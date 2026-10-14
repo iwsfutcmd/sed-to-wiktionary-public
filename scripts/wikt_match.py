@@ -1,5 +1,8 @@
-import csv,json,re,unicodedata as U,itertools,sys
-ps=json.load(open('wik_ps.json'));pw=json.load(open('wik_pws.json'))
+"""Match every SED form against the Wiktionary title snapshots; write the per-volume and combined TSVs."""
+import csv,json,re,unicodedata as U
+from collections import Counter
+from paths import DATA,INTER,WIKT
+ps=json.loads((WIKT/'wik_ps.json').read_text(encoding='utf-8'));pw=json.loads((WIKT/'wik_pws.json').read_text(encoding='utf-8'))
 def fold(s):
     s=U.normalize('NFC',s)
     for a,b in [('ʾ','ʔ'),('ˀ','ʔ'),('ʿ','ʕ'),('ʻ','ʕ'),('ð','ḏ'),('θ','ṯ'),('ḳ','q'),('γ','ġ'),('ŝ','ś'),('ḡ','ġ'),('δ','ḏ')]:
@@ -53,18 +56,27 @@ def status(ex,pa):
     if ex: return 'yes',';'.join(sorted(ex))
     if pa: return 'pattern',';'.join(sorted(pa))
     return 'no',''
-rows=list(csv.reader(open('sed_all.tsv',encoding='utf-8'),delimiter='\t'))
+rows=list(csv.reader(open(INTER/'sed_all.tsv',encoding='utf-8'),delimiter='\t'))
 h=rows[0]+['wikt_ps','wikt_ps_title','wikt_pws','wikt_pws_title']
 out=[h]
 for r in rows[1:]:
     d=dict(zip(rows[0],r))
-    vs=expand(d['protoform'])+expand(d['wikt_norm'])+expand(d['affricate_variant'])
-    vs=list(dict.fromkeys(vs))
+    vs=list(dict.fromkeys(expand(d['protoform'])+expand(d['wikt_norm'])+expand(d['affricate_variant'])))
     a=status(*match(IPS,vs));b=status(*match(IPW,vs))
     out.append(r+[a[0],a[1],b[0],b[1]])
-json.dump(out,open('wikt_merged.json','w'),ensure_ascii=False)
-from collections import Counter
+def write(path,rs):
+    with open(path,'w',encoding='utf-8',newline='') as f:
+        csv.writer(f,delimiter='\t',lineterminator='\n').writerows([h]+rs)
+(DATA/'vol1').mkdir(exist_ok=True);(DATA/'vol2').mkdir(exist_ok=True)
+write(DATA/'vol1'/'sed_vol1_reconstructions.tsv',[r for r in out[1:] if r[0]=='1'])
+write(DATA/'vol2'/'sed_vol2_reconstructions.tsv',[r for r in out[1:] if r[0]=='2'])
+write(DATA/'sed_vol1_vol2_reconstructions.tsv',out[1:])
+# JSON for the browser page: typed copy of the combined table
+recs=[dict(zip(h,r)) for r in out[1:]]
+for d in recs:
+    d['vol']=int(d['vol']);d['no']=int(d['no']);d['pdf_page']=int(d['pdf_page']) if d['pdf_page'] else ''
+(INTER/'sed_all.json').write_text(json.dumps(recs,ensure_ascii=False),encoding='utf-8')
 for vol in '12':
     for sec in ('nominal','verbal'):
         rs=[o for o in out[1:] if o[0]==vol and o[1]==sec]
-        if rs: print(vol,sec,len(rs),'PS',Counter(o[-4] for o in rs),'PWS',Counter(o[-2] for o in rs))
+        if rs: print(vol,sec,len(rs),'PS',dict(Counter(o[-4] for o in rs)),'PWS',dict(Counter(o[-2] for o in rs)))

@@ -1,0 +1,638 @@
+vol	section	no	protoform	affricate_variant	gloss	wikt_norm	pdf_page
+1	nominal	1	*ʔa/ibr-		pinion, wing	*ʔa/ibr-	155
+1	nominal	2	*ʔibr(-at)-		membrum virile	*ʔibr(-at)-	156
+1	nominal	3	*ʔi(-)bVr-at-		bone of leg/arm; limb	*ʔi(-)bVr-at-	157
+1	nominal	4	*ʔuḏn-	*ʔužn-	ear	*ʔuḏn-	158
+1	nominal	5	*ʔaly-at-		fat tail (of a certain race of sheep)	*ʔaly-at-	159
+1	nominal	6	*ʔamm-at-		elbow, forearm	*ʔamm-at-	160
+1	nominal	7	*ʔi(n)gi/ur-		foot	*ʔi(n)gi/ur-	161
+1	nominal	8	*ʔanp-		nose	*ʔanp-	162
+1	nominal	9	*ʔir(r)-at-		chest, breast	*ʔir(r)-at-	163
+1	nominal	10	*ʔVrāw-, *wVrāʔ-		back	*ʔVrāw-	164
+1	nominal	11	*ʔi/ušk(-at)-	*ʔi/usḱ(-at)-	testiculus	*ʔi/ušk(-at)-	165
+1	nominal	12	*ʕidḳ-		(lock/tuft of) hair, curl, fleece	*ʕidq-	166
+1	nominal	13	*ʕagb-		rump, buttocks	*ʕagb-	166
+1	nominal	14	*ʕaḳib-, *ʕiḳb-		heel	*ʕaqib-	166
+1	nominal	15	*ʕi/unḳ-		neck	*ʕi/unq-	168
+1	nominal	16	*ʕa(n)ṣab-	*ʕa(n)c̣ab-	sinew, nerves	*ʕa(n)ṣab-	171
+1	nominal	17	*ʕap(-ʕap)-		pupil of the eye	*ʕap(-ʕap)-	171
+1	nominal	18	*ʕap/baḳ-		sores, scabies, leprosy	*ʕap/baq-	172
+1	nominal	19	*ʕa/up(a)l-		haemorrhoids, thickening of tissue	*ʕa/up(a)l-	172
+1	nominal	20	*ʕa/irḳ-		tendon, muscle, vein, nerve	*ʕa/irq-	173
+1	nominal	21	*ʕarḳūb-		(Achilles') tendon	*ʕarqūb-	174
+1	nominal	22	*ʕu/irray(-at)-		intestines; excrement	*ʕu/irray(-at)-	175
+1	nominal	23	*ʕaṣay-	*ʕac̣ay-	backbone	*ʕaṣay-	176
+1	nominal	24	*ʕVṣ̂ā/īṣ̂-	*ʕVĉ̣ā/īĉ̣-	(kind of) bone	*ʕVṣ́ā/īṣ́-	176
+1	nominal	25	*ʕaṯm(-at)-	*ʕač̣m(-at)-	bone	*ʕaṯm(-at)-	177
+1	nominal	26	*ʕawr(-at)-, *ʕVrw(-at)-		pudenda	*ʕawr(-at)-	178
+1	nominal	27	*ʕaw/yš-, *ʕašw/y-	*ʕaw/ys-, *ʕasw/y-	kind of disease (fever, cold in the head; plague)	*ʕaw/yš-	179
+1	nominal	28	*ʕayn-		eye	*ʕayn-	180
+1	nominal	29	*ba/u(ʔ)ba/u(ʔ)-		pupil of the eye	*ba/u(ʔ)ba/u(ʔ)-	181
+1	nominal	30	*bVʕ(bVʕ)-at-, *ʔV-bVʕbVʕ(-at)-		blister, boil	*bVʕ(bVʕ)-at-	181
+1	nominal	31	*badan-		body	*badan-	182
+1	nominal	32	*ba/uday-		back of thorax including shoulders and arms	*ba/uday-	183
+1	nominal	33	*bahaḳ-		(kind of) skin disease	*bahaq-	184
+1	nominal	34	*bVhā/īn-, *ʔV-bhān-		thumb, big toe	*bVhā/īn-	185
+1	nominal	35	*būḥ-		phallus; genitalia	*būḥ-	186
+1	nominal	36	*balVʕ/ġ-, *balʕVm-		uvula; gullet, gorge	*balVʕ/ġ-	186
+1	nominal	37	*bi(n)ṯ̣ur-	*bi(n)č̣ur-	clitoris, vagina	*bi(n)ṱur-	187
+1	nominal	38	*barak-		chest, thorax	*barak-	187
+1	nominal	39	*bi/ark-		knee	*bi/ark-	188
+1	nominal	40	*baraṣ-	*barac̣-	scabies, tetter, ringworm	*baraṣ-	190
+1	nominal	41	*bi/aŝar-	*bi/aĉar-	flesh, (human) body	*bi/aśar-	190
+1	nominal	42	*baṭn-		(big) belly	*baṭn-	192
+1	nominal	43	*bayṣ̂-at-	*bayĉ̣-at-	egg	*bayṣ́-at-	193
+1	nominal	44	*bizz-	*biǯǯ-	teat, breast	*bizz-	194
+1	nominal	45	*da/ib(a)r-		pestilence, plague	*da/ib(a)r-	194
+1	nominal	46	*dVb(V)r-		back, hind part	*dVb(V)r-	196
+1	nominal	47	*dadd-, *dayd-		breast, teat	*dadd-	197
+1	nominal	48	*duhn-, *daha/in-		fat	*duhn-	198
+1	nominal	49	*dVḳm-		mouth; jaw; beak	*dVqm-	198
+1	nominal	50	*dam-, *ʔa-dam-		blood	*dam-	199
+1	nominal	51	*dimʕ(-at)-		tear(-drop)	*dimʕ(-at)-	201
+1	nominal	52	*dimāγ-		(top of the) head; brains	*dimāġ-	201
+1	nominal	53	*dVm(a)n-		dung	*dVm(a)n-	202
+1	nominal	54	*dan(V)n-		viscera, inner organ, intestine	*dan(V)n-	203
+1	nominal	55	*dap-an-, *dapp(-at)-		upper torso	*dap-an-	204
+1	nominal	56	*dVr(dVr)-		toothless mouth, gum	*dVr(dVr)-	205
+1	nominal	57	*daran-		(kind of) skin disease	*daran-	206
+1	nominal	58	*da/ir(r)-at-		breast, udder	*da/ir(r)-at-	206
+1	nominal	59	*di/arṣ-	*di/arc̣-	viscera	*di/arṣ-	207
+1	nominal	60	*dVšm/n-	*dVsm/n-	fat; fatness	*dVšm/n-	208
+1	nominal	61	*ḏu/iʕ-at-, *waḏʕ-at-	*ǯu/iʕ-at-, *waǯʕ-at-	sweat	*ḏu/iʕ-at-	209
+1	nominal	62	*ḏ/zVb(b)-(ān)-	*ǯ/ʒVb(b)-(ān)-	tail, back	*ḏ/zVb(b)-(ān)-	210
+1	nominal	63	*ḏi/aḳan-	*ǯi/aḳan-	beard	*ḏi/aqan-	211
+1	nominal	64	*ḏi/anab(-at)-	*ǯi/anab(-at)-	tail	*ḏi/anab(-at)-	212
+1	nominal	65	*ḏVrāʕ-	*ǯVrāʕ-	arm	*ḏVrāʕ-	214
+1	nominal	66	*gabb(-at)-		eyebrow, eye-pit, front	*gabb(-at)-	215
+1	nominal	67	*gVb(V)b-, *gVb(b)-an-		hump, hunch	*gVb(V)b-	216
+1	nominal	68	*gVbh(-at)-		forehead, front	*gVbh(-at)-	217
+1	nominal	69	*gVb(b)īn-		eyebrow, front	*gVb(b)īn-	217
+1	nominal	70	*ga/ibar-		genital organ	*ga/ibar-	218
+1	nominal	71	*gVd-at-		(part or bone of the) leg of animal	*gVd-at-	219
+1	nominal	72	*gīd-		sinew, nerve	*gīd-	220
+1	nominal	73	*gVd(V)l-		limb	*gVd(V)l-	221
+1	nominal	74	*gadp-		wing	*gadp-	222
+1	nominal	75	*gall-		dung	*gall-	222
+1	nominal	76	*gilʕ-		prepuce, clitoris	*gilʕ-	223
+1	nominal	77	*gu/alb-		(piece of) skin	*gu/alb-	224
+1	nominal	78	*gi/ald-		skin, hide	*gi/ald-	224
+1	nominal	79	*ga/ulga/ul-at-		skull	*ga/ulga/ul-at-	226
+1	nominal	80	*gVl(a)p-at-		skin; peel; scales; test	*gVl(a)p-at-	227
+1	nominal	81	*ga/umm(-at)-		(long) hair, mane	*ga/umm(-at)-	227
+1	nominal	82	*gV(m)bVṯ-	*gV(m)bVč-	hump (of an animal)	*gV(m)bVṯ-	229
+1	nominal	83	*gan(a)n-		viscera; heart	*gan(a)n-	229
+1	nominal	84	*gu/in-, *ʔ/wVgn-		(area including) cheek-bone and eye-socket	*gu/in-	230
+1	nominal	85	*ganb-		side and back of torso	*ganb-	231
+1	nominal	86	*ganaḥ-		chest with upper arm/wing	*ganaḥ-	232
+1	nominal	87	*gVn(ā)z(-at)-	*gVn(ā)ʒ(-at)-	(dead) body, back (of body)	*gVn(ā)z(-at)-	233
+1	nominal	88	*gapp-, *ʔa-gapp-		wing	*gapp-	234
+1	nominal	89	*gar(r)-		back, rear, buttocks	*gar(r)-	235
+1	nominal	90	*gVrVb-		body; stomach	*gVrVb-	236
+1	nominal	91	*gar(a)b-		leprosy, mange, scab	*gar(a)b-	237
+1	nominal	92	*gar(i)d-		back of neck	*gar(i)d-	238
+1	nominal	93	*gargūm(-at)-		throat	*gargūm(-at)-	238
+1	nominal	94	*gVrm-		body; bone	*gVrm-	239
+1	nominal	95	*girān-		throat	*girān-	241
+1	nominal	96	*gišm-	*gism-	body	*gišm-	241
+1	nominal	97	*giŝŝ-	*giĉĉ-	torso, body	*giśś-	242
+1	nominal	98	*gi/uṯṯ(-at)-	*gi/učč(-at)-	body, corpse	*gi/uṯṯ(-at)-	244
+1	nominal	99	*gaw(w)iʔ- (or *gʷay(y)aʔ-)		(front part of) body; chest, belly; interior	*gaw(w)iʔ- (or *gʷay(y)aʔ-)	244
+1	nominal	100	*gawp-		chest and abdominal cavities of body/corpse	*gawp-	246
+1	nominal	101	*g(ʷ)ann-		breastbone; side of body	*g(ʷ)ann-	247
+1	nominal	102	*gʷar(gʷ)ar(-at)-		throat, gullet	*gʷar(gʷ)ar(-at)-	248
+1	nominal	103	*γib(b)-		dung, faeces	*ġib(b)-	250
+1	nominal	104	*γa/ub(a)b-		bosom, chest; dewlap	*ġa/ub(a)b-	250
+1	nominal	105	*γap(a)r-		(stiff) hair	*ġap(a)r-	251
+1	nominal	106	*γa/ur(r)-		(loose) skin, dewlap	*ġa/ur(r)-	251
+1	nominal	107	*γarVṗ-		occiput, back of the neck	*ġarVṗ-	252
+1	nominal	108	*γurl(-at)-		foreskin, prepuce	*ġurl(-at)-	253
+1	nominal	109	*ḥubb- (or *ḥawb-)		chest, bosom	*ḥubb- (or *ḥawb-)	254
+1	nominal	110	*ḥabal-, *ḥibl-		foetus; umbilical cord	*ḥabal-	254
+1	nominal	111	*ḥi/ab(V)r-		spot on the skin, bruise, mark of violence	*ḥi/ab(V)r-	255
+1	nominal	112	*ḥaḏ(V)y-	*ḥaǯ(V)y-	breast	*ḥaḏ(V)y-	256
+1	nominal	113	*ḥi/aḳ(ʷ)-		hip, loin, lap	*ḥi/aq(ʷ)-	256
+1	nominal	114	*ḥa/ul(l/y)-		spinal column with thigh bones	*ḥa/ul(l/y)-	257
+1	nominal	115	*ḥil(Vl)-		canal (anat.), urethra (?)	*ḥil(Vl)-	258
+1	nominal	116	*ḥ/ḫalaʔ-		mole; pustule	*ḥ/ḫalaʔ-	258
+1	nominal	117	*ḥalḳ-, *ḥalḳū/um-		Adam's apple, throat	*ḥalq-	259
+1	nominal	118	*ḥVlṣ-	*ḥVlc̣-	loin, hip	*ḥVlṣ-	259
+1	nominal	119	*ḥVmm(-at)-		breast, stomach, entrails	*ḥVmm(-at)-	260
+1	nominal	120	*ḥVm-at-		venom, bile	*ḥVm-at-	261
+1	nominal	121	*ḥum(a)ṣ-at-	*ḥum(a)c̣-at-	birth-mark, scar on the skin	*ḥum(a)ṣ-at-	262
+1	nominal	122	*ḥVmṯ-	*ḥVmč-	(lower) belly, uterus, womb	*ḥVmṯ-	262
+1	nominal	123	*ḥann(-at)-		(feminine) genital organ, uterus	*ḥann(-at)-	263
+1	nominal	124	*ḥanak-, *ḥink-		palate	*ḥanak-	264
+1	nominal	125	*ḥu/apn-		hollow of the hand, handful	*ḥu/apn-	265
+1	nominal	126	*ḥVrṣ-	*ḥVrc̣-	hip, loin	*ḥVrṣ-	266
+1	nominal	127	*ḥasīs-	*ḥacīc-	external ear structure; aural apparatus	*ḥasīs-	267
+1	nominal	128	*ḥaŝy-	*ḥaĉy-	entrails	*ḥaśy-	268
+1	nominal	129	*ḥi/uṣ̂(a)n-	*ḥi/uĉ̣(a)n-	lap, bosom	*ḥi/uṣ́(a)n-	269
+1	nominal	130	*ḥi(wa)l-		fetal membrane	*ḥi(wa)l-	270
+1	nominal	131	*ḫilb-		fatty tissue covering interior organs; caul	*ḫilb-	271
+1	nominal	132	*ḫam/nṣ-	*ḫam/nc̣-	waist	*ḫam/nṣ-	271
+1	nominal	133	*ḫim/nṣ-	*ḫim/nc̣-	fatty tissue around intestines and stomach	*ḫim/nṣ-	272
+1	nominal	134	*ḫi(n)ṣVr-	*ḫi(n)c̣Vr-	(little) finger	*ḫi(n)ṣVr-	273
+1	nominal	135	*ḫu/ap(p)-		hoof	*ḫu/ap(p)-	274
+1	nominal	136	*ḫVrʔ/y-		excrement, dregs	*ḫVrʔ/y-	275
+1	nominal	137	*ḫarṭūm-		(long) nose, beak, trunk, etc.	*ḫarṭūm-	276
+1	nominal	138	*ḫVŝₓVp-	*ḫVŝVp-	scabies, itch, boil	*ḫVśₓVp-	276
+1	nominal	139	*ḫuṭm-		nose, snout, muzzle, beak	*ḫuṭm-	277
+1	nominal	140	*ku/aʕ(-at)-		joint; ankle; foot	*ku/aʕ(-at)-	277
+1	nominal	141	*kabid(-at)-		liver	*kabid(-at)-	278
+1	nominal	142	*kVbaw/y(-at)-		(dry cow's) dung	*kVbaw/y(-at)-	279
+1	nominal	143	*ki/um-		wrist, articulation (of arms and legs)	*ki/um-	280
+1	nominal	144	*kVm(V)d-		forearm, cubit	*kVm(V)d-	281
+1	nominal	145	*kanap-, *kinp-		wing	*kanap-	282
+1	nominal	146	*ka/inpa/ir-		tip of the nose; lip	*ka/inpa/ir-	283
+1	nominal	147	*ki(n)šād-	*ki(n)sād-	neck, top of shoulder	*ki(n)šād-	285
+1	nominal	148	*kapp-		palm, flap of hand or foot	*kapp-	286
+1	nominal	149	*kVr(V)m-		joint of limb bones; flexion, bend of limbs	*kVr(V)m-	287
+1	nominal	150	*kursū/iʕ-	*kurcū/iʕ-	fetlock joint, tarsus	*kursū/iʕ-	287
+1	nominal	151	*kariŝ-	*kariĉ-	belly, stomach	*kariś-	288
+1	nominal	152	*ka/iska/is-, *kVsʔ/w-	*ka/icka/ic-, *kVcʔ/w-	back, side or front part of body (of a sheep?)	*ka/iska/is-	289
+1	nominal	153	*kVs(V)l-	*kVc(V)l-	(area between) loins and genitals	*kVs(V)l-	290
+1	nominal	154	*kat(i)p-		(back of) shoulder, shoulder blade	*kat(i)p-	290
+1	nominal	155	*ki/uṯr-	*ki/učr-	joint (of the ribs, fingers, etc.)	*ki/uṯr-	291
+1	nominal	156	*kʷaly-at-		kidney	*kʷaly-at-	293
+1	nominal	157	*kʷirāʕ-		knee and shin-bone; lower leg (of animal)	*kʷirāʕ-	293
+1	nominal	158	*ḳVb-at-		stomach (of animals)	*qVb-at-	295
+1	nominal	159	*ḳa/udḳa/ud-		skull, head	*qa/udqa/ud-	296
+1	nominal	160	*ḳīḳ(-at)-		egg	*qīq(-at)-	297
+1	nominal	161	*ḳalb- (or *ḳabl-)		heart, middle of the body	*qalb- (or *qabl-)	298
+1	nominal	162	*ḳVlVp(-at)-		scale; shell; (hard) skin; foreskin (?); peel; bark of tree	*qVlVp(-at)-	299
+1	nominal	163	*ḳanṭīr-		clitoris	*qanṭīr-	300
+1	nominal	164	*ḳapy-		occiput, back of the head	*qapy-	300
+1	nominal	165	*ḳVrb-		inner part, middle of the body	*qVrb-	301
+1	nominal	166	*ḳard-		neck, throat	*qard-	302
+1	nominal	167	*ḳa/urḳa/ub-		stomach (of birds)	*qa/urqa/ub-	302
+1	nominal	168	*ḳarn-		horn	*qarn-	303
+1	nominal	169	*ḳVrs/ṣ-Vll-	*ḳVrc/c̣-Vll-	ankle	*qVrs/ṣ-Vll-	304
+1	nominal	170	*ḳa(w)ḥil-, *ʔVn-ḳulaliḥ-		egg	*qa(w)ḥil-	305
+1	nominal	171	*ḳ(ʷ)Vlḥ-		genitals; testicles	*q(ʷ)Vlḥ-	306
+1	nominal	172	*ḳ(ʷ)Vyṣ-, *ḳ(ʷ)Vṣṣ-	*ḳ(ʷ)Vyc̣-, *ḳ(ʷ)Vc̣c̣-	joint, point of connection between bones	*q(ʷ)Vyṣ-	307
+1	nominal	173	*labb(-at)-, *lab(y)-ān-		(animal's) body from neck to rump	*labb(-at)-	308
+1	nominal	174	*libb-		heart	*libb-	309
+1	nominal	175	*li/abbuḫ-, *labīḫ-at-		bladder (of animals)	*li/abbuḫ-	310
+1	nominal	176	*luγ(γ)-		throat	*luġ(ġ)-	311
+1	nominal	177	*lVγ-		jaw	*lVġ-	312
+1	nominal	178	*liḥ(a)y(-at)-		cheek, jaw	*liḥ(a)y(-at)-	313
+1	nominal	179	*lam(a)ṯ-	*lam(a)č̣-	eruption (on the skin), white spot	*lam(a)ṯ-	314
+1	nominal	180	*li/apVʔ-		fatty, fleshy tissue	*li/apVʔ-	315
+1	nominal	181	*liš(š)ān-	*lis(s)ān-	tongue; language	*liš(š)ān-	316
+1	nominal	182	*laṯaγ-	*lačaγ-	(inner part of the) mouth	*laṯaġ-	317
+1	nominal	183	*mV(ʔ)n(-at)-		tendon, sinew; muscle	*mV(ʔ)n(-at)-	318
+1	nominal	184	*mVʕmVʕ-		brain	*mVʕmVʕ-	319
+1	nominal	185	*maʕay/w(-at)-		intestines, entrails	*maʕay/w(-at)-	320
+1	nominal	186	*mVgl-		pus, blister	*mVgl-	321
+1	nominal	187	*muḫḫ-		brain	*muḫḫ-	321
+1	nominal	188	*mi/ar(r)-at-, *mirār-at-		gall, gall-bladder	*mi/ar(r)-at-	322
+1	nominal	189	*ma-rpiḳ-		elbow	*ma-rpiq-	324
+1	nominal	190	*ma/išk-	*ma/isk-	skin	*ma/išk-	324
+1	nominal	191	*matn- (1)		sinew, tendon; nerve	*matn- (1)	325
+1	nominal	192	*matn- (2)		hip and small of the back	*matn- (2)	325
+1	nominal	193	*nVʕay-at-, *nayaʕ-		breast (of an animal)	*nVʕay-at-	326
+1	nominal	194	*nabīl-at-		corpse, carcass	*nabīl-at-	326
+1	nominal	195	*nagd-		bosom, breast	*nagd-	327
+1	nominal	196	*naḥ(a)r-		upper part of chest	*naḥ(a)r-	327
+1	nominal	197	*naḫ-		mucus; mucus membrane	*naḫ-	328
+1	nominal	198	*naḫīr-		nostril	*naḫīr-	329
+1	nominal	199	*nakap-at-		temple, cheek-bone	*nakap-at-	330
+1	nominal	200	*napa/iš-	*napa/is-	throat	*napa/iš-	330
+1	nominal	201	*našy-, *ʔa-nšVy-	*nasy-, *ʔa-nsVy-	sciatic tendon/nerve	*našy-	330
+1	nominal	202	*nāṣ(y)-	*nāc̣(y)-	feathers, plumage	*nāṣ(y)-	331
+1	nominal	203	*nayab-		canine tooth	*nayab-	332
+1	nominal	204	*pVʔ-at-		face, front	*pVʔ-at-	332
+1	nominal	205	*pVʔVd-		heart	*pVʔVd-	334
+1	nominal	206	*pVʔw/y(-at)-		genital organ	*pVʔw/y(-at)-	335
+1	nominal	207	*paʕm-, *paʕn-		leg	*paʕm-	335
+1	nominal	208	*pidr-		fat	*pidr-	336
+1	nominal	209	*pagr-		body; corpse	*pagr-	336
+1	nominal	210	*paḥ(a)l-		thigh; penis	*paḥ(a)l-	337
+1	nominal	211	*paḫ(i)ḏ-	*paḫ(i)ǯ-	hip, thigh	*paḫ(i)ḏ-	338
+1	nominal	212	*pakk-		jaw, joint of the jaw	*pakk-	339
+1	nominal	213	*pVḳ-		neck	*pVq-	339
+1	nominal	214	*pVḳVm-		(animal's) mouth, muzzle	*pVqVm-	340
+1	nominal	215	*pan-		face	*pan-	340
+1	nominal	216	*p/ban/md(-at)-		back, podex	*p/ban/md(-at)-	342
+1	nominal	217	*par-		skin, shell, husk	*par-	344
+1	nominal	218	*parʕ-		(loose) hair of the head	*parʕ-	344
+1	nominal	219	*pi/arḳ-at-, *pi/aḳr-at-		neck, vertebra, occiput	*pi/arq-at-	345
+1	nominal	220	*pa/irs-	*pa/irc-	sole (of foot, hoof)	*pa/irs-	345
+1	nominal	221	*parṯ-	*parč-	non-digested food in the stomach	*parṯ-	346
+1	nominal	222	*pawd-		(lock of) hair	*pawd-	347
+1	nominal	223	*pay-		mouth	*pay-	347
+1	nominal	224	*riʔ(-at)-		lung	*riʔ(-at)-	349
+1	nominal	225	*raʔ(i)š-	*raʔ(i)s-	head	*raʔ(i)š-	350
+1	nominal	226	*ru/abṣ̂-	*ru/abĉ̣-	womb, uterus	*ru/abṣ́-	352
+1	nominal	227	*rib(Vb)y(-at)-, *ʔa-rib(Vb)y(-at)-		lower part of the trunk, area below the navel	*rib(Vb)y(-at)-	352
+1	nominal	228	*rigl-		foot	*rigl-	353
+1	nominal	229	*rVγw/y-at-		foam; saliva; excretion	*rVġw/y-at-	354
+1	nominal	230	*rāḥ-at-, *riḥ-at-		palm of hand	*rāḥ-at-	354
+1	nominal	231	*raḥ(i)m-, *riḥm-		womb	*raḥ(i)m-	356
+1	nominal	232	*rVk(u)b(-at)-		knee	*rVk(u)b(-at)-	357
+1	nominal	233	*rVm-		kind of skin ulcer; mole, mark on the skin	*rVm-	358
+1	nominal	234	*rayr- (or *rīr-)		saliva	*rayr- (or *rīr-)	359
+1	nominal	235	*si/anṗ-	*ci/anṗ-	lung	*si/anṗ-	359
+1	nominal	236	*si(n)ṭ-	*ci(n)ṭ-	flat hand with wrist	*si(n)ṭ-	361
+1	nominal	237	*sur(u)m-	*cur(u)m-	intestine	*sur(u)m-	362
+1	nominal	238	*šiʔr-	*siʔr-	flesh	*šiʔr-	362
+1	nominal	239	*š/sVb-, *ʔV-š/sVb-	*ś/cVb-, *ʔV-ś/cVb-	pubic hair	*š/sVb-	363
+1	nominal	240	*šaḫw/y-at-	*saḫw/y-at-	armpit	*šaḫw/y-at-	364
+1	nominal	241	*šāḳ-	*sāḳ-	thigh, leg	*šāq-	364
+1	nominal	242	*š/suḳl-	*ś/cuḳl-	leg, thigh; elbow	*š/suql-	365
+1	nominal	243	*š/sVl(V)ʕ-		(kind of) disease causing scales on the skin; leprosy	*š/sVl(V)ʕ-	366
+1	nominal	244	*ša/ilḫ-	*sa/ilḫ-	skin, hide	*ša/ilḫ-	367
+1	nominal	245	*šalpūḥ(-at)-	*salpūḥ(-at)-	bladder, inflated organ	*šalpūḥ(-at)-	368
+1	nominal	246	*ša/ily(-at)-	*sa/ily(-at)-	afterbirth, fetal membrane	*ša/ily(-at)-	368
+1	nominal	247	*šVmāḫ-	*sVmāḫ-	intestine, spleen	*šVmāḫ-	369
+1	nominal	248	*šamn-	*samn-	fat (also 'oil')	*šamn-	370
+1	nominal	249	*šinn-	*sinn-	tooth	*šinn-	371
+1	nominal	250	*š/sVn(-ām)-	*ś/cVn(-ām)-	hump of animal (camel, etc.)	*š/sVn(-ām)-	372
+1	nominal	251	*š/ŝV(n)zVr-	*s/ĉV(n)ʒVr-	span	*š/śV(n)zVr-	373
+1	nominal	252	*šapū/il-	*sapū/il-	legs (as lower parts of body)	*šapū/il-	374
+1	nominal	253	*š/sar-	*ś/car-	vertebral column, backbone	*š/sar-	375
+1	nominal	254	*šurr-	*surr-	navel, navel string	*šurr-	376
+1	nominal	255	*šVt-, *ʔi-šVt-	*sVt-, *ʔi-sVt-	posterior, buttocks	*šVt-	377
+1	nominal	256	*ṣVbʕ(-at)-, *ʔV-ṣbaʕ-	*c̣Vbʕ(-at)-, *ʔV-c̣baʕ-	finger	*ṣVbʕ(-at)-	379
+1	nominal	257	*ṣirnaγ-at-	*c̣irnaγ-at-	(kind of) skin disease	*ṣirnaġ-at-	381
+1	nominal	258	*ṣaw(ʔ)ar-	*c̣aw(ʔ)ar-	neck	*ṣaw(ʔ)ar-	381
+1	nominal	259	*ŝV(ʕ)p-at-	*ĉV(ʕ)p-at-	(tuft of) hair	*śV(ʕ)p-at-	382
+1	nominal	260	*ŝaʕr(-at)-	*ĉaʕr(-at)-	hair (of body and head)	*śaʕr(-at)-	383
+1	nominal	261	*ŝabḥ-	*ĉabḥ-	(animal) fat	*śabḥ-	384
+1	nominal	262	*ŝVbVr-	*ĉVbVr-	buttocks, hind parts, small of the back	*śVbVr-	385
+1	nominal	263	*ŝaḥm-	*ĉaḥm-	fat	*śaḥm-	385
+1	nominal	264	*ŝimaʔl-	*ĉimaʔl-	left hand (side)	*śimaʔl-	386
+1	nominal	265	*ŝa(n)p-at-	*ĉa(n)p-at-	lip	*śa(n)p-at-	387
+1	nominal	266	*ŝVp(V)r-	*ĉVp(V)r-	eyelash; (tuft of) hair	*śVp(V)r-	389
+1	nominal	267	*ŝir-	*ĉir-	skin, hide of cattle	*śir-	390
+1	nominal	268	*ŝVry/w/ʕ-, *ŝVry/ʕ-ān-	*ĉVry/w/ʕ-, *ĉVry/ʕ-ān-	(Achilles') tendon; sinew, muscle (of leg)	*śVry/w/ʕ-	391
+1	nominal	269	*ŝayṗ-	*ĉayṗ-	foot, sole of foot	*śayṗ-	393
+1	nominal	270	*ŝₓV̄m-at-	*ŝV̄m-at-	birth-mark, mole	*śₓV̄m-at-	394
+1	nominal	271	*ŝₓV(n)pVl-		stomach (of an animal, bird)	*śₓV(n)pVl-	395
+1	nominal	272	*ṣ̂il(a)ʕ-	*ĉ̣il(a)ʕ-	rib, side (of chest)	*ṣ́il(a)ʕ-	395
+1	nominal	273	*ṣ̂ap(V)ʕ/γ-	*ĉ̣ap(V)ʕ/γ-	dung	*ṣ́ap(V)ʕ/ġ-	396
+1	nominal	274	*ṣ̂Vrʕ-	*ĉ̣Vrʕ-	teat, nipple, udder	*ṣ́Vrʕ-	397
+1	nominal	275	*ṣ̂irš-	*ĉ̣irs-	molar tooth	*ṣ́irš-	398
+1	nominal	276	*tVlāʕ-		breast, nipple	*tVlāʕ-	399
+1	nominal	277	*ṭVb-		teat	*ṭVb-	399
+1	nominal	278	*ṭiḥāl-, *ṭu/alḥīm-		spleen	*ṭiḥāl-	400
+1	nominal	279	*ṭap(a)ḥ-		span, palm of hand	*ṭap(a)ḥ-	401
+1	nominal	280	*ṯVdy-	*čVdy-	(woman's) breast	*ṯVdy-	402
+1	nominal	281	*ṯVkm-	*čVkm-	neck and shoulders	*ṯVkm-	403
+1	nominal	282	*ṯapr-	*čapr-	perineum	*ṯapr-	404
+1	nominal	283	*ṯarb-	*čarb-	(animal) fat	*ṯarb-	405
+1	nominal	284	*ṯ̣Vhr-	*č̣Vhr-	back	*ṱVhr-	405
+1	nominal	285	*ṯ̣ip(V)r-	*č̣ip(V)r-	nail	*ṱip(V)r-	407
+1	nominal	286	*ṯ̣ayVʔ(-at)-	*č̣ayVʔ(-at)-	excrement; excreta	*ṱayVʔ(-at)-	408
+1	nominal	287	*warīd-		jugular vein; trachea	*warīd-	410
+1	nominal	288	*warik(-at)-		hip(-bone)	*warik(-at)-	410
+1	nominal	289	*waṣil-	*wac̣il-	joint, articulation (of the humerus)	*waṣil-	412
+1	nominal	290	*wat(a)r-		tendon	*wat(a)r-	412
+1	nominal	291	*yad-, *ʔid-		hand	*yad-	414
+1	nominal	292	*yamīn-, *yamān-		right hand (side)	*yamīn-	415
+1	nominal	293	*zubb-	*ʒubb-	(male) genitalia	*zubb-	416
+1	nominal	294	*zibl-	*ʒibl-	dung	*zibl-	417
+1	nominal	295	*zīḏ-	*ʒīǯ-	teat	*zīḏ-	418
+1	nominal	296	*zam-	*ʒam-	blood	*zam-	418
+1	nominal	297	*zapp/bb-	*ʒapp/bb-	hair (on the head), bristle	*zapp/bb-	419
+1	nominal	298	*zVr(-at)-	*ʒVr(-at)-	(spread) hand; span	*zVr(-at)-	420
+1	verbal	1	*ʕḳr		to be sterile, without offspring	*ʕqr	424
+1	verbal	2	*ʕlg		to stammer	*ʕlg	424
+1	verbal	3	*ʕmy		to be blind	*ʕmy	425
+1	verbal	4	*ʕṭš	*ʕṭs	to sneeze	*ʕṭš	426
+1	verbal	5	*ʕwr		to be blind	*ʕwr	427
+1	verbal	6	*bhm		to be mute, dumb	*bhm	428
+1	verbal	7	*bṣḳ	*bc̣ḳ	to spit	*bṣq	428
+1	verbal	8	*dbš (or *dbṯ)	*dbs (or *dbč)	to be hump-backed	*dbš (or *dbṯ)	429
+1	verbal	9	*dnḳ		to be deaf, stupid	*dnq	430
+1	verbal	10	*dnw/y		to conceive, be pregnant	*dnw/y	430
+1	verbal	11	*dwm		to be giddy; have pain in the head	*dwm	431
+1	verbal	12	*dwy/ʔ		to be ill, sick	*dwy/ʔ	431
+1	verbal	13	*ḏbb	*ǯbb	to be mad, crazy	*ḏbb	432
+1	verbal	14	*ḏmm	*ǯmm	to fornicate	*ḏmm	433
+1	verbal	15	*gbḫ		to be bald (on the forehead)	*gbḫ	433
+1	verbal	16	*g(ʷ)ʕṯ̣	*g(ʷ)ʕč̣	to (be about to) vomit	*g(ʷ)ʕṱ	434
+1	verbal	17	*g(ʷ)ŝₓʕ/ʔ	*g(ʷ)ŝʕ/ʔ	to belch, retch, vomit	*g(ʷ)śₓʕ/ʔ	434
+1	verbal	18	*hḏy/w	*hǯy/w	to be mad, talk without sense; produce incoherent sounds (in one's sleep)	*hḏy/w	435
+1	verbal	19	*hll		to be imbecile, weak-minded, mad; be mocked at	*hll	436
+1	verbal	20	*hry		to be pregnant, conceive	*hry	437
+1	verbal	21	*ḥbl		to be pregnant, conceive	*ḥbl	438
+1	verbal	22	*ḥbṭ		to swell, inflate (esp. of stomach)	*ḥbṭ	438
+1	verbal	23	*ḥkk		to itch, scratch (oneself)	*ḥkk	439
+1	verbal	24	*ḥks	*ḥkc	to be lame	*ḥks	440
+1	verbal	25	*ḥlm		to dream; have nocturnal ejaculations	*ḥlm	441
+1	verbal	26	*ḥlṣ	*ḥlc̣	to feel pain, be sick	*ḥlṣ	442
+1	verbal	27	*ḥly, *ḥll, *ḥyl		to be sick, infirm	*ḥly	442
+1	verbal	28	*ḥmr		to have indigestion	*ḥmr	444
+1	verbal	29	*ḥyṣ̂	*ḥyĉ̣	to menstruate	*ḥyṣ́	444
+1	verbal	30	*ḫrm		to have a notch, cut in the skin (nose, ear, lip)	*ḫrm	445
+1	verbal	31	*ḫrš	*ḫrs (1)	to be in confinement, in childbed	*ḫrš	445
+1	verbal	32	*ḫrš	*ḫrs (2)	to be deaf and dumb	*ḫrš	446
+1	verbal	33	*ḫyl		to be in labour; have labour pains	*ḫyl	447
+1	verbal	34	*kʔb		to suffer pain	*kʔb	447
+1	verbal	35	*ḳdḥ		to have inflammation	*qdḥ	448
+1	verbal	36	*ḳrd		to have a disease causing fall of hair	*qrd	449
+1	verbal	37	*ḳry/ʔ		to have effusion (menstruation, pollution)	*qry/ʔ	450
+1	verbal	38	*ḳ(ʷ)rḥ		to have/make a hairless spot (on the head), to become/make bald	*q(ʷ)rḥ	451
+1	verbal	39	*ḳ(ʷ)yʔ (or *ḳy/wʔ)		to vomit	*q(ʷ)yʔ (or *qy/wʔ)	452
+1	verbal	40	*mḫṣ̂	*mḫĉ̣	to have labour pains	*mḫṣ́	452
+1	verbal	41	*mny		to have sexual desire; discharge sperm, exude vaginal secretion	*mny	453
+1	verbal	42	*mrṣ̂	*mrĉ̣	to be sick, ill	*mrṣ́	454
+1	verbal	43	*mwt		to die	*mwt	455
+1	verbal	44	*nhḳ		to bray (of donkey); cry, groan; roar	*nhq	456
+1	verbal	45	*npḫ		to blow, breathe, inflate	*npḫ	457
+1	verbal	46	*npš	*nps (1)	to breathe	*npš	458
+1	verbal	47	*npš	*nps (2)	to deliver, give birth to a child	*npš	460
+1	verbal	48	*npṭ		to blow the nose	*npṭ	460
+1	verbal	49	*nšb	*nsb	to blow	*nšb	461
+1	verbal	50	*nšm	*nsm	to breathe	*nšm	461
+1	verbal	51	*nšp	*nsp	to blow	*nšp	462
+1	verbal	52	*nwm		to sleep, slumber	*nwm	463
+1	verbal	53	*nyk		to have sexual intercourse	*nyk	464
+1	verbal	54	*pḫ/ḥ		to breathe, blow, exhale (smell)	*pḫ/ḥ	464
+1	verbal	55	*psḥ/ḫ	*pcḥ/ḫ	to be lame; have a dislocated limb	*psḥ/ḫ	465
+1	verbal	56	*pš	*ps	to breathe, blow	*pš	465
+1	verbal	57	*pšw	*psw	to break wind silently	*pšw	466
+1	verbal	58	*pw/ʔ/hḳ		to sob; have hiccups	*pw/ʔ/hq	466
+1	verbal	59	*rγb		to be hungry	*rġb	467
+1	verbal	60	*rkb		to have intercourse	*rkb	467
+1	verbal	61	*š/sʕl	*ś/cʕl	to cough	*š/sʕl	469
+1	verbal	62	*šlʕ/γ	*slʕ/γ	to grow toothless, to have defective mouth	*šlʕ/ġ	469
+1	verbal	63	*šwp	*swp	to blow, smell	*šwp	470
+1	verbal	64	*ṣmm	*c̣mm	to be deaf, to have a damaged ear	*ṣmm	471
+1	verbal	65	*ŝbʕ	*ĉbʕ	to be sated	*śbʕ	471
+1	verbal	66	*ŝyb	*ĉyb	to have grey hair	*śyb	472
+1	verbal	67	*ŝₓgʕ	*ŝgʕ	to be rabid, mad	*śₓgʕ	473
+1	verbal	68	*ŝₓhḳ	*ŝhḳ	to hiccup	*śₓhq	474
+1	verbal	69	*ŝₓrm	*ŝrm	to have a nose with a cut-off tip; have a slit lip	*śₓrm	475
+1	verbal	70	*ṣ̂ḥk/ḳ	*ĉ̣ḥk/ḳ	to laugh	*ṣ́ḥk/q	476
+1	verbal	71	*ṣ̂rṭ	*ĉ̣rṭ	to fart, break wind audibly	*ṣ́rṭ	478
+1	verbal	72	*tpp		to spit	*tpp	479
+1	verbal	73	*tpl		to spit	*tpl	480
+1	verbal	74	*twb, *tbb		to spit, vomit	*twb	480
+1	verbal	75	*ṭmm, *ʔṭm		to be deaf and mute	*ṭmm	481
+1	verbal	76	*ṯkl	*čkl	to be/become childless	*ṯkl	481
+1	verbal	77	*ṯyn	*čyn	to urinate	*ṯyn	482
+1	verbal	78	*ṯ̣lʕ	*č̣lʕ	to limp, be lame	*ṱlʕ	483
+1	verbal	79	*ṯ̣mʔ	*č̣mʔ	to be thirsty	*ṱmʔ	483
+1	verbal	80	*wld		to bear, give birth to	*wld	484
+1	verbal	81	*wrḳ		to spit	*wrq	485
+1	verbal	82	*wšn	*wsn	to sleep	*wšn	486
+1	verbal	83	*ynḳ		to suck	*ynq	487
+1	verbal	84	*z/ḏny	*ʒ/ǯny	to fornicate	*z/ḏny	488
+2	nominal	1	*ʔabbVk-		kind of bird	*ʔabbVk-	94
+2	nominal	2	*ʔibil-		camel	*ʔibil-	95
+2	nominal	3	*ʔVbbVl-		kind of bird	*ʔVbbVl-	96
+2	nominal	4	*ʔalp-		cattle	*ʔalp-	97
+2	nominal	5	*ʔimmar-		lamb	*ʔimmar-	98
+2	nominal	6	*ʔan(V)ḳ-		a bird of prey	*ʔan(V)q-	100
+2	nominal	7	*ʔanap-at-		kind of bird	*ʔanap-at-	101
+2	nominal	8	*ʔVnar-, *ʔVran-		a small predatory mammal	*ʔVnar-	102
+2	nominal	9	*ʔa(n)z/ḏar-	*ʔa(n)ʒ/ǯar-	kind of wild cat	*ʔa(n)z/ḏar-	103
+2	nominal	10	*ʔapʕaw-		kind of snake (viper?)	*ʔapʕaw-	105
+2	nominal	11	*ʔa/irbay-		locust	*ʔa/irbay-	106
+2	nominal	12	*ʔarḫ-		cow, heifer	*ʔarḫ-	107
+2	nominal	13	*ʔarm-, *ʔarn-		wild goat	*ʔarm-	109
+2	nominal	14	*ʔarnab(-at)-		hare	*ʔarnab(-at)-	111
+2	nominal	15	*ʔarVr-		kind of bird	*ʔarVr-	112
+2	nominal	16	*ʔi/arw-ān-, *ʔawr-		calf, bull	*ʔi/arw-ān-	113
+2	nominal	17	*ʔarway-		wild beast; lion	*ʔarway-	115
+2	nominal	18	*ʔarwiy-		(wild) goat, gazelle	*ʔarwiy-	117
+2	nominal	19	*ʔatān-		donkey mare	*ʔatān-	120
+2	nominal	20	*ʔaṯ(h)al-	*ʔač(h)al-	a mythical reptile, dragon	*ʔaṯ(h)al-	120
+2	nominal	21	*ʔVwVy-		jackal	*ʔVwVy-	122
+2	nominal	22	*ʔa/iw(a)z-, *waz(z)-	*ʔa/iw(a)ʒ-, *waʒ(ʒ)-	goose	*ʔa/iw(a)z-	123
+2	nominal	23	*ʔay-		bird of prey	*ʔay-	124
+2	nominal	24	*ʔayl-, *ʔVl-		ram	*ʔayl-	125
+2	nominal	25	*ʔayyal-		stag, deer	*ʔayyal-	128
+2	nominal	26	*ʔa(n)yaṣ-, *ʔanṣaw/y-	*ʔa(n)yac̣-, *ʔanc̣aw/y-	weasel, mouse	*ʔa(n)yaṣ-	131
+2	nominal	27	*ʕabVw-		kind of fish	*ʕabVw-	133
+2	nominal	28	*ʕigʷal- // *ʕigl-		calf	*ʕigʷal-	134
+2	nominal	29	*ʕVgVr-		kind of bird	*ʕVgVr-	137
+2	nominal	30	*ʕakbar-		mouse, jerboa	*ʕakbar-	138
+2	nominal	31	*ʕaḳrab-		scorpion	*ʕaqrab-	139
+2	nominal	32	*ʕala/ūḳ(-at)-		leech	*ʕala/ūq(-at)-	141
+2	nominal	33	*ʕankab(īṯ)-	*ʕankab(īč)-	spider	*ʕankab(īṯ)-	142
+2	nominal	34	*ʕVnV̄ḳ-		female kid	*ʕVnV̄q-	144
+2	nominal	35	*ʕVnz-	*ʕVnʒ-	goat	*ʕVnz-	144
+2	nominal	36	*ʕa/urub-		kind of vermin, worm	*ʕa/urub-	147
+2	nominal	37	*ʕar(ā)d-		wild ass	*ʕar(ā)d-	147
+2	nominal	38	*ʕVrṣ̂-	*ʕVrĉ̣-	kind of insect	*ʕVrṣ́-	149
+2	nominal	39	*ʕVrīṯ-	*ʕVrīč̣-	male kid	*ʕVrīṯ-	149
+2	nominal	40	*ʕarw/y-, *ʕawr-		bird of prey	*ʕarw/y-	149
+2	nominal	41	*ʕVrw/y-		kind of wild cat	*ʕVrw/y-	151
+2	nominal	42	*ʕVsVb-	*ʕVcVb-	kind of bird	*ʕVsVb-	151
+2	nominal	43	*ʕVṣṣūr-	*ʕVc̣c̣ūr-	bird	*ʕVṣṣūr-	151
+2	nominal	44	*ʕatūd-		male of small cattle	*ʕatūd-	153
+2	nominal	45	*ʕVṯ(V)ṯ-	*ʕVč(V)č-	moth	*ʕVṯ(V)ṯ-	154
+2	nominal	46	*ʕiṯ̣āy-	*ʕič̣āy-	kind of lizard	*ʕiṱāy-	155
+2	nominal	47	*ʕVwVl-		young of domestic animals, foal	*ʕVwVl-	156
+2	nominal	48	*ʕawp-		bird	*ʕawp-	157
+2	nominal	49	*ʕayp-, *pa(y)ʕ-		kid	*ʕayp-	159
+2	nominal	50	*ʕayr-		(young) donkey	*ʕayr-	160
+2	nominal	51	*ʕVz-	*ʕVʒ-	bird of prey	*ʕVz-	162
+2	nominal	52	*bVʔ(w)-, *būh-		owl	*bVʔ(w)-	163
+2	nominal	53	*bVʕVr-		household animal; beast of burden	*bVʕVr-	164
+2	nominal	54	*bVb(b)-		a wild hoofed animal	*bVb(b)-	167
+2	nominal	55	*bayγ/ḳl-		mule	*bayġ/ql-	168
+2	nominal	56	*bVk(ʷ)Vr(-at)- // *bVkVr(-at)-		young (she-)camel	*bVk(ʷ)Vr(-at)-	169
+2	nominal	57	*bik(ʷ)ay- // *bukay-		kind of insect or worm	*bik(ʷ)ay-	171
+2	nominal	58	*baḳḳ-		gnat	*baqq-	173
+2	nominal	59	*baḳar-		large cattle	*baqar-	174
+2	nominal	60	*bVl-		kind of small bird	*bVl-	176
+2	nominal	61	*bar-		kind of bird	*bar-	177
+2	nominal	62	*bur-		kind of insect	*bur-	179
+2	nominal	63	*baṯan-	*bačan-	snake	*baṯan-	180
+2	nominal	64	*daʔy(-at)-		bird of prey	*daʔy(-at)-	182
+2	nominal	65	*da/ubb-		bear	*da/ubb-	184
+2	nominal	66	*di/ab(b)ūr-		bee, wasp	*di/ab(b)ūr-	187
+2	nominal	67	*dVg-		kind of insect	*dVg-	191
+2	nominal	68	*dVlVl-		kind of small creature	*dVlVl-	191
+2	nominal	69	*dim-		kind of insect	*dim-	192
+2	nominal	70	*dVm(V)m-		(wild) cat	*dVm(V)m-	193
+2	nominal	71	*dVrr-		kind of bird	*dVrr-	194
+2	nominal	72	*ḏiʔb-	*ǯiʔb-	wolf, jackal	*ḏiʔb-	196
+2	nominal	73	*ḏVb(V)b-	*ǯVb(V)b-	fly	*ḏVb(V)b-	199
+2	nominal	74	*ḏVr(r)-	*ǯVr(r)-	kind of worm, insect	*ḏVr(r)-	202
+2	nominal	75	*g(ʷ)Vb- // *gVb-		locust	*g(ʷ)Vb-	203
+2	nominal	76	*gady-		kid	*gady-	204
+2	nominal	77	*gūg-		kind of insect	*gūg-	206
+2	nominal	78	*g(ʷ)amg(ʷ)am- // *gVmgVm-		kind of bird	*g(ʷ)amg(ʷ)am-	206
+2	nominal	79	*gam(a)l-		camel	*gam(a)l-	207
+2	nominal	80	*gʷa(n)dab- // *ga(n)dab-		cricket, locust	*gʷa(n)dab-	209
+2	nominal	81	*gʷa(n)dVr- // *ga(n)dVr-		kind of worm	*gʷa(n)dVr-	211
+2	nominal	82	*gūr-, *gury/w-		whelp, cub	*gūr-	211
+2	nominal	83	*garad-		kind of insect	*garad-	215
+2	nominal	84	*gVrVḏ(-Vn)-	*gVrVǯ(-Vn)-	kind of rodent	*gVrVḏ(-Vn)-	215
+2	nominal	85	*gVrr/w(-at)-		small hoofed animal	*gVrr/w(-at)-	216
+2	nominal	86	*gawzal-	*gawʒal-	brood	*gawzal-	218
+2	nominal	87	*gʷaz- // *gVz-	*gʷaʒ- // *gVʒ-	kind of bird of prey	*gʷaz-	219
+2	nominal	88	*γ/ʕVṗr-		young of ungulate	*ġ/ʕVṗr-	219
+2	nominal	89	*γārib-, *γurāb-		crow, raven	*ġārib-	220
+2	nominal	90	*γVrVn-		eagle	*ġVrVn-	222
+2	nominal	91	*γVrnīḳ-		crane	*ġVrnīq-	222
+2	nominal	92	*γVzāl-	*γVʒāl-	gazelle	*ġVzāl-	223
+2	nominal	93	*hVm/wām-		large wild beast	*hVm/wām-	225
+2	nominal	94	*hatatVw/y-at-		spider	*hatatVw/y-at-	225
+2	nominal	95	*hVwVy-		kind of worm, snake	*hVwVy-	226
+2	nominal	96	*ḥVbVŝₓ-	*ḥVbVŝ-	kind of insect	*ḥVbVśₓ-	227
+2	nominal	97	*ḥagal-		partridge	*ḥagal-	227
+2	nominal	98	*ḥimār-		donkey	*ḥimār-	228
+2	nominal	99	*ḥVm(V)ṭ-		kind of snake, lizard	*ḥVm(V)ṭ-	230
+2	nominal	100	*ḥV(n)g-		kind of worm, centipede	*ḥV(n)g-	231
+2	nominal	101	*ḥVrb-		chameleon	*ḥVrb-	231
+2	nominal	102	*ḥVrd/ḏān-	*ḥVrd/ǯān-	kind of lizard	*ḥVrd/ḏān-	232
+2	nominal	103	*ḥargVl-		locust	*ḥargVl-	233
+2	nominal	104	*ḥarSap-		young of animals, larva	*ḥarSap-	234
+2	nominal	105	*ḥVsVn-	*ḥVcVn-	kind of insect	*ḥVsVn-	235
+2	nominal	106	*ḥVwār-		young camel	*ḥVwār-	236
+2	nominal	107	*ḫVl-		kind of bird	*ḫVl-	237
+2	nominal	108	*ḫuld-		mole	*ḫuld-	238
+2	nominal	109	*ḫaml-, *ḫVlVm-		kind of insect	*ḫaml-	239
+2	nominal	110	*ḫVnnVṣ-	*ḫVnnVc̣-	piglet	*ḫVnnVṣ-	240
+2	nominal	111	*ḫV(n)zīr-	*ḫV(n)ʒīr-	pig	*ḫV(n)zīr-	240
+2	nominal	112	*ḫVnz(i/uz)-	*ḫVnʒ(i/uʒ)-	kind of insect	*ḫVnz(i/uz)-	243
+2	nominal	113	*ḫVrVp-		young sheep	*ḫVrVp-	244
+2	nominal	114	*kabŝ-	*kabĉ-	young ram	*kabś-	245
+2	nominal	115	*kalb-		dog	*kalb-	247
+2	nominal	116	*ki/ann(-Vm)-		a harmful insect	*ki/ann(-Vm)-	250
+2	nominal	117	*k(ʷ)arkiy- // *kurkiy-		goose, crane	*k(ʷ)arkiy-	251
+2	nominal	118	*ka/irr-		ram	*ka/irr-	253
+2	nominal	119	*kʷaraz- // *karaʒ-		kind of insect	*kʷaraz-	255
+2	nominal	120	*kVS-		a (mythical) aquatic reptile	*kVS-	256
+2	nominal	121	*kVs(Vs)-	*kVc(Vc)-	kind of bird of prey	*kVs(Vs)-	257
+2	nominal	122	*kʷVt(t)ān-, *tukʷān- // *kut(t)ān-, *tukān-		bug	*kʷVt(t)ān-	257
+2	nominal	123	*kVw-		kind of bird	*kVw-	259
+2	nominal	124	*kawdan-		mule	*kawdan-	260
+2	nominal	125	*kVwVr-		kind of fish	*kVwVr-	262
+2	nominal	126	*ḳ(ʷ)aʔ(ḳ(ʷ)aʔ)- // *ḳaʔ(ḳaʔ)-		kind of bird	*q(ʷ)aʔ(q(ʷ)aʔ)-	263
+2	nominal	127	*ḳʷāʕ- // *ḳāʕ-		crow	*qʷāʕ-	265
+2	nominal	128	*ḳʷaʕḳʷaʕ- // *ḳaʕḳaʕ-		frog	*qʷaʕqʷaʕ-	265
+2	nominal	129	*ḳVmḥ-		kind of insect	*qVmḥ-	266
+2	nominal	130	*ḳ(ʷ)aml- // *ḳumāl-, *ḳalm-		louse	*q(ʷ)aml-	266
+2	nominal	131	*ḳam(a)ṣ-	*ḳam(a)c̣-	kind of (harmful) insect	*qam(a)ṣ-	270
+2	nominal	132	*ḳ(ʷ)a(n)ḳ(ʷ)an- // *ḳV(n)ḳVn-		kind of worm, insect	*q(ʷ)a(n)q(ʷ)an-	271
+2	nominal	133	*ḳ(ʷ)inpaḏ- // *ḳunpuḏ-	*ḳ(ʷ)inpaǯ- // *ḳunpuǯ-	hedgehog	*q(ʷ)inpaḏ-	272
+2	nominal	134	*ḳʷāriʔ/y- // *ḳāriʔ/y-		kind of bird, partridge	*qʷāriʔ/y-	274
+2	nominal	135	*ḳʷVrVd- // *ḳVrd-		tick	*qʷVrVd-	276
+2	nominal	136	*ḳVr(Vl)l-		kind of bird	*qVr(Vl)l-	276
+2	nominal	137	*ḳVr(V)r-		frog	*qVr(V)r-	277
+2	nominal	138	*ḳarṣ-	*ḳarc̣-	kind of harmful insect; mosquito	*qarṣ-	278
+2	nominal	139	*ḳVṣam-	*ḳVc̣am-	locust, (locust) larva	*qVṣam-	279
+2	nominal	140	*ḳut-		kind of insect	*qut-	281
+2	nominal	141	*ḳʷVṭVn- // *ḳVṭVn-		kind of insect	*qʷVṭVn-	281
+2	nominal	142	*liʔ(-at)-, *laʔay-at-		head of large cattle	*liʔ(-at)-	282
+2	nominal	143	*lVʔlVʔ-		head of small cattle	*lVʔlVʔ-	284
+2	nominal	144	*labVʔ-		lion(ess)	*labVʔ-	285
+2	nominal	145	*lVḫVm-		kind of large aquatic animal	*lVḫVm-	288
+2	nominal	146	*laḳlaḳ-		stork	*laqlaq-	290
+2	nominal	147	*layṯ-	*layč-	lion	*layṯ-	290
+2	nominal	148	*ma/iʕ(a)z-	*ma/iʕ(a)ʒ-	goat	*ma/iʕ(a)z-	291
+2	nominal	149	*muhr-		foal	*muhr-	293
+2	nominal	150	*mVḳ(Vḳ)-		kind of insect	*mVq(Vq)-	294
+2	nominal	151	*mV(n)dīn-		a large wild cat	*mV(n)dīn-	294
+2	nominal	152	*mVn(Vn)-		kind of insect	*mVn(Vn)-	295
+2	nominal	153	*mir(Vʔ)-		bull	*mir(Vʔ)-	296
+2	nominal	154	*mVSVṭ-		kind of insect	*mVSVṭ-	298
+2	nominal	155	*nu/aʕ(ā)m-		ostrich	*nu/aʕ(ā)m-	298
+2	nominal	156	*nūb(-at)-		bee	*nūb(-at)-	298
+2	nominal	157	*nāb-, *nib(b)-		louse, nit	*nāb-	299
+2	nominal	158	*nVγVr-		kind of bird	*nVġVr-	300
+2	nominal	159	*nVhVš-	*nVhVs-	lion	*nVhVš-	301
+2	nominal	160	*nVḥl-		swarm of bees	*nVḥl-	302
+2	nominal	161	*nāḳ-at-		she-camel	*nāq-at-	303
+2	nominal	162	*nVḳVr-		kind of bird	*nVqVr-	304
+2	nominal	163	*nam(V)l-		ant	*nam(V)l-	305
+2	nominal	164	*namir-		leopard	*namir-	307
+2	nominal	165	*nVšVp-	*nVsVp-	kind of bird	*nVšVp-	310
+2	nominal	166	*nVšr-	*nVsr-	eagle, vulture	*nVšr-	311
+2	nominal	167	*nVṣVr-	*nVc̣Vr-	cricket	*nVṣVr-	313
+2	nominal	168	*na/iṣ(ṣ)-	*na/ic̣(c̣)-	kind of bird	*na/iṣ(ṣ)-	313
+2	nominal	169	*na(ya)l-		a wild hoofed animal	*na(ya)l-	314
+2	nominal	170	*paʔr-		mouse	*paʔr-	315
+2	nominal	171	*pahd-		cheetah	*pahd-	316
+2	nominal	172	*pVḥVr-		kind of worm	*pVḥVr-	317
+2	nominal	173	*pVl-		elephant(?); a large hoofed animal(?)	*pVl-	318
+2	nominal	174	*pVlw/y-		yearling foal, small of domestic animals	*pVlw/y-	321
+2	nominal	175	*pVl(y)-		kind of insect, louse	*pVl(y)-	322
+2	nominal	176	*par(a)ʔ-		wild ass	*par(a)ʔ-	324
+2	nominal	177	*pi/ard-		an equid	*pi/ard-	326
+2	nominal	178	*parg-		kind of bird (hen, quail)	*parg-	328
+2	nominal	179	*parḫ-		chick, brood	*parḫ-	328
+2	nominal	180	*pVrpVr-, *parr/w-		kind of bird	*pVrpVr-	329
+2	nominal	181	*parr-		young of small or large cattle	*parr-	330
+2	nominal	182	*paraš-	*paras-	horse	*paraš-	333
+2	nominal	183	*pVšpVš-	*pVspVs-	bug	*pVšpVš-	336
+2	nominal	184	*pVṣγ-	*pVc̣γ-	gecko	*pVṣġ-	336
+2	nominal	185	*ṗVrγVṯ-, *ṗVrṯaγ-	*ṗVrγVč-, *ṗVrčaγ-	flea	*ṗVrġVṯ-	337
+2	nominal	186	*riʔm-		aurochs	*riʔm-	339
+2	nominal	187	*raʔ/w/hy-		kind of bird	*raʔ/w/hy-	341
+2	nominal	188	*raḫil-		ewe	*raḫil-	341
+2	nominal	189	*raḫam-		bird of prey	*raḫam-	342
+2	nominal	190	*raḳḳ-		turtle	*raqq-	343
+2	nominal	191	*rimm-at-		kind of insect, worm	*rimm-at-	344
+2	nominal	192	*sVḥ/ḫVṭ-	*cVḥ/ḫVṭ-	kind of insect	*sVḥ/ḫVṭ-	346
+2	nominal	193	*SVkk-		kind of small mammal	*SVkk-	347
+2	nominal	194	*saḳʷāt-	*caḳʷāt- // *saḳāt-	kind of bird	*saqʷāt-	347
+2	nominal	195	*SVlw-		quail	*SVlw-	348
+2	nominal	196	*sVm(V)m(-at)-	*cVm(V)m(-at)-	kind of bird	*sVm(V)m(-at)-	348
+2	nominal	197	*su/inūn(Vw/y)-at-	*cu/inūn(Vw/y)-at-	swallow	*su/inūn(Vw/y)-at-	349
+2	nominal	198	*sā/ūs-	*cā/ūc-	moth	*sā/ūs-	350
+2	nominal	199	*sVwsVw-	*cVwcVw-	horse	*sVwsVw-	352
+2	nominal	200	*šibb-	*sibb-	kind of snake, worm	*šibb-	355
+2	nominal	201	*šVl-	*sVl-	kind of bird	*šVl-	356
+2	nominal	202	*šalaḥpaw/y-, *šalapḥaw/y-	*salaḥpaw/y-, *salapḥaw/y-	turtle	*šalaḥpaw/y-	356
+2	nominal	203	*šVl(V)k-	*sVl(V)k-	kind of bird	*šVl(V)k-	357
+2	nominal	204	*š/ŝVmm-	*ś/ĉVmm-	kind of reptile (snake, lizard)	*š/śVmm-	357
+2	nominal	205	*šumšum-	*sumsum-	ant	*šumšum-	358
+2	nominal	206	*šu/in(n)ār-, *šurān-	*su/in(n)ār-, *surān-	cat	*šu/in(n)ār-	359
+2	nominal	207	*šVpp-	*sVpp-	kind of snake, worm, insect larvae	*šVpp-	361
+2	nominal	208	*šappVr-	*sappVr-	kind of (large) hoofed animal	*šappVr-	362
+2	nominal	209	*ṣVl(Vl)-	*c̣Vl(Vl)-	kind of bird of prey	*ṣVl(Vl)-	364
+2	nominal	210	*ṣVlVm-	*c̣VlVm-	kind of insect	*ṣVlVm-	365
+2	nominal	211	*ṣulṣVl-	*c̣ulc̣Vl-	(wild) dove	*ṣulṣVl-	365
+2	nominal	212	*ṣVp(p)Vr-	*c̣Vp(p)Vr-	(kind of small) bird	*ṣVp(p)Vr-	366
+2	nominal	213	*ṣarṣa/ūr-	*c̣arc̣a/ūr-	cricket	*ṣarṣa/ūr-	368
+2	nominal	214	*ŝVm-	*ĉVm-	kind of mouse, rat	*śVm-	369
+2	nominal	215	*ŝarap-	*ĉarap-	kind of creeping creature	*śarap-	370
+2	nominal	216	*ŝVrŝūr-	*ĉVrĉūr-	kind of bird	*śVrśūr-	371
+2	nominal	217	*ŝaw-	*ĉaw-	sheep	*śaw-	371
+2	nominal	218	*ŝₓVbay(-at)-	*ŝVbay(-at)-	kind of insect	*śₓVbay(-at)-	373
+2	nominal	219	*ṣ̂aʔn-	*ĉ̣aʔn-	small cattle	*ṣ́aʔn-	374
+2	nominal	220	*ṣ̂ab(u)ʕ-	*ĉ̣ab(u)ʕ-	hyena	*ṣ́ab(u)ʕ-	376
+2	nominal	221	*ṣ̂abb-	*ĉ̣abb-	kind of lizard	*ṣ́abb-	378
+2	nominal	222	*ṣ̂Vpardiʕ-	*ĉ̣Vpardiʕ-	frog	*ṣ́Vpardiʕ-	379
+2	nominal	223	*ṣ̂Vrʕ(-at)-	*ĉ̣Vrʕ(-at)-	wasp	*ṣ́Vrʕ(-at)-	380
+2	nominal	224	*ṣ̂ayw-	*ĉ̣ayw-	wild cat	*ṣ́ayw-	381
+2	nominal	225	*tāʔ/y-		kind of antelope	*tāʔ/y-	381
+2	nominal	226	*tVkur(r)-		kind of bird	*tVkur(r)-	382
+2	nominal	227	*tVnnVn-		(mythical) snake, dragon	*tVnnVn-	382
+2	nominal	228	*tVrbal-, *bVrtal-		large hoofed animal	*tVrbal-	383
+2	nominal	229	*tVrr-		kind of bird	*tVrr-	384
+2	nominal	230	*tawliʕ(-at)-		worm	*tawliʕ(-at)-	385
+2	nominal	231	*tayš-	*tays-	he-goat	*tayš-	386
+2	nominal	232	*ṭalay-		lamb, kid	*ṭalay-	388
+2	nominal	233	*ṭVrVḳay-, *ṭVḳVray-		kind of insect (bee, wasp)	*ṭVrVqay-	390
+2	nominal	234	*ṭaγ-		(young) bull	*ṭaġ-	390
+2	nominal	235	*ṭayr-		bird	*ṭayr-	391
+2	nominal	236	*ṯaʔ(w/y)-at-	*čaʔ(w/y)-at-	ewe	*ṯaʔ(w/y)-at-	392
+2	nominal	237	*ṯVʕ(V)l-, *ṯaʕlab-	*čVʕ(V)l-, *čaʕlab-	fox	*ṯVʕ(V)l-	393
+2	nominal	238	*ṯVbl(Vl)-	*čVbl(Vl)-	kind of insect, snail	*ṯVbl(Vl)-	395
+2	nominal	239	*ṯVl-	*čVl-	head of small cattle	*ṯVl-	396
+2	nominal	240	*ṯapan-	*čapan-	rock hyrax	*ṯapan-	397
+2	nominal	241	*ṯawr-	*čawr-	bull, ox	*ṯawr-	398
+2	nominal	242	*ṯ̣aby(-at)-	*č̣aby(-at)-	gazelle	*ṱaby(-at)-	401
+2	nominal	243	*wVʕ-		kind of bird	*wVʕ-	403
+2	nominal	244	*waʕil-		ibex	*waʕil-	403
+2	nominal	245	*wābil-		ram	*wābil-	405
+2	nominal	246	*waran-, *waral-		kind of large lizard (varan?)	*waran-	407
+2	nominal	247	*waw-at-		kind of bird	*waw-at-	408
+2	nominal	248	*w/yaʕr-, *w/yarʕ-		(young of) ungulate	*w/yaʕr-	408
+2	nominal	249	*yaḥmūr-		kind of antelope, roebuck	*yaḥmūr-	409
+2	nominal	250	*yapan-		young bull	*yapan-	410
+2	nominal	251	*yarbVʕ-		kind of rodent	*yarbVʕ-	411
+2	nominal	252	*yawn(-at)-, *wānay-		dove	*yawn(-at)-	412
+2	nominal	253	*zVmr-	*ʒVmr-	gazelle	*zVmr-	413
+2	nominal	254	*zarzī/ūr-	*ʒarʒī/ūr-	starling	*zarzī/ūr-	414
+2	nominal	255	*zīz-	*ʒīʒ-	kind of insect	*zīz-	415

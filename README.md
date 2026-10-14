@@ -24,5 +24,23 @@ Matching is on the form only, after folding spelling variants (ʔ/ʾ, ʕ/ʿ, ḏ
 ## Browser
 `site/index.html` is the self-contained browsing page (search, filters, PS/PWS badges); `site/template.html` has a `__DATA__` placeholder filled from `data/intermediate/sed_all.json`.
 
-## Scripts
-`scripts/` holds the extraction and build pipeline as run (paths assume a working directory with the PDFs, which are not included for copyright reasons): `locate.py`, `crops*.py`, `glot*.py`, `build_all.py`, `fetch_titles.py` (MediaWiki API, namespace 118), `wikt_match.py`.
+## Reproducing
+Everything is repo-relative (`scripts/paths.py`); no absolute paths.
+
+```
+make            # tables + site from the committed intermediates (no PDFs, no network)
+make titles     # refresh data/wiktionary/*.json from the MediaWiki API (network), then `make`
+```
+`make` rebuilds `data/**/*.tsv`, `data/intermediate/sed_all.{json,tsv}` and `site/index.html` byte-identically to what is committed (checked).
+
+Regenerating the intermediates from the books needs `pdf/vol1.pdf` and `pdf/vol2.pdf` (git-ignored; poppler-utils, Pillow, OpenCV, SciPy required):
+
+| step | command | produces |
+|---|---|---|
+| heading positions | `make heads-1 heads-2` | `data/intermediate/heads_vN.json` (verified identical to the committed files) |
+| glottal calls | `make glot-1 glot-2` | `data/intermediate/glot_vN.json` (hook-direction classifier, threshold 4; verified identical to the committed files) |
+| crops for reading | `make crops-1 crops-2` | `build/vN/crops/batch_NN.png` |
+
+The step in between is **manual**: forms and glosses in `data/intermediate/raw_v*_*.tsv` (`n<TAB>form<TAB>gloss`, with `Q` marking each glottal) were transcribed by eye from the batch crops, because the PDFs' OCR text layer garbles diacritics. `glot_vN.json` fills the `Q` slots; the four glottals the classifier left empty (1N205, 1N243, 1V37, 1V62) are set by hand in `scripts/paths.py`.
+
+Scripts: `locate.py`, `crops.py`, `glot.py`, `zoom.py` (650-dpi spot checks), `build_sed.py`, `fetch_titles.py`, `wikt_match.py`, `build_site.py`.
