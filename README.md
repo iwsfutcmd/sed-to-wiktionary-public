@@ -11,6 +11,11 @@ Reconstructed Proto-Semitic forms extracted from Militarev & Kogan, *Semitic Ety
   - `pdf_page`: page of the PDF file (not the printed page number).
 - `data/wiktionary/wik_ps.json`, `wik_pws.json`: snapshot of all `Reconstruction:Proto-Semitic/` (372) and `Reconstruction:Proto-West Semitic/` (42) titles, taken 2026-10-14.
 
+- `data/vol1/sed_vol1_reflexes.tsv` (6,419 rows), `data/vol2/sed_vol2_reflexes.tsv` (3,637 rows) and their concatenation `data/sed_vol1_vol2_reflexes.tsv`: the **Semitic reflexes** listed under each reconstruction (the block before the `Afras.` sub-entry; `||` comments and `0` footnotes are skipped).
+  - Columns: `vol, section, no` (join key to the reconstruction tables), `branch` (the `[1]`-`[9]` group number as printed), `lang` (SED siglum, e.g. `Arb.`, `Gog. Sod.`), `form`, `note` (qualifier after the form, e.g. `(redupl.)`), `gloss`, `ref` (bibliographic reference as printed), `flags`.
+  - `flags`: `uncertain` (`(?)` before the siglum), `cf` (`Cf.`), `shared_gloss` (gloss given once after a comma-run of forms, copied to each), `quote_garbled` (an opening or closing quote was lost in OCR, so form/gloss/ref boundaries are unreliable: check against the page).
+  - **Forms are raw text-layer OCR, not normalised**: diacritics are lost or garbled and glottals appear as `?`, `H`, `f` etc. (ʔ/ʕ were only recovered for the reconstructions, from image crops). Treat them as search keys for locating the form on the page, not as transcriptions. Roughly 10% of rows carry `quote_garbled`; rows may also be missing where a line was mis-segmented. Not yet extracted: the Afro-Asiatic comparanda.
+
 ## Method and limits
 Matching is on the form only, after folding spelling variants (ʔ/ʾ, ʕ/ʿ, ḏ/ð, ṯ/θ, ḳ/q), expanding `(optional)` material and `a/b` alternations. A word may exist on Wiktionary under a different reconstruction. Ten entries have glyphs flagged "to verify" (see `docs/notation-and-verification-notes.md` and the browser page).
 
@@ -39,6 +44,7 @@ Regenerating the intermediates from the books needs `pdf/vol1.pdf` and `pdf/vol2
 |---|---|---|
 | heading positions | `make heads-1 heads-2` | `data/intermediate/heads_vN.json` (verified identical to the committed files) |
 | glottal calls | `make glot-1 glot-2` | `data/intermediate/glot_vN.json` (hook-direction classifier, threshold 4; verified identical to the committed files) |
+| Semitic reflexes | `make reflexes-1 reflexes-2` | `data/volN/sed_volN_reflexes.tsv` and the concatenation (needs only poppler; not part of plain `make`) |
 | crops for reading | `make crops-1 crops-2` | `build/vN/crops/batch_NN.png` |
 
 The step in between is **manual**: forms and glosses in `data/intermediate/raw_v*_*.tsv` (`n<TAB>form<TAB>gloss`, with `Q` marking each glottal) were transcribed by eye from the batch crops, because the PDFs' OCR text layer garbles diacritics. `glot_vN.json` fills the `Q` slots; the four glottals the classifier left empty (1N205, 1N243, 1V37, 1V62) are set by hand in `scripts/paths.py`.

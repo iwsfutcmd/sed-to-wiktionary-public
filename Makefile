@@ -24,3 +24,5 @@ crops-%: heads-%
 glot-%: heads-%
 	$(PY) scripts/glot.py $* $(or $(OUT),data/intermediate/glot_v$*.json)
 .PHONY: all tables site titles
+reflexes-%: bbox-%       # Semitic reflexes per entry from the PDFs' text layer -> data/volN/sed_volN_reflexes.tsv
+	cd scripts && $(PY) reflexes.py $*
