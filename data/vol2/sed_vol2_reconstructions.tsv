@@ -1,0 +1,256 @@
+vol	section	no	protoform	affricate_variant	gloss	wikt_norm	pdf_page	wikt_ps	wikt_ps_title	wikt_pws	wikt_pws_title
+2	nominal	1	*ʔabbVk-		kind of bird	*ʔabbVk-	94	no		no	
+2	nominal	2	*ʔibil-		camel	*ʔibil-	95	no		no	
+2	nominal	3	*ʔVbbVl-		kind of bird	*ʔVbbVl-	96	no		no	
+2	nominal	4	*ʔalp-		cattle	*ʔalp-	97	yes	ʔalp-;ʾalp-	no	
+2	nominal	5	*ʔimmar-		lamb	*ʔimmar-	98	no		no	
+2	nominal	6	*ʔan(V)ḳ-		a bird of prey	*ʔan(V)q-	100	no		no	
+2	nominal	7	*ʔanap-at-		kind of bird	*ʔanap-at-	101	no		no	
+2	nominal	8	*ʔVnar-, *ʔVran-		a small predatory mammal	*ʔVnar-	102	no		no	
+2	nominal	9	*ʔa(n)z/ḏar-	*ʔa(n)ʒ/ǯar-	kind of wild cat	*ʔa(n)z/ḏar-	103	no		no	
+2	nominal	10	*ʔapʕaw-		kind of snake (viper?)	*ʔapʕaw-	105	yes	ʔapʕaw-	no	
+2	nominal	11	*ʔa/irbay-		locust	*ʔa/irbay-	106	yes	ʔirbay-;ʾirbay-	no	
+2	nominal	12	*ʔarḫ-		cow, heifer	*ʔarḫ-	107	yes	ʔarḫ-	no	
+2	nominal	13	*ʔarm-, *ʔarn-		wild goat	*ʔarm-	109	no		no	
+2	nominal	14	*ʔarnab(-at)-		hare	*ʔarnab(-at)-	111	yes	ʔarnab-	no	
+2	nominal	15	*ʔarVr-		kind of bird	*ʔarVr-	112	no		no	
+2	nominal	16	*ʔi/arw-ān-, *ʔawr-		calf, bull	*ʔi/arw-ān-	113	no		no	
+2	nominal	17	*ʔarway-		wild beast; lion	*ʔarway-	115	yes	ʔarway-	no	
+2	nominal	18	*ʔarwiy-		(wild) goat, gazelle	*ʔarwiy-	117	no		no	
+2	nominal	19	*ʔatān-		donkey mare	*ʔatān-	120	yes	ʔatān-	no	
+2	nominal	20	*ʔaṯ(h)al-	*ʔač(h)al-	a mythical reptile, dragon	*ʔaṯ(h)al-	120	no		no	
+2	nominal	21	*ʔVwVy-		jackal	*ʔVwVy-	122	no		no	
+2	nominal	22	*ʔa/iw(a)z-, *waz(z)-	*ʔa/iw(a)ʒ-, *waʒ(ʒ)-	goose	*ʔa/iw(a)z-	123	no		no	
+2	nominal	23	*ʔay-		bird of prey	*ʔay-	124	no		no	
+2	nominal	24	*ʔayl-, *ʔVl-		ram	*ʔayl-	125	no		no	
+2	nominal	25	*ʔayyal-		stag, deer	*ʔayyal-	128	yes	ʔayyal-	no	
+2	nominal	26	*ʔa(n)yaṣ-, *ʔanṣaw/y-	*ʔa(n)yac̣-, *ʔanc̣aw/y-	weasel, mouse	*ʔa(n)yaṣ-	131	no		no	
+2	nominal	27	*ʕabVw-		kind of fish	*ʕabVw-	133	no		no	
+2	nominal	28	*ʕigʷal- // *ʕigl-		calf	*ʕigʷal-	134	no		yes	ʕigl-
+2	nominal	29	*ʕVgVr-		kind of bird	*ʕVgVr-	137	no		no	
+2	nominal	30	*ʕakbar-		mouse, jerboa	*ʕakbar-	138	no		no	
+2	nominal	31	*ʕaḳrab-		scorpion	*ʕaqrab-	139	yes	ʕaḳrab-	no	
+2	nominal	32	*ʕala/ūḳ(-at)-		leech	*ʕala/ūq(-at)-	141	no		no	
+2	nominal	33	*ʕankab(īṯ)-	*ʕankab(īč)-	spider	*ʕankab(īṯ)-	142	no		no	
+2	nominal	34	*ʕVnV̄ḳ-		female kid	*ʕVnV̄q-	144	no		no	
+2	nominal	35	*ʕVnz-	*ʕVnʒ-	goat	*ʕVnz-	144	no		no	
+2	nominal	36	*ʕa/urub-		kind of vermin, worm	*ʕa/urub-	147	no		no	
+2	nominal	37	*ʕar(ā)d-		wild ass	*ʕar(ā)d-	147	no		no	
+2	nominal	38	*ʕVrṣ̂-	*ʕVrĉ̣-	kind of insect	*ʕVrṣ́-	149	no		no	
+2	nominal	39	*ʕVrīṯ-	*ʕVrīč̣-	male kid	*ʕVrīṯ-	149	no		no	
+2	nominal	40	*ʕarw/y-, *ʕawr-		bird of prey	*ʕarw/y-	149	no		no	
+2	nominal	41	*ʕVrw/y-		kind of wild cat	*ʕVrw/y-	151	no		no	
+2	nominal	42	*ʕVsVb-	*ʕVcVb-	kind of bird	*ʕVsVb-	151	no		no	
+2	nominal	43	*ʕVṣṣūr-	*ʕVc̣c̣ūr-	bird	*ʕVṣṣūr-	151	no		no	
+2	nominal	44	*ʕatūd-		male of small cattle	*ʕatūd-	153	no		no	
+2	nominal	45	*ʕVṯ(V)ṯ-	*ʕVč(V)č-	moth	*ʕVṯ(V)ṯ-	154	no		no	
+2	nominal	46	*ʕiṯ̣āy-	*ʕič̣āy-	kind of lizard	*ʕiṱāy-	155	no		no	
+2	nominal	47	*ʕVwVl-		young of domestic animals, foal	*ʕVwVl-	156	no		no	
+2	nominal	48	*ʕawp-		bird	*ʕawp-	157	no		no	
+2	nominal	49	*ʕayp-, *pa(y)ʕ-		kid	*ʕayp-	159	no		no	
+2	nominal	50	*ʕayr-		(young) donkey	*ʕayr-	160	no		yes	ʕayr-
+2	nominal	51	*ʕVz-	*ʕVʒ-	bird of prey	*ʕVz-	162	no		no	
+2	nominal	52	*bVʔ(w)-, *būh-		owl	*bVʔ(w)-	163	no		no	
+2	nominal	53	*bVʕVr-		household animal; beast of burden	*bVʕVr-	164	no		no	
+2	nominal	54	*bVb(b)-		a wild hoofed animal	*bVb(b)-	167	no		no	
+2	nominal	55	*bayγ/ḳl-		mule	*bayġ/ql-	168	no		no	
+2	nominal	56	*bVk(ʷ)Vr(-at)- // *bVkVr(-at)-		young (she-)camel	*bVk(ʷ)Vr(-at)-	169	no		no	
+2	nominal	57	*bik(ʷ)ay- // *bukay-		kind of insect or worm	*bik(ʷ)ay-	171	no		no	
+2	nominal	58	*baḳḳ-		gnat	*baqq-	173	no		no	
+2	nominal	59	*baḳar-		large cattle	*baqar-	174	no		no	
+2	nominal	60	*bVl-		kind of small bird	*bVl-	176	no		no	
+2	nominal	61	*bar-		kind of bird	*bar-	177	no		no	
+2	nominal	62	*bur-		kind of insect	*bur-	179	no		no	
+2	nominal	63	*baṯan-	*bačan-	snake	*baṯan-	180	yes	baṯan-	no	
+2	nominal	64	*daʔy(-at)-		bird of prey	*daʔy(-at)-	182	no		no	
+2	nominal	65	*da/ubb-		bear	*da/ubb-	184	yes	dubb-	no	
+2	nominal	66	*di/ab(b)ūr-		bee, wasp	*di/ab(b)ūr-	187	no		no	
+2	nominal	67	*dVg-		kind of insect	*dVg-	191	no		no	
+2	nominal	68	*dVlVl-		kind of small creature	*dVlVl-	191	no		no	
+2	nominal	69	*dim-		kind of insect	*dim-	192	no		no	
+2	nominal	70	*dVm(V)m-		(wild) cat	*dVm(V)m-	193	no		no	
+2	nominal	71	*dVrr-		kind of bird	*dVrr-	194	no		no	
+2	nominal	72	*ḏiʔb-	*ǯiʔb-	wolf, jackal	*ḏiʔb-	196	yes	ḏiʔb-;ḏiʾb-	no	
+2	nominal	73	*ḏVb(V)b-	*ǯVb(V)b-	fly	*ḏVb(V)b-	199	no		no	
+2	nominal	74	*ḏVr(r)-	*ǯVr(r)-	kind of worm, insect	*ḏVr(r)-	202	no		no	
+2	nominal	75	*g(ʷ)Vb- // *gVb-		locust	*g(ʷ)Vb-	203	no		no	
+2	nominal	76	*gady-		kid	*gady-	204	yes	gady-	no	
+2	nominal	77	*gūg-		kind of insect	*gūg-	206	no		no	
+2	nominal	78	*g(ʷ)amg(ʷ)am- // *gVmgVm-		kind of bird	*g(ʷ)amg(ʷ)am-	206	no		no	
+2	nominal	79	*gam(a)l-		camel	*gam(a)l-	207	yes	gamal-	yes	gamal-
+2	nominal	80	*gʷa(n)dab- // *ga(n)dab-		cricket, locust	*gʷa(n)dab-	209	no		no	
+2	nominal	81	*gʷa(n)dVr- // *ga(n)dVr-		kind of worm	*gʷa(n)dVr-	211	no		no	
+2	nominal	82	*gūr-, *gury/w-		whelp, cub	*gūr-	211	no		no	
+2	nominal	83	*garad-		kind of insect	*garad-	215	no		no	
+2	nominal	84	*gVrVḏ(-Vn)-	*gVrVǯ(-Vn)-	kind of rodent	*gVrVḏ(-Vn)-	215	no		no	
+2	nominal	85	*gVrr/w(-at)-		small hoofed animal	*gVrr/w(-at)-	216	no		no	
+2	nominal	86	*gawzal-	*gawʒal-	brood	*gawzal-	218	no		no	
+2	nominal	87	*gʷaz- // *gVz-	*gʷaʒ- // *gVʒ-	kind of bird of prey	*gʷaz-	219	no		no	
+2	nominal	88	*γ/ʕVṗr-		young of ungulate	*ġ/ʕVṗr-	219	no		no	
+2	nominal	89	*γārib-, *γurāb-		crow, raven	*ġārib-	220	no		no	
+2	nominal	90	*γVrVn-		eagle	*ġVrVn-	222	no		no	
+2	nominal	91	*γVrnīḳ-		crane	*ġVrnīq-	222	no		no	
+2	nominal	92	*γVzāl-	*γVʒāl-	gazelle	*ġVzāl-	223	no		no	
+2	nominal	93	*hVm/wām-		large wild beast	*hVm/wām-	225	no		no	
+2	nominal	94	*hatatVw/y-at-		spider	*hatatVw/y-at-	225	no		no	
+2	nominal	95	*hVwVy-		kind of worm, snake	*hVwVy-	226	pattern	haway-	no	
+2	nominal	96	*ḥVbVŝₓ-	*ḥVbVŝ-	kind of insect	*ḥVbVśₓ-	227	no		no	
+2	nominal	97	*ḥagal-		partridge	*ḥagal-	227	no		no	
+2	nominal	98	*ḥimār-		donkey	*ḥimār-	228	yes	ḥimār-	no	
+2	nominal	99	*ḥVm(V)ṭ-		kind of snake, lizard	*ḥVm(V)ṭ-	230	no		no	
+2	nominal	100	*ḥV(n)g-		kind of worm, centipede	*ḥV(n)g-	231	no		no	
+2	nominal	101	*ḥVrb-		chameleon	*ḥVrb-	231	pattern	ḥarb-	no	
+2	nominal	102	*ḥVrd/ḏān-	*ḥVrd/ǯān-	kind of lizard	*ḥVrd/ḏān-	232	no		no	
+2	nominal	103	*ḥargVl-		locust	*ḥargVl-	233	pattern	ḥargil-	no	
+2	nominal	104	*ḥarSap-		young of animals, larva	*ḥarSap-	234	no		no	
+2	nominal	105	*ḥVsVn-	*ḥVcVn-	kind of insect	*ḥVsVn-	235	no		no	
+2	nominal	106	*ḥVwār-		young camel	*ḥVwār-	236	no		no	
+2	nominal	107	*ḫVl-		kind of bird	*ḫVl-	237	no		no	
+2	nominal	108	*ḫuld-		mole	*ḫuld-	238	no		no	
+2	nominal	109	*ḫaml-, *ḫVlVm-		kind of insect	*ḫaml-	239	no		no	
+2	nominal	110	*ḫVnnVṣ-	*ḫVnnVc̣-	piglet	*ḫVnnVṣ-	240	no		no	
+2	nominal	111	*ḫV(n)zīr-	*ḫV(n)ʒīr-	pig	*ḫV(n)zīr-	240	no		no	
+2	nominal	112	*ḫVnz(i/uz)-	*ḫVnʒ(i/uʒ)-	kind of insect	*ḫVnz(i/uz)-	243	no		no	
+2	nominal	113	*ḫVrVp-		young sheep	*ḫVrVp-	244	no		no	
+2	nominal	114	*kabŝ-	*kabĉ-	young ram	*kabś-	245	no		no	
+2	nominal	115	*kalb-		dog	*kalb-	247	yes	kalb-	no	
+2	nominal	116	*ki/ann(-Vm)-		a harmful insect	*ki/ann(-Vm)-	250	no		no	
+2	nominal	117	*k(ʷ)arkiy- // *kurkiy-		goose, crane	*k(ʷ)arkiy-	251	no		no	
+2	nominal	118	*ka/irr-		ram	*ka/irr-	253	no		no	
+2	nominal	119	*kʷaraz- // *karaʒ-		kind of insect	*kʷaraz-	255	no		no	
+2	nominal	120	*kVS-		a (mythical) aquatic reptile	*kVS-	256	no		no	
+2	nominal	121	*kVs(Vs)-	*kVc(Vc)-	kind of bird of prey	*kVs(Vs)-	257	no		no	
+2	nominal	122	*kʷVt(t)ān-, *tukʷān- // *kut(t)ān-, *tukān-		bug	*kʷVt(t)ān-	257	no		no	
+2	nominal	123	*kVw-		kind of bird	*kVw-	259	no		no	
+2	nominal	124	*kawdan-		mule	*kawdan-	260	no		no	
+2	nominal	125	*kVwVr-		kind of fish	*kVwVr-	262	no		no	
+2	nominal	126	*ḳ(ʷ)aʔ(ḳ(ʷ)aʔ)- // *ḳaʔ(ḳaʔ)-		kind of bird	*q(ʷ)aʔ(q(ʷ)aʔ)-	263	no		no	
+2	nominal	127	*ḳʷāʕ- // *ḳāʕ-		crow	*qʷāʕ-	265	no		no	
+2	nominal	128	*ḳʷaʕḳʷaʕ- // *ḳaʕḳaʕ-		frog	*qʷaʕqʷaʕ-	265	no		no	
+2	nominal	129	*ḳVmḥ-		kind of insect	*qVmḥ-	266	no		no	
+2	nominal	130	*ḳ(ʷ)aml- // *ḳumāl-, *ḳalm-		louse	*q(ʷ)aml-	266	no		no	
+2	nominal	131	*ḳam(a)ṣ-	*ḳam(a)c̣-	kind of (harmful) insect	*qam(a)ṣ-	270	no		no	
+2	nominal	132	*ḳ(ʷ)a(n)ḳ(ʷ)an- // *ḳV(n)ḳVn-		kind of worm, insect	*q(ʷ)a(n)q(ʷ)an-	271	no		no	
+2	nominal	133	*ḳ(ʷ)inpaḏ- // *ḳunpuḏ-	*ḳ(ʷ)inpaǯ- // *ḳunpuǯ-	hedgehog	*q(ʷ)inpaḏ-	272	no		no	
+2	nominal	134	*ḳʷāriʔ/y- // *ḳāriʔ/y-		kind of bird, partridge	*qʷāriʔ/y-	274	no		no	
+2	nominal	135	*ḳʷVrVd- // *ḳVrd-		tick	*qʷVrVd-	276	no		no	
+2	nominal	136	*ḳVr(Vl)l-		kind of bird	*qVr(Vl)l-	276	no		no	
+2	nominal	137	*ḳVr(V)r-		frog	*qVr(V)r-	277	no		no	
+2	nominal	138	*ḳarṣ-	*ḳarc̣-	kind of harmful insect; mosquito	*qarṣ-	278	no		no	
+2	nominal	139	*ḳVṣam-	*ḳVc̣am-	locust, (locust) larva	*qVṣam-	279	no		no	
+2	nominal	140	*ḳut-		kind of insect	*qut-	281	no		no	
+2	nominal	141	*ḳʷVṭVn- // *ḳVṭVn-		kind of insect	*qʷVṭVn-	281	no		no	
+2	nominal	142	*liʔ(-at)-, *laʔay-at-		head of large cattle	*liʔ(-at)-	282	no		no	
+2	nominal	143	*lVʔlVʔ-		head of small cattle	*lVʔlVʔ-	284	no		no	
+2	nominal	144	*labVʔ-		lion(ess)	*labVʔ-	285	pattern	labiʔ-;labiʾ-	no	
+2	nominal	145	*lVḫVm-		kind of large aquatic animal	*lVḫVm-	288	no		no	
+2	nominal	146	*laḳlaḳ-		stork	*laqlaq-	290	no		no	
+2	nominal	147	*layṯ-	*layč-	lion	*layṯ-	290	no		no	
+2	nominal	148	*ma/iʕ(a)z-	*ma/iʕ(a)ʒ-	goat	*ma/iʕ(a)z-	291	yes	maʕaz-	yes	maʕaz-
+2	nominal	149	*muhr-		foal	*muhr-	293	yes	muhr-	no	
+2	nominal	150	*mVḳ(Vḳ)-		kind of insect	*mVq(Vq)-	294	no		no	
+2	nominal	151	*mV(n)dīn-		a large wild cat	*mV(n)dīn-	294	no		no	
+2	nominal	152	*mVn(Vn)-		kind of insect	*mVn(Vn)-	295	no		no	
+2	nominal	153	*mir(Vʔ)-		bull	*mir(Vʔ)-	296	no		no	
+2	nominal	154	*mVSVṭ-		kind of insect	*mVSVṭ-	298	no		no	
+2	nominal	155	*nu/aʕ(ā)m-		ostrich	*nu/aʕ(ā)m-	298	no		no	
+2	nominal	156	*nūb(-at)-		bee	*nūb(-at)-	298	no		no	
+2	nominal	157	*nāb-, *nib(b)-		louse, nit	*nāb-	299	no		no	
+2	nominal	158	*nVγVr-		kind of bird	*nVġVr-	300	no		no	
+2	nominal	159	*nVhVš-	*nVhVs-	lion	*nVhVš-	301	no		no	
+2	nominal	160	*nVḥl-		swarm of bees	*nVḥl-	302	no		no	
+2	nominal	161	*nāḳ-at-		she-camel	*nāq-at-	303	no		no	
+2	nominal	162	*nVḳVr-		kind of bird	*nVqVr-	304	no		no	
+2	nominal	163	*nam(V)l-		ant	*nam(V)l-	305	no		no	
+2	nominal	164	*namir-		leopard	*namir-	307	yes	namir-	no	
+2	nominal	165	*nVšVp-	*nVsVp-	kind of bird	*nVšVp-	310	no		no	
+2	nominal	166	*nVšr-	*nVsr-	eagle, vulture	*nVšr-	311	pattern	našr-	pattern	našr-
+2	nominal	167	*nVṣVr-	*nVc̣Vr-	cricket	*nVṣVr-	313	no		no	
+2	nominal	168	*na/iṣ(ṣ)-	*na/ic̣(c̣)-	kind of bird	*na/iṣ(ṣ)-	313	no		no	
+2	nominal	169	*na(ya)l-		a wild hoofed animal	*na(ya)l-	314	no		no	
+2	nominal	170	*paʔr-		mouse	*paʔr-	315	yes	paʔr-	no	
+2	nominal	171	*pahd-		cheetah	*pahd-	316	no		no	
+2	nominal	172	*pVḥVr-		kind of worm	*pVḥVr-	317	no		no	
+2	nominal	173	*pVl-		elephant(?); a large hoofed animal(?)	*pVl-	318	no		no	
+2	nominal	174	*pVlw/y-		yearling foal, small of domestic animals	*pVlw/y-	321	no		no	
+2	nominal	175	*pVl(y)-		kind of insect, louse	*pVl(y)-	322	no		no	
+2	nominal	176	*par(a)ʔ-		wild ass	*par(a)ʔ-	324	no		no	
+2	nominal	177	*pi/ard-		an equid	*pi/ard-	326	no		no	
+2	nominal	178	*parg-		kind of bird (hen, quail)	*parg-	328	no		no	
+2	nominal	179	*parḫ-		chick, brood	*parḫ-	328	no		no	
+2	nominal	180	*pVrpVr-, *parr/w-		kind of bird	*pVrpVr-	329	no		no	
+2	nominal	181	*parr-		young of small or large cattle	*parr-	330	no		no	
+2	nominal	182	*paraš-	*paras-	horse	*paraš-	333	no		no	
+2	nominal	183	*pVšpVš-	*pVspVs-	bug	*pVšpVš-	336	no		no	
+2	nominal	184	*pVṣγ-	*pVc̣γ-	gecko	*pVṣġ-	336	no		no	
+2	nominal	185	*ṗVrγVṯ-, *ṗVrṯaγ-	*ṗVrγVč-, *ṗVrčaγ-	flea	*ṗVrġVṯ-	337	no		no	
+2	nominal	186	*riʔm-		aurochs	*riʔm-	339	no		no	
+2	nominal	187	*raʔ/w/hy-		kind of bird	*raʔ/w/hy-	341	no		no	
+2	nominal	188	*raḫil-		ewe	*raḫil-	341	no		no	
+2	nominal	189	*raḫam-		bird of prey	*raḫam-	342	no		no	
+2	nominal	190	*raḳḳ-		turtle	*raqq-	343	yes	raḳḳ-	no	
+2	nominal	191	*rimm-at-		kind of insect, worm	*rimm-at-	344	no		no	
+2	nominal	192	*sVḥ/ḫVṭ-	*cVḥ/ḫVṭ-	kind of insect	*sVḥ/ḫVṭ-	346	no		no	
+2	nominal	193	*SVkk-		kind of small mammal	*SVkk-	347	no		no	
+2	nominal	194	*saḳʷāt-	*caḳʷāt- // *saḳāt-	kind of bird	*saqʷāt-	347	no		no	
+2	nominal	195	*SVlw-		quail	*SVlw-	348	no		no	
+2	nominal	196	*sVm(V)m(-at)-	*cVm(V)m(-at)-	kind of bird	*sVm(V)m(-at)-	348	no		no	
+2	nominal	197	*su/inūn(Vw/y)-at-	*cu/inūn(Vw/y)-at-	swallow	*su/inūn(Vw/y)-at-	349	no		no	
+2	nominal	198	*sā/ūs-	*cā/ūc-	moth	*sā/ūs-	350	no		no	
+2	nominal	199	*sVwsVw-	*cVwcVw-	horse	*sVwsVw-	352	no		no	
+2	nominal	200	*šibb-	*sibb-	kind of snake, worm	*šibb-	355	no		no	
+2	nominal	201	*šVl-	*sVl-	kind of bird	*šVl-	356	no		no	
+2	nominal	202	*šalaḥpaw/y-, *šalapḥaw/y-	*salaḥpaw/y-, *salapḥaw/y-	turtle	*šalaḥpaw/y-	356	no		no	
+2	nominal	203	*šVl(V)k-	*sVl(V)k-	kind of bird	*šVl(V)k-	357	no		no	
+2	nominal	204	*š/ŝVmm-	*ś/ĉVmm-	kind of reptile (snake, lizard)	*š/śVmm-	357	no		no	
+2	nominal	205	*šumšum-	*sumsum-	ant	*šumšum-	358	no		no	
+2	nominal	206	*šu/in(n)ār-, *šurān-	*su/in(n)ār-, *surān-	cat	*šu/in(n)ār-	359	no		no	
+2	nominal	207	*šVpp-	*sVpp-	kind of snake, worm, insect larvae	*šVpp-	361	no		no	
+2	nominal	208	*šappVr-	*sappVr-	kind of (large) hoofed animal	*šappVr-	362	no		no	
+2	nominal	209	*ṣVl(Vl)-	*c̣Vl(Vl)-	kind of bird of prey	*ṣVl(Vl)-	364	no		no	
+2	nominal	210	*ṣVlVm-	*c̣VlVm-	kind of insect	*ṣVlVm-	365	no		no	
+2	nominal	211	*ṣulṣVl-	*c̣ulc̣Vl-	(wild) dove	*ṣulṣVl-	365	no		no	
+2	nominal	212	*ṣVp(p)Vr-	*c̣Vp(p)Vr-	(kind of small) bird	*ṣVp(p)Vr-	366	no		no	
+2	nominal	213	*ṣarṣa/ūr-	*c̣arc̣a/ūr-	cricket	*ṣarṣa/ūr-	368	no		no	
+2	nominal	214	*ŝVm-	*ĉVm-	kind of mouse, rat	*śVm-	369	no		no	
+2	nominal	215	*ŝarap-	*ĉarap-	kind of creeping creature	*śarap-	370	no		no	
+2	nominal	216	*ŝVrŝūr-	*ĉVrĉūr-	kind of bird	*śVrśūr-	371	no		no	
+2	nominal	217	*ŝaw-	*ĉaw-	sheep	*śaw-	371	no		no	
+2	nominal	218	*ŝₓVbay(-at)-	*ŝVbay(-at)-	kind of insect	*śₓVbay(-at)-	373	no		no	
+2	nominal	219	*ṣ̂aʔn-	*ĉ̣aʔn-	small cattle	*ṣ́aʔn-	374	yes	ṣ́aʔn-;ṣ́aʾn-	no	
+2	nominal	220	*ṣ̂ab(u)ʕ-	*ĉ̣ab(u)ʕ-	hyena	*ṣ́ab(u)ʕ-	376	yes	ṣ́abuʕ-;ṣ́abuʿ-	no	
+2	nominal	221	*ṣ̂abb-	*ĉ̣abb-	kind of lizard	*ṣ́abb-	378	no		no	
+2	nominal	222	*ṣ̂Vpardiʕ-	*ĉ̣Vpardiʕ-	frog	*ṣ́Vpardiʕ-	379	no		no	
+2	nominal	223	*ṣ̂Vrʕ(-at)-	*ĉ̣Vrʕ(-at)-	wasp	*ṣ́Vrʕ(-at)-	380	no		no	
+2	nominal	224	*ṣ̂ayw-	*ĉ̣ayw-	wild cat	*ṣ́ayw-	381	no		no	
+2	nominal	225	*tāʔ/y-		kind of antelope	*tāʔ/y-	381	no		no	
+2	nominal	226	*tVkur(r)-		kind of bird	*tVkur(r)-	382	no		no	
+2	nominal	227	*tVnnVn-		(mythical) snake, dragon	*tVnnVn-	382	no		no	
+2	nominal	228	*tVrbal-, *bVrtal-		large hoofed animal	*tVrbal-	383	no		no	
+2	nominal	229	*tVrr-		kind of bird	*tVrr-	384	no		no	
+2	nominal	230	*tawliʕ(-at)-		worm	*tawliʕ(-at)-	385	no		no	
+2	nominal	231	*tayš-	*tays-	he-goat	*tayš-	386	no		no	
+2	nominal	232	*ṭalay-		lamb, kid	*ṭalay-	388	no		yes	ṭalay-
+2	nominal	233	*ṭVrVḳay-, *ṭVḳVray-		kind of insect (bee, wasp)	*ṭVrVqay-	390	no		no	
+2	nominal	234	*ṭaγ-		(young) bull	*ṭaġ-	390	no		no	
+2	nominal	235	*ṭayr-		bird	*ṭayr-	391	no		no	
+2	nominal	236	*ṯaʔ(w/y)-at-	*čaʔ(w/y)-at-	ewe	*ṯaʔ(w/y)-at-	392	no		no	
+2	nominal	237	*ṯVʕ(V)l-, *ṯaʕlab-	*čVʕ(V)l-, *čaʕlab-	fox	*ṯVʕ(V)l-	393	yes	čaʿlab-;θaʿlab-;ṯaʕlab-;ṯaʿlab-	no	
+2	nominal	238	*ṯVbl(Vl)-	*čVbl(Vl)-	kind of insect, snail	*ṯVbl(Vl)-	395	no		no	
+2	nominal	239	*ṯVl-	*čVl-	head of small cattle	*ṯVl-	396	no		no	
+2	nominal	240	*ṯapan-	*čapan-	rock hyrax	*ṯapan-	397	no		no	
+2	nominal	241	*ṯawr-	*čawr-	bull, ox	*ṯawr-	398	yes	θawr-;ṯawr-	no	
+2	nominal	242	*ṯ̣aby(-at)-	*č̣aby(-at)-	gazelle	*ṱaby(-at)-	401	no		no	
+2	nominal	243	*wVʕ-		kind of bird	*wVʕ-	403	no		no	
+2	nominal	244	*waʕil-		ibex	*waʕil-	403	yes	waʕil-	no	
+2	nominal	245	*wābil-		ram	*wābil-	405	no		no	
+2	nominal	246	*waran-, *waral-		kind of large lizard (varan?)	*waran-	407	yes	waral-;waran-	no	
+2	nominal	247	*waw-at-		kind of bird	*waw-at-	408	no		no	
+2	nominal	248	*w/yaʕr-, *w/yarʕ-		(young of) ungulate	*w/yaʕr-	408	no		no	
+2	nominal	249	*yaḥmūr-		kind of antelope, roebuck	*yaḥmūr-	409	no		no	
+2	nominal	250	*yapan-		young bull	*yapan-	410	no		no	
+2	nominal	251	*yarbVʕ-		kind of rodent	*yarbVʕ-	411	no		no	
+2	nominal	252	*yawn(-at)-, *wānay-		dove	*yawn(-at)-	412	no		no	
+2	nominal	253	*zVmr-	*ʒVmr-	gazelle	*zVmr-	413	no		no	
+2	nominal	254	*zarzī/ūr-	*ʒarʒī/ūr-	starling	*zarzī/ūr-	414	no		no	
+2	nominal	255	*zīz-	*ʒīʒ-	kind of insect	*zīz-	415	no		no	

@@ -1,0 +1,141 @@
+<title>SED Reconstructions</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Gentium+Plus:ital,wght@0,400;0,700;1,400&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: a dictionary-style index. Sticky search/filter bar, then rows set in a phonetic serif with source references in the margin. */
+:root{
+  --bg:#f4f6f9; --surface:#ffffff; --ink:#161b26; --muted:#5d6676; --rule:#dbe0e8;
+  --ok:#1d6b3a; --ok-soft:#dff2e5; --accent:#27498f; --accent-soft:#e3eaf7; --warn:#9a5b00; --warn-soft:#fbefd6;
+  --f-form:"Gentium Plus","Charis SIL","Noto Serif","Times New Roman",serif;
+  --f-ui:"IBM Plex Sans",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --f-mono:"IBM Plex Mono",ui-monospace,Menlo,monospace;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --bg:#10151e; --surface:#171d29; --ink:#e8ecf3; --muted:#98a2b5; --rule:#2a3345;
+  --ok:#7fd49b; --ok-soft:#173424; --accent:#8fb0f2; --accent-soft:#1f2b45; --warn:#f0b45a; --warn-soft:#3a2a10; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#10151e; --surface:#171d29; --ink:#e8ecf3; --muted:#98a2b5; --rule:#2a3345;
+  --ok:#7fd49b; --ok-soft:#173424; --accent:#8fb0f2; --accent-soft:#1f2b45; --warn:#f0b45a; --warn-soft:#3a2a10; color-scheme:dark}
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--ink);font:15px/1.5 var(--f-ui);
+  padding-inline:max(16px,env(safe-area-inset-left,0px)) max(16px,env(safe-area-inset-right,0px));margin:0}
+.wrap{max-width:980px;margin:0 auto;padding-block:24px 56px}
+header h1{font:700 clamp(26px,5vw,36px)/1.15 var(--f-form);margin:0 0 6px;text-wrap:balance}
+header p{color:var(--muted);margin:0;max-width:62ch}
+header p em{font-family:var(--f-form);font-style:italic}
+.bar{position:sticky;top:env(safe-area-inset-top,0px);background:var(--bg);padding-block:14px 10px;z-index:2;
+  border-bottom:1px solid var(--rule);margin-top:18px}
+.search{width:100%;font:17px var(--f-form);padding:11px 14px;border:1px solid var(--rule);border-radius:6px;
+  background:var(--surface);color:var(--ink)}
+.search:focus-visible,.chip:focus-visible,.btn:focus-visible,a:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px;align-items:center}
+.chip{font:500 13px var(--f-ui);padding:6px 11px;border:1px solid var(--rule);border-radius:999px;background:var(--surface);color:var(--ink);cursor:pointer}
+.chip[aria-pressed="true"]{background:var(--accent);border-color:var(--accent);color:var(--surface)}
+.sep{flex:1}
+.count{font:13px var(--f-mono);color:var(--muted)}
+ul{list-style:none;margin:0;padding:0}
+li.row{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,15rem);gap:4px 20px;padding:14px 0;border-bottom:1px solid var(--rule)}
+.form{font:400 clamp(20px,3.6vw,25px)/1.3 var(--f-form);overflow-wrap:anywhere}
+.alt{font:400 17px/1.35 var(--f-form);color:var(--muted);overflow-wrap:anywhere}
+.alt::before{content:"◊ ";font-family:var(--f-ui);font-size:12px}
+.gloss{grid-column:1;color:var(--ink)}
+.wik{font:13px var(--f-form);color:var(--muted);grid-column:1}
+.meta{grid-column:2;grid-row:1/span 3;display:flex;flex-direction:column;gap:6px;align-items:flex-start;justify-content:flex-start;font:12.5px var(--f-mono);color:var(--muted)}
+.meta .src b{color:var(--ink);font-weight:500}
+.btns{display:flex;gap:6px;flex-wrap:wrap}
+.btn{font:500 12px var(--f-ui);padding:4px 9px;border:1px solid var(--rule);border-radius:5px;background:var(--surface);color:var(--accent);text-decoration:none;cursor:pointer}
+.btn:hover{background:var(--accent-soft)}
+.wb{font:500 11px var(--f-ui);padding:2px 7px;border-radius:4px;border:1px solid var(--rule);color:var(--muted);white-space:nowrap}
+.wb.yes{background:var(--ok-soft);color:var(--ok);border-color:transparent}
+.wb.pattern{background:var(--warn-soft);color:var(--warn);border-color:transparent}
+.wbs{display:flex;gap:6px;flex-wrap:wrap}
+.flag{font:500 11px var(--f-ui);background:var(--warn-soft);color:var(--warn);padding:2px 7px;border-radius:4px}
+.more{display:block;margin:20px auto 0}
+.empty{padding:40px 0;color:var(--muted);text-align:center}
+footer{margin-top:28px;color:var(--muted);font-size:13px;max-width:70ch}
+footer code{font-family:var(--f-mono);font-size:12px}
+@media (max-width:620px){
+  li.row{grid-template-columns:minmax(0,1fr)}
+  .meta{grid-column:1;grid-row:auto;flex-direction:row;flex-wrap:wrap;align-items:center;gap:8px 12px;margin-top:4px}
+}
+@media (prefers-reduced-motion:no-preference){.chip,.btn{transition:background .12s}}
+</style>
+<div class="wrap">
+<header>
+  <h1>Semitic Etymological Dictionary: Reconstructions</h1>
+  <p>Every Proto-Semitic headword from Militarev &amp; Kogan, <em>SED</em> Vol. 1 (anatomy, 2000) and Vol. 2 (animal names, 1995), transcribed from the printed headings. Use it to check each form against Wiktionary's Proto-Semitic and Proto-West Semitic pages.</p>
+</header>
+<div class="bar">
+  <input id="q" class="search" type="search" lang="und" dir="auto" autocomplete="off" spellcheck="false"
+    placeholder="Search a form or gloss: ʕqr, kalb, 'liver'   (? = ʔ, ` = ʕ)" aria-label="Search reconstructions">
+  <div class="chips" role="group" aria-label="Filters">
+    <button class="chip" data-f="v1n" aria-pressed="true">Vol. 1 nominal</button>
+    <button class="chip" data-f="v1v" aria-pressed="true">Vol. 1 verbal</button>
+    <button class="chip" data-f="v2n" aria-pressed="true">Vol. 2 fauna</button>
+    <button class="chip" id="aff" aria-pressed="false">Has ◊ variant</button>
+    <button class="chip" id="chk" aria-pressed="false">To verify</button>
+    <button class="chip" data-w="inany" aria-pressed="false">In Wiktionary</button>
+    <button class="chip" data-w="missps" aria-pressed="false">Not in PS</button>
+    <button class="chip" data-w="misspws" aria-pressed="false">Not in PWS</button>
+    <button class="chip" data-w="none" aria-pressed="false">In neither</button>
+    <button class="chip" id="wk" aria-pressed="false">Wiktionary spelling</button>
+    <span class="sep"></span><span class="count" id="count" aria-live="polite"></span>
+  </div>
+</div>
+<ul id="list"></ul>
+<button class="btn more" id="more" hidden>Show more</button>
+<p class="empty" id="empty" hidden>No entries match.</p>
+<footer>
+  <p>Forms follow SED notation: <code>V</code> an unspecified vowel, <code>/</code> an alternation, <code>(…)</code> optional material, <code>◊</code> the variant with affricates, <code>//</code> labialised alternant. Alternate forms are separated by commas. “Wiktionary spelling” converts ŝ→ś, ṣ̂→ṣ́, ṯ̣→ṱ, γ→ġ, ḳ→q on the first variant; the “Wiktionary” button opens the matching page when one exists, otherwise the would-be Proto-Semitic title.</p><p><b>Wiktionary badges.</b> Checked 14 Oct 2026 against the complete list of <code>Reconstruction:Proto-Semitic/</code> (372 pages) and <code>Reconstruction:Proto-West Semitic/</code> (42 pages) titles, comparing after folding spelling variants (ʔ/ʾ, ʕ/ʿ, ḏ/ð, ṯ/θ, ḳ/q), expanding optional material and alternations. “In Wiktionary” = an exact title matches some variant of the SED form. “Similar page” = the SED form is schematic (contains V) and a title fits the pattern; check it by hand. “Not in Wiktionary” = no title matches. Matching is on the form only: a page may exist under a different reconstruction of the same word. Entries marked “to verify” have glyphs I could not read with certainty, and ejective p (ṗ) versus plain p was judged by eye, so spot-check against the PDF page shown.</p>
+</footer>
+</div>
+<script>
+const DATA=__DATA__;
+const VERIFY=new Set(["1N239","1V68","1V72","1N115","2N154","2N207","1N205","1N243","1V37","1V62"]);
+const $=s=>document.querySelector(s);
+const state={f:{v1n:true,v1v:true,v2n:true},aff:false,chk:false,w:{},wk:false,q:"",shown:150};
+const fold=s=>s.normalize("NFD").replace(/[̀-ͯ]/g,"").replace(/ʷ/g,"w").toLowerCase();
+const qnorm=s=>fold(s.replace(/\?/g,"ʔ").replace(/`/g,"ʕ"));
+DATA.forEach(r=>{r.key=r.vol+(r.section==="nominal"?"N":"V")+r.no;r.cat="v"+r.vol+(r.section==="nominal"?"n":"v");
+  r.hay=fold(r.protoform+" "+r.affricate_variant+" "+r.wikt_norm+" "+r.gloss);r.verify=VERIFY.has(r.key)});
+const wikUrl=r=>{const t=(r.wikt_ps_title||"").split(";")[0];if(t)return "https://en.wiktionary.org/wiki/Reconstruction:Proto-Semitic/"+encodeURIComponent(t);const u=(r.wikt_pws_title||"").split(";")[0];if(u)return "https://en.wiktionary.org/wiki/Reconstruction:Proto-West_Semitic/"+encodeURIComponent(u);return "https://en.wiktionary.org/wiki/Reconstruction:Proto-Semitic/"+encodeURIComponent(r.wikt_norm.replace(/^\*/,""))};
+const WL={yes:"in Wiktionary",pattern:"similar page",no:"not in Wiktionary"};
+function el(t,c,txt){const e=document.createElement(t);if(c)e.className=c;if(txt!=null)e.textContent=txt;return e}
+function row(r){
+  const li=el("li","row");
+  const form=el("div","form",state.wk?r.wikt_norm:r.protoform);form.lang="und";form.dir="ltr";li.append(form);
+  if(r.affricate_variant&&!state.wk){const a=el("div","alt",r.affricate_variant);a.lang="und";a.dir="ltr";li.append(a)}
+  li.append(el("div","gloss",r.gloss));
+  if(state.wk&&r.protoform!==r.wikt_norm){}
+  const m=el("div","meta");
+  const s=el("span","src");s.innerHTML="Vol. <b>"+r.vol+"</b> · "+(r.section==="nominal"?"No.":"Verbal No.")+" <b>"+r.no+"</b> · pdf p. "+r.pdf_page;m.append(s);
+  const wbs=el("div","wbs");
+  [["PS",r.wikt_ps,r.wikt_ps_title,"Proto-Semitic"],["PWS",r.wikt_pws,r.wikt_pws_title,"Proto-West_Semitic"]].forEach(([n,s,ti,ns])=>{
+    const e=ti?el("a","wb "+s,n+" · "+WL[s]):el("span","wb "+s,n+" · "+WL[s]);
+    if(ti){e.href="https://en.wiktionary.org/wiki/Reconstruction:"+ns+"/"+encodeURIComponent(ti.split(";")[0]);e.target="_blank";e.rel="noopener";e.title=ti.split(";").join(", ")}
+    wbs.append(e)});
+  m.append(wbs);
+  if(r.verify)m.append(el("span","flag","to verify"));
+  const b=el("div","btns");
+  const c=el("button","btn","Copy");c.type="button";
+  c.onclick=async()=>{const t=r.protoform;try{await navigator.clipboard.writeText(t);c.textContent="Copied"}catch(e){const rg=document.createRange();rg.selectNodeContents(form);const sel=getSelection();sel.removeAllRanges();sel.addRange(rg);c.textContent="Selected"}setTimeout(()=>c.textContent="Copy",1200)};
+  const a=el("a","btn","Wiktionary ↗");a.href=wikUrl(r);a.target="_blank";a.rel="noopener";
+  b.append(c,a);m.append(b);li.append(m);return li}
+const inPS=r=>r.wikt_ps==="yes",inPW=r=>r.wikt_pws==="yes";
+const wokay=r=>(!state.w.inany||inPS(r)||inPW(r))&&(!state.w.missps||!inPS(r))&&(!state.w.misspws||!inPW(r))&&(!state.w.none||!(inPS(r)||inPW(r)));
+function matches(){
+  const q=qnorm(state.q.trim());
+  return DATA.filter(r=>state.f[r.cat]&&(!state.aff||r.affricate_variant)&&(!state.chk||r.verify)&&wokay(r)&&(!q||r.hay.includes(q)))}
+function render(){
+  const rs=matches();const list=$("#list");list.replaceChildren();
+  rs.slice(0,state.shown).forEach(r=>list.append(row(r)));
+  $("#count").textContent=rs.length+" of "+DATA.length;
+  $("#more").hidden=rs.length<=state.shown;$("#empty").hidden=rs.length>0}
+$("#q").addEventListener("input",e=>{state.q=e.target.value;state.shown=150;render()});
+document.querySelectorAll(".chip[data-f]").forEach(b=>b.onclick=()=>{state.f[b.dataset.f]=!state.f[b.dataset.f];b.setAttribute("aria-pressed",state.f[b.dataset.f]);state.shown=150;render()});
+[["#aff","aff"],["#chk","chk"],["#wk","wk"]].forEach(([s,k])=>$(s).onclick=e=>{state[k]=!state[k];e.currentTarget.setAttribute("aria-pressed",state[k]);state.shown=150;render()});
+document.querySelectorAll(".chip[data-w]").forEach(b=>b.onclick=()=>{const k=b.dataset.w;state.w[k]=!state.w[k];b.setAttribute("aria-pressed",!!state.w[k]);state.shown=150;render()});
+$("#more").onclick=()=>{state.shown+=200;render()};
+render();
+</script>
