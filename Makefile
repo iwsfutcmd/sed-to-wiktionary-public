@@ -28,3 +28,5 @@ reflexes-%: bbox-%       # Semitic reflexes per entry from the PDFs' text layer 
 	cd scripts && $(PY) reflexes.py $*
 afras-%: bbox-%         # Afro-Asiatic comparanda per entry -> data/volN/sed_volN_afras.tsv
 	cd scripts && $(PY) afras.py $*
+gaps: tables             # Wiktionary gap report from the committed tables + title snapshot
+	cd scripts && $(PY) gaps.py
