@@ -156,8 +156,8 @@ def parse_record(branch, text):
 
 COLS = ['vol', 'section', 'no', 'branch', 'lang', 'form', 'note', 'gloss', 'ref', 'flags']
 
-def run(v):
-    P = VOLS[v]
+def entry_blocks(v):
+    """Yield (head, section, [(x, text)]) for every entry: its heading record and the lines up to the next heading."""
     hs = json.loads(heads(v).read_text(encoding='utf-8'))
     best = {}
     for h in hs:      # the heads file also holds running headers; keep the candidate that looks like a real heading
@@ -176,11 +176,14 @@ def run(v):
                 marks.append((k, h)); cursor = k + 1; break
         else:
             print('heading not found', v, h['sec'], h['n'], h['page'], file=sys.stderr)
-    out = []
     for j, (k, h) in enumerate(marks):
         end = marks[j+1][0] if j + 1 < len(marks) else len(flat)
-        body = [(x, l) for _, x, l in flat[k+1:end]]
-        sec = 'verbal' if h['sec'] == 'V' else 'nominal'
+        yield h, ('verbal' if h['sec'] == 'V' else 'nominal'), [(x, l) for _, x, l in flat[k+1:end]]
+
+def run(v):
+    out, nent = [], 0
+    for h, sec, body in entry_blocks(v):
+        nent += 1
         for br, text in records(body):
             if br is None:                      # heading continuation (gloss / variants), before the first [n]
                 continue
@@ -190,7 +193,7 @@ def run(v):
     with dest.open('w', encoding='utf-8', newline='') as f:
         w = csv.DictWriter(f, COLS, delimiter='\t', lineterminator='\n', extrasaction='ignore')
         w.writeheader(); w.writerows(out)
-    print(v, len(marks), 'entries,', len(out), 'reflexes ->', dest)
+    print(v, nent, 'entries,', len(out), 'reflexes ->', dest)
     both = [DATA / f"vol{i}" / f"sed_vol{i}_reflexes.tsv" for i in (1, 2)]
     if all(p.exists() for p in both):       # concatenation, like sed_vol1_vol2_reconstructions.tsv
         a, b = (p.read_text(encoding='utf-8') for p in both)

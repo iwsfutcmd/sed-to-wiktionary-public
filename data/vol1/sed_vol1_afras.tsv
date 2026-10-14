@@ -1,0 +1,234 @@
+vol	section	no	afras_no	afras_protoform	afras_gloss	branch	family	subgroup	subgroup_proto	lang	form	note	gloss	ref	flags
+1	nominal	1	1	*?abVr-	wing	4	Cush.	N.		Beja	an/mbur		Fliigel	[Rein. Bed. 21]	
+1	nominal	1	1	*?abVr-	wing	4	Cush.	N.		Beja	ambir				lang_inherited
+1	nominal	1	1	*?abVr-	wing	4	Cush.	N.		Beja	anbir	wing			lang_inherited
+1	nominal	1	1	*?abVr-	wing	4	Cush.	N.		Beja	feather(S)'			[Huds. 9]	lang_inherited;quote_garbled
+1	nominal	2	1	*6Fr-	membrum virile	4	Cush.	E.		Somali	buryo		foreskin	[Abr. Som. 36] (not necessarily from 'penis')	uncertain
+1	nominal	2	1	*6Fr-	membrum virile	5	Omot.			Basketo	bulli		penis	[Bla. Om. 25] (apud Fleming; -11- may be either < *-//- or < *-rr-)	uncertain
+1	nominal	2	1	*6Fr-	membrum virile	6	Chad.	W.		Hausa	burn		penis	[Abr. Hs. 120]	
+1	nominal	2	1	*6Fr-	membrum virile	6	Chad.	C.		Bura	bura	id.		[OS 83]	
+1	nominal	7	1	*(?Vn-)gur-	or *(?Vn-)gwir- 'knee; foot	4	Cush.	S.		Iraqw	gurungura	(redupl., cf. also Alagwa gurunguda, gurugunda)	knee	[Ehr. HRSC 239]. Burunge	
+1	nominal	7	1	*(?Vn-)gur-	or *(?Vn-)gwir- 'knee; foot	5	Omot.			Mocha	gurato		strength, knee		
+1	nominal	7	1	*(?Vn-)gur-	or *(?Vn-)gwir- 'knee; foot	5	Omot.			Gimirra	gurat	(She) id. [LMoca 33] (according to Leslau, from the root *grb, with weaken- ing of b).			
+1	nominal	7	1	*(?Vn-)gur-	or *(?Vn-)gwir- 'knee; foot	6	Chad.	W.		Warji	ygarai		foot, leg		shared_gloss
+1	nominal	7	1	*(?Vn-)gur-	or *(?Vn-)gwir- 'knee; foot	6	Chad.	W.		Miya	aygar		foot, leg	[Skinner 22]	
+1	nominal	7	1	*(?Vn-)gur-	or *(?Vn-)gwir- 'knee; foot	6	Chad.	C.		Musgu	yguygore			[Muk. 17]	
+1	nominal	7	1	*(?Vn-)gur-	or *(?Vn-)gwir- 'knee; foot	6	Chad.	E.		Keragigir	(redupl.,	cf. Sokoro gorungorundu) [ibid.].			
+1	nominal	9	1	*?Vr(r)-,	*war(r)- 'chest; belly, stomach	3	Berb.			E. Wlm.	a-haror		poitrine	[Aloj. 80] (h- < *?-})	cf
+1	nominal	9	1	*?Vr(r)-,	*war(r)- 'chest; belly, stomach	3	Berb.			E. Wlm.	also	*ta- wray	lung	in *ri?(-at)- 'lung'	cf;lang_inherited
+1	nominal	9	1	*?Vr(r)-,	*war(r)- 'chest; belly, stomach	3	Berb.			No.	224.				
+1	nominal	9	1	*?Vr(r)-,	*war(r)- 'chest; belly, stomach	4	Cush.	N.		Beja	aror		Schoss	[Rein. Bed. 30] (cf. [Bla. Bed. 3—4])	
+1	nominal	9	1	*?Vr(r)-,	*war(r)- 'chest; belly, stomach	4	Cush.	E.		Somali	iiur		stomach		shared_gloss
+1	nominal	9	1	*?Vr(r)-,	*war(r)- 'chest; belly, stomach	4	Cush.	E.		Somali	uurar	pi.	stomach	[Abr. Som. 243]	lang_inherited
+1	nominal	9	1	*?Vr(r)-,	*war(r)- 'chest; belly, stomach	4	Cush.	E.		Rendille	ur		belly, abdomen		shared_gloss
+1	nominal	9	1	*?Vr(r)-,	*war(r)- 'chest; belly, stomach	4	Cush.	E.		Rendille	ur?ar	pi.	belly, abdomen	[Heine 75]	lang_inherited
+1	nominal	9	1	*?Vr(r)-,	*war(r)- 'chest; belly, stomach	4	Cush.	E.		Burji	ir-a		stomach	[Sasse Burji 106]	
+1	nominal	9	1	*?Vr(r)-,	*war(r)- 'chest; belly, stomach	6	Chad.	C.		Padokwo	arwa		chest	[Bla. Om. 7] (apud R. Lukas)	
+1	nominal	9	1	*?Vr(r)-,	*war(r)- 'chest; belly, stomach	6	Chad.	C.		Musgu	warn		belly		shared_gloss
+1	nominal	9	1	*?Vr(r)-,	*war(r)- 'chest; belly, stomach	6	Chad.	C.		Mbara	war		belly		
+1	nominal	9	1	*?Vr(r)-,	*war(r)- 'chest; belly, stomach	6	Chad.	C.		Musgu	ur-ni		stomach	[OS 36]	
+1	nominal	9	1	*?Vr(r)-,	*war(r)- 'chest; belly, stomach	6	Chad.	E.		Jegu	?urre'navel'			[OS 36]	quote_garbled
+1	nominal	10	1	*?/wiray/w-	back	3	Berb.				*(H)Vr(r)aw	'back': Ahaggar a-ruri	dos		quote_garbled;shared_gloss
+1	nominal	10	1	*?/wiray/w-	back	3	Berb.				i-ruriaw-dn	pi. [Fouc. 160] (< *rawray, redupl.)	dos		shared_gloss
+1	nominal	10	1	*?/wiray/w-	back	3	Berb.			Siwa	drrau		dos	[Laoust Siwa 228]	
+1	nominal	10	1	*?/wiray/w-	back	3	Berb.			Qabyle	iri		dos; cou; epaule		shared_gloss
+1	nominal	10	1	*?/wiray/w-	back	3	Berb.			Qabyle	iraw-dn	pi.	dos; cou; epaule	[Dallet 697]	lang_inherited
+1	nominal	10	1	*?/wiray/w-	back	3	Berb.			Zenaga	o?ri		epaule, creux de l'epaule	[Nic. 439] (< *wVryl)	
+1	nominal	10	1	*?/wiray/w-	back	4	Cush.	E.		Saho Afar	iro		Riickseite, Riicken	[Rein. Afar 814]	
+1	nominal	10	1	*?/wiray/w-	back	4	Cush.	E.		Oromo	wiirtuu		spine, mid-back	[Gragg Oromo 403, 428]	
+1	nominal	10	1	*?/wiray/w-	back	4	Cush.	S.		Iraqw	oriya		thigh	[Ehr. HRSC 334] (< *wVriy})	
+1	nominal	10	1	*?/wiray/w-	back	6	Chad.	W.		Tsagu	ari			[Skinner 11]	
+1	nominal	10	1	*?/wiray/w-	back	6	Chad.	E.			Dangaleataro		back	[ibid.]	
+1	nominal	15	1	*hank(-ar)-	palate, inside of mouth	3	Berb.			Ayr E. Wlm.	anya			[Aloj. 144]	
+1	nominal	15	1	*hank(-ar)-	palate, inside of mouth	3	Berb.			Ghadames	Tney			[Lanfry 244]	
+1	nominal	15	1	*hank(-ar)-	palate, inside of mouth	3	Berb.			Qabyle	andy			[Dallet 568]	
+1	nominal	15	1	*hank(-ar)-	palate, inside of mouth	3	Berb.			Semlal	anya	[Dest. Tach. 209]	palais (de la bouche)		
+1	nominal	15	1	*hank(-ar)-	palate, inside of mouth	4	Cush.	E.		Kamb.	aka		inside of mouth		shared_gloss
+1	nominal	15	1	*hank(-ar)-	palate, inside of mouth	4	Cush.	E.		Hadiya	ako		inside of mouth	[LGur. 68]	
+1	nominal	15	1	*hank(-ar)-	palate, inside of mouth	4	Cush.	E.		Somali	hokad		tonsil	[Abr. Som. 123] (-d may be < *-t suffix)	uncertain
+1	nominal	15	1	*hank(-ar)-	palate, inside of mouth	4	Cush.	S.		Dahalo	haykara		palate	[Ehr.-Eld.-Nurse 27] (with suffixed -ar)	
+1	nominal	15	2	*?Vng-(?)	neck, throat	4	Cush.	C.		Bilin	ta?ange			[Rein. Bilin 332]	uncertain
+1	nominal	15	2	*?Vng-(?)	neck, throat	4	Cush.	C.		Quara	tanaga		Gaumen	(ta- is a prefix?)	
+1	nominal	15	2	*?Vng-(?)	neck, throat	4	Cush.	C.		Kemant	angl		palais de la bouche	[Conti Rossini 166]	
+1	nominal	15	2	*?Vng-(?)	neck, throat	4	Cush.	C.		Kemant	all	loan-words from Eth.?			lang_inherited
+1	nominal	15	3	*ha/ung-Vr-	throat	2	Egyp.				(18	Dyn.) hngg	Schlund	[EG III 121]	
+1	nominal	15	3	*ha/ung-Vr-	throat	4	Cush.	E.		Sam.	*hanguri		throat	[Heine 63] (*h- instead of the expected *h-, if related at all)	uncertain
+1	nominal	32	1	*ba/ud-	(back of) thorax; shoulder with arm	3	Berb.			Ahaggar	a-bada		pied des pentes; sein	[Fouc. 19]	
+1	nominal	32	1	*ba/ud-	(back of) thorax; shoulder with arm	3	Berb.			Ayr E. Wlm.	a-bada	id.		[Aloj. 3]	
+1	nominal	32	1	*ba/ud-	(back of) thorax; shoulder with arm	4	Cush.	E.		Sidamo Hadiya	buda		arm	[Bla. Om. 6] (apud Cerulli)	
+1	nominal	32	1	*ba/ud-	(back of) thorax; shoulder with arm	5	Omot.			Ari-Jinka	bud		upper back, back of thorax	[ibid.] (apud Bender)	
+1	nominal	32	1	*ba/ud-	(back of) thorax; shoulder with arm	6	Chad.	E.		Tumak	bed		arm	[ibid.] (apud Caprile)	
+1	nominal	32	1	*ba/ud-	(back of) thorax; shoulder with arm	6	Chad.	E.		Ndam	bad	id. [ibid.] (apud Stolbova).			
+1	nominal	33	1	*bVhak/k-	a skin disease	4	Cush.	E.			*bV(H)ak-/k-:	Afar Saho biake	Wunde		shared_gloss
+1	nominal	33	1	*bVhak/k-	a skin disease	4	Cush.	E.			biyok	pi.	Wunde	[Rein. Afar 833] (given as biak 'illness' in [Sasse PEC 53], apud [Black 210])	
+1	nominal	33	1	*bVhak/k-	a skin disease	4	Cush.	E.		Somali	buk-		to become ill	[Abr. Som. 35]	
+1	nominal	33	1	*bVhak/k-	a skin disease	4	Cush.	E.		Boni	bus-i-				
+1	nominal	33	1	*bVhak/k-	a skin disease	4	Cush.	E.		Burji	buk-	(or buuk-)			
+1	nominal	33	1	*bVhak/k-	a skin disease	4	Cush.	E.		Konso	paaq-	id. [Sasse Burji 42] (Sasse accounts for an ir- regular correspondence of Somali k ~ Konso q by a tentative re- construction of the shape *bV?k- [Sasse PEC 53], supporting this reconstruction by the Burji word		[Sasse Burji 42])	
+1	nominal	33	1	*bVhak/k-	a skin disease	5	Omot.			Kaffa	biccoTuruncolo'	[Cer. IV 410] (-cc- < *-M-?)			uncertain;quote_garbled
+1	nominal	33	1	*bVhak/k-	a skin disease	5	Omot.			Mocha	biygo	id. [LMoca 22] (compared by Leslau with the Kaffa form) < *bink/k-? Cf. Bworo bakeenta Tsetsefliege' [Lamb. Shin. 283] (un- convincingly compared [ibid.] with Cush. forms like Baiso teeken-).			quote_garbled
+1	nominal	33	1	*bVhak/k-	a skin disease	6	Chad.	C.		Bachama	boke		ulcer	[Skinner 47] (probably < *bVk-, see [Stolb. 1996 24] on *bVk < *bVk in Chad.)	
+1	nominal	35	1	*bVh-	phallus	2	Egyp.				bih		das mannliche Glied	[EG I 419]	
+1	nominal	35	1	*bVh-	phallus	3	Berb.				*-bi/ubb(VH)-		penis	(redupl. < *bVhbVh-?): Ntifa a-bubbu [La- oust MCB 116]	
+1	nominal	35	1	*bVh-	phallus	3	Berb.			Ghadames	bdbb				
+1	nominal	35	1	*bVh-	phallus	3	Berb.			Ghadames	bdbbu			[CM 168]	lang_inherited
+1	nominal	35	1	*bVh-	phallus	3	Berb.			Siwa	td-bib-dt	[Laoust Siwa 276]. II Cf.		[OS 78]	
+1	nominal	54	1	*(?a-)dan-	intestine	3	Berb.				*Hadan	(< *?a-dan) 'intestine': Ghadames adan			quote_garbled
+1	nominal	54	1	*(?a-)dan-	intestine	3	Berb.				adanen	pi.		[Lanfry 71]	
+1	nominal	54	1	*(?a-)dan-	intestine	3	Berb.			Ahaggar	adanm	(pi.)		[Fouc. 205]	
+1	nominal	54	1	*(?a-)dan-	intestine	3	Berb.			Semlal	adan	(pi.)		[Dest. Tach 159]	
+1	nominal	60	1	*dVs-am/n-	Tat(ness)	3	Berb.				*-dis-	'belly, stomach': Ghadames ta-dis-t		[Lanfry 77]	quote_garbled
+1	nominal	60	1	*dVs-am/n-	Tat(ness)	3	Berb.			Ayr	te-dis-t				
+1	nominal	60	1	*dVs-am/n-	Tat(ness)	3	Berb.			E. Wlm.	ta-dis-t			[Aloj. 27]	
+1	nominal	60	1	*dVs-am/n-	Tat(ness)	3	Berb.			Semlal	adis			[Dest. Tach. 291]	
+1	nominal	60	1	*dVs-am/n-	Tat(ness)	4	Cush.	E.		Somali	dasayno		fertile	[Abr. Som. 51] (meaning shift < 'fat'? Cf. Hbr. pB.)	uncertain
+1	nominal	60	1	*dVs-am/n-	Tat(ness)	6	Chad.	W.		Hausa	duddusa	(redupl.)	corpulent		shared_gloss
+1	nominal	60	1	*dVs-am/n-	Tat(ness)	6	Chad.	W.		Hausa	dusasa	(pi.)	corpulent	[Abr. Hs. 228]	lang_inherited
+1	nominal	63	1	*jVk-an/m-	chin, jaw, cheek; beard	3	Berb.			Ahaggar	ta-zya		paroi interne de lajoue	[Fouc. 1995]	
+1	nominal	63	1	*jVk-an/m-	chin, jaw, cheek; beard	6	Chad.	W.		Sura	fayam		chin		shared_gloss
+1	nominal	63	1	*jVk-an/m-	chin, jaw, cheek; beard	6	Chad.	W.		Angas	3aam		chin		shared_gloss
+1	nominal	63	1	*jVk-an/m-	chin, jaw, cheek; beard	6	Chad.	W.		Ankwe	3am		chin		shared_gloss
+1	nominal	63	1	*jVk-an/m-	chin, jaw, cheek; beard	6	Chad.	W.		Geruma	3angumu		chin		shared_gloss
+1	nominal	63	1	*jVk-an/m-	chin, jaw, cheek; beard	6	Chad.	W.		Ngizim	fygdna		chin		shared_gloss
+1	nominal	63	1	*jVk-an/m-	chin, jaw, cheek; beard	6	Chad.	W.		Kapiski	cakame	(< *|-?)	chin	[Stolb. 1996 49]	
+1	nominal	63	1	*jVk-an/m-	chin, jaw, cheek; beard	6	Chad.	E.		Tumak	fygdm		jaw		
+1	nominal	63	1	*jVk-an/m-	chin, jaw, cheek; beard	6	Chad.	E.		Mokilko	sukumo		jaw		
+1	nominal	63	1	*jVk-an/m-	chin, jaw, cheek; beard	6	Chad.	E.		Mokilko	zukumd		chin, beard	[ibid.] (according to Stolbova, < Chad. *|z/k/an-um 'chin')	lang_inherited
+1	nominal	71	1	*(ra-)gVd(-Vm)-	limb	4	Cush.	E.		Oromo	agguuddoo	(also abbuuddoo, abbuuduu)	thumb	[Gragg Oromo 11] (note a striking similarity with Hbr. ?agudal, see *gVd(V)l- limb', No. 73)	
+1	nominal	71	1	*(ra-)gVd(-Vm)-	limb	4	Cush.	E.		Afar Saho	agada		Arm		shared_gloss
+1	nominal	71	1	*(ra-)gVd(-Vm)-	limb	4	Cush.	E.		Afar Saho	agud	pi.	Arm	[Rein. Afar 805]	lang_inherited
+1	nominal	71	1	*(ra-)gVd(-Vm)-	limb	4	Cush.	E.		Burji	gudum-a		shoulder	[Sasse Burji 85]	
+1	nominal	71	1	*(ra-)gVd(-Vm)-	limb	4	Cush.	E.		Hadiya	gudum-o	id. [ibid.] (the two latter forms with suffixed -m)	upper part of arm		shared_gloss
+1	nominal	71	1	*(ra-)gVd(-Vm)-	limb	4	Cush.	E.		Hadiya	angwoda		upper part of arm		lang_inherited;shared_gloss
+1	nominal	71	1	*(ra-)gVd(-Vm)-	limb	4	Cush.	E.		Tambaro	angata		upper part of arm		
+1	nominal	71	1	*(ra-)gVd(-Vm)-	limb	4	Cush.	E.		Darasa	agoda		shoulder	[LGur. 28]	
+1	nominal	71	1	*(ra-)gVd(-Vm)-	limb	5	Omot.				Kaffagidd		ginocchio	[Cer. IV 438]	
+1	nominal	71	1	*(ra-)gVd(-Vm)-	limb	5	Omot.			Ometo	gaddea	(Wolamo) leg'	foot		quote_garbled;shared_gloss
+1	nominal	71	1	*(ra-)gVd(-Vm)-	limb	5	Omot.			Ometo	gadeiya	(Kullo)	foot	[Bla. Om. 14]	lang_inherited
+1	nominal	71	1	*(ra-)gVd(-Vm)-	limb	6	Chad.	E.		Somray	gtdam		foot	[Bla. Om. 14] (with suffixed -m)	
+1	nominal	77	1	*galb-	(piece of) skin	4	Cush.	E.		Afar	galabo		Haut, Fell	[Rein. Afar 850] (hardly from Arb. yulbat- as Reinisch assumes, which is too different both semantically and formally)	
+1	nominal	77	1	*galb-	(piece of) skin	5	Omot.			Ometo	galba	(Chara)	pelle	[Cer. Ill 168]	
+1	nominal	77	1	*galb-	(piece of) skin	5	Omot.			Ometo	(Wolamo,	Dache) galba			lang_inherited
+1	nominal	77	1	*galb-	(piece of) skin	5	Omot.			Ometo	gdVba'skin'	(Dorse)		[Bla. Om. 26]	lang_inherited;quote_garbled
+1	nominal	81	1	*gam(m)-	long hair, mane	2	Egyp.				gmh.t	(Sarg.)	Locke oder Flechte; Schlafe	[EG V 171] (-h remains unexplained; according to [Tak.], a common Afras. affix forming names of body parts)	
+1	nominal	81	1	*gam(m)-	long hair, mane	4	Cush.	C.		Kemant	gama		criniere	[Conti Rossini 197]	
+1	nominal	81	1	*gam(m)-	long hair, mane	4	Cush.	C.		Khamir	gami		mane	[Rein. Bilin 152]	
+1	nominal	81	1	*gam(m)-	long hair, mane	4	Cush.	E.		Afar Saho	gama		Mane		shared_gloss
+1	nominal	81	1	*gam(m)-	long hair, mane	4	Cush.	E.		Afar Saho	gamma		Mane	[Rein. Afar 850]	lang_inherited
+1	nominal	81	1	*gam(m)-	long hair, mane	4	Cush.	E.		Somali	gemme		mane		shared_gloss
+1	nominal	81	1	*gam(m)-	long hair, mane	4	Cush.	E.		Burji	gamm-aa		mane	[Sasse Burji 77]	
+1	nominal	81	1	*gam(m)-	long hair, mane	4	Cush.	E.		Oromo	gaammaa		mane of horse	[Gragg Oromo 157] (cf. gaammee 'kind of tonsure for child- ren' [ibid.])	
+1	nominal	81	1	*gam(m)-	long hair, mane	6	Chad.	W.		Hausa	gemu		beard	[Abr. Hs. 315]	
+1	nominal	81	1	*gam(m)-	long hair, mane	6	Chad.	C.		Buduma	ygume				
+1	nominal	81	1	*gam(m)-	long hair, mane	6	Chad.	C.		Affadegummede	(-d-	id. < *-£-?Cf.		[Porkhom. 72])	
+1	nominal	84	1	*gVn-	cheek-bone; chin; parts of face	4	Cush.	N.			Bejagenun		Kiefer, Kinnbacken, Kinnlade	[Rein. Bed. 99]	
+1	nominal	84	1	*gVn-	cheek-bone; chin; parts of face	4	Cush.	S.		Dahalo	gakane		chin	[Ehr.-Eld.-Nurse 30] (redupl. < *gangan-?)	uncertain
+1	nominal	84	1	*gVn-	cheek-bone; chin; parts of face	6	Chad.	W.		Sura	gm		cheek		shared_gloss
+1	nominal	84	1	*gVn-	cheek-bone; chin; parts of face	6	Chad.	W.		Montol	gun		cheek		shared_gloss
+1	nominal	84	1	*gVn-	cheek-bone; chin; parts of face	6	Chad.	W.		Angas	gun		cheek		shared_gloss
+1	nominal	84	1	*gVn-	cheek-bone; chin; parts of face	6	Chad.	W.		Ankwe	gen		cheek		shared_gloss
+1	nominal	84	1	*gVn-	cheek-bone; chin; parts of face	6	Chad.	W.		Sayanchi	guyn		cheek		shared_gloss
+1	nominal	84	1	*gVn-	cheek-bone; chin; parts of face	6	Chad.	W.		Buli	guyi		cheek	[Stolb. 1987 218] (reconstructed as *hV-gunV; other forms compared are questionable)	
+1	nominal	84	1	*gVn-	cheek-bone; chin; parts of face	6	Chad.	W.		Gera	geni		face	[Bla. Bed. 12] (apud Kraft). Cf. Warji ygaygdn-na	
+1	nominal	84	1	*gVn-	cheek-bone; chin; parts of face	6	Chad.	W.		Siri	ygamaygama		jaw		shared_gloss
+1	nominal	84	1	*gVn-	cheek-bone; chin; parts of face	6	Chad.	W.		Diri	ygaygam		jaw	[Skinner 27] reconstructed as *ygam-	
+1	nominal	84	1	*gVn-	cheek-bone; chin; parts of face	6	Chad.	W.		Diri	probably	< *nV-gangan-			lang_inherited
+1	nominal	84	1	*gVn-	cheek-bone; chin; parts of face	6	Chad.	W.		Diri	with	a reduplication and dissimilation of > -m.			lang_inherited
+1	nominal	84	1	*gVn-	cheek-bone; chin; parts of face	6	Chad.	E.		Lame	gini		cheeks		shared_gloss
+1	nominal	84	1	*gVn-	cheek-bone; chin; parts of face	6	Chad.	E.		Lame	ngyen	(Peve)	cheeks	[Bla. Bed. 12] (apud Kraft)	
+1	nominal	84	1	*gVn-	cheek-bone; chin; parts of face	6	Chad.	E.		Lame	Mubigin		Stirn	[ibid. 12] (apud Lukas)	lang_inherited
+1	nominal	86	1	*gVnVh-	arm/leg; wing	2	Egyp.				dnh	(Pyr.)	Flugel	[EG V 577]	
+1	nominal	86	1	*gVnVh-	arm/leg; wing	2	Egyp.				(18	Dyn.)	Bein oder Teil des- selben	[ibid. 578]	
+1	nominal	90	1	*gVrVb-	body; chest; stomach, viscera	4	Cush.	C.		Bilin	gerob		Gestalt, Leib, Korper		shared_gloss
+1	nominal	90	1	*gVrVb-	body; chest; stomach, viscera	4	Cush.	C.		Bilin	gerof	pi.	Gestalt, Leib, Korper	[Rein. Bilin 159] (unless < Tgr.)	lang_inherited
+1	nominal	90	1	*gVrVb-	body; chest; stomach, viscera	4	Cush.	E.		Afar Saho	garba		Bauch, Magen, Eingeweide, Herz	[Rein. Afar 852] (semantics broader than in Tgr. or Zwy. speaks against bor- rowing from Eth.)	
+1	nominal	90	1	*gVrVb-	body; chest; stomach, viscera	6	Chad.	W.		Miya	garabu		chest	[Skinner 15]	
+1	nominal	123	1	*hann-	genital organ	2	Egyp.				hnn	(Pyr.)	Phallus	[EG III 115]	
+1	nominal	123	1	*hann-	genital organ	4	Cush.	E.		Somali	hinin		testicles	[Abr. Som. 121]	
+1	nominal	146	1	*ka/inpa/ir-	lip; snout, muzzle	3	Berb.				*-kdnfi/ur:	Ntifa a-kdnfur	museau, gueule, groin	[Laoust MCB 110]. Cf. a variant root in Ahaggar akdnbur 'petite excroissance de chair sur le nez' [Fouc. 827]	
+1	nominal	146	1	*ka/inpa/ir-	lip; snout, muzzle	4	Cush.	C.		Bilin	kanfar		Lippe		shared_gloss
+1	nominal	146	1	*ka/inpa/ir-	lip; snout, muzzle	4	Cush.	C.		Quara	kanpar		Lippe		shared_gloss
+1	nominal	146	1	*ka/inpa/ir-	lip; snout, muzzle	4	Cush.	C.		Khamir	kifir		Lippe	[Rein. Bilin 224]	
+1	nominal	146	1	*ka/inpa/ir-	lip; snout, muzzle	4	Cush.	C.		Aungi	kemper	lip'		[Ehr. PCR 90]	quote_garbled
+1	nominal	146	1	*ka/inpa/ir-	lip; snout, muzzle	4	Cush.	E.		Saho	kamfdr		muzzle	[OS 312]	
+1	nominal	146	1	*ka/inpa/ir-	lip; snout, muzzle	4	Cush.	E.		Yaaku	kemper	lip'		[Ehr. PCR 90]	quote_garbled
+1	nominal	164	1	*kapay-	occiput, back of the head	3	Berb.				*i-yafi	'head': Ahaggar eydf		[Fouc. 1700]	quote_garbled
+1	nominal	164	1	*kapay-	occiput, back of the head	3	Berb.			Ayr E. Wlm.	eydf			[Aloj. 65]	
+1	nominal	164	1	*kapay-	occiput, back of the head	3	Berb.			Siwa	ahfi				
+1	nominal	164	1	*kapay-	occiput, back of the head	3	Berb.			Nfs.	iyaf			[Laoust Siwa 301]	
+1	nominal	164	1	*kapay-	occiput, back of the head	3	Berb.			Nfs.	etc.				lang_inherited
+1	nominal	164	1	*kapay-	occiput, back of the head	6	Chad.	E.			Dangla^o		occiput		shared_gloss
+1	nominal	164	1	*kapay-	occiput, back of the head	6	Chad.	E.		Migama	kupo		occiput		shared_gloss
+1	nominal	164	1	*kapay-	occiput, back of the head	6	Chad.	E.		Jegu	kofo		occiput	[OS 337]	
+1	nominal	166	1	*kVrd-	back of neck	3	Berb.				*kzrd-		neck': Ayr E. Wlm. ti-yzrd-en (f. pi.) 'partie du corps situee en-dessous du cou et entre les deux omoplates	[Aloj. 71]. Cf. also *a(m)-gVrd/d: Qabyle a-gwdrd 'encolure, col'	
+1	nominal	166	1	*kVrd-	back of neck	3	Berb.				amgdrd		cou, nuque	[Dallet 273]	
+1	nominal	166	1	*kVrd-	back of neck	3	Berb.			Semlal	ammgerd		cou	[Dest. Tach. 77]	
+1	nominal	166	1	*kVrd-	back of neck	3	Berb.			Semlal	etc.		back of neck		lang_inherited;shared_gloss
+1	nominal	166	1	*kVrd-	back of neck	3	Berb.			Semlal	a	variant root? Cf. Sem. *gar(i)d-	back of neck	(No. 92)	lang_inherited
+1	nominal	181	1	*lis-	tongue	2	Egyp.				ns	(Pyr.)		[EG II 320]	
+1	nominal	181	1	*lis-	tongue	2	Egyp.			Copt.	*lsy(<lisy-?)			[Vycichl DELC 99]	
+1	nominal	181	1	*lis-	tongue	3	Berb.				*Hi-lis-:	Siwa ihs		[Laoust Siwa 251]	
+1	nominal	181	1	*lis-	tongue	3	Berb.			Ahaggar	ihs			[Fouc. 1124]	
+1	nominal	181	1	*lis-	tongue	3	Berb.			Semlal	lis			[Dest. Tach. 166]	
+1	nominal	181	1	*lis-	tongue	3	Berb.			Semlal	etc.				lang_inherited
+1	nominal	181	1	*lis-	tongue	6	Chad.				His-			[Dolg. BP 269]	
+1	nominal	205	1	*pu?ad-	heart, lung	4	Cush.	N.		Beja	fawad		Lunge	[Rein. Bed. 85] (according to Reinisch, from Arb. which would be very likely if not for the fact that the meaning 'lung' is peripheral in Arb.)	uncertain
+1	nominal	205	1	*pu?ad-	heart, lung	4	Cush.	E.		Afar Saho	aftado		Herz	[Rein. Afar 804] (strangely interpreted by Reinisch as af-^ado 'Mund-Weisse'; stem with the ?a-prefix? Note in place of the expected -?-)	
+1	nominal	205	1	*pu?ad-	heart, lung	6	Chad.	W.		Sura	puut		heart		shared_gloss
+1	nominal	205	1	*pu?ad-	heart, lung	6	Chad.	W.		Angas	put		heart	^contraction from *puwad-») [OS 431]	
+1	nominal	205	1	*pu?ad-	heart, lung	6	Chad.	E.		Somray	pdddpddd		lungs		shared_gloss
+1	nominal	205	1	*pu?ad-	heart, lung	6	Chad.	E.		Tumak	podpod		lungs		shared_gloss
+1	nominal	205	1	*pu?ad-	heart, lung	6	Chad.	E.		Ndam	pdt-pdt		lungs	(< *pwad- pwad-, redupl.) [ibid.]	
+1	nominal	210	1	*pVhVl-	thigh	6	Chad.	W.			Angaspydl		thigh	[OS 414]	
+1	nominal	210	1	*pVhVl-	thigh	6	Chad.	C.			Dabapoxol		leg, thigh	[ibid.]	
+1	nominal	216	1	*pand-Vt-	back part, podex, thigh	4	Cush.	S.		Iraqw	panda		abnormal backward extension of skull	[Ehr. HRSC 339]	
+1	nominal	216	1	*pand-Vt-	back part, podex, thigh	6	Chad.	W.			*punda:	Dera pundo	thigh		shared_gloss
+1	nominal	216	1	*pand-Vt-	back part, podex, thigh	6	Chad.	W.		Krkr.	fintau		thigh		shared_gloss
+1	nominal	216	1	*pand-Vt-	back part, podex, thigh	6	Chad.	W.		Kirfi	fdndo		thigh		shared_gloss
+1	nominal	216	1	*pand-Vt-	back part, podex, thigh	6	Chad.	W.		Galambu	pmda		thigh		shared_gloss
+1	nominal	216	1	*pand-Vt-	back part, podex, thigh	6	Chad.	W.		Galambu	etc.		thigh	[Stolb. 1996 21]	lang_inherited
+1	nominal	216	1	*pand-Vt-	back part, podex, thigh	6	Chad.	C.			*fud-:	Bokafudd-td			
+1	nominal	216	1	*pand-Vt-	back part, podex, thigh	6	Chad.	C.			etc.	id. [ibid.].			
+1	nominal	216	1	*pand-Vt-	back part, podex, thigh	6	Chad.	E.			Jegupaado				
+1	nominal	216	1	*pand-Vt-	back part, podex, thigh	6	Chad.	E.			Mubifundi				
+1	nominal	216	1	*pand-Vt-	back part, podex, thigh	6	Chad.	E.			etc.	id. [ibid.].			
+1	nominal	224	1	*wVray/?-	lung	3	Berb.				*ta-wray	lung': Ahaggar t-aruri [Fouc. 1558] (< *ta-wrawray, with redupl.)			quote_garbled
+1	nominal	224	1	*wVray/?-	lung	3	Berb.			Ghadames	t-ura				
+1	nominal	224	1	*wVray/?-	lung	3	Berb.			Ghadames	t-uraw-in	pi.		[Lanfry 301]	lang_inherited
+1	nominal	224	1	*wVray/?-	lung	3	Berb.			Qabyle	t-ure-c			[Dallet 697]	
+1	nominal	224	1	*wVray/?-	lung	3	Berb.			Ntifa	t-uri-n	(pi.)		[Laoust MCB 120]	
+1	nominal	224	1	*wVray/?-	lung	3	Berb.			Zenaga	t-u?r-an	(pi. without sg.)		[Nic. 439]	
+1	nominal	224	1	*wVray/?-	lung	6	Chad.	C.		Logone	werwer	(redupl.) lungs' [OS 36] (differently compared [ibid.], cf. in *?ir(r)-at-	chest, breast	, No. 9)	
+1	nominal	235	1	*Si/anp-	lung	4	Cush.	N.		Beja	sambut	lung'		[Huds. 96]	quote_garbled
+1	nominal	235	1	*Si/anp-	lung	4	Cush.	N.		Beja	(Amar'ar)	sanbut		[Dolg. SIFKY 94]	lang_inherited;quote_garbled
+1	nominal	235	1	*Si/anp-	lung	4	Cush.	C.		Bilin	sanbt				
+1	nominal	235	1	*Si/anp-	lung	4	Cush.	C.		Bilin	sanfuf	pi.			lang_inherited
+1	nominal	235	1	*Si/anp-	lung	4	Cush.	C.		Quara	samba			[Rein. Bilin 306—7]	
+1	nominal	235	1	*Si/anp-	lung	4	Cush.	C.		Khamir	sdbba				
+1	nominal	235	1	*Si/anp-	lung	4	Cush.	C.		Kemant	samba				
+1	nominal	235	1	*Si/anp-	lung	4	Cush.	C.		Aungi	samb(i)			[Appl. Agaw 38]	
+1	nominal	235	1	*Si/anp-	lung	4	Cush.	E.		Somali	sambab			[Abr. Som. 216]	
+1	nominal	235	1	*Si/anp-	lung	4	Cush.	E.		Oromo	somba			[Gragg Oromo 362]	
+1	nominal	235	1	*Si/anp-	lung	4	Cush.	E.		Qabenna	sombu				
+1	nominal	235	1	*Si/anp-	lung	4	Cush.	E.		Sidamo	sombo				
+1	nominal	235	1	*Si/anp-	lung	4	Cush.	E.		Sidamo	Darasasomfo)			[LGur. 546]	lang_inherited
+1	nominal	235	1	*Si/anp-	lung	5	Omot.			Mocha	sombo			[LMoca 50]	
+1	nominal	235	1	*Si/anp-	lung	5	Omot.			Mocha	Kaffasombo			[Cer. IV 497]	lang_inherited
+1	nominal	235	1	*Si/anp-	lung	5	Omot.			Ometo: Dawaro	senfo		heart		
+1	nominal	235	1	*Si/anp-	lung	5	Omot.			Ometo: Dawaro	Maiesempi		soul	[Dolg. SIFKY 94]	lang_inherited
+1	nominal	248	1	*sim-an-	melted fat, butter, oil	2	Egyp.				smy	(Med.)	fette Milch, Sahne	[EG IV 130]	
+1	nominal	248	1	*sim-an-	melted fat, butter, oil	3	Berb.			Ahaggar	esim		graisse fondu	[Fouc. 1835]	
+1	nominal	248	1	*sim-an-	melted fat, butter, oil	3	Berb.			Ghat	isim		graisse (de tout animal)	[Nehlil 165]	
+1	nominal	248	1	*sim-an-	melted fat, butter, oil	3	Berb.			Qabyle	ta-ssdm-t		graisse animal	[Dallet 778]	
+1	nominal	248	1	*sim-an-	melted fat, butter, oil	4	Cush.	N.		Beja	simuum		suet, fatty covering of kidneys	[Bla. Bed. 24] (apud Roper)	
+1	nominal	248	1	*sim-an-	melted fat, butter, oil	6	Chad.	W.		Diri	sinama	[Skinner 34] (metath. < *siman-).			
+1	nominal	248	1	*sim-an-	melted fat, butter, oil	6	Chad.	E.		Sokoro	sunne		melted butter	(< *sumne, according to [Stolb. 1996 135], i. e. metath.)	
+1	nominal	296	1	*jVm-	blood	5	Omot.			Dime	z/jumu		blood taken from an ox		
+1	nominal	296	1	*jVm-	blood	5	Omot.			Baka	zomH		blood		shared_gloss
+1	nominal	296	1	*jVm-	blood	5	Omot.			Hamer	zumH		blood		shared_gloss
+1	nominal	296	1	*jVm-	blood	5	Omot.			Ari	zomH		blood		shared_gloss
+1	nominal	296	1	*jVm-	blood	5	Omot.			Ari	zom		blood	[Bla. Om. 8]	lang_inherited
+1	nominal	296	1	*jVm-	blood	6	Chad.	W.			*jayam-		blood	[Stolb. 1987 190]: Montol siyim	
+1	nominal	296	1	*jVm-	blood	6	Chad.	W.		Gerka	syem				
+1	nominal	296	1	*jVm-	blood	6	Chad.	W.		Galambu	jaamd	(3 < Kulere zom.			
+1	nominal	296	1	*jVm-	blood	6	Chad.	C.		Daba	zemi		vein	[Bla. Om. 8] (apud Kraft; semantically and phonetically obscure)	uncertain

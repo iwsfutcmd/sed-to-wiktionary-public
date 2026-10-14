@@ -15,6 +15,9 @@ Reconstructed Proto-Semitic forms extracted from Militarev & Kogan, *Semitic Ety
   - Columns: `vol, section, no` (join key to the reconstruction tables), `branch` (the `[1]`-`[9]` group number as printed), `lang` (SED siglum, e.g. `Arb.`, `Gog. Sod.`), `form`, `note` (qualifier after the form, e.g. `(redupl.)`), `gloss`, `ref` (bibliographic reference as printed), `flags`.
   - `flags`: `uncertain` (`(?)` before the siglum), `cf` (`Cf.`), `shared_gloss` (gloss given once after a comma-run of forms, copied to each), `quote_garbled` (an opening or closing quote was lost in OCR, so form/gloss/ref boundaries are unreliable: check against the page).
   - **Forms are raw text-layer OCR, not normalised**: diacritics are lost or garbled and glottals appear as `?`, `H`, `f` etc. (ʔ/ʕ were only recovered for the reconstructions, from image crops). Treat them as search keys for locating the form on the page, not as transcriptions. Roughly 10% of rows carry `quote_garbled`; rows may also be missing where a line was mis-segmented. Not yet extracted: the Afro-Asiatic comparanda.
+- `data/vol1/sed_vol1_afras.tsv` (233 rows, 33 `Afras.` sub-entries), `data/vol2/sed_vol2_afras.tsv` (1,122 rows, 79 sub-entries) and the concatenation `data/sed_vol1_vol2_afras.tsv`: the **Afro-Asiatic comparanda** (Egyptian, Berber, Chadic, Cushitic, Omotic) cited under each reconstruction.
+  - Columns: `vol, section, no` (join key), `afras_no` (an entry can have several `Afras.` sub-entries), `afras_protoform`, `afras_gloss`, `branch` (printed `[n]`; the numbering differs between volumes, use `family`), `family`, `subgroup` (N./S./E./W./C., `?` if printed `(?)`), `subgroup_proto` (a sub-group reconstruction such as `*?VrVw-`), `lang`, `form`, `note`, `gloss`, `ref`, `flags` (as for reflexes, plus `lang_inherited`: no language given, previous one assumed).
+  - Same OCR caveats as the reflexes, and language/form boundaries are guessed (leading capitalised words = language name), so some rows have prose fragments in `form`/`note`. The `Sem.` line of each sub-entry is skipped.
 
 ## Method and limits
 Matching is on the form only, after folding spelling variants (ʔ/ʾ, ʕ/ʿ, ḏ/ð, ṯ/θ, ḳ/q), expanding `(optional)` material and `a/b` alternations. A word may exist on Wiktionary under a different reconstruction. Ten entries have glyphs flagged "to verify" (see `docs/notation-and-verification-notes.md` and the browser page).
@@ -45,6 +48,7 @@ Regenerating the intermediates from the books needs `pdf/vol1.pdf` and `pdf/vol2
 | heading positions | `make heads-1 heads-2` | `data/intermediate/heads_vN.json` (verified identical to the committed files) |
 | glottal calls | `make glot-1 glot-2` | `data/intermediate/glot_vN.json` (hook-direction classifier, threshold 4; verified identical to the committed files) |
 | Semitic reflexes | `make reflexes-1 reflexes-2` | `data/volN/sed_volN_reflexes.tsv` and the concatenation (needs only poppler; not part of plain `make`) |
+| Afro-Asiatic comparanda | `make afras-1 afras-2` | `data/volN/sed_volN_afras.tsv` and the concatenation |
 | crops for reading | `make crops-1 crops-2` | `build/vN/crops/batch_NN.png` |
 
 The step in between is **manual**: forms and glosses in `data/intermediate/raw_v*_*.tsv` (`n<TAB>form<TAB>gloss`, with `Q` marking each glottal) were transcribed by eye from the batch crops, because the PDFs' OCR text layer garbles diacritics. `glot_vN.json` fills the `Q` slots; the four glottals the classifier left empty (1N205, 1N243, 1V37, 1V62) are set by hand in `scripts/paths.py`.
