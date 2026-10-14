@@ -33,7 +33,7 @@ make titles     # refresh data/wiktionary/*.json from the MediaWiki API (network
 ```
 `make` rebuilds `data/**/*.tsv`, `data/intermediate/sed_all.{json,tsv}` and `site/index.html` byte-identically to what is committed (checked).
 
-Regenerating the intermediates from the books needs `pdf/vol1.pdf` and `pdf/vol2.pdf` (git-ignored; poppler-utils, Pillow, OpenCV, SciPy required):
+Regenerating the intermediates from the books needs `pdf/vol1.pdf` and `pdf/vol2.pdf` (the SED scans, tracked in this private repo; poppler-utils, Pillow, OpenCV, SciPy required):
 
 | step | command | produces |
 |---|---|---|

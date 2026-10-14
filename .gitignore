@@ -1,5 +1,3 @@
-*.pdf
-*.png
-__pycache__/
-pdf/
 build/
+__pycache__/
+*.pyc
