@@ -15,7 +15,7 @@ vol	section	no	afras_no	afras_protoform	afras_gloss	branch	family	subgroup	subgr
 1	nominal	7	1	*(?Vn-)gur-	or *(?Vn-)gwir- 'knee; foot	6	Chad.	C.		Musgu	yguygore			[Muk. 17]	
 1	nominal	7	1	*(?Vn-)gur-	or *(?Vn-)gwir- 'knee; foot	6	Chad.	E.		Keragigir	(redupl.,	cf. Sokoro gorungorundu) [ibid.].			
 1	nominal	9	1	*?Vr(r)-,	*war(r)- 'chest; belly, stomach	3	Berb.			E. Wlm.	a-haror		poitrine	[Aloj. 80] (h- < *?-})	cf
-1	nominal	9	1	*?Vr(r)-,	*war(r)- 'chest; belly, stomach	3	Berb.			E. Wlm.	also	*ta- wray	lung	in *ri?(-at)- 'lung'	cf;lang_inherited
+1	nominal	9	1	*?Vr(r)-,	*war(r)- 'chest; belly, stomach	3	Berb.			E. Wlm.	also	*ta- wray	lung	in *ri?(-at)- 'lung'	cf;lang_inherited;prose
 1	nominal	9	1	*?Vr(r)-,	*war(r)- 'chest; belly, stomach	3	Berb.			No.	224.				
 1	nominal	9	1	*?Vr(r)-,	*war(r)- 'chest; belly, stomach	4	Cush.	N.		Beja	aror		Schoss	[Rein. Bed. 30] (cf. [Bla. Bed. 3—4])	
 1	nominal	9	1	*?Vr(r)-,	*war(r)- 'chest; belly, stomach	4	Cush.	E.		Somali	iiur		stomach		shared_gloss
@@ -27,7 +27,7 @@ vol	section	no	afras_no	afras_protoform	afras_gloss	branch	family	subgroup	subgr
 1	nominal	9	1	*?Vr(r)-,	*war(r)- 'chest; belly, stomach	6	Chad.	C.		Musgu	warn		belly		shared_gloss
 1	nominal	9	1	*?Vr(r)-,	*war(r)- 'chest; belly, stomach	6	Chad.	C.		Mbara	war		belly		
 1	nominal	9	1	*?Vr(r)-,	*war(r)- 'chest; belly, stomach	6	Chad.	C.		Musgu	ur-ni		stomach	[OS 36]	
-1	nominal	9	1	*?Vr(r)-,	*war(r)- 'chest; belly, stomach	6	Chad.	E.		Jegu	?urre'navel'			[OS 36]	quote_garbled
+1	nominal	9	1	*?Vr(r)-,	*war(r)- 'chest; belly, stomach	6	Chad.	E.		Jegu	?urre		navel	[OS 36]	
 1	nominal	10	1	*?/wiray/w-	back	3	Berb.				*(H)Vr(r)aw	'back': Ahaggar a-ruri	dos		quote_garbled;shared_gloss
 1	nominal	10	1	*?/wiray/w-	back	3	Berb.				i-ruriaw-dn	pi. [Fouc. 160] (< *rawray, redupl.)	dos		shared_gloss
 1	nominal	10	1	*?/wiray/w-	back	3	Berb.			Siwa	drrau		dos	[Laoust Siwa 228]	
@@ -58,15 +58,15 @@ vol	section	no	afras_no	afras_protoform	afras_gloss	branch	family	subgroup	subgr
 1	nominal	32	1	*ba/ud-	(back of) thorax; shoulder with arm	4	Cush.	E.		Sidamo Hadiya	buda		arm	[Bla. Om. 6] (apud Cerulli)	
 1	nominal	32	1	*ba/ud-	(back of) thorax; shoulder with arm	5	Omot.			Ari-Jinka	bud		upper back, back of thorax	[ibid.] (apud Bender)	
 1	nominal	32	1	*ba/ud-	(back of) thorax; shoulder with arm	6	Chad.	E.		Tumak	bed		arm	[ibid.] (apud Caprile)	
-1	nominal	32	1	*ba/ud-	(back of) thorax; shoulder with arm	6	Chad.	E.		Ndam	bad	id. [ibid.] (apud Stolbova).			
+1	nominal	32	1	*ba/ud-	(back of) thorax; shoulder with arm	6	Chad.	E.		Ndam	bad	(apud Stolbova).	id.	[ibid.]	
 1	nominal	33	1	*bVhak/k-	a skin disease	4	Cush.	E.			*bV(H)ak-/k-:	Afar Saho biake	Wunde		shared_gloss
 1	nominal	33	1	*bVhak/k-	a skin disease	4	Cush.	E.			biyok	pi.	Wunde	[Rein. Afar 833] (given as biak 'illness' in [Sasse PEC 53], apud [Black 210])	
 1	nominal	33	1	*bVhak/k-	a skin disease	4	Cush.	E.		Somali	buk-		to become ill	[Abr. Som. 35]	
 1	nominal	33	1	*bVhak/k-	a skin disease	4	Cush.	E.		Boni	bus-i-				
 1	nominal	33	1	*bVhak/k-	a skin disease	4	Cush.	E.		Burji	buk-	(or buuk-)			
 1	nominal	33	1	*bVhak/k-	a skin disease	4	Cush.	E.		Konso	paaq-	id. [Sasse Burji 42] (Sasse accounts for an ir- regular correspondence of Somali k ~ Konso q by a tentative re- construction of the shape *bV?k- [Sasse PEC 53], supporting this reconstruction by the Burji word		[Sasse Burji 42])	
-1	nominal	33	1	*bVhak/k-	a skin disease	5	Omot.			Kaffa	biccoTuruncolo'	[Cer. IV 410] (-cc- < *-M-?)			uncertain;quote_garbled
-1	nominal	33	1	*bVhak/k-	a skin disease	5	Omot.			Mocha	biygo	id. [LMoca 22] (compared by Leslau with the Kaffa form) < *bink/k-? Cf. Bworo bakeenta Tsetsefliege' [Lamb. Shin. 283] (un- convincingly compared [ibid.] with Cush. forms like Baiso teeken-).			quote_garbled
+1	nominal	33	1	*bVhak/k-	a skin disease	5	Omot.			Kaffa	biccoTuruncolo'	(-cc- < *-M-?)		[Cer. IV 410]	uncertain;quote_garbled
+1	nominal	33	1	*bVhak/k-	a skin disease	5	Omot.			Mocha	biygo	(compared by Leslau with the Kaffa form) < *bink/k-? Cf. Bworo bakeenta Tsetsefliege' [Lamb. Shin. 283] (un- convincingly compared [ibid.] with Cush. forms like Baiso teeken-).	id.	[LMoca 22]	
 1	nominal	33	1	*bVhak/k-	a skin disease	6	Chad.	C.		Bachama	boke		ulcer	[Skinner 47] (probably < *bVk-, see [Stolb. 1996 24] on *bVk < *bVk in Chad.)	
 1	nominal	35	1	*bVh-	phallus	2	Egyp.				bih		das mannliche Glied	[EG I 419]	
 1	nominal	35	1	*bVh-	phallus	3	Berb.				*-bi/ubb(VH)-		penis	(redupl. < *bVhbVh-?): Ntifa a-bubbu [La- oust MCB 116]	
@@ -98,7 +98,7 @@ vol	section	no	afras_no	afras_protoform	afras_gloss	branch	family	subgroup	subgr
 1	nominal	71	1	*(ra-)gVd(-Vm)-	limb	4	Cush.	E.		Afar Saho	agada		Arm		shared_gloss
 1	nominal	71	1	*(ra-)gVd(-Vm)-	limb	4	Cush.	E.		Afar Saho	agud	pi.	Arm	[Rein. Afar 805]	lang_inherited
 1	nominal	71	1	*(ra-)gVd(-Vm)-	limb	4	Cush.	E.		Burji	gudum-a		shoulder	[Sasse Burji 85]	
-1	nominal	71	1	*(ra-)gVd(-Vm)-	limb	4	Cush.	E.		Hadiya	gudum-o	id. [ibid.] (the two latter forms with suffixed -m)	upper part of arm		shared_gloss
+1	nominal	71	1	*(ra-)gVd(-Vm)-	limb	4	Cush.	E.		Hadiya	gudum-o	(the two latter forms with suffixed -m)	id.	[ibid.]	
 1	nominal	71	1	*(ra-)gVd(-Vm)-	limb	4	Cush.	E.		Hadiya	angwoda		upper part of arm		lang_inherited;shared_gloss
 1	nominal	71	1	*(ra-)gVd(-Vm)-	limb	4	Cush.	E.		Tambaro	angata		upper part of arm		
 1	nominal	71	1	*(ra-)gVd(-Vm)-	limb	4	Cush.	E.		Darasa	agoda		shoulder	[LGur. 28]	
@@ -108,8 +108,8 @@ vol	section	no	afras_no	afras_protoform	afras_gloss	branch	family	subgroup	subgr
 1	nominal	71	1	*(ra-)gVd(-Vm)-	limb	6	Chad.	E.		Somray	gtdam		foot	[Bla. Om. 14] (with suffixed -m)	
 1	nominal	77	1	*galb-	(piece of) skin	4	Cush.	E.		Afar	galabo		Haut, Fell	[Rein. Afar 850] (hardly from Arb. yulbat- as Reinisch assumes, which is too different both semantically and formally)	
 1	nominal	77	1	*galb-	(piece of) skin	5	Omot.			Ometo	galba	(Chara)	pelle	[Cer. Ill 168]	
-1	nominal	77	1	*galb-	(piece of) skin	5	Omot.			Ometo	(Wolamo,	Dache) galba			lang_inherited
-1	nominal	77	1	*galb-	(piece of) skin	5	Omot.			Ometo	gdVba'skin'	(Dorse)		[Bla. Om. 26]	lang_inherited;quote_garbled
+1	nominal	77	1	*galb-	(piece of) skin	5	Omot.			Ometo	(Wolamo,	Dache) galba	skin		lang_inherited;shared_gloss
+1	nominal	77	1	*galb-	(piece of) skin	5	Omot.			Ometo	gdVba	(Dorse)	skin	[Bla. Om. 26]	lang_inherited
 1	nominal	81	1	*gam(m)-	long hair, mane	2	Egyp.				gmh.t	(Sarg.)	Locke oder Flechte; Schlafe	[EG V 171] (-h remains unexplained; according to [Tak.], a common Afras. affix forming names of body parts)	
 1	nominal	81	1	*gam(m)-	long hair, mane	4	Cush.	C.		Kemant	gama		criniere	[Conti Rossini 197]	
 1	nominal	81	1	*gam(m)-	long hair, mane	4	Cush.	C.		Khamir	gami		mane	[Rein. Bilin 152]	
@@ -132,8 +132,8 @@ vol	section	no	afras_no	afras_protoform	afras_gloss	branch	family	subgroup	subgr
 1	nominal	84	1	*gVn-	cheek-bone; chin; parts of face	6	Chad.	W.		Gera	geni		face	[Bla. Bed. 12] (apud Kraft). Cf. Warji ygaygdn-na	
 1	nominal	84	1	*gVn-	cheek-bone; chin; parts of face	6	Chad.	W.		Siri	ygamaygama		jaw		shared_gloss
 1	nominal	84	1	*gVn-	cheek-bone; chin; parts of face	6	Chad.	W.		Diri	ygaygam		jaw	[Skinner 27] reconstructed as *ygam-	
-1	nominal	84	1	*gVn-	cheek-bone; chin; parts of face	6	Chad.	W.		Diri	probably	< *nV-gangan-			lang_inherited
-1	nominal	84	1	*gVn-	cheek-bone; chin; parts of face	6	Chad.	W.		Diri	with	a reduplication and dissimilation of > -m.			lang_inherited
+1	nominal	84	1	*gVn-	cheek-bone; chin; parts of face	6	Chad.	W.		Diri	probably	< *nV-gangan-			lang_inherited;prose
+1	nominal	84	1	*gVn-	cheek-bone; chin; parts of face	6	Chad.	W.		Diri	with	a reduplication and dissimilation of > -m.			lang_inherited;prose
 1	nominal	84	1	*gVn-	cheek-bone; chin; parts of face	6	Chad.	E.		Lame	gini		cheeks		shared_gloss
 1	nominal	84	1	*gVn-	cheek-bone; chin; parts of face	6	Chad.	E.		Lame	ngyen	(Peve)	cheeks	[Bla. Bed. 12] (apud Kraft)	
 1	nominal	84	1	*gVn-	cheek-bone; chin; parts of face	6	Chad.	E.		Lame	Mubigin		Stirn	[ibid. 12] (apud Lukas)	lang_inherited
@@ -164,7 +164,7 @@ vol	section	no	afras_no	afras_protoform	afras_gloss	branch	family	subgroup	subgr
 1	nominal	166	1	*kVrd-	back of neck	3	Berb.				amgdrd		cou, nuque	[Dallet 273]	
 1	nominal	166	1	*kVrd-	back of neck	3	Berb.			Semlal	ammgerd		cou	[Dest. Tach. 77]	
 1	nominal	166	1	*kVrd-	back of neck	3	Berb.			Semlal	etc.		back of neck		lang_inherited;shared_gloss
-1	nominal	166	1	*kVrd-	back of neck	3	Berb.			Semlal	a	variant root? Cf. Sem. *gar(i)d-	back of neck	(No. 92)	lang_inherited
+1	nominal	166	1	*kVrd-	back of neck	3	Berb.			Semlal	a	variant root? Cf. Sem. *gar(i)d-	back of neck	(No. 92)	lang_inherited;prose
 1	nominal	181	1	*lis-	tongue	2	Egyp.				ns	(Pyr.)		[EG II 320]	
 1	nominal	181	1	*lis-	tongue	2	Egyp.			Copt.	*lsy(<lisy-?)			[Vycichl DELC 99]	
 1	nominal	181	1	*lis-	tongue	3	Berb.				*Hi-lis-:	Siwa ihs		[Laoust Siwa 251]	
@@ -187,11 +187,11 @@ vol	section	no	afras_no	afras_protoform	afras_gloss	branch	family	subgroup	subgr
 1	nominal	216	1	*pand-Vt-	back part, podex, thigh	6	Chad.	W.		Kirfi	fdndo		thigh		shared_gloss
 1	nominal	216	1	*pand-Vt-	back part, podex, thigh	6	Chad.	W.		Galambu	pmda		thigh		shared_gloss
 1	nominal	216	1	*pand-Vt-	back part, podex, thigh	6	Chad.	W.		Galambu	etc.		thigh	[Stolb. 1996 21]	lang_inherited
-1	nominal	216	1	*pand-Vt-	back part, podex, thigh	6	Chad.	C.			*fud-:	Bokafudd-td			
-1	nominal	216	1	*pand-Vt-	back part, podex, thigh	6	Chad.	C.			etc.	id. [ibid.].			
-1	nominal	216	1	*pand-Vt-	back part, podex, thigh	6	Chad.	E.			Jegupaado				
-1	nominal	216	1	*pand-Vt-	back part, podex, thigh	6	Chad.	E.			Mubifundi				
-1	nominal	216	1	*pand-Vt-	back part, podex, thigh	6	Chad.	E.			etc.	id. [ibid.].			
+1	nominal	216	1	*pand-Vt-	back part, podex, thigh	6	Chad.	C.			*fud-:	Bokafudd-td	id.		shared_gloss
+1	nominal	216	1	*pand-Vt-	back part, podex, thigh	6	Chad.	C.			etc.	.	id.	[ibid.]	
+1	nominal	216	1	*pand-Vt-	back part, podex, thigh	6	Chad.	E.			Jegupaado		id.		shared_gloss
+1	nominal	216	1	*pand-Vt-	back part, podex, thigh	6	Chad.	E.			Mubifundi		id.		shared_gloss
+1	nominal	216	1	*pand-Vt-	back part, podex, thigh	6	Chad.	E.			etc.	.	id.	[ibid.]	
 1	nominal	224	1	*wVray/?-	lung	3	Berb.				*ta-wray	lung': Ahaggar t-aruri [Fouc. 1558] (< *ta-wrawray, with redupl.)			quote_garbled
 1	nominal	224	1	*wVray/?-	lung	3	Berb.			Ghadames	t-ura				
 1	nominal	224	1	*wVray/?-	lung	3	Berb.			Ghadames	t-uraw-in	pi.		[Lanfry 301]	lang_inherited
@@ -221,7 +221,7 @@ vol	section	no	afras_no	afras_protoform	afras_gloss	branch	family	subgroup	subgr
 1	nominal	248	1	*sim-an-	melted fat, butter, oil	3	Berb.			Ghat	isim		graisse (de tout animal)	[Nehlil 165]	
 1	nominal	248	1	*sim-an-	melted fat, butter, oil	3	Berb.			Qabyle	ta-ssdm-t		graisse animal	[Dallet 778]	
 1	nominal	248	1	*sim-an-	melted fat, butter, oil	4	Cush.	N.		Beja	simuum		suet, fatty covering of kidneys	[Bla. Bed. 24] (apud Roper)	
-1	nominal	248	1	*sim-an-	melted fat, butter, oil	6	Chad.	W.		Diri	sinama	[Skinner 34] (metath. < *siman-).			
+1	nominal	248	1	*sim-an-	melted fat, butter, oil	6	Chad.	W.		Diri	sinama	(metath. < *siman-).		[Skinner 34]	
 1	nominal	248	1	*sim-an-	melted fat, butter, oil	6	Chad.	E.		Sokoro	sunne		melted butter	(< *sumne, according to [Stolb. 1996 135], i. e. metath.)	
 1	nominal	296	1	*jVm-	blood	5	Omot.			Dime	z/jumu		blood taken from an ox		
 1	nominal	296	1	*jVm-	blood	5	Omot.			Baka	zomH		blood		shared_gloss

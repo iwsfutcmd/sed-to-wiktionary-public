@@ -82,7 +82,16 @@ def parse_item(it, last_lang):
         lang = [last_lang] if last_lang else []
         if last_lang:
             fl.append('lang_inherited')
-    return ' '.join(lang), form, ' '.join(note), gloss, post.rstrip('.').strip(), fl
+    note = ' '.join(note)
+    mq = re.match(r"^([^'’‘]+?)['’‘]([^'’‘]+)['’]$", form)      # form and gloss run together: byk'Falke'
+    if mq and not gloss:
+        form, gloss = mq.group(1), mq.group(2)
+    mi = re.match(r'^(id\.)?\s*(\[[^\]]*\]|\([A-Z][^()]*\d[^()]*\))\s*(.*)$', note)   # 'id. [ref] comment' left in the note
+    if mi and not post:
+        gloss = gloss or (mi.group(1) or ''); post, note = mi.group(2), mi.group(3)
+    if form in ('<', 'with', 'an', 'a', 'the', 'also', 'probably', 'according', 'cf.', 'see', 'perhaps') or form.startswith('<'):
+        fl.append('prose')
+    return ' '.join(lang), form, note, gloss, post.rstrip('.').strip(), fl
 
 def parse_branch(num, text, afr):
     text = text.strip()
@@ -111,6 +120,8 @@ def parse_branch(num, text, afr):
             if not form:
                 continue
             lang = lg or lang
+            if form == 'id.' and rows and rows[-1]['subgroup'] == grp:     # 'Gejimaal id.': same form as the previous one
+                form = rows[-1]['form']; fl.append('form_id')
             r = dict(branch=num, family=fam, subgroup=grp, subgroup_proto=proto, lang=lg, form=form,
                      note=note, gloss=gloss, ref=ref, flags=list(fl))
             if "'" in (form + note + ref) and not gloss:

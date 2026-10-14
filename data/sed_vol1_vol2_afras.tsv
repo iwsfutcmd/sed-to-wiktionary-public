@@ -15,7 +15,7 @@ vol	section	no	afras_no	afras_protoform	afras_gloss	branch	family	subgroup	subgr
 1	nominal	7	1	*(?Vn-)gur-	or *(?Vn-)gwir- 'knee; foot	6	Chad.	C.		Musgu	yguygore			[Muk. 17]	
 1	nominal	7	1	*(?Vn-)gur-	or *(?Vn-)gwir- 'knee; foot	6	Chad.	E.		Keragigir	(redupl.,	cf. Sokoro gorungorundu) [ibid.].			
 1	nominal	9	1	*?Vr(r)-,	*war(r)- 'chest; belly, stomach	3	Berb.			E. Wlm.	a-haror		poitrine	[Aloj. 80] (h- < *?-})	cf
-1	nominal	9	1	*?Vr(r)-,	*war(r)- 'chest; belly, stomach	3	Berb.			E. Wlm.	also	*ta- wray	lung	in *ri?(-at)- 'lung'	cf;lang_inherited
+1	nominal	9	1	*?Vr(r)-,	*war(r)- 'chest; belly, stomach	3	Berb.			E. Wlm.	also	*ta- wray	lung	in *ri?(-at)- 'lung'	cf;lang_inherited;prose
 1	nominal	9	1	*?Vr(r)-,	*war(r)- 'chest; belly, stomach	3	Berb.			No.	224.				
 1	nominal	9	1	*?Vr(r)-,	*war(r)- 'chest; belly, stomach	4	Cush.	N.		Beja	aror		Schoss	[Rein. Bed. 30] (cf. [Bla. Bed. 3—4])	
 1	nominal	9	1	*?Vr(r)-,	*war(r)- 'chest; belly, stomach	4	Cush.	E.		Somali	iiur		stomach		shared_gloss
@@ -27,7 +27,7 @@ vol	section	no	afras_no	afras_protoform	afras_gloss	branch	family	subgroup	subgr
 1	nominal	9	1	*?Vr(r)-,	*war(r)- 'chest; belly, stomach	6	Chad.	C.		Musgu	warn		belly		shared_gloss
 1	nominal	9	1	*?Vr(r)-,	*war(r)- 'chest; belly, stomach	6	Chad.	C.		Mbara	war		belly		
 1	nominal	9	1	*?Vr(r)-,	*war(r)- 'chest; belly, stomach	6	Chad.	C.		Musgu	ur-ni		stomach	[OS 36]	
-1	nominal	9	1	*?Vr(r)-,	*war(r)- 'chest; belly, stomach	6	Chad.	E.		Jegu	?urre'navel'			[OS 36]	quote_garbled
+1	nominal	9	1	*?Vr(r)-,	*war(r)- 'chest; belly, stomach	6	Chad.	E.		Jegu	?urre		navel	[OS 36]	
 1	nominal	10	1	*?/wiray/w-	back	3	Berb.				*(H)Vr(r)aw	'back': Ahaggar a-ruri	dos		quote_garbled;shared_gloss
 1	nominal	10	1	*?/wiray/w-	back	3	Berb.				i-ruriaw-dn	pi. [Fouc. 160] (< *rawray, redupl.)	dos		shared_gloss
 1	nominal	10	1	*?/wiray/w-	back	3	Berb.			Siwa	drrau		dos	[Laoust Siwa 228]	
@@ -58,15 +58,15 @@ vol	section	no	afras_no	afras_protoform	afras_gloss	branch	family	subgroup	subgr
 1	nominal	32	1	*ba/ud-	(back of) thorax; shoulder with arm	4	Cush.	E.		Sidamo Hadiya	buda		arm	[Bla. Om. 6] (apud Cerulli)	
 1	nominal	32	1	*ba/ud-	(back of) thorax; shoulder with arm	5	Omot.			Ari-Jinka	bud		upper back, back of thorax	[ibid.] (apud Bender)	
 1	nominal	32	1	*ba/ud-	(back of) thorax; shoulder with arm	6	Chad.	E.		Tumak	bed		arm	[ibid.] (apud Caprile)	
-1	nominal	32	1	*ba/ud-	(back of) thorax; shoulder with arm	6	Chad.	E.		Ndam	bad	id. [ibid.] (apud Stolbova).			
+1	nominal	32	1	*ba/ud-	(back of) thorax; shoulder with arm	6	Chad.	E.		Ndam	bad	(apud Stolbova).	id.	[ibid.]	
 1	nominal	33	1	*bVhak/k-	a skin disease	4	Cush.	E.			*bV(H)ak-/k-:	Afar Saho biake	Wunde		shared_gloss
 1	nominal	33	1	*bVhak/k-	a skin disease	4	Cush.	E.			biyok	pi.	Wunde	[Rein. Afar 833] (given as biak 'illness' in [Sasse PEC 53], apud [Black 210])	
 1	nominal	33	1	*bVhak/k-	a skin disease	4	Cush.	E.		Somali	buk-		to become ill	[Abr. Som. 35]	
 1	nominal	33	1	*bVhak/k-	a skin disease	4	Cush.	E.		Boni	bus-i-				
 1	nominal	33	1	*bVhak/k-	a skin disease	4	Cush.	E.		Burji	buk-	(or buuk-)			
 1	nominal	33	1	*bVhak/k-	a skin disease	4	Cush.	E.		Konso	paaq-	id. [Sasse Burji 42] (Sasse accounts for an ir- regular correspondence of Somali k ~ Konso q by a tentative re- construction of the shape *bV?k- [Sasse PEC 53], supporting this reconstruction by the Burji word		[Sasse Burji 42])	
-1	nominal	33	1	*bVhak/k-	a skin disease	5	Omot.			Kaffa	biccoTuruncolo'	[Cer. IV 410] (-cc- < *-M-?)			uncertain;quote_garbled
-1	nominal	33	1	*bVhak/k-	a skin disease	5	Omot.			Mocha	biygo	id. [LMoca 22] (compared by Leslau with the Kaffa form) < *bink/k-? Cf. Bworo bakeenta Tsetsefliege' [Lamb. Shin. 283] (un- convincingly compared [ibid.] with Cush. forms like Baiso teeken-).			quote_garbled
+1	nominal	33	1	*bVhak/k-	a skin disease	5	Omot.			Kaffa	biccoTuruncolo'	(-cc- < *-M-?)		[Cer. IV 410]	uncertain;quote_garbled
+1	nominal	33	1	*bVhak/k-	a skin disease	5	Omot.			Mocha	biygo	(compared by Leslau with the Kaffa form) < *bink/k-? Cf. Bworo bakeenta Tsetsefliege' [Lamb. Shin. 283] (un- convincingly compared [ibid.] with Cush. forms like Baiso teeken-).	id.	[LMoca 22]	
 1	nominal	33	1	*bVhak/k-	a skin disease	6	Chad.	C.		Bachama	boke		ulcer	[Skinner 47] (probably < *bVk-, see [Stolb. 1996 24] on *bVk < *bVk in Chad.)	
 1	nominal	35	1	*bVh-	phallus	2	Egyp.				bih		das mannliche Glied	[EG I 419]	
 1	nominal	35	1	*bVh-	phallus	3	Berb.				*-bi/ubb(VH)-		penis	(redupl. < *bVhbVh-?): Ntifa a-bubbu [La- oust MCB 116]	
@@ -98,7 +98,7 @@ vol	section	no	afras_no	afras_protoform	afras_gloss	branch	family	subgroup	subgr
 1	nominal	71	1	*(ra-)gVd(-Vm)-	limb	4	Cush.	E.		Afar Saho	agada		Arm		shared_gloss
 1	nominal	71	1	*(ra-)gVd(-Vm)-	limb	4	Cush.	E.		Afar Saho	agud	pi.	Arm	[Rein. Afar 805]	lang_inherited
 1	nominal	71	1	*(ra-)gVd(-Vm)-	limb	4	Cush.	E.		Burji	gudum-a		shoulder	[Sasse Burji 85]	
-1	nominal	71	1	*(ra-)gVd(-Vm)-	limb	4	Cush.	E.		Hadiya	gudum-o	id. [ibid.] (the two latter forms with suffixed -m)	upper part of arm		shared_gloss
+1	nominal	71	1	*(ra-)gVd(-Vm)-	limb	4	Cush.	E.		Hadiya	gudum-o	(the two latter forms with suffixed -m)	id.	[ibid.]	
 1	nominal	71	1	*(ra-)gVd(-Vm)-	limb	4	Cush.	E.		Hadiya	angwoda		upper part of arm		lang_inherited;shared_gloss
 1	nominal	71	1	*(ra-)gVd(-Vm)-	limb	4	Cush.	E.		Tambaro	angata		upper part of arm		
 1	nominal	71	1	*(ra-)gVd(-Vm)-	limb	4	Cush.	E.		Darasa	agoda		shoulder	[LGur. 28]	
@@ -108,8 +108,8 @@ vol	section	no	afras_no	afras_protoform	afras_gloss	branch	family	subgroup	subgr
 1	nominal	71	1	*(ra-)gVd(-Vm)-	limb	6	Chad.	E.		Somray	gtdam		foot	[Bla. Om. 14] (with suffixed -m)	
 1	nominal	77	1	*galb-	(piece of) skin	4	Cush.	E.		Afar	galabo		Haut, Fell	[Rein. Afar 850] (hardly from Arb. yulbat- as Reinisch assumes, which is too different both semantically and formally)	
 1	nominal	77	1	*galb-	(piece of) skin	5	Omot.			Ometo	galba	(Chara)	pelle	[Cer. Ill 168]	
-1	nominal	77	1	*galb-	(piece of) skin	5	Omot.			Ometo	(Wolamo,	Dache) galba			lang_inherited
-1	nominal	77	1	*galb-	(piece of) skin	5	Omot.			Ometo	gdVba'skin'	(Dorse)		[Bla. Om. 26]	lang_inherited;quote_garbled
+1	nominal	77	1	*galb-	(piece of) skin	5	Omot.			Ometo	(Wolamo,	Dache) galba	skin		lang_inherited;shared_gloss
+1	nominal	77	1	*galb-	(piece of) skin	5	Omot.			Ometo	gdVba	(Dorse)	skin	[Bla. Om. 26]	lang_inherited
 1	nominal	81	1	*gam(m)-	long hair, mane	2	Egyp.				gmh.t	(Sarg.)	Locke oder Flechte; Schlafe	[EG V 171] (-h remains unexplained; according to [Tak.], a common Afras. affix forming names of body parts)	
 1	nominal	81	1	*gam(m)-	long hair, mane	4	Cush.	C.		Kemant	gama		criniere	[Conti Rossini 197]	
 1	nominal	81	1	*gam(m)-	long hair, mane	4	Cush.	C.		Khamir	gami		mane	[Rein. Bilin 152]	
@@ -132,8 +132,8 @@ vol	section	no	afras_no	afras_protoform	afras_gloss	branch	family	subgroup	subgr
 1	nominal	84	1	*gVn-	cheek-bone; chin; parts of face	6	Chad.	W.		Gera	geni		face	[Bla. Bed. 12] (apud Kraft). Cf. Warji ygaygdn-na	
 1	nominal	84	1	*gVn-	cheek-bone; chin; parts of face	6	Chad.	W.		Siri	ygamaygama		jaw		shared_gloss
 1	nominal	84	1	*gVn-	cheek-bone; chin; parts of face	6	Chad.	W.		Diri	ygaygam		jaw	[Skinner 27] reconstructed as *ygam-	
-1	nominal	84	1	*gVn-	cheek-bone; chin; parts of face	6	Chad.	W.		Diri	probably	< *nV-gangan-			lang_inherited
-1	nominal	84	1	*gVn-	cheek-bone; chin; parts of face	6	Chad.	W.		Diri	with	a reduplication and dissimilation of > -m.			lang_inherited
+1	nominal	84	1	*gVn-	cheek-bone; chin; parts of face	6	Chad.	W.		Diri	probably	< *nV-gangan-			lang_inherited;prose
+1	nominal	84	1	*gVn-	cheek-bone; chin; parts of face	6	Chad.	W.		Diri	with	a reduplication and dissimilation of > -m.			lang_inherited;prose
 1	nominal	84	1	*gVn-	cheek-bone; chin; parts of face	6	Chad.	E.		Lame	gini		cheeks		shared_gloss
 1	nominal	84	1	*gVn-	cheek-bone; chin; parts of face	6	Chad.	E.		Lame	ngyen	(Peve)	cheeks	[Bla. Bed. 12] (apud Kraft)	
 1	nominal	84	1	*gVn-	cheek-bone; chin; parts of face	6	Chad.	E.		Lame	Mubigin		Stirn	[ibid. 12] (apud Lukas)	lang_inherited
@@ -164,7 +164,7 @@ vol	section	no	afras_no	afras_protoform	afras_gloss	branch	family	subgroup	subgr
 1	nominal	166	1	*kVrd-	back of neck	3	Berb.				amgdrd		cou, nuque	[Dallet 273]	
 1	nominal	166	1	*kVrd-	back of neck	3	Berb.			Semlal	ammgerd		cou	[Dest. Tach. 77]	
 1	nominal	166	1	*kVrd-	back of neck	3	Berb.			Semlal	etc.		back of neck		lang_inherited;shared_gloss
-1	nominal	166	1	*kVrd-	back of neck	3	Berb.			Semlal	a	variant root? Cf. Sem. *gar(i)d-	back of neck	(No. 92)	lang_inherited
+1	nominal	166	1	*kVrd-	back of neck	3	Berb.			Semlal	a	variant root? Cf. Sem. *gar(i)d-	back of neck	(No. 92)	lang_inherited;prose
 1	nominal	181	1	*lis-	tongue	2	Egyp.				ns	(Pyr.)		[EG II 320]	
 1	nominal	181	1	*lis-	tongue	2	Egyp.			Copt.	*lsy(<lisy-?)			[Vycichl DELC 99]	
 1	nominal	181	1	*lis-	tongue	3	Berb.				*Hi-lis-:	Siwa ihs		[Laoust Siwa 251]	
@@ -187,11 +187,11 @@ vol	section	no	afras_no	afras_protoform	afras_gloss	branch	family	subgroup	subgr
 1	nominal	216	1	*pand-Vt-	back part, podex, thigh	6	Chad.	W.		Kirfi	fdndo		thigh		shared_gloss
 1	nominal	216	1	*pand-Vt-	back part, podex, thigh	6	Chad.	W.		Galambu	pmda		thigh		shared_gloss
 1	nominal	216	1	*pand-Vt-	back part, podex, thigh	6	Chad.	W.		Galambu	etc.		thigh	[Stolb. 1996 21]	lang_inherited
-1	nominal	216	1	*pand-Vt-	back part, podex, thigh	6	Chad.	C.			*fud-:	Bokafudd-td			
-1	nominal	216	1	*pand-Vt-	back part, podex, thigh	6	Chad.	C.			etc.	id. [ibid.].			
-1	nominal	216	1	*pand-Vt-	back part, podex, thigh	6	Chad.	E.			Jegupaado				
-1	nominal	216	1	*pand-Vt-	back part, podex, thigh	6	Chad.	E.			Mubifundi				
-1	nominal	216	1	*pand-Vt-	back part, podex, thigh	6	Chad.	E.			etc.	id. [ibid.].			
+1	nominal	216	1	*pand-Vt-	back part, podex, thigh	6	Chad.	C.			*fud-:	Bokafudd-td	id.		shared_gloss
+1	nominal	216	1	*pand-Vt-	back part, podex, thigh	6	Chad.	C.			etc.	.	id.	[ibid.]	
+1	nominal	216	1	*pand-Vt-	back part, podex, thigh	6	Chad.	E.			Jegupaado		id.		shared_gloss
+1	nominal	216	1	*pand-Vt-	back part, podex, thigh	6	Chad.	E.			Mubifundi		id.		shared_gloss
+1	nominal	216	1	*pand-Vt-	back part, podex, thigh	6	Chad.	E.			etc.	.	id.	[ibid.]	
 1	nominal	224	1	*wVray/?-	lung	3	Berb.				*ta-wray	lung': Ahaggar t-aruri [Fouc. 1558] (< *ta-wrawray, with redupl.)			quote_garbled
 1	nominal	224	1	*wVray/?-	lung	3	Berb.			Ghadames	t-ura				
 1	nominal	224	1	*wVray/?-	lung	3	Berb.			Ghadames	t-uraw-in	pi.		[Lanfry 301]	lang_inherited
@@ -221,7 +221,7 @@ vol	section	no	afras_no	afras_protoform	afras_gloss	branch	family	subgroup	subgr
 1	nominal	248	1	*sim-an-	melted fat, butter, oil	3	Berb.			Ghat	isim		graisse (de tout animal)	[Nehlil 165]	
 1	nominal	248	1	*sim-an-	melted fat, butter, oil	3	Berb.			Qabyle	ta-ssdm-t		graisse animal	[Dallet 778]	
 1	nominal	248	1	*sim-an-	melted fat, butter, oil	4	Cush.	N.		Beja	simuum		suet, fatty covering of kidneys	[Bla. Bed. 24] (apud Roper)	
-1	nominal	248	1	*sim-an-	melted fat, butter, oil	6	Chad.	W.		Diri	sinama	[Skinner 34] (metath. < *siman-).			
+1	nominal	248	1	*sim-an-	melted fat, butter, oil	6	Chad.	W.		Diri	sinama	(metath. < *siman-).		[Skinner 34]	
 1	nominal	248	1	*sim-an-	melted fat, butter, oil	6	Chad.	E.		Sokoro	sunne		melted butter	(< *sumne, according to [Stolb. 1996 135], i. e. metath.)	
 1	nominal	296	1	*jVm-	blood	5	Omot.			Dime	z/jumu		blood taken from an ox		
 1	nominal	296	1	*jVm-	blood	5	Omot.			Baka	zomH		blood		shared_gloss
@@ -232,7 +232,7 @@ vol	section	no	afras_no	afras_protoform	afras_gloss	branch	family	subgroup	subgr
 1	nominal	296	1	*jVm-	blood	6	Chad.	W.		Gerka	syem				
 1	nominal	296	1	*jVm-	blood	6	Chad.	W.		Galambu	jaamd	(3 < Kulere zom.			
 1	nominal	296	1	*jVm-	blood	6	Chad.	C.		Daba	zemi		vein	[Bla. Om. 8] (apud Kraft; semantically and phonetically obscure)	uncertain
-2	nominal	1	1	*(?a-)bVkay-	kind of bird	2	Egyp.				byk'Falke'	(Old)		(EG I 444)	quote_garbled
+2	nominal	1	1	*(?a-)bVkay-	kind of bird	2	Egyp.				byk	(Old)	Falke	(EG I 444)	
 2	nominal	1	1	*(?a-)bVkay-	kind of bird	3	Berb.			Ayr E. Wlm.	bdkdt		engoulevent		shared_gloss
 2	nominal	1	1	*(?a-)bVkay-	kind of bird	3	Berb.			Ayr E. Wlm.	bdkdt-sn	pi.	engoulevent	(Aloj. 5)	lang_inherited
 2	nominal	1	1	*(?a-)bVkay-	kind of bird	4	Chad.	C.		Gisiga	bokoy		hen	(HSED No. 356)	
@@ -242,10 +242,10 @@ vol	section	no	afras_no	afras_protoform	afras_gloss	branch	family	subgroup	subgr
 2	nominal	1	1	*(?a-)bVkay-	kind of bird	5	Cush.	C.?		Bilin	bikaa		eine Vogelspezies (Ploceus larvatus)	(RBil. 74; a loan from or to Tgr.)	
 2	nominal	1	1	*(?a-)bVkay-	kind of bird	6	Omot.	N.		Mocha	bakko		cock		
 2	nominal	1	1	*(?a-)bVkay-	kind of bird	6	Omot.	N.		Mocha	bakke		hen, fowl	(LMoca 22)	lang_inherited
-2	nominal	1	1	*(?a-)bVkay-	kind of bird	6	Omot.	N.		Kafa	bakko				
-2	nominal	1	1	*(?a-)bVkay-	kind of bird	6	Omot.	N.		Anfillo	bako				
-2	nominal	1	1	*(?a-)bVkay-	kind of bird	6	Omot.	N.		Shinasha	baaka				
-2	nominal	1	1	*(?a-)bVkay-	kind of bird	6	Omot.	N.		Sheko	baakku'Hahnchen'			(Lamb. Shin. 282)	quote_garbled
+2	nominal	1	1	*(?a-)bVkay-	kind of bird	6	Omot.	N.		Kafa	bakko		Hahnchen		shared_gloss
+2	nominal	1	1	*(?a-)bVkay-	kind of bird	6	Omot.	N.		Anfillo	bako		Hahnchen		shared_gloss
+2	nominal	1	1	*(?a-)bVkay-	kind of bird	6	Omot.	N.		Shinasha	baaka		Hahnchen		shared_gloss
+2	nominal	1	1	*(?a-)bVkay-	kind of bird	6	Omot.	N.		Sheko	baakku		Hahnchen	(Lamb. Shin. 282)	
 2	nominal	1	1	*(?a-)bVkay-	kind of bird	6	Omot.	S.?		Ari	baac		chicken, fowl,hen		shared_gloss
 2	nominal	1	1	*(?a-)bVkay-	kind of bird	6	Omot.	S.?		Hamar	bac-a		chicken, fowl,hen	(Bnd. Ar. 147; c < *k ?)	
 2	nominal	2	1	*?a/iba/il-,	*balbal- 'camel	3	Berb.				*Habal-		(young) camel': Ghat abal 'chameau en age d'etre monte	(DRB 53)	
@@ -257,7 +257,7 @@ vol	section	no	afras_no	afras_protoform	afras_gloss	branch	family	subgroup	subgr
 2	nominal	2	1	*?a/iba/il-,	*balbal- 'camel	5	Cush.	N.		Beja	baldabu		2-3 years old camel	(Blazek 2003a 240) < *balbal- ?	
 2	nominal	5	1	*H-mar-	goat, ram	4	Chad.	W.	*(?a-)mar~	Tangale	mara		large castrated he-goat	(Jung. Tng. 119)	
 2	nominal	5	1	*H-mar-	goat, ram	4	Chad.	W.	*(?a-)mar~	Polchi Buli	maar		goat		
-2	nominal	5	1	*H-mar-	goat, ram	4	Chad.	W.	*(?a-)mar~	Gejimaal	id.			(Cosp. No. 226)	
+2	nominal	5	1	*H-mar-	goat, ram	4	Chad.	W.	*(?a-)mar~	Gejimaal	maar			(Cosp. No. 226)	form_id
 2	nominal	5	1	*H-mar-	goat, ram	4	Chad.	W.	*(?a-)mar~	Bokkos	maray		ram		
 2	nominal	5	1	*H-mar-	goat, ram	4	Chad.	W.	*(?a-)mar~	Fyer	?a-mara		Widder	(Jung. Ron 144)	
 2	nominal	5	1	*H-mar-	goat, ram	5	Cush.	E.		Saho Afar	maruu		Schafbock, Widder	(RAf. 883)	
@@ -272,7 +272,7 @@ vol	section	no	afras_no	afras_protoform	afras_gloss	branch	family	subgroup	subgr
 2	nominal	9	1	*(?a-w-)j/jFr-	kind of feline	4	Chad.	C.		Bachama	jhara		leopard		shared_gloss
 2	nominal	9	1	*(?a-w-)j/jFr-	kind of feline	4	Chad.	C.		Bachama	jara		leopard		lang_inherited;shared_gloss
 2	nominal	9	1	*(?a-w-)j/jFr-	kind of feline	4	Chad.	C.		Bata	tyre		leopard	(CLR II 223)	
-2	nominal	9	1	*(?a-w-)j/jFr-	kind of feline	4	Chad.	C.		Bata	<	*$Vr- rather than *}Vr-			lang_inherited
+2	nominal	9	1	*(?a-w-)j/jFr-	kind of feline	4	Chad.	C.		Bata	<	*$Vr- rather than *}Vr-			lang_inherited;prose
 2	nominal	9	1	*(?a-w-)j/jFr-	kind of feline	4	Chad.	E.		Gabri	$ur			(Luk. ZS 88)	
 2	nominal	9	1	*(?a-w-)j/jFr-	kind of feline	4	Chad.	E.		Mubi	jyuruk	(CLR II 223)	leopard	(< *$ur-rather than *$ur-)	
 2	nominal	9	1	*(?a-w-)j/jFr-	kind of feline	5	Cush.			E.	*?a-durr-(*-d-	may go back to either or *-%-): Konso aturra-ta	civet cat, viverra	(SIFKYa 300)	
@@ -287,7 +287,7 @@ vol	section	no	afras_no	afras_protoform	afras_gloss	branch	family	subgroup	subgr
 2	nominal	16	1	*?a/irw-,	*?awr- 'calf, bull	2	Egyp.				iry.t	(Dem.)	Milchkuh	(ibid. 114)	
 2	nominal	16	1	*?a/irw-,	*?awr- 'calf, bull	3	Berb.			Ayr E. Wlm.	ehdri		jeune boeuf de 2 a 3 ans		shared_gloss
 2	nominal	16	1	*?a/irw-,	*?awr- 'calf, bull	3	Berb.			Ayr E. Wlm.	iharan	pi.	jeune boeuf de 2 a 3 ans	(Aloj. 79)	lang_inherited
-2	nominal	16	1	*?a/irw-,	*?awr- 'calf, bull	3	Berb.			Shilh	trey'veau'			(Dest. VFB 228, Koss. 98)	quote_garbled
+2	nominal	16	1	*?a/irw-,	*?awr- 'calf, bull	3	Berb.			Shilh	trey		veau	(Dest. VFB 228, Koss. 98)	
 2	nominal	16	1	*?a/irw-,	*?awr- 'calf, bull	4	Chad.	W.		Sha	?arwa		Ochse	(Jung. Ron 282)	
 2	nominal	16	1	*?a/irw-,	*?awr- 'calf, bull	5	Cush.	N.		Beja	rew		Vieh	(RBed. 193, Blazek 2003a 269)	
 2	nominal	16	1	*?a/irw-,	*?awr- 'calf, bull	5	Cush.	E.		Saho	awr		bull	(PEC 46)	
@@ -302,9 +302,9 @@ vol	section	no	afras_no	afras_protoform	afras_gloss	branch	family	subgroup	subgr
 2	nominal	16	1	*?a/irw-,	*?awr- 'calf, bull	5	Cush.	E.		Burji	arr-ay	(ar?-ay)'bull' (Sasse Bur. 28; hardly related to har'plow, cultivate' or Dullay fard'-o	ox	as suggested by Sasse)	
 2	nominal	16	1	*?a/irw-,	*?awr- 'calf, bull	5	Cush.	E.		Burji	a?re		calf	(ibid.)	lang_inherited
 2	nominal	16	1	*?a/irw-,	*?awr- 'calf, bull	5	Cush.	E.		Sidamo	wa?r-icco		older calf	(HEC 35)	
-2	nominal	16	1	*?a/irw-,	*?awr- 'calf, bull	5	Cush.	E.		Yaaku	reh-e?'calf'	(PEC 22). Some of the E. Cush. forms may be borrowed from Amh.			quote_garbled
+2	nominal	16	1	*?a/irw-,	*?awr- 'calf, bull	5	Cush.	E.		Yaaku	reh-e?	. Some of the E. Cush. forms may be borrowed from Amh.	calf	(PEC 22)	
 2	nominal	16	1	*?a/irw-,	*?awr- 'calf, bull	6	Omot.	N.		Oyda	arr		cow	(Bnd. Om. 56)	
-2	nominal	16	1	*?a/irw-,	*?awr- 'calf, bull	6	Omot.	N.		Oyda	an	isolated term which may be borrowed from E. Cush. or Eth.			lang_inherited
+2	nominal	16	1	*?a/irw-,	*?awr- 'calf, bull	6	Omot.	N.		Oyda	an	isolated term which may be borrowed from E. Cush. or Eth.			lang_inherited;prose
 2	nominal	17	1	*(?a-)rVw-	lion	2	Egyp.				rw	(Pyr.)	Lowe	(EG II 403)	
 2	nominal	17	1	*(?a-)rVw-	lion	4	Chad.	C.?		Fali-Kiria	fu		hyena	(Kraft II 182)	
 2	nominal	17	1	*(?a-)rVw-	lion	4	Chad.	C.?		Mwulien	fu	id.		(HSED No. 56)	
@@ -326,7 +326,7 @@ vol	section	no	afras_no	afras_protoform	afras_gloss	branch	family	subgroup	subgr
 2	nominal	18	1	*?arwVy-	(wild) goat, ram; kind of antelope	3	Berb.			Gran Canaria	ta-	har-an	sheep (sg., pi.)	(Wolf. 485-6, 488)	
 2	nominal	18	1	*?arwVy-	(wild) goat, ram; kind of antelope	4	Chad.	W.		Hausa	dra-dra		type of long-legged ram, goat, sheep	(Abr. Hs. 35)	
 2	nominal	18	1	*?arwVy-	(wild) goat, ram; kind of antelope	4	Chad.	W.		Montol Yiwom	ur		he-goat (Dolgopolsky 2004 418), Kulere war 'Ziegenbock	(Jung. Ron 355)	cf
-2	nominal	18	1	*?arwVy-	(wild) goat, ram; kind of antelope	4	Chad.	E.		Lele	ore'goats'			(CLR II 167)	quote_garbled
+2	nominal	18	1	*?arwVy-	(wild) goat, ram; kind of antelope	4	Chad.	E.		Lele	ore		goats	(CLR II 167)	
 2	nominal	18	1	*?arwVy-	(wild) goat, ram; kind of antelope	5	Cush.				*?aray-	'goat and sheep; bushbuck, kind of antelope':			quote_garbled
 2	nominal	18	1	*?arwVy-	(wild) goat, ram; kind of antelope	5	Cush.	E.		Afar	ray			(RAf. 893)	
 2	nominal	18	1	*?arwVy-	(wild) goat, ram; kind of antelope	5	Cush.	E.		Somali	ari		pecore e capre		shared_gloss
@@ -367,12 +367,12 @@ vol	section	no	afras_no	afras_protoform	afras_gloss	branch	family	subgroup	subgr
 2	nominal	21	1	*Uway-	a (wild) canine	5	Cush.	E.	*yayy-	Rendille	yaay		wild dog (.Lycaonpictus)	(Heine Sam 1981 199)	
 2	nominal	21	1	*Uway-	a (wild) canine	5	Cush.	E.	*yayy-	Rendille	Boniyeye?		jackal		lang_inherited
 2	nominal	21	1	*Uway-	a (wild) canine	5	Cush.	E.	*yayy-	Konso	yoy-ta		hunting dog	(PEC 43)	
-2	nominal	21	1	*Uway-	a (wild) canine	5	Cush.	E.	*yayy-	Oromo	yeeyii'wolf'			(Gragg 406; cf. iyyaa'kind of wild cat' ibid. 228)	quote_garbled
+2	nominal	21	1	*Uway-	a (wild) canine	5	Cush.	E.	*yayy-	Oromo	yeeyii		wolf	(Gragg 406; cf. iyyaa'kind of wild cat' ibid. 228)	
 2	nominal	21	1	*Uway-	a (wild) canine	5	Cush.	E.	*yayy-	Sidamo	iyay		hunting dog		shared_gloss
 2	nominal	21	1	*Uway-	a (wild) canine	5	Cush.	E.	*yayy-	Burji	yeyy-ee		hunting dog	(Sasse Bur. 193)	
 2	nominal	21	1	*Uway-	a (wild) canine	5	Cush.	E.	*yayy-	Gollango	yooy-o		Hyanenhund		shared_gloss
 2	nominal	21	1	*Uway-	a (wild) canine	5	Cush.	E.	*yayy-	Harso	Dobaseyoyyakko		Hyanenhund	(AMS 251)	
-2	nominal	21	1	*Uway-	a (wild) canine	6	Omot.	S.?		Ongota	yaayo'jackal'	(Bla. Ong.)			quote_garbled
+2	nominal	21	1	*Uway-	a (wild) canine	6	Omot.	S.?		Ongota	yaayo	(Bla. Ong.)	jackal		
 2	nominal	21	1	*Uway-	a (wild) canine	6	Omot.	S.?		Ongota	likely	borrowed from Dullay.			lang_inherited
 2	nominal	22	1	*(?a-)wa%-	kind of large bird; goose	2	Egyp.				z.t	(Pyr.)	Ente, Gans	(EG III 407)	
 2	nominal	22	1	*(?a-)wa%-	kind of large bird; goose	2	Egyp.				kS	(MK) zw.t	Erpel	(ibid. V 96)	
@@ -387,7 +387,7 @@ vol	section	no	afras_no	afras_protoform	afras_gloss	branch	family	subgroup	subgr
 2	nominal	22	1	*(?a-)wa%-	kind of large bird; goose	4	Chad.	W.?		Bokkos	-s	< *-zdevoiced in Auslaut?			lang_inherited
 2	nominal	22	1	*(?a-)wa%-	kind of large bird; goose	4	Chad.	E.		Mokilko	?uzu'poulet				quote_garbled
 2	nominal	22	1	*(?a-)wa%-	kind of large bird; goose	4	Chad.	E.		Mokilko	coq				lang_inherited
-2	nominal	22	1	*(?a-)wa%-	kind of large bird; goose	4	Chad.	E.		Mokilko	volaille'	(Jung. Mkk. 192) <			lang_inherited;quote_garbled
+2	nominal	22	1	*(?a-)wa%-	kind of large bird; goose	4	Chad.	E.		Mokilko	volaille'	<		(Jung. Mkk. 192)	lang_inherited;quote_garbled
 2	nominal	24	1	*?ayl-,*?al(l)ay-	(domestic) ram, sheep	3	Berb.				*ti-Hali		sheep': Nefusa t-ili 'brebis	(Beg. 237)	
 2	nominal	24	1	*?ayl-,*?al(l)ay-	(domestic) ram, sheep	3	Berb.			Ghat	ci-hali			(Nhl. 136)	
 2	nominal	24	1	*?ayl-,*?al(l)ay-	(domestic) ram, sheep	3	Berb.			Ahaggar	te-hele			(Fouc. 580)	
@@ -396,7 +396,7 @@ vol	section	no	afras_no	afras_protoform	afras_gloss	branch	family	subgroup	subgr
 2	nominal	24	1	*?ayl-,*?al(l)ay-	(domestic) ram, sheep	3	Berb.			Zenaga	t-idji				
 2	nominal	24	1	*?ayl-,*?al(l)ay-	(domestic) ram, sheep	3	Berb.			Zenaga	t-al-m	pi.		(Basset MS 89)	lang_inherited
 2	nominal	24	1	*?ayl-,*?al(l)ay-	(domestic) ram, sheep	3	Berb.			Zenaga	t-i^ih			(Nic. Zng. 156)	lang_inherited
-2	nominal	24	1	*?ayl-,*?al(l)ay-	(domestic) ram, sheep	3	Berb.			Semlal	t-ili	(Dest. VFB 45). See further Koss. 93			
+2	nominal	24	1	*?ayl-,*?al(l)ay-	(domestic) ram, sheep	3	Berb.			Semlal	t-ili	. See further Koss. 93		(Dest. VFB 45)	
 2	nominal	24	1	*?ayl-,*?al(l)ay-	(domestic) ram, sheep	3	Berb.			Pr. H	220				
 2	nominal	24	1	*?ayl-,*?al(l)ay-	(domestic) ram, sheep	5	Cush.				*?allay-	'ram, sheep':			quote_garbled
 2	nominal	24	1	*?ayl-,*?al(l)ay-	(domestic) ram, sheep	5	Cush.	N.		Beja	alii		long-haired sheep		shared_gloss
@@ -412,7 +412,7 @@ vol	section	no	afras_no	afras_protoform	afras_gloss	branch	family	subgroup	subgr
 2	nominal	25	1	*?ayVl-	stag; kind of antelope	4	Chad.	C.	*liy-(metath.?)	Higi-Nkafa Higi-Kamale	le		duiker		shared_gloss
 2	nominal	25	1	*?ayVl-	stag; kind of antelope	4	Chad.	C.	*liy-(metath.?)	Higi-Futu	li		duiker	(ibid.)	
 2	nominal	25	1	*?ayVl-	stag; kind of antelope	4	Chad.	E.		Lele	dl				
-2	nominal	25	1	*?ayVl-	stag; kind of antelope	4	Chad.	E.		Kabalai^'fe	id.			(HSED No. 2505)	
+2	nominal	25	1	*?ayVl-	stag; kind of antelope	4	Chad.	E.		Kabalai^'fe	dl			(HSED No. 2505)	form_id
 2	nominal	25	1	*?ayVl-	stag; kind of antelope	5	Cush.				*?el-	< *?ayVl~:			
 2	nominal	25	1	*?ayVl-	stag; kind of antelope	5	Cush.	E.		Somali	eelo		tipo de gazella (antilope giraffa)	(Som.-It. 206)	
 2	nominal	25	1	*?ayVl-	stag; kind of antelope	5	Cush.	S.		Gorowa	elete-mo		bushbuck		
@@ -427,7 +427,7 @@ vol	section	no	afras_no	afras_protoform	afras_gloss	branch	family	subgroup	subgr
 2	nominal	26	1	*?an-cVyaw-,	*?ayac- 'kind of small mammal	5	Cush.	C.	*Hncaw-	Khamta	acuwa		souris		shared_gloss
 2	nominal	26	1	*?an-cVyaw-,	*?ayac- 'kind of small mammal	5	Cush.	C.	*Hncaw-	Khamta	Y&mantyeswa		souris	(CR Kem. 271)	lang_inherited
 2	nominal	26	1	*?an-cVyaw-,	*?ayac- 'kind of small mammal	5	Cush.	C.	*Hncaw-	Damot	men			(HSED No. 507)	
-2	nominal	26	1	*?an-cVyaw-,	*?ayac- 'kind of small mammal	5	Cush.	C.	*Hncaw-	Damot	see	further Appl. IC 40			lang_inherited
+2	nominal	26	1	*?an-cVyaw-,	*?ayac- 'kind of small mammal	5	Cush.	C.	*Hncaw-	Damot	see	further Appl. IC 40			lang_inherited;prose
 2	nominal	26	1	*?an-cVyaw-,	*?ayac- 'kind of small mammal	5	Cush.	E.		Oromo	wawwacoo		mongoose	(Gragg 402)	
 2	nominal	26	1	*?an-cVyaw-,	*?ayac- 'kind of small mammal	6	Omot.	N.		Basketo	iici		rat	(Bnd. Om. 171)	
 2	nominal	26	1	*?an-cVyaw-,	*?ayac- 'kind of small mammal	6	Omot.	N.		Chara	uusa				
@@ -449,7 +449,7 @@ vol	section	no	afras_no	afras_protoform	afras_gloss	branch	family	subgroup	subgr
 2	nominal	28	1	*H-gal-	cow, calf	5	Cush.	N.?		Beja	gulah		Weibchen von Antilope Agazen oder Strepticeros, Kuhantilope	(RBed. 95)	
 2	nominal	28	1	*H-gal-	cow, calf	5	Cush.	N.?		Beja	-h	is obscure			lang_inherited
 2	nominal	28	1	*H-gal-	cow, calf	5	Cush.	S.?		Dahalo	rjgolome		male buffalo	(EEN 47) < *nV-gwVl-am-?	
-2	nominal	28	1	*H-gal-	cow, calf	6	Omot.	N.?		Wolaytagallua	calf'	"(SIFKYa 197) < ""gall-."			quote_garbled
+2	nominal	28	1	*H-gal-	cow, calf	6	Omot.	N.?		Wolaytagallua	calf'	"< ""gall-."		(SIFKYa 197)	quote_garbled
 2	nominal	49	1	*?Vp-,*pV?-	goat, sheep	2	Egyp.				(20	Dyn.) fpwy'Name eines heiligen Widders'		(EG I 180)	quote_garbled
 2	nominal	49	1	*?Vp-,*pV?-	goat, sheep	3	Berb.			Canarian	tufa	(Gomera)	oveja	(Wolf. 492) < HV-Uuf- (?)	
 2	nominal	49	1	*?Vp-,*pV?-	goat, sheep	4	Chad.	W.		Tsagu	ufe		goat	(Sk. NB 23)	
@@ -484,7 +484,7 @@ vol	section	no	afras_no	afras_protoform	afras_gloss	branch	family	subgroup	subgr
 2	nominal	60	1	*bVl-	kind of (small) bird	4	Chad.	E.		Gabri	belu		Taube	(Luk. ZS 88)	
 2	nominal	60	1	*bVl-	kind of (small) bird	4	Chad.	E.		Bidiya	balya		tourterelle sp.	(Al.- Jung. 56)	
 2	nominal	60	1	*bVl-	kind of (small) bird	5	Cush.	N.?		Beja	belbel		wilde Taube	(RBed. 47)	
-2	nominal	60	1	*bVl-	kind of (small) bird	5	Cush.	N.?		Beja	according	to Blazek 2003a 240 < Arb. (in fact, rather < Amh.)			lang_inherited
+2	nominal	60	1	*bVl-	kind of (small) bird	5	Cush.	N.?		Beja	according	to Blazek 2003a 240 < Arb. (in fact, rather < Amh.)			lang_inherited;prose
 2	nominal	60	1	*bVl-	kind of (small) bird	5	Cush.	E.		Oromo	bulula		dove	(Blazek 2003a 240; rather borrowed from Amh.)	
 2	nominal	60	1	*bVl-	kind of (small) bird	5	Cush.	E.		Sidamo	bulo?e		bird	(ND No. 197a)	
 2	nominal	61	1	*6Fr-,	*bVrbVr- 'kind of bird (quail, partridge, dove)	3	Berb.			E. Wlm.	ta-bsrr-ut		caille d'Europe	(Nic. Tarn. 55)	
@@ -501,8 +501,8 @@ vol	section	no	afras_no	afras_protoform	afras_gloss	branch	family	subgroup	subgr
 2	nominal	61	1	*6Fr-,	*bVrbVr- 'kind of bird (quail, partridge, dove)	4	Chad.	E.		Bidiya	birbinny		caille	(Al.-Jung. 58) < *birbir- (reduplication)	
 2	nominal	61	1	*6Fr-,	*bVrbVr- 'kind of bird (quail, partridge, dove)	5	Cush.	E.		Burji	bur-o		partridge	(Sasse Bur. 44)	
 2	nominal	61	1	*6Fr-,	*bVrbVr- 'kind of bird (quail, partridge, dove)	5	Cush.	E.		Burji	bur-o		dove	(HEC 182)	lang_inherited
-2	nominal	61	1	*6Fr-,	*bVrbVr- 'kind of bird (quail, partridge, dove)	5	Cush.	S.		Iraqw	bambare'hoopoe'			(MQK 19; cf. also biirfr'pytilia bird', ibid. 22)	quote_garbled
-2	nominal	61	1	*6Fr-,	*bVrbVr- 'kind of bird (quail, partridge, dove)	5	Cush.	S.		Dahalo	mbaare'egret'			(EEN 45)	quote_garbled
+2	nominal	61	1	*6Fr-,	*bVrbVr- 'kind of bird (quail, partridge, dove)	5	Cush.	S.		Iraqw	bambare		hoopoe	(MQK 19; cf. also biirfr'pytilia bird', ibid. 22)	
+2	nominal	61	1	*6Fr-,	*bVrbVr- 'kind of bird (quail, partridge, dove)	5	Cush.	S.		Dahalo	mbaare		egret	(EEN 45)	
 2	nominal	62	1	*bV(?)Vr-	kind of insect	3	Berb.			Tamazight	(dialect	not specified) a-burri	criquets capables de voler		
 2	nominal	62	1	*bV(?)Vr-	kind of insect	3	Berb.			Rif	a-barru		criquet		shared_gloss
 2	nominal	62	1	*bV(?)Vr-	kind of insect	3	Berb.			Senhadja	a-barru		criquet		
@@ -545,7 +545,7 @@ vol	section	no	afras_no	afras_protoform	afras_gloss	branch	family	subgroup	subgr
 2	nominal	64	1	*da?Vw/y-	kind of (large) bird	4	Chad.	C.		Gisiga	diyew		bird	(CLR II 23)	
 2	nominal	64	1	*da?Vw/y-	kind of (large) bird	4	Chad.	E.		Tumak	dooo		oiseau nocturne sp.	(Capr. 123)	
 2	nominal	64	1	*da?Vw/y-	kind of (large) bird	4	Chad.	E.		Dangla	edeya		oiseau a large queue	(Fedry 4)	
-2	nominal	64	1	*da?Vw/y-	kind of (large) bird	4	Chad.	E.		Dangla	a	reduplicated stem in Somrai dudi	bird		cf;lang_inherited;shared_gloss
+2	nominal	64	1	*da?Vw/y-	kind of (large) bird	4	Chad.	E.		Dangla	a	reduplicated stem in Somrai dudi	bird		cf;lang_inherited;prose;shared_gloss
 2	nominal	64	1	*da?Vw/y-	kind of (large) bird	4	Chad.	E.		Dangla	duda		bird		shared_gloss
 2	nominal	64	1	*da?Vw/y-	kind of (large) bird	4	Chad.	E.		Migama	didi		bird	(HSED No. 735)	
 2	nominal	64	1	*da?Vw/y-	kind of (large) bird	4	Chad.	E.		Jegu	deedo		Vogel	(Jung. Jg. 122)	
@@ -589,18 +589,18 @@ vol	section	no	afras_no	afras_protoform	afras_gloss	branch	family	subgroup	subgr
 2	nominal	66	4	*dVb-	ant, termite	4	Chad.	E.		Kera	addbddbd		Tsetsefliege	(Eb. 131)	
 2	nominal	66	4	*dVb-	ant, termite	4	Chad.	E.		Mokilko	dibe		termite, ter- mitiere	(Jung. Mkk. 80)	
 2	nominal	66	4	*dVb-	ant, termite	4	Chad.	E.		Migama	dnbidiibi		termite ailee (grand, rouge)	(Jung. Mig. 77)	
-2	nominal	66	4	*dVb-	ant, termite	4	Chad.	C.		Lame	dab				
-2	nominal	66	4	*dVb-	ant, termite	4	Chad.	C.		Lame	ddbai'termite'			(HSED No. 606; <*daHb~)	lang_inherited;quote_garbled
-2	nominal	66	4	*dVb-	ant, termite	6	Omot.	N.		Hozo	dabbi'termite'			(Bnd. Om. 358)	quote_garbled
+2	nominal	66	4	*dVb-	ant, termite	4	Chad.	C.		Lame	dab		termite		shared_gloss
+2	nominal	66	4	*dVb-	ant, termite	4	Chad.	C.		Lame	ddbai		termite	(HSED No. 606; <*daHb~)	lang_inherited
+2	nominal	66	4	*dVb-	ant, termite	6	Omot.	N.		Hozo	dabbi		termite	(Bnd. Om. 358)	
 2	nominal	66	6	*jVn/mb-	kind of worm, insect	4	Chad.	C.		Tera	zaba		termite	(Kraft II 6) < *jaHb~	
 2	nominal	70	1	*di(?)m-	feline	4	Chad.	W.		Yergum	damurj		leopard	(Fitz. 218) < *dam-un-} Cf. Mupun ndsmu-k 'hyena' (Fraj. Mup. 41)	
 2	nominal	70	1	*di(?)m-	feline	4	Chad.	W.		Sura	ndumu				
 2	nominal	70	1	*di(?)m-	feline	4	Chad.	W.		Ankwe	tumu	id.		(CLR II 204)	
 2	nominal	70	1	*di(?)m-	feline	4	Chad.	W.		Gerka	damn	id.		(HSED No. 751)	
-2	nominal	70	1	*di(?)m-	feline	4	Chad.	W.		Gerka	with	a meaning shiftfrom	leopard	to 'hyena' (as spotted)?	lang_inherited
+2	nominal	70	1	*di(?)m-	feline	4	Chad.	W.		Gerka	with	a meaning shiftfrom	leopard	to 'hyena' (as spotted)?	lang_inherited;prose
 2	nominal	70	1	*di(?)m-	feline	4	Chad.	E.		Lele	%em		Caracal	(< *dim)	
 2	nominal	70	1	*di(?)m-	feline	4	Chad.	E.		Sokoro	damde		leopard	(CLR II 223)	
-2	nominal	70	1	*di(?)m-	feline	4	Chad.	E.		Sokoro	perhaps	alsoJegu duygum	Lowe	(Jung.Jg. 121)	lang_inherited
+2	nominal	70	1	*di(?)m-	feline	4	Chad.	E.		Sokoro	perhaps	alsoJegu duygum	Lowe	(Jung.Jg. 121)	lang_inherited;prose
 2	nominal	70	1	*di(?)m-	feline	5	Cush.	N.			Bejatymo		cat		shared_gloss
 2	nominal	70	1	*di(?)m-	feline	5	Cush.	N.			dimmo		cat	(Blazek 2003a 255). Borrowed fromArb. or Eth.?	
 2	nominal	70	1	*di(?)m-	feline	5	Cush.	C.		Bilin	dsmmu	(pi.)	cat		shared_gloss
@@ -636,7 +636,7 @@ vol	section	no	afras_no	afras_protoform	afras_gloss	branch	family	subgroup	subgr
 2	nominal	72	1	*jV?Vb-	kind of predator	6	Omot.	N.		Basketo	zobba				
 2	nominal	72	1	*jV?Vb-	kind of predator	6	Omot.	N.		Basketo	zop				lang_inherited
 2	nominal	72	1	*jV?Vb-	kind of predator	6	Omot.	N.		Male	zobi	lion'		(Bnd. Om. 328)	quote_garbled
-2	nominal	72	1	*jV?Vb-	kind of predator	6	Omot.	N.		Gimirra	ezubay'cat'			(ibid. 339)	quote_garbled
+2	nominal	72	1	*jV?Vb-	kind of predator	6	Omot.	N.		Gimirra	ezubay		cat	(ibid. 339)	
 2	nominal	72	1	*jV?Vb-	kind of predator	6	Omot.	S.		Ari	zob				
 2	nominal	72	1	*jV?Vb-	kind of predator	6	Omot.	S.		Ari	zobba				lang_inherited
 2	nominal	72	1	*jV?Vb-	kind of predator	6	Omot.	S.		Hamar	zobo				
@@ -697,7 +697,7 @@ vol	section	no	afras_no	afras_protoform	afras_gloss	branch	family	subgroup	subgr
 2	nominal	80	1	*gwand(-ab)-	kind of insect (cricket, locust, ant)	4	Chad.	E.		Dangla	Bidiyag^mfo		petit fourmi rouge	(Al.-Jung. 78)	lang_inherited
 2	nominal	80	1	*gwand(-ab)-	kind of insect (cricket, locust, ant)	4	Chad.	E.		Dangla	v.	Sk. Hs. 97			lang_inherited
 2	nominal	80	1	*gwand(-ab)-	kind of insect (cricket, locust, ant)	4	Chad.	C.		Bacama	gidirjoto		scorpion	(Kraft III 68) < *gidHin-Vt~	
-2	nominal	80	1	*gwand(-ab)-	kind of insect (cricket, locust, ant)	4	Chad.	C.		Buduma	debugo'Holzwurm'			(Luk. Bud. 96; metathesis)	cf;quote_garbled
+2	nominal	80	1	*gwand(-ab)-	kind of insect (cricket, locust, ant)	4	Chad.	C.		Buduma	debugo		Holzwurm	(Luk. Bud. 96; metathesis)	cf
 2	nominal	80	1	*gwand(-ab)-	kind of insect (cricket, locust, ant)	5	Cush.	C.?		Bilin	guandabe		Heuschrecke		shared_gloss
 2	nominal	80	1	*gwand(-ab)-	kind of insect (cricket, locust, ant)	5	Cush.	C.?		Bilin	danguabe		Heuschrecke	(RBil. 154; borrowed < Tna.?)	lang_inherited
 2	nominal	80	1	*gwand(-ab)-	kind of insect (cricket, locust, ant)	5	Cush.	C.?		Khamir	gundan			(RCham. 361; borrowed < Amh.?)	
@@ -734,14 +734,14 @@ vol	section	no	afras_no	afras_protoform	afras_gloss	branch	family	subgroup	subgr
 2	nominal	82	2	*gi/ar(-m)-	cat; lion	6	Omot.	N.		Zaysse	garawa		cat		shared_gloss
 2	nominal	82	2	*gi/ar(-m)-	cat; lion	6	Omot.	N.		Koyra	giraawwe?		cat	(Bnd. Om. 140, 316). Cf. probably related forms with -m: Zaysse Koyra Ganjulegarma 'lion' (ibid. 334)	
 2	nominal	95	1	*hVwVy-	snake	2	Egyp.				hyw	(Pyr.)	Schlange	(EG II 483)	
-2	nominal	95	1	*hVwVy-	snake	4	Chad.	E.?		Tumak	awsywsy'cameleon'			(Capr. 106)	quote_garbled
+2	nominal	95	1	*hVwVy-	snake	4	Chad.	E.?		Tumak	awsywsy		cameleon	(Capr. 106)	
 2	nominal	95	1	*hVwVy-	snake	4	Chad.	C.		Misme	hou		snake	(Kraft III 216)	
 2	nominal	95	1	*hVwVy-	snake	4	Chad.	C.		Misme	yahou		python	(ibid.)	lang_inherited
 2	nominal	95	1	*hVwVy-	snake	4	Chad.	C.		Zime- Batna	?uhu?u		snake	(Sach. Lame 549)	
 2	nominal	106	1	*hawar-,	*harr- 'camel, donkey	5	Cush.				*harr-'camel				quote_garbled
 2	nominal	106	1	*hawar-,	*harr- 'camel, donkey	5	Cush.				donkey':				quote_garbled
 2	nominal	106	1	*hawar-,	*harr- 'camel, donkey	5	Cush.	N.		Beja	hare		camel	(Blazek 2003a 253)	
-2	nominal	106	1	*hawar-,	*harr- 'camel, donkey	5	Cush.	N.		Beja	also	harri	mount (any- thing that can be riden)	(ibid.)	cf;lang_inherited
+2	nominal	106	1	*hawar-,	*harr- 'camel, donkey	5	Cush.	N.		Beja	also	harri	mount (any- thing that can be riden)	(ibid.)	cf;lang_inherited;prose
 2	nominal	106	1	*hawar-,	*harr- 'camel, donkey	5	Cush.	E.		Saho	her-a		female donkey		
 2	nominal	106	1	*hawar-,	*harr- 'camel, donkey	5	Cush.	E.		Oromo	harree		donkey		shared_gloss
 2	nominal	106	1	*hawar-,	*harr- 'camel, donkey	5	Cush.	E.		Konso	harr-eta		donkey		shared_gloss
@@ -775,8 +775,8 @@ vol	section	no	afras_no	afras_protoform	afras_gloss	branch	family	subgroup	subgr
 2	nominal	115	1	*kwVl-	wolf, dog' (pointing to the suffixal origin of -b in Se- mitic)	5	Cush.	C.		E: Saho	takla		Wolf, Hyanenhund		shared_gloss
 2	nominal	115	1	*kwVl-	wolf, dog' (pointing to the suffixal origin of -b in Se- mitic)	5	Cush.	C.		E: Saho	tahla		Wolf, Hyanenhund	(ibid, after RSa.). Cf. Harso tolokk-o'Felis serval' (ibid.; related with metathesis?)	lang_inherited
 2	nominal	115	1	*kwVl-	wolf, dog' (pointing to the suffixal origin of -b in Se- mitic)	6	Omot.				*tolku(<*tV-lku,	metathetic to < *tV-kVl-?):			
-2	nominal	115	1	*kwVl-	wolf, dog' (pointing to the suffixal origin of -b in Se- mitic)	6	Omot.	N.?		Zaysse Zergulla	tolko				
-2	nominal	115	1	*kwVl-	wolf, dog' (pointing to the suffixal origin of -b in Se- mitic)	6	Omot.	N.?		Koyra Ganlule	tolko'hyena'			(Blazek 2003a 273)	quote_garbled
+2	nominal	115	1	*kwVl-	wolf, dog' (pointing to the suffixal origin of -b in Se- mitic)	6	Omot.	N.?		Zaysse Zergulla	tolko		hyena		shared_gloss
+2	nominal	115	1	*kwVl-	wolf, dog' (pointing to the suffixal origin of -b in Se- mitic)	6	Omot.	N.?		Koyra Ganlule	tolko		hyena	(Blazek 2003a 273)	
 2	nominal	115	1	*kwVl-	wolf, dog' (pointing to the suffixal origin of -b in Se- mitic)	6	Omot.	S.?		Dime	tolku		leopard	(ibid.)	
 2	nominal	116	1	*ka/inn-	kind of insect	4	Chad.	E.		Dangla	kbkktneene		sauterelle de saison seche, comestible	(Fedry 289)	
 2	nominal	116	1	*ka/inn-	kind of insect	4	Chad.	E.		Migama	kakkuma		pou	(Jung. Mig. 96) < *kankum-}	
@@ -877,9 +877,9 @@ vol	section	no	afras_no	afras_protoform	afras_gloss	branch	family	subgroup	subgr
 2	nominal	122	1	*tVkw(-an)-	kind of (blood-sucking) insect	5	Cush.	S.		Burunge	tikaHya'tsetse	fly'	gadfly		quote_garbled;shared_gloss
 2	nominal	122	1	*tVkw(-an)-	kind of (blood-sucking) insect	5	Cush.	S.		Maa	twange		gadfly		
 2	nominal	122	1	*tVkw(-an)-	kind of (blood-sucking) insect	5	Cush.	S.		Maa	Dahalotakkwa?e		dung beetle	(HRSC 169; clearly inherited terms which cannot be explained as loanwords)	lang_inherited
-2	nominal	122	1	*tVkw(-an)-	kind of (blood-sucking) insect	5	Cush.	S.		Maa	the	S. Cush. protoform is reconstructed by Ehret as *taanka^~ (ibid.)			lang_inherited
+2	nominal	122	1	*tVkw(-an)-	kind of (blood-sucking) insect	5	Cush.	S.		Maa	the	S. Cush. protoform is reconstructed by Ehret as *taanka^~ (ibid.)			lang_inherited;prose
 2	nominal	122	1	*tVkw(-an)-	kind of (blood-sucking) insect	6	Omot.	N.?		Shinasha	tokano		bedbug	(Bnd. Om. 158; almost certainly < Eth.)	
-2	nominal	125	1	*ka(wa)r-	fish	4	Chad.	C.		MbaraMMra	'Tetraodonfahaka	(TSL 301) < *kurkur- (redupl.)			quote_garbled
+2	nominal	125	1	*ka(wa)r-	fish	4	Chad.	C.		MbaraMMra	'Tetraodonfahaka	< *kurkur- (redupl.)		(TSL 301)	quote_garbled
 2	nominal	125	1	*ka(wa)r-	fish	5	Cush.	E.		Dasenech	kaara	(Bla. Das. after Haberland)	fish		shared_gloss
 2	nominal	125	1	*ka(wa)r-	fish	5	Cush.	E.		Gawwada	haare		fish		shared_gloss
 2	nominal	125	1	*ka(wa)r-	fish	5	Cush.	E.		Tsamai	haarite		fish		shared_gloss
@@ -934,8 +934,8 @@ vol	section	no	afras_no	afras_protoform	afras_gloss	branch	family	subgroup	subgr
 2	nominal	137	1	*kVr-	frog	4	Chad.	C.		Gava	kife			(ibid. 125)	
 2	nominal	137	1	*kVr-	frog	4	Chad.	C.		Daba	kirriy			(ibid. 158)	
 2	nominal	137	1	*kVr-	frog	4	Chad.	C.		Mofu-Gudur	kaksrarj			(Barr. MG 143)	
-2	nominal	137	1	*kVr-	frog	6	Omot.	N.		Zaysse	?ookkaro				
-2	nominal	137	1	*kVr-	frog	6	Omot.	N.		Zergula	fookeru'frog'	(Bnd. Om. 333) < *?a-kar~.			quote_garbled
+2	nominal	137	1	*kVr-	frog	6	Omot.	N.		Zaysse	?ookkaro		frog		shared_gloss
+2	nominal	137	1	*kVr-	frog	6	Omot.	N.		Zergula	fookeru	< *?a-kar~.	frog	(Bnd. Om. 333)	
 2	nominal	139	1	*kVc/c-	k. of insect (locust or ant larva?)	4	Chad.	W.		Hausa	kiyasi				
 2	nominal	139	1	*kVc/c-	k. of insect (locust or ant larva?)	4	Chad.	W.		Boghom	Uyaaksam				
 2	nominal	139	1	*kVc/c-	k. of insect (locust or ant larva?)	4	Chad.	W.		Boghom	Gejikacin-balla			(Cosp. No. 288)	lang_inherited
@@ -978,7 +978,7 @@ vol	section	no	afras_no	afras_protoform	afras_gloss	branch	family	subgroup	subgr
 2	nominal	142	1	*li?aw-	kind of bovine; cattle, cow	5	Cush.	E.		Afar	lo-w				lang_inherited
 2	nominal	142	1	*li?aw-	kind of bovine; cattle, cow	5	Cush.	E.		Afar	la-a			(PEC 52)	lang_inherited
 2	nominal	142	1	*li?aw-	kind of bovine; cattle, cow	5	Cush.	E.		Somali	lo?		herd of cows	(Abr. Som. 166)	
-2	nominal	142	1	*li?aw-	kind of bovine; cattle, cow	5	Cush.	E.		Rendille	loolyo'cows'	pi.		(Pill.-Galb. 326)	quote_garbled
+2	nominal	142	1	*li?aw-	kind of bovine; cattle, cow	5	Cush.	E.		Rendille	loolyo	pi.	cows	(Pill.-Galb. 326)	
 2	nominal	142	1	*li?aw-	kind of bovine; cattle, cow	5	Cush.	E.		Oromo	loon		cattle	(Gragg 267)	
 2	nominal	142	1	*li?aw-	kind of bovine; cattle, cow	5	Cush.	E.		Oromo	loo-	ni	cows	(coll.)	lang_inherited
 2	nominal	142	1	*li?aw-	kind of bovine; cattle, cow	5	Cush.	E.		Konso	low-aa	id.		(PEC 52)	
@@ -1024,7 +1024,7 @@ vol	section	no	afras_no	afras_protoform	afras_gloss	branch	family	subgroup	subgr
 2	nominal	152	1	*mVn(Vn/w)-	kind of insect, worm	5	Cush.	S.		Asa	menana		tape- worm	(HRSC 324)	
 2	nominal	153	1	*ma/ir-	bull, calf	2	Egyp.				mr.t	(Gr.)	Kuh	(EG II 106). Cf. (MR) mr	
 2	nominal	153	1	*ma/ir-	bull, calf	2	Egyp.				mry		Kampftier		
-2	nominal	153	1	*ma/ir-	bull, calf	2	Egyp.				with	the sign for bull/cow (ibid.)			
+2	nominal	153	1	*ma/ir-	bull, calf	2	Egyp.				with	the sign for bull/cow (ibid.)			prose
 2	nominal	153	1	*ma/ir-	bull, calf	4	Chad.	W.		Hausa	mariri		white oryx	(Abr. Hs. 659)	
 2	nominal	153	1	*ma/ir-	bull, calf	4	Chad.	W.		Dwot	maariiri		rhinoc- eros	(Cosp. No. 277)	
 2	nominal	153	1	*ma/ir-	bull, calf	4	Chad.	C.?		Mafa	maray		fete rituelle de taureau; taureau de case sacrifie lors la fete	(Barr. Mafa 231; semantically risky)	
@@ -1041,14 +1041,14 @@ vol	section	no	afras_no	afras_protoform	afras_gloss	branch	family	subgroup	subgr
 2	nominal	164	1	*ma/ur-	a (large) feline	2	Egyp.				(NK)		auch allgemein fur grosses Raubtier	(EG II 11) < *mVr(V)y- ? Otherwise < *mV?-	
 2	nominal	164	1	*ma/ur-	a (large) feline	2	Egyp.				related	to E. Chad. *mu?i-	lion	(v. HSED No. 1810, EDE I 56)	
 2	nominal	164	1	*ma/ur-	a (large) feline	4	Chad.	W.		Dera	muumuru		cheetah	(Newman Kan. 130)	
-2	nominal	164	1	*ma/ur-	a (large) feline	4	Chad.	W.		Dera	also	Polchi mur	jackal	(Cosp. No. 261)	cf;lang_inherited
+2	nominal	164	1	*ma/ur-	a (large) feline	4	Chad.	W.		Dera	also	Polchi mur	jackal	(Cosp. No. 261)	cf;lang_inherited;prose
 2	nominal	164	1	*ma/ur-	a (large) feline	4	Chad.	W.		Bokkos Daffo-Butura Sha	murum		Hyane	(Jung. Ron 145,219, 287)	
 2	nominal	164	1	*ma/ur-	a (large) feline	4	Chad.	C.		Mofa	mariy-zhele		lion	(CLR II 227)	
 2	nominal	164	1	*ma/ur-	a (large) feline	4	Chad.	C.		Lame	merian		wild cat		
 2	nominal	164	1	*ma/ur-	a (large) feline	4	Chad.	C.		Lame	me-	riau	cat	(Kraft III 199)	lang_inherited
 2	nominal	164	1	*ma/ur-	a (large) feline	4	Chad.	C.		Lame-Peve	mereo		cat	(ibid. 207)	
 2	nominal	164	1	*ma/ur-	a (large) feline	4	Chad.	C.		Zime	mier		genette	(Sach. Lame 17)	
-2	nominal	164	1	*ma/ur-	a (large) feline	5	Cush.	E.		Oromo	morre'zibetto'			(Thiene 153)	quote_garbled
+2	nominal	164	1	*ma/ur-	a (large) feline	5	Cush.	E.		Oromo	morre		zibetto	(Thiene 153)	
 2	nominal	164	1	*ma/ur-	a (large) feline	5	Cush.	S.		Alagwa	mariyamo		wild cat		
 2	nominal	164	1	*ma/ur-	a (large) feline	5	Cush.	S.		Gorowa	mariri-ka		leopard		
 2	nominal	164	1	*ma/ur-	a (large) feline	5	Cush.	S.		Gorowa	Asamer-ok		lion	(HRSC 342)	lang_inherited
@@ -1065,7 +1065,7 @@ vol	section	no	afras_no	afras_protoform	afras_gloss	branch	family	subgroup	subgr
 2	nominal	173	1	*pVr-	horn; horned animal	6	Omot.	N.		Sheko	compared	with She fal			lang_inherited
 2	nominal	173	1	*pVr-	horn; horned animal	6	Omot.	N.		Benco	pal				
 2	nominal	173	1	*pVr-	horn; horned animal	6	Omot.	N.		Benco	fal	id. (all after Mukarovsky)			lang_inherited
-2	nominal	173	1	*pVr-	horn; horned animal	6	Omot.	N.		Benco	the	correspondence between Dizoid -r- and Gimirra -I- needs to be proved.			lang_inherited
+2	nominal	173	1	*pVr-	horn; horned animal	6	Omot.	N.		Benco	the	correspondence between Dizoid -r- and Gimirra -I- needs to be proved.			lang_inherited;prose
 2	nominal	174	1	*pVl(l)Vw/y-,	*pVw/yal- '(young of) large or small cattle	4	Chad.	W.			Guruntumfwull		cow	(CLR II 92)	
 2	nominal	174	1	*pVl(l)Vw/y-,	*pVw/yal- '(young of) large or small cattle	5	Cush.	N.		Beja	(Ammar'ar)	filay	she-camel just foaled	(Blazek 2003a 246)	
 2	nominal	174	1	*pVl(l)Vw/y-,	*pVw/yal- '(young of) large or small cattle	5	Cush.	N.		Beja	likely	a loan from Arb. or Tgr.			lang_inherited
@@ -1095,7 +1095,7 @@ vol	section	no	afras_no	afras_protoform	afras_gloss	branch	family	subgroup	subgr
 2	nominal	175	1	*pil-,	*paliy- 'kind of insect (flea, louse, tick)	5	Cush.	S.?		Qwadza	pa?al-uko		flying termite	(HRSC 143; otherwise < *pa?ar-)	
 2	nominal	175	1	*pil-,	*paliy- 'kind of insect (flea, louse, tick)	6	Omot.	N.			Womberapel-a		locust	(EDE II 411 after Fleming 1987 158)	
 2	nominal	175	1	*pil-,	*paliy- 'kind of insect (flea, louse, tick)	6	Omot.	S.		Ongota	fil(l)aye		flea, bedbug	(Bla. Ong.)	
-2	nominal	175	1	*pil-,	*paliy- 'kind of insect (flea, louse, tick)	6	Omot.	S.		Ongota	probably	a loan from Dullay.			lang_inherited
+2	nominal	175	1	*pil-,	*paliy- 'kind of insect (flea, louse, tick)	6	Omot.	S.		Ongota	probably	a loan from Dullay.			lang_inherited;prose
 2	nominal	176	1	*para(r/?/w)-	kind of equid	4	Chad.	W.			Yiwom		mare		shared_gloss
 2	nominal	176	1	*para(r/?/w)-	kind of equid	4	Chad.	W.		Gurkawa	pirri		mare	(Fitz. 218)	
 2	nominal	176	1	*para(r/?/w)-	kind of equid	4	Chad.	W.		Daffo-Butura	pun		Pferd	(Jung. Ron 219)	
@@ -1106,7 +1106,7 @@ vol	section	no	afras_no	afras_protoform	afras_gloss	branch	family	subgroup	subgr
 2	nominal	176	1	*para(r/?/w)-	kind of equid	6	Omot.	N.		Wolayta Zala Dawro Gofa Gamu Tsara	fara		horse	(Lamb.-Sot. 355)	
 2	nominal	180	1	*pVr(w)-	kind of (small) bird	2	Egyp.				pr	(Pyr.)	ein Vogel	(EG I 531)	
 2	nominal	180	1	*pVr(w)-	kind of (small) bird	2	Egyp.				p?r.t	(NK)	ein Gefliigel (neben Tauben)	(EG I 504)	cf
-2	nominal	180	1	*pVr(w)-	kind of (small) bird	2	Egyp.				with	a secondary inserted?			
+2	nominal	180	1	*pVr(w)-	kind of (small) bird	2	Egyp.				with	a secondary inserted?			prose
 2	nominal	180	1	*pVr(w)-	kind of (small) bird	4	Chad.	W.			Hausaferu		name of small bird	(Barg. 317)	
 2	nominal	180	1	*pVr(w)-	kind of (small) bird	4	Chad.	C.			Burapartawa		a white bird	(EB 170; < *par-t-aw-?)	
 2	nominal	180	1	*pVr(w)-	kind of (small) bird	4	Chad.	E.			Tumakpzrwitn		pigeon	(Capr. 125)	
@@ -1134,7 +1134,7 @@ vol	section	no	afras_no	afras_protoform	afras_gloss	branch	family	subgroup	subgr
 2	nominal	185	1	*paryuc-,	*puryac- 'kind of insect	4	Chad.	W.?		Gera	burst		mosquito	(Kraft I 74; > 0?)	
 2	nominal	185	1	*paryuc-,	*puryac- 'kind of insect	4	Chad.	W.?		Guruntum	viirti	id. (CLR II 242; *-y- > 0,			
 2	nominal	185	1	*paryuc-,	*puryac- 'kind of insect	4	Chad.	C.		Daba	mbirguc		louse	(Kraft III 158; hardly from Arb.). Cf. also Musgoy vdrts'mosquito' (CLR II 243) < *p/barHac-?	
-2	nominal	185	1	*paryuc-,	*puryac- 'kind of insect	6	Omot.	N.		Gimirra	hire'ant'			(Bnd. Om. 338)	quote_garbled
+2	nominal	185	1	*paryuc-,	*puryac- 'kind of insect	6	Omot.	N.		Gimirra	hire		ant	(Bnd. Om. 338)	
 2	nominal	191	1	*rim(rim)-	kind of insect (ant, termite), worm	4	Chad.	W.?		Hausa	maryamu		young or small scorpion		shared_gloss
 2	nominal	191	1	*rim(rim)-	kind of insect (ant, termite), worm	4	Chad.	W.?		Hausa	mairamu		young or small scorpion		lang_inherited;shared_gloss
 2	nominal	191	1	*rim(rim)-	kind of insect (ant, termite), worm	4	Chad.	W.?		Hausa	mairo		young or small scorpion	(< *ma-ryam-})	lang_inherited
@@ -1165,13 +1165,13 @@ vol	section	no	afras_no	afras_protoform	afras_gloss	branch	family	subgroup	subgr
 2	nominal	198	1	*cay/w(cay/w)-	kind of insect	5	Cush.	E.			Tsamai^		flea	(Bla. Ong. after Sava-Tosco)	
 2	nominal	198	1	*cay/w(cay/w)-	kind of insect	5	Cush.	S.		Iraqw	cuuaa		midgets, small flying insects	(MQK 110)	
 2	nominal	198	1	*cay/w(cay/w)-	kind of insect	5	Cush.	S.		Ma?a	swa?		tick on animal	(Bla. Ong.)	
-2	nominal	198	1	*cay/w(cay/w)-	kind of insect	6	Omot.	N.		Gimirra	saya	(Bencho)			
-2	nominal	198	1	*cay/w(cay/w)-	kind of insect	6	Omot.	N.		Dizi	cahi				
-2	nominal	198	1	*cay/w(cay/w)-	kind of insect	6	Omot.	N.		Sheko	sei'flea'	(ibid.)			quote_garbled
-2	nominal	198	1	*cay/w(cay/w)-	kind of insect	6	Omot.	S.		Galila	seya				
-2	nominal	198	1	*cay/w(cay/w)-	kind of insect	6	Omot.	S.		Ubamer	sea				
-2	nominal	198	1	*cay/w(cay/w)-	kind of insect	6	Omot.	S.		Hamar	sat				
-2	nominal	198	1	*cay/w(cay/w)-	kind of insect	6	Omot.	S.		Dime	siye'flea'				quote_garbled
+2	nominal	198	1	*cay/w(cay/w)-	kind of insect	6	Omot.	N.		Gimirra	saya	(Bencho)	flea		shared_gloss
+2	nominal	198	1	*cay/w(cay/w)-	kind of insect	6	Omot.	N.		Dizi	cahi		flea		shared_gloss
+2	nominal	198	1	*cay/w(cay/w)-	kind of insect	6	Omot.	N.		Sheko	sei	(ibid.)	flea		
+2	nominal	198	1	*cay/w(cay/w)-	kind of insect	6	Omot.	S.		Galila	seya		flea		shared_gloss
+2	nominal	198	1	*cay/w(cay/w)-	kind of insect	6	Omot.	S.		Ubamer	sea		flea		shared_gloss
+2	nominal	198	1	*cay/w(cay/w)-	kind of insect	6	Omot.	S.		Hamar	sat		flea		shared_gloss
+2	nominal	198	1	*cay/w(cay/w)-	kind of insect	6	Omot.	S.		Dime	siye		flea		
 2	nominal	198	1	*cay/w(cay/w)-	kind of insect	6	Omot.	S.		Ongota	seyid.	(ibid.).			
 2	nominal	200	1	*sVb-	kind of snake, worm	4	Chad.	E.		Leie	stibd		worm	(HSED No. 2227)	
 2	nominal	200	1	*sVb-	kind of snake, worm	5	Cush.	C.		Bilin	sabara	(pi. safal)	Schlange		
@@ -1202,7 +1202,7 @@ vol	section	no	afras_no	afras_protoform	afras_gloss	branch	family	subgroup	subgr
 2	nominal	207	1	*sVfy-	kind of snake	4	Chad.	E.			Kwangsept		snake	(HSED No. 2216)	
 2	nominal	207	1	*sVfy-	kind of snake	5	Cush.	S.		Iraqw	sapa		crickets	(MQK 91; semantically remote)	
 2	nominal	207	1	*sVfy-	kind of snake	6	Omot.	N.		Kafa	sefittoo'sorta	di lucertola (e lungo come un serpente ed ha quattro zampe)'		(Cer. Caf. 493)	quote_garbled
-2	nominal	207	1	*sVfy-	kind of snake	6	Omot.	N.		Kafa	also	Shinasha sippira	worm		cf;lang_inherited;shared_gloss
+2	nominal	207	1	*sVfy-	kind of snake	6	Omot.	N.		Kafa	also	Shinasha sippira	worm		cf;lang_inherited;prose;shared_gloss
 2	nominal	207	1	*sVfy-	kind of snake	6	Omot.	N.		Kafa	sipra		worm	in Bnd. Om. 345	lang_inherited
 2	nominal	217	1	*caw(?)-	(meat of) small cattle	2	Egyp.				%	(MK)	pig	(EG IV 408). Cf. also (MK) sw 'Esel' (ibid. 433)	
 2	nominal	217	1	*caw(?)-	(meat of) small cattle	4	Chad.			W.	*caw-	'meat': Kariya siwi			quote_garbled
@@ -1264,12 +1264,12 @@ vol	section	no	afras_no	afras_protoform	afras_gloss	branch	family	subgroup	subgr
 2	nominal	241	1	*cawr-	bull; elephant, rhinoceros	5	Cush.	S.		Asa	sodo'waterbuck				quote_garbled
 2	nominal	241	1	*cawr-	bull; elephant, rhinoceros	5	Cush.	S.		Asa	lesser	kudu'		(Blazek 2003b, after HRSC and Kiessling-Mous)	lang_inherited;quote_garbled
 2	nominal	241	1	*cawr-	bull; elephant, rhinoceros	5	Cush.	S.		Asa	but	according to the corre- spondences in HSED 22 (which seem to be correct) the second consonant in the underlying protoform must be *-d-and not *-r-			lang_inherited
-2	nominal	241	1	*cawr-	bull; elephant, rhinoceros	6	Omot.	N.		Kacama	soro'rhinoceros'			"(related in Blazek 1994 201 to other N. Omot. and Beja terms without final -r, ""if we accept the loss of -r-"" in these languages and if the latter terms are not borrowed from E. Cush. *wars~; both assumptions seem unsustained)"	quote_garbled
+2	nominal	241	1	*cawr-	bull; elephant, rhinoceros	6	Omot.	N.		Kacama	soro		rhinoceros	"(related in Blazek 1994 201 to other N. Omot. and Beja terms without final -r, ""if we accept the loss of -r-"" in these languages and if the latter terms are not borrowed from E. Cush. *wars~; both assumptions seem unsustained)"	
 2	nominal	244	1	*waHl-	kind of goat or gazelle	3	Berb.			Ghadames	welli		chevre		shared_gloss
 2	nominal	244	1	*waHl-	kind of goat or gazelle	3	Berb.			Ghadames	wulli		chevre	(Lanfry 390)	lang_inherited
 2	nominal	244	1	*waHl-	kind of goat or gazelle	3	Berb.			Ahaggar	ulli	(pi. of tiyse)'chevre'		(Fouc. 1781)	quote_garbled
 2	nominal	244	1	*waHl-	kind of goat or gazelle	3	Berb.			Qabyle	ulli		brebis	(Dallet 441)	
-2	nominal	244	1	*waHl-	kind of goat or gazelle	4	Chad.	W.		Jimi	walaroo'antelope'			(Cosp. No. 252)	quote_garbled
+2	nominal	244	1	*waHl-	kind of goat or gazelle	4	Chad.	W.		Jimi	walaroo		antelope	(Cosp. No. 252)	
 2	nominal	244	1	*waHl-	kind of goat or gazelle	4	Chad.	W.		Geji	wulli		gazelle	(ibid.)	
 2	nominal	244	1	*waHl-	kind of goat or gazelle	5	Cush.	E.		Somali	?awl-		Soemmering's Gazelle	(Abr. Som. 18)	
 2	nominal	244	1	*waHl-	kind of goat or gazelle	5	Cush.	E.		Rendille	hool		gazelle	(Pill.-Galb. 342)	
@@ -1278,7 +1278,7 @@ vol	section	no	afras_no	afras_protoform	afras_gloss	branch	family	subgroup	subgr
 2	nominal	245	1	*(wa)bVl-	small cattle	2	Egyp.				(OK,	MK) ?iblw	Mahnenschaf (Ovis tragelaphus)	(EG I 62) <*yVbVl~!	
 2	nominal	245	1	*(wa)bVl-	small cattle	3	Berb.			Ghadames	ta-bali		ibex		shared_gloss
 2	nominal	245	1	*(wa)bVl-	small cattle	3	Berb.			Audjila	te-bel'brebis'	(Koss. No. 193; other- wise < *ta-Hwal-, v. *waHl-	ibex	, No. 244)	
-2	nominal	245	1	*(wa)bVl-	small cattle	3	Berb.			Gurara Tuat Tidikelt	belli'moutons'	"(DRB 52; Koss. No. 193). Cf. EDE II 24: ""Note that NBrb ... are just Kinderwdrter ... therefore cannot be considered"". This position"			quote_garbled
+2	nominal	245	1	*(wa)bVl-	small cattle	3	Berb.			Gurara Tuat Tidikelt	belli	". Cf. EDE II 24: ""Note that NBrb ... are just Kinderwdrter ... therefore cannot be considered"". This position"	moutons	(DRB 52; Koss. No. 193)	
 2	nominal	245	1	*(wa)bVl-	small cattle	3	Berb.			Gurara Tuat Tidikelt	excluding	from comparison all forms suspected to originate in children speech is not shared by the present authors			lang_inherited
 2	nominal	245	1	*(wa)bVl-	small cattle	4	Chad.	W.			Gejimbila		sheep	(EDE II 24, after Skinner)	
 2	nominal	245	1	*(wa)bVl-	small cattle	4	Chad.	E.		Lele	bulobulo		he-goat		shared_gloss
@@ -1292,7 +1292,7 @@ vol	section	no	afras_no	afras_protoform	afras_gloss	branch	family	subgroup	subgr
 2	nominal	245	1	*(wa)bVl-	small cattle	5	Cush.	E.		Kambatta	ambula		goat, ram	(HEC 71, 120)	
 2	nominal	245	1	*(wa)bVl-	small cattle	5	Cush.	S.		Ma?a	mbala		Buschbock, Tragelaphus scriptus (antelope)	(Meinhof 313)	
 2	nominal	250	1	*(y/wa)fan-	bull, buffalo	4	Chad.	W.			Montolfeoy				
-2	nominal	250	1	*(y/wa)fan-	bull, buffalo	4	Chad.	W.		Siri	te-vni	(Stolbova 1996 61) < *fVny-} C. *ufan- 'buffalo': Ga?anda ufana			quote_garbled
+2	nominal	250	1	*(y/wa)fan-	bull, buffalo	4	Chad.	W.		Siri	te-vni	< *fVny-} C. *ufan- 'buffalo': Ga?anda ufana		(Stolbova 1996 61)	quote_garbled
 2	nominal	250	1	*(y/wa)fan-	bull, buffalo	4	Chad.	W.		Higi-Dakwa	funu			(Sk. AAV 23)	
 2	nominal	250	1	*(y/wa)fan-	bull, buffalo	4	Chad.	W.		Fali Kiria	nfun				
 2	nominal	250	1	*(y/wa)fan-	bull, buffalo	4	Chad.	W.		Gude	uwena				
@@ -1321,11 +1321,11 @@ vol	section	no	afras_no	afras_protoform	afras_gloss	branch	family	subgroup	subgr
 2	nominal	255	1	*jijVw-	kind of insect (bee, fly; locust)	3	Berb.			Siwa	izi				
 2	nominal	255	1	*jijVw-	kind of insect (bee, fly; locust)	3	Berb.			Siwa	izan	pi.			lang_inherited
 2	nominal	255	1	*jijVw-	kind of insect (bee, fly; locust)	3	Berb.			Ghada-	mes	izzi		(La. Siwa 262-3)	
-2	nominal	255	1	*jijVw-	kind of insect (bee, fly; locust)	3	Berb.			Ghat	iz(z)i		abeille		shared_gloss
-2	nominal	255	1	*jijVw-	kind of insect (bee, fly; locust)	3	Berb.			Ghat	izzan	pi.	abeille		lang_inherited;shared_gloss
-2	nominal	255	1	*jijVw-	kind of insect (bee, fly; locust)	3	Berb.			Ahaggar	ehi		abeille		shared_gloss
-2	nominal	255	1	*jijVw-	kind of insect (bee, fly; locust)	3	Berb.			Ayr E. Wlm.	izi		abeille		shared_gloss
-2	nominal	255	1	*jijVw-	kind of insect (bee, fly; locust)	3	Berb.			Qabyle Semlal Izayan	izzi	(Pr. H 43). Cf. Nefusa td-ziz-wi	abeille		shared_gloss
+2	nominal	255	1	*jijVw-	kind of insect (bee, fly; locust)	3	Berb.			Ghat	iz(z)i				
+2	nominal	255	1	*jijVw-	kind of insect (bee, fly; locust)	3	Berb.			Ghat	izzan	pi.			lang_inherited
+2	nominal	255	1	*jijVw-	kind of insect (bee, fly; locust)	3	Berb.			Ahaggar	ehi				
+2	nominal	255	1	*jijVw-	kind of insect (bee, fly; locust)	3	Berb.			Ayr E. Wlm.	izi				
+2	nominal	255	1	*jijVw-	kind of insect (bee, fly; locust)	3	Berb.			Qabyle Semlal Izayan	izzi	. Cf. Nefusa td-ziz-wi		(Pr. H 43)	
 2	nominal	255	1	*jijVw-	kind of insect (bee, fly; locust)	3	Berb.			Iznasen	^izwi		abeille		shared_gloss
 2	nominal	255	1	*jijVw-	kind of insect (bee, fly; locust)	3	Berb.			Iznasen	t-izizwa	pi.	abeille		lang_inherited;shared_gloss
 2	nominal	255	1	*jijVw-	kind of insect (bee, fly; locust)	3	Berb.			Semlal	ta-zdui-t		abeille		shared_gloss
