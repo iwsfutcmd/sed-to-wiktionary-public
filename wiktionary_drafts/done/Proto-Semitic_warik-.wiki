@@ -20,7 +20,7 @@ Reconstructed in Militarev & Kogan's ''Semitic Etymological Dictionary'' with an
 ** {{desc|xeb|wa-rí-ku₁₇-um}}
 * West Semitic:
 ** Central Semitic:
-*** {{desc|ar|وَرِك|tr=warik-|t=haunch, upper thigh}}
+*** {{desc|ar|وَرِك|t=haunch, upper thigh}}
 *** Northwest Semitic:
 **** Biblical {{desc|arc|ירכתה|tr=yarḵāṯēh|t=thigh (suff.)}}
 **** {{desc|jpa|ירך|tr=yrk|t=haunch, thigh}}
@@ -28,7 +28,7 @@ Reconstructed in Militarev & Kogan's ''Semitic Etymological Dictionary'' with an
 **** {{desc|amw|werka|t=hip}}
 **** Canaanite:
 ***** {{desc|hbo|יָרֵךְ|tr=yārēk|t=upper thigh; side}}
-**** {{desc|uga|𐎊𐎗𐎋|tr=yrk|t=hips (?)}}
+**** {{desc|uga|𐎊𐎗𐎋|t=hips (?)}}
 *** Old South Arabian:
 **** {{desc|xsa|𐩥𐩧𐩫|tr=wrk|t=hip, thigh}}
 ** Ethiopian Semitic:
