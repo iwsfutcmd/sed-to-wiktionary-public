@@ -9,7 +9,9 @@ Refused (None): forms that cannot be a unique spelling:
   doubled consonants   (gemination: written with the mark U+085B or not at all)
   bare roots           (no a/i/u at all, 3+ consonants: a root, not a word)
   ',' ' ' '(' '-' and other punctuation: variants and affixes are converted one at a time by the caller
-Validated against Wiktionary by tests/test_tr2script.py (the Mandaic entries that exist on Wiktionary)."""
+Source of the table: Macuch, Handbook of Classical and Modern Mandaic (1965, pdf/), §2: a halqa, i aksa, u ušenna are the vowel letters, ʿ (ࡏ) stands for the old
+ʿayn and ẖ (ࡇ) for the old ḥet, a consonant with no vowel sign is read with a reduced vowel. The ˁ -> ࡏ rule follows that table; no Wiktionary entry
+with ˁ is among the checked ones, so it is the least verified part. Validated against Wiktionary by tests/test_tr2script.py (the Mandaic entries that exist on Wiktionary)."""
 import re, unicodedata as U
 
 MAP = {"a": "ࡀ", "ā": "ࡀ", "b": "ࡁ", "g": "ࡂ", "d": "ࡃ", "h": "ࡄ", "u": "ࡅ", "w": "ࡅ", "z": "ࡆ", "ṭ": "ࡈ", "i": "ࡉ", "y": "ࡉ",
