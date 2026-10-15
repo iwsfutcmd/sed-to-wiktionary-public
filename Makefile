@@ -47,3 +47,6 @@ conflicts:              # read the Wiktionary page behind each descendant and re
 	cd scripts && $(PY) wikt_conflicts.py --fetch
 wanted:                 # which Proto-Semitic pages does Wiktionary already link to but not have, that a SED entry could fill in (network, resumable, ~75 requests)
 	cd scripts && $(PY) wikt_wanted.py
+
+orthography:
+	cd scripts && python wikt_orthography.py --scan --fresh
