@@ -11,7 +11,7 @@
 
 ====Descendants====
 * East Semitic:
-** {{desc|akk|nâkum|alt=𒈾𒀀𒆪|tr=nâkum|t=to have illicit sexual intercourse, to fornicate}}
+** {{desc|akk|niākum|alt=𒉌𒀀𒆠𒅎|tr=niākum|t=to have illicit sexual intercourse, to fornicate}}
 * West Semitic:
 ** Central Semitic:
 *** {{desc|ar|نَاكَ|t=to cohabit with a woman}}

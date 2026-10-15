@@ -61,11 +61,10 @@ def page(title):
     r = api(action="query", prop="revisions", rvprop="content", rvslots="main", titles=title)["query"]["pages"][0]
     c = r["revisions"][0]["slots"]["main"]["content"] if "revisions" in r else ""
     f.write_text(c, encoding="utf-8"); return c or None
-AKK_LEMMA = {"warkatu": "warkatum", "warki": "warki", "marāṣu": "marāṣum", "immeru": "immerum", "ṣabītu": "ṣabītum", "baqqu": "baqqum", "baḳḳu": "baqqum", "ṣarātu": "ṣarātum", "nâku": "nâkum", "ḫarāšu": "ḫarāšum", "šīru": "šīrum", "šēmu": "šēmum", "pānu": "pānum", "nâku": "nâkum"}
+AKK_LEMMA = {"warkatu": "warkatum", "warki": "warki", "marāṣu": "marāṣum", "immeru": "immerum", "ṣabītu": "ṣabītum", "baqqu": "baqqum", "baḳḳu": "baqqum", "ṣarātu": "ṣarātum", "nâku": "nâkum", "ḫarāšu": "ḫarāšum", "šīru": "šīrum", "šēmu": "šēmum", "pānu": "pānum", "nâku": "niākum"}
 # no lemma page: (lemma, cuneiform, its transliteration). The cuneiform is as cited on Wiktionary's Arabic بق and Classical Syriac ܒܩܐ;
 # tests/test_cuneiform.py checks that the transliteration really gives it (eBL sign list).
 AKK_OVERRIDE = {"baḳḳu": ("baqqu", "𒁀𒀝𒄣", "ba-aq-qu"),
-                "nâku": ("nâkum", "𒈾𒀀𒆪", "na-a-ku"),     # no Wiktionary lemma: a NORMALISED spelling na-a-ku built with eBL, not a quoted attestation
                 "gildu": ("gildu", "𒋢𒄀𒅋𒁺", None)}   # cuneiform as on Wiktionary's Hebrew גלד / Syriac ܓܠܕܐ (transliteration of the spelling not given)
 def akkadian(form):
     """-> (lemma, phonetic cuneiform spelling from the page's {{cunsp}}, or None)"""
