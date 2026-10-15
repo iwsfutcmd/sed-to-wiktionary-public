@@ -1,0 +1,32 @@
+{{reconstructed}}
+==Proto-Semitic==
+
+===Noun===
+{{sem-noun|m}}
+
+# [[hollow]] of the [[hand]]; [[handful]]
+
+====Inflection====
+{{sem-decl-noun}}
+
+====Descendants====
+* East Semitic:
+** {{desc|akk|upnum|tr=upnum}}
+* West Semitic:
+** Central Semitic:
+*** {{desctree|ar|حُفْنَة}}
+*** Northwest Semitic:
+**** {{desc|arc|חֻפְנָא|tr=ḥupnā|t=handful}}
+***** {{desc|syc|ܚܘܦܢܐ|tr=ḥupnā|t=handful, fistful}}
+**** Canaanite:
+***** {{desc|hbo|חָפְנַיִם|tr=ḥofnayim|t=the hollow of both hands}}
+** Ethiopian Semitic:
+*** {{desc|gez|ሕፍን|tr=ḥəfn|t=handful, fistful}}
+*** {{desc|am|እፍኝ|tr=əffəñ|t=handful}}
+** Modern South Arabian:
+*** {{desc|gdq|-|tr=ḥāfən|t=amount held in cupped hands}}
+
+===References===
+* {{R:sem-pro:SED|volume=I|id=836|entry=*ḥupn-}}
+
+{{C|sem-pro|Anatomy}}

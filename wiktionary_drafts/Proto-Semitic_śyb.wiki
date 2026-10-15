@@ -1,0 +1,27 @@
+{{reconstructed}}
+==Proto-Semitic==
+
+===Verb===
+{{head|sem-pro|verb}}
+
+# to have [[grey]] [[hair]]; to turn [[grey]]
+
+====Derived terms====
+* {{l|sem-pro|*śaybat-|t=grey hair}}
+
+====Descendants====
+* East Semitic:
+** {{desc|akk|šâbum|tr=šâbum|t=to become old}}
+* West Semitic:
+** Central Semitic:
+*** {{desctree|ar|شَابَ}}
+*** Northwest Semitic:
+**** Canaanite:
+***** {{desc|hbo|שָׂב|tr=śāḇ|t=to be grey-headed, old}}
+** Ethiopian Semitic:
+*** {{desc|gez|-|tr=śeba|t=to turn grey (hair)}}
+** Modern South Arabian:
+*** {{desc|gdq|-|tr=ŝyīb|t=to go white in the hair of the head}}
+
+===References===
+* {{R:sem-pro:SED|volume=I|id=1207|entry=*ŝyb}}
