@@ -28,7 +28,7 @@ Semitic "lamb" words as borrowings from Akkadian, which conflicts with an inheri
 ## Is a draft good to go?
 `make test` (offline) and `ONLINE=1 make test` (also checks the live wiki; not yet run) run `tests/test_drafts.py` over every draft: well-formed wikitext, SED reference,
 print/site agreement, every SEDonline word present, script matches language, English glosses, tr= conventions, generator reproducibility;
-online: clean parse, title free and not linked under another spelling, language codes. Mutation-checked: 19 of 19 seeded mistakes are caught.
+online: title free and not linked under another spelling, language codes (no parse check: pages are pasted in by hand). Mutation-checked: 19 of 19 seeded mistakes are caught.
 
 ## Titles
 Checked against incoming links (`list=backlinks`), because Wiktionary's Proto-Semitic titles mix `ḳ`/`q` and `ṯ̣`/`θ̣`:

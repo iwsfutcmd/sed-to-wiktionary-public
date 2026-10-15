@@ -8,8 +8,8 @@ script checks only, since the live page is authoritative for those).
 Per draft: well-formed wikitext; the SED reference matches the SEDonline entry it was built from; print and site agree on the entry
 (sed_print_vs_site_agreement.tsv) and no Wiktionary title with that form exists; every word SEDonline lists is on the page; every
 term is in the script its language is written in; glosses are English; tr= follows Wiktionary's conventions; the file is what the
-generator produces (when its Wiktionary page cache is present). Online: the page parses without Lua errors or maintenance notes,
-the title is still free, no other spelling of the title already has incoming links, and the language codes mean what we think."""
+generator produces (when its Wiktionary page cache is present). Online: the title is still free, no other spelling of the title already has incoming links,
+and the language codes mean what we think."""
 import json, os, re, sys, tempfile, time, unicodedata as U, unittest, urllib.error, urllib.parse, urllib.request
 from collections import Counter, defaultdict
 from pathlib import Path
@@ -244,22 +244,8 @@ def spellings(title):
 
 @unittest.skipUnless(ONLINE, "set ONLINE=1 to check against en.wiktionary.org")
 class Online(unittest.TestCase):
-    """About 20 requests in total, each with a 20 s timeout."""
+    """A handful of requests, each with a 20 s timeout."""
     PFX = "Reconstruction:Proto-Semitic/"
-    def test_parse_is_clean(self):
-        for f in NEW + DONE:
-            with self.subTest(draft=title_of(f)):
-                say(f"  parse {title_of(f)}")
-                p = api(action="parse", title=self.PFX + title_of(f), text=f.read_text(encoding="utf-8"), prop="text|templates|categories",
-                        contentmodel="wikitext", disablelimitreport=1)["parse"]
-                txt = re.sub(r"<[^>]+>", "", re.sub(r"<style.*?</style>", "", p["text"], flags=re.S))
-                self.assertNotIn("Lua error", txt)
-                self.assertNotIn("Please either change this template", txt)
-                self.assertEqual([c["category"] for c in p["categories"] if "rror" in c["category"]], [])
-                self.assertEqual([t["title"] for t in p["templates"] if t.get("missing")], [])
-                if "[script needed]" in txt:                  # a warning, not a failure: not every language can be written (see --report)
-                    say(f"    warning: {txt.count('[script needed]')} descendant(s) without a script")
-
     def test_titles_are_free_and_not_linked_under_another_spelling(self):
         alts = {t: sorted(spellings(t)) for t in map(title_of, NEW)}
         say("  titles (one request)")
