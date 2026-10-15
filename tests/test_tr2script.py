@@ -39,6 +39,8 @@ class Abjad(unittest.TestCase):
         self.assertEqual(abjad.convert("arc", "yarḵāṯēh"), "ירכתה")      # spirantised ḵ ṯ -> כ ת
         self.assertEqual(abjad.convert("sam", "ṭby"), "ࠈࠁࠉ")
         self.assertEqual(abjad.convert("sam", "ṭabyā"), "ࠈࠁࠉࠀ")   # final ā -> alaf
+    def test_turoyo_in_syriac_script(self):                       # Wiktionary Turoyo entry for 'mosquito' is titled ܒܩܐ
+        self.assertEqual(abjad.convert("tru", "bōḳo"), "ܒܩܐ")
     def test_other_scripts(self):
         self.assertEqual(abjad.convert("xsa", "wrk"), "𐩥𐩧𐩫"); self.assertEqual(abjad.convert("sem-srb", "ṣby"), "𐩮𐩨𐩺")
         self.assertEqual(abjad.convert("phn", "ˀmr"), "𐤀𐤌𐤓")

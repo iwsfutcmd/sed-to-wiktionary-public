@@ -13,7 +13,7 @@
 ** Central Semitic:
 *** {{desc|ar|مَرِضَ|tr=mrḍ|t=to be diseased, disordered, distempered, sick, ill}}
 *** Northwest Semitic:
-**** Old {{desc|arc|מרק|tr=mrḳ|t=illness}}
+**** Old {{desc|arc|מרק|tr=mrq|t=illness}}
 **** Official {{desc|arc|מרע|tr=mrʕ|t=illness}}
 **** {{desc|jpa|מרע|tr=mrʕ|t=to be sick}}
 **** {{desc|syc|ܡܪܥ|tr=mǝraʕ|t=to be ill, sick}}

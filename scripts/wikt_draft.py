@@ -4,7 +4,7 @@ usage: wikt_draft.py REC_ID [REC_ID ...]    -> wiktionary_drafts/Proto-Semitic_<
 Script forms, in order: (1) Akkadian cuneiform copied from the {{cunsp}} block of the Wiktionary lemma page (network, cached under
 build/); (2) CURATED vocalised spellings (Arabic, pointed Hebrew, Ugaritic ʾi) that no converter can derive; (3) tr2script.ethiopic and
 tr2script.abjad (tests/test_tr2script.py); (4) languages cited in Latin on Wiktionary (Mehri, Jibbali, Harsusi, Bathari, Soqotri,
-Eblaite, Turoyo, Western Neo-Aramaic): the source form is the term; (5) otherwise `-` plus tr= ("[script needed]")."""
+Eblaite, Western Neo-Aramaic): the source form is the term; (5) otherwise `-` plus tr= ("[script needed]")."""
 import csv, json, re, sys, time, urllib.request, urllib.parse, urllib.error, unicodedata as U
 from collections import defaultdict
 from paths import DATA, BUILD, ROOT
@@ -31,7 +31,7 @@ LANG = {"Akkadian": ("akk", EAST, ""), "Ebla": ("xeb", EAST, ""), "Arabic": ("ar
         "Muher": ("sgw", GUR, ""), "Masqan": ("mvz", GUR, ""), "Mehri": ("gdq", MSA, ""), "Jibbali": ("shv", MSA, ""), "Harsusi": ("hss", MSA, ""),
         "Soqotri": ("sqt", MSA, ""), "Bathari": ("bhm", MSA, "")}
 ORDER = list(LANG)                      # output order within a node
-LATIN_TERM = {"tru", "amw", "gdq", "shv", "hss", "bhm", "sqt", "xeb"}   # cited in Latin script (the source form is the term)
+LATIN_TERM = {"amw", "gdq", "shv", "hss", "bhm", "sqt", "xeb"}   # cited in Latin script (the source form is the term)
 DIALECT = {"Chaha": "Chaha", "Ezha": "Ezha", "Endegen": "Endegen", "Ennemor": "Ennemor", "Gyeto": "Gyeto", "Muher": "Muher", "Gogot": "Gogot", "Soddo": "Soddo", "Masqan": None}
 
 # (lang code, SEDonline form) -> script, for spellings no converter can derive (vowelled or lexical). --verify checks them on Wiktionary.
@@ -58,8 +58,11 @@ def page(title):
     c = r["revisions"][0]["slots"]["main"]["content"] if "revisions" in r else ""
     f.write_text(c, encoding="utf-8"); return c or None
 AKK_LEMMA = {"warkatu": "warkatum", "warki": "warki", "marāṣu": "marāṣum", "immeru": "immerum", "ṣabītu": "ṣabītum", "baqqu": "baqqum", "baḳḳu": "baqqum", "ṣarātu": "ṣarātum", "nâku": "nâkum", "ḫarāšu": "ḫarāšum", "šīru": "šīrum", "šēmu": "šēmum"}
+AKK_OVERRIDE = {"baḳḳu": ("baqqu", "𒁀𒀝𒄣")}     # no lemma page; cuneiform as cited on Wiktionary's Arabic بق and Classical Syriac ܒܩܐ
 def akkadian(form):
     """-> (lemma, phonetic cuneiform spelling from the page's {{cunsp}}, or None)"""
+    if form in AKK_OVERRIDE:
+        return AKK_OVERRIDE[form]
     lemma = AKK_LEMMA.get(form, form)
     c = page(lemma)
     sec = c[c.find("==Akkadian=="):] if c and "==Akkadian==" in c else ""
@@ -67,7 +70,7 @@ def akkadian(form):
     return lemma, (m.group(1) if m else None)
 
 def tr_of(f):
-    return U.normalize("NFC", f).replace("ˀ", "ʔ").replace("ˁ", "ʕ")
+    return U.normalize("NFC", f).replace("ˀ", "ʔ").replace("ˁ", "ʕ").replace("ḳ", "q")      # descendants: Wiktionary's tr uses q (PS titles keep ḳ)
 TRANSLATE = {"im Kindbett liegen": "to be in childbed", "partorire (to give birth)": "to give birth", "accouché": "woman who has given birth", "the sacrup or rump of a butchered animal": "the sacrum or rump of a butchered animal", "Hüfte": "hip", "Wanzen (bugs)": "bugs", "Mücke (mosquito)": "mosquito", "guérir": "to heal"}
 def script_for(code, form):
     """-> (script, how) with how in curated / ethiopic / abjad, or (None, None)."""
@@ -113,15 +116,15 @@ PAGES = {   # title -> SEDonline reconstruction id and page content
  "warik-": dict(rec="758", vol="I", entry="*warik(-at)-", pos="{{sem-noun|m|g2=f}}", infl=True,
                 defs=["[[hip]], [[hipbone]]", "[[haunch]], upper [[thigh]]"], cat="{{C|sem-pro|Anatomy}}",
                 etym="Reconstructed in Militarev & Kogan's ''Semitic Etymological Dictionary'' with an optional feminine suffix {{m|sem-pro|*-at-}}: {{m|sem-pro|*warik(-at)-}}."),
- "ṯ̣aby-": dict(rec="624", vol="II", entry="*ṯ̣aby(-at)-", pos="{{sem-noun|m|g2=f}}", infl=True, defs=["[[gazelle]]"], cat="{{C|sem-pro|Mammals}}",
-               etym="Reconstructed in Militarev & Kogan's ''Semitic Etymological Dictionary'' with an optional feminine suffix {{m|sem-pro|*-at-}}: {{m|sem-pro|*ṯ̣aby(-at)-}}."),
+ "θ̣aby-": dict(rec="624", vol="II", entry="*ṯ̣aby(-at)-", pos="{{sem-noun|m|g2=f}}", infl=True, defs=["[[gazelle]]"], cat="{{C|sem-pro|Mammals}}",
+               etym="Reconstructed in Militarev & Kogan's ''Semitic Etymological Dictionary'' with an optional feminine suffix {{m|sem-pro|*-at-}}: {{m|sem-pro|*θ̣aby(-at)-}}."),
  "mrṣ́": dict(rec="894", vol="I", entry="*mrṣ̂", pos="{{head|sem-pro|verb}}", infl=False, defs=["to be [[sick]], [[ill]]"], cat="", etym=""),
  "ṣ́rṭ": dict(rec="1023", vol="I", entry="*ṣ̂rṭ", pos="{{head|sem-pro|verb}}", infl=False, defs=["to [[fart]], to break [[wind]] audibly"], cat="", etym=""),
  "nyk": dict(rec="995", vol="I", entry="*nyk", pos="{{head|sem-pro|verb}}", infl=False, defs=["to have [[sexual intercourse]]"], cat="", etym=""),
  "ḫrš": dict(rec="960", vol="I", entry="*ḫrš", pos="{{head|sem-pro|verb}}", infl=False, defs=["to be in [[childbed]], to be in [[confinement]]"], cat="", etym=""),
  "šiʔr-": dict(rec="691", vol="I", entry="*šiʔr-", pos="{{sem-noun|m}}", infl=True, defs=["[[flesh]]"], cat="{{C|sem-pro|Anatomy}}", etym=""),
  "śaḥm-": dict(rec="698", vol="I", entry="*ŝaḥm-", pos="{{sem-noun|m}}", infl=True, defs=["[[fat]]"], cat="", etym=""),
- "baqq-": dict(rec="667", vol="II", entry="*baḳḳ-", pos="{{sem-noun|m}}", infl=True, defs=["[[gnat]]"], cat="{{C|sem-pro|Insects}}", etym=""),
+ "baḳḳ-": dict(rec="667", vol="II", entry="*baḳḳ-", pos="{{sem-noun|m}}", infl=True, defs=["[[gnat]]"], cat="{{C|sem-pro|Insects}}", etym=""),
 }
 def tree_lines(words, notes):
     lines, shown = [], set()

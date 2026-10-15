@@ -11,17 +11,17 @@
 
 ====Descendants====
 * East Semitic:
-** {{desc|akk|baqqum|tr=baqqum|t=gnat}}
+** {{desc|akk|baqqu|alt=𒁀𒀝𒄣|tr=baqqu|t=gnat}}
 * West Semitic:
 ** Central Semitic:
 *** {{desc|ar|بَقّ|tr=baqq-|t=gnat}}
 *** Northwest Semitic:
-**** {{desc|tmr|בקא|tr=bāḳā|t=gnat}}
-**** {{desc|syc|ܒܩܐ|tr=bāḳā|t=gnat}}
-**** {{desc|tru|bōḳo|t=mosquito}}
-**** {{desc|amw|baḳḳa|t=bugs}}
+**** {{desc|tmr|בקא|tr=bāqā|t=gnat}}
+**** {{desc|syc|ܒܩܐ|tr=bāqā|t=gnat}}
+**** {{desc|tru|ܒܩܐ|tr=bōqo|t=mosquito}}
+**** {{desc|amw|baqqa|t=bugs}}
 ** Modern South Arabian:
-*** {{desc|hss|beḳḳét|t=bug}}, {{l|hss|beḳáyt}}
+*** {{desc|hss|beqqét|t=bug}}, {{l|hss|beqáyt}}
 
 ===References===
 * {{R:sem-pro:SED|volume=II|id=667|entry=*baḳḳ-}}

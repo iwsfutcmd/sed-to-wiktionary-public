@@ -16,14 +16,20 @@ Semitic "lamb" words as borrowings from Akkadian, which conflicts with an inheri
 | page | SED | SEDonline id | cited words |
 |---|---|---|---|
 | `warik-` | I no. 288 | 758 | 27 |
-| `ṯ̣aby-` | II no. 242 | 624 | 14 |
+| `θ̣aby-` | II no. 242 | 624 | 14 |
 | `mrṣ́` | I no. 42 (verbal) | 894 | 13 |
 | `ṣ́rṭ` | I no. 71 (verbal) | 1023 | 8 |
-| `baqq-` | II no. 58 | 667 | 7 |
+| `baḳḳ-` | II no. 58 | 667 | 7 |
 | `nyk` | I no. 53 (verbal) | 995 | 5 |
 | `ḫrš` | I no. 31 (verbal) | 960 | 14 |
 | `šiʔr-` | I no. 238 | 691 | 4 |
 | `śaḥm-` | I no. 263 | 698 | 4 |
+
+## Titles
+Checked against incoming links (`list=backlinks`), because Wiktionary's Proto-Semitic titles mix `ḳ`/`q` and `ṯ̣`/`θ̣`:
+`baḳḳ-` is already linked from the Arabic entry بق ("from Proto-Semitic *baḳḳ-"), `θ̣aby-` from ظبي (`{{ety|ar|:inh|sem-pro:*θ̣aby-}}`).
+Where nothing links in, the SED's own spelling is used with Wiktionary's `ś ṣ́ ʔ`. In descendants, `tr=` follows Wiktionary (`q`).
+`warik-` was saved to Wiktionary on 2026-10-15 (the first draft of it); regenerating it from this repo would now differ from the live page.
 
 ## Contents
 Every word SEDonline lists under the reconstruction is included (nothing is selected), grouped by branch as on `kalb-`/`pataḥ-`.
@@ -43,7 +49,7 @@ The reference is `{{R:sem-pro:SED|volume=…|id=<SEDonline id>|entry=…}}`.
 3. **`CURATED`** (`wikt_draft.py`): what no converter can derive: Arabic, pointed Hebrew, Ugaritic ʾi.
 4. **Latin as the term** (Wiktionary accepts it, and these are cited in Latin): Mehri, Shehri/Jibbali, Harsusi, Bathari, Soqotri,
    Eblaite, Turoyo, Western Neo-Aramaic.
-5. Still "[script needed]": Mandaic and Ge'ez (no converter), and forms with variants. `ṯ̣aby-` has one (Mandaic).
+5. Still "[script needed]": Mandaic and Ge'ez (no converter), and forms with variants. `θ̣aby-` has one (Mandaic).
 
 `python3 scripts/wikt_draft.py --verify` lists every script form with how it was made and whether Wiktionary has an entry for it:
 35 of 56 do not (red links; mostly Aramaic dialects, Sabaic, Gurage and Tigre, which Wiktionary covers thinly). Generated Ethiopic

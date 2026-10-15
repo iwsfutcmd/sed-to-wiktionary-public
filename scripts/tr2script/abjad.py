@@ -2,7 +2,7 @@
 
   sam   Samaritan script (Samaritan Aramaic and Hebrew)
   he    Hebrew / Aramaic square script (also Biblical Aramaic, Jewish Aramaic): unpointed; final forms ך ם ן ף ץ
-  syc   Syriac (Estrangela letters, unpointed)
+  syc   Syriac (Estrangela letters, unpointed); also Turoyo, which Wiktionary writes in Syriac script (final -o = Aramaic -ā)
   uga   Ugaritic cuneiform alphabet          phn   Phoenician          osa   Old South Arabian (Sabaic, Minaic, Qatabanic, Hadramitic)
 
 Only the consonant skeleton is written: vowels are dropped, doubled consonants are written once (no script here marks gemination),
@@ -31,7 +31,7 @@ PAIRS["sam"] = [(lat, chr(0x800 + i)) for i, (lat, _) in enumerate(l for l in PA
 TABLES = {k: dict(v) for k, v in PAIRS.items()}
 FINAL = {"כ": "ך", "מ": "ם", "נ": "ן", "פ": "ף", "צ": "ץ"}
 # Wiktionary language code -> table
-CODES = {"he": "he", "sam": "sam", "hbo": "he", "arc": "he", "jpa": "he", "tmr": "he", "syc": "syc", "uga": "uga", "phn": "phn", "xsa": "osa", "sem-srb": "osa",
+CODES = {"he": "he", "sam": "sam", "hbo": "he", "arc": "he", "jpa": "he", "tmr": "he", "syc": "syc", "tru": "syc", "uga": "uga", "phn": "phn", "xsa": "osa", "sem-srb": "osa",
          "inm": "osa", "xqt": "osa"}
 SRC = {"ˀ": "ʾ", "ʔ": "ʾ", "ʼ": "ʾ", "ˁ": "ʿ", "ʕ": "ʿ", "ʻ": "ʿ", "ḳ": "q", "ṯ̣": "ẓ", "ḏ̣": "ẓ", "ŝ": "ś"}
 VOWEL = "aeiouāēīōūəǝ"
@@ -44,7 +44,7 @@ def convert(code, translit):
     s = U.normalize("NFC", translit.strip().lower())
     for a, b in SRC.items():
         s = s.replace(a, b)
-    final_a = t in ("he", "sam", "syc") and s.endswith("ā")                                            # before marks and vowels go
+    final_a = t in ("he", "sam", "syc") and (s.endswith("ā") or (code == "tru" and s.endswith("o")))   # Turoyo -o < Aramaic -ā                                            # before marks and vowels go
     if t in ("he", "sam", "syc"):                                                                # spirantised begadkefat: same letters
         for a, b in SPIRANT.items():
             s = s.replace(a, b)
