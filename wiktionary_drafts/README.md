@@ -25,6 +25,13 @@ Semitic "lamb" words as borrowings from Akkadian, which conflicts with an inheri
 | `šiʔr-` | I no. 238 | 691 | 4 |
 | `śaḥm-` | I no. 263 | 698 | 4 |
 
+## Wanted pages (red links on Wiktionary)
+Special:WantedPages is capped at 5,000 results (down to 55 incoming links) and contains no Semitic reconstruction, so `make wanted`
+(`scripts/wikt_wanted.py`) goes the other way: for each SED entry without a matching page it generates the plausible titles (Wiktionary's mixed
+spellings; for verbs the root and the vocalised stems CaCaC-/CaCiC-/CaCuC-) and asks, in batches, which of them are missing but linked
+(`prop=linkshere`). Output: `data/wiktionary/wanted_semitic.tsv` (title, number of linking pages, some of them, SED entry, `agree` flag).
+Writing a page at a title Wiktionary already links to also settles the spelling questions (ḳ/q, ṯ̣/θ̣, ṣ́/ṣ̂).
+
 ## Verbs: vocalised stems
 Verbs are titled by their perfect stem, as on `pataḥ-`, `našaḳ-`, `patal-` (`maraṣ́-`, `nayak-`, `ḫaraš-`, `ṣ́araṭ-`), with the SED root
 (`*mrṣ̂`, `*nyk`, ...) in the reference. The SED gives only roots, so the vowels come from evidence, not from the source:

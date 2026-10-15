@@ -23,7 +23,7 @@ crops-%: heads-%
 	$(PY) scripts/crops.py $*
 glot-%: heads-%
 	$(PY) scripts/glot.py $* $(or $(OUT),data/intermediate/glot_v$*.json)
-.PHONY: all tables site titles sedonline-fetch sedonline sedonline-site test done-check conflicts
+.PHONY: all tables site titles sedonline-fetch sedonline sedonline-site test done-check conflicts wanted
 reflexes-%: bbox-%       # Semitic reflexes per entry from the PDFs' text layer -> data/volN/sed_volN_reflexes.tsv
 	cd scripts && $(PY) reflexes.py $*
 afras-%: bbox-%         # Afro-Asiatic comparanda per entry -> data/volN/sed_volN_afras.tsv
@@ -45,3 +45,5 @@ done-check:             # rebuild the pages already saved to Wiktionary (wiktion
 	cd scripts && $(PY) wikt_draft.py --check-done
 conflicts:              # read the Wiktionary page behind each descendant and report contradictions (CONFLICT/WARN); --fetch downloads missing pages
 	cd scripts && $(PY) wikt_conflicts.py --fetch
+wanted:                 # which Proto-Semitic pages does Wiktionary already link to but not have, that a SED entry could fill in (network, resumable, ~75 requests)
+	cd scripts && $(PY) wikt_wanted.py
