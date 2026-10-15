@@ -23,7 +23,7 @@ crops-%: heads-%
 	$(PY) scripts/crops.py $*
 glot-%: heads-%
 	$(PY) scripts/glot.py $* $(or $(OUT),data/intermediate/glot_v$*.json)
-.PHONY: all tables site titles sedonline-fetch sedonline sedonline-site test
+.PHONY: all tables site titles sedonline-fetch sedonline sedonline-site test done-check
 reflexes-%: bbox-%       # Semitic reflexes per entry from the PDFs' text layer -> data/volN/sed_volN_reflexes.tsv
 	cd scripts && $(PY) reflexes.py $*
 afras-%: bbox-%         # Afro-Asiatic comparanda per entry -> data/volN/sed_volN_afras.tsv
@@ -40,3 +40,5 @@ test:                    # converter and draft tests (no network; ONLINE=1 make 
 	$(PY) tests/test_tr2script.py
 	$(PY) tests/test_drafts.py
 	$(PY) tests/test_cuneiform.py
+done-check:             # rebuild the pages already saved to Wiktionary (wiktionary_drafts/done/), print a diff of what changed; exit 1 if any did
+	cd scripts && $(PY) wikt_draft.py --check-done

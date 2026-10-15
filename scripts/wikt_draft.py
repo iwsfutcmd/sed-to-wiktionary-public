@@ -213,10 +213,42 @@ def verify():
         n_no += not ok
     print(f"{len(rows)} script forms; {n_no} have no Wiktionary entry of that language (red links)")
 
+def check_done(only=None):
+    """Rebuild every page that is in wiktionary_drafts/done/ and compare it with the saved copy. The saved copy is never touched: a changed
+    page is written to wiktionary_drafts/updates/ and a diff is printed, so you can decide what to change on the live page.
+    Returns the titles that changed."""
+    import difflib, tempfile
+    UPD = OUT / "updates"
+    changed = []
+    for title, cfg in PAGES.items():
+        saved = OUT / "done" / f"Proto-Semitic_{title}.wiki"
+        if not saved.exists():
+            continue
+        with tempfile.TemporaryDirectory() as tmp:
+            build(title, cfg, out=tmp)
+            new = (Path(tmp) / saved.name).read_text(encoding="utf-8")
+        old = saved.read_text(encoding="utf-8")
+        stale = UPD / saved.name
+        if new == old:
+            print(f"done/{title}: unchanged")
+            stale.unlink(missing_ok=True)
+            continue
+        changed.append(title)
+        UPD.mkdir(exist_ok=True)
+        stale.write_text(new, encoding="utf-8")
+        print(f"done/{title}: CHANGED, new version in wiktionary_drafts/updates/{saved.name}")
+        print("".join("    " + l for l in difflib.unified_diff(old.splitlines(True), new.splitlines(True), "saved", "regenerated", n=0)
+                      if not l.startswith(("---", "+++"))))
+    return changed
+
 if __name__ == "__main__":
-    if "--verify" in sys.argv: verify()
-    else:
-        for t, cfg in PAGES.items():
-            if (OUT / "done" / f"Proto-Semitic_{t}.wiki").exists():      # already saved to Wiktionary: the live page is authoritative
-                print(f"{t}: in wiktionary_drafts/done/, not regenerated"); continue
-            if len(sys.argv) == 1 or t in sys.argv[1:]: build(t, cfg)
+    if "--check-done" in sys.argv:
+        sys.exit(1 if check_done() else 0)
+    for t, cfg in PAGES.items():
+        if (OUT / "done" / f"Proto-Semitic_{t}.wiki").exists():
+            continue                                   # saved to Wiktionary: never overwritten; see check_done()
+        if len(sys.argv) == 1 or t in sys.argv[1:]:
+            build(t, cfg)
+    changed = check_done()
+    if changed:
+        print(f"\n{len(changed)} page(s) already on Wiktionary would change: {', '.join(changed)} (wiktionary_drafts/updates/)")

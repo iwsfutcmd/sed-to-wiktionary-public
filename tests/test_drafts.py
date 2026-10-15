@@ -90,6 +90,19 @@ for w in read(DATA / "sedonline" / "sedonline_words.tsv"):
     WORDS[w["rec_id"]].append(w)
 AGREE = {r["rec_id"]: r for r in read(DATA / "sedonline" / "sed_print_vs_site_agreement.tsv")}
 
+def convention_problems(t):
+    """tr= / term conventions for descendants (see test_transliteration_follows_wiktionary_conventions)."""
+    out = []
+    for tpl, code, term, params in entries(t):
+        tr = params.get("tr", "")
+        if re.search("[ˀˁǝḳɨ]", tr):
+            out.append(f"{code}: tr={tr!r} uses SED symbols (use ʔ ʕ ə q)")
+        if code in WD.AUTO_TR and "tr" in params:
+            out.append(f"{code}: Wiktionary transliterates this itself; drop tr={tr}")
+        if code in ("gdq", "shv", "hss", "bhm", "sqt", "amw", "xeb") and "tr" in params:
+            out.append(f"{code}: a Latin term needs no tr=")
+    return out
+
 class Drafts(unittest.TestCase):
     # ---------- structure ----------
     @forall(NEW + DONE)
@@ -186,13 +199,21 @@ class Drafts(unittest.TestCase):
 
     @forall(NEW)
     def test_transliteration_follows_wiktionary_conventions(self, t, title):
-        for tpl, code, term, params in entries(t):
-            tr = params.get("tr", "")
-            self.assertFalse(re.search("[ˀˁǝḳɨ]", tr), f"{code}: tr={tr!r} uses SED symbols (use ʔ ʕ ə q)")
-            if code in WD.AUTO_TR:
-                self.assertNotIn("tr", params, f"{code}: Wiktionary transliterates this itself; drop tr={tr}")
-            if code in ("gdq", "shv", "hss", "bhm", "sqt", "amw", "xeb"):
-                self.assertNotIn("tr", params, f"{code}: a Latin term needs no tr=")
+        self.assertEqual(convention_problems(t), [])
+
+    def test_pages_already_on_wiktionary_are_flagged_when_they_would_change(self):
+        """Not a failure: the saved copies in done/ are what you pasted. This FLAGS what has changed since (convention fixes, new data),
+        so you can update the live page. Details: `make done-check` (diffs, new versions in wiktionary_drafts/updates/)."""
+        if not (BUILD / "wikt_pages").exists():
+            self.skipTest("no Wiktionary page cache")
+        import contextlib, io
+        with contextlib.redirect_stdout(io.StringIO()):
+            changed = WD.check_done()
+        for title in changed:
+            say(f"\n  FLAG: done/{title} would change if regenerated (make done-check)")
+        for f in DONE:
+            for problem in convention_problems(f.read_text(encoding="utf-8")):
+                say(f"\n  FLAG: done/{title_of(f)}: {problem}")
 
     @forall(NEW)
     def test_branches_are_in_wiktionarys_order(self, t, title):

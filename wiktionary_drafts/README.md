@@ -25,6 +25,13 @@ Semitic "lamb" words as borrowings from Akkadian, which conflicts with an inheri
 | `šiʔr-` | I no. 238 | 691 | 4 |
 | `śaḥm-` | I no. 263 | 698 | 4 |
 
+## Pages already on Wiktionary (`done/`)
+Move a page to `done/` once you have saved it. `python3 scripts/wikt_draft.py` and `make done-check` rebuild every `done/` page
+and compare it with your saved copy. The saved copy is never overwritten: a changed page is written to `updates/` with a diff printed
+(delete the file in `updates/` after applying it, or it disappears by itself once the saved copy matches). `make test` prints a
+`FLAG` line for the same changes and for convention problems in saved pages (not a failure). All the content checks below also run
+on `done/`.
+
 ## Is a draft good to go?
 `make test` (offline) and `ONLINE=1 make test` (also checks the live wiki; not yet run) run `tests/test_drafts.py` over every draft: well-formed wikitext, SED reference,
 print/site agreement, every SEDonline word present, script matches language, English glosses, tr= conventions, generator reproducibility;
