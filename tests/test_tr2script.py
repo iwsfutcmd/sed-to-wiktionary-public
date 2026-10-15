@@ -1,8 +1,8 @@
 """Run: python3 tests/test_tr2script.py   (no network, no dependencies)"""
-import json, sys, unittest
+import json, os, sys, unittest
 from pathlib import Path
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent / "scripts"))
-from tr2script import abjad, ethiopic
+from tr2script import abjad, arabic, ethiopic
 from paths import DATA
 
 class Ethiopic(unittest.TestCase):
@@ -24,7 +24,8 @@ class Ethiopic(unittest.TestCase):
     def test_refuses_instead_of_guessing(self):
         self.assertIsNone(ethiopic.convert("gez", "ḥəfn"))          # no Ge'ez profile
         self.assertIsNone(ethiopic.convert("ti", "aṭənt"))          # Tigrinya has distinct ʾä and ʾa: initial a is ambiguous
-        self.assertIsNone(ethiopic.convert("am", "arās"))           # length marks are not handled
+        self.assertEqual(ethiopic.convert("stv", "arās"), ethiopic.convert("am", "aras"))   # long ā = fourth order in Amharic-type sources
+        self.assertIsNone(ethiopic.convert("ti", "ʕaṣmā"))          # Tigrinya/Tigre: length marks are not handled
         self.assertIsNone(ethiopic.convert("am", "wä rč"))
         self.assertIsNone(ethiopic.convert("am", "wärč1"))
 
@@ -50,6 +51,34 @@ class Abjad(unittest.TestCase):
     def test_known_limits(self):
         self.assertEqual(abjad.convert("uga", "ˀmr"), "𐎀𐎎𐎗")           # Wiktionary writes 𐎛𐎎𐎗 (ʾi): not recoverable from the consonants
         self.assertIsNone(abjad.convert("he", "qwm x")); self.assertIsNone(abjad.convert("ar", "wrk")); self.assertIsNone(abjad.convert("he", "z1"))
+
+class Arabic(unittest.TestCase):
+    PAIRS = [("warik-", "وَرِك"), ("baqq-", "بَقّ"), ("ḏ̣aby-", "ظَبْي"), ("ẓaby-", "ظَبْي"), ("šaḥm-", "شَحْم"), ("šaḥuma", "شَحُمَ"), ("ḫarūs-", "خَرُوس"),
+             ("kalb-", "كَلْب"), ("bayt-", "بَيْت"), ("ṯawr-", "ثَوْر")]
+    def test_vocalised_stems(self):                     # the first seven are spellings used (and found on Wiktionary) in the drafts
+        for lat, ar in self.PAIRS:
+            self.assertEqual(arabic.convert(lat), ar, lat)
+    def test_refuses_instead_of_guessing(self):
+        for lat in ["nyk", "ḍrṭ", "ˀab-", "ʔabb-", "ab-", "kalbā", "kalbī", "ʕaṯm(-at)-", "ka/lb", "kalb, kalab", "wū", ""]:
+            self.assertIsNone(arabic.convert(lat), lat)
+    def test_sukun_not_on_the_last_letter(self):
+        self.assertFalse(arabic.convert("kalb-").endswith("\u0652")); self.assertTrue(arabic.convert("kalb-").startswith("كَ"))
+
+@unittest.skipUnless(os.environ.get("ONLINE"), "set ONLINE=1: round trip through Wiktionary's own Arabic transliteration")
+class ArabicOracle(unittest.TestCase):
+    def test_round_trip_through_wiktionary(self):
+        import json, re, urllib.parse, urllib.request
+        scripts = [(lat, ar) for lat, ar in Arabic.PAIRS]
+        text = "\n".join(f"* {{{{desc|ar|{ar}}}}}" for _, ar in scripts)
+        data = urllib.parse.urlencode(dict(format="json", formatversion=2, action="parse", title="Reconstruction:Proto-Semitic/x", text=text,
+                                           prop="text", contentmodel="wikitext", disablelimitreport=1)).encode()
+        html = json.load(urllib.request.urlopen(urllib.request.Request("https://en.wiktionary.org/w/api.php", data=data,
+                         headers={"User-Agent": "sed-to-wiktionary/1.0 (research)"}), timeout=30))["parse"]["text"]
+        trs = re.findall(r"Arabic: [^(]*\(([^)]*)\)", re.sub(r"<[^>]+>", "", re.sub(r"<style.*?</style>", "", html, flags=re.S)))
+        self.assertEqual(len(trs), len(scripts), trs)
+        for (lat, ar), tr in zip(scripts, trs):
+            want = lat.rstrip("-").replace("ḏ̣", "ẓ").replace("ḫ", "ḵ")      # Wiktionary writes خ as ḵ, the SED as ḫ
+            self.assertEqual(tr, want, f"{ar}: Wiktionary reads it as {tr!r}, we meant {lat!r}")
 
 if __name__ == "__main__":
     unittest.main(verbosity=1)

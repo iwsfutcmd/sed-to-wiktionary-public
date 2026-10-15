@@ -10,7 +10,7 @@ from collections import defaultdict
 from pathlib import Path
 from paths import DATA, BUILD, ROOT
 from sedonline_compare import read
-from tr2script import abjad, ethiopic
+from tr2script import abjad, arabic, ethiopic
 
 UA = {"User-Agent": "sed-to-wiktionary/1.0 (research; https://github.com/iwsfutcmd/sed-to-wiktionary)"}
 CACHE = BUILD / "wikt_pages"
@@ -41,8 +41,7 @@ CURATED = {
  ("uga", "ˀmr"): "𐎛𐎎𐎗",                    # Wiktionary writes ʾi (𐎛), the consonants alone give 𐎀
  ("hbo", "yārēk"): "יָרֵךְ", ("hbo", "ṣəbī"): "צְבִי", ("hbo", "ˀimmēr"): "אִמֵּר", ("tru", "bōḳo"): "ܒܩܐ",      # Turoyo is written in Syriac script on Wiktionary (entry ܒܩܐ)
 
- ("ar", "warik-"): "وَرِك", ("ar", "ḏ̣aby-"): "ظَبْي", ("ar", "mrḍ"): "مَرِضَ", ("ar", "baqq-"): "بَقّ", ("ar", "ḍrṭ"): "ضَرَطَ",
- ("ar", "nyk"): "نَاكَ", ("ar", "ḫarūs-"): "خَرُوس", ("ar", "ḫrs"): "خَرَّسَ", ("ar", "šaḥuma"): "شَحُمَ", ("ar", "šaḥm-"): "شَحْم",
+ ("ar", "mrḍ"): "مَرِضَ", ("ar", "ḍrṭ"): "ضَرَطَ", ("ar", "nyk"): "نَاكَ", ("ar", "ḫrs"): "خَرَّسَ",    # bare roots: the verb forms are chosen by hand
  ("hbo", "šəˀēr"): "שְׁאֵר", ("uga", "šˀir"): "𐎌𐎛𐎗",          # both as on Wiktionary's Akkadian šīrum page
 }
 def api(**q):
@@ -83,6 +82,8 @@ def script_for(code, form):
         return CURATED[(code, form)], "curated"
     sc = ethiopic.convert(code, form) if code in ethiopic.PROFILES else None
     if sc: return sc, "ethiopic"
+    sc = arabic.convert(form) if code == "ar" else None
+    if sc: return sc, "arabic"
     sc = abjad.convert(code, form)
     return (sc, "abjad") if sc else (None, None)
 def one(code, form, notes, first, gloss, lang):

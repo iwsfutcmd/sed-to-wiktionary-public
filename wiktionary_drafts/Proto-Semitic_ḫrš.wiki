@@ -22,7 +22,7 @@
 *** {{desc|agj|ሃራስ|tr=haras|t=woman in childbed}}
 *** {{desc|gft|አራስ|tr=aras|t=woman who has given birth}}
 *** Gurage:
-**** {{desc|stv|-|tr=arās|t=woman in childbed}}
+**** {{desc|stv|አራስ|tr=arās|t=woman in childbed}}
 **** {{desc|wle|አራስ|tr=aras|t=woman in childbed}}
 **** {{desc|zwa|አራስ|tr=aras|t=woman in childbed}}
 

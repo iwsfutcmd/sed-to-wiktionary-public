@@ -23,6 +23,7 @@ VOWELS = "äuiaeəo"
 PROFILES = {c: {} for c in "am tig agj har gft stv wle zwa gru sgw mvz".split()}
 PROFILES["ti"] = {"ḵ": "x"}
 # profiles whose source writes a word-initial vowel for an unwritten ʾ, with a standing for ʾä (cf. Wiktionary's Amharic አጥንት = SED aṭənt)
+LONG_A = {"am", "agj", "gft", "stv", "wle", "zwa", "gru", "sgw", "mvz", "har"}
 INITIAL_A = {"am", "agj", "gft", "stv", "wle", "zwa", "gru", "sgw", "mvz"}
 # source spellings -> Wiktionary's symbols
 COMMON = {"ˀ": "ʾ", "ʔ": "ʾ", "ʼ": "ʾ", "ˁ": "ʿ", "ʕ": "ʿ", "ʻ": "ʿ", "ṣ̂": "ṣ́", "ɨ": "ə", "ǝ": "ə"}
@@ -45,6 +46,8 @@ def convert(lang, translit):
     for a, b in {**COMMON, **PROFILES[lang]}.items():
         s = s.replace(a, b)
     s = U.normalize("NFC", s)
+    if lang in LONG_A:                                              # a long ā in these sources is the fourth order, as a is
+        s = s.replace("ā", "a")
     if s and s[0] in VOWELS and lang in INITIAL_A:                   # initial vowel = ʾ + vowel; a stands for ä
         s = "ʾ" + ("ä" if s[0] == "a" else s[0]) + s[1:]
     out, i = [], 0

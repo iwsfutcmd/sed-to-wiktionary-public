@@ -66,10 +66,12 @@ The reference is `{{R:sem-pro:SED|volume=…|id=<SEDonline id>|entry=…}}`.
      Not for Ge'ez (its source writes `a` for the first order, so it depends on the word) or word-initial vowels (unwritten ʾ).
    - `abjad`: consonantal Hebrew/Aramaic, Samaritan, Syriac, Ugaritic, Phoenician, Old South Arabian. Unpointed; final ā is written
      as alef; Ugaritic ʾ is always 𐎀 (Wiktionary's 𐎛 for *ʾimr-* is in `CURATED`).
-3. **`CURATED`** (`wikt_draft.py`): what no converter can derive: Arabic, pointed Hebrew, Ugaritic ʾi.
-4. **Latin as the term** (Wiktionary accepts it, and these are cited in Latin): Mehri, Shehri/Jibbali, Harsusi, Bathari, Soqotri,
+3. `arabic`: vocalised stems (warik- → وَرِك). Refuses bare roots, hamza, and word-final ā/ī. Checked against Wiktionary's own
+   transliteration (`ONLINE=1 make test`: the spelling is rendered by `{{desc|ar|…}}` and its automatic transliteration compared).
+4. **`CURATED`** (`wikt_draft.py`): what no converter can derive: Arabic verbs given by root only, pointed Hebrew, Ugaritic ʾi, Turoyo.
+5. **Latin as the term** (Wiktionary accepts it, and these are cited in Latin): Mehri, Shehri/Jibbali, Harsusi, Bathari, Soqotri,
    Eblaite, Turoyo, Western Neo-Aramaic.
-5. Still "[script needed]": Mandaic and Ge'ez (no converter), and forms with variants. `θ̣aby-` has one (Mandaic).
+6. Still "[script needed]": Mandaic (not attempted: Wiktionary has only 8 Mandaic entries with a transcription, too few to verify a converter) and Ge'ez (no converter), and forms with variants. `θ̣aby-` has one (Mandaic).
 
 `python3 scripts/wikt_draft.py --verify` lists every script form with how it was made and whether Wiktionary has an entry for it:
 35 of 56 do not (red links; mostly Aramaic dialects, Sabaic, Gurage and Tigre, which Wiktionary covers thinly). Generated Ethiopic
