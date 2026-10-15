@@ -129,14 +129,16 @@ PAGES = {   # title -> SEDonline reconstruction id and page content
  "mrṣ́": dict(rec="894", vol="I", entry="*mrṣ̂", pos="{{head|sem-pro|verb}}", infl=False, defs=["to be [[sick]], [[ill]]"], cat="", etym=""),
  "ṣ́rṭ": dict(rec="1023", vol="I", entry="*ṣ̂rṭ", pos="{{head|sem-pro|verb}}", infl=False, defs=["to [[fart]], to break [[wind]] audibly"], cat="", etym=""),
  "nyk": dict(rec="995", vol="I", entry="*nyk", pos="{{head|sem-pro|verb}}", infl=False, defs=["to have [[sexual intercourse]]"], cat="", etym=""),
- "ḫrš": dict(rec="960", vol="I", entry="*ḫrš", pos="{{head|sem-pro|verb}}", infl=False, defs=["to be in [[childbed]], to be in [[confinement]]"], cat="", etym=""),
+ "ḫrš": dict(rec="960", vol="I", entry="*ḫrš", exclude={("Amharic", "arräsä"): "Wiktionary's Amharic አረሰ is 'to plough', from *ḥaraṯ- (tests/test_conflicts.py)"}, pos="{{head|sem-pro|verb}}", infl=False, defs=["to be in [[childbed]], to be in [[confinement]]"], cat="", etym=""),
  "šiʔr-": dict(rec="691", vol="I", entry="*šiʔr-", pos="{{sem-noun|m}}", infl=True, defs=["[[flesh]]"], cat="{{C|sem-pro|Anatomy}}", etym=""),
  "śaḥm-": dict(rec="698", vol="I", entry="*ŝaḥm-", pos="{{sem-noun|m}}", infl=True, defs=["[[fat]]"], cat="", etym=""),
  "baḳḳ-": dict(rec="667", vol="II", entry="*baḳḳ-", pos="{{sem-noun|m}}", infl=True, defs=["[[gnat]]"], cat="{{C|sem-pro|Insects}}", etym=""),
 }
-def tree_lines(words, notes):
+def tree_lines(words, notes, exclude=()):
     lines, shown = [], set()
     for w in sorted(words, key=lambda w: ORDER.index(w["lang"])):
+        if (w["lang"], w["form"]) in exclude:
+            continue
         code, path, label = LANG[w["lang"]]
         g = re.sub(r"\s+", " ", w["gloss"]).strip().replace("|", "/")
         e = entry(code, w["form"], g, w["lang"], notes)
@@ -156,7 +158,7 @@ def build(title, cfg, out=None):
     if cfg["etym"]: d += ["===Etymology===", cfg["etym"], ""]
     d += ["===" + ("Verb" if "verb" in cfg["pos"] else "Noun") + "===", cfg["pos"], ""] + ["# " + x for x in cfg["defs"]] + [""]
     if cfg["infl"]: d += ["====Inflection====", "{{sem-decl-noun}}", ""]
-    d += ["====Descendants===="] + tree_lines(words, notes) + ["",
+    d += ["====Descendants===="] + tree_lines(words, notes, cfg.get("exclude", {})) + ["",
           "===References===", "* {{R:sem-pro:SED|volume=%s|id=%s|entry=%s}}" % (cfg["vol"], cfg["rec"], cfg["entry"])]
     if cfg["cat"]: d += ["", cfg["cat"]]
     dest = Path(out) if out else OUT

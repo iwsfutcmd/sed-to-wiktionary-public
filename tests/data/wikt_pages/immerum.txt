@@ -1,0 +1,14 @@
+<!-- EXCERPT of en.wiktionary.org/wiki/immerum (Akkadian section, as seen 2026-10-15); kept as a test fixture -->
+==Akkadian==
+
+===Noun===
+{{akk-noun|m|pl=immerū|plg=m|pl2=immerātum|pl2g=f}} {{tlb|akk|fromOAOB}}
+
+# [[sheep]], [[ram]]
+
+====Descendants====
+* {{desc|arc|אִימְּרָא|bor=1}} / {{l|arc|אִמְּרָא|tr=ʾimmərā}} / {{l|syc|ܐܶܡܪܳܐ|tr=ʾemmərā|t=lamb}}
+** {{desc|ar|إِمَّر|t=young lamb|bor=1}}
+* {{desc|he|אִמַּר|tr=ʔimmár|bor=1|t=lamb}} or {{l|he|אִמֵּר|tr=ʔimmér}}
+* {{desc|phn|𐤀𐤌𐤓|bor=1|t=lamb}}
+* {{desc|uga|𐎛𐎎𐎗|ts=immiru|t=lamb|bor=1}}

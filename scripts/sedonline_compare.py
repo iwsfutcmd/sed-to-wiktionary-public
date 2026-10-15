@@ -23,6 +23,7 @@ def fold(s):
     s = U.normalize("NFC", s)
     for a, b in FOLD:
         s = s.replace(a, b)
+    s = s.replace("ṣ̂", "ṣ́")       # SED writes the lateral emphatic ṣ̂, Wiktionary mostly ṣ́
     s = s.replace("ṱ", "ṯ̣")     # U+1E71 (t + circumflex below) is the same sound as ṯ̣; Wiktionary mostly writes ṯ + dot below
     return canon(s).replace("-", "").replace("*", "").strip()
 

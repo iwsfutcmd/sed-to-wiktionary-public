@@ -19,7 +19,6 @@
 *** {{desc|tig|ሓራስ|tr=ḥaras|t=woman in childbed}}
 *** {{desc|ti|ሓረሰ|tr=ḥaräsä|t=to give birth}}
 *** {{desc|am|አራስ|tr=aras|t=woman in childbed}}
-*** {{desc|am|አረሰ|tr=arräsä|t=to take care of a parturient woman}}
 *** {{desc|agj|ሃራስ|tr=haras|t=woman in childbed}}
 *** {{desc|gft|አራስ|tr=aras|t=woman who has given birth}}
 *** Gurage:

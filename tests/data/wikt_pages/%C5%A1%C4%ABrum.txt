@@ -1,0 +1,31 @@
+==Akkadian==
+
+===Etymology===
+Cognate with {{cog|hbo|שְׁאֵר|tr=šəʾer|t=flesh}} and {{cog|uga|𐎌𐎛𐎗|t=flesh}}.
+
+===Pronunciation===
+{{akk-IPA}}
+
+===Noun===
+{{akk-noun|m|cons=šīr|cons2=šīri}} {{tlb|akk|fromOAOB}}
+
+# [[flesh]]
+# [[kin]] {{gl|one's own flesh and blood}}
+# {{lb|akk|extispicy}} [[ominous]] [[part]], [[ominous]] [[sign]]
+
+====Alternative forms====
+* {{alter|akk|šīru||nm}}
+* {{alter|akk|šērum|šēru}}
+* {{alter|akk|širrum||OBab}}
+* {{alter|akk|tīru||MAss|MBab}}
+
+{{cunsp
+|sum=𒍜<tr:UZU>
+|sum2=𒋢<tr:SU>
+|phon=𒅆𒊒𒌝<tr:ši-ru-um>
+|phon2=𒅆𒄿𒀸<tr:ši-i-rum>
+|phon3=𒅆𒄿𒊒<tr:ši-i-ru>
+}}
+
+===References===
+* {{R:akk:CAD|šīru|volume=17|part=3}}

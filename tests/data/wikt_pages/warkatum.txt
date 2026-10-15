@@ -1,0 +1,40 @@
+==Akkadian==
+
+===Etymology===
+Cognate with {{cog|ar|وَرِك|t=hip, buttock}} and {{cog|hbo|יָרֵךְ|tr=yɔreḵ|t=thigh, side}}.
+
+===Pronunciation===
+{{akk-IPA}}
+
+===Noun===
+{{akk-noun|f|pl=warkātum}} {{tlb|akk|fromOAOB}}
+
+# [[backside]], [[rear]] [[side]]
+# {{lb|akk|anatomy}} [[rectum]], [[buttocks]]
+# {{lb|akk|military}} [[rear]] [[guard]] {{gl|of an army}}
+# {{lb|akk|finance}} [[later]] [[instalment]]
+# [[arrears]] {{gl|[[unpaid]] [[debt]]}}
+# [[estate]], [[inheritance]]
+# [[circumstances]], [[background]] {{gl|of a case}}
+#: {{coi|akk|'''𒉿𒅈𒅗𒌓''' 𒉺𒊏𒋢𒌝|tr='''wa-ar-ka-tam''' pa-ra-su-um|norm='''warkatam''' parāsum|t=to investigate the '''circumstances''' of a case}}
+
+====Alternative forms====
+* {{alter|akk|warkatu||nm}}
+* {{alter|akk|barkatu}}
+* {{alter|akk|urkatum|urkatu||Ass}}
+
+{{cunsp
+|sum=𒂕<tr:EGIR>
+|sum2=𒀀𒂵<tr:A.GA>
+|phon=𒉿𒅈𒅗𒌈<tr:wa-ar-ka-tum>
+|phon2=𒅈𒅗𒌈<tr:ar-ka-tum>
+|phon3=𒅈𒅗𒌅<tr:ar-ka-tu>
+}}
+
+====Derived terms====
+{{col3|akk|warkatam<t:later, soon afterwards>}}
+
+===References===
+* {{R:akk:CAD|arkatu}}
+* {{R:akk:CDA|(w)arkatu(m)}}
+* {{R:akk:GA}}

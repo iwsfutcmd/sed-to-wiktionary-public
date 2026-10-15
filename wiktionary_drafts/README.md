@@ -32,6 +32,14 @@ and compare it with your saved copy. The saved copy is never overwritten: a chan
 `FLAG` line for the same changes and for convention problems in saved pages (not a failure). All the content checks below also run
 on `done/`.
 
+## Conflicts with existing Wiktionary pages
+`make conflicts` (`scripts/wikt_conflicts.py`) reads the Wiktionary page behind every descendant and reports, in that language's section:
+CONFLICT (etymology names a different Proto-Semitic form; the page lists other descendants of ours as *borrowed* from it, as Akkadian
+`immerum` does for the Hebrew/Aramaic "lamb" words), WARN (the word is said to be borrowed; our gloss shares no word with the page's
+definitions; the page names our consonants with other vowels, so the page may be expected at that title), INFO (agrees, or no page).
+`make test` runs it on the cached pages and fails on any CONFLICT. A word can be left out of a draft with a documented reason
+(`exclude` in `wikt_draft.py`; currently Amharic *arräsä* under `ḫrš`: Wiktionary's አረሰ is "to plough", from *ḥaraṯ-).
+
 ## Is a draft good to go?
 `make test` (offline) and `ONLINE=1 make test` (also checks the live wiki; not yet run) run `tests/test_drafts.py` over every draft: well-formed wikitext, SED reference,
 print/site agreement, every SEDonline word present, script matches language, English glosses, tr= conventions, generator reproducibility;

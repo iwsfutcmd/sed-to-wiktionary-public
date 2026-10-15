@@ -25,22 +25,7 @@ NEW = sorted(DRAFTS.glob("Proto-Semitic_*.wiki"))
 DONE = sorted((DRAFTS / "done").glob("Proto-Semitic_*.wiki"))
 ONLINE = bool(os.environ.get("ONLINE"))
 
-# code -> (name as Wiktionary renders it, scripts its terms may be in). Names are re-verified live by the online tests.
-LANGS = {
- "akk": ("Akkadian", {"Latin", "Cuneiform"}), "xeb": ("Eblaite", {"Latin"}), "ar": ("Arabic", {"Arabic"}),
- "arc": ("Aramaic", {"Hebrew"}), "jpa": ("Jewish Palestinian Aramaic", {"Hebrew"}), "tmr": ("Jewish Babylonian Aramaic", {"Hebrew"}),
- "sam": ("Samaritan Aramaic", {"Samaritan"}), "syc": ("Classical Syriac", {"Syriac"}), "myz": ("Classical Mandaic", {"Mandaic"}),
- "tru": ("Turoyo", {"Syriac"}), "amw": ("Western Neo-Aramaic", {"Latin"}), "hbo": ("Biblical Hebrew", {"Hebrew"}), "he": ("Hebrew", {"Hebrew"}),
- "phn": ("Phoenician", {"Phoenician"}), "uga": ("Ugaritic", {"Ugaritic"}), "xsa": ("Sabaean", {"Old South Arabian"}),
- "sem-srb": ("Old South Arabian", {"Old South Arabian"}), "gez": ("Ge'ez", {"Ethiopic"}), "tig": ("Tigre", {"Ethiopic"}),
- "ti": ("Tigrinya", {"Ethiopic"}), "am": ("Amharic", {"Ethiopic"}), "agj": ("Argobba", {"Ethiopic"}), "har": ("Harari", {"Ethiopic"}),
- "gft": ("Gafat", {"Ethiopic"}), "stv": ("Silt'e", {"Ethiopic"}), "wle": ("Wolane", {"Ethiopic"}), "zwa": ("Zay", {"Ethiopic"}),
- "gru": ("Kistane", {"Ethiopic"}), "sgw": ("Sebat Bet Gurage", {"Ethiopic"}), "mvz": ("Mesqan", {"Ethiopic"}),
- "gdq": ("Mehri", {"Latin"}), "shv": ("Shehri", {"Latin"}), "hss": ("Harsusi", {"Latin"}), "bhm": ("Bathari", {"Latin"}), "sqt": ("Soqotri", {"Latin"})}
-RANGES = [("Hebrew", 0x590, 0x5FF), ("Arabic", 0x600, 0x6FF), ("Syriac", 0x700, 0x74F), ("Arabic", 0x750, 0x77F), ("Samaritan", 0x800, 0x83F),
-          ("Mandaic", 0x840, 0x85F), ("Ethiopic", 0x1200, 0x139F), ("Ethiopic", 0x2D80, 0x2DDF), ("Ethiopic", 0xAB00, 0xAB2F),
-          ("Arabic", 0xFB50, 0xFDFF), ("Arabic", 0xFE70, 0xFEFF), ("Ugaritic", 0x10380, 0x1039F), ("Phoenician", 0x10900, 0x1091F),
-          ("Old South Arabian", 0x10A60, 0x10A7F), ("Cuneiform", 0x12000, 0x1254F)]
+from wikt_langs import LANGS, RANGES
 def scripts_of(text):
     out = set()
     for ch in text:
@@ -162,13 +147,15 @@ class Drafts(unittest.TestCase):
         _, rid, _ = rec_of(t)
         ents = entries(t)
         self.assertTrue(ents)
+        skip = WD.PAGES.get(title, {}).get("exclude", {})              # words left out on purpose, each with a reason
+        words_ = [w for w in WORDS[rid] if (w["lang"], w["form"]) not in skip]
         per = Counter(code for _, code, _, _ in ents)
-        expect = Counter(WD.LANG[w["lang"]][0] for w in WORDS[rid])
+        expect = Counter(WD.LANG[w["lang"]][0] for w in words_)
         for code, n in expect.items():
             need = 1 if code == "xeb" else n               # Eblaite spelling variants are one word
             self.assertGreaterEqual(per[code], need, f"{LANGS.get(code, (code,))[0]}: {per[code]} entries for {n} SEDonline words")
         blob = norm(" ".join(term + " " + p.get("tr", "") for _, _, term, p in ents))
-        for w in WORDS[rid]:                                # forms are checkable where the page keeps Latin (tr= or a Latin term)
+        for w in words_:                                    # forms are checkable where the page keeps Latin (tr= or a Latin term)
             code = WD.LANG[w["lang"]][0]
             if code in WD.AUTO_TR or code == "xeb":
                 continue

@@ -1,0 +1,74 @@
+{{also|تف|تق}}
+
+==Arabic==
+
+===Etymology 1===
+{{ar-rootbox|ب ق ق}}
+From {{der|ar|sem-pro|*baḳḳ-|t=gnat}}, ultimately stemming from {{der|ar|afa-pro|*ba(n)ḳ-|t=troublesome insect}}, with cognates in {{cog|cdc-wst|-}}, {{cog|fie|ḅakyáà-ŋ|t=scorpion}}, and to {{cog|cus|-}}, {{cog|hdy|benḳ-aččo|t=tick}}. {{unc|ar}} if cognate to or continuing {{der|ar|arc|בָּקָּא}} / {{m|syc|ܒܳܩܳܐ|t=gnat|tr=bāqā, baqqā}}, already found in lexical list [[w:Urra%3Dhubullu|ḪAR-ra=''ḫubullu'']] as {{der|ar|akk|𒁀𒀝𒄣|tr=ba-aq-qu|ts=baqqu, bāqu|t=gnat}}, also in diminutive forms {{m|akk|𒁍𒂵𒆪𒌝|tr=bu-qa-qu-um|ts=buqāqu}}, and {{m|akk|𒁀𒀝𒁀𒀝𒄣
+|tr=ba-aq-ba-aq-qu|ts=baqbaqqu|}}; possibly inherited separately if {{cog|hss|beqqét}} and {{m|hss|beqáyt|t=bug}} are not borrowed from Arabic, but attest a {{noncog|sem-sar|-}} form.
+
+====Verb====
+{{ar-verb|I/a~u.vn:بَقّ,بَقِيق}}
+
+# to [[bear]] [[many]] [[children]], to be [[prolific]]
+# to [[scatter]], to [[disperse]], to [[distribute]], to [[spread out]], to take [[forth]], to [[abound]] with
+# to [[blather]], to [[prattle]], to [[talk]] [[too much]]
+
+=====Conjugation=====
+{{ar-conj|I/a~u.vn:بَقّ,بَقِيق}}
+
+====Noun====
+{{ar-noun|بَقّ|m}}
+
+# {{ar-verbal noun of|بَقَّ|form=I}}
+
+=====Declension=====
+{{ar-decl-noun|بَقّ}}
+
+{{wp|ar:بق الفراش,Argas}}
+
+====Noun====
+{{ar-coll-noun|بَقّ|sing=+}}
+
+# {{lb|ar|obsolete}} [[fecund]] [[human]] [[female]]
+# {{lb|ar|obsolete|Iraq}} any {{taxfmt|Nematocera|suborder}} insect: [[crane fly|crane flies]], [[gnat]]s, [[midge]]s
+#: {{syn|ar|بَعُوض|بَرْغَش|قِرْقِس|q3=Syria|جِرْجِس|q4=Syria|نَامُوس|خَمُوش}}
+# [[bite|biting]] [[bug]], [[tick]] and the like
+## {{taxfmt|Cimex|genus}} spp., including the [[bedbug]]
+## {{taxfmt|Argas|genus}} gen. et spp.
+# [[elm]] ({{taxfmt|Ulmus|genus}} gen. et spp., usually classified with {{m|ar|شَجَرَة}})
+
+=====Declension=====
+{{ar-decl-coll-noun|بَقّ}}
+
+===Etymology 2===
+
+====Verb====
+{{ar-verb form|+بقى<II>}}
+
+===Further reading===
+* {{R:akk:Landsberger-Fauna|page=131}}
+
+{{C|ar|Dipterans|Hemipterans|Parasites|Rosales order plants}}
+
+==Egyptian Arabic==
+
+===Alternative forms===
+* {{alter|arz|بؤ}}
+
+===Etymology===
+{{unc|arz}}. Behnstedt & Woidich derive it from {{der|arz|ar|بَقْبَقَ|t=gurgle}}, but others connect it to {{cog|la|bucca|t=mouth}}.
+
+===Pronunciation===
+* {{IPA|arz|/buʔʔ/|[boʔ]}}
+* {{IPA|arz|/buɡɡ/|[boɡ]|[bok]}}
+
+===Noun===
+{{arz-noun|g=m|tr=buʔʔ}}
+
+# {{lb|arz|anatomy}} [[mouth]]
+#: {{uxa|arz|حطّه في بقّك|t=Put it in your mouth.}}
+# [[mouthful]]
+#: {{uxa|arz|إدّيني بقّ|t=Give me a mouthful.}}
+# [[opening]]
+#: {{uxa|arz|بقّ الشلتة|t=the opening of the cushion}}

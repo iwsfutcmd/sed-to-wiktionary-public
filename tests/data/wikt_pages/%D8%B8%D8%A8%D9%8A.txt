@@ -1,0 +1,32 @@
+{{also|طبی|طبي}}
+==Arabic==
+
+===Etymology===
+{{ety|ar|:inh|sem-pro:*θ̣aby-|text=+|tree=1}} Compare {{cog|arc|טַבְיָא|tr=ṭaḇyā}}, {{cog|syc|ܛܒܝܐ|tr=ṭaḇyā}}, {{cog|he|צְבִי|tr=ts'ví, ṣəḇī}}, {{cog|uga|𐎑𐎁𐎊}}.
+
+===Pronunciation===
+{{ar-pr|ظَبْي}}
+
+===Noun===
+{{ar-noun+|ظَبْي|m|pl=أَظْبٍ,ظِبَاء,ظُبِيّ}}
+
+# [[gazelle]], [[mountain goat]], [[antelope]]
+# [[mark]] by [[branding]]
+# [[name]] of a [[star]]
+
+====Declension====
+{{ar-decl-gendered-noun|ظَبْي|pl=أَظْبٍ|pl2=ظِبَاء|pl3=ظُبِيّ|f=ظَبْيَة|fpl=ظَبَيَات|fpl2=ظِبَاء}}
+
+====Derived terms====
+* {{l|ar|أَبُو ظَبْي|t=[[Abu Dhabi]]}}
+* {{l|ar|تَظَبَّى|t=to abound in gazelles}}
+
+===Noun===
+{{ar-head|nounf|ظُبِيّ|m-p}}
+
+# {{plural of|ar|ظَبْي}}
+
+===References===
+* {{R:sem-pro:Weninger-Handbook|page=208}}
+
+{{C|ar|Antelopes}}

@@ -1,0 +1,66 @@
+==Assyrian Neo-Aramaic==
+
+===Etymology===
+{{aii-root|ܒ ܩ ܩ}}
+Compare {{cog|akk|𒁀𒀝𒄣|ts=baqqu|t=gnat, numerous insects, swarm}} and {{cog|ar|بَقّ}}.
+
+===Pronunciation===
+* {{IPA|aii|[baːqaː]|a=Standard}}
+
+===Noun===
+{{aii-noun|ܒܵܩܵܐ|m|pl=ܒܵܩܹ̈ܐ,ܒܵܩ̈ܵܬ݂ܵܐ}}
+
+# [[gnat]]
+# {{lb|aii|collective}} [[gnats]]
+#: {{uxa|aii|ܐܝܼܬ݂ ܣܲܓܝܼ '''ܒܵܩܵܐ''' ܐܵܟ݂ܵܐ|t=There’s a lot of '''gnats''' here.}}
+
+==Classical Syriac==
+
+===Etymology 1===
+{{syc-rootbox|ܒ ܩ ܩ}}
+Compare {{cog|akk|𒁀𒀝𒄣|ts=baqqu|t=gnat, numerous insects, swarm}} and {{cog|ar|بَقّ}}.
+
+====Pronunciation====
+* {{IPA|syc|[bɑqɑ]|aa=singular}}
+* {{IPA|syc|[bɑqe]|aa=plural}}
+
+====Noun====
+{{syc-noun|m|ܒܩܐ|tr=bāqā|pltr=bāqē}}
+
+# [[gnat]], [[mosquito]]
+
+=====Inflection=====
+{{syc-decl-noun-m|ܒܩ}}
+
+===Etymology 2===
+{{syc-rootbox|ܒ ܩ ܝ}}
+
+====Pronunciation====
+* {{IPA|syc|/bqɑʔ/}}
+
+====Verb====
+{{head|syc|verbs|tr=bqā}}
+
+# to [[examine]], to [[consider]], to [[investigate]]
+
+===References===
+* {{R:CAL|bq}}
+* {{R:CAL|bqy|V}}
+* {{R:Costaz 1963|page=36a}}
+* {{R:Payne Smith 1902|page=52b}}
+* {{R:Sokoloff 2009|page=176b}}
+
+{{topics|syc|Dipterans}}
+
+==Turoyo==
+
+===Etymology===
+From {{inh|tru|arc|בקא|tr=bāqā}}.
+
+===Pronunciation===
+* {{IPA|tru|/boqo/}}
+
+===Noun===
+{{tru-noun|ܒܳܩܳܐ|m}}
+
+# [[mosquito]]
