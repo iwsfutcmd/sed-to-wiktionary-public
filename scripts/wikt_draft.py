@@ -129,8 +129,8 @@ PAGES = {   # title -> SEDonline reconstruction id and page content
                 etym="Reconstructed in Militarev & Kogan's ''Semitic Etymological Dictionary'' with an optional feminine suffix {{m|sem-pro|*-at-}}: {{m|sem-pro|*warik(-at)-}}."),
  "θ̣aby-": dict(rec="624", vol="II", entry="*ṯ̣aby(-at)-", pos="{{sem-noun|m|g2=f}}", infl=True, defs=["[[gazelle]]"], cat="{{C|sem-pro|Mammals}}",
                etym="Reconstructed in Militarev & Kogan's ''Semitic Etymological Dictionary'' with an optional feminine suffix {{m|sem-pro|*-at-}}: {{m|sem-pro|*θ̣aby(-at)-}}."),
- "maraṣ́-": dict(rec="894", vol="I", entry="*mrṣ̂", pos="{{head|sem-pro|verb}}", infl=False,
-                 conj="{{sem-pro-conj/*paʕala-*yipʕal|m|r|ṣ́|vn=marṣ́}}",        # SED: Akkadian marāṣu (a/a)
+ "maraṣ̂-": dict(rec="894", vol="I", entry="*mrṣ̂", pos="{{head|sem-pro|verb}}", infl=False,
+                 conj="{{sem-pro-conj/*paʕala-*yipʕal|m|r|ṣ̂|vn=marṣ̂}}",        # SED: Akkadian marāṣu (a/a)
  defs=["to be [[sick]], [[ill]]"], cat="", etym=""),
  "ṣ́araṭ-": dict(rec="1023", vol="I", entry="*ṣ̂rṭ",
                  # where the printed SED differs from SEDonline the draft follows the print (read at 650 dpi; data/sedonline/form_check.tsv)
