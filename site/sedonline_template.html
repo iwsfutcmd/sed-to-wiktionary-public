@@ -1,0 +1,200 @@
+<title>SEDonline Browser</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Gentium+Plus:ital,wght@0,400;0,700;1,400&family=Source+Sans+3:wght@400;600;700&display=swap">
+<style>
+/* Layout: filter bar on top, then a list pane beside a detail pane; stacks to one column on a phone. */
+:root{
+  --bg:#f4f7f7; --panel:#ffffff; --fg:#14262c; --muted:#5a6e74; --line:#d5e0e2;
+  --accent:#0e6a73; --accent-fg:#ffffff; --accent-soft:#dcefef;
+  --ok:#1d7a46; --ok-soft:#dff2e6; --warn:#a15c00; --warn-soft:#fbead0;
+  --form:"Gentium Plus","Charis SIL","Gentium Book Plus","Noto Serif","DejaVu Serif",serif;
+  --ui:"Source Sans 3","Segoe UI",system-ui,sans-serif;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --bg:#0e1a1e; --panel:#15262b; --fg:#e3eeef; --muted:#92a8ad; --line:#274047;
+  --accent:#58c4cc; --accent-fg:#06222a; --accent-soft:#17383d;
+  --ok:#62d08f; --ok-soft:#183a29; --warn:#f0b35c; --warn-soft:#3d2d12; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#0e1a1e; --panel:#15262b; --fg:#e3eeef; --muted:#92a8ad; --line:#274047;
+  --accent:#58c4cc; --accent-fg:#06222a; --accent-soft:#17383d;
+  --ok:#62d08f; --ok-soft:#183a29; --warn:#f0b35c; --warn-soft:#3d2d12; color-scheme:dark}
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--fg);font:15px/1.45 var(--ui);padding-block:12px;
+  padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+h1{font:700 22px/1.2 var(--ui);margin:0}
+.sub{color:var(--muted);margin:2px 0 12px;max-width:70ch}
+.sub a,.links a,a.ext{color:var(--accent)}
+.form{font-family:var(--form);font-size:1.12em;unicode-bidi:isolate}
+.bar{display:flex;flex-wrap:wrap;gap:8px 12px;align-items:end;margin-bottom:10px}
+.bar label{display:flex;flex-direction:column;gap:2px;font-size:12px;color:var(--muted);min-width:0}
+.bar input[type=search],.bar select{font:inherit;color:var(--fg);background:var(--panel);border:1px solid var(--line);border-radius:6px;padding:6px 8px;min-height:36px}
+.bar input[type=search]{width:min(100%,22ch)}
+.bar .chk{flex-direction:row;align-items:center;gap:6px;color:var(--fg);font-size:14px;min-height:36px}
+.count{margin-inline-start:auto;color:var(--muted);font-size:13px;align-self:center}
+main{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.25fr);gap:12px;align-items:start}
+@media(max-width:820px){main{grid-template-columns:minmax(0,1fr)}}
+.list,.detail{background:var(--panel);border:1px solid var(--line);border-radius:8px;min-width:0}
+.list{max-height:78vh;overflow:auto}
+.row{display:grid;grid-template-columns:3.6em minmax(0,1fr) auto;gap:8px;align-items:baseline;padding:7px 10px;border-block-end:1px solid var(--line);cursor:pointer;width:100%;text-align:start;background:none;border-inline:0;border-block-start:0;color:inherit;font:inherit}
+.row:hover{background:var(--accent-soft)} .row[aria-current=true]{background:var(--accent-soft);box-shadow:inset 3px 0 0 var(--accent)}
+.row .lv{font-size:11px;font-weight:700;color:var(--muted);letter-spacing:.04em}
+.row .gl{display:block;color:var(--muted);font-size:13px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.row .nl{font-size:12px;color:var(--muted);font-variant-numeric:tabular-nums}
+.pill{display:inline-block;font-size:11px;font-weight:700;border-radius:99px;padding:1px 8px;margin-inline-end:4px;background:var(--accent-soft);color:var(--accent);white-space:nowrap}
+.pill.ok{background:var(--ok-soft);color:var(--ok)} .pill.warn{background:var(--warn-soft);color:var(--warn)}
+.more{display:block;width:100%;padding:10px;font:inherit;color:var(--accent);background:none;border:0;cursor:pointer}
+.detail{padding:14px 16px}
+.detail h2{margin:4px 0 2px;font:400 28px/1.2 var(--form);overflow-wrap:anywhere}
+.detail .gloss{font-size:17px;margin:0 0 8px}
+.meta{color:var(--muted);font-size:13px;margin:6px 0}
+.note{border-inline-start:3px solid var(--line);padding-inline-start:10px;margin:10px 0}
+.rel{display:flex;flex-wrap:wrap;gap:6px;margin:8px 0}
+.rel button{font:inherit;font-size:13px;border:1px solid var(--line);background:var(--bg);color:var(--fg);border-radius:6px;padding:3px 8px;cursor:pointer}
+.rel button:hover{border-color:var(--accent)}
+h3{font:700 12px/1 var(--ui);letter-spacing:.06em;text-transform:uppercase;color:var(--muted);margin:16px 0 6px}
+.words{overflow-x:auto}
+table{border-collapse:collapse;width:100%;min-width:30em}
+th,td{text-align:start;vertical-align:baseline;padding:4px 8px 4px 0;border-block-end:1px solid var(--line)}
+td.l{color:var(--muted);white-space:nowrap;font-size:13px}
+td.r{color:var(--muted);font-size:12px}
+.empty{padding:24px;color:var(--muted)}
+button:focus-visible,input:focus-visible,select:focus-visible,a:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+</style>
+
+<h1 id="t-title">SEDonline Browser</h1>
+<p class="sub" id="t-sub"></p>
+
+<div class="bar" role="search">
+  <label><span id="t-q">Search</span><input id="q" type="search" autocomplete="off" spellcheck="false"></label>
+  <label><span id="t-lv">Level</span><select id="lv"></select></label>
+  <label><span id="t-wk">Wiktionary</span><select id="wk"></select></label>
+  <label><span id="t-sd">Printed SED</span><select id="sd"></select></label>
+  <label><span id="t-nl">Languages ≥</span><select id="nl"></select></label>
+  <label><span id="t-so">Sort</span><select id="so"></select></label>
+  <label class="chk"><input id="deep" type="checkbox"><span id="t-deep"></span></label>
+  <span class="count" id="count" aria-live="polite"></span>
+</div>
+
+<main>
+  <div class="list" id="list" role="list"></div>
+  <article class="detail" id="detail" aria-live="polite"></article>
+</main>
+
+<script id="data" type="application/json">__DATA__</script>
+<script>
+"use strict";
+const D = JSON.parse(document.getElementById("data").textContent);
+// UI strings live in one table so another locale is a drop-in object; direction follows the locale.
+const STR = {en:{dir:"ltr",
+  title:"SEDonline Browser",
+  sub:(n,w,s)=>`${n} reconstructions and ${w} cited words from the Semitic Etymological Database Online (Kogan, Arkhipov et al., sed-online.ru, beta), compared with the printed SED volumes and with English Wiktionary's Proto-Semitic and Proto-West Semitic page titles (snapshot ${s}).`,
+  q:"Search", qph:"form or gloss, e.g. ʔab or kalb", lv:"Level", wk:"Wiktionary", sd:"Printed SED", nl:"Languages ≥", so:"Sort",
+  deep:"Also search cited words", all:"All", any:"Any",
+  wkOn:"Has a page", wkOff:"No page (PS/PWS)", sdYes:"In SED vols. 1–2", sdNo:"Not in SED vols. 1–2",
+  sMore:"Most languages", sForm:"Form A–Z", sId:"Site order",
+  count:(a,b)=>`${a} of ${b}`, more:n=>`Show ${n} more`, none:"No reconstruction matches.", pick:"Choose a reconstruction from the list.",
+  langs:n=>`${n} language${n==1?"":"s"}`, words:"Cited words", parents:"Reconstructed from", children:"Further reconstructions",
+  sed:"Printed SED", vol:{1:"Vol. 1",2:"Vol. 2"}, nominal:"nominal", verbal:"verbal", wkPage:"Wiktionary page", noWk:"No Wiktionary page with this skeleton",
+  noSed:"Not cited as a SED entry", openSite:"Open on sed-online.ru", cols:["Language","Form","Meaning","Reference"], note:"Note"}};
+const L = "en", S = STR[L];
+document.documentElement.lang = L; document.documentElement.dir = S.dir;
+
+const $ = id => document.getElementById(id);
+const esc = s => String(s).replace(/[&<>"]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+// Fold for matching: NFD, drop combining marks, unify glottal/ayin signs, drop * and hyphens, lowercase.
+const GLOT = {"ˀ":"ʔ","ʾ":"ʔ","ʼ":"ʔ","ˁ":"ʕ","ʿ":"ʕ","ʻ":"ʕ"};
+const fold = s => s.normalize("NFD").replace(/\p{M}/gu,"").replace(/[ˀʾʼˁʿʻ]/g,c=>GLOT[c]).replace(/[*\-‐]/g,"").toLowerCase();
+const foldKeep = s => s.normalize("NFC").replace(/[ˀʾʼˁʿʻ]/g,c=>GLOT[c]).replace(/[*\-‐]/g,"").toLowerCase();
+
+const R = D.recs, byId = new Map(R.map(r => [r.id, r]));
+for (const r of R) {
+  r.k = fold(r.f) + " " + foldKeep(r.f); r.gk = r.g.toLowerCase();
+  r.wk2 = r.w.map(w => fold(w[1]) + " " + foldKeep(w[1]) + " " + w[2].toLowerCase()).join(" | ");
+  r.nl = new Set(r.w.map(w => w[0])).size;
+  r.cmp = r.lv === "PS" || r.lv === "PWS";
+  r.onWk = !!(r.wk.PS || r.wk.PWS);
+}
+const LV = ["PS","PWS","PCS","PNWS","PC","PArm","PES","Proto-MSA","Areal reconstruction"].filter(l => R.some(r => r.lv === l));
+const opt = (el, items) => el.innerHTML = items.map(([v,t]) => `<option value="${esc(v)}">${esc(t)}</option>`).join("");
+opt($("lv"), [["",S.all], ...LV.map(l => [l, `${l} (${R.filter(r=>r.lv===l).length})`])]);
+opt($("wk"), [["",S.any],["on",S.wkOn],["off",S.wkOff]]);
+opt($("sd"), [["",S.any],["yes",S.sdYes],["no",S.sdNo]]);
+opt($("nl"), [0,2,3,5,8,12,20,30].map(n => [n, n || S.any]));
+opt($("so"), [["nl",S.sMore],["f",S.sForm],["id",S.sId]]);
+$("t-title").textContent = S.title;
+$("t-sub").innerHTML = esc(S.sub(R.length, R.reduce((a,r)=>a+r.w.length,0), D.snapshot));
+for (const [id,k] of [["t-q","q"],["t-lv","lv"],["t-wk","wk"],["t-sd","sd"],["t-nl","nl"],["t-so","so"],["t-deep","deep"]]) $(id).textContent = S[k];
+$("q").placeholder = S.qph;
+
+let hits = [], shown = 0, cur = null;
+const PAGE = 150;
+function filter() {
+  const q = $("q").value.trim(), qf = fold(q), ql = q.toLowerCase(), lv = $("lv").value, wk = $("wk").value, sd = $("sd").value,
+        nl = +$("nl").value, deep = $("deep").checked;
+  hits = R.filter(r =>
+    (!lv || r.lv === lv) &&
+    (!wk || (wk === "on" ? r.onWk : r.cmp && !r.onWk)) &&
+    (!sd || (sd === "yes") === (r.sed.length > 0)) &&
+    r.nl >= nl &&
+    (!q || r.k.includes(qf) || r.gk.includes(ql) || (deep && r.wk2.includes(qf)) || (deep && r.wk2.includes(ql))));
+  const so = $("so").value;
+  hits.sort(so === "id" ? (a,b) => a.id - b.id : so === "f" ? (a,b) => fold(a.f).localeCompare(fold(b.f)) || a.id - b.id : (a,b) => b.nl - a.nl || a.id - b.id);
+  shown = 0; $("list").innerHTML = ""; $("list").scrollTop = 0; more();
+  $("count").textContent = S.count(hits.length, R.length);
+  if (!hits.length) $("list").innerHTML = `<div class="empty">${esc(S.none)}</div>`;
+}
+function pills(r) {
+  let h = "";
+  if (r.sed.length) h += `<span class="pill">SED</span>`;
+  if (r.cmp) h += r.onWk ? `<span class="pill ok">Wikt</span>` : `<span class="pill warn">no Wikt</span>`;
+  return h;
+}
+function more() {
+  const old = $("list").querySelector(".more"); if (old) old.remove();
+  const next = hits.slice(shown, shown + PAGE);
+  $("list").insertAdjacentHTML("beforeend", next.map(r =>
+    `<button class="row" role="listitem" data-id="${r.id}" aria-current="${r.id === cur}">
+      <span class="lv">${esc(r.lv.replace("Areal reconstruction","areal"))}</span>
+      <span><bdi class="form" lang="sem-Latn">${esc(r.f)}</bdi><span class="gl" lang="en">${esc(r.g)}</span></span>
+      <span class="nl">${pills(r)} ${r.nl}</span></button>`).join(""));
+  shown += next.length;
+  if (shown < hits.length) $("list").insertAdjacentHTML("beforeend", `<button class="more">${esc(S.more(Math.min(PAGE, hits.length - shown)))}</button>`);
+}
+$("list").addEventListener("click", e => {
+  if (e.target.closest(".more")) return more();
+  const row = e.target.closest(".row"); if (row) show(+row.dataset.id, true);
+});
+const rel = (arr) => arr.map(([lv,id]) => { const r = byId.get(+id); return r ? `<button data-go="${r.id}"><b>${esc(lv.trim())}</b> <bdi class="form" lang="sem-Latn">${esc(r.f)}</bdi> <span lang="en">${esc(r.g)}</span></button>` : ""; }).join("");
+function show(id, push) {
+  const r = byId.get(id); if (!r) return; cur = id;
+  document.querySelectorAll(".row").forEach(b => b.setAttribute("aria-current", +b.dataset.id === id));
+  const wkLinks = ["PS","PWS"].flatMap(l => (r.wk[l] || []).map(t =>
+    `<a class="ext" target="_blank" rel="noopener" href="https://en.wiktionary.org/wiki/${encodeURI(D.pfx[l].replace(/ /g,"_") + t.replace(/ /g,"_"))}"><bdi lang="sem-Latn">${esc(D.pfx[l].split(":")[1].replace(/\/$/,"") + "/" + t)}</bdi></a>`));
+  const by = new Map(); for (const w of r.w) { if (!by.has(w[0])) by.set(w[0], []); by.get(w[0]).push(w); }
+  const rows = [...by.values()].map(ws => ws.map((w,i) =>
+    `<tr><td class="l" lang="en">${i ? "" : esc(D.langs[w[0]])}</td><td><bdi class="form" lang="sem-Latn">${esc(w[1])}</bdi></td><td lang="en">${esc(w[2])}${w[4] ? `<br><span class="r" style="color:var(--muted);font-size:13px">${esc(w[4])}</span>` : ""}</td><td class="r"><a class="ext" target="_blank" rel="noopener" href="http://sed-online.ru/words/${w[5]}">${esc(w[3] || "·")}</a></td></tr>`).join("")).join("");
+  $("detail").innerHTML = `
+    <span class="pill">${esc(r.lv)}</span>${pills(r).replace(/<span class="pill">SED<\/span>/,"")}
+    <h2><bdi class="form" lang="sem-Latn">${esc(r.f)}</bdi></h2>
+    <p class="gloss" lang="en">${esc(r.g)}</p>
+    <p class="meta">${esc(S.langs(r.nl))} · ${r.w.length} ${esc(S.words.toLowerCase())}${r.ref ? ` · <span lang="en">${esc(r.ref)}</span>` : ""}</p>
+    <p class="meta">${r.sed.length
+      ? esc(S.sed) + ": " + r.sed.map(([k,f]) => `${esc(S.vol[k[0]])} ${k[1]==="V" ? esc(S.verbal) : esc(S.nominal)} no. ${esc(k.split(":")[1])}${f ? ` <bdi class="form" lang="sem-Latn">${esc(f)}</bdi>` : ""}`).join("; ")
+      : esc(S.noSed)}</p>
+    ${r.cmp ? `<p class="meta">${wkLinks.length ? esc(S.wkPage) + ": " + wkLinks.join(", ") : esc(S.noWk)}</p>` : ""}
+    ${r.n ? `<div class="note" lang="en">${esc(r.n)}</div>` : ""}
+    ${r.up.length ? `<h3>${esc(S.parents)}</h3><div class="rel">${rel(r.up)}</div>` : ""}
+    ${r.dn.length ? `<h3>${esc(S.children)}</h3><div class="rel">${rel(r.dn)}</div>` : ""}
+    <h3>${esc(S.words)}</h3>
+    <div class="words"><table><thead><tr class="sr-only" style="color:var(--muted);font-size:12px">${S.cols.map(c => `<th>${esc(c)}</th>`).join("")}</tr></thead><tbody>${rows}</tbody></table></div>
+    <p class="meta"><a class="ext" target="_blank" rel="noopener" href="http://sed-online.ru/reconstructions/${r.id}">${esc(S.openSite)}</a></p>`;
+  if (push) { try { history.replaceState(null, "", "#r" + id); } catch (_) {} }
+}
+$("detail").addEventListener("click", e => { const b = e.target.closest("[data-go]"); if (b) { show(+b.dataset.go, true); $("detail").scrollIntoView({block:"nearest"}); } });
+let t; $("q").addEventListener("input", () => { clearTimeout(t); t = setTimeout(filter, 120); });
+for (const id of ["lv","wk","sd","nl","so","deep"]) $(id).addEventListener("change", filter);
+filter();
+const h = /^#r(\d+)$/.exec(location.hash);
+const start = h && byId.get(+h[1]) ? +h[1] : (hits.find(r => r.sed.length && r.onWk) || hits[0] || {}).id;
+if (start) show(start, false); else $("detail").innerHTML = `<div class="empty">${esc(S.pick)}</div>`;
+</script>
