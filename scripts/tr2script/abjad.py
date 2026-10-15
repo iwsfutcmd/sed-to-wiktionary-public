@@ -2,11 +2,13 @@
 
   sam   Samaritan script (Samaritan Aramaic and Hebrew)
   he    Hebrew / Aramaic square script (also Biblical Aramaic, Jewish Aramaic): unpointed; final forms ך ם ן ף ץ
-  syc   Syriac (Estrangela letters, unpointed); also Turoyo, which Wiktionary writes in Syriac script (final -o = Aramaic -ā)
+  syc   Syriac (Estrangela letters, unpointed)
   uga   Ugaritic cuneiform alphabet          phn   Phoenician          osa   Old South Arabian (Sabaic, Minaic, Qatabanic, Hadramitic)
 
 Only the consonant skeleton is written: vowels are dropped, doubled consonants are written once (no script here marks gemination),
-and a final ā is written as a mater lectionis (alef) in he, sam and syc, as Aramaic orthography does. Anything outside the scheme
+and a final ā is written as a mater lectionis (alef) in he, sam and syc.
+When the form has vowels that these orthographies often write with a letter (ī ū ō, short u o, or a final ē) the skeleton may be
+incomplete, so the result is None: better "script needed" than a wrong spelling, as Aramaic orthography does. Anything outside the scheme
 (unknown letter, space, digits) gives None. Two things cannot be recovered from the consonants and are NOT attempted:
 Ugaritic ʾ with its own vowel (𐎀 𐎛 𐎜) is always 𐎀, and Hebrew sin/shin dots, dagesh and vowel points are never written.
 
@@ -31,10 +33,12 @@ PAIRS["sam"] = [(lat, chr(0x800 + i)) for i, (lat, _) in enumerate(l for l in PA
 TABLES = {k: dict(v) for k, v in PAIRS.items()}
 FINAL = {"כ": "ך", "מ": "ם", "נ": "ן", "פ": "ף", "צ": "ץ"}
 # Wiktionary language code -> table
-CODES = {"he": "he", "sam": "sam", "hbo": "he", "arc": "he", "jpa": "he", "tmr": "he", "syc": "syc", "tru": "syc", "uga": "uga", "phn": "phn", "xsa": "osa", "sem-srb": "osa",
+CODES = {"he": "he", "sam": "sam", "hbo": "he", "arc": "he", "jpa": "he", "tmr": "he", "syc": "syc", "uga": "uga", "phn": "phn", "xsa": "osa", "sem-srb": "osa",
          "inm": "osa", "xqt": "osa"}
 SRC = {"ˀ": "ʾ", "ʔ": "ʾ", "ʼ": "ʾ", "ˁ": "ʿ", "ʕ": "ʿ", "ʻ": "ʿ", "ḳ": "q", "ṯ̣": "ẓ", "ḏ̣": "ẓ", "ŝ": "ś"}
 VOWEL = "aeiouāēīōūəǝ"
+MATRES_RISK = re.compile("[īūōuo]")      # vowels these orthographies often write with y/w: the bare skeleton may be wrong
+
 SPIRANT = {"ḇ": "b", "ḡ": "g", "ḏ": "d", "ḵ": "k", "ṯ": "t"}
 
 def convert(code, translit):
@@ -44,7 +48,9 @@ def convert(code, translit):
     s = U.normalize("NFC", translit.strip().lower())
     for a, b in SRC.items():
         s = s.replace(a, b)
-    final_a = t in ("he", "sam", "syc") and (s.endswith("ā") or (code == "tru" and s.endswith("o")))   # Turoyo -o < Aramaic -ā                                            # before marks and vowels go
+    if t in ("he", "sam", "syc") and (MATRES_RISK.search(s) or s.endswith("ē")):
+        return None
+    final_a = t in ("he", "sam", "syc") and s.endswith("ā")                                            # before marks and vowels go
     if t in ("he", "sam", "syc"):                                                                # spirantised begadkefat: same letters
         for a, b in SPIRANT.items():
             s = s.replace(a, b)

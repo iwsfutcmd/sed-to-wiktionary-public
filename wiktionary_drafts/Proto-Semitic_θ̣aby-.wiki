@@ -18,7 +18,7 @@ Reconstructed in Militarev & Kogan's ''Semitic Etymological Dictionary'' with an
 ** {{desc|xeb|ṣa-ba-a-tum|t=gazelle}}
 * West Semitic:
 ** Central Semitic:
-*** {{desc|ar|ظَبْي|tr=ḏ̣aby-|t=gazelle}}
+*** {{desc|ar|ظَبْي|t=gazelle}}
 *** Northwest Semitic:
 **** Old {{desc|arc|צבי|tr=ṣby|t=gazelle}}
 **** Official {{desc|arc|טבי|tr=ṭby|t=gazelle}}
@@ -29,7 +29,7 @@ Reconstructed in Militarev & Kogan's ''Semitic Etymological Dictionary'' with an
 **** {{desc|myz|-|tr=ṭabia|t=deer}}
 **** Canaanite:
 ***** {{desc|hbo|צְבִי|tr=ṣəbī|t=gazelle}}
-**** {{desc|uga|𐎑𐎁𐎊|tr=ṯ̣by|t=gazelle}}
+**** {{desc|uga|𐎑𐎁𐎊|t=gazelle}}
 *** Old South Arabian:
 **** {{desc|xsa|𐩮𐩨𐩺|tr=ṣby|t=gazelle}}
 **** Hadramitic {{desc|sem-srb|𐩮𐩨𐩺|tr=ṣby|t=gazelle}}

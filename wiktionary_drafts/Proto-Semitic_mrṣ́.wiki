@@ -11,19 +11,19 @@
 ** {{desc|akk|marāṣum|alt=𒈠𒊏𒍮|tr=marāṣum|t=to fall ill}}
 * West Semitic:
 ** Central Semitic:
-*** {{desc|ar|مَرِضَ|tr=mrḍ|t=to be diseased, disordered, distempered, sick, ill}}
+*** {{desc|ar|مَرِضَ|t=to be diseased, disordered, distempered, sick, ill}}
 *** Northwest Semitic:
 **** Old {{desc|arc|מרק|tr=mrq|t=illness}}
 **** Official {{desc|arc|מרע|tr=mrʕ|t=illness}}
 **** {{desc|jpa|מרע|tr=mrʕ|t=to be sick}}
-**** {{desc|syc|ܡܪܥ|tr=mǝraʕ|t=to be ill, sick}}
+**** {{desc|syc|ܡܪܥ|tr=məraʕ|t=to be ill, sick}}
 **** Canaanite:
 ***** {{desc|hbo|מרץ|tr=mrṣ|t=to be bad, painful}}
-**** {{desc|uga|𐎎𐎗𐎕|tr=mrṣ|t=to fall ill}}
+**** {{desc|uga|𐎎𐎗𐎕|t=to fall ill}}
 *** Old South Arabian:
 **** {{desc|xsa|𐩣𐩧𐩳|tr=mrḍ|t=to suffer from disease}}
 ** Modern South Arabian:
-*** {{desc|gdq|mērǝẑ|t=to be unwell, ill}}
+*** {{desc|gdq|mērəẑ|t=to be unwell, ill}}
 *** {{desc|shv|mírẓ̂|t=to be ill}}
 *** {{desc|hss|mēreẑ|t=to be unwell, ill}}
 *** {{desc|sqt|hemrôẑ|t=to heal}}

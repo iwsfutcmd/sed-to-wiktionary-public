@@ -7,6 +7,7 @@ tr2script.abjad (tests/test_tr2script.py); (4) languages cited in Latin on Wikti
 Eblaite, Western Neo-Aramaic): the source form is the term; (5) otherwise `-` plus tr= ("[script needed]")."""
 import csv, json, re, sys, time, urllib.request, urllib.parse, urllib.error, unicodedata as U
 from collections import defaultdict
+from pathlib import Path
 from paths import DATA, BUILD, ROOT
 from sedonline_compare import read
 from tr2script import abjad, ethiopic
@@ -31,13 +32,15 @@ LANG = {"Akkadian": ("akk", EAST, ""), "Ebla": ("xeb", EAST, ""), "Arabic": ("ar
         "Muher": ("sgw", GUR, ""), "Masqan": ("mvz", GUR, ""), "Mehri": ("gdq", MSA, ""), "Jibbali": ("shv", MSA, ""), "Harsusi": ("hss", MSA, ""),
         "Soqotri": ("sqt", MSA, ""), "Bathari": ("bhm", MSA, "")}
 ORDER = list(LANG)                      # output order within a node
+AUTO_TR = {"ar", "uga"}             # Wiktionary transliterates these itself (Module:ar-translit, uga-translit): no tr=
 LATIN_TERM = {"amw", "gdq", "shv", "hss", "bhm", "sqt", "xeb"}   # cited in Latin script (the source form is the term)
 DIALECT = {"Chaha": "Chaha", "Ezha": "Ezha", "Endegen": "Endegen", "Ennemor": "Ennemor", "Gyeto": "Gyeto", "Muher": "Muher", "Gogot": "Gogot", "Soddo": "Soddo", "Masqan": None}
 
 # (lang code, SEDonline form) -> script, for spellings no converter can derive (vowelled or lexical). --verify checks them on Wiktionary.
 CURATED = {
  ("uga", "ˀmr"): "𐎛𐎎𐎗",                    # Wiktionary writes ʾi (𐎛), the consonants alone give 𐎀
- ("hbo", "yārēk"): "יָרֵךְ", ("hbo", "ṣəbī"): "צְבִי", ("hbo", "ˀimmēr"): "אִמֵּר",
+ ("hbo", "yārēk"): "יָרֵךְ", ("hbo", "ṣəbī"): "צְבִי", ("hbo", "ˀimmēr"): "אִמֵּר", ("tru", "bōḳo"): "ܒܩܐ",      # Turoyo is written in Syriac script on Wiktionary (entry ܒܩܐ)
+
  ("ar", "warik-"): "وَرِك", ("ar", "ḏ̣aby-"): "ظَبْي", ("ar", "mrḍ"): "مَرِضَ", ("ar", "baqq-"): "بَقّ", ("ar", "ḍrṭ"): "ضَرَطَ",
  ("ar", "nyk"): "نَاكَ", ("ar", "ḫarūs-"): "خَرُوس", ("ar", "ḫrs"): "خَرَّسَ", ("ar", "šaḥuma"): "شَحُمَ", ("ar", "šaḥm-"): "شَحْم",
  ("hbo", "šəˀēr"): "שְׁאֵר", ("uga", "šˀir"): "𐎌𐎛𐎗",          # both as on Wiktionary's Akkadian šīrum page
@@ -70,7 +73,7 @@ def akkadian(form):
     return lemma, (m.group(1) if m else None)
 
 def tr_of(f):
-    return U.normalize("NFC", f).replace("ˀ", "ʔ").replace("ˁ", "ʕ").replace("ḳ", "q")      # descendants: Wiktionary's tr uses q (PS titles keep ḳ)
+    return U.normalize("NFC", f).replace("ˀ", "ʔ").replace("ˁ", "ʕ").replace("ḳ", "q").replace("ǝ", "ə")      # descendants: Wiktionary's tr uses q (PS titles keep ḳ)
 TRANSLATE = {"im Kindbett liegen": "to be in childbed", "partorire (to give birth)": "to give birth", "accouché": "woman who has given birth", "the sacrup or rump of a butchered animal": "the sacrum or rump of a butchered animal", "Hüfte": "hip", "Wanzen (bugs)": "bugs", "Mücke (mosquito)": "mosquito", "guérir": "to heal"}
 def script_for(code, form):
     """-> (script, how) with how in curated / ethiopic / abjad, or (None, None)."""
@@ -95,11 +98,14 @@ def one(code, form, notes, first, gloss, lang):
         notes.append(f"{lang} {form}: {sc} ({how})")
     if sc is None:
         return f"{{{{{head}|{code}|-|tr={tr_of(form)}{t}}}}}"
+    if code in AUTO_TR:
+        return f"{{{{{head}|{code}|{sc}{t}}}}}"
     return f"{{{{{head}|{code}|{sc}|tr={tr_of(form)}{t}}}}}"
 def entry(code, form, gloss, lang, notes):
     gloss = TRANSLATE.get(gloss, gloss)
     if len(gloss) > 90 and ";" in gloss:                       # long dictionary quotations: keep the first clause
         gloss = gloss.split(";")[0].strip()
+    gloss = re.sub(r"^(I{1,3}|IV|V|VI{1,3}|IX|X)\.\s+", lambda m: f"(form {m.group(1)}) ", gloss)
     if gloss.startswith("="):                               # a note about a spelling, not a meaning
         gloss = ""
     m = re.match(r"^(.*?)\s*\(([^)]*)\)$", form)           # 'yarḵāṯēh (suff.)' -> form + note
@@ -139,7 +145,7 @@ def tree_lines(words, notes):
                 shown.add(path[:d + 1]); lines.append("*" * (d + 1) + " " + path[d] + ":")
         lines.append("*" * (len(path) + 1) + " " + label + e)
     return lines
-def build(title, cfg):
+def build(title, cfg, out=None):
     words = [w for w in read(DATA / "sedonline" / "sedonline_words.tsv") if w["rec_id"] == cfg["rec"]]
     miss = sorted({w["lang"] for w in words} - set(LANG))
     if miss: raise SystemExit(f"{title}: unmapped languages {miss}")
@@ -151,9 +157,11 @@ def build(title, cfg):
     d += ["====Descendants===="] + tree_lines(words, notes) + ["",
           "===References===", "* {{R:sem-pro:SED|volume=%s|id=%s|entry=%s}}" % (cfg["vol"], cfg["rec"], cfg["entry"])]
     if cfg["cat"]: d += ["", cfg["cat"]]
-    OUT.mkdir(exist_ok=True)
-    (OUT / f"Proto-Semitic_{title}.wiki").write_text("\n".join(d) + "\n", encoding="utf-8")
-    print(f"{title}: {len(words)} words; notes:", *notes, sep="\n   ")
+    dest = Path(out) if out else OUT
+    dest.mkdir(exist_ok=True)
+    (dest / f"Proto-Semitic_{title}.wiki").write_text("\n".join(d) + "\n", encoding="utf-8")
+    if not out:
+        print(f"{title}: {len(words)} words; notes:", *notes, sep="\n   ")
 
 UGA = ["𐎀ʔ", "𐎁b", "𐎂g", "𐎃ḫ", "𐎄d", "𐎅h", "𐎆w", "𐎇z", "𐎈ḥ", "𐎉ṭ", "𐎊y", "𐎋k", "𐎌š", "𐎍l", "𐎎m", "𐎏ḏ", "𐎐n", "𐎑ẓ", "𐎒s",
        "𐎓ʕ", "𐎔p", "𐎕ṣ", "𐎖q", "𐎗r", "𐎘ṯ", "𐎙ġ", "𐎚t", "𐎛ʔ", "𐎜ʔ", "𐎝ś"]

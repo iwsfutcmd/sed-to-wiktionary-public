@@ -11,10 +11,10 @@
 ** {{desc|akk|ṣarātum|tr=ṣarātum|t=to fart}}
 * West Semitic:
 ** Central Semitic:
-*** {{desc|ar|ضَرَطَ|tr=ḍrṭ|t=to fart}}
+*** {{desc|ar|ضَرَطَ|t=to fart}}
 *** Northwest Semitic:
 **** {{desc|syc|ܥܪܛ|tr=ʕrṭ|t=(pa.) to break wind}}
-**** {{desc|syc|ܥܪܛ|tr=ʕurṭē|t=stomach growling}}, {{l|syc|ܥܪܛܝܐ|tr=ʕurṭāyā}}
+**** {{desc|syc|-|tr=ʕurṭē|t=stomach growling}}, {{l|syc|-|tr=ʕurṭāyā}}
 ** Modern South Arabian:
 *** {{desc|gdq|ẑərūṭ|t=to fart (audibly)}}
 *** {{desc|shv|ẓ̂érɔ́ṭ|t=to fart (audibly)}}

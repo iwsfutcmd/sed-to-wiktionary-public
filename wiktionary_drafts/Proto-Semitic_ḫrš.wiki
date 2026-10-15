@@ -11,8 +11,8 @@
 ** {{desc|akk|ḫarāšum|tr=ḫarāšum|t=to be in childbed}}
 * West Semitic:
 ** Central Semitic:
-*** {{desc|ar|خَرُوس|tr=ḫarūs-|t=female that has not yet brought forth in the first period of her pregnancy}}
-*** {{desc|ar|خَرَّسَ|tr=ḫrs|t=II. to feed the woman on the occasion of child-birth}}
+*** {{desc|ar|خَرُوس|t=female that has not yet brought forth in the first period of her pregnancy}}
+*** {{desc|ar|خَرَّسَ|t=(form II) to feed the woman on the occasion of child-birth}}
 ** Ethiopian Semitic:
 *** {{desc|gez|-|tr=ḫarasa|t=to bear a child, lie in bed when giving birth to a child}}
 *** {{desc|gez|-|tr=ḫaraŝa|t=to feed, nourish, take good care of someone by properly feeding him}}, {{l|gez|-|tr=ḥarasa}}, {{l|gez|-|tr=ḫarrasa}}

@@ -14,7 +14,7 @@
 ** {{desc|akk|baqqu|alt=𒁀𒀝𒄣|tr=baqqu|t=gnat}}
 * West Semitic:
 ** Central Semitic:
-*** {{desc|ar|بَقّ|tr=baqq-|t=gnat}}
+*** {{desc|ar|بَقّ|t=gnat}}
 *** Northwest Semitic:
 **** {{desc|tmr|בקא|tr=bāqā|t=gnat}}
 **** {{desc|syc|ܒܩܐ|tr=bāqā|t=gnat}}

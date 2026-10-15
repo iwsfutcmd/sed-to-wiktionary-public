@@ -36,5 +36,6 @@ sedonline: tables        # parse the cached crawl -> data/sedonline/*.tsv, then 
 	cd scripts && $(PY) sedonline_parse.py && $(PY) sedonline_compare.py && $(PY) sedonline_missing.py
 sedonline-site: sedonline # self-contained browsing page for the SEDonline tables -> site/sedonline.html
 	cd scripts && $(PY) build_sedonline_site.py
-test:                    # converter tests (no network)
+test:                    # converter and draft tests (no network; ONLINE=1 make test also checks the live wiki)
 	$(PY) tests/test_tr2script.py
+	$(PY) tests/test_drafts.py

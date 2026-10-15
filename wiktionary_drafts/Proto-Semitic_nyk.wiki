@@ -11,7 +11,7 @@
 ** {{desc|akk|nâkum|tr=nâkum|t=to have illicit sexual intercourse, to fornicate}}
 * West Semitic:
 ** Central Semitic:
-*** {{desc|ar|نَاكَ|tr=nyk|t=to marry a woman}}
+*** {{desc|ar|نَاكَ|t=to marry a woman}}
 ** Modern South Arabian:
 *** {{desc|gdq|nəyūk|t=to have sexual intercourse with, sleep with}}
 *** {{desc|shv|nɛ̄k|t=to sleep with}}
