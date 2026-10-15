@@ -33,6 +33,6 @@ gaps: tables             # Wiktionary gap report from the committed tables + tit
 sedonline-fetch:         # crawl http://sed-online.ru/ into build/sedonline/ (network, resumable, ~2,260 requests)
 	cd scripts && $(PY) sedonline_fetch.py
 sedonline: tables        # parse the cached crawl -> data/sedonline/*.tsv, then compare with the printed SED and Wiktionary
-	cd scripts && $(PY) sedonline_parse.py && $(PY) sedonline_compare.py
+	cd scripts && $(PY) sedonline_parse.py && $(PY) sedonline_compare.py && $(PY) sedonline_missing.py
 sedonline-site: sedonline # self-contained browsing page for the SEDonline tables -> site/sedonline.html
 	cd scripts && $(PY) build_sedonline_site.py

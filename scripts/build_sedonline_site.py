@@ -1,5 +1,5 @@
 """Fill site/sedonline_template.html with the SEDonline tables -> site/sedonline.html (self-contained browser page).
-Needs data/sedonline/*.tsv (make sedonline). Wiktionary matching reuses sedonline_compare (exact skeleton, PS/PWS only).
+Needs data/sedonline/*.tsv (make sedonline), including sed_print_vs_site.tsv. Wiktionary matching reuses sedonline_compare (exact skeleton, PS/PWS only).
 usage: build_sedonline_site.py"""
 import csv, json
 from collections import defaultdict
@@ -35,7 +35,10 @@ def main():
                         up=[p.rsplit(":", 1) for p in r["parents"].split(";") if p],
                         dn=[p.rsplit(":", 1) for p in r["children"].split(";") if p],
                         wk=wikt, w=by[r["rec_id"]]))
-    blob = json.dumps(dict(langs=langs, recs=out, pfx=PFX, snapshot="2026-10-14"), ensure_ascii=False,
+    pr = [[r["key"], r["protoform"], r["gloss"], r["pdf_page"], r["status"],
+           [c.split(":") for c in r["candidates"].split(";") if c]]
+          for r in read(DATA / "sedonline" / "sed_print_vs_site.tsv")]
+    blob = json.dumps(dict(langs=langs, recs=out, pr=pr, pfx=PFX, snapshot="2026-10-14"), ensure_ascii=False,
                       separators=(",", ":")).replace("</", "<\\/")
     html = (SITE / "sedonline_template.html").read_text(encoding="utf-8").replace("__DATA__", blob)
     (SITE / "sedonline.html").write_text(html, encoding="utf-8")

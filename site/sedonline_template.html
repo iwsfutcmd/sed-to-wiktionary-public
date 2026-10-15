@@ -29,6 +29,7 @@ h1{font:700 22px/1.2 var(--ui);margin:0}
 .bar label{display:flex;flex-direction:column;gap:2px;font-size:12px;color:var(--muted);min-width:0}
 .bar input[type=search],.bar select{font:inherit;color:var(--fg);background:var(--panel);border:1px solid var(--line);border-radius:6px;padding:6px 8px;min-height:36px}
 .bar input[type=search]{width:min(100%,22ch)}
+.bar[hidden]{display:none}
 .bar .chk{flex-direction:row;align-items:center;gap:6px;color:var(--fg);font-size:14px;min-height:36px}
 .count{margin-inline-start:auto;color:var(--muted);font-size:13px;align-self:center}
 main{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.25fr);gap:12px;align-items:start}
@@ -58,13 +59,32 @@ th,td{text-align:start;vertical-align:baseline;padding:4px 8px 4px 0;border-bloc
 td.l{color:var(--muted);white-space:nowrap;font-size:13px}
 td.r{color:var(--muted);font-size:12px}
 .empty{padding:24px;color:var(--muted)}
+.tabs{display:flex;gap:4px;margin:0 0 10px;border-block-end:1px solid var(--line)}
+.tabs button{font:600 14px var(--ui);color:var(--muted);background:none;border:0;border-block-end:3px solid transparent;padding:8px 12px;cursor:pointer}
+.tabs button[aria-selected=true]{color:var(--accent);border-block-end-color:var(--accent)}
+.prow{display:grid;grid-template-columns:4.2em minmax(0,1fr) auto;gap:8px;align-items:baseline;padding:7px 10px;border-block-end:1px solid var(--line);cursor:pointer;width:100%;text-align:start;background:none;border-inline:0;border-block-start:0;color:inherit;font:inherit}
+.prow:hover,.prow[aria-current=true]{background:var(--accent-soft)} .prow[aria-current=true]{box-shadow:inset 3px 0 0 var(--accent)}
+.prow .k{font-size:12px;font-weight:700;color:var(--muted)} .prow .gl{display:block;color:var(--muted);font-size:13px}
+.cand{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:2px 10px;width:100%;text-align:start;font:inherit;color:inherit;background:var(--bg);border:1px solid var(--line);border-radius:6px;padding:6px 10px;margin:0 0 6px;cursor:pointer}
+.cand:hover{border-color:var(--accent)} .cand small{color:var(--muted)}
+.back{font:inherit;color:var(--accent);background:none;border:0;padding:0;margin:0 0 8px;cursor:pointer}
+.rv{display:flex;align-items:center;gap:8px;margin:10px 0;font-size:14px}
 button:focus-visible,input:focus-visible,select:focus-visible,a:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
 </style>
 
 <h1 id="t-title">SEDonline Browser</h1>
 <p class="sub" id="t-sub"></p>
 
-<div class="bar" role="search">
+<div class="tabs" role="tablist">
+  <button role="tab" id="tab-r" aria-selected="true"></button><button role="tab" id="tab-p" aria-selected="false"></button>
+</div>
+<div class="bar" id="pbar" role="search" hidden>
+  <label><span id="t-pq">Search</span><input id="pq" type="search" autocomplete="off" spellcheck="false"></label>
+  <label><span id="t-ps">Status</span><select id="ps"></select></label>
+  <label class="chk"><input id="pun" type="checkbox"><span id="t-pun"></span></label>
+  <span class="count" id="pcount" aria-live="polite"></span>
+</div>
+<div class="bar" id="rbar" role="search">
   <label><span id="t-q">Search</span><input id="q" type="search" autocomplete="off" spellcheck="false"></label>
   <label><span id="t-lv">Level</span><select id="lv"></select></label>
   <label><span id="t-wk">Wiktionary</span><select id="wk"></select></label>
@@ -95,6 +115,11 @@ const STR = {en:{dir:"ltr",
   count:(a,b)=>`${a} of ${b}`, more:n=>`Show ${n} more`, none:"No reconstruction matches.", pick:"Choose a reconstruction from the list.",
   langs:n=>`${n} language${n==1?"":"s"}`, words:"Cited words", parents:"Reconstructed from", children:"Further reconstructions",
   sed:"Printed SED", vol:{1:"Vol. 1",2:"Vol. 2"}, nominal:"nominal", verbal:"verbal", wkPage:"Wiktionary page", noWk:"No Wiktionary page with this skeleton",
+  tabR:"Reconstructions", tabP:"Printed SED check", pq:"Search", pqph:"printed form or gloss", ps:"Status", pun:"Only entries I haven't reviewed",
+  stNot:"Not found on the site", stMat:"On the site, no SED number", stCit:"Cited by number", stAll:"All printed entries",
+  stText:{not_found:"No SEDonline reconstruction cites this entry, and none has the same skeleton and gloss. Check the candidates, or the site, by hand.",matched:"A SEDonline reconstruction has the same skeleton and a shared gloss word, but does not cite this entry's number.",cited:"A SEDonline reconstruction cites this entry by number."},
+  cand:"Closest on SEDonline", noCand:"No candidate shares a gloss word with this entry.", why:{cites:"cites this number","form+gloss":"same skeleton and gloss",gloss:"shares a gloss word"},
+  reviewed:"Reviewed", pdfp:"PDF page", back:"← Back to printed check", sect:{N:"nominal",V:"verbal"}, openRec:"Open",
   noSed:"Not cited as a SED entry", openSite:"Open on sed-online.ru", cols:["Language","Form","Meaning","Reference"], note:"Note"}};
 const L = "en", S = STR[L];
 document.documentElement.lang = L; document.documentElement.dir = S.dir;
@@ -125,6 +150,9 @@ $("t-title").textContent = S.title;
 $("t-sub").innerHTML = esc(S.sub(R.length, R.reduce((a,r)=>a+r.w.length,0), D.snapshot));
 for (const [id,k] of [["t-q","q"],["t-lv","lv"],["t-wk","wk"],["t-sd","sd"],["t-nl","nl"],["t-so","so"],["t-deep","deep"]]) $(id).textContent = S[k];
 $("q").placeholder = S.qph;
+$("tab-r").textContent = S.tabR; $("tab-p").textContent = S.tabP; $("t-pq").textContent = S.pq; $("t-ps").textContent = S.ps; $("t-pun").textContent = S.pun;
+$("pq").placeholder = S.pqph;
+opt($("ps"), [["not_found",S.stNot],["matched",S.stMat],["cited",S.stCit],["",S.stAll]]);
 
 let hits = [], shown = 0, cur = null;
 const PAGE = 150;
@@ -161,11 +189,12 @@ function more() {
   if (shown < hits.length) $("list").insertAdjacentHTML("beforeend", `<button class="more">${esc(S.more(Math.min(PAGE, hits.length - shown)))}</button>`);
 }
 $("list").addEventListener("click", e => {
+  const pr = e.target.closest(".prow"); if (pr) return showP(pr.dataset.key);
   if (e.target.closest(".more")) return more();
   const row = e.target.closest(".row"); if (row) show(+row.dataset.id, true);
 });
 const rel = (arr) => arr.map(([lv,id]) => { const r = byId.get(+id); return r ? `<button data-go="${r.id}"><b>${esc(lv.trim())}</b> <bdi class="form" lang="sem-Latn">${esc(r.f)}</bdi> <span lang="en">${esc(r.g)}</span></button>` : ""; }).join("");
-function show(id, push) {
+function show(id, push, from) {
   const r = byId.get(id); if (!r) return; cur = id;
   document.querySelectorAll(".row").forEach(b => b.setAttribute("aria-current", +b.dataset.id === id));
   const wkLinks = ["PS","PWS"].flatMap(l => (r.wk[l] || []).map(t =>
@@ -173,7 +202,7 @@ function show(id, push) {
   const by = new Map(); for (const w of r.w) { if (!by.has(w[0])) by.set(w[0], []); by.get(w[0]).push(w); }
   const rows = [...by.values()].map(ws => ws.map((w,i) =>
     `<tr><td class="l" lang="en">${i ? "" : esc(D.langs[w[0]])}</td><td><bdi class="form" lang="sem-Latn">${esc(w[1])}</bdi></td><td lang="en">${esc(w[2])}${w[4] ? `<br><span class="r" style="color:var(--muted);font-size:13px">${esc(w[4])}</span>` : ""}</td><td class="r"><a class="ext" target="_blank" rel="noopener" href="http://sed-online.ru/words/${w[5]}">${esc(w[3] || "·")}</a></td></tr>`).join("")).join("");
-  $("detail").innerHTML = `
+  $("detail").innerHTML = (from ? `<button class="back" data-back="${esc(from)}">${esc(S.back)} (${esc(from)})</button><br>` : "") + `
     <span class="pill">${esc(r.lv)}</span>${pills(r).replace(/<span class="pill">SED<\/span>/,"")}
     <h2><bdi class="form" lang="sem-Latn">${esc(r.f)}</bdi></h2>
     <p class="gloss" lang="en">${esc(r.g)}</p>
@@ -190,7 +219,58 @@ function show(id, push) {
     <p class="meta"><a class="ext" target="_blank" rel="noopener" href="http://sed-online.ru/reconstructions/${r.id}">${esc(S.openSite)}</a></p>`;
   if (push) { try { history.replaceState(null, "", "#r" + id); } catch (_) {} }
 }
-$("detail").addEventListener("click", e => { const b = e.target.closest("[data-go]"); if (b) { show(+b.dataset.go, true); $("detail").scrollIntoView({block:"nearest"}); } });
+$("detail").addEventListener("click", e => {
+  const bk = e.target.closest("[data-back]"); if (bk) { setMode("p"); return showP(bk.dataset.back); }
+  const cd = e.target.closest("[data-cand]"); if (cd) { setMode("r"); return show(+cd.dataset.cand, true, cd.dataset.from); }
+  const b = e.target.closest("[data-go]"); if (b) { show(+b.dataset.go, true); $("detail").scrollIntoView({block:"nearest"}); } });
+// ---- Printed SED check: every printed entry vs SEDonline; the list defaults to the ones with no counterpart.
+const PR = D.pr.map(([key, f, g, page, st, c]) => ({key, f, g, page, st, c, k: fold(f), gk: g.toLowerCase()}));
+const prByKey = new Map(PR.map(p => [p.key, p]));
+let reviewed = new Set();
+try { reviewed = new Set(JSON.parse(localStorage.getItem("sedonline-reviewed") || "[]")); } catch (_) {}
+const saveRv = () => { try { localStorage.setItem("sedonline-reviewed", JSON.stringify([...reviewed])); } catch (_) {} };
+let mode = "r", phits = [], pcur = null;
+const keyLabel = k => `${S.vol[k[0]]} ${S.sect[k[1]]} ${k.split(":")[1]}`;
+function setMode(m) {
+  mode = m;
+  $("tab-r").setAttribute("aria-selected", m === "r"); $("tab-p").setAttribute("aria-selected", m === "p");
+  $("rbar").hidden = m !== "r"; $("pbar").hidden = m !== "p";
+  if (m === "r") filter(); else filterP();
+}
+function filterP() {
+  const q = $("pq").value.trim(), qf = fold(q), ql = q.toLowerCase(), st = $("ps").value, un = $("pun").checked;
+  phits = PR.filter(p => (!st || p.st === st) && (!un || !reviewed.has(p.key)) && (!q || p.k.includes(qf) || p.gk.includes(ql)));
+  $("list").innerHTML = phits.map(p =>
+    `<button class="prow" data-key="${esc(p.key)}" aria-current="${p.key === pcur}">
+      <span class="k">${esc(p.key.replace(":", " #"))}</span>
+      <span><bdi class="form" lang="sem-Latn">${esc(p.f)}</bdi><span class="gl" lang="en">${esc(p.g)}</span></span>
+      <span>${reviewed.has(p.key) ? `<span class="pill ok rvmark">✓</span>` : ""}<span class="pill ${p.st === "not_found" ? "warn" : p.st === "matched" ? "" : "ok"}">${esc({not_found:S.stNot,matched:S.stMat,cited:S.stCit}[p.st])}</span></span></button>`).join("")
+    || `<div class="empty">${esc(S.none)}</div>`;
+  $("pcount").textContent = S.count(phits.length, PR.length);
+  if (phits.length && !prByKey.has(pcur)) showP(phits[0].key); else if (prByKey.has(pcur)) showP(pcur);
+  else $("detail").innerHTML = `<div class="empty">${esc(S.pick)}</div>`;
+}
+function showP(key) {
+  const p = prByKey.get(key); if (!p) return; pcur = key;
+  document.querySelectorAll(".prow").forEach(b => b.setAttribute("aria-current", b.dataset.key === key));
+  const cands = p.c.map(([id, why]) => { const r = byId.get(+id); return r ? `<button class="cand" data-cand="${r.id}" data-from="${esc(key)}">
+      <span><b>${esc(r.lv)}</b> <bdi class="form" lang="sem-Latn">${esc(r.f)}</bdi> <span lang="en">${esc(r.g)}</span></span><small>${esc(S.why[why] || why)}${r.sed.length ? "" : ""}</small></button>` : ""; }).join("");
+  $("detail").innerHTML = `
+    <span class="pill ${p.st === "not_found" ? "warn" : p.st === "matched" ? "" : "ok"}">${esc({not_found:S.stNot,matched:S.stMat,cited:S.stCit}[p.st])}</span>
+    <h2><bdi class="form" lang="sem-Latn">${esc(p.f)}</bdi></h2>
+    <p class="gloss" lang="en">${esc(p.g)}</p>
+    <p class="meta">${esc(S.sed)}: ${esc(keyLabel(p.key))}${p.page ? ` · ${esc(S.pdfp)} ${esc(p.page)}` : ""}</p>
+    <p class="meta">${esc(S.stText[p.st])}</p>
+    <label class="rv"><input type="checkbox" id="rv" ${reviewed.has(key) ? "checked" : ""}> ${esc(S.reviewed)}</label>
+    <h3>${esc(S.cand)}</h3>${cands || `<p class="meta">${esc(S.noCand)}</p>`}`;
+  $("rv").addEventListener("change", e => { e.target.checked ? reviewed.add(key) : reviewed.delete(key); saveRv();
+    const row = [...document.querySelectorAll(".prow")].find(b => b.dataset.key === key);
+    if (row) row.lastElementChild.querySelector(".rvmark")?.remove();
+    if (row && e.target.checked) row.lastElementChild.insertAdjacentHTML("afterbegin", `<span class="pill ok rvmark">✓</span>`); });
+}
+$("tab-r").addEventListener("click", () => setMode("r")); $("tab-p").addEventListener("click", () => setMode("p"));
+let pt; $("pq").addEventListener("input", () => { clearTimeout(pt); pt = setTimeout(filterP, 120); });
+$("ps").addEventListener("change", filterP); $("pun").addEventListener("change", filterP);
 let t; $("q").addEventListener("input", () => { clearTimeout(t); t = setTimeout(filter, 120); });
 for (const id of ["lv","wk","sd","nl","so","deep"]) $(id).addEventListener("change", filter);
 filter();
