@@ -22,7 +22,12 @@ class Ethiopic(unittest.TestCase):
         self.assertEqual(ethiopic.convert("tig", "warkat"), "ዋርካት")
         self.assertEqual(ethiopic.convert("tig", "ˁaṣəm"), ethiopic.convert("tig", "ʿaṣəm"))
     def test_refuses_instead_of_guessing(self):
-        self.assertIsNone(ethiopic.convert("gez", "ḥəfn"))          # no Ge'ez profile
+        # Ge'ez (Leslau): a = ä, ā = a; each of these is a Wiktionary Ge'ez entry at this spelling (checked against the live pages)
+        for lat, sc in [("kalb", "ከልብ"), ("ˀəzn", "እዝን"), ("ḥaddis", "ሐዲስ"), ("ŝāˁr", "ሣዕር"), ("ˁayn", "ዐይን"), ("ˁəṣ̂", "ዕፅ"), ("ṣəfr", "ጽፍር"),
+                        ("samˁa", "ሰምዐ"), ("lelit", "ሌሊት"), ("warḳ", "ወርቅ")]:
+            self.assertEqual(ethiopic.convert("gez", lat), sc, lat)
+        self.assertEqual(ethiopic.convert("gez", "kəśād"), "ክሣድ")
+        self.assertIsNone(ethiopic.convert("gez", "ˀanḳe, ˀanḳet"))
         self.assertIsNone(ethiopic.convert("ti", "aṭənt"))          # Tigrinya has distinct ʾä and ʾa: initial a is ambiguous
         self.assertEqual(ethiopic.convert("stv", "arās"), ethiopic.convert("am", "aras"))   # long ā = fourth order in Amharic-type sources
         self.assertIsNone(ethiopic.convert("ti", "ʕaṣmā"))          # Tigrinya/Tigre: length marks are not handled

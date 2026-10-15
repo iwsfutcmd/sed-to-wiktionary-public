@@ -53,7 +53,7 @@ def rec_of(text):
     m = re.search(r"\{\{R:sem-pro:SED\|volume=(I+)\|id=(\d+)\|entry=([^}]*)\}\}", text)
     return m.groups() if m else None
 def norm(s):
-    s = U.normalize("NFC", s).replace("ˀ", "ʔ").replace("ˁ", "ʕ").replace("ḳ", "q").replace("ǝ", "ə").replace("γ", "ɣ").lower()
+    s = U.normalize("NFC", s).replace("ˀ", "ʔ").replace("ˁ", "ʕ").replace("ḳ", "q").replace("ǝ", "ə").replace("γ", "ɣ").replace("ŝ", "ś").lower()
     return re.sub(r"[\s*\-()]", "", s)
 
 def forall(files):

@@ -21,7 +21,7 @@ Reconstructed in Militarev & Kogan's ''Semitic Etymological Dictionary'' as {{m|
 *** Northwest Semitic:
 **** {{desc|myz|-|tr=kšada|t=throat|unc=1}}
 ** Ethiopian Semitic:
-*** {{desc|gez|-|tr=kəsād|t=neck}}
+*** {{desc|gez|ክሣድ|tr=kəśād|t=neck}}
 *** {{desc|ti|ክሳድ|tr=kəsad|t=neck}}
 *** {{desc|am|ክሳድ|tr=kəsad|t=collar}}
 ** Modern South Arabian:

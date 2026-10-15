@@ -10,8 +10,10 @@ Language profiles say how a source's transliteration maps onto that scheme:
   am, ti, tig, agj, har, gft, stv, wle, zwa, gru, sgw, mvz   the source writes ä for the first order and a for the fourth
                                                            (as SEDonline does for Amharic, Tigrinya, Tigre and the Gurage group)
   ti additionally takes ḵ (Kane's transcription of ኸ) as x.
-Not provided: Ge'ez. Its source (Leslau's CDG, as quoted in SED) writes a for the first order, so the conversion depends on the
-word and cannot be done from the transliteration alone.
+  gez   Leslau's CDG, as quoted in SED: first order written a (ä), fourth order ā (a); ś ṣ́ (ḍ) ḥ ḫ h ʾ ʿ are kept apart, so the letters
+        follow from the transliteration. Checked against Wiktionary (data in tests/test_tr2script.py): of 645 SEDonline Ge'ez words the
+        converter gives, 118 are Wiktionary Ge'ez entries at exactly the spelling produced, and the only one that exists under another
+        letter is sabˁ (Wiktionary ሰብእ, with ʾ for ʿ). The SED sometimes writes s for a graphic ś (kəsād = ክሣድ): give such words as ś.
 
 usage: ethiopic.convert("am", "wärč") -> "ወርች";  ethiopic.refresh() re-fetches Wiktionary's table."""
 import json, re, unicodedata as U
@@ -22,6 +24,7 @@ TABLE = DATA / "scripts" / "ethi_translit.json"
 VOWELS = "äuiaeəo"
 PROFILES = {c: {} for c in "am tig agj har gft stv wle zwa gru sgw mvz".split()}
 PROFILES["ti"] = {"ḵ": "x"}
+PROFILES["gez"] = {"ŝ": "ś", "ṣ̂": "ṣ́", "ḍ": "ṣ́", "ī": "i", "ū": "u", "ē": "e", "ō": "o"}      # Leslau: ä is written a, a is written ā; ṣ́ is ḍ
 # profiles whose source writes a word-initial vowel for an unwritten ʾ, with a standing for ʾä (cf. Wiktionary's Amharic አጥንት = SED aṭənt)
 LONG_A = {"am", "agj", "gft", "stv", "wle", "zwa", "gru", "sgw", "mvz", "har"}
 INITIAL_A = {"am", "agj", "gft", "stv", "wle", "zwa", "gru", "sgw", "mvz"}
@@ -46,6 +49,8 @@ def convert(lang, translit):
     for a, b in {**COMMON, **PROFILES[lang]}.items():
         s = s.replace(a, b)
     s = U.normalize("NFC", s)
+    if lang == "gez":                                               # Leslau's CDG: first order a (= ä), fourth order ā (= a)
+        s = s.replace("ā", "\0").replace("a", "ä").replace("\0", "a")
     if lang in LONG_A:                                              # a long ā in these sources is the fourth order, as a is
         s = s.replace("ā", "a")
     if s and s[0] in VOWELS and lang in INITIAL_A:                   # initial vowel = ʾ + vowel; a stands for ä

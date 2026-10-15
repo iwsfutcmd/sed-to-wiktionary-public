@@ -78,7 +78,7 @@ def akkadian(form):
     return lemma, (m.group(1) if m else None)
 
 def tr_of(f):
-    return U.normalize("NFC", f).replace("ˀ", "ʔ").replace("ˁ", "ʕ").replace("ḳ", "q").replace("ǝ", "ə").replace("γ", "ɣ")      # descendants: Wiktionary's tr uses q (PS titles keep ḳ)
+    return U.normalize("NFC", f).replace("ˀ", "ʔ").replace("ˁ", "ʕ").replace("ḳ", "q").replace("ǝ", "ə").replace("γ", "ɣ").replace("ŝ", "ś")      # descendants: Wiktionary's tr uses q (PS titles keep ḳ)
 TRANSLATE = {"im Kindbett liegen": "to be in childbed", "partorire (to give birth)": "to give birth", "accouché": "woman who has given birth", "the sacrup or rump of a butchered animal": "the sacrum or rump of a butchered animal", "Hüfte": "hip", "Wanzen (bugs)": "bugs", "Mücke (mosquito)": "mosquito", "guérir": "to heal"}
 def script_for(code, form):
     """-> (script, how) with how in curated / ethiopic / abjad, or (None, None)."""
@@ -192,6 +192,7 @@ PAGES = {   # title -> SEDonline reconstruction id and page content
                 cat="{{C|sem-pro|Anatomy}}",
                 etym="Reconstructed in Militarev & Kogan's ''Semitic Etymological Dictionary'' as {{m|sem-pro|*ki(n)šād-}}. The Modern South Arabian nasal is not found elsewhere. "
                      "According to Kaufman, Mandaic {{m|myz|kšada}} is rather \"a neck ornament\" borrowed from Akkadian.",
+                override={("Geez", "kəsād"): dict(form="kəśād", reason="print: kəsād, kəŝād; ŝ is purely graphic, the Ge'ez spelling has ሠ (ክሣድ)")},
                 words=[dict(lang="Akkadian", form="kišādu", gloss="neck, throat; necklace"),
                        dict(lang="Mandaic", form="kšada", gloss="throat", unc=True),
                        dict(lang="Geez", form="kəsād", gloss="neck"),

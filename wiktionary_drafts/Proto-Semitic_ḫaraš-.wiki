@@ -14,8 +14,8 @@
 *** {{desc|ar|خَرُوس|t=female that has not yet brought forth in the first period of her pregnancy}}
 *** {{desc|ar|خَرَّسَ|t=(form II) to feed the woman on the occasion of child-birth}}
 ** Ethiopian Semitic:
-*** {{desc|gez|-|tr=ḫarasa|t=to bear a child, lie in bed when giving birth to a child}}
-*** {{desc|gez|-|tr=ḫaraŝa|t=to feed, nourish, take good care of someone by properly feeding him}}, {{l|gez|-|tr=ḥarasa}}, {{l|gez|-|tr=ḫarrasa}}
+*** {{desc|gez|ኀረሰ|tr=ḫarasa|t=to bear a child, lie in bed when giving birth to a child}}
+*** {{desc|gez|ኀረሠ|tr=ḫaraśa|t=to feed, nourish, take good care of someone by properly feeding him}}, {{l|gez|ሐረሰ|tr=ḥarasa}}, {{l|gez|ኀረሰ|tr=ḫarrasa}}
 *** {{desc|tig|ሓራስ|tr=ḥaras|t=woman in childbed}}
 *** {{desc|ti|ሓረሰ|tr=ḥaräsä|t=to give birth}}
 *** {{desc|am|አራስ|tr=aras|t=woman in childbed}}
