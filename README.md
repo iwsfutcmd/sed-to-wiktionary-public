@@ -28,6 +28,7 @@ The online Semitic Etymological Database (Kogan, Arkhipov et al.; beta) gives re
 - `data/sedonline/sedonline_comparison.tsv`: each SEDonline PS/PWS reconstruction against the Wiktionary title snapshot (exact skeleton after folding; `V` patterns are not expanded here), with the printed-SED form it cites, `n_words`, `n_langs`; Wiktionary-missing, best-attested first.
 - Results: of 873 PS / 430 PWS reconstructions, 115 / 27 have a matching Wiktionary PS/PWS page. 576 of the 637 printed-SED entries are cited by some SEDonline reconstruction (516 by a PS/PWS one). 448 PS/PWS reconstructions with no SED number and no Wiktionary page are attested in 5+ languages: candidates beyond the two volumes.
 - `site/sedonline.html` (`make sedonline-site`): self-contained browser for the above (search with diacritic/glottal folding, filters by level, Wiktionary page, printed-SED citation and language count, cited words per language, links to the site and to Wiktionary). `site/sedonline_template.html` is the template.
+- GitHub Pages: `.github/workflows/pages.yml` (manual run) publishes only `site/sedonline.html`, as the Pages root. Enable once under Settings → Pages → Source: GitHub Actions. Note that Pages sites are public (and Pages on a private repo needs a paid GitHub plan); `site/index.html` is not deployed.
 - The Wiktionary snapshot was refreshed the same day (PS 372, PWS 42→43: `ʔalp-`); `fetch_titles.py` now backs off on HTTP 429.
 
 ## Method and limits
