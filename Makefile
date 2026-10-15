@@ -49,4 +49,4 @@ wanted:                 # which Proto-Semitic pages does Wiktionary already link
 	cd scripts && $(PY) wikt_wanted.py
 
 orthography:
-	cd scripts && python wikt_orthography.py --scan --fresh
+	cd scripts && $(PY) wikt_orthography.py --scan --fresh

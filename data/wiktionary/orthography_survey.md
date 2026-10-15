@@ -20,7 +20,7 @@ The three pages to move (`orthography_survey.tsv`, action `MOVE`):
 So the mass cleanup of titles has largely been done. Beware: the two pages we posted (1, 2) were wrong spellings.
 
 ## 2. References that still use a non-standard spelling
-`orthography_links.tsv`: 199 (link, page) pairs from 197 distinct pages to 38 non-standard titles. 34 of those titles are redirects (the links work, but go through a redirect); **4 are red links** (no page at that spelling):
+`orthography_links.tsv`: 199 (link, page) pairs from 197 distinct pages to 38 non-standard titles. 34 of those titles exist (31 redirects whose links work but go through the redirect, plus the 3 real pages of §1); **4 are red links** (no page at that spelling):
 `našaq-` (1 page: ܢܫܩ), `ʾarṣ́-` (4: ardi, ارض, अर्ज़, Erd), `ʾayyal-` (1: ܐܝܠܬܐ), `ʿaḳrab-` (1: عقرب).
 The heaviest redirects: `ʾil-` 22 pages, `baʿl-` 18, `ʿaśr-` 8, `ʾab-` 7, `šabʿ-` 7, `tišʿ-` 10 (`orthography_survey.tsv`, column n_links).
 Some redirects lead to a *different stem* (not just a respelling): `ʾab-` → `ʔabw-`, `ʾid-` → `yad-`, `maʾ-` → `māy-`, `ʿaśr-` → `ʕaśar-`: the links there want repointing to the new stem, not only a respelling.
