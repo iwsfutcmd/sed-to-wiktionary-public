@@ -2,7 +2,7 @@
 ==Proto-Semitic==
 
 ===Etymology===
-Reconstructed in Militarev & Kogan's ''Semitic Etymological Dictionary'' with an optional feminine suffix {{m|sem-pro|*-at-}}: {{m|sem-pro|*θ̣aby(-at)-}}. Akkadian {{m|akk|ṣabītum}} is written with the logogram MAŠ.DA (𒈦𒁕) and syllabically (CAD Ṣ 42).
+Reconstructed in Militarev & Kogan's ''Semitic Etymological Dictionary'' with an optional feminine suffix {{m|sem-pro|*-at-}}: {{m|sem-pro|*θ̣aby(-at)-}}.
 
 ===Noun===
 {{sem-noun|m|g2=f}}
