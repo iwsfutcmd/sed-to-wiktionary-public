@@ -45,6 +45,12 @@ definitions; the page names our consonants with other vowels, so the page may be
 print/site agreement, every SEDonline word present, script matches language, English glosses, tr= conventions, generator reproducibility;
 online: title free and not linked under another spelling, language codes (no parse check: pages are pasted in by hand). Mutation-checked: 19 of 19 seeded mistakes are caught.
 
+## Form-level check against the printed page
+The agreement test only compares which languages are cited. `data/sedonline/form_check.tsv` records a by-eye comparison of every cited
+form with the printed entry (200-dpi crops from `scripts/entry_crop.py VOL KEY`, e.g. `entry_crop.py 1 N238`). Done so far:
+`šiʔr-` (all forms agree; the print has a few extras) and `ṣ́rṭ` (the print differs from the site for Soqotri and Harsusi, glosses Syriac
+*ʕurṭē* "crepitus ventris", and adds Amharic forms). The other drafts have not been compared by eye.
+
 ## Titles
 Checked against incoming links (`list=backlinks`), because Wiktionary's Proto-Semitic titles mix `ḳ`/`q` and `ṯ̣`/`θ̣`:
 `baḳḳ-` is already linked from the Arabic entry بق ("from Proto-Semitic *baḳḳ-"), `θ̣aby-` from ظبي (`{{ety|ar|:inh|sem-pro:*θ̣aby-}}`).
