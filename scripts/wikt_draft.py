@@ -140,6 +140,7 @@ PAGES = {   # title -> SEDonline reconstruction id and page content
                            ("Syriac", "ˁurṭē, ˁurṭāyā"): dict(gloss="flatulence", reason="print: 'crepitus ventris', site: 'stomach growling'")}, pos="{{head|sem-pro|verb}}", infl=False, defs=["to [[fart]], to break [[wind]] audibly"], cat="", etym=""),
  "nayak-": dict(rec="995", vol="I", entry="*nyk", pos="{{head|sem-pro|verb}}", infl=False,
                 conj="{{sem-pro-conj/*payala-*yipīl|n|y|k|vn=nayk}}",           # hollow root (medial y)
+                override={("Arabic", "nyk"): dict(gloss="to cohabit with a woman", reason="print: 'cohabiter avec une femme' [BK 2 1376]; site: 'to marry a woman'")},
  defs=["to have [[sexual intercourse]]"], cat="", etym=""),
  "ḫaraš-": dict(rec="960", vol="I", entry="*ḫrš", exclude={("Amharic", "arräsä"): "Wiktionary's Amharic አረሰ is 'to plough', from *ḥaraṯ- (tests/test_conflicts.py)"}, pos="{{head|sem-pro|verb}}", infl=False, defs=["to be in [[childbed]], to be in [[confinement]]"], cat="", etym=""),
  "šiʔr-": dict(rec="691", vol="I", entry="*šiʔr-", pos="{{sem-noun|m}}", infl=True, defs=["[[flesh]]"], cat="{{C|sem-pro|Anatomy}}", etym=""),
