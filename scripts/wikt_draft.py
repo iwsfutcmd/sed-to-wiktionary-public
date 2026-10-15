@@ -138,7 +138,7 @@ PAGES = {   # title -> SEDonline reconstruction id and page content
                 defs=["[[hip]], [[hipbone]]", "[[haunch]], upper [[thigh]]"], cat="{{C|sem-pro|Anatomy}}",
                 etym="Reconstructed in Militarev & Kogan's ''Semitic Etymological Dictionary'' with an optional feminine suffix {{m|sem-pro|*-at-}}: {{m|sem-pro|*warik(-at)-}}."),
  "θ̣aby-": dict(rec="624", vol="II", entry="*ṯ̣aby(-at)-", override={("Mandaic", "ṭabia"): dict(gloss="gazelle, deer", reason="print: ṭabia 'gazelle, deer' [DM 173], site: 'deer'")}, pos="{{sem-noun|m|g2=f}}", infl=True, defs=["[[gazelle]]"], cat="{{C|sem-pro|Mammals}}",
-               etym="Reconstructed in Militarev & Kogan's ''Semitic Etymological Dictionary'' with an optional feminine suffix {{m|sem-pro|*-at-}}: {{m|sem-pro|*θ̣aby(-at)-}}."),
+               etym="Reconstructed in Militarev & Kogan's ''Semitic Etymological Dictionary'' with an optional feminine suffix {{m|sem-pro|*-at-}}: {{m|sem-pro|*θ̣aby(-at)-}}. Akkadian {{m|akk|ṣabītum}} is written syllabically and with the logogram MAŠ.DA₂ (𒈦𒋫; CAD Ṣ 42)."),
  "maraṣ̂-": dict(rec="894", vol="I", entry="*mrṣ̂", pos="{{head|sem-pro|verb}}", infl=False,
                  conj="{{sem-pro-conj/*paʕala-*yipʕal|m|r|ṣ̂|vn=marṣ̂}}",        # SED: Akkadian marāṣu (a/a)
  defs=["to be [[sick]], [[ill]]"], cat="", etym=""),
