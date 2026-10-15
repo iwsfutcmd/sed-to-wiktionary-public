@@ -7,8 +7,9 @@ the page title without the namespace. **None has been saved to the wiki.** Regen
 ## Selection rule
 Only entries where the printed SED and SEDonline agree (`data/sedonline/sed_print_vs_site_agreement.tsv`, `agree = 1`):
 same form, same gloss, the same set of core languages cited (Akk, Ebl, Ugr, Hbr, Pho, Arb, Sab, Gez, Tgr, Tna, Amh, Har, Mhr,
-Jib, Hrs, Soq, Syr, Mnd, Jewish Aramaic), and filed as PS on the site. 107 of the 523 gaps pass; the first five without schematic
-`V` or `/` variants were taken, best-attested first. Titles were checked live on en.wiktionary.org (none exists).
+Jib, Hrs, Soq, Syr, Mnd, Jewish Aramaic), and filed as PS on the site. 107 of the 523 gaps pass. Entries with schematic
+`V`, `/` variants or mixed meanings were left for later (e.g. `*ṯarb-` is "fat" in some languages and "calf of leg" in others;
+`*laḳlaḳ-`: the site itself allows an Akkadian-to-Arabic borrowing), best-attested first. Titles were checked live on en.wiktionary.org (none exists).
 Dropped: `ḥupn-`, `šit-`, `wšn`, `śyb` (site differs from the print), `ʔimmar-` (Wiktionary's Akkadian `immerum` lists the West
 Semitic "lamb" words as borrowings from Akkadian, which conflicts with an inherited PS entry).
 
@@ -19,6 +20,10 @@ Semitic "lamb" words as borrowings from Akkadian, which conflicts with an inheri
 | `mrṣ́` | I no. 42 (verbal) | 894 | 13 |
 | `ṣ́rṭ` | I no. 71 (verbal) | 1023 | 8 |
 | `baqq-` | II no. 58 | 667 | 7 |
+| `nyk` | I no. 53 (verbal) | 995 | 5 |
+| `ḫrš` | I no. 31 (verbal) | 960 | 14 |
+| `šiʔr-` | I no. 238 | 691 | 4 |
+| `śaḥm-` | I no. 263 | 698 | 4 |
 
 ## Contents
 Every word SEDonline lists under the reconstruction is included (nothing is selected), grouped by branch as on `kalb-`/`pataḥ-`.
@@ -41,7 +46,7 @@ The reference is `{{R:sem-pro:SED|volume=…|id=<SEDonline id>|entry=…}}`.
 5. Still "[script needed]": Mandaic and Ge'ez (no converter), and forms with variants. `ṯ̣aby-` has one (Mandaic).
 
 `python3 scripts/wikt_draft.py --verify` lists every script form with how it was made and whether Wiktionary has an entry for it:
-27 of 40 do not (red links; mostly Aramaic dialects, Sabaic, Gurage and Tigre, which Wiktionary covers thinly). Generated Ethiopic
+35 of 56 do not (red links; mostly Aramaic dialects, Sabaic, Gurage and Tigre, which Wiktionary covers thinly). Generated Ethiopic
 is the least certain output: compare it with a lexicon before saving.
 
 ## Check before saving
@@ -53,3 +58,7 @@ is the least certain output: compare it with a lexicon before saving.
 - Roots (`mrṣ́`, `ṣ́rṭ`) carry no `{{sem-pro-conj}}`: the SED gives no stem vowels.
 - `warik-`: Wiktionary's Akkadian `warkatum` already says "cognate with Arabic وَرِك and Hebrew יָרֵךְ". Akkadian `warki`
   ("after, behind") is a different sense, and Ugaritic *yrk* "hips (?)" is queried in the source.
+- `nyk`: the Arabic gloss "to marry a woman" is the source's (Kazimirski), while Arabic ناك is vulgar "to have sex with"; check it.
+- `šiʔr-`: Wiktionary's Akkadian `šīrum` already lists Hebrew שְׁאֵר and Ugaritic 𐎌𐎛𐎗 as cognates (the spellings here are copied from it).
+- `śaḥm-`: only Akkadian, Arabic and one Jibbali form (glossed "temple", with a note that it is cut to judge the fat of a carcass).
+- `ḫrš`: Ge'ez has no converter; Tigre and Argobba Ethiopic are generated. The Arabic forms are two different words (`ḫarūs-`, `ḫrs` II).

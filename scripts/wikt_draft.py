@@ -39,6 +39,8 @@ CURATED = {
  ("uga", "ˀmr"): "𐎛𐎎𐎗",                    # Wiktionary writes ʾi (𐎛), the consonants alone give 𐎀
  ("hbo", "yārēk"): "יָרֵךְ", ("hbo", "ṣəbī"): "צְבִי", ("hbo", "ˀimmēr"): "אִמֵּר",
  ("ar", "warik-"): "وَرِك", ("ar", "ḏ̣aby-"): "ظَبْي", ("ar", "mrḍ"): "مَرِضَ", ("ar", "baqq-"): "بَقّ", ("ar", "ḍrṭ"): "ضَرَطَ",
+ ("ar", "nyk"): "نَاكَ", ("ar", "ḫarūs-"): "خَرُوس", ("ar", "ḫrs"): "خَرَّسَ", ("ar", "šaḥuma"): "شَحُمَ", ("ar", "šaḥm-"): "شَحْم",
+ ("hbo", "šəˀēr"): "שְׁאֵר", ("uga", "šˀir"): "𐎌𐎛𐎗",          # both as on Wiktionary's Akkadian šīrum page
 }
 def api(**q):
     data = urllib.parse.urlencode(dict(format="json", formatversion=2, **q)).encode()
@@ -55,7 +57,7 @@ def page(title):
     r = api(action="query", prop="revisions", rvprop="content", rvslots="main", titles=title)["query"]["pages"][0]
     c = r["revisions"][0]["slots"]["main"]["content"] if "revisions" in r else ""
     f.write_text(c, encoding="utf-8"); return c or None
-AKK_LEMMA = {"warkatu": "warkatum", "warki": "warki", "marāṣu": "marāṣum", "immeru": "immerum", "ṣabītu": "ṣabītum", "baqqu": "baqqum", "baḳḳu": "baqqum", "ṣarātu": "ṣarātum"}
+AKK_LEMMA = {"warkatu": "warkatum", "warki": "warki", "marāṣu": "marāṣum", "immeru": "immerum", "ṣabītu": "ṣabītum", "baqqu": "baqqum", "baḳḳu": "baqqum", "ṣarātu": "ṣarātum", "nâku": "nâkum", "ḫarāšu": "ḫarāšum", "šīru": "šīrum", "šēmu": "šēmum"}
 def akkadian(form):
     """-> (lemma, phonetic cuneiform spelling from the page's {{cunsp}}, or None)"""
     lemma = AKK_LEMMA.get(form, form)
@@ -66,7 +68,7 @@ def akkadian(form):
 
 def tr_of(f):
     return U.normalize("NFC", f).replace("ˀ", "ʔ").replace("ˁ", "ʕ")
-TRANSLATE = {"the sacrup or rump of a butchered animal": "the sacrum or rump of a butchered animal", "Hüfte": "hip", "Wanzen (bugs)": "bugs", "Mücke (mosquito)": "mosquito", "guérir": "to heal"}
+TRANSLATE = {"im Kindbett liegen": "to be in childbed", "partorire (to give birth)": "to give birth", "accouché": "woman who has given birth", "the sacrup or rump of a butchered animal": "the sacrum or rump of a butchered animal", "Hüfte": "hip", "Wanzen (bugs)": "bugs", "Mücke (mosquito)": "mosquito", "guérir": "to heal"}
 def script_for(code, form):
     """-> (script, how) with how in curated / ethiopic / abjad, or (None, None)."""
     if (code, form) in CURATED:
@@ -93,6 +95,8 @@ def one(code, form, notes, first, gloss, lang):
     return f"{{{{{head}|{code}|{sc}|tr={tr_of(form)}{t}}}}}"
 def entry(code, form, gloss, lang, notes):
     gloss = TRANSLATE.get(gloss, gloss)
+    if len(gloss) > 90 and ";" in gloss:                       # long dictionary quotations: keep the first clause
+        gloss = gloss.split(";")[0].strip()
     if gloss.startswith("="):                               # a note about a spelling, not a meaning
         gloss = ""
     m = re.match(r"^(.*?)\s*\(([^)]*)\)$", form)           # 'yarḵāṯēh (suff.)' -> form + note
@@ -113,6 +117,10 @@ PAGES = {   # title -> SEDonline reconstruction id and page content
                etym="Reconstructed in Militarev & Kogan's ''Semitic Etymological Dictionary'' with an optional feminine suffix {{m|sem-pro|*-at-}}: {{m|sem-pro|*ṯ̣aby(-at)-}}."),
  "mrṣ́": dict(rec="894", vol="I", entry="*mrṣ̂", pos="{{head|sem-pro|verb}}", infl=False, defs=["to be [[sick]], [[ill]]"], cat="", etym=""),
  "ṣ́rṭ": dict(rec="1023", vol="I", entry="*ṣ̂rṭ", pos="{{head|sem-pro|verb}}", infl=False, defs=["to [[fart]], to break [[wind]] audibly"], cat="", etym=""),
+ "nyk": dict(rec="995", vol="I", entry="*nyk", pos="{{head|sem-pro|verb}}", infl=False, defs=["to have [[sexual intercourse]]"], cat="", etym=""),
+ "ḫrš": dict(rec="960", vol="I", entry="*ḫrš", pos="{{head|sem-pro|verb}}", infl=False, defs=["to be in [[childbed]], to be in [[confinement]]"], cat="", etym=""),
+ "šiʔr-": dict(rec="691", vol="I", entry="*šiʔr-", pos="{{sem-noun|m}}", infl=True, defs=["[[flesh]]"], cat="{{C|sem-pro|Anatomy}}", etym=""),
+ "śaḥm-": dict(rec="698", vol="I", entry="*ŝaḥm-", pos="{{sem-noun|m}}", infl=True, defs=["[[fat]]"], cat="", etym=""),
  "baqq-": dict(rec="667", vol="II", entry="*baḳḳ-", pos="{{sem-noun|m}}", infl=True, defs=["[[gnat]]"], cat="{{C|sem-pro|Insects}}", etym=""),
 }
 def tree_lines(words, notes):

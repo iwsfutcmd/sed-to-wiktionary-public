@@ -1,0 +1,26 @@
+{{reconstructed}}
+==Proto-Semitic==
+
+===Noun===
+{{sem-noun|m}}
+
+# [[flesh]]
+
+====Inflection====
+{{sem-decl-noun}}
+
+====Descendants====
+* East Semitic:
+** {{desc|akk|šīrum|alt=𒅆𒊒𒌝|tr=šīrum|t=flesh}}
+* West Semitic:
+** Central Semitic:
+*** Northwest Semitic:
+**** Canaanite:
+***** {{desc|hbo|שְׁאֵר|tr=šəʔēr|t=body, flesh}}
+***** {{desc|phn|𐤔𐤀𐤓|tr=šʔr|t=flesh}}
+**** {{desc|uga|𐎌𐎛𐎗|tr=šʔir|t=flesh}}
+
+===References===
+* {{R:sem-pro:SED|volume=I|id=691|entry=*šiʔr-}}
+
+{{C|sem-pro|Anatomy}}

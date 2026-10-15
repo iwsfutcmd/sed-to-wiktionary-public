@@ -1,0 +1,23 @@
+{{reconstructed}}
+==Proto-Semitic==
+
+===Noun===
+{{sem-noun|m}}
+
+# [[fat]]
+
+====Inflection====
+{{sem-decl-noun}}
+
+====Descendants====
+* East Semitic:
+** {{desc|akk|šēmum|tr=šēmum|t=fat}}
+* West Semitic:
+** Central Semitic:
+*** {{desc|ar|شَحُمَ|tr=šaḥuma|t=to be fat}}
+*** {{desc|ar|شَحْم|tr=šaḥm-|t=fat}}
+** Modern South Arabian:
+*** {{desc|shv|ŝḥmέt|t=temple}}
+
+===References===
+* {{R:sem-pro:SED|volume=I|id=698|entry=*ŝaḥm-}}

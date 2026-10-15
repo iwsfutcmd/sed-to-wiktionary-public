@@ -3,7 +3,8 @@
 Scheme (Wiktionary's): seven orders  ä u i a e ə o ; a consonant with no vowel written is the sixth order (ə);
 ʾ ʿ for ʔ ʕ; ṣ́ for ፀ, ṣ for ጸ, ḳ ፣ x̣ ቐ, ḫ ኀ, ǧ ጀ, č̣ ጨ, p̣ ጰ, ŋ ጘ; labialised consonants as C+ʷ+a.
 Gemination is not written (Amharic, Tigrinya and Gurage orthography do not mark it), so a doubled letter is written once.
-A word-initial vowel (an unwritten ʾ in the sources) is not converted: ä/a after ʾ cannot be told apart.
+A word-initial vowel is an unwritten ʾ in the sources: for the Amharic-type profiles (INITIAL_A) it is read as ʾ+vowel with a = ʾä
+(Amharic አጥንት = SED aṭənt); for Tigrinya and Tigre, which write ʾä and ʾa differently, it is not converted.
 
 Language profiles say how a source's transliteration maps onto that scheme:
   am, ti, tig, agj, har, gft, stv, wle, zwa, gru, sgw, mvz   the source writes ä for the first order and a for the fourth
@@ -21,6 +22,8 @@ TABLE = DATA / "scripts" / "ethi_translit.json"
 VOWELS = "äuiaeəo"
 PROFILES = {c: {} for c in "am tig agj har gft stv wle zwa gru sgw mvz".split()}
 PROFILES["ti"] = {"ḵ": "x"}
+# profiles whose source writes a word-initial vowel for an unwritten ʾ, with a standing for ʾä (cf. Wiktionary's Amharic አጥንት = SED aṭənt)
+INITIAL_A = {"am", "agj", "gft", "stv", "wle", "zwa", "gru", "sgw", "mvz"}
 # source spellings -> Wiktionary's symbols
 COMMON = {"ˀ": "ʾ", "ʔ": "ʾ", "ʼ": "ʾ", "ˁ": "ʿ", "ʕ": "ʿ", "ʻ": "ʿ", "ṣ̂": "ṣ́", "ɨ": "ə", "ǝ": "ə"}
 
@@ -42,6 +45,8 @@ def convert(lang, translit):
     for a, b in {**COMMON, **PROFILES[lang]}.items():
         s = s.replace(a, b)
     s = U.normalize("NFC", s)
+    if s and s[0] in VOWELS and lang in INITIAL_A:                   # initial vowel = ʾ + vowel; a stands for ä
+        s = "ʾ" + ("ä" if s[0] == "a" else s[0]) + s[1:]
     out, i = [], 0
     while i < len(s):
         for c in cons:

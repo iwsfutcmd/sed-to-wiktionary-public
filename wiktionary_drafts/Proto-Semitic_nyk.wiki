@@ -1,0 +1,21 @@
+{{reconstructed}}
+==Proto-Semitic==
+
+===Verb===
+{{head|sem-pro|verb}}
+
+# to have [[sexual intercourse]]
+
+====Descendants====
+* East Semitic:
+** {{desc|akk|nâkum|tr=nâkum|t=to have illicit sexual intercourse, to fornicate}}
+* West Semitic:
+** Central Semitic:
+*** {{desc|ar|نَاكَ|tr=nyk|t=to marry a woman}}
+** Modern South Arabian:
+*** {{desc|gdq|nəyūk|t=to have sexual intercourse with, sleep with}}
+*** {{desc|shv|nɛ̄k|t=to sleep with}}
+*** {{desc|hss|neyōk|t=to sleep with}}
+
+===References===
+* {{R:sem-pro:SED|volume=I|id=995|entry=*nyk}}

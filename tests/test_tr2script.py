@@ -17,11 +17,14 @@ class Ethiopic(unittest.TestCase):
         self.assertEqual(ethiopic.convert("am", "wärč"), "ወርች")
         self.assertEqual(ethiopic.convert("sgw", "wäččä"), "ወቸ")
         self.assertEqual(ethiopic.convert("ti", "wäräḵät"), "ወረኸት")
+        self.assertEqual(ethiopic.convert("am", "aṭənt"), "አጥንት")      # Wiktionary Amharic entry for 'bone'
+        self.assertEqual(ethiopic.convert("am", "aras"), "አራስ")
         self.assertEqual(ethiopic.convert("tig", "warkat"), "ዋርካት")
         self.assertEqual(ethiopic.convert("tig", "ˁaṣəm"), ethiopic.convert("tig", "ʿaṣəm"))
     def test_refuses_instead_of_guessing(self):
         self.assertIsNone(ethiopic.convert("gez", "ḥəfn"))          # no Ge'ez profile
-        self.assertIsNone(ethiopic.convert("am", "aṭənt"))          # initial vowel: ʾä or ʾa?
+        self.assertIsNone(ethiopic.convert("ti", "aṭənt"))          # Tigrinya has distinct ʾä and ʾa: initial a is ambiguous
+        self.assertIsNone(ethiopic.convert("am", "arās"))           # length marks are not handled
         self.assertIsNone(ethiopic.convert("am", "wä rč"))
         self.assertIsNone(ethiopic.convert("am", "wärč1"))
 
