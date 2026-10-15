@@ -4,7 +4,7 @@ The invariant: whenever scripts/tr2script/cuneiform.py returns a spelling, it eq
 (logograms, readings eBL lacks), but must never disagree with the {{cunsp}} pairs of Wiktionary's Akkadian lemma pages
 (tests/data/akk_cunsp_gold.tsv). Also: every cuneiform `alt=` in a draft is an attested spelling that converts back from its
 transliteration, so a copied or mistyped sign string is caught."""
-import re, sys, unittest
+import csv, re, sys, unittest
 from pathlib import Path
 ROOT = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(ROOT / "scripts")); sys.path.insert(0, str(ROOT / "tests"))
@@ -23,7 +23,7 @@ def gold():
 class Readings(unittest.TestCase):
     def test_reading_parser(self):
         for s, want in [("ka", ("ka", 1)), ("ku₁₇", ("ku", 17)), ("rí", ("ri", 2)), ("à", ("a", 3)), ("šu", ("šu", 1)), ("tum4", ("tum", 4)),
-                        ("ṣa", ("ṣa", 1)), ("ḫa", ("ḫa", 1))]:
+                        ("ṣa", ("ṣa", 1)), ("ḫa", ("ha", 1))]:
             self.assertEqual(C.reading(s), want, s)
         for s in ["DUG₄", "KA", "{d}", "1", "x", "", "ka.ka", "[ka]"]:
             self.assertIsNone(C.reading(s), s)
@@ -86,6 +86,30 @@ class Drafts(unittest.TestCase):
                         if c == params["alt"] and tr and C.convert(tr) is not None:
                             self.assertEqual(C.convert(tr), c)
         self.assertGreater(seen, 0)
+
+class Normalised(unittest.TestCase):
+    """C.normalise: a plene spelling for a lemma Wiktionary has no spelling for. Checked against Wiktionary's own spellings of ~430 lemmas."""
+    def test_examples(self):
+        for lemma, sp in [("pānu", "pa-a-nu"), ("šīru", "ši-i-ru"), ("pagru", "pa-ag-ru"), ("baqqu", "ba-aq-qu"), ("nâku", "na-a-ku"), ("akbarum", "ak-ba-ru"),
+                          ("warkatum", "wa-ar-ka-tu")]:        # each of these is among Wiktionary's own spellings of the lemma, up to mimation
+            self.assertEqual(C.normalise(lemma), sp, lemma)
+        self.assertIsNone(C.normalise("ba-q")); self.assertIsNone(C.normalise("ṣa7"))
+        self.assertEqual(C.convert("ḫa-ra-a-šu"), "𒄩𒊏𒀀𒋗")
+
+    def test_agrees_with_wiktionary_up_to_mimation_and_plene_writing(self):
+        by = {}
+        for r in csv.DictReader(open(ROOT / "tests" / "data" / "akk_cunsp_gold.tsv", encoding="utf-8"), delimiter="\t"):
+            by.setdefault(r["lemma"], set()).add(r["transliteration"])
+        def canon(s):
+            s = re.sub(r"-?(um|im|am)$", "", s.replace("₂", "").replace("₃", ""))
+            return re.sub(r"([aeiu])-\1(?=-|$)", r"\1", re.sub(r"\b([aeiu])-\1\b", r"\1", s)).replace("-", "")
+        n = hit = 0
+        for lemma, sps in by.items():
+            g = C.normalise(lemma)
+            if g:
+                n += 1; hit += canon(g) in {canon(x) for x in sps}
+        self.assertGreater(n, 400)
+        self.assertGreater(hit / n, 0.7, f"only {hit}/{n} normalised spellings agree with Wiktionary's")        # measured: 312/420
 
 if __name__ == "__main__":
     unittest.main(verbosity=1)

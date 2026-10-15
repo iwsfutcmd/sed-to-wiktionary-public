@@ -8,7 +8,7 @@
 
 ====Descendants====
 * East Semitic:
-** {{desc|akk|ḫarāšum|tr=ḫarāšum|t=to be in childbed}}
+** {{desc|akk|ḫarāšum|alt=𒄩𒊏𒀀𒋗|tr=ḫarāšum|t=to be in childbed}}
 * West Semitic:
 ** Central Semitic:
 *** {{desc|ar|خَرُوس|t=female that has not yet brought forth in the first period of her pregnancy}}

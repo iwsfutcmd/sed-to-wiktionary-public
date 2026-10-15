@@ -11,7 +11,7 @@
 
 ====Descendants====
 * East Semitic:
-** {{desc|akk|šēmum|tr=šēmum|t=fat}}
+** {{desc|akk|šēmum|alt=𒊺𒂊𒈬|tr=šēmum|t=fat}}
 * West Semitic:
 ** Central Semitic:
 *** {{desc|ar|شَحْم|t=fat}}

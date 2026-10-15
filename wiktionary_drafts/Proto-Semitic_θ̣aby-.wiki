@@ -14,7 +14,7 @@ Reconstructed in Militarev & Kogan's ''Semitic Etymological Dictionary'' with an
 
 ====Descendants====
 * East Semitic:
-** {{desc|akk|ṣabītum|tr=ṣabītum|t=gazelle}}
+** {{desc|akk|ṣabītum|alt=𒍝𒁉𒄿𒌅|tr=ṣabītum|t=gazelle}}
 ** {{desc|xeb|ṣa-ba-a-tum|t=gazelle}}
 * West Semitic:
 ** Central Semitic:

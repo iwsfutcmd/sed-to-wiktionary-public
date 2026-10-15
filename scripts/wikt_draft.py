@@ -10,7 +10,7 @@ from collections import defaultdict
 from pathlib import Path
 from paths import DATA, BUILD, ROOT
 from sedonline_compare import read
-from tr2script import abjad, arabic, ethiopic, mandaic
+from tr2script import abjad, arabic, ethiopic, mandaic, cuneiform
 
 UA = {"User-Agent": "sed-to-wiktionary/1.0 (research; https://github.com/iwsfutcmd/sed-to-wiktionary)"}
 CACHE = BUILD / "wikt_pages"
@@ -75,8 +75,13 @@ def akkadian(form):
     c = page(lemma)
     sec = c[c.find("==Akkadian=="):] if c and "==Akkadian==" in c else ""
     m = re.search(r"\|phon=([^<\n|]+)", sec)
-    return lemma, (m.group(1) if m else None)
+    if m: return lemma, m.group(1)
+    n = cuneiform.normalise(lemma)                          # no spelling on Wiktionary: a normalised plene spelling (pānu -> pa-a-nu), flagged in the notes
+    cun = cuneiform.convert(n) if n else None
+    return lemma, cun
 
+def AKK_ON_WIKT_CACHE():
+    return {l for l in set(AKK_LEMMA.values()) | {"niākum"} if (page(l) or "").find("|phon=") >= 0}
 def tr_of(f):
     return U.normalize("NFC", f).replace("ˀ", "ʔ").replace("ˁ", "ʕ").replace("ḳ", "q").replace("ǝ", "ə").replace("γ", "ɣ").replace("ŝ", "ś")      # descendants: Wiktionary's tr uses q (PS titles keep ḳ)
 TRANSLATE = {"im Kindbett liegen": "to be in childbed", "partorire (to give birth)": "to give birth", "accouché": "woman who has given birth", "the sacrup or rump of a butchered animal": "the sacrum or rump of a butchered animal", "Hüfte": "hip", "Wanzen (bugs)": "bugs", "Mücke (mosquito)": "mosquito", "guérir": "to heal"}
@@ -98,7 +103,8 @@ def one(code, form, notes, first, gloss, lang):
     t = f"|t={gloss}" if (gloss and first) else ""
     if code == "akk":
         lemma, cun = akkadian(form)
-        if not cun: notes.append(f"Akkadian {lemma}: no cuneiform (no Wiktionary lemma page)")
+        if not cun: notes.append(f"Akkadian {lemma}: no cuneiform (no Wiktionary lemma page, no convertible normalised spelling)")
+        elif lemma not in AKK_ON_WIKT_CACHE(): notes.append(f"Akkadian {lemma}: {cun} (NORMALISED spelling {cuneiform.normalise(lemma)}, not an attestation)")
         return f"{{{{{head}|akk|{lemma}" + (f"|alt={cun}" if cun else "") + f"|tr={lemma}{t}}}}}"
     if code in LATIN_TERM:
         return f"{{{{{head}|{code}|{tr_of(form)}{t}}}}}"

@@ -49,7 +49,7 @@ def reading(syl):
         return None
     if m.group(2):
         idx = int(m.group(2))
-    return m.group(1), idx
+    return m.group(1).replace("ḫ", "h"), idx                # eBL's sign list writes ḫ as h (ha = HA = 𒄩)
 
 def lookup(value, idx, online=False):
     """-> the cuneiform sign, or None. Uses the cache; fetches only when online=True."""
@@ -90,3 +90,60 @@ def fill(spellings, delay=0.15):
 def save():
     CACHE.parent.mkdir(parents=True, exist_ok=True)
     CACHE.write_text(json.dumps(_load(), ensure_ascii=False, indent=0, sort_keys=True), encoding="utf-8")
+
+# ---------------- normalised spelling of a lemma ----------------
+VOW = "aeiu"
+LONG = {"ā": "a", "ē": "e", "ī": "i", "ū": "u", "â": "a", "ê": "e", "î": "i", "û": "u"}
+def normalise(lemma):
+    """Akkadian lemma -> a plene syllabic spelling in the style of Wiktionary's {{cunsp}} (pānu -> pa-a-nu, pagru -> pa-ag-ru, baqqu -> ba-aq-qu):
+    open syllables CV, a long vowel adds a vowel sign (ši-i-ru), a consonant before another consonant is written with the preceding vowel (VC: ak-ba-ru).
+    Mimation (-m) and case endings are not written: the nominative without -m. A NORMALISED spelling, not an attestation. None if a letter is unknown."""
+    s = U.normalize("NFC", lemma).lower().rstrip("m") if lemma.endswith("um") or lemma.endswith("im") or lemma.endswith("am") else U.normalize("NFC", lemma).lower()
+    s = s.replace("ḳ", "q")
+    toks = []                                           # (consonant or "", vowel or "", long)
+    i = 0
+    cons = ""
+    while i < len(s):
+        ch = s[i]
+        if ch in LONG or ch in VOW:
+            v, ln = (LONG[ch], True) if ch in LONG else (ch, False)
+            toks.append((cons, v, ln)); cons = ""
+        elif re.fullmatch(r"[bdgḫklmnpqrsṣštṭwyz]", ch):
+            if cons:                                    # cluster: the first consonant closes the previous syllable
+                if not toks:
+                    toks.append(("", "", False))        # word-initial consonant cluster: no vowel to attach to
+                toks.append((cons, None, False))         # coda marker
+            cons = ch
+        else:
+            return None
+        i += 1
+    if cons:
+        toks.append((cons, None, False))
+    out = []
+    for k, (c, v, ln) in enumerate(toks):
+        if v is None:                                   # coda consonant: VC with the previous vowel
+            if not out:
+                return None
+            prev = out.pop() if False else None
+            out.append(("coda", c))
+        else:
+            out.append(("syl", c, v, ln))
+    syl = []
+    last_v = ""
+    bare = False
+    for item in out:
+        if item[0] == "coda":
+            if not last_v:
+                return None
+            if syl and syl[-1] == last_v and bare:                 # a bare initial vowel + coda is one VC sign (ak-ba-ru, not a-ak-ba-ru)
+                syl[-1] = last_v + item[1]
+            else:
+                syl.append(last_v + item[1])
+        else:
+            _, c, v, ln = item
+            bare = (c == "" and not ln)
+            syl.append(c + v)
+            if ln:
+                syl.append(v)
+            last_v = v
+    return "-".join(syl) if syl else None

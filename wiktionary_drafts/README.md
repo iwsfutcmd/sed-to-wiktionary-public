@@ -108,6 +108,7 @@ The reference is `{{R:sem-pro:SED|volume=…|id=<SEDonline id>|entry=…}}`.
 4. **`CURATED`** (`wikt_draft.py`): what no converter can derive: Arabic verbs given by root only, pointed Hebrew, Ugaritic ʾi, Turoyo.
 5. **Latin as the term** (Wiktionary accepts it, and these are cited in Latin): Mehri, Shehri/Jibbali, Harsusi, Bathari, Soqotri,
    Eblaite, Turoyo, Western Neo-Aramaic.
+6. Akkadian lemmas with no Wiktionary page (`ṣabītum`, `ṣarātum`, `ḫarāšum`, `šēmum`, `akbarum`) get a NORMALISED plene spelling (`ṣa-bi-i-tu`), built by `cuneiform.normalise` and converted with eBL: the nominative without mimation. It is not an attestation. Against Wiktionary's own spellings of 420 lemmas it agrees 312 times up to mimation and plene writing (tests/test_cuneiform.py). Delete the `alt=` if you prefer none.
 6. Still "[script needed]": forms the converters refuse (see the refusal lists in each module), bare roots and forms with variants. Ge'ez is converted, but the SED sometimes writes s for a graphic ś (`kəsād` = ክሣድ): such words need the ś by hand.
 
 `python3 scripts/wikt_draft.py --verify` lists every script form with how it was made and whether Wiktionary has an entry for it:

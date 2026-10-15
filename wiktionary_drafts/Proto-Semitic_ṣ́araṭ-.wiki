@@ -8,7 +8,7 @@
 
 ====Descendants====
 * East Semitic:
-** {{desc|akk|ṣarātum|tr=ṣarātum|t=to fart}}
+** {{desc|akk|ṣarātum|alt=𒍝𒊏𒀀𒌅|tr=ṣarātum|t=to fart}}
 * West Semitic:
 ** Central Semitic:
 *** {{desc|ar|ضَرَطَ|t=to fart}}
