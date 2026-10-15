@@ -10,7 +10,7 @@ from collections import defaultdict
 from pathlib import Path
 from paths import DATA, BUILD, ROOT
 from sedonline_compare import read
-from tr2script import abjad, arabic, ethiopic
+from tr2script import abjad, arabic, ethiopic, mandaic
 
 UA = {"User-Agent": "sed-to-wiktionary/1.0 (research; https://github.com/iwsfutcmd/sed-to-wiktionary)"}
 CACHE = BUILD / "wikt_pages"
@@ -88,6 +88,8 @@ def script_for(code, form):
     if sc: return sc, "ethiopic"
     sc = arabic.convert(form) if code == "ar" else None
     if sc: return sc, "arabic"
+    sc = mandaic.convert(code, form) if code == "myz" else None
+    if sc: return sc, "mandaic"
     sc = abjad.convert(code, form)
     return (sc, "abjad") if sc else (None, None)
 def one(code, form, notes, first, gloss, lang):
@@ -105,7 +107,7 @@ def one(code, form, notes, first, gloss, lang):
         notes.append(f"{lang} {form}: {sc} ({how})")
     if sc is None:
         return f"{{{{{head}|{code}|-|tr={tr_of(form)}{t}}}}}"
-    if code in AUTO_TR:
+    if code in AUTO_TR or (code == "myz" and mandaic.translit(sc) == tr_of(form).replace("ʕ", "ʿ")):        # Wiktionary's own transliteration gives the same
         return f"{{{{{head}|{code}|{sc}{t}}}}}"
     return f"{{{{{head}|{code}|{sc}|tr={tr_of(form)}{t}}}}}"
 def entry(code, form, gloss, lang, notes):
@@ -191,7 +193,7 @@ PAGES = {   # title -> SEDonline reconstruction id and page content
  "kišād-": dict(rec="707", vol="I", entry="*ki(n)šād-", print_sourced=True, pos="{{sem-noun|m}}", infl=True, defs=["[[neck]]", "top of the [[shoulder]]"],
                 cat="{{C|sem-pro|Anatomy}}",
                 etym="Reconstructed in Militarev & Kogan's ''Semitic Etymological Dictionary'' as {{m|sem-pro|*ki(n)šād-}}. The Modern South Arabian nasal is not found elsewhere. "
-                     "According to Kaufman, Mandaic {{m|myz|kšada}} is rather \"a neck ornament\" borrowed from Akkadian.",
+                     "According to Kaufman, Mandaic {{m|myz|ࡊࡔࡀࡃࡀ}} is rather \"a neck ornament\" borrowed from Akkadian.",
                 override={("Geez", "kəsād"): dict(form="kəśād", reason="print: kəsād, kəŝād; ŝ is purely graphic, the Ge'ez spelling has ሠ (ክሣድ)")},
                 words=[dict(lang="Akkadian", form="kišādu", gloss="neck, throat; necklace"),
                        dict(lang="Mandaic", form="kšada", gloss="throat", unc=True),

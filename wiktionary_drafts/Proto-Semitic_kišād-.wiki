@@ -2,7 +2,7 @@
 ==Proto-Semitic==
 
 ===Etymology===
-Reconstructed in Militarev & Kogan's ''Semitic Etymological Dictionary'' as {{m|sem-pro|*ki(n)šād-}}. The Modern South Arabian nasal is not found elsewhere. According to Kaufman, Mandaic {{m|myz|kšada}} is rather "a neck ornament" borrowed from Akkadian.
+Reconstructed in Militarev & Kogan's ''Semitic Etymological Dictionary'' as {{m|sem-pro|*ki(n)šād-}}. The Modern South Arabian nasal is not found elsewhere. According to Kaufman, Mandaic {{m|myz|ࡊࡔࡀࡃࡀ}} is rather "a neck ornament" borrowed from Akkadian.
 
 ===Noun===
 {{sem-noun|m}}
@@ -19,7 +19,7 @@ Reconstructed in Militarev & Kogan's ''Semitic Etymological Dictionary'' as {{m|
 * West Semitic:
 ** Central Semitic:
 *** Northwest Semitic:
-**** {{desc|myz|-|tr=kšada|t=throat|unc=1}}
+**** {{desc|myz|ࡊࡔࡀࡃࡀ|t=throat|unc=1}}
 ** Ethiopian Semitic:
 *** {{desc|gez|ክሣድ|tr=kəśād|t=neck}}
 *** {{desc|ti|ክሳድ|tr=kəsad|t=neck}}

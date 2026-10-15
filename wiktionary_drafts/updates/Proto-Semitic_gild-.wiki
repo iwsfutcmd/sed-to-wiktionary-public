@@ -23,7 +23,7 @@ Reconstructed in Militarev & Kogan's ''Semitic Etymological Dictionary'' as {{m|
 **** Palmyrene {{desc|arc|גלדיא|tr=gldyʔ|t=hide, skin}}
 **** {{desc|tmr|גלדא|tr=gildā|t=plate, covering, skin, leather}}
 **** {{desc|syc|ܓܠܕܐ|tr=geldā|t=skin, hide}}
-**** {{desc|myz|-|tr=gilda|t=testicle, leather}}
+**** {{desc|myz|ࡂࡉࡋࡃࡀ|t=testicle, leather}}
 **** {{desc|amw|ɣelta|t=skin}}
 **** {{desc|aii|-|tr=ɣildä|t=skin, hide}}
 **** Canaanite:

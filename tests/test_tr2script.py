@@ -2,7 +2,7 @@
 import json, os, sys, unittest
 from pathlib import Path
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent / "scripts"))
-from tr2script import abjad, arabic, ethiopic
+from tr2script import abjad, arabic, ethiopic, mandaic
 from paths import DATA
 
 class Ethiopic(unittest.TestCase):
@@ -87,3 +87,23 @@ class ArabicOracle(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main(verbosity=1)
+
+
+class Mandaic(unittest.TestCase):
+    def test_wiktionary_entries(self):
+        """Each of these is a Wiktionary Classical Mandaic entry whose title is exactly the script produced (checked against the live pages)."""
+        for lat, sc in [("pagra", "ࡐࡀࡂࡓࡀ"), ("kul", "ࡊࡅࡋ"), ("nuna", "ࡍࡅࡍࡀ"), ("liba", "ࡋࡉࡁࡀ"), ("šuma", "ࡔࡅࡌࡀ"), ("ṣipra", "ࡑࡉࡐࡓࡀ"),
+                        ("arḳa", "ࡀࡓࡒࡀ"), ("gabra", "ࡂࡀࡁࡓࡀ"), ("ṭab", "ࡈࡀࡁ"), ("tlata", "ࡕࡋࡀࡕࡀ"), ("daura", "ࡃࡀࡅࡓࡀ")]:
+            self.assertEqual(mandaic.convert("myz", lat), sc, lat)
+            self.assertEqual(mandaic.translit(sc), lat.replace("ḳ", "q"))
+    def test_refusals(self):
+        for lat in ["ḥamara", "ˀbra", "kulla", "nkt", "hrš", "b-", "dma, zma", "ġ", "baita "]:
+            self.assertIsNone(mandaic.convert("myz", lat), lat)
+        self.assertIsNone(mandaic.convert("ar", "pagra"))
+    def test_inverse_of_wiktionarys_table(self):
+        """Every letter the converter writes is read back as the same letter by Wiktionary's module (up to ˁ/ʿ, i/y, u/w, ḳ/q)."""
+        for ch, lat in mandaic.TT.items():
+            if lat in ("ẖ", "ḏ-", "kḏ", "ʕ", "a", "i", "u"):      # letters the converter does not write from the SED transcription / vowels
+                continue
+            src = "ˁ" if lat == "ʿ" else lat
+            self.assertEqual(mandaic.convert("myz", "a" + src + "a"), "ࡀ" + ch + "ࡀ", lat)

@@ -25,7 +25,7 @@ Reconstructed in Militarev & Kogan's ''Semitic Etymological Dictionary'' as {{m|
 **** {{desc|jpa|פגר|tr=pgr|t=body}}
 **** {{desc|tmr|פגרא|tr=pagrā|t=body}}
 **** {{desc|syc|ܦܓܪܐ|tr=pagrā|t=body, corpse}}
-**** {{desc|myz|-|tr=pagra|t=body}}
+**** {{desc|myz|ࡐࡀࡂࡓࡀ|t=body}}
 **** Canaanite:
 ***** {{desc|hbo|פָּגָר|tr=pāgār|t=corpse}}
 

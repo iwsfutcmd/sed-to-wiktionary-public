@@ -100,6 +100,7 @@ The reference is `{{R:sem-pro:SED|volume=…|id=<SEDonline id>|entry=…}}`.
    - `ethiopic`: the exact inverse of Wiktionary's `Module:Ethi-translit` (snapshot in `data/scripts/ethi_translit.json`, refresh with
      `ethiopic.refresh()`). Amharic, Tigrinya, Tigre, the Gurage group and Ge'ez (Leslau's a = ä, ā = a; 118 of 645 SEDonline Ge'ez words exist on Wiktionary at the spelling produced, one under another letter). Gemination (doubled letter in the source) is not written.
      Not for word-initial vowels (unwritten ʾ) or forms with several variants.
+   - `mandaic`: one letter to one letter, since Wiktionary's `Module:Mand-translit` reads the script letter by letter and the SED's Macuch-style forms write the vowel letters a, i, u. Refuses ḥ ġ ˀ (merged in the script), doubled consonants and bare roots; the page's tr is omitted when Wiktionary's own transliteration gives the same. 37 of 368 convertible SEDonline Mandaic words are Wiktionary Classical Mandaic entries at exactly the spelling produced.
    - `abjad`: consonantal Hebrew/Aramaic, Samaritan, Syriac, Ugaritic, Phoenician, Old South Arabian. Unpointed; final ā is written
      as alef; Ugaritic ʾ is always 𐎀 (Wiktionary's 𐎛 for *ʾimr-* is in `CURATED`).
 3. `arabic`: vocalised stems (warik- → وَرِك). Refuses bare roots, hamza, and word-final ā/ī. Checked against Wiktionary's own
@@ -107,7 +108,7 @@ The reference is `{{R:sem-pro:SED|volume=…|id=<SEDonline id>|entry=…}}`.
 4. **`CURATED`** (`wikt_draft.py`): what no converter can derive: Arabic verbs given by root only, pointed Hebrew, Ugaritic ʾi, Turoyo.
 5. **Latin as the term** (Wiktionary accepts it, and these are cited in Latin): Mehri, Shehri/Jibbali, Harsusi, Bathari, Soqotri,
    Eblaite, Turoyo, Western Neo-Aramaic.
-6. Still "[script needed]": Mandaic (not attempted: Wiktionary has only 8 Mandaic entries with a transcription, too few to verify a converter) and forms with variants. Ge'ez is converted, but the SED sometimes writes s for a graphic ś (`kəsād` = ክሣድ): such words need the ś by hand. `θ̣aby-` has one (Mandaic).
+6. Still "[script needed]": forms the converters refuse (see the refusal lists in each module), bare roots and forms with variants. Ge'ez is converted, but the SED sometimes writes s for a graphic ś (`kəsād` = ክሣድ): such words need the ś by hand.
 
 `python3 scripts/wikt_draft.py --verify` lists every script form with how it was made and whether Wiktionary has an entry for it:
 35 of 56 do not (red links; mostly Aramaic dialects, Sabaic, Gurage and Tigre, which Wiktionary covers thinly). Generated Ethiopic

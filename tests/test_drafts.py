@@ -19,6 +19,7 @@ sys.path.insert(0, str(ROOT / "scripts"))
 from paths import DATA, BUILD
 from sedonline_compare import read, fold, titles, skeleton
 import wikt_draft as WD
+from tr2script import mandaic
 
 DRAFTS = ROOT / "wiktionary_drafts"
 NEW = sorted(DRAFTS.glob("Proto-Semitic_*.wiki"))
@@ -179,7 +180,8 @@ class Drafts(unittest.TestCase):
         for code, n in expect.items():
             need = 1 if code == "xeb" else n               # Eblaite spelling variants are one word
             self.assertGreaterEqual(per[code], need, f"{LANGS.get(code, (code,))[0]}: {per[code]} entries for {n} SEDonline words")
-        blob = norm(" ".join(term + " " + p.get("tr", "") for _, _, term, p in ents))
+        blob = norm(" ".join(term + " " + p.get("tr", "") + (" " + mandaic.translit(term).replace("ʿ", "ʕ") if code == "myz" else "")   # Mandaic: Wiktionary's own transliteration
+                             for _, code, term, p in ents))
         for w in words_:                                    # forms are checkable where the page keeps Latin (tr= or a Latin term)
             code = WD.LANG[w["lang"]][0]
             if code in WD.AUTO_TR or code == "xeb":
