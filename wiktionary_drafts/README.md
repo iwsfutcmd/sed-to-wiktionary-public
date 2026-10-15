@@ -32,6 +32,7 @@ Verbs are titled by their perfect stem, as on `pataḥ-`, `našaḳ-`, `patal-` 
 - `nayak-`: medial y (hollow) -> `*payala-*yipīl`; two Wiktionary pages already link `*nayak-`.
 - `ḫaraš-`: Ge'ez *ḫarasa*, Akkadian *ḫarāšu*; no class marker in the print, so no conjugation table.
 - `ṣ́araṭ-`: Akkadian `(u/u)`, Arabic `(u)` = u-class, but Wiktionary has no plain u-class template, so no table.
+  Where the print differs from SEDonline the draft follows the print (`override` in `wikt_draft.py`, documented in `form_check.tsv`, tested): Harsusi `ẑerōṭ`, Soqotri `ẑerót`, Syriac gloss "flatulence". The print's Amharic forms (noted there as possible Arabisms) are not included.
 `vn=` is the CaCC verbal noun, as on the existing pages. Wiktionary's titles write the lateral emphatic `ṣ́` (15 titles, none with `ṣ̂`), so the
 three existing links to `*maraṣ̂-` need their spelling changed (or a redirect). A test checks each conjugation block against its title.
 
@@ -58,8 +59,8 @@ online: title free and not linked under another spelling, language codes (no par
 ## Form-level check against the printed page
 The agreement test only compares which languages are cited. `data/sedonline/form_check.tsv` records a by-eye comparison of every cited
 form with the printed entry (200-dpi crops from `scripts/entry_crop.py VOL KEY`, e.g. `entry_crop.py 1 N238`). Done so far:
-`šiʔr-` (all forms agree; the print has a few extras) and `ṣ́rṭ` (the print differs from the site for Soqotri and Harsusi, glosses Syriac
-*ʕurṭē* "crepitus ventris", and adds Amharic forms). The other drafts have not been compared by eye.
+`šiʔr-` (all forms agree; the print has a few extras) and `ṣ́araṭ-` (the print differs from the site for Soqotri and Harsusi and glosses Syriac
+*ʕurṭē* "crepitus ventris"; the draft now follows the print). The other drafts have not been compared by eye.
 
 ## Titles
 Checked against incoming links (`list=backlinks`), because Wiktionary's Proto-Semitic titles mix `ḳ`/`q` and `ṯ̣`/`θ̣`:

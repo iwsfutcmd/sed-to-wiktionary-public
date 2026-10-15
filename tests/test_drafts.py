@@ -142,6 +142,16 @@ class Drafts(unittest.TestCase):
         self.assertEqual(a["agree"], "1", f"print and site differ: {a['protoform']} / {a['web_form']}; "
                          f"only in print: {a['langs_only_print']}; only on site: {a['langs_only_web']}")
 
+    def test_every_override_is_documented_in_form_check(self):
+        """A word changed to follow the printed page must have a reason and a row in data/sedonline/form_check.tsv saying the print differs."""
+        rows = read(DATA / "sedonline" / "form_check.tsv")
+        for title, cfg in WD.PAGES.items():
+            for (lang, form), o in cfg.get("override", {}).items():
+                with self.subTest(draft=title, word=f"{lang} {form}"):
+                    self.assertTrue(o.get("reason"), "an override needs a reason")
+                    hit = [r for r in rows if r["language"] == lang and r["site_form"] == form and "differs" in r["status"]]
+                    self.assertTrue(hit, "form_check.tsv has no 'differs' row for this word")
+
     @forall(NEW)
     def test_no_wiktionary_page_with_this_form_in_the_snapshot(self, t, title):
         idx = {**titles("wik_ps.json"), **titles("wik_pws.json")}
@@ -154,7 +164,9 @@ class Drafts(unittest.TestCase):
         ents = entries(t)
         self.assertTrue(ents)
         skip = WD.PAGES.get(title, {}).get("exclude", {})              # words left out on purpose, each with a reason
-        words_ = [w for w in WORDS[rid] if (w["lang"], w["form"]) not in skip]
+        over = WD.PAGES.get(title, {}).get("override", {})            # words changed to follow the printed page
+        words_ = [{**w, **{k: v for k, v in over.get((w["lang"], w["form"]), {}).items() if k in ("form", "gloss")}} for w in WORDS[rid]
+                  if (w["lang"], w["form"]) not in skip]
         per = Counter(code for _, code, _, _ in ents)
         expect = Counter(WD.LANG[w["lang"]][0] for w in words_)
         for code, n in expect.items():
