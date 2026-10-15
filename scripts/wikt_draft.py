@@ -42,6 +42,7 @@ CURATED = {
  ("hbo", "géleḏ"): "גֶּלֶד",              # Wiktionary's own Hebrew lemma גלד (etymology: from *gild-)
  ("hbo", "pānīm"): "פָּנִים",                  # plural tantum; the lemma page פנים
   ("hbo", "ʕakbār"): "עַכְבָּר", ("hbo", "pāgār"): "פָּגָר",
+ ("ar", "f\u01efr"): "فَجَرَ",                   # fajara, as Wiktionary's Arabic فجر
  ("hbo", "yārēk"): "יָרֵךְ", ("hbo", "ṣəbī"): "צְבִי", ("hbo", "ˀimmēr"): "אִמֵּר", ("tru", "bōḳo"): "ܒܩܐ",      # Turoyo is written in Syriac script on Wiktionary (entry ܒܩܐ)
 
  ("ar", "mrḍ"): "مَرِضَ", ("ar", "ḍrṭ"): "ضَرَطَ", ("ar", "nyk"): "نَاكَ", ("ar", "ḫrs"): "خَرَّسَ",    # bare roots: the verb forms are chosen by hand
@@ -215,6 +216,7 @@ PAGES = {   # title -> SEDonline reconstruction id and page content
  "pagr-": dict(rec="688", vol="I", entry="*pagr-", print_sourced=True, pos="{{sem-noun|m}}", infl=True, defs=["[[body]]", "[[corpse]]"],
                cat="{{C|sem-pro|Anatomy}}", etym="Reconstructed in Militarev & Kogan's ''Semitic Etymological Dictionary'' as {{m|sem-pro|*pagr-}}.",
                words=[dict(lang="Akkadian", form="pagru", gloss="body, trunk"),
+                      dict(lang="Ugaritic", form="pgr", gloss="body, corpse as a funerary offering", unc=True),
                       dict(lang="Hebrew", form="pāgār", gloss="corpse"),
                       dict(lang="Old Aramaic", form="pgr", gloss="body"),
                       dict(lang="Official Aramaic", form="pgr", gloss="body"),
@@ -222,7 +224,8 @@ PAGES = {   # title -> SEDonline reconstruction id and page content
                       dict(lang="Jewish Palestinian Aramaic", form="pgr", gloss="body"),
                       dict(lang="Jewish Babylonian Aramaic", form="pagrā", gloss="body"),
                       dict(lang="Syriac", form="pagrā", gloss="body, corpse"),
-                      dict(lang="Mandaic", form="pagra", gloss="body")]),
+                      dict(lang="Mandaic", form="pagra", gloss="body"),
+                      dict(lang="Arabic", form="f\u01efr", gloss="to commit adultery, fornication with a woman", unc=True)]),
  "ʕakbar-": dict(rec="504", vol="II", entry="*ʕakbar-", print_sourced=True, pos="{{sem-noun|m}}", infl=True, defs=["[[mouse]]", "[[jerboa]]"], cat="{{C|sem-pro|Rodents}}",
                  etym="Reconstructed in Militarev & Kogan's ''Semitic Etymological Dictionary'' as {{m|sem-pro|*ʕakbar-}}. The SED also compares several terms with metathesis, "
                       "meaning shifts or secondary emphasis, such as Syriac {{m|syc|ܥܘܩܒܪܐ|tr=ʕuḳbərā}} and the Modern South Arabian forms like Mehri {{m|gdq|ʔārḳáyb}}.",
