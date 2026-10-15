@@ -185,6 +185,8 @@ class Drafts(unittest.TestCase):
             if code in WD.AUTO_TR or code == "xeb":
                 continue
             first = re.sub(r"\s*\((suff|det)[^)]*\)$", "", w["form"]).split(",")[0].split("/")[0].strip()
+            if code == "akk":
+                first = WD.AKK_LEMMA.get(first, first)        # the page uses Wiktionary's lemma (nâku -> niākum)
             self.assertIn(norm(first)[:5], blob, f"{w['lang']} {w['form']!r} is missing")
 
     @forall(NEW + DONE)
