@@ -8,13 +8,15 @@
 
 ====Descendants====
 * East Semitic:
-** {{desc|akk|marāṣum|tr=marāṣum|t=to fall ill}}
+** {{desc|akk|marāṣum|alt=𒈠𒊏𒍮|tr=marāṣum|t=to fall ill}}
 * West Semitic:
 ** Central Semitic:
-*** {{desc|ar|مَرِضَ}}
+*** {{desc|ar|مَرِضَ|tr=mrḍ|t=to be diseased, disordered, distempered, sick, ill}}
 *** Northwest Semitic:
-**** {{desc|arc|מרע|tr=mrˁ|t=to be sick}}
-***** {{desc|syc|ܡܪܥ|tr=mraˁ|t=to be ill, sick}}
+**** Old {{desc|arc|מרק|tr=mrḳ|t=illness}}
+**** Official {{desc|arc|מרע|tr=mrʕ|t=illness}}
+**** {{desc|jpa|מרע|tr=mrʕ|t=to be sick}}
+**** {{desc|syc|ܡܪܥ|tr=mǝraʕ|t=to be ill, sick}}
 **** Canaanite:
 ***** {{desc|hbo|מרץ|tr=mrṣ|t=to be bad, painful}}
 **** {{desc|uga|𐎎𐎗𐎕|tr=mrṣ|t=to fall ill}}
@@ -22,7 +24,9 @@
 **** {{desc|xsa|𐩣𐩧𐩳|tr=mrḍ|t=to suffer from disease}}
 ** Modern South Arabian:
 *** {{desc|gdq|-|tr=mērǝẑ|t=to be unwell, ill}}
+*** {{desc|shv|-|tr=mírẓ̂|t=to be ill}}
 *** {{desc|hss|-|tr=mēreẑ|t=to be unwell, ill}}
+*** {{desc|sqt|-|tr=hemrôẑ|t=to heal}}
 
 ===References===
 * {{R:sem-pro:SED|volume=I|id=894|entry=*mrṣ̂}}

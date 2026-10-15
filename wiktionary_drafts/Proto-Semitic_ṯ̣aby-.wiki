@@ -15,18 +15,24 @@ Reconstructed in Militarev & Kogan's ''Semitic Etymological Dictionary'' with an
 ====Descendants====
 * East Semitic:
 ** {{desc|akk|ṣabītum|tr=ṣabītum|t=gazelle}}
+** {{desc|xeb|-|tr=ṣa-ba-a-tum|t=gazelle}}
 * West Semitic:
 ** Central Semitic:
-*** {{desc|ar|ظَبْي}}
+*** {{desc|ar|ظَبْي|tr=ḏ̣aby-|t=gazelle}}
 *** Northwest Semitic:
 **** Old {{desc|arc|צבי|tr=ṣby|t=gazelle}}
-***** Official {{desc|arc|טבי|tr=ṭby|t=gazelle}}
-***** {{desc|syc|ܛܒܝܐ|tr=ṭabyā|t=gazelle, deer}}
+**** Official {{desc|arc|טבי|tr=ṭby|t=gazelle}}
+**** {{desc|jpa|טבי|tr=ṭby|t=deer}}
+**** {{desc|tmr|טביא|tr=ṭabyā|t=deer}}
+**** {{desc|sam|-|tr=ṭby|t=deer}}
+**** {{desc|syc|ܛܒܝܐ|tr=ṭabyā|t=gazelle, deer}}
+**** {{desc|myz|-|tr=ṭabia|t=deer}}
 **** Canaanite:
-***** {{desc|hbo|צְבִי|tr=ṣəḇī|t=gazelle}}
-**** {{desc|uga|𐎑𐎁𐎊|tr=ẓby|t=gazelle}}
+***** {{desc|hbo|צְבִי|tr=ṣəbī|t=gazelle}}
+**** {{desc|uga|𐎑𐎁𐎊|tr=ṯ̣by|t=gazelle}}
 *** Old South Arabian:
 **** {{desc|xsa|𐩮𐩨𐩺|tr=ṣby|t=gazelle}}
+**** Hadramitic {{desc|sem-srb|𐩮𐩨𐩺|tr=ṣby|t=gazelle}}
 
 ===References===
 * {{R:sem-pro:SED|volume=II|id=624|entry=*ṯ̣aby(-at)-}}
