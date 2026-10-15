@@ -6,6 +6,9 @@
 
 # to be [[sick]], [[ill]]
 
+====Conjugation====
+{{sem-pro-conj/*paʕala-*yipʕal|m|r|ṣ́|vn=marṣ́}}
+
 ====Descendants====
 * East Semitic:
 ** {{desc|akk|marāṣum|alt=𒈠𒊏𒍮|tr=marāṣum|t=to fall ill}}

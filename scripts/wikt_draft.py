@@ -127,10 +127,14 @@ PAGES = {   # title -> SEDonline reconstruction id and page content
                 etym="Reconstructed in Militarev & Kogan's ''Semitic Etymological Dictionary'' with an optional feminine suffix {{m|sem-pro|*-at-}}: {{m|sem-pro|*warik(-at)-}}."),
  "θ̣aby-": dict(rec="624", vol="II", entry="*ṯ̣aby(-at)-", pos="{{sem-noun|m|g2=f}}", infl=True, defs=["[[gazelle]]"], cat="{{C|sem-pro|Mammals}}",
                etym="Reconstructed in Militarev & Kogan's ''Semitic Etymological Dictionary'' with an optional feminine suffix {{m|sem-pro|*-at-}}: {{m|sem-pro|*θ̣aby(-at)-}}."),
- "mrṣ́": dict(rec="894", vol="I", entry="*mrṣ̂", pos="{{head|sem-pro|verb}}", infl=False, defs=["to be [[sick]], [[ill]]"], cat="", etym=""),
- "ṣ́rṭ": dict(rec="1023", vol="I", entry="*ṣ̂rṭ", pos="{{head|sem-pro|verb}}", infl=False, defs=["to [[fart]], to break [[wind]] audibly"], cat="", etym=""),
- "nyk": dict(rec="995", vol="I", entry="*nyk", pos="{{head|sem-pro|verb}}", infl=False, defs=["to have [[sexual intercourse]]"], cat="", etym=""),
- "ḫrš": dict(rec="960", vol="I", entry="*ḫrš", exclude={("Amharic", "arräsä"): "Wiktionary's Amharic አረሰ is 'to plough', from *ḥaraṯ- (tests/test_conflicts.py)"}, pos="{{head|sem-pro|verb}}", infl=False, defs=["to be in [[childbed]], to be in [[confinement]]"], cat="", etym=""),
+ "maraṣ́-": dict(rec="894", vol="I", entry="*mrṣ̂", pos="{{head|sem-pro|verb}}", infl=False,
+                 conj="{{sem-pro-conj/*paʕala-*yipʕal|m|r|ṣ́|vn=marṣ́}}",        # SED: Akkadian marāṣu (a/a)
+ defs=["to be [[sick]], [[ill]]"], cat="", etym=""),
+ "ṣ́araṭ-": dict(rec="1023", vol="I", entry="*ṣ̂rṭ", pos="{{head|sem-pro|verb}}", infl=False, defs=["to [[fart]], to break [[wind]] audibly"], cat="", etym=""),
+ "nayak-": dict(rec="995", vol="I", entry="*nyk", pos="{{head|sem-pro|verb}}", infl=False,
+                conj="{{sem-pro-conj/*payala-*yipīl|n|y|k|vn=nayk}}",           # hollow root (medial y)
+ defs=["to have [[sexual intercourse]]"], cat="", etym=""),
+ "ḫaraš-": dict(rec="960", vol="I", entry="*ḫrš", exclude={("Amharic", "arräsä"): "Wiktionary's Amharic አረሰ is 'to plough', from *ḥaraṯ- (tests/test_conflicts.py)"}, pos="{{head|sem-pro|verb}}", infl=False, defs=["to be in [[childbed]], to be in [[confinement]]"], cat="", etym=""),
  "šiʔr-": dict(rec="691", vol="I", entry="*šiʔr-", pos="{{sem-noun|m}}", infl=True, defs=["[[flesh]]"], cat="{{C|sem-pro|Anatomy}}", etym=""),
  "śaḥm-": dict(rec="698", vol="I", entry="*ŝaḥm-", pos="{{sem-noun|m}}", infl=True, defs=["[[fat]]"], cat="", etym=""),
  "baḳḳ-": dict(rec="667", vol="II", entry="*baḳḳ-", pos="{{sem-noun|m}}", infl=True, defs=["[[gnat]]"], cat="{{C|sem-pro|Insects}}", etym=""),
@@ -159,6 +163,7 @@ def build(title, cfg, out=None):
     if cfg["etym"]: d += ["===Etymology===", cfg["etym"], ""]
     d += ["===" + ("Verb" if "verb" in cfg["pos"] else "Noun") + "===", cfg["pos"], ""] + ["# " + x for x in cfg["defs"]] + [""]
     if cfg["infl"]: d += ["====Inflection====", "{{sem-decl-noun}}", ""]
+    if cfg.get("conj"): d += ["====Conjugation====", cfg["conj"], ""]
     d += ["====Descendants===="] + tree_lines(words, notes, cfg.get("exclude", {})) + ["",
           "===References===", "* {{R:sem-pro:SED|volume=%s|id=%s|entry=%s}}" % (cfg["vol"], cfg["rec"], cfg["entry"])]
     if cfg["cat"]: d += ["", cfg["cat"]]

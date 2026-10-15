@@ -75,6 +75,12 @@ for w in read(DATA / "sedonline" / "sedonline_words.tsv"):
     WORDS[w["rec_id"]].append(w)
 AGREE = {r["rec_id"]: r for r in read(DATA / "sedonline" / "sed_print_vs_site_agreement.tsv")}
 
+# Wiktionary's Proto-Semitic conjugation templates (Special:PrefixIndex/Template:sem-pro-conj, 2026-10-15)
+KNOWN_CONJ = {"sem-pro-conj/*pawala-*yipūl", "sem-pro-conj/*payala-*yipīl", "sem-pro-conj/*paʕal-*yipʕul", "sem-pro-conj/*paʕal-*yipʕul-a",
+              "sem-pro-conj/*paʕala-*yipʕal", "sem-pro-conj/*paʕala-*yipʕil", "sem-pro-conj/*paʕala-*yipʕil-long",
+              "sem-pro-conj/*paʕala-*yipʕul-long", "sem-pro-conj/*paʕawa-*yipʕū", "sem-pro-conj/*paʕaya-*yipʕī",
+              "sem-pro-conj/*paʕaya-*yipʕī-long", "sem-pro-conj/*waʕala-*yiʕil"}
+
 def convention_problems(t):
     """tr= / term conventions for descendants (see test_transliteration_follows_wiktionary_conventions)."""
     out = []
@@ -183,6 +189,18 @@ class Drafts(unittest.TestCase):
             self.assertFalse(re.search(r"[^\x00-\x7F]", g), f"{code}: non-ASCII in gloss {g!r}")
             self.assertIsNone(foreign.search(g), f"{code}: gloss looks non-English: {g!r}")
             self.assertFalse(g.startswith("="), f"{code}: gloss is a note, not a meaning: {g!r}")
+
+    @forall(NEW + DONE)
+    def test_conjugation_block_is_consistent_with_the_title(self, t, title):
+        """{{sem-pro-conj/TEMPLATE|C1|C2|C3|vn=C1aC2C3}}: an existing template, radicals = the title's consonants, vn = the CaCC pattern."""
+        for m in re.finditer(r"\{\{(sem-pro-conj[^|}]*)\|([^|}]*)\|([^|}]*)\|([^|}]*)\|vn=([^|}]*)\}\}", t):
+            tpl, c1, c2, c3, vn = m.groups()
+            self.assertIn(tpl, KNOWN_CONJ, f"{tpl} is not a Wiktionary template")
+            self.assertEqual(skeleton(c1 + c2 + c3), skeleton(title), "radicals differ from the title")
+            self.assertEqual(U.normalize("NFC", vn), U.normalize("NFC", c1 + "a" + c2 + c3), "vn= should be the CaCC verbal noun")
+            self.assertIn("====Conjugation====", t)
+        if "{{head|sem-pro|verb}}" in t and "sem-pro-conj" not in t:
+            say(f"\n  note: {title} is a verb with no conjugation table")
 
     @forall(NEW)
     def test_transliteration_follows_wiktionary_conventions(self, t, title):

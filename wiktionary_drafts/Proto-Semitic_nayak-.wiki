@@ -6,6 +6,9 @@
 
 # to have [[sexual intercourse]]
 
+====Conjugation====
+{{sem-pro-conj/*payala-*yipīl|n|y|k|vn=nayk}}
+
 ====Descendants====
 * East Semitic:
 ** {{desc|akk|nâkum|tr=nâkum|t=to have illicit sexual intercourse, to fornicate}}

@@ -17,13 +17,23 @@ Semitic "lamb" words as borrowings from Akkadian, which conflicts with an inheri
 |---|---|---|---|
 | `warik-` | I no. 288 | 758 | 27 |
 | `θ̣aby-` | II no. 242 | 624 | 14 |
-| `mrṣ́` | I no. 42 (verbal) | 894 | 13 |
-| `ṣ́rṭ` | I no. 71 (verbal) | 1023 | 8 |
+| `maraṣ́-` | I no. 42 (verbal) | 894 | 13 |
+| `ṣ́araṭ-` | I no. 71 (verbal) | 1023 | 8 |
 | `baḳḳ-` | II no. 58 | 667 | 7 |
-| `nyk` | I no. 53 (verbal) | 995 | 5 |
-| `ḫrš` | I no. 31 (verbal) | 960 | 14 |
+| `nayak-` | I no. 53 (verbal) | 995 | 5 |
+| `ḫaraš-` | I no. 31 (verbal) | 960 | 14 |
 | `šiʔr-` | I no. 238 | 691 | 4 |
 | `śaḥm-` | I no. 263 | 698 | 4 |
+
+## Verbs: vocalised stems
+Verbs are titled by their perfect stem, as on `pataḥ-`, `našaḳ-`, `patal-` (`maraṣ́-`, `nayak-`, `ḫaraš-`, `ṣ́araṭ-`), with the SED root
+(`*mrṣ̂`, `*nyk`, ...) in the reference. The SED gives only roots, so the vowels come from evidence, not from the source:
+- `maraṣ́-`: the printed Akkadian *marāṣu* is marked `(a/a)` -> `{{sem-pro-conj/*paʕala-*yipʕal}}`; three Wiktionary pages already link `*maraṣ̂-`.
+- `nayak-`: medial y (hollow) -> `*payala-*yipīl`; two Wiktionary pages already link `*nayak-`.
+- `ḫaraš-`: Ge'ez *ḫarasa*, Akkadian *ḫarāšu*; no class marker in the print, so no conjugation table.
+- `ṣ́araṭ-`: Akkadian `(u/u)`, Arabic `(u)` = u-class, but Wiktionary has no plain u-class template, so no table.
+`vn=` is the CaCC verbal noun, as on the existing pages. Wiktionary's titles write the lateral emphatic `ṣ́` (15 titles, none with `ṣ̂`), so the
+three existing links to `*maraṣ̂-` need their spelling changed (or a redirect). A test checks each conjugation block against its title.
 
 ## Pages already on Wiktionary (`done/`)
 Move a page to `done/` once you have saved it. `python3 scripts/wikt_draft.py` and `make done-check` rebuild every `done/` page
