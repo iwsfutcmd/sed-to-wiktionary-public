@@ -21,6 +21,10 @@ Semitic "lamb" words as borrowings from Akkadian, which conflicts with an inheri
 | `ṣ́araṭ-` | I no. 71 (verbal) | 1023 | 8 |
 | `baḳḳ-` | II no. 58 | 667 | 7 |
 | `gild-` | I no. 78 | 704 | 17 (from the print) |
+| `pan-` | I no. 215 | 347 | 7 (from the print) |
+| `kišād-` | I no. 147 | 707 | 8 (from the print) |
+| `pagr-` | I no. 209 | 688 | 9 (from the print) |
+| `ʕakbar-` | II no. 30 | 504 | 6 (from the print) |
 | `nayak-` | I no. 53 (verbal) | 995 | 5 |
 | `ḫaraš-` | I no. 31 (verbal) | 960 | 14 |
 | `šiʔr-` | I no. 238 | 691 | 4 |
@@ -122,3 +126,9 @@ is the least certain output: compare it with a lexicon before saving.
 - `šiʔr-`: Wiktionary's Akkadian `šīrum` already lists Hebrew שְׁאֵר and Ugaritic 𐎌𐎛𐎗 as cognates (the spellings here are copied from it).
 - `śaḥm-`: only Akkadian, Arabic and one Jibbali form (glossed "temple", with a note that it is cut to judge the fat of a carcass).
 - `ḫrš`: Ge'ez has no converter; Tigre and Argobba Ethiopic are generated. The Arabic forms are two different words (`ḫarūs-`, `ḫrs` II).
+
+
+Print-sourced pages (`gild-`, `pan-`, `kišād-`, `pagr-`, `ʕakbar-`) list only the words of the printed entry; what the site adds or changes is recorded in
+`data/sedonline/form_check.tsv`. Not drafted from the wanted-pages list: `ʔay-` (the two links are the interrogative "where", e.g. Ge'ez ኢ, Phoenician 𐤀𐤉,
+not the bird of prey, which Wiktionary has at `*ʔayy-`), `ḏbb` and `mny` (the links use the bare root; no vowel evidence for a stem title), `baḳar-`
+(the links go to Proto-West Semitic, not Proto-Semitic) and `bVʕVr-` (print and site disagree).

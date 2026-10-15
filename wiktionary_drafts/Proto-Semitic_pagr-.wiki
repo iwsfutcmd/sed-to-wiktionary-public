@@ -1,0 +1,35 @@
+{{reconstructed}}
+==Proto-Semitic==
+
+===Etymology===
+Reconstructed in Militarev & Kogan's ''Semitic Etymological Dictionary'' as {{m|sem-pro|*pagr-}}.
+
+===Noun===
+{{sem-noun|m}}
+
+# [[body]]
+# [[corpse]]
+
+====Inflection====
+{{sem-decl-noun}}
+
+====Descendants====
+* East Semitic:
+** {{desc|akk|pagrum|alt=𒉺𒀝𒀸|tr=pagrum|t=body, trunk}}
+* West Semitic:
+** Central Semitic:
+*** Northwest Semitic:
+**** Old {{desc|arc|פגר|tr=pgr|t=body}}
+**** Official {{desc|arc|פגר|tr=pgr|t=body}}
+**** Palmyrene {{desc|arc|פגר|tr=pgr|t=body}}
+**** {{desc|jpa|פגר|tr=pgr|t=body}}
+**** {{desc|tmr|פגרא|tr=pagrā|t=body}}
+**** {{desc|syc|ܦܓܪܐ|tr=pagrā|t=body, corpse}}
+**** {{desc|myz|-|tr=pagra|t=body}}
+**** Canaanite:
+***** {{desc|hbo|פָּגָר|tr=pāgār|t=corpse}}
+
+===References===
+* {{R:sem-pro:SED|volume=I|id=688|entry=*pagr-}}
+
+{{C|sem-pro|Anatomy}}

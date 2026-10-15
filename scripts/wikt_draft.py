@@ -41,6 +41,7 @@ CURATED = {
  ("uga", "ˀmr"): "𐎛𐎎𐎗",                    # Wiktionary writes ʾi (𐎛), the consonants alone give 𐎀
  ("hbo", "géleḏ"): "גֶּלֶד",              # Wiktionary's own Hebrew lemma גלד (etymology: from *gild-)
  ("hbo", "pānīm"): "פָּנִים",                  # plural tantum; the lemma page פנים
+  ("hbo", "ʕakbār"): "עַכְבָּר", ("hbo", "pāgār"): "פָּגָר",
  ("hbo", "yārēk"): "יָרֵךְ", ("hbo", "ṣəbī"): "צְבִי", ("hbo", "ˀimmēr"): "אִמֵּר", ("tru", "bōḳo"): "ܒܩܐ",      # Turoyo is written in Syriac script on Wiktionary (entry ܒܩܐ)
 
  ("ar", "mrḍ"): "مَرِضَ", ("ar", "ḍrṭ"): "ضَرَطَ", ("ar", "nyk"): "نَاكَ", ("ar", "ḫrs"): "خَرَّسَ",    # bare roots: the verb forms are chosen by hand
@@ -61,7 +62,7 @@ def page(title):
     r = api(action="query", prop="revisions", rvprop="content", rvslots="main", titles=title)["query"]["pages"][0]
     c = r["revisions"][0]["slots"]["main"]["content"] if "revisions" in r else ""
     f.write_text(c, encoding="utf-8"); return c or None
-AKK_LEMMA = {"warkatu": "warkatum", "warki": "warki", "marāṣu": "marāṣum", "immeru": "immerum", "ṣabītu": "ṣabītum", "baqqu": "baqqum", "baḳḳu": "baqqum", "ṣarātu": "ṣarātum", "nâku": "nâkum", "ḫarāšu": "ḫarāšum", "šīru": "šīrum", "šēmu": "šēmum", "pānu": "pānum", "nâku": "niākum"}
+AKK_LEMMA = {"warkatu": "warkatum", "warki": "warki", "marāṣu": "marāṣum", "immeru": "immerum", "ṣabītu": "ṣabītum", "baqqu": "baqqum", "baḳḳu": "baqqum", "ṣarātu": "ṣarātum", "nâku": "nâkum", "ḫarāšu": "ḫarāšum", "šīru": "šīrum", "šēmu": "šēmum", "pānu": "pānum", "nâku": "niākum", "kišādu": "kišādum", "pagru": "pagrum", "akbaru": "akbarum"}
 # no lemma page: (lemma, cuneiform, its transliteration). The cuneiform is as cited on Wiktionary's Arabic بق and Classical Syriac ܒܩܐ;
 # tests/test_cuneiform.py checks that the transliteration really gives it (eBL sign list).
 AKK_OVERRIDE = {"baḳḳu": ("baqqu", "𒁀𒀝𒄣", "ba-aq-qu"),
@@ -185,6 +186,40 @@ PAGES = {   # title -> SEDonline reconstruction id and page content
                      dict(lang="Official Aramaic", form="pnh", gloss="face"),
                      dict(lang="Jibbali", form="fέnε", gloss="face, front part"),
                      dict(lang="Soqotri", form="fáne", gloss="face")]),
+ # SED I no. 147 *ki(n)šād- 'neck, top of shoulder' (print ◊ *ki(n)sād-), SED I no. 209 *pagr-, SED II no. 30 *ʕakbar-: SEDonline
+ # differs from the print in the cognate sets (data/sedonline/form_check.tsv), so the words are those of the PRINTED entries, read by eye.
+ "kišād-": dict(rec="707", vol="I", entry="*ki(n)šād-", print_sourced=True, pos="{{sem-noun|m}}", infl=True, defs=["[[neck]]", "top of the [[shoulder]]"],
+                cat="{{C|sem-pro|Anatomy}}",
+                etym="Reconstructed in Militarev & Kogan's ''Semitic Etymological Dictionary'' as {{m|sem-pro|*ki(n)šād-}}. The Modern South Arabian nasal is not found elsewhere. "
+                     "According to Kaufman, Mandaic {{m|myz|kšada}} is rather \"a neck ornament\" borrowed from Akkadian.",
+                words=[dict(lang="Akkadian", form="kišādu", gloss="neck, throat; necklace"),
+                       dict(lang="Mandaic", form="kšada", gloss="throat", unc=True),
+                       dict(lang="Geez", form="kəsād", gloss="neck"),
+                       dict(lang="Tigrinya", form="kəsad", gloss="neck"),
+                       dict(lang="Amharic", form="kəsad", gloss="collar"),
+                       dict(lang="Mehri", form="kənsīd", gloss="top of the shoulder"),
+                       dict(lang="Harsusi", form="kənsīd", gloss="shoulder"),
+                       dict(lang="Jibbali", form="kənséd", gloss="shoulder")]),
+ "pagr-": dict(rec="688", vol="I", entry="*pagr-", print_sourced=True, pos="{{sem-noun|m}}", infl=True, defs=["[[body]]", "[[corpse]]"],
+               cat="{{C|sem-pro|Anatomy}}", etym="Reconstructed in Militarev & Kogan's ''Semitic Etymological Dictionary'' as {{m|sem-pro|*pagr-}}.",
+               words=[dict(lang="Akkadian", form="pagru", gloss="body, trunk"),
+                      dict(lang="Hebrew", form="pāgār", gloss="corpse"),
+                      dict(lang="Old Aramaic", form="pgr", gloss="body"),
+                      dict(lang="Official Aramaic", form="pgr", gloss="body"),
+                      dict(lang="Palmyrean", form="pgr", gloss="body"),
+                      dict(lang="Jewish Palestinian Aramaic", form="pgr", gloss="body"),
+                      dict(lang="Jewish Babylonian Aramaic", form="pagrā", gloss="body"),
+                      dict(lang="Syriac", form="pagrā", gloss="body, corpse"),
+                      dict(lang="Mandaic", form="pagra", gloss="body")]),
+ "ʕakbar-": dict(rec="504", vol="II", entry="*ʕakbar-", print_sourced=True, pos="{{sem-noun|m}}", infl=True, defs=["[[mouse]]", "[[jerboa]]"], cat="{{C|sem-pro|Rodents}}",
+                 etym="Reconstructed in Militarev & Kogan's ''Semitic Etymological Dictionary'' as {{m|sem-pro|*ʕakbar-}}. The SED also compares several terms with metathesis, "
+                      "meaning shifts or secondary emphasis, such as Syriac {{m|syc|ܥܘܩܒܪܐ|tr=ʕuḳbərā}} and the Modern South Arabian forms like Mehri {{m|gdq|ʔārḳáyb}}.",
+                 words=[dict(lang="Akkadian", form="akbaru", gloss="jerboa"),
+                        dict(lang="Hebrew", form="ʕakbār", gloss="mouse"),
+                        dict(lang="Samaritan", form="ʕkbr", gloss="mouse"),
+                        dict(lang="Jewish Palestinian Aramaic", form="ʕkbr", gloss="mouse"),
+                        dict(lang="Jewish Babylonian Aramaic", form="ʕakbərā", gloss="mouse"),
+                        dict(lang="Arabic", form="ʕakābir-", gloss="a kind of mouse (plural)")]),
  "baḳḳ-": dict(rec="667", vol="II", entry="*baḳḳ-", pos="{{sem-noun|m}}", infl=True, defs=["[[gnat]]"], cat="{{C|sem-pro|Insects}}", etym=""),
 }
 def tree_lines(words, notes, exclude=(), override=None):

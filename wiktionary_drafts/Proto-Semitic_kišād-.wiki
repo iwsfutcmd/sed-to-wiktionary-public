@@ -1,0 +1,35 @@
+{{reconstructed}}
+==Proto-Semitic==
+
+===Etymology===
+Reconstructed in Militarev & Kogan's ''Semitic Etymological Dictionary'' as {{m|sem-pro|*ki(n)šād-}}. The Modern South Arabian nasal is not found elsewhere. According to Kaufman, Mandaic {{m|myz|kšada}} is rather "a neck ornament" borrowed from Akkadian.
+
+===Noun===
+{{sem-noun|m}}
+
+# [[neck]]
+# top of the [[shoulder]]
+
+====Inflection====
+{{sem-decl-noun}}
+
+====Descendants====
+* East Semitic:
+** {{desc|akk|kišādum|alt=𒆠𒊭𒁺𒌝|tr=kišādum|t=neck, throat; necklace}}
+* West Semitic:
+** Central Semitic:
+*** Northwest Semitic:
+**** {{desc|myz|-|tr=kšada|t=throat|unc=1}}
+** Ethiopian Semitic:
+*** {{desc|gez|-|tr=kəsād|t=neck}}
+*** {{desc|ti|ክሳድ|tr=kəsad|t=neck}}
+*** {{desc|am|ክሳድ|tr=kəsad|t=collar}}
+** Modern South Arabian:
+*** {{desc|gdq|kənsīd|t=top of the shoulder}}
+*** {{desc|shv|kənséd|t=shoulder}}
+*** {{desc|hss|kənsīd|t=shoulder}}
+
+===References===
+* {{R:sem-pro:SED|volume=I|id=707|entry=*ki(n)šād-}}
+
+{{C|sem-pro|Anatomy}}

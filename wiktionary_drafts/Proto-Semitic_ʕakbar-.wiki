@@ -1,0 +1,32 @@
+{{reconstructed}}
+==Proto-Semitic==
+
+===Etymology===
+Reconstructed in Militarev & Kogan's ''Semitic Etymological Dictionary'' as {{m|sem-pro|*ʕakbar-}}. The SED also compares several terms with metathesis, meaning shifts or secondary emphasis, such as Syriac {{m|syc|ܥܘܩܒܪܐ|tr=ʕuḳbərā}} and the Modern South Arabian forms like Mehri {{m|gdq|ʔārḳáyb}}.
+
+===Noun===
+{{sem-noun|m}}
+
+# [[mouse]]
+# [[jerboa]]
+
+====Inflection====
+{{sem-decl-noun}}
+
+====Descendants====
+* East Semitic:
+** {{desc|akk|akbarum|tr=akbarum|t=jerboa}}
+* West Semitic:
+** Central Semitic:
+*** {{desc|ar|عَكَابِر|t=a kind of mouse (plural)}}
+*** Northwest Semitic:
+**** {{desc|jpa|עכבר|tr=ʕkbr|t=mouse}}
+**** {{desc|tmr|עכברא|tr=ʕakbərā|t=mouse}}
+**** {{desc|sam|ࠏࠊࠁࠓ|tr=ʕkbr|t=mouse}}
+**** Canaanite:
+***** {{desc|hbo|עַכְבָּר|tr=ʕakbār|t=mouse}}
+
+===References===
+* {{R:sem-pro:SED|volume=II|id=504|entry=*ʕakbar-}}
+
+{{C|sem-pro|Rodents}}
