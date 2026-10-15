@@ -34,7 +34,7 @@ def main(n=500):
         print(f"{min(i + 50, len(titles))}/{len(titles)} lemmas, {len(pairs)} spellings", flush=True)
 
 def from_cache():
-    """Seed the gold file from Akkadian pages already cached by wikt_draft.py in build/wikt_pages (no network)."""
+    """Add the spellings of Akkadian pages already cached by wikt_draft.py (build/wikt_pages) to the gold file (no network)."""
     from urllib.parse import unquote
     from paths import BUILD
     pairs = []
@@ -44,8 +44,10 @@ def from_cache():
         if m:
             pairs += [(unquote(f.stem), k, cun.strip(), tr.strip()) for k, cun, tr in re.findall(r"\|(phon\d*)=([^<\n|]+)<tr:([^>]+)>", m.group(1))]
     OUT.parent.mkdir(parents=True, exist_ok=True)
-    OUT.write_text("lemma\tkey\tcuneiform\ttransliteration\n" + "".join("\t".join(t) + "\n" for t in pairs), encoding="utf-8")
-    print(len(pairs), "spellings from", len({p[0] for p in pairs}), "cached lemma pages")
+    have = [tuple(l.split("\t")) for l in OUT.read_text(encoding="utf-8").splitlines()[1:]] if OUT.exists() else []
+    merged = have + [p for p in pairs if p not in have]           # merge: never drop what a fuller download collected
+    OUT.write_text("lemma\tkey\tcuneiform\ttransliteration\n" + "".join("\t".join(t) + "\n" for t in merged), encoding="utf-8")
+    print(len(merged), "spellings (", len(merged) - len(have), "new from", len({p[0] for p in pairs}), "cached lemma pages)")
 
 if __name__ == "__main__":
     if "--from-cache" in sys.argv:

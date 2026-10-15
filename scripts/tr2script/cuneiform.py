@@ -24,7 +24,10 @@ ACCENT = {"́": 2, "̀": 3}             # acute, grave
 # the converter refuses them. reading -> what differs.
 DISPUTED = {("šum", 1): "Wiktionary 𒋗 (SHU), eBL 𒋳 (TAG): period-dependent sign forms?",
             ("iš", 1): "Wiktionary 𒄑 (GIŠ), eBL 𒅖 (IŠ)",
-            ("qa", 1): "Wiktionary 𒂵 (GA), eBL 𒋡 (SILA₃)"}
+            ("qa", 1): "Wiktionary 𒂵 (GA), eBL 𒋡 (SILA₃)",
+            ("niš", 1): "Wiktionary 𒌋𒌋 (U U), eBL 𒎙 (NIŠ)",
+            ("ya", 1): "Wiktionary 𒅀 (I.A), eBL 𒉿 (PI)",
+            ("tar", 1): "Wiktionary 𒁄 (DAR), eBL 𒋻 (TAR)"}
 
 _cache = None
 def _load():

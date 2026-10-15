@@ -35,7 +35,9 @@ class Readings(unittest.TestCase):
     def test_indexed_readings_are_refused(self):
         # Wiktionary: ar₂-ki = 𒄱𒆠 (HI×DIŠ); eBL's list gives 𒌒 (UB) for ar₂. Numbering differs between sign lists, so no guessing.
         self.assertIsNone(C.convert("ar₂-ki"))
-        self.assertIsNone(C.convert("aš-šum")); self.assertIsNone(C.convert("e-di-iš-tum")); self.assertIsNone(C.convert("qa-aq-qa-dum"))   # DISPUTED (šum, iš, qa)
+        self.assertIsNone(C.convert("aš-šum")); self.assertIsNone(C.convert("e-di-iš-tum")); self.assertIsNone(C.convert("qa-aq-qa-dum"))   # DISPUTED (šum, iš, qa, niš, ya, tar)
+        for tr in ["sin-niš-tum", "re-ya-um", "tar-lugal-lum"]:
+            self.assertIsNone(C.convert(tr), tr)
         self.assertEqual(C.convert("ar₂-ki", indexed=True), "𒌒𒆠")          # what eBL alone would say: not what Wiktionary says
         self.assertNotEqual(C.convert("ar₂-ki", indexed=True), "𒄱𒆠")
         for tr in ["wa-rí-ku₁₇-um", "a-šá-ru-um", "ši-pa-ár"]:
