@@ -16,12 +16,12 @@
 ** Central Semitic:
 *** {{desc|ar|بَقّ|tr=baqq-|t=gnat}}
 *** Northwest Semitic:
-**** {{desc|tmr|-|tr=bāḳā|t=gnat}}
+**** {{desc|tmr|בקא|tr=bāḳā|t=gnat}}
 **** {{desc|syc|ܒܩܐ|tr=bāḳā|t=gnat}}
 **** {{desc|tru|bōḳo|t=mosquito}}
 **** {{desc|amw|baḳḳa|t=bugs}}
 ** Modern South Arabian:
-*** {{desc|hss|-|tr=beḳḳét|t=bug}}, {{l|hss|-|tr=beḳáyt}}
+*** {{desc|hss|beḳḳét|t=bug}}, {{l|hss|beḳáyt}}
 
 ===References===
 * {{R:sem-pro:SED|volume=II|id=667|entry=*baḳḳ-}}

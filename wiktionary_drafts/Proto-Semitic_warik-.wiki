@@ -17,12 +17,12 @@ Reconstructed in Militarev & Kogan's ''Semitic Etymological Dictionary'' with an
 * East Semitic:
 ** {{desc|akk|warkatum|alt=𒉿𒅈𒅗𒌈|tr=warkatum|t=rear, rear side}}
 ** {{desc|akk|warki|alt=𒉿𒅈𒆠|tr=warki|t=after, behind}}
-** {{desc|xeb|-|tr=wa-rí-ku₁₇-um}}
+** {{desc|xeb|wa-rí-ku₁₇-um}}
 * West Semitic:
 ** Central Semitic:
 *** {{desc|ar|وَرِك|tr=warik-|t=haunch, upper thigh}}
 *** Northwest Semitic:
-**** Biblical {{desc|arc|-|tr=yarḵāṯēh|t=thigh (suff.)}}
+**** Biblical {{desc|arc|ירכתה|tr=yarḵāṯēh|t=thigh (suff.)}}
 **** {{desc|jpa|ירך|tr=yrk|t=haunch, thigh}}
 **** {{desc|tmr|ירכא|tr=yirkā|t=haunch, thigh}}
 **** {{desc|amw|werka|t=hip}}
@@ -32,24 +32,24 @@ Reconstructed in Militarev & Kogan's ''Semitic Etymological Dictionary'' with an
 *** Old South Arabian:
 **** {{desc|xsa|𐩥𐩧𐩫|tr=wrk|t=hip, thigh}}
 ** Ethiopian Semitic:
-*** {{desc|tig|-|tr=warkat|t=side, hip}}
+*** {{desc|tig|ዋርካት|tr=warkat|t=side, hip}}
 *** {{desc|ti|ወርቺ|tr=wärči|t=arm, foreleg of a quadruped}}
-*** {{desc|ti|-|tr=wäräḵät|t=the sacrum or rump of a butchered animal}}
+*** {{desc|ti|ወረኸት|tr=wäräḵät|t=the sacrum or rump of a butchered animal}}
 *** {{desc|am|ወርች|tr=wärč|t=foreleg of an animal}}
 *** Gurage:
 **** {{desc|gru|ወርቸ|tr=wärčä|t=front leg of cattle, upper part of front leg of cattle|q=Soddo}}
 **** {{desc|gru|ወርቸ|tr=wärčä|t=front leg of cattle, upper part of front leg of cattle|q=Gogot}}
 **** {{desc|sgw|ወርቸ|tr=wärčä|t=front leg of cattle, upper part of front leg of cattle|q=Chaha}}
 **** {{desc|sgw|ወርቸ|tr=wärčä|t=front leg of cattle, upper part of front leg of cattle|q=Ezha}}
-**** {{desc|sgw|ወችቸ|tr=wäččä|t=front leg of cattle, upper part of front leg of cattle|q=Endegen}}
+**** {{desc|sgw|ወቸ|tr=wäččä|t=front leg of cattle, upper part of front leg of cattle|q=Endegen}}
 **** {{desc|sgw|ወቸ|tr=wäčä|t=front leg of cattle, upper part of front leg of cattle|q=Ennemor}}
 **** {{desc|sgw|ወርቸ|tr=wärčä|t=front leg of cattle, upper part of front leg of cattle|q=Gyeto}}
-**** {{desc|sgw|ወርችቸ|tr=wärəččä|t=front leg of cattle, upper part of front leg of cattle|q=Muher}}
+**** {{desc|sgw|ወርቸ|tr=wärəččä|t=front leg of cattle, upper part of front leg of cattle|q=Muher}}
 ** Modern South Arabian:
-*** {{desc|gdq|-|tr=wərkīt|t=hip, hip-bone and flesh}}
-*** {{desc|shv|-|tr=irs̃ét|t=hip}}
-*** {{desc|hss|-|tr=wərkēt|t=thighbone, hip}}
-*** {{desc|bhm|-|tr=wərəkēt|t=bones of the hip}}
+*** {{desc|gdq|wərkīt|t=hip, hip-bone and flesh}}
+*** {{desc|shv|irs̃ét|t=hip}}
+*** {{desc|hss|wərkēt|t=thighbone, hip}}
+*** {{desc|bhm|wərəkēt|t=bones of the hip}}
 
 ===References===
 * {{R:sem-pro:SED|volume=I|id=758|entry=*warik(-at)-}}

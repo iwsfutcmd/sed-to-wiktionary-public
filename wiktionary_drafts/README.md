@@ -29,14 +29,20 @@ The reference is `{{R:sem-pro:SED|volume=…|id=<SEDonline id>|entry=…}}`.
 ## Where the script forms come from
 1. **Akkadian cuneiform** is copied from the `{{cunsp}}` block (`phon=`) of the Wiktionary lemma page. Missing lemma pages
    (`ṣabītum`, `ṣarātum`, `baqqum`) get no cuneiform.
-2. **Curated spellings** (Arabic, Hebrew, Aramaic, Syriac, Ugaritic, Phoenician, Old South Arabian; `CURATED` in `wikt_draft.py`).
-   `python3 scripts/wikt_draft.py --verify` checks each against a live Wiktionary entry and against the consonants of the
-   SEDonline transliteration. All consonants match; **18 of 35 have no Wiktionary entry yet** (they will be red links): Old and
-   Official Aramaic, all Jewish Palestinian/Babylonian Aramaic, Syriac `mǝraˁ`/`ˁrṭ`, Phoenician `ˀmr`, Ugaritic `yrk`, all Sabaic.
-3. **Ethiopic is generated** from the transliteration (regular syllabary, Amharic/Tigrinya/Gurage only; marked in the generator's
-   output). Not done for Tigre or Ge'ez, whose source transliteration does not follow the regular `ä`/`a` convention.
-4. Everything else renders "[script needed]" (`-` + `tr=`): Tigre, Eblaite, Biblical Aramaic, Modern South Arabian, and forms with
-   variants. SEDonline has no script for these.
+2. **Converters** in `scripts/tr2script/` (tests: `make test`, no network). They return nothing instead of guessing.
+   - `ethiopic`: the exact inverse of Wiktionary's `Module:Ethi-translit` (snapshot in `data/scripts/ethi_translit.json`, refresh with
+     `ethiopic.refresh()`). Amharic, Tigrinya, Tigre and the Gurage group. Gemination (doubled letter in the source) is not written.
+     Not for Ge'ez (its source writes `a` for the first order, so it depends on the word) or word-initial vowels (unwritten ʾ).
+   - `abjad`: consonantal Hebrew/Aramaic, Samaritan, Syriac, Ugaritic, Phoenician, Old South Arabian. Unpointed; final ā is written
+     as alef; Ugaritic ʾ is always 𐎀 (Wiktionary's 𐎛 for *ʾimr-* is in `CURATED`).
+3. **`CURATED`** (`wikt_draft.py`): what no converter can derive: Arabic, pointed Hebrew, Ugaritic ʾi.
+4. **Latin as the term** (Wiktionary accepts it, and these are cited in Latin): Mehri, Shehri/Jibbali, Harsusi, Bathari, Soqotri,
+   Eblaite, Turoyo, Western Neo-Aramaic.
+5. Still "[script needed]": Mandaic and Ge'ez (no converter), and forms with variants. `ṯ̣aby-` has one (Mandaic).
+
+`python3 scripts/wikt_draft.py --verify` lists every script form with how it was made and whether Wiktionary has an entry for it:
+27 of 40 do not (red links; mostly Aramaic dialects, Sabaic, Gurage and Tigre, which Wiktionary covers thinly). Generated Ethiopic
+is the least certain output: compare it with a lexicon before saving.
 
 ## Check before saving
 - The language comparison behind "agree" is coarse (core languages only; the print reflexes are OCR text). Compare the

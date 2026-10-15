@@ -15,7 +15,7 @@ Reconstructed in Militarev & Kogan's ''Semitic Etymological Dictionary'' with an
 ====Descendants====
 * East Semitic:
 ** {{desc|akk|ṣabītum|tr=ṣabītum|t=gazelle}}
-** {{desc|xeb|-|tr=ṣa-ba-a-tum|t=gazelle}}
+** {{desc|xeb|ṣa-ba-a-tum|t=gazelle}}
 * West Semitic:
 ** Central Semitic:
 *** {{desc|ar|ظَبْي|tr=ḏ̣aby-|t=gazelle}}
@@ -24,7 +24,7 @@ Reconstructed in Militarev & Kogan's ''Semitic Etymological Dictionary'' with an
 **** Official {{desc|arc|טבי|tr=ṭby|t=gazelle}}
 **** {{desc|jpa|טבי|tr=ṭby|t=deer}}
 **** {{desc|tmr|טביא|tr=ṭabyā|t=deer}}
-**** {{desc|sam|-|tr=ṭby|t=deer}}
+**** {{desc|sam|ࠈࠁࠉ|tr=ṭby|t=deer}}
 **** {{desc|syc|ܛܒܝܐ|tr=ṭabyā|t=gazelle, deer}}
 **** {{desc|myz|-|tr=ṭabia|t=deer}}
 **** Canaanite:

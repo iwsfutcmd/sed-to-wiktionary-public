@@ -23,7 +23,7 @@ crops-%: heads-%
 	$(PY) scripts/crops.py $*
 glot-%: heads-%
 	$(PY) scripts/glot.py $* $(or $(OUT),data/intermediate/glot_v$*.json)
-.PHONY: all tables site titles sedonline-fetch sedonline sedonline-site
+.PHONY: all tables site titles sedonline-fetch sedonline sedonline-site test
 reflexes-%: bbox-%       # Semitic reflexes per entry from the PDFs' text layer -> data/volN/sed_volN_reflexes.tsv
 	cd scripts && $(PY) reflexes.py $*
 afras-%: bbox-%         # Afro-Asiatic comparanda per entry -> data/volN/sed_volN_afras.tsv
@@ -36,3 +36,5 @@ sedonline: tables        # parse the cached crawl -> data/sedonline/*.tsv, then 
 	cd scripts && $(PY) sedonline_parse.py && $(PY) sedonline_compare.py && $(PY) sedonline_missing.py
 sedonline-site: sedonline # self-contained browsing page for the SEDonline tables -> site/sedonline.html
 	cd scripts && $(PY) build_sedonline_site.py
+test:                    # converter tests (no network)
+	$(PY) tests/test_tr2script.py

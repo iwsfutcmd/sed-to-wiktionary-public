@@ -23,10 +23,10 @@
 *** Old South Arabian:
 **** {{desc|xsa|𐩣𐩧𐩳|tr=mrḍ|t=to suffer from disease}}
 ** Modern South Arabian:
-*** {{desc|gdq|-|tr=mērǝẑ|t=to be unwell, ill}}
-*** {{desc|shv|-|tr=mírẓ̂|t=to be ill}}
-*** {{desc|hss|-|tr=mēreẑ|t=to be unwell, ill}}
-*** {{desc|sqt|-|tr=hemrôẑ|t=to heal}}
+*** {{desc|gdq|mērǝẑ|t=to be unwell, ill}}
+*** {{desc|shv|mírẓ̂|t=to be ill}}
+*** {{desc|hss|mēreẑ|t=to be unwell, ill}}
+*** {{desc|sqt|hemrôẑ|t=to heal}}
 
 ===References===
 * {{R:sem-pro:SED|volume=I|id=894|entry=*mrṣ̂}}

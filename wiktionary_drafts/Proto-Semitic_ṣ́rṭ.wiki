@@ -14,12 +14,12 @@
 *** {{desc|ar|ضَرَطَ|tr=ḍrṭ|t=to fart}}
 *** Northwest Semitic:
 **** {{desc|syc|ܥܪܛ|tr=ʕrṭ|t=(pa.) to break wind}}
-**** {{desc|syc|-|tr=ʕurṭē|t=stomach growling}}, {{l|syc|-|tr=ʕurṭāyā}}
+**** {{desc|syc|ܥܪܛ|tr=ʕurṭē|t=stomach growling}}, {{l|syc|ܥܪܛܝܐ|tr=ʕurṭāyā}}
 ** Modern South Arabian:
-*** {{desc|gdq|-|tr=ẑərūṭ|t=to fart (audibly)}}
-*** {{desc|shv|-|tr=ẓ̂érɔ́ṭ|t=to fart (audibly)}}
-*** {{desc|hss|-|tr=ẑərōṭ|t=to fart (audibly)}}
-*** {{desc|sqt|-|tr=ẓ̂éraṭ|t=to fart (audibly)}}
+*** {{desc|gdq|ẑərūṭ|t=to fart (audibly)}}
+*** {{desc|shv|ẓ̂érɔ́ṭ|t=to fart (audibly)}}
+*** {{desc|hss|ẑərōṭ|t=to fart (audibly)}}
+*** {{desc|sqt|ẓ̂éraṭ|t=to fart (audibly)}}
 
 ===References===
 * {{R:sem-pro:SED|volume=I|id=1023|entry=*ṣ̂rṭ}}

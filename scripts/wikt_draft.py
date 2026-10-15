@@ -1,13 +1,15 @@
 """Generate draft Wiktionary Proto-Semitic reconstruction pages from SEDonline (all cited words, not a selection).
 usage: wikt_draft.py REC_ID [REC_ID ...]    -> wiktionary_drafts/Proto-Semitic_<title>.wiki (+ prints script/verification notes)
 
-Script forms, in order of trust: (1) curated spellings below, each checked against a live Wiktionary entry (see --verify);
-(2) Akkadian cuneiform copied from the {{cunsp}} block of the Wiktionary lemma page (network, cached under build/);
-(3) Ethiopic generated from the transliteration (syllabary is regular; flagged); (4) none -> `-` plus tr= ("[script needed]")."""
+Script forms, in order: (1) Akkadian cuneiform copied from the {{cunsp}} block of the Wiktionary lemma page (network, cached under
+build/); (2) CURATED vocalised spellings (Arabic, pointed Hebrew, Ugaritic ʾi) that no converter can derive; (3) tr2script.ethiopic and
+tr2script.abjad (tests/test_tr2script.py); (4) languages cited in Latin on Wiktionary (Mehri, Jibbali, Harsusi, Bathari, Soqotri,
+Eblaite, Turoyo, Western Neo-Aramaic): the source form is the term; (5) otherwise `-` plus tr= ("[script needed]")."""
 import csv, json, re, sys, time, urllib.request, urllib.parse, urllib.error, unicodedata as U
 from collections import defaultdict
 from paths import DATA, BUILD, ROOT
 from sedonline_compare import read
+from tr2script import abjad, ethiopic
 
 UA = {"User-Agent": "sed-to-wiktionary/1.0 (research; https://github.com/iwsfutcmd/sed-to-wiktionary)"}
 CACHE = BUILD / "wikt_pages"
@@ -29,47 +31,15 @@ LANG = {"Akkadian": ("akk", EAST, ""), "Ebla": ("xeb", EAST, ""), "Arabic": ("ar
         "Muher": ("sgw", GUR, ""), "Masqan": ("mvz", GUR, ""), "Mehri": ("gdq", MSA, ""), "Jibbali": ("shv", MSA, ""), "Harsusi": ("hss", MSA, ""),
         "Soqotri": ("sqt", MSA, ""), "Bathari": ("bhm", MSA, "")}
 ORDER = list(LANG)                      # output order within a node
-ETHIOPIC = {"am", "ti", "agj", "har", "gft", "stv", "wle", "zwa", "gru", "sgw", "mvz"}   # not tig/gez: their sources' a/ä do not follow the regular convention
-LATIN = {"tru", "amw"}                  # written in Latin script on Wiktionary: the form itself is the entry
+LATIN_TERM = {"tru", "amw", "gdq", "shv", "hss", "bhm", "sqt", "xeb"}   # cited in Latin script (the source form is the term)
 DIALECT = {"Chaha": "Chaha", "Ezha": "Ezha", "Endegen": "Endegen", "Ennemor": "Ennemor", "Gyeto": "Gyeto", "Muher": "Muher", "Gogot": "Gogot", "Soddo": "Soddo", "Masqan": None}
 
-# (lang code, SEDonline form) -> script. Every one is verified against a live Wiktionary entry by --verify.
+# (lang code, SEDonline form) -> script, for spellings no converter can derive (vowelled or lexical). --verify checks them on Wiktionary.
 CURATED = {
- ("uga", "yrk"): "𐎊𐎗𐎋", ("uga", "ṯ̣by"): "𐎑𐎁𐎊", ("uga", "ˀmr"): "𐎛𐎎𐎗", ("uga", "mrṣ"): "𐎎𐎗𐎕",
- ("hbo", "yārēk"): "יָרֵךְ", ("hbo", "ṣəbī"): "צְבִי", ("hbo", "ˀimmēr"): "אִמֵּר", ("hbo", "mrṣ"): "מרץ",
- ("phn", "ˀmr"): "𐤀𐤌𐤓", ("ar", "warik-"): "وَرِك", ("ar", "ḏ̣aby-"): "ظَبْي", ("ar", "mrḍ"): "مَرِضَ", ("ar", "baqq-"): "بَقّ",
- ("xsa", "wrk"): "𐩥𐩧𐩫", ("xsa", "ṣby"): "𐩮𐩨𐩺", ("xsa", "mrḍ"): "𐩣𐩧𐩳", ("sem-srb", "ṣby"): "𐩮𐩨𐩺",
- ("jpa", "yrk"): "ירך", ("tmr", "yirkā"): "ירכא", ("arc", "ṣby"): "צבי", ("arc", "ṭby"): "טבי", ("jpa", "ṭby"): "טבי", ("tmr", "ṭabyā"): "טביא",
- ("arc", "ˀmr"): "אמר", ("jpa", "ˀymrh"): "אימרה", ("tmr", "ˀimmrā"): "אימרא", ("arc", "mrḳ"): "מרק", ("arc", "mrˁ"): "מרע", ("jpa", "mrˁ"): "מרע",
- ("syc", "ˁrṭ"): "ܥܪܛ", ("ar", "ḍrṭ"): "ضَرَطَ", ("syc", "ṭabyā"): "ܛܒܝܐ", ("syc", "ˀemmrā"): "ܐܡܪܐ", ("syc", "mǝraˁ"): "ܡܪܥ", ("syc", "bāḳā"): "ܒܩܐ",
+ ("uga", "ˀmr"): "𐎛𐎎𐎗",                    # Wiktionary writes ʾi (𐎛), the consonants alone give 𐎀
+ ("hbo", "yārēk"): "יָרֵךְ", ("hbo", "ṣəbī"): "צְבִי", ("hbo", "ˀimmēr"): "אִמֵּר",
+ ("ar", "warik-"): "وَرِك", ("ar", "ḏ̣aby-"): "ظَبْي", ("ar", "mrḍ"): "مَرِضَ", ("ar", "baqq-"): "بَقّ", ("ar", "ḍrṭ"): "ضَرَطَ",
 }
-ETH_BASE = {"h": 0x1200, "l": 0x1208, "ḥ": 0x1210, "m": 0x1218, "ś": 0x1220, "r": 0x1228, "s": 0x1230, "š": 0x1238, "q": 0x1240, "ḳ": 0x1240,
-            "b": 0x1260, "t": 0x1270, "č": 0x1278, "n": 0x1290, "ñ": 0x1298, "ʔ": 0x12A0, "ˀ": 0x12A0, "k": 0x12A8, "w": 0x12C8, "ʕ": 0x12D0, "ˁ": 0x12D0,
-            "z": 0x12D8, "ž": 0x12E0, "y": 0x12E8, "d": 0x12F0, "ǧ": 0x1300, "g": 0x1308, "ṭ": 0x1320, "č̣": 0x1328, "ṗ": 0x1330, "ṣ": 0x1338,
-            "ṣ̂": 0x1340, "f": 0x1348, "p": 0x1350}
-ORD = {"ä": 0, "u": 1, "i": 2, "a": 3, "e": 4, "ə": 5, "o": 6}
-def ethiopic(tr):
-    """Regular syllabary: consonant + vowel (ä u i a e ə o, no vowel = ə). Returns None if anything is not covered
-    (labialised, ejective variants, tone, unknown letters), so that nothing is guessed."""
-    s = U.normalize("NFC", tr)
-    if re.search(r"[\s,;/()ʷ˜̃-]", U.normalize("NFD", s)):
-        return None
-    out, i = [], 0
-    toks = sorted(ETH_BASE, key=len, reverse=True)
-    while i < len(s):
-        for t in toks:
-            if s.startswith(t, i):
-                i += len(t)
-                v = 5
-                if i < len(s) and s[i] in ORD:
-                    v = ORD[s[i]]; i += 1
-                    if i < len(s) and s[i] == "ː":
-                        i += 1
-                out.append(chr(ETH_BASE[t] + v)); break
-        else:
-            return None
-    return "".join(out)
-
 def api(**q):
     data = urllib.parse.urlencode(dict(format="json", formatversion=2, **q)).encode()
     for i in range(7):
@@ -97,6 +67,14 @@ def akkadian(form):
 def tr_of(f):
     return U.normalize("NFC", f).replace("ˀ", "ʔ").replace("ˁ", "ʕ")
 TRANSLATE = {"the sacrup or rump of a butchered animal": "the sacrum or rump of a butchered animal", "Hüfte": "hip", "Wanzen (bugs)": "bugs", "Mücke (mosquito)": "mosquito", "guérir": "to heal"}
+def script_for(code, form):
+    """-> (script, how) with how in curated / ethiopic / abjad, or (None, None)."""
+    if (code, form) in CURATED:
+        return CURATED[(code, form)], "curated"
+    sc = ethiopic.convert(code, form) if code in ethiopic.PROFILES else None
+    if sc: return sc, "ethiopic"
+    sc = abjad.convert(code, form)
+    return (sc, "abjad") if sc else (None, None)
 def one(code, form, notes, first, gloss, lang):
     """One {{desc}} (first variant) or {{l}} (further variants) with the best script available."""
     head = "desc" if first else "l"
@@ -105,12 +83,11 @@ def one(code, form, notes, first, gloss, lang):
         lemma, cun = akkadian(form)
         if not cun: notes.append(f"Akkadian {lemma}: no cuneiform (no Wiktionary lemma page)")
         return f"{{{{{head}|akk|{lemma}" + (f"|alt={cun}" if cun else "") + f"|tr={lemma}{t}}}}}"
-    sc = CURATED.get((code, form))
-    if sc is None and code in ETHIOPIC:
-        sc = ethiopic(form)
-        if sc: notes.append(f"{lang} {form}: Ethiopic {sc} GENERATED from the transliteration")
-    if code in LATIN:
+    if code in LATIN_TERM:
         return f"{{{{{head}|{code}|{tr_of(form)}{t}}}}}"
+    sc, how = script_for(code, form)
+    if sc and how != "curated":
+        notes.append(f"{lang} {form}: {sc} ({how})")
     if sc is None:
         return f"{{{{{head}|{code}|-|tr={tr_of(form)}{t}}}}}"
     return f"{{{{{head}|{code}|{sc}|tr={tr_of(form)}{t}}}}}"
@@ -191,19 +168,29 @@ def consistent(code, form, sc):
     return got == want, got, want
 
 def verify():
-    """Every curated spelling must be an existing Wiktionary entry in the right language (title = spelling without vowel marks)."""
+    """For every word on every page: the script form used, how it was made, and whether a Wiktionary entry exists for it
+    (title = the spelling without vowel marks). Consonants are checked against the transliteration for the abjads."""
     sect = {"uga": "Ugaritic", "hbo": "Hebrew", "phn": "Phoenician", "ar": "Arabic", "xsa": "Sabaean", "sem-srb": "Old South Arabian", "jpa": "Jewish Palestinian Aramaic",
-            "tmr": "Jewish Babylonian Aramaic", "arc": "Aramaic", "syc": "Classical Syriac"}
+            "tmr": "Jewish Babylonian Aramaic", "arc": "Aramaic", "syc": "Classical Syriac", "sam": "Samaritan Aramaic", "am": "Amharic", "ti": "Tigrinya", "tig": "Tigre"}
     strip = lambda t: "".join(c for c in U.normalize("NFC", t) if not (0x591 <= ord(c) <= 0x5C7 or 0x64B <= ord(c) <= 0x652 or ord(c) in (0x670, 0x651) or 0x730 <= ord(c) <= 0x74A))
-    bad = 0
-    for (code, form), sc in sorted(CURATED.items()):
-        t = strip(sc); c = page(t)
-        s = sect[code]; ok = bool(c) and (f"=={s}==" in c or (code == "hbo" and "==Biblical Hebrew==" in c) or (code == "arc" and "==Aramaic==" in c))
-        # Wiktionary has no entries for some pure transliteration-derived forms: report, do not hide
-        cs = consistent(code, form, sc)
-        print(("ok     " if ok else "NO PAGE"), code, form, sc, "->", t, "" if cs is None else ("| consonants match" if cs[0] else f"| CONSONANT MISMATCH {cs[1]} vs {cs[2]}"))
-        bad += not ok
-    print(bad, "of", len(CURATED), "curated spellings have no matching Wiktionary entry")
+    seen, rows = set(), []
+    for title, cfg in PAGES.items():
+        for w in read(DATA / "sedonline" / "sedonline_words.tsv"):
+            if w["rec_id"] != cfg["rec"] or w["lang"] not in LANG: continue
+            code = LANG[w["lang"]][0]
+            if code in LATIN_TERM or code == "akk" or "," in w["form"] or "/" in w["form"]: continue
+            f = re.sub(r"\s*\((suff|det)[^)]*\)$", "", w["form"])
+            sc, how = script_for(code, f)
+            if not sc or (code, f) in seen: continue
+            seen.add((code, f)); rows.append((code, f, sc, how))
+    n_no = 0
+    for code, f, sc, how in sorted(rows):
+        t = strip(sc); c = page(t); s_ = sect.get(code)
+        ok = bool(c) and bool(s_) and (f"=={s_}==" in c or (code == "hbo" and "==Biblical Hebrew==" in c) or (code == "arc" and "==Aramaic==" in c))
+        cs = consistent(code, f, sc) if how == "curated" else None
+        print(("ok     " if ok else "no page"), f"{code:8}", f"{f:14}", sc, f"({how})", "" if cs is None or cs[0] else f"| CONSONANT MISMATCH {cs}")
+        n_no += not ok
+    print(f"{len(rows)} script forms; {n_no} have no Wiktionary entry of that language (red links)")
 
 if __name__ == "__main__":
     if "--verify" in sys.argv: verify()
