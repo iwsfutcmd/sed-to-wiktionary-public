@@ -29,7 +29,7 @@ Semitic "lamb" words as borrowings from Akkadian, which conflicts with an inheri
 Checked against incoming links (`list=backlinks`), because Wiktionary's Proto-Semitic titles mix `ḳ`/`q` and `ṯ̣`/`θ̣`:
 `baḳḳ-` is already linked from the Arabic entry بق ("from Proto-Semitic *baḳḳ-"), `θ̣aby-` from ظبي (`{{ety|ar|:inh|sem-pro:*θ̣aby-}}`).
 Where nothing links in, the SED's own spelling is used with Wiktionary's `ś ṣ́ ʔ`. In descendants, `tr=` follows Wiktionary (`q`).
-`warik-` was saved to Wiktionary on 2026-10-15 (the first draft of it); regenerating it from this repo would now differ from the live page.
+Pages already saved to Wiktionary are moved to `done/` (`warik-`, 2026-10-15); `wikt_draft.py` does not regenerate them.
 
 ## Contents
 Every word SEDonline lists under the reconstruction is included (nothing is selected), grouped by branch as on `kalb-`/`pataḥ-`.

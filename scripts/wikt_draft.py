@@ -207,4 +207,6 @@ if __name__ == "__main__":
     if "--verify" in sys.argv: verify()
     else:
         for t, cfg in PAGES.items():
+            if (OUT / "done" / f"Proto-Semitic_{t}.wiki").exists():      # already saved to Wiktionary: the live page is authoritative
+                print(f"{t}: in wiktionary_drafts/done/, not regenerated"); continue
             if len(sys.argv) == 1 or t in sys.argv[1:]: build(t, cfg)
