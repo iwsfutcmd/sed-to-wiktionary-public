@@ -1,0 +1,26 @@
+{{reconstructed}}
+==Proto-Semitic==
+
+===Noun===
+{{sem-noun|m}}
+
+# [[gnat]]
+
+====Inflection====
+{{sem-decl-noun}}
+
+====Descendants====
+* East Semitic:
+** {{desc|akk|baqqum|tr=baqqum|t=gnat}}
+* West Semitic:
+** Central Semitic:
+*** {{desc|ar|بَقّ}}
+*** Northwest Semitic:
+**** {{desc|syc|ܒܩܐ|tr=bāqā|t=gnat}}
+** Modern South Arabian:
+*** {{desc|hss|-|tr=beqqét|t=bug}}
+
+===References===
+* {{R:sem-pro:SED|volume=II|id=667|entry=*baḳḳ-}}
+
+{{C|sem-pro|Insects}}

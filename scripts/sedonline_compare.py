@@ -8,11 +8,23 @@ from paths import DATA, WIKT
 
 FOLD = [("ʾ", "ʔ"), ("ˀ", "ʔ"), ("ʿ", "ʕ"), ("ˁ", "ʕ"), ("ʻ", "ʕ"), ("ð", "ḏ"), ("θ", "ṯ"), ("ḳ", "q"), ("γ", "ġ"),
         ("ŝ", "ś"), ("ḡ", "ġ"), ("δ", "ḏ"), ("š", "š")]
+def canon(s):
+    """NFC, with each run of combining marks sorted, so ṯ+dot-below and dot-below+ṯ compare equal."""
+    out, run = [], []
+    for ch in U.normalize("NFD", s):
+        if U.combining(ch):
+            run.append(ch)
+        else:
+            out += sorted(run); run = []; out.append(ch)
+    out += sorted(run)
+    return U.normalize("NFC", "".join(out))
+
 def fold(s):
     s = U.normalize("NFC", s)
     for a, b in FOLD:
         s = s.replace(a, b)
-    return U.normalize("NFC", s).replace("-", "").replace("*", "").strip()
+    s = s.replace("ṱ", "ṯ̣")     # U+1E71 (t + circumflex below) is the same sound as ṯ̣; Wiktionary mostly writes ṯ + dot below
+    return canon(s).replace("-", "").replace("*", "").strip()
 
 VOWELS = "aiuāīūēōeoV"
 def skeleton(form):

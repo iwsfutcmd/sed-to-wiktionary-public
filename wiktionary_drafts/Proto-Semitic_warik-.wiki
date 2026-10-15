@@ -18,7 +18,7 @@ Reconstructed in Militarev & Kogan's ''Semitic Etymological Dictionary'' with an
 ** {{desc|akk|warkatum|tr=warkatum|t=rear side|unc=1}}
 * West Semitic:
 ** Central Semitic:
-*** {{desctree|ar|وَرِك}}
+*** {{desc|ar|وَرِك}}
 *** Northwest Semitic:
 **** {{desc|arc|ירכא|tr=yirkā|t=haunch, thigh}}
 **** Canaanite:

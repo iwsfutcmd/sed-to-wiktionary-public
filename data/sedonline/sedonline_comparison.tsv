@@ -1110,7 +1110,7 @@ rec_id	level	form	gloss	sed_ref	sed_form	n_words	n_langs	wikt_ps	wikt_ps_title	w
 1272	PWS	*ḫlp	to pass by, to leave behind, to replace			9	9	skeleton	ḫalap-	no	
 1379	PS	*bḥr	to choose, to test			11	9	no		skeleton	baḥr-
 1595	PS	*byt	to spend the night			9	9	skeleton	bayt;bayt-	no	
-1812	PS	*ki/uṯ̣r-	joint (of the ribs, fingers, etc.)	1N:155	*ki/uṯr-	9	9	skeleton	θ̣Vrr-;ṯ̣urr-;ṯ̣ūr-	skeleton	ṯ̣ūr-
+1812	PS	*ki/uṯ̣r-	joint (of the ribs, fingers, etc.)	1N:155	*ki/uṯr-	9	9	skeleton	θ̣Vrr-;ṯ̣urr-;ṯ̣ūr-;ṱVrr-	skeleton	ṯ̣ūr-
 1850	PS	*nšḳ	to kiss			9	9	skeleton	našaḳ-	no	
 136	PS	*labVˀ-	lion	2N:144	*labVʔ-	8	8	skeleton	labiʔ-;labiʾ-	no	
 192	PS	*warīd-	(jugular) vein, trachea	1N:287	*warīd-	9	8	skeleton	warad-	no	
@@ -1186,7 +1186,7 @@ rec_id	level	form	gloss	sed_ref	sed_form	n_words	n_langs	wikt_ps	wikt_ps_title	w
 82	PS	*kariŝ-	belly, stomach			26	25	yes	kariś-	no	
 335	PS	*baˁl-	lord			29	25	yes	baʕl-;baʿl-	no	
 543	PS	*baraḳ-/*barḳ-	lightning			26	25	yes	baraḳ-	no	
-556	PS	*ṯ̣ill-	shadow			27	25	yes	θ̣ill-;ṯ̣ill-	no	
+556	PS	*ṯ̣ill-	shadow			27	25	yes	θ̣ill-;ṯ̣ill-;ṱill-	no	
 1319	PS	*piˀ-at-	border, side	1N:204	*pVʔ-at-	28	25	yes	piʔat-	no	
 858	PS	*ṯamāniy-	eight			24	24	yes	θamāniy-;ṯamāniy-	no	
 1390	PS	*ˁalay	on, over			29	23	yes	ʕalay-	no	
@@ -1289,7 +1289,7 @@ rec_id	level	form	gloss	sed_ref	sed_form	n_words	n_langs	wikt_ps	wikt_ps_title	w
 1430	PS	*ˀiš	to, for			6	5	yes	ʔiš-;ʾiš-	no	
 88	PS	*ŝaˁr-	straw, grass			4	4	yes	śaʕr-;śaʿr-	no	
 157	PS	*mut-	husband or man			4	4	yes	mut-	no	
-520	PS	*ṯ̣Vrr-	flint			4	4	yes	θ̣Vrr-	skeleton	ṯ̣ūr-
+520	PS	*ṯ̣Vrr-	flint			4	4	yes	θ̣Vrr-;ṱVrr-	skeleton	ṯ̣ūr-
 662	PS	*raḳḳ-	turtle	2N:190	*raḳḳ-	4	4	yes	raḳḳ-	no	
 733	PWS	*ˁaṣay-	coccyx, backbone	1N:23	*ʕaṣay-	5	4	no		yes	ʕaṣay-
 1062	PS	*šikar-	alcoholic drink			4	4	yes	šikar-	no	

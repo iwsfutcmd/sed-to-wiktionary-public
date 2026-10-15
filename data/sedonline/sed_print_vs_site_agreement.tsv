@@ -1,0 +1,577 @@
+key	protoform	gloss	rec_id	web_form	web_gloss	web_level	form_same	gloss_same	core_langs_print	core_langs_web	langs_only_print	langs_only_web	agree
+1N:1	*ʔa/ibr-	pinion, wing	375	*ˀa/ibr-	pinion, wing	PS	1	1	Akk Hbr JewAram Mnd Syr Ugr	Akk Hbr Mnd Syr Ugr	JewAram		0
+1N:2	*ʔibr(-at)-	membrum virile	376	*ˀibr(-at)-	membrum virile	PCS	1	1	Arb Hbr JewAram	Arb Hbr	JewAram		0
+1N:3	*ʔi(-)bVr-at-	bone of leg/arm; limb	377	*ˀi(-)bVr-at-	bone of leg/arm; limb	PS	1	1	Akk Amh Arb Hbr JewAram Mnd Soq Syr	Akk Amh Hbr JewAram Mnd Soq	Arb Syr		0
+1N:4	*ʔuḏn-	ear	14	*ˀuḏn-	ear	PS	1	1	Akk Arb Gez Har Hbr Hrs JewAram Jib Mhr Mnd Sab Soq Syr Tgr Tna Ugr	Akk Arb Gez Har Hbr Hrs JewAram Jib Mhr Mnd Sab Soq Syr Tgr Tna Ugr			1
+1N:5	*ʔaly-at-	fat tail (of a certain race of sheep)	385	*ˀaly-at-	fat tail (of a certain race of sheep)	PWS	1	1	Amh Arb Har Hbr JewAram Mnd Syr	Amh Arb Har Hbr JewAram Mnd Syr			0
+1N:6	*ʔamm-at-	elbow, forearm	386	*ˀamm-at-	elbow, forearm	PS	1	1	Akk Amh Ebl Gez Hbr JewAram Mnd Sab Syr Tgr Tna Ugr	Akk Amh Ebl Gez Hbr JewAram Mnd Sab Syr Tgr Tna Ugr			1
+1N:7	*ʔi(n)gi/ur-	foot	387	*ˀi(n)gi/ur-	foot	PWS	1	1	Amh Arb Gez Har Syr Tgr Tna	Amh Arb Gez Har Tgr Tna	Syr		0
+1N:8	*ʔanp-	nose	96	*ˀanp-	nose	PS	1	1	Akk Arb Ebl Gez Har Hbr JewAram Jib Mnd Syr Tgr Tna Ugr	Akk Arb Ebl Gez Har Hbr Jib Sab Tgr Tna Ugr	JewAram Mnd Syr	Sab	0
+1N:9	*ʔir(r)-at-	chest, breast	389	*ˀir(r)-at-	chest, breast	PS	1	1	Akk Tgr Ugr	Akk Tgr Ugr			1
+1N:10	*ʔVrāw-, *wVrāʔ-	back	793	*ˀVrāw­, *wVrāˀ­	back	PS	0	1	Akk Arb Gez	Akk Arb Gez			0
+1N:11	*ʔi/ušk(-at)-	testiculus	391	*ˀi/ušk(-at)-	testiculus	PS	1	1	Akk Amh Arb Ebl Gez Hbr JewAram Syr Ugr	Akk Amh Arb Ebl Gez Hbr JewAram Soq Syr Ugr		Soq	0
+1N:12	*ʕidḳ-	(lock/tuft of) hair, curl, fleece	392	*ˁidḳ-	(lock/tuft of) hair, curl, fleece	PS	1	1	Akk Mnd Syr	Akk Arb Mnd Syr		Arb	0
+1N:13	*ʕagb-	rump, buttocks	393	*ˁagb-	rump, buttocks	PWS	1	1	Arb Hbr Soq	Arb Hbr Soq			0
+1N:14	*ʕaḳib-, *ʕiḳb-	heel	394	*ˁaḳib-, *ˁiḳb-	heel	PS	1	1	Akk Amh Arb Gez Har Hbr JewAram Mnd Sab Syr Tgr Tna Ugr	Akk Amh Arb Gez Har Hbr JewAram Mhr Mnd Pho Sab Soq Syr Tgr Tna Ugr		Mhr Pho Soq	0
+1N:15	*ʕi/unḳ-	neck	708	*ˁVnḳ-	neck	PS	0	1	Amh Arb Ebl Har Hbr JewAram Soq Syr Tgr Tna	Akk Arb Gez Hbr JewAram Mnd Syr Tna Ugr	Amh Ebl Har Soq Tgr	Akk Gez Mnd Ugr	0
+1N:16	*ʕa(n)ṣab-	sinew, nerves	1216	*ˁa(n)ṣab-	sinew, nerves	PWS	1	1	Arb Hrs Jib Mhr Tgr	Arb Hrs Jib Mhr Tgr			0
+1N:18	*ʕap/baḳ-	sores, scabies, leprosy	1004	*ˁabaḳ-	sores, scabies, leprosy	PS	0	1	Akk Amh Arb Gez Tgr Tna	Akk Amh Arb Gez Tgr Tna			0
+1N:20	*ʕa/irḳ-	tendon, muscle, vein, nerve	102	*ˁa/irḳ-	tendon, muscle, vein, nerve	PWS	1	1	Arb Gez Har Hrs Jib Mhr Mnd Sab Soq Syr Tgr	Arb Har Hrs Mhr Sab Soq Tgr	Gez Jib Mnd Syr		0
+1N:21	*ʕarḳūb-	(Achilles') tendon	843	*ˁarḳVb-	Achilles’ tendon	PWS	0	1	Arb Hbr Hrs Jib Mhr Syr Tgr	Arb Hbr Hrs Mhr Syr Tgr	Jib		0
+1N:22	*ʕu/irray(-at)-	intestines; excrement	1336	*ˁu/irray(-at)-	intestines; excrement	PS	1	1	Akk Arb Soq	Akk Arb Soq			1
+1N:23	*ʕaṣay-	backbone	733	*ˁaṣay-	coccyx, backbone	PWS	1	0	Arb Hbr JewAram Tgr	Arb Hbr JewAram Tgr			0
+1N:24	*ʕVṣ̂ā/īṣ̂-	(kind of) bone	1218	*ˁVṣ̂āṣ̂-/*ˁVṣ̂īṣ̂-	(kind of) bone	PWS	0	1	Amh Arb Har Hbr Hrs Jib Mhr Tgr	Arb	Amh Har Hbr Hrs Jib Mhr Tgr		0
+1N:25	*ʕaṯm(-at)-	bone	44	*ˁaṯ̣m-	bone	PS	0	1	Akk Amh Arb Ebl Gez Har Hbr Hrs JewAram Jib Mhr Mnd Pho Syr Tgr Tna Ugr	Akk Amh Arb Ebl Gez Har Hbr JewAram Jib Mhr Mnd Soq Syr Tgr Tna Ugr	Hrs Pho	Soq	0
+1N:27	*ʕaw/yš-, *ʕašw/y-	kind of disease (fever, cold in the head; plague)	1220	*ˁaw/yš-, *ˁašw/y-	kind of disease (fever, cold in the head; plague)	PS	1	1	Akk Jib Sab Tgr Tna	Akk Arb Jib Sab Tgr Tna		Arb	0
+1N:28	*ʕayn-	eye	19	*ˁayn-	eye	PS	1	1	Akk Amh Arb Ebl Gez Har Hbr Hrs JewAram Jib Mhr Mnd Pho Sab Soq Syr Tna	Akk Amh Arb Ebl Gez Har Hbr JewAram Jib Mhr Mnd Pho Sab Syr Tgr Tna Ugr	Hrs Soq	Tgr Ugr	0
+1N:29	*ba/u(ʔ)ba/u(ʔ)-	pupil of the eye	816	*bV(ˀ)b(Vˀ)-	pupil of the eye	PCS	0	1	Arb Hbr JewAram Syr	Arb Hbr JewAram Syr			0
+1N:30	*bVʕ(bVʕ)-at-, *ʔV-bVʕbVʕ(-at)-	blister, boil	959	*ḫrm	to have a notch, cut in the skin (nose, ear, lip)	PWS	0	0	Akk Gez Hbr JewAram Syr	Arb Hbr Jib Mhr	Akk Gez JewAram Syr	Arb Jib Mhr	0
+1N:31	*badan-	body	685	*badan-	body, trunk	Areal reconstruction	1	0	Amh Arb Gez Hrs Jib Mhr Tgr Tna	Amh Arb Gez Hrs Jib Mhr Tgr Tna			0
+1N:33	*bahaḳ-	(kind of) skin disease	962	*ḫyl	to be in labour; have labour pains	PS	0	0	Arb Hbr Hrs JewAram Jib Mhr Mnd Syr Tgr	Akk Arb Hbr Jib Ugr	Hrs JewAram Mhr Mnd Syr Tgr	Akk Ugr	0
+1N:34	*bVhā/īn-, *ʔV-bhān-	thumb, big toe	837	*bVhVn-	thumb	PS	0	0	Akk Arb Ebl Hbr Hrs Mhr	Akk Arb Ebl Hbr Hrs Mhr			0
+1N:35	*būḥ-	phallus; genitalia	1221	*būḥ-	phallus; genitalia	Areal reconstruction	1	1	Arb Sab	Arb Sab			0
+1N:36	*balVʕ/ġ-, *balʕVm-	uvula; gullet, gorge	966	*ḳrd	to have a disease causing fall of hair	PS	0	0	Arb Hrs Jib Mhr Mnd Soq Syr	Akk Arb Syr	Hrs Jib Mhr Mnd Soq	Akk	0
+1N:37	*bi(n)ṯ̣ur-	clitoris, vagina	749	*bVnṯ̣ur-	clitoris, vagina	PS	0	1	Akk Arb	Akk Arb			0
+1N:38	*barak-	chest, thorax	1223	*barak-	chest, thorax	PWS	1	1	Amh Arb Soq	Amh Arb Hrs Mhr Soq		Hrs Mhr	0
+1N:39	*bi/ark-	knee	31	*bi/ark-	knee	PS	1	1	Akk Amh Arb Gez Har Hbr Hrs JewAram Jib Mhr Mnd Soq Syr Tgr Tna Ugr	Akk Arb Gez Har Hbr Hrs JewAram Jib Mhr Mnd Syr Tgr Tna Ugr	Amh Soq		0
+1N:40	*baraṣ-	scabies, tetter, ringworm	1337	*baraṣ-	scabies, tetter, ringworm	PWS	1	1	Arb Gez Jib Syr	Arb Gez Har Jib Mhr Syr Tgr		Har Mhr Tgr	0
+1N:41	*bi/aŝar-	flesh, (human) body	114	*bi/aŝar-	meat	PWS	1	0	Akk Arb Gez Har Hbr JewAram Jib Mhr Mnd Pho Sab Syr Ugr	Akk Arb Gez Har Hbr JewAram Jib Mhr Mnd Pho Sab Syr Ugr			0
+1N:42	*baṭn-	(big) belly	723	*baṭn-	belly	PCS	1	0	Arb Hbr Hrs JewAram Jib Mnd Syr	Arb Har Hbr Hrs Jib Mhr Tgr	JewAram Mnd Syr	Har Mhr Tgr	0
+1N:43	*bayṣ̂-at-	egg	109	*bayṣ̂-at-	egg	PCS	1	1	Arb Hbr JewAram Mnd Syr	Arb Hbr Hrs JewAram Jib Mhr Mnd Syr Tgr		Hrs Jib Mhr Tgr	0
+1N:44	*bizz-	teat, breast	720	*bizz-	teat, breast	PCS	1	1	Arb JewAram Syr Ugr	Amh Arb JewAram Syr Ugr		Amh	0
+1N:45	*da/ib(a)r-	pestilence, plague	1224	*da/ib(a)r-	pestilence, plague	PS	1	1	Akk Arb Hbr JewAram Jib Tgr Ugr	Akk Arb Hbr Jib Tgr Ugr	JewAram		0
+1N:46	*dVb(V)r-	back, hind part	1090	*dVb(V)r-	back, hind part	PWS	1	1	Amh Arb Gez Hbr Hrs Jib Mnd Soq	Amh Arb Mnd	Gez Hbr Hrs Jib Soq		0
+1N:47	*dadd-, *dayd-	breast, teat	721	*dVd-	breast	PS	0	0	Akk Arb Hbr JewAram Ugr	Akk Arb Hbr JewAram Ugr			0
+1N:48	*duhn-, *daha/in-	fat	1091	*duhn-, *daha/in-	fat	PWS	1	1	Arb Hbr JewAram Mnd Syr Tgr	Arb Hbr JewAram Mnd Syr Tgr			0
+1N:49	*dVḳm-	mouth; jaw; beak	1338	*dVḳm-	mouth; jaw; beak	Areal reconstruction	1	1	Arb Hrs Jib Mhr Tgr	Arb Jib Tgr	Hrs Mhr		0
+1N:50	*dam-, *ʔa-dam-	blood	5	*dam-, *ˀa-dam-	blood	PS	1	1	Akk Amh Arb Gez Har Hbr JewAram Jib Mnd Sab Soq Syr Tgr Tna Ugr	Akk Amh Arb Gez Har Hbr JewAram Mnd Sab Syr Tgr Tna Ugr	Jib Soq		0
+1N:51	*dimʕ(-at)-	tear(-drop)	976	*dVmˁ-at-	tear(-drop)	PS	0	1	Akk Arb Ebl Hbr Hrs JewAram Jib Mhr Mnd Soq Syr Ugr	Akk Arb Ebl Hbr Hrs Jib Mhr Mnd Soq Syr Ugr	JewAram		0
+1N:52	*dimāγ-	(top of the) head; brains	1092	*dVmāγ-	(top of the) head; brains	PWS	0	1	Amh Arb Gez Tgr	Amh Arb Gez Tgr			0
+1N:53	*dVm(a)n-	dung	992	*dVmn-	dung	PCS	0	1	Arb Hbr	Arb Hbr			0
+1N:54	*dan(V)n-	viscera, inner organ, intestine	1093	*dan(V)n-	viscera, inner organ, intestine	PS	1	1	Akk Amh	Akk Amh			1
+1N:55	*dap-an-, *dapp(-at)-	upper torso	1227	*dap-an-, *dapp(-at)-	upper torso	PWS	1	1	Arb Hbr Hrs JewAram Mhr Mnd Soq Syr Tgr	Arb Hbr Hrs JewAram Mhr Mnd Soq Syr Tgr			0
+1N:56	*dVr(dVr)-	toothless mouth, gum	827	*dVrdVr-	toothless mouth, gum	PS	0	1	Akk Amh Arb JewAram Syr Tgr	Akk Amh Arb JewAram Syr Tgr			0
+1N:58	*da/ir(r)-at-	breast, udder	1094	*da/ir(r)-at-	breast, udder	PWS	1	1	Amh Arb Tna	Amh Arb Jib Tna		Jib	0
+1N:59	*di/arṣ-	viscera	1303	*raγab-	hunger	PWS	0	0	Arb Soq Tgr	Amh Arb Gez Har Hbr Ugr	Soq Tgr	Amh Gez Har Hbr Ugr	0
+1N:61	*ḏu/iʕ-at-, *waḏʕ-at-	sweat	978	*ḏVˁ-at-	sweat	PS	0	1	Akk Amh Ebl Har Hbr JewAram Syr Ugr	Akk Amh Ebl Har Hbr JewAram Syr Ugr			0
+1N:62	*ḏ/zVb(b)-(ān)-	tail, back	1649	*ḏ/zVb(b)-(ān)­­	tail, back	PS	0	1	Gez Tgr Tna	Arb Gez Tgr Tna		Arb	0
+1N:63	*ḏi/aḳan-	beard	833	*ḏaḳan-	beard	PS	0	1	Akk Arb Ebl Hbr JewAram Pho Soq Syr Ugr	Akk Arb Ebl Hbr JewAram Pho Soq Syr Ugr			0
+1N:64	*ḏi/anab(-at)-	tail	58	*ḏanab-	tail	PS	0	1	Akk Amh Arb Ebl Gez Hbr Hrs JewAram Jib Mhr Mnd Soq Syr Tgr Tna Ugr	Akk Amh Arb Ebl Gez Hbr Hrs JewAram Jib Mhr Mnd Sab Soq Syr Tgr Ugr	Tna	Sab	0
+1N:65	*ḏVrāʕ-	arm	840	*ḏirāˁ-	arm, elbow	PWS	0	0	Arb Gez Hbr Hrs JewAram Jib Mhr Mnd Soq Syr Tgr Tna Ugr	Akk Arb Gez Hbr Hrs Jib Mhr Mnd Soq Syr Tgr Tna Ugr	JewAram	Akk	0
+1N:66	*gabb(-at)-	eyebrow, eye-pit, front	1228	*gabb(-at)-	eyebrow, eye-pit, front	PS	1	1	Akk Arb Hbr	Akk Arb Hbr			1
+1N:67	*gVb(V)b-, *gVb(b)-an-	hump, hunch	1014	*gVb(V)b-, gVb(b)-an-	hump, hunchback	PWS	1	0	Amh Arb Gez Hbr JewAram Mnd Syr	Amh Arb Hbr JewAram Syr	Gez Mnd		0
+1N:68	*gVbh(-at)-	forehead, front	1229	*gVbh(-at)-	forehead, front	PWS	1	1	Arb Hbr Hrs JewAram Jib Tgr	Arb Hrs Jib Mhr Tgr	Hbr JewAram	Mhr	0
+1N:69	*gVb(b)īn-	eyebrow, front	1230	*gVb(b)ān-	eyebrow, front	PCS	0	1	Arb Hbr JewAram Mnd Syr	Arb Hbr JewAram Mnd Syr			0
+1N:70	*ga/ibar-	genital organ	1231	*ga/ibar	genital organ	PWS	0	1	Hbr Hrs JewAram Mhr Mnd	Hbr Hrs Mhr Mnd	JewAram		0
+1N:71	*gVd-at-	(part or bone of the) leg of animal	1095	*gVd-at-	(part or bone of the) leg of animal	PS	1	1	Akk Amh Gez Tgr	Akk Amh Gez Tgr			1
+1N:72	*gīd-	sinew, nerve	692	*gīd-	tendon, sinew	PS	1	0	Akk Amh Har Hbr JewAram Jib Mnd Soq Syr Ugr	Akk Arb Har Hbr JewAram Jib Mnd Soq Syr Ugr	Amh	Arb	0
+1N:73	*gVd(V)l-	limb	1232	*gVd(V)l-	limb	PWS	1	1	Arb Hbr Hrs Mhr	Arb Hbr Hrs Jib Mhr		Jib	0
+1N:74	*gadp-	wing	1651	*gadp-	wing	PS	1	1	Arb JewAram Mnd	Arb JewAram Mnd			1
+1N:75	*gall-	dung	990	*gVlVl-	dung	PWS	0	1	Arb Hbr JewAram Mnd Tgr	Arb Hbr JewAram Mnd Tgr			0
+1N:76	*gilʕ-	prepuce, clitoris	1652	*gilˁ-	prepuce, clitoris	PS	1	1	Arb Jib Mhr Syr	Arb Jib Mhr Syr			1
+1N:77	*gu/alb-	(piece of) skin	1653	*gu/alb-	(piece of) skin	PS	1	1	Arb JewAram	Arb JewAram			1
+1N:78	*gi/ald-	skin, hide	704	*gild-	skin	PWS	0	0	Akk Amh Arb Gez Hbr Hrs JewAram Jib Mhr Mnd Soq Syr Tgr Tna	Akk Arb Gez Hbr Hrs JewAram Jib Mhr Mnd Syr Tgr	Amh Soq Tna		0
+1N:79	*ga/ulga/ul-at-	skull	754	*gVlgVl-at-	skull	PS	0	1	Akk Amh Arb JewAram Jib Mhr Soq	Akk Arb Hbr JewAram	Amh Jib Mhr Soq	Hbr	0
+1N:80	*gVl(a)p-at-	skin; peel; scales; test	1655	*gVl(a)p­at-	skin; peel; scales; test	PS	0	1	Amh Arb Syr	Amh Arb Syr			0
+1N:81	*ga/umm(-at)-	(long) hair, mane	1656	*ga/umm(-at-)-	(long) hair, mane	PS	0	1	Amh Arb Har Tgr Tna	Amh Arb Har Tgr Tna			0
+1N:82	*gV(m)bVṯ-	hump (of an animal)	1015	*gbṯ	hump (of an animal)	PWS	0	1	Akk Tgr Ugr	Akk Tgr Ugr			0
+1N:83	*gan(a)n-	viscera; heart	1096	*gVnVn-	viscera; heart	PCS	0	1	Akk Arb Hbr Tgr Ugr	Akk Arb Ugr	Hbr Tgr		0
+1N:84	*gu/in-, *ʔ/wVgn-	(area including) cheek-bone and eye-socket	1097	*gu/in-, *ˀ/wVgn-	(area including) cheek-bone and eye-socket	PWS	1	1	Arb Hrs Jib Mhr Syr	Arb Hrs Jib Mhr Syr			0
+1N:85	*ganb-	side and back of torso	140	*ganb-	side and back of torso	PWS	1	1	Arb Gez Hbr Hrs JewAram Jib Mhr Mnd Syr Tgr Tna Ugr	Arb Gez Hbr Hrs JewAram Jib Mhr Mnd Syr Tgr Tna Ugr			0
+1N:86	*ganaḥ-	chest with upper arm/wing	1098	*ganaḥ-	chest with upper arm/wing	PWS	1	1	Arb Jib Soq	Arb	Jib Soq		0
+1N:87	*gVn(ā)z(-at)-	(dead) body, back (of body)	1683	*gVn(ā)z(-at)-	(dead) body, back (of body)	PS	1	1	Arb Sab	Arb Sab			1
+1N:88	*gapp-, *ʔa-gapp-	wing	1099	*gapp-, *ˀa-gapp-	wing	PS	1	1	Akk Amh Arb Hbr JewAram Mnd Syr	Akk Arb Hbr JewAram Mnd Syr Tgr	Amh	Tgr	0
+1N:89	*gar(r)-	back, rear, buttocks	1100	*gar(r)-	back, rear, buttocks	PWS	1	1	Arb Tgr	Arb Tgr			0
+1N:90	*gVrVb-	body; stomach	686	*gVrVb-	body, stomach	Areal reconstruction	1	1	Arb Sab Tgr	Arb Sab Tgr			0
+1N:91	*gar(a)b-	leprosy, mange, scab	1005	*garab-	leprosy, mange, scab	PS	0	1	Akk Arb Hbr Hrs JewAram Jib Mhr Mnd Soq Syr Tgr	Akk Arb Hbr Hrs JewAram Jib Mhr Mnd Soq Syr Tgr			0
+1N:92	*gar(i)d-	back of neck	1693	*gar(i)d-	back of neck	PS	1	1	Arb Tgr	Arb Tgr			1
+1N:93	*gargūm(-at)-	throat	1694	*gargūm(-at)-	throat	PS	1	1	Arb Mnd Tgr	Arb Mnd Tgr			1
+1N:94	*gVrm-	body; bone	45	*gVrm-	body; bone	PWS	1	1	Arb JewAram Mnd Sab Syr	Arb Hbr JewAram Mnd Sab Syr		Hbr	0
+1N:95	*girān-	throat	713	*gVrān-	throat	PCS	0	1	Arb Hbr JewAram Syr	Arb Hbr JewAram Syr			0
+1N:96	*gišm-	body	687	*gišm-	body, trunk	Areal reconstruction	1	0	Amh Arb JewAram Jib Mhr Mnd Soq Syr	Amh Arb Soq Syr	JewAram Jib Mhr Mnd		0
+1N:97	*giŝŝ-	torso, body	1695	*giŝŝ-	torso, body	PS	1	1	Akk Arb Hbr JewAram Jib Mhr Soq Syr	Akk Arb Hbr JewAram Jib Mhr Syr	Soq		0
+1N:98	*gi/uṯṯ(-at)-	body, corpse	1696	*gi/uṯṯ(-at)-	body, corpse	PS	1	1	Arb Soq	Arb Soq			1
+1N:99	*gaw(w)iʔ- (or *gʷay(y)aʔ-)	(front part of) body; chest, belly; interior	199	*gaw(w)iˀ-	(front part of) body; chest, belly; interior	PS	0	1	Akk Amh Gez Hbr JewAram Jib Mnd Soq Syr	Akk Amh Arb Gez Hbr JewAram Jib Mnd Soq Syr Tgr		Arb Tgr	0
+1N:100	*gawp-	chest and abdominal cavities of body/corpse	1101	*gawp-	chest and abdominal cavities of body/ corpse	PWS	1	1	Arb Hbr Hrs JewAram Jib Mhr Tgr	Arb Hbr Hrs JewAram Jib Mhr Tgr			0
+1N:101	*g(ʷ)ann-	breastbone; side of body	1701	*g(ʷ)ann-	breastbone; side of body	PS	1	1	Amh Arb Tgr	Amh Arb Tgr			1
+1N:102	*gʷar(gʷ)ar(-at)-	throat, gullet	712	*gVrgVr-at-	throat	PWS	0	0	Akk Amh Arb Gez Har Hbr Hrs JewAram Jib Mhr Mnd Soq Syr Tgr Tna Ugr	Akk Amh Hbr Mnd Syr Tna Ugr	Arb Gez Har Hrs JewAram Jib Mhr Soq Tgr		0
+1N:103	*γib(b)-	dung, faeces	1702	*γVb(b)-	dung, faeces	PWS	0	1	Amh Gez Hrs Jib Mhr Soq Tna	Amh Gez Hrs Jib Mhr Soq Tna			0
+1N:104	*γa/ub(a)b-	bosom, chest; dewlap	1703	*γa/ub(a)b-	bosom, chest; dewlap	PS	1	1	Amh Arb JewAram Mnd Syr	Amh Arb JewAram Mnd Syr			1
+1N:105	*γap(a)r-	(stiff) hair	832	*γapar-	(stiff) hair	PS	0	1	Akk Arb	Akk Arb			0
+1N:106	*γa/ur(r)-	(loose) skin, dewlap	706	*γār-	(loose) skin, dewlap	PC	0	1	Akk Arb Hbr JewAram Jib Mhr Ugr	Akk Arb Hbr JewAram Jib Mhr Pho Ugr		Pho	0
+1N:107	*γarVṗ-	occiput, back of the neck	803	*γarVp-	occiput, back of the neck	PS	0	1	Akk Arb Hbr Hrs JewAram Jib Mhr Soq Syr	Akk Arb Hbr Hrs JewAram Jib Mhr Soq	Syr		0
+1N:108	*γurl(-at)-	foreskin, prepuce	751	*γurl(-at)-	foreskin	PS	1	0	Akk Arb Hbr JewAram Syr	Akk Arb Hbr JewAram Syr			0
+1N:109	*ḥubb- (or *ḥawb-)	chest, bosom	1705	*ḥubb- (or *ḥawb-)	chest, bosom	PS	1	1	Arb Hbr JewAram	Arb Hbr JewAram			1
+1N:110	*ḥabal-, *ḥibl-	foetus; umbilical cord	756	*ḥablat-	umbilical cord	Proto-MSA	0	0	Amh Arb Har Hbr JewAram Jib Mhr Syr	Hrs Jib Mhr	Amh Arb Har Hbr JewAram Syr	Hrs	0
+1N:111	*ḥi/ab(V)r-	spot on the skin, bruise, mark of violence	1009	*ḥVbVr-	spot on the skin, bruise, mark of violence	PS	0	1	Akk Arb Gez Hbr JewAram Soq Syr Tgr Tna	Akk Arb Gez Hbr JewAram Soq Syr	Tgr Tna		0
+1N:112	*ḥaḏ(V)y-	breast	122	*ḥaḏVy-	breast	PWS	0	1	Hbr JewAram Mnd Syr	Arb Hbr JewAram Mnd Syr		Arb	0
+1N:113	*ḥi/aḳ(ʷ)-	hip, loin, lap	728	*ḥVḳw-	back, loin, hip	PWS	0	0	Arb Gez Har Hbr Hrs JewAram Jib Mhr Sab Tgr Tna Ugr	Arb Gez Har Hbr JewAram Jib Mhr Sab Tgr Tna Ugr	Hrs		0
+1N:114	*ḥa/ul(l/y)-	spinal column with thigh bones	1750	*ḥa/ul(l/y)-	spinal column with thigh bones	PS	1	1	Akk Arb Hbr	Akk Arb Hbr			1
+1N:115	*ḥil(Vl)-	canal (anat.), urethra (?)	1751	*ḥil(Vl)-	canal (anat.), urethra (?)	PS	1	1	Arb Syr Tgr	Arb Syr Tgr			1
+1N:116	*ḥ/ḫalaʔ-	mole; pustule	1007	*ḥ/ḫalaˀ-	mole; pustule	PS	1	1	Akk Arb	Akk Arb			1
+1N:117	*ḥalḳ-, *ḥalḳū/um-	Adam's apple, throat	711	*ḥVlḳ-	throat	PS	0	0	Akk Amh Arb Gez Hrs Jib Mhr Soq Tgr Ugr	Akk Amh Arb Gez Hrs Jib Mhr Soq Tgr Ugr			0
+1N:118	*ḥVlṣ-	loin, hip	1752	*ḥVlṣ-	loin, hip	PS	1	1	Akk Gez Hbr JewAram Mnd	Akk Arb Gez Hbr JewAram Mnd		Arb	0
+1N:119	*ḥVmm(-at)-	breast, stomach, entrails	1753	*ḥVmm(-at)-	breast, stomach, entrails	PS	1	1	Akk Arb Soq Tgr Tna	Akk Arb Tgr Tna	Soq		0
+1N:120	*ḥVm-at-	venom, bile	980	*ḥim-at-	venom, bile	PS	0	1	Akk Amh Arb Gez Hbr JewAram Jib Mhr Mnd Soq Syr Tna Ugr	Akk Amh Arb Gez Hbr JewAram Syr Tna Ugr	Jib Mhr Mnd Soq		0
+1N:121	*ḥum(a)ṣ-at-	birth-mark, scar on the skin	1008	*ḥumṣ-at-	birth-mark, scar on the skin	PS	0	1	Akk Arb	Akk Arb			0
+1N:122	*ḥVmṯ-	(lower) belly, uterus, womb	724	*ḥamṯ-	lower belly, uterus, womb	PS	0	1	Akk Amh Gez Hbr Hrs Jib Mhr Soq Syr Tgr Ugr	Akk Amh Gez Hbr Hrs Jib Mhr Syr Tgr Ugr	Soq		0
+1N:123	*ḥann(-at)-	(feminine) genital organ, uterus	1759	*ḥann(-at)-	(feminine) genital organ, uterus	PS	1	1	Arb Mnd Syr Tgr	Arb Mnd Syr Tgr			1
+1N:124	*ḥanak-, *ḥink-	palate	1266	*ḥVnVk-, *ḥink-	palate	PWS	0	1	Akk Amh Arb Hbr Hrs JewAram Jib Mhr Mnd Soq Syr Tgr	Arb Gez Hbr Hrs JewAram Jib Mhr Mnd Syr Tgr	Akk Amh Soq	Gez	0
+1N:125	*ḥu/apn-	hollow of the hand, handful	836	*ḥupn-	hollow of the hand	PS	0	0	Akk Amh Arb Gez Hbr JewAram Jib Mhr Mnd Sab Syr Tgr Tna Ugr	Akk Amh Arb Gez Hbr JewAram Jib Mhr Mnd Sab Syr Tgr Tna	Ugr		0
+1N:126	*ḥVrṣ-	hip, loin	1760	*ḥVrṣ-	hip, loin	PCS	1	1	Akk Arb Hbr JewAram Mnd Syr	Arb Hbr JewAram	Akk Mnd Syr		0
+1N:127	*ḥasīs-	external ear structure; aural apparatus	817	*ḥasīs-	ear	PS	1	0	Akk Arb Ebl Hbr JewAram Syr	Akk Arb Ebl Hbr JewAram Syr			0
+1N:128	*ḥaŝy-	entrails	1761	*ḥaŝy-	entrails	PS	1	1	Akk Arb	Akk Arb			1
+1N:129	*ḥi/uṣ̂(a)n-	lap, bosom	727	*ḥVṣ̂n-	lap, bosom	PWS	0	1	Akk Amh Arb Gez Har Hbr JewAram Tgr Tna	Akk Amh Arb Gez Har Hbr JewAram Tgr Tna			0
+1N:130	*ḥi(wa)l-	fetal membrane	1762	*ḥi(wa)l-	fetal membrane	PS	1	1	Akk Arb	Akk Arb			1
+1N:131	*ḫilb-	fatty tissue covering interior organs; caul	699	*ḫilb-	fat	PCS	1	0	Arb Hbr JewAram Mnd Pho Syr Ugr	Arb Hbr JewAram Pho Syr Ugr	Mnd		0
+1N:132	*ḫam/nṣ-	waist	1772	*ḫam/nṣ-	waist	PS	1	1	Akk Arb	Akk Arb			1
+1N:133	*ḫim/nṣ-	fatty tissue around intestines and stomach	1773	*ḫim/nṣ-	fatty tissue around intestins and stomach	PS	1	0	Akk JewAram Mnd	Akk JewAram Mnd			0
+1N:134	*ḫi(n)ṣVr-	(little) finger	838	*ḫiṣr-	little finger	PWS	0	1	Arb Hbr JewAram Jib Mhr Mnd Syr	Arb Hbr JewAram Jib Mhr Mnd Syr			0
+1N:135	*ḫu/ap(p)-	hoof	1774	*ḫu/ap(p)-	hoof	PWS	1	1	Arb Hrs Jib Mhr Tgr	Arb Hrs Jib Mhr Tgr			0
+1N:136	*ḫVrʔ/y-	excrement, dregs	988	*ḫVrˀ-	excrement, dregs	PWS	0	1	Akk Amh Arb Hbr JewAram Mnd Soq Syr Tgr Tna Ugr	Amh Arb Hbr JewAram Mnd Soq Syr Tgr Tna Ugr	Akk		0
+1N:137	*ḫarṭūm-	(long) nose, beak, trunk, etc.	1775	*ḫarṭūm-	(long) nose, beak, trunk, etc.	PCS	1	1	Arb Hbr Mnd Syr	Arb Hbr Mnd Syr			0
+1N:138	*ḫVŝₓVp-	scabies, itch, boil	1010	*ḫVŝp-	scabies, itch, boil	PS	0	1	Arb Gez JewAram Jib	Arb Gez JewAram Jib			0
+1N:139	*ḫuṭm-	nose, snout, muzzle, beak	780	*ḫuṭm-	nose, snout, muzzle, beak	PS	1	1	Akk Arb Hbr JewAram Mhr Ugr	Akk Arb Hbr JewAram Ugr	Mhr		0
+1N:140	*ku/aʕ(-at)-	joint; ankle; foot	1776	*ku/aˁ(-at)-	joint; ankle; foot	PWS	1	1	Amh Arb Syr	Amh Arb Syr			0
+1N:141	*kabid(-at)-	liver	33	*kabid-	liver	PS	0	1	Akk Amh Arb Gez Har Hbr Hrs JewAram Jib Mhr Mnd Soq Syr Tgr Tna Ugr	Akk Amh Arb Gez Har Hbr Hrs JewAram Jib Mhr Mnd Soq Syr Tgr Tna Ugr			0
+1N:142	*kVbaw/y(-at)-	(dry cow's) dung	986	*kVbVw-	(dry cow's) dung	PS	0	1	Akk Amh Arb Gez JewAram Jib Mhr Syr Tgr Tna	Akk Amh Arb Gez JewAram Jib Mhr Syr Tgr Tna			0
+1N:143	*ki/um-	wrist, articulation (of arms and legs)	697	*kVm-	articulation, joint, wrist	PS	0	0	Akk Tgr	Akk Arb Jib Tgr		Arb Jib	0
+1N:144	*kVm(V)d-	forearm, cubit	1779	*kVm(V)d-	forearm, cubit	PS	1	1	Amh Arb Hbr JewAram Jib Mhr Mnd Tna	Amh Arb Hbr JewAram Jib Mhr Mnd Syr	Tna	Syr	0
+1N:145	*kanap-, *kinp-	wing	849	*kanap-	wing	PS	0	1	Akk Amh Arb Gez Hbr JewAram Mnd Syr Tgr Tna Ugr	Akk Amh Arb Gez Hbr JewAram Mnd Syr Tgr Tna Ugr			0
+1N:146	*ka/inpa/ir-	tip of the nose; lip	823	*kanpar-	lip; tip of the nose	PES	0	0	Amh Arb Gez Tgr Tna	Amh Gez Tgr Tna	Arb		0
+1N:147	*ki(n)šād-	neck, top of shoulder	707	*ki(n)šād-	neck	PS	1	0	Akk Amh Gez Hrs Jib Mhr Mnd Tna	Akk Amh Gez Hrs Jib Mhr Mnd Tna			0
+1N:148	*kapp-	palm, flap of hand or foot	834	*kapp-	palm	PS	1	0	Akk Arb Gez Hbr Hrs JewAram Jib Mhr Mnd Syr Ugr	Akk Arb Gez Hbr Hrs JewAram Jib Mhr Mnd Syr Ugr			0
+1N:149	*kVr(V)m-	joint of limb bones; flexion, bend of limbs	696	*kVrm-	joint of limb bones; flexion, bend of limbs	PS	0	1	Akk Amh Arb Har Hrs Jib	Akk Amh Arb Har Jib Mhr	Hrs	Mhr	0
+1N:150	*kursū/iʕ-	fetlock joint, tarsus	845	*kursVˁ-	etlock joint, tarsus	PS	0	0	Akk Arb Mnd Syr	Akk Arb Mnd Syr			0
+1N:153	*kVs(V)l-	(area between) loins and genitals	729	*kVsl-	lower part of the trunk, genitals	PS	0	0	Akk Arb Hbr JewAram Ugr	Akk Arb Ebl Hbr JewAram Ugr		Ebl	0
+1N:154	*kat(i)p-	(back of) shoulder, shoulder blade	841	*katip-	shoulder	PS	0	0	Akk Arb Gez Hbr Hrs JewAram Jib Mhr Mnd Syr Tgr Ugr	Akk Arb Gez Hbr Hrs JewAram Jib Mhr Mnd Syr Tgr Ugr			0
+1N:155	*ki/uṯr-	joint (of the ribs, fingers, etc.)	1812	*ki/uṯ̣r-	joint (of the ribs, fingers, etc.)	PS	1	1	Akk Arb Ebl Hbr JewAram Jib Mhr Mnd Pho Syr Tgr	Akk Arb Ebl JewAram Mnd Pho Syr Tgr	Hbr Jib Mhr		0
+1N:156	*kʷaly-at-	kidney	737	*kVly-at-	kidney	PS	0	1	Akk Amh Arb Gez Har Hbr Hrs JewAram Jib Mhr Mnd Soq Syr Tgr Tna Ugr	Akk Amh Arb Gez Har Hbr Hrs JewAram Jib Mhr Mnd Soq Syr Tgr Tna Ugr			0
+1N:157	*kʷirāʕ-	knee and shin-bone; lower leg (of animal)	851	*kurāˁ-	knee and shin-bone; lower leg (of animal)	PS	0	1	Akk Amh Arb Gez Har Hbr JewAram Mnd Sab Syr Tna Ugr	Akk Amh Arb Gez Hbr JewAram Mnd Sab Syr Tna Ugr	Har		0
+1N:158	*ḳVb-at-	stomach (of animals)	850	*ḳVb-at-	stomach (of animals)	PS	1	1	Akk Amh Arb Hbr JewAram Tgr Tna	Akk Arb Hbr JewAram Tgr Tna	Amh		0
+1N:159	*ḳa/udḳa/ud-	skull, head	25	*ḳVdḳVd-	skull	PS	0	0	Akk Arb Ebl Har Hbr JewAram Ugr	Akk Arb Ebl Har Hbr JewAram Ugr			0
+1N:161	*ḳalb- (or *ḳabl-)	heart, middle of the body	28	*ḳalb-/*ḳabl-	heart, middle of the body	PS	0	1	Akk Arb Hrs Jib Mhr	Akk Arb Gez Har Hrs Jib Mhr		Gez Har	0
+1N:163	*ḳanṭīr-	clitoris	760	*ḳanṭīr-	clitoris	Areal reconstruction	1	1	Amh Arb Har Soq Tna	Amh Arb Har Tgr Tna	Soq	Tgr	0
+1N:164	*ḳapy-	occiput, back of the head	1851	*ḳapy-	occiput, back of the head	PS	1	1	Arb Gez Har Hrs Jib Mhr Syr	Arb Gez Har Hrs Jib Mhr Syr			1
+1N:165	*ḳVrb-	inner part, middle of the body	1852	*ḳVrb-	inner part, middle of the body	PS	1	1	Akk Arb Ebl Hbr Ugr	Akk Arb Hbr Ugr	Ebl		0
+1N:166	*ḳard-	neck, throat	1861	*ḳard-	neck, throat	Areal reconstruction	1	1	Arb Hrs Jib Mhr Soq	Arb Hrs Jib Mhr	Soq		0
+1N:167	*ḳa/urḳa/ub-	stomach (of birds)	1862	*ḳa/urḳa/ub-	stomach (of birds)	PCS	1	1	Arb Hbr JewAram Syr	Arb Hbr JewAram Syr			0
+1N:168	*ḳarn-	horn	29	*ḳarn-	horn	PS	1	1	Akk Amh Arb Gez Har Hbr Hrs JewAram Jib Mhr Mnd Pho Soq Syr Tgr Tna Ugr	Akk Amh Arb Gez Har Hbr JewAram Jib Mhr Mnd Pho Syr Tgr Tna Ugr	Hrs Soq		0
+1N:169	*ḳVrs/ṣ-Vll-	ankle	846	*ḳVrs/ṣVll-	ankle	PS	0	1	Akk Hbr JewAram Mhr Syr Tgr	Akk Hbr JewAram Mhr Syr Tgr			0
+1N:171	*ḳ(ʷ)Vlḥ-	genitals; testicles	1882	*ḳ(ʷ)Vlḥ-	genitals, testicles	PS	1	1	Akk Amh Gez	Akk Amh Gez			1
+1N:172	*ḳ(ʷ)Vyṣ-, *ḳ(ʷ)Vṣṣ-	joint, point of connection between bones	1910	*ḳ(ʷ)Vyṣ-, *k(ʷ)Vṣṣ-	joint, point of connection between bones	PS	1	1	Akk Amh Arb Gez Hbr Soq	Akk Amh Arb Gez Hbr Ugr	Soq	Ugr	0
+1N:173	*labb(-at)-, *lab(y)-ān-	(animal's) body from neck to rump	1911	*labb(-at)-, *lab(y)-ān-	(animal's) body from neck to rump	PS	1	1	Akk Arb Jib Mhr Tgr	Akk Arb Jib Mhr Tgr			1
+1N:174	*libb-	heart	27	*libb-	heart	PS	1	1	Akk Amh Arb Ebl Gez Hbr Hrs JewAram Jib Mhr Mnd Pho Sab Soq Syr Tgr Tna Ugr	Akk Amh Arb Gez Hbr Hrs JewAram Jib Mhr Mnd Pho Sab Soq Syr Tgr Tna Ugr	Ebl		0
+1N:175	*li/abbuḫ-, *labīḫ-at-	bladder (of animals)	1912	*li/abbuḫ-, *labīḫ-at-	bladder (of animals)	PS	1	1	Akk Arb	Akk Arb			1
+1N:176	*luγ(γ)-	throat	1913	*luγ(γ)-	throat	PS	1	1	Akk Arb Hrs JewAram Soq Syr	Akk Arb	Hrs JewAram Soq Syr		0
+1N:177	*lVγ-	jaw	1914	*lVγ-	jaw	PS	1	1	Akk Arb Hbr JewAram Mhr Syr	Arb Hbr JewAram Mhr Syr	Akk		0
+1N:178	*liḥ(a)y(-at)-	cheek, jaw	824	*lVḥy-at-	cheek, jaw	PS	0	1	Akk Arb Gez Hbr Hrs JewAram Jib Mhr Soq Tgr Tna Ugr	Akk Arb Gez Hbr Hrs JewAram Jib Mhr Soq Tgr Tna Ugr			0
+1N:179	*lam(a)ṯ-	eruption (on the skin), white spot	1002	*lam(a)ṯ̣-	eruption (on the skin), white spot	PS	1	1	Akk Amh Arb Gez Tna	Akk Amh Arb Gez Tna			1
+1N:180	*li/apVʔ-	fatty, fleshy tissue	701	*lVpˀ-	fatty, fleshy tissue	PS	0	1	Akk Arb Hbr	Akk Arb Hbr JewAram		JewAram	0
+1N:181	*liš(š)ān-	tongue; language	62	*liš(š)ān-	tongue	PS	1	0	Akk Amh Arb Ebl Gez Har Hbr Hrs JewAram Jib Mhr Mnd Pho Sab Soq Syr Tgr Tna Ugr	Akk Amh Arb Ebl Gez Hbr Hrs JewAram Jib Mhr Mnd Pho Sab Syr Tgr Tna Ugr	Har Soq		0
+1N:182	*laṯaγ-	(inner part of the) mouth	826	*laṯaγ-	gum	PS	1	0	Akk Arb	Akk Arb			0
+1N:183	*mV(ʔ)n(-at)-	tendon, sinew; muscle	1915	*mV(ˀ)n(-at)-	tendon, sinew; muscle	PS	1	1	Akk Arb Syr Tna	Akk Arb Syr Tna			1
+1N:184	*mVʕmVʕ-	brain	805	*maˁmaˁ-	brain	PWS	0	1	Arb Hrs Jib Mhr Soq Ugr	Arb Hrs Jib Mhr Soq Ugr			0
+1N:185	*maʕay/w(-at)-	intestines, entrails	34	*mVˁay-	intestines, entrails	PS	0	1	Akk Arb Gez Hbr Hrs JewAram Mhr Mnd Soq Syr Tgr Tna	Akk Arb Gez Hbr Hrs JewAram Mhr Mnd Syr Tgr Tna	Soq		0
+1N:186	*mVgl-	pus, blister	690	*mugl-	pus	PWS	0	0	Amh Arb Gez JewAram Syr Tgr Tna	Amh Arb Gez JewAram Syr Tgr Tna			0
+1N:187	*muḫḫ-	brain	804	*muḫḫ-	brain, marrow	PS	1	0	Akk Arb Ebl Hbr JewAram Mnd Syr Ugr	Akk Arb Hbr JewAram Mnd Syr Ugr	Ebl		0
+1N:188	*mi/ar(r)-at-, *mirār-at-	gall, gall-bladder	741	*mVr(V)r-at-	gall, gall bladder	PS	0	1	Akk Arb Har Hbr Hrs JewAram Jib Mhr Mnd Soq Syr Tgr	Akk Arb Har Hbr Hrs JewAram Jib Mhr Mnd Syr Tgr	Soq		0
+1N:189	*ma-rpiḳ-	elbow	1917	*ma-rpiḳ-	elbow	PCS	1	1	Arb Hbr JewAram	Arb Hbr JewAram			0
+1N:190	*ma/išk-	skin	703	*mašk-	skin	PS	0	1	Akk Arb Har Hbr JewAram Mnd Syr	Akk Arb Har Hbr JewAram Mnd Syr			0
+1N:191	*matn- (1)	sinew, tendon; nerve	693	*matn- (1)	sinew, tendon; nerve	PS	1	1	Akk Amh Arb Ebl Gez Tna Ugr	Akk Amh Arb Ebl Gez Tna	Ugr		0
+1N:192	*matn- (2)	hip and small of the back	1936	*matn- (2)	hip, loins, small of the back	PCS	1	0	Arb Hbr Hrs JewAram Jib Mhr Mnd Soq Syr Ugr	Hbr Hrs JewAram Jib Mhr Mnd Syr Ugr	Arb Soq		0
+1N:193	*nVʕay-at-, *nayaʕ-	breast (of an animal)	719	*nVˁ-	breast (of an animal)	PWS	0	1	Arb Hrs JewAram Jib Mhr Soq Syr	Arb Hrs JewAram Jib Mhr Syr	Soq		0
+1N:194	*nabīl-at-	corpse, carcass	1933	*nabī̆l-at-	corpse, carcass	PS	0	1	Akk Arb Hbr JewAram Soq Syr	Akk Arb Hbr JewAram	Soq Syr		0
+1N:195	*nagd-	bosom, breast	1934	*nagd-	bosom, breast	PCS	1	1	Arb Gez Tna	Arb Gez Hbr Tna		Hbr	0
+1N:196	*naḥ(a)r-	upper part of chest	1935	*naḥ(a)r-	upper part of chest	PCS	1	1	Arb Jib Tgr	Arb Jib Tgr			0
+1N:197	*naḫ-	mucus; mucus membrane	983	*nVḫ-	mucus, phlegm	PWS	0	0	Akk Arb Gez Jib Syr	Akk Arb Gez Jib Syr			0
+1N:198	*naḫīr-	nostril	820	*naḫīr-	nostril	PS	1	1	Akk Arb Hbr Hrs JewAram Jib Mhr Mnd Soq Syr	Akk Arb Hbr JewAram Mnd Syr	Hrs Jib Mhr Soq		0
+1N:199	*nakap-at-	temple, cheek-bone	771	*nakap-at-	temple, cheek-bone	PS	1	1	Akk Arb	Akk Arb			1
+1N:200	*napa/iš-	throat	1791	*napa/iš-	throat	PS	1	1	Akk Arb Hbr Ugr	Akk Arb Hbr Ugr			1
+1N:201	*našy-, *ʔa-nšVy-	sciatic tendon/nerve	695	*našay-	sciatic tendon	PWS	0	0	Amh Arb Hbr JewAram Syr Ugr	Amh Arb Hbr JewAram Syr Tgr Ugr		Tgr	0
+1N:202	*nāṣ(y)-	feathers, plumage	975	*nāṣiy-at-	plumage, feathers	PS	0	0	Akk Arb Hbr JewAram	Akk Arb Hbr JewAram			0
+1N:203	*nayab-	canine tooth	66	*nayab-	canine tooth	PS	1	1	Akk Arb Hbr JewAram Syr Tgr	Akk	Arb Hbr JewAram Syr Tgr		0
+1N:204	*pVʔ-at-	face, front	772	*pVˀ-at-	front	PS	1	0	Akk Amh Ebl Hbr Mnd Soq Syr Ugr		Akk Amh Ebl Hbr Mnd Soq Syr Ugr		0
+1N:205	*pVʔVd-	heart	1418	*pVˀd-	heart	PCS	0	1	Ugr	Arb Ugr		Arb	0
+1N:206	*pVʔw/y(-at)-	genital organ	1797	*pVˀw/y(-at)-	genital organ	PWS	1	1		Arb Gez Har Tgr Tna		Arb Gez Har Tgr Tna	0
+1N:207	*paʕm-, *paʕn-	leg	179	*paˁm-	leg	PS	0	1	Hbr	Akk Arb Hbr Hrs Jib Mhr Pho Ugr		Akk Arb Hrs Jib Mhr Pho Ugr	0
+1N:208	*pidr-	fat	702	*pidr-	fat	PCS	1	1	Hbr	Arb Hbr JewAram		Arb JewAram	0
+1N:209	*pagr-	body; corpse	688	*pagr-	body, trunk	Areal reconstruction	1	0	Hbr JewAram Mnd	Akk Arb Hbr JewAram Mnd Syr Ugr		Akk Arb Syr Ugr	0
+1N:210	*paḥ(a)l-	thigh; penis	752	*paḥl-	penis	PS	0	0	Mnd	Akk Arb Gez Hrs Jib Mhr Mnd Syr Ugr		Akk Arb Gez Hrs Jib Mhr Syr Ugr	0
+1N:211	*paḫ(i)ḏ-	hip, thigh	848	*paḫiḏ-	hip, thigh	PWS	0	1	Hrs Mhr	Arb Hbr Hrs JewAram Jib Mhr Sab Soq Syr		Arb Hbr JewAram Jib Sab Soq Syr	0
+1N:212	*pakk-	jaw, joint of the jaw	1792	*pakk-	jaw, joint of the jaw	PWS	1	1	Arb Hbr JewAram	Arb Syr Tgr	Hbr JewAram	Syr Tgr	0
+1N:213	*pVḳ-	neck	1793	*pVḳ-	neck	PWS	1	1	JewAram Mnd Tgr Ugr	Arb JewAram Mnd Tgr Ugr		Arb	0
+1N:214	*pVḳVm-	(animal's) mouth, muzzle	1798	*pVḳVm-	(animal's) mouth, muzzle	PCS	1	1	Arb Hbr	Arb Hbr Soq		Soq	0
+1N:215	*pan-	face	347	*pan(ay)-	face	PS	0	1	Hbr Pho Ugr	Akk Amh Arb Gez Har Hbr JewAram Jib Mhr Mnd Pho Sab Soq Syr Tgr Tna Ugr		Akk Amh Arb Gez Har JewAram Jib Mhr Mnd Sab Soq Syr Tgr Tna	0
+1N:216	*p/ban/md(-at)-	back, podex	1509	*p/ban/md(at)-	back, podex	PS	0	1	Akk Arb Har Hbr Ugr	Akk Arb Gez Har Hbr Syr Tgr Ugr		Gez Syr Tgr	0
+1N:217	*par-	skin, shell, husk	705	*parr-, *parw-	skin	PS	0	0	Akk Arb Syr	Akk Arb Gez Syr Tgr		Gez Tgr	0
+1N:218	*parʕ-	(loose) hair of the head	831	*parˁ-	hair	PS	1	0	Hbr	Akk Arb Hbr JewAram Soq Syr		Akk Arb JewAram Soq Syr	0
+1N:219	*pi/arḳ-at-, *pi/aḳr-at-	neck, vertebra, occiput	1800	*pi/arḳ-at-, pi/aḳr-at-	neck, vertebra, occiput	PWS	1	1	Arb Hbr JewAram Soq	Arb Hbr JewAram Jib Mnd Soq Syr		Jib Mnd Syr	0
+1N:220	*pa/irs-	sole (of foot, hoof)	974	*pVrs-	hoof	PWS	0	0	Arb Hbr JewAram Mnd Syr	Arb Hbr JewAram Mnd Syr Tgr		Tgr	0
+1N:221	*parṯ-	non-digested food in the stomach	985	*parṯ-	non-digested food in the stomach	PS	1	1	Amh Hbr Hrs JewAram Mnd	Akk Amh Arb Hbr Hrs JewAram Jib Mhr Mnd Syr Tna		Akk Arb Jib Mhr Syr Tna	0
+1N:223	*pay-	mouth	35	*pay-	mouth	PS	1	1	Amh Arb Gez Har Hbr JewAram Mnd Pho Syr Tgr Tna	Akk Amh Arb Gez Har Hbr JewAram Mnd Pho Sab Syr Tgr Tna Ugr		Akk Sab Ugr	0
+1N:224	*riʔ(-at)-	lung	159	*riˀ-at-	lung	PWS	0	1	Arb Hbr Hrs Jib Mhr Syr	Arb Hbr Hrs Jib Mhr Syr			0
+1N:225	*raʔ(i)š-	head	24	*raˀš-	head	PS	0	1	Akk Amh Arb Ebl Gez Har Hbr Hrs JewAram Jib Mhr Mnd Pho Sab Soq Syr Tgr Tna Ugr	Akk Amh Arb Ebl Gez Har Hbr Hrs JewAram Jib Mhr Mnd Pho Sab Soq Syr Tgr Tna Ugr			0
+1N:227	*rib(Vb)y(-at)-, *ʔa-rib(Vb)y(-at)-	lower part of the trunk, area below the navel	730	*rVby-	crotch, groin	PS	0	0	Akk Amh Arb Hrs Jib Mhr Soq Syr	Akk Amh Arb Jib Mhr Syr	Hrs Soq		0
+1N:228	*rigl-	foot	120	*rigl-	foot	PWS	1	1	Arb Hbr JewAram Sab Syr Ugr	Arb Hbr JewAram Mnd Sab Syr Ugr		Mnd	0
+1N:229	*rVγw/y-at-	foam; saliva; excretion	981	*ruγw-at-	foam; saliva; excretion	PS	0	1	Akk Arb Hbr JewAram Syr	Akk Arb Hbr JewAram Syr			0
+1N:230	*rāḥ-at-, *riḥ-at-	palm of hand	835	*rāḥ-at-	palm	PS	0	0	Akk Arb Ebl Gez Hrs Jib Mhr Soq Tgr Tna Ugr	Akk Arb Ebl Gez Hbr Hrs Jib Mhr Tgr Tna Ugr	Soq	Hbr	0
+1N:231	*raḥ(i)m-, *riḥm-	womb	263	*raḥim-	womb; compassion, pity, kindness	PS	0	0	Akk Amh Arb Ebl Hbr Hrs JewAram Jib Mhr Pho Sab Syr Tgr Tna	Akk Arb Ebl Hbr JewAram Jib Mhr Pho Syr Tgr Tna	Amh Hrs Sab		0
+1N:232	*rVk(u)b(-at)-	knee	32	*rVk(u)b(-­at)­-	knee	PWS	0	1	Arb Gez JewAram Syr Tgr	Arb Gez JewAram Syr Tgr			0
+1N:233	*rVm-	kind of skin ulcer; mole, mark on the skin	1507	*rVm-	kind of skin ulcer; mole, mark on the skin	PS	1	1	Akk Arb Gez	Akk Arb Gez			1
+1N:234	*rayr- (or *rīr-)	saliva	979	*rīr-, *rayr-	saliva	PCS	0	1	Arb Hbr JewAram Mnd Syr	Arb Hbr JewAram Mnd Syr			0
+1N:235	*si/anṗ-	lung	755	*si/anp-	lung	PS	0	1	Akk Amh Gez Hbr JewAram Tgr Tna	Akk Amh Gez Hbr JewAram Tgr Tna			0
+1N:236	*si(n)ṭ-	flat hand with wrist	1977	*si(n)ṭ-	flat hand with wrist	PCS	1	1	Arb Hbr Syr	Arb Hbr Syr			0
+1N:237	*sur(u)m-	intestine	1506	*sur(u)m-	intestine	PS	1	1	Akk Arb Syr	Akk Arb Syr			1
+1N:238	*šiʔr-	flesh	691	*šiˀr-	flesh	PS	1	1	Akk Hbr Pho Ugr	Akk Hbr Pho Ugr			1
+1N:239	*š/sVb-, *ʔV-š/sVb-	pubic hair	1505	*š/sVb-, *ˀV-š/sVb-	pubic hair	Areal reconstruction	1	1	Arb Hrs Jib Mhr Soq	Arb	Hrs Jib Mhr Soq		0
+1N:240	*šaḫw/y-at-	armpit	714	*šaḫ(a)y(-at)-	armpit	PS	0	1	Akk Ebl Hbr Hrs JewAram Jib Mhr Soq Syr	Akk Ebl Hbr Hrs JewAram Jib Mhr Soq Syr			0
+1N:241	*šāḳ-	thigh, leg	844	*šāḳ-	leg, shin	PWS	1	0	Akk Arb Gez Hbr JewAram Mnd Syr Tgr Ugr	Akk Arb Gez Hbr JewAram Mnd Syr Tgr Ugr			0
+1N:242	*š/suḳl-	leg, thigh; elbow	1504	*š/suḳl-	leg; thigh; elbow	Areal reconstruction	1	1	Amh Arb Soq Tgr	Amh Arb Soq Tgr			0
+1N:243	*š/sVl(V)ʕ-	(kind of) disease causing scales on the skin; leprosy	1979	*š/sVl(V)ˁ-	(kind of) disease causing scales on the skin; leprosy	PS	1	1	Akk Arb Hbr JewAram	Akk Arb Hbr JewAram			1
+1N:244	*ša/ilḫ-	skin, hide	1427	*šlḫ	to strip off (hide, skin)	PS	0	0	Akk Arb JewAram Syr	Akk	Arb JewAram Syr		0
+1N:245	*šalpūḥ(-at)-	bladder, inflated organ	1980	*šalpūḥ(-at)-	bladder, inflated organ	PCS	1	1	Arb Hbr JewAram Syr	Arb Hbr JewAram Syr			0
+1N:246	*ša/ily(-at)-	afterbirth, fetal membrane	753	*šily-at-	afterbirth	PS	0	0	Akk Amh Arb Gez Hbr JewAram Mnd Syr Tgr Tna	Akk Amh Arb Gez Hbr JewAram Mnd Syr Tgr Tna			0
+1N:247	*šVmāḫ-	intestine, spleen	1502	*šVmāḫ-	intestine; spleen	PS	1	1	Akk Gez	Akk Gez			1
+1N:248	*šamn-	fat (also 'oil')	150	*šamn-	fat, oil	PS	1	0	Akk Arb Hbr JewAram Jib Mnd Pho Syr Ugr	Akk Arb Ebl Hbr JewAram Jib Mnd Pho Syr Ugr		Ebl	0
+1N:249	*šinn-	tooth	64	*šinn-	tooth	PS	1	1	Akk Arb Ebl Gez Har Hbr JewAram Jib Mnd Syr Tna Ugr	Akk Arb Ebl Gez Har Hbr JewAram Jib Mnd Syr Tna Ugr			1
+1N:250	*š/sVn(-ām)-	hump of animal (camel, etc.)	2002	*š/sVn(-ām)-	hump of animal (camel, etc.)	Areal reconstruction	1	1	Arb Gez Hrs Tgr	Arb Gez Hrs Tgr			0
+1N:251	*š/ŝV(n)zVr-	span	1499	*šV(n)zVr-, ŝV(n)zVr-	span	PWS	0	1	Amh Gez Har Jib Mhr Soq Tgr Tna	Amh Arb Gez Har Hbr Jib Mhr Mnd Soq Tgr Tna		Arb Hbr Mnd	0
+1N:253	*š/sar-	vertebral column, backbone	1498	*šar-, *sar-	vertebral column, backbone	Areal reconstruction	0	1	Amh Arb Hrs Jib Soq	Amh Arb Hrs	Jib Soq		0
+1N:254	*šurr-	navel, navel string	725	*šurr-	navel; navel string	PCS	1	1	Arb Hbr Hrs JewAram Mhr Mnd Soq Syr Ugr	Arb Hbr Hrs JewAram Mhr Mnd Soq Syr Ugr			0
+1N:255	*šVt-, *ʔi-šVt-	posterior, buttocks	734	*šit-	buttocks	PS	0	0	Akk Arb Ebl Hbr Hrs JewAram Jib Mhr Mnd Pho Sab Soq Syr Tgr Ugr	Arb Hbr Hrs Jib Mhr Mnd Pho Soq Syr Ugr	Akk Ebl JewAram Sab Tgr		0
+1N:256	*ṣVbʕ(-at)-, *ʔV-ṣbaʕ-	finger	739	*ˀiṣbaˁ-	finger	PWS	0	1	Akk Amh Arb Ebl Gez Har Hbr Hrs JewAram Jib Mhr Mnd Soq Syr Tgr Tna Ugr	Akk Amh Arb Ebl Gez Har Hbr Hrs JewAram Jib Mhr Mnd Sab Soq Syr Tgr Tna Ugr		Sab	0
+1N:257	*ṣirnaγ-at-	(kind of) skin disease	1006	*ṣVrnVˁ-at-	(kind of) skin disease	PS	0	1	Akk Arb Gez Hbr JewAram	Akk Arb Gez Hbr JewAram			0
+1N:258	*ṣaw(ʔ)ar-	neck	126	*ṣaw(ˀ)ar-	neck	PS	1	1	Akk Arb Hbr JewAram Mhr Mnd Syr	Akk Arb Hbr JewAram Mnd Syr	Mhr		0
+1N:259	*ŝV(ʕ)p-at-	(tuft of) hair	738	*ŝVp-	tuft of hair	PS	0	1	Akk Amh Arb Hbr Hrs Jib Mhr Soq Tna	Akk Amh Arb Hbr Tna	Hrs Jib Mhr Soq		0
+1N:260	*ŝaʕr(-at)-	hair (of body and head)	21	*ŝaˁr-	hair	PS	0	0	Akk Arb Ebl Gez Hbr Hrs JewAram Mnd Soq Syr Ugr	Akk Arb Ebl Gez Hbr Hrs JewAram Mnd Soq Syr Ugr			0
+1N:261	*ŝabḥ-	(animal) fat	177	*ŝabḥ/*ŝVbḥ-	fat	PWS	0	0	Gez Har Jib Mhr	Amh Gez Har Hrs Jib Mhr Soq Tgr Tna		Amh Hrs Soq Tgr Tna	0
+1N:262	*ŝVbVr-	buttocks, hind parts, small of the back	1495	*ŝVbVr-	buttocks, hind parts, small of the back	PS	1	1	Akk Tgr Ugr	Akk Arb Tgr Ugr		Arb	0
+1N:263	*ŝaḥm-	fat	698	*ŝaḥm-	fat	PS	1	1	Akk Arb Jib	Akk Arb Jib			1
+1N:264	*ŝimaʔl-	left hand (side)	565	*ŝamˀāl-	left hand (side)	PS	0	1	Akk Arb Hbr Hrs JewAram Jib Mhr Mnd Soq Syr Ugr	Akk Arb Hbr Hrs JewAram Jib Mhr Mnd Sab Soq Syr Ugr		Sab	0
+1N:265	*ŝa(n)p-at-	lip	821	*ŝap-at-	lip	PS	0	1	Akk Arb Ebl Hbr JewAram Mnd Syr Tgr Ugr	Akk Arb Ebl Hbr JewAram Mnd Sab Syr Tgr Tna Ugr		Sab Tna	0
+1N:266	*ŝVp(V)r-	eyelash; (tuft of) hair	1494	*ŝVp(V)r-	eyelash; (tuft of) hair	PS	1	1	Akk Arb Hbr Hrs JewAram Jib Mhr Soq Tgr	Akk Arb Hbr Hrs JewAram Jib Mhr Soq Tgr			1
+1N:267	*ŝir-	skin, hide of cattle	2035	*ŝir-	skin, hide of cattle	PWS	1	1	Amh Arb Jib Mhr Soq Tgr		Amh Arb Jib Mhr Soq Tgr		0
+1N:268	*ŝVry/w/ʕ-, *ŝVry/ʕ-ān-	(Achilles') tendon; sinew, muscle (of leg)	1483	*ŝVry/w/ˁ-, *ŝVry/ ˁ-ān-	(Achilles) tendon; sinew, muscle (of leg)	PS	1	1	Akk Amh Arb Gez Hbr JewAram Jib Mhr Mnd Soq Syr	Akk Amh Arb Gez JewAram Jib Mhr Mnd Soq Syr	Hbr		0
+1N:269	*ŝayṗ-	foot, sole of foot	842	*ŝa(ˀ)p-	trace, foot	Proto-MSA	0	0	Akk Hrs Jib Mhr Soq	Hrs Jib Mhr	Akk Soq		0
+1N:271	*ŝₓV(n)pVl-	stomach (of an animal, bird)	2003	*šapū/il-	legs (as lower parts of body)	PS	0	0	Amh Arb Hrs Jib Mhr Soq Tgr Tna	Akk Arb Tgr	Amh Hrs Jib Mhr Soq Tna	Akk	0
+1N:272	*ṣ̂il(a)ʕ-	rib, side (of chest)	715	*ṣ̂ilaˁ-	rib	PS	0	0	Akk Arb Hbr Hrs JewAram Jib Mhr Soq Syr Ugr	Akk Arb Hbr Hrs JewAram Jib Mhr Soq Syr Ugr			0
+1N:273	*ṣ̂ap(V)ʕ/γ-	dung	989	*ṣ̂Vpˁ-	dung	PWS	0	1	Arb Gez Hbr Hrs Jib Mhr Tgr Tna	Arb Gez Hbr Hrs Jib Mhr Tgr Tna			0
+1N:274	*ṣ̂Vrʕ-	teat, nipple, udder	717	*ṣ̂Vrˁ-	female breast	PS	1	0	Akk Arb Gez Syr Tgr	Akk Arb Gez Syr Tgr			0
+1N:275	*ṣ̂irš-	molar tooth	65	*ṣ̂irš-	molar tooth	PS	1	1	Arb Ebl Gez Hrs Jib Mhr Sab Soq Syr	Akk Arb Ebl Gez Hrs Jib Mhr Sab Syr	Soq	Akk	0
+1N:276	*tVlāʕ-	breast, nipple	716	*tVlVˁ-	female breast	PS	0	0	Akk Gez Mhr Ugr	Akk Gez Mhr Ugr			0
+1N:277	*ṭVb-	teat	744	*ṭVb-	teat, breast	PWS	1	0	Amh Arb Gez Har Hrs Jib Mhr Soq Tgr Tna	Amh Arb Gez Har Hrs Jib Mhr Soq Tgr Tna			0
+1N:278	*ṭiḥāl-, *ṭu/alḥīm-	spleen	747	*ṭiḥāl-	spleen	PS	0	1	Akk Arb Har Hbr Hrs JewAram Jib Mhr Mnd Soq Syr Ugr	Arb Har Hbr JewAram Mnd Syr Ugr	Akk Hrs Jib Mhr Soq		0
+1N:279	*ṭap(a)ḥ-	span, palm of hand	1371	*ṭapḥ-	span, palm of the hand	PWS	0	0	Amh Hbr JewAram Jib Soq	Amh Hbr JewAram Soq	Jib		0
+1N:280	*ṯVdy-	(woman's) breast	718	*ṯad(y)-	female breast	PWS	0	0	Arb Hbr Hrs JewAram Jib Mhr Soq Syr Ugr	Arb Hbr Hrs JewAram Jib Mhr Syr Ugr	Soq		0
+1N:281	*ṯVkm-	neck and shoulders	709	*ṯVkm-	the lowest part of the neck	PWS	1	0	Hbr Tgr Ugr	Arb Hbr Ugr	Tgr	Arb	0
+1N:282	*ṯapr-	perineum	750	*ṯapr-	vulva	PS	1	0	Akk Arb Mhr	Akk Arb Mhr			0
+1N:283	*ṯarb-	(animal) fat	1479	*ṯarb-	(animal) fat	PS	1	1	Akk Arb Har JewAram Mnd Syr Tgr	Akk Arb Har JewAram Mnd Syr Tgr			1
+1N:284	*ṯ̣Vhr-	back	726	*ṯ̣ahr-	back	PS	0	1	Akk Amh Arb Ebl Hbr Hrs JewAram Jib Mhr Soq Syr Tna Ugr	Akk Amh Arb Ebl Hbr Tna Ugr	Hrs JewAram Jib Mhr Soq Syr		0
+1N:285	*ṯ̣ip(V)r-	nail	10	*ṯ̣ipr-	nail, claw	PS	0	0	Akk Amh Arb Gez Har Hbr Hrs JewAram Jib Mhr Mnd Soq Syr Tgr Tna	Akk Amh Arb Gez Har Hbr Hrs JewAram Jib Mhr Mnd Soq Syr Tgr Tna			0
+1N:286	*ṯ̣ayVʔ(-at)-	excrement; excreta	991	*ṯ̣iˀ-at-	excrement; excreta	PWS	0	1	Akk Arb Gez Hbr Syr Ugr	Akk Arb Gez Hbr Jib Mhr Soq Tgr Tna Ugr	Syr	Jib Mhr Soq Tgr Tna	0
+1N:287	*warīd-	jugular vein; trachea	192	*warīd-	(jugular) vein, trachea	PS	1	1	Akk Arb Hbr Syr Tgr	Akk Arb Hbr Syr Tgr			1
+1N:288	*warik(-at)-	hip(-bone)	758	*warik(-at)-	hip(-bone)	PS	1	1	Akk Amh Arb Ebl Hbr Hrs JewAram Jib Mhr Sab Tgr Tna Ugr	Akk Amh Arb Ebl Hbr Hrs JewAram Jib Mhr Sab Tgr Tna Ugr			1
+1N:289	*waṣil-	joint, articulation (of the humerus)	1478	*waṣil-	joint, articulation (of the humerus)	PCS	1	1	Arb Hbr JewAram Jib Mnd Pho Soq	Arb Hbr JewAram Mnd Pho Syr	Jib Soq	Syr	0
+1N:290	*wat(a)r-	tendon	694	*watar-/*watr-	tendon	PWS	0	1	Amh Arb Gez Har JewAram Mnd Tgr Tna	Amh Arb Gez Har Hbr JewAram Mnd Syr	Tgr Tna	Hbr Syr	0
+1N:291	*yad-, *ʔid-	hand	23	*yad-	hand	PS	0	1	Akk Amh Arb Gez Har Hrs JewAram Jib Mhr Mnd Pho Soq Syr Tgr Tna Ugr	Akk Amh Gez Har Hbr Hrs JewAram Jib Mhr Mnd Pho Sab Soq Syr Tgr Tna Ugr	Arb	Hbr Sab	0
+1N:293	*zubb-	(male) genitalia	2039	*zubb-	(male) genitalia	PCS	1	1	Arb Hbr Syr	Arb Hbr Syr			0
+1N:294	*zibl-	dung	987	*zibl-	dung	PS	1	1	Akk Arb Gez Hbr JewAram Syr	Akk Amh Arb Gez Hbr JewAram Syr		Amh	0
+1N:295	*zīḏ-	teat	722	*zīḏ-	breast	PS	1	0	Akk Arb Hbr Ugr	Akk Arb Hbr Ugr			0
+1N:296	*zam-	blood	1342	*zam-	blood	PWS	1	1	Arb Gez Mnd	Arb Gez	Mnd		0
+1N:297	*zapp/bb-	hair (on the head), bristle	1341	*zapp/bb-	hair (on the head), bristle	PS	1	1	Akk Arb Hbr JewAram Mnd Syr	Akk Arb Hbr JewAram Mnd Syr			1
+1N:298	*zVr(-at)-	(spread) hand; span	1340	*zVr(-at)-	(spread) hand; span	PWS	1	1	Gez Hbr JewAram Mnd Syr Tgr Ugr	Hbr JewAram Mnd Syr Tgr Ugr	Gez		0
+1V:1	*ʕḳr	to be sterile, without offspring	921	*ˁḳr	to be sterile, without offspring (of man and woman)	PWS	1	0	Arb Gez Hbr JewAram Mnd Syr		Arb Gez Hbr JewAram Mnd Syr		0
+1V:2	*ʕlg	to stammer	1020	*ˁlg	to stammer	PWS	1	1	Hbr Mnd Tgr Ugr	Arb Ebl Hbr Tgr Ugr	Mnd	Arb Ebl	0
+1V:5	*ʕwr	to be blind	938	*ˁwr	to be blind	PWS	1	1	Akk Amh Arb Gez Hbr Hrs JewAram Jib Mhr Mnd Pho Soq Syr Tgr Tna Ugr	Amh Arb Gez Hbr Hrs Jib Mhr Mnd Pho Syr Tgr Ugr	Akk JewAram Soq Tna		0
+1V:8	*dbš (or *dbṯ)	to be hump-backed	1016	*dbš	to be hump-backed	PWS	0	1	Hbr JewAram Tgr	Hbr Tgr	JewAram		0
+1V:11	*dwm	to be giddy; have pain in the head	1103	*dwm	to be giddy; have pain in the head	PS	1	1	Akk Arb Gez Jib	Akk Arb Jib	Gez		0
+1V:12	*dwy/ʔ	to be ill, sick	939	*dwy/ˀ	to be ill, sick	PS	1	1	Akk Amh Arb Gez Hbr JewAram Mnd Syr Tna Ugr	Akk Amh Arb Gez Hbr JewAram Jib Mnd Syr Ugr	Tna	Jib	0
+1V:13	*ḏbb	to be mad, crazy	940	*ḏbb	to be mad, crazy	PS	1	1	Akk Arb	Akk Arb			1
+1V:17	*g(ʷ)ŝₓʕ/ʔ	to belch, retch, vomit	945	*gŝˁ/ˀ	to belch, retch, vomit	PS	0	1	Akk Amh Arb Gez Har Hbr Hrs Jib Mhr Mnd Soq Syr Tgr Tna	Akk Amh Arb Gez Har Hbr Hrs Jib Mhr Mnd Syr Tgr	Soq Tna		0
+1V:18	*hḏy/w	to be mad, talk without sense; produce incoherent sounds (in one's sleep)	947	*hḏy/w	to be mad, talk without sense; produce incoherent sounds (in one’s sleep)	PS	1	1	Akk Arb Hbr Jib Mhr Syr	Akk Arb Hbr Jib Mhr Syr			1
+1V:19	*hll	to be imbecile, weak-minded, mad; be mocked at	948	*hll	to be imbecile, weak-minded, mad; be mocked at	PS	1	1	Akk Amh Arb Gez Hbr Soq Syr Tgr Tna	Akk Amh Arb Gez Hbr Soq Syr Tgr	Tna		0
+1V:20	*hry	to be pregnant, conceive	949	*hry	to be pregnant, conceive	PS	1	1	Akk Ebl Hbr Sab Ugr	Akk Ebl Hbr Sab Tna Ugr		Tna	0
+1V:23	*ḥkk	to itch, scratch (oneself)	952	*ḥkk	to itch, scratch (oneself)	PS	1	1	Akk Amh Arb Gez Har Hbr Hrs JewAram Jib Mhr Mnd Syr Tgr Tna	Akk Amh Arb Gez Har Hbr Hrs JewAram Jib Mhr Mnd Syr Tgr	Tna		0
+1V:24	*ḥks	to be lame	953	*ḥks/ḥnks	to be lame	PES	0	1	Amh Arb Gez Tgr Tna	Amh Gez Tgr	Arb Tna		0
+1V:25	*ḥlm	to dream; have nocturnal ejaculations	954	*ḥlm	to dream; have nocturnal ejaculations when dreaming	PWS	1	0	Amh Arb Gez Hbr Hrs JewAram Jib Mhr Mnd Pho Sab Soq Syr Tgr Tna Ugr	Amh Arb Gez Hbr Hrs JewAram Jib Mhr Mnd Pho Sab Syr Tgr Tna Ugr	Soq		0
+1V:28	*ḥmr	to have indigestion	778	*ḥmr	to have indigestion	PS	1	1	Akk Arb Hbr Jib	Akk Arb Hbr Jib			1
+1V:31	*ḫrš	to be in confinement, in childbed	960	*ḫrš	to be in confinement, in childbed	PS	1	1	Akk Amh Arb Gez Tgr Tna	Akk Amh Arb Gez Tgr Tna			1
+1V:32	*ḫrš	to be deaf and dumb	961	*ḫrš	to be deaf and dumb	PS	1	1	Arb Hbr JewAram Mnd Syr Ugr	Akk Arb Gez Hbr Mnd Syr Ugr	JewAram	Akk Gez	0
+1V:38	*ḳ(ʷ)rḥ	to have/make a hairless spot (on the head), to become/make bald	1013	*ḳurḥ-at-	baldness	PWS	0	0	Akk Amh Arb Gez Hbr Hrs JewAram Jib Mhr Syr Tgr Tna	Arb Gez Hbr Syr	Akk Amh Hrs JewAram Jib Mhr Tgr Tna		0
+1V:39	*ḳ(ʷ)yʔ (or *ḳy/wʔ)	to vomit	970	*ḳy/wˀ	to vomit	PS	0	1	Akk Amh Arb Gez Hbr Hrs Jib Soq Tgr	Akk Amh Arb Gez Hbr Hrs Jib Mhr Soq Tgr		Mhr	0
+1V:41	*mny	to have sexual desire; discharge sperm, exude vaginal secretion	972	*mny	to have sexual desire; discharge sperm, exude vaginal secretion	PS	1	1	Akk Amh Arb Gez Har Hrs Jib Mhr Soq Tgr Tna	Akk Amh Arb Gez Har Hbr Jib Mhr Soq Syr Tgr Tna	Hrs	Hbr Syr	0
+1V:42	*mrṣ̂	to be sick, ill	894	*mrṣ̂	to be sick, ill	PS	1	1	Akk Arb Hbr Hrs JewAram Jib Mhr Sab Soq Syr Ugr	Akk Arb Hbr Hrs JewAram Jib Mhr Sab Soq Syr Ugr			1
+1V:43	*mwt	to die	6	*mwt	to die	PS	1	1	Akk Amh Arb Gez Har Hbr Hrs JewAram Jib Mhr Mnd Pho Sab Soq Syr Tgr Tna Ugr	Akk Amh Gez Har Hbr Hrs JewAram Jib Mhr Mnd Sab Syr Tgr Tna Ugr	Arb Pho Soq		0
+1V:46	*npš	to breathe	540	*npš	to breathe	PS	1	1		Akk Amh Arb Gez Hbr Jib Mhr Mnd Soq Syr Tgr		Akk Amh Arb Gez Hbr Jib Mhr Mnd Soq Syr Tgr	0
+1V:50	*nšm	to breathe	1198	*nšm	to breathe	PCS	1	1	Arb Hbr Hrs JewAram Jib Mhr Mnd Syr	Arb Hbr JewAram Jib Mhr Mnd Syr	Hrs		0
+1V:52	*nwm	to sleep, slumber	1000	*nwm	to sleep, slumber	PS	1	1	Akk Arb Gez Hbr JewAram Mnd Syr Ugr	Akk Arb Gez Hbr Mnd Syr Ugr	JewAram		0
+1V:53	*nyk	to have sexual intercourse	995	*nyk	to have sexual intercourse	PS	1	1	Akk Arb Hrs Jib Mhr	Akk Arb Hrs Jib Mhr			1
+1V:54	*pḫ/ḥ	to breathe, blow, exhale (smell)	1118	*pḫ/ḥ	to breathe, blow, exhale (smell)	PWS	1	1	Arb Hbr JewAram Syr	Arb Hbr JewAram Syr Tgr		Tgr	0
+1V:57	*pšw	to break wind silently	1024	*pšw	to break wind silently	PS	1	1	Har Tgr	Amh Arb Gez Har Jib Tgr Tna		Amh Arb Gez Jib Tna	0
+1V:58	*pw/ʔ/hḳ	to sob; have hiccups	1124	*pw/ˀ/hḳ	to sob; have hiccups	PWS	1	1	Amh Hbr	Amh Arb Gez Syr	Hbr	Arb Gez Syr	0
+1V:59	*rγb	to be hungry	1032	*rγb	to be hungry	PWS	1	1	Amh Arb Gez Har Hbr Tgr Ugr	Amh Arb Gez Har Hbr Ugr	Tgr		0
+1V:60	*rkb	to have intercourse	897	*rkb	to ride; to (be) join(ed), connect(ed); to mount	PS	1	0	Akk Amh Arb Gez Hbr JewAram Jib Mhr Syr Tgr	Akk Amh Arb Ebl Gez Jib Mhr Syr Tgr Ugr	Hbr JewAram	Ebl Ugr	0
+1V:61	*š/sʕl	to cough	1021	*šˁl	to cough	PS	0	1	Akk Amh Arb Gez Hbr Sab Syr Tgr Tna	Akk Amh Arb Gez Hbr Sab Syr Tgr Tna			0
+1V:64	*ṣmm	to be deaf, to have a damaged ear	1019	*ṣmm	to be deaf, to have a damaged ear	PWS	1	1	Amh Arb Gez Hbr Syr Tgr Tna	Amh Arb Gez Hbr Syr Tgr Tna			0
+1V:66	*ŝyb	to have grey hair	1207	*ŝyb	to have grey hair	PS	1	1	Akk Amh Arb Gez Har Hbr Hrs JewAram Jib Mhr Mnd Soq Syr Tgr Tna Ugr	Akk Arb Gez Hbr Jib Mhr Mnd Tgr Tna	Amh Har Hrs JewAram Soq Syr Ugr		0
+1V:67	*ŝₓgʕ	to be rabid, mad	1025	*šgˁ	to be rabid, mad	PS	0	1	Akk Amh Arb Hbr JewAram Jib Mhr Tna	Akk Amh Arb Hbr JewAram	Jib Mhr Tna		0
+1V:69	*ŝₓrm	to have a nose with a cut-off tip; have a slit lip	1208	*ŝrm	to have a nose with a cut-off tip; have a slit lip	PS	0	1	Akk Arb Hrs Jib Mhr Syr Tgr	Arb Hrs Jib Mhr Syr Tgr	Akk		0
+1V:70	*ṣ̂ḥk/ḳ	to laugh	1210	*ṣ̂ḥk/ṣ̂ḥḳ	to laugh	PWS	0	1	Akk Amh Arb Gez Har Hbr Hrs JewAram Jib Mhr Mnd Soq Syr Tgr Tna Ugr	Akk Amh Arb Ebl Gez Har Hbr Hrs JewAram Jib Mhr Mnd Soq Syr Tgr Tna Ugr		Ebl	0
+1V:71	*ṣ̂rṭ	to fart, break wind audibly	1023	*ṣ̂rṭ	to fart, break wind audibly	PS	1	1	Akk Arb Hrs Jib Mhr Soq Syr	Akk Arb Hrs Jib Mhr Soq Syr			1
+1V:72	*tpp	to spit	1211	*tpp	to spit	PWS	1	1	Amh Arb Gez Har Hbr JewAram Tgr Tna	Arb Gez Har Hbr Tgr Tna	Amh JewAram		0
+1V:75	*ṭmm, *ʔṭm	to be deaf and mute	1018	*ṭmm, ˀṭm	to be deaf and dumb	PS	1	0	Akk Hbr Syr Tna	Akk Hbr Syr Tna			0
+1V:76	*ṯkl	to be/become childless	922	*ṯkl	to be / become childless; to be bereft	PCS	1	0	Arb Hbr JewAram Mnd Syr Ugr	Arb Hbr JewAram Mnd Syr Ugr			0
+1V:77	*ṯyn	to urinate	984	*ṯyn	to urinate	PS	1	1	Akk Amh Arb Gez Hbr JewAram Mnd Syr Tgr Tna Ugr	Akk Amh Arb Gez Hbr Mnd Syr Tgr Tna Ugr	JewAram		0
+1V:78	*ṯ̣lʕ	to limp, be lame	1017	*ṯ̣lˁ	to limp, be lame	PWS	1	1	Arb Hbr Hrs JewAram Jib Mhr	Arb Gez Hbr Hrs JewAram Jib Mhr		Gez	0
+1V:79	*ṯ̣mʔ	to be thirsty	1044	*ṯ̣mˀ	to be thirsty	PS	1	1	Akk Amh Arb Gez Hbr Hrs Jib Mhr Sab Soq Tgr Tna Ugr	Akk Amh Arb Ebl Gez Hbr Jib Mhr Sab Soq Tgr Tna Ugr	Hrs	Ebl	0
+1V:80	*wld	to bear, give birth to	901	*wld	to bear, give birth to	PS	1	1	Akk Amh Arb Gez Har Hbr Jib Mhr Mnd Pho Sab Syr Tgr Tna Ugr	Akk Amh Arb Gez Har Hbr JewAram Jib Mhr Mnd Pho Sab Syr Tgr Ugr	Tna	JewAram	0
+1V:81	*wrḳ	to spit	982	*rḳ	to spit	PWS	0	1	Amh Arb Gez Hbr JewAram Syr Tgr Tna	Amh Arb Gez Hbr JewAram Syr Tgr Tna			0
+1V:82	*wšn	to sleep	1001	*wšn	to sleep	PS	1	1	Akk Arb Ebl Hbr Hrs JewAram Jib Mhr Mnd Sab Soq Syr Ugr	Arb Hbr Ugr	Akk Ebl Hrs JewAram Jib Mhr Mnd Sab Soq Syr		0
+1V:83	*ynḳ	to suck	900	*ynḳ	to suck	PS	1	1	Akk Arb Hbr Mnd Syr Ugr	Akk Arb Hbr JewAram Jib Mhr Mnd Syr Ugr		JewAram Jib Mhr	0
+1V:84	*z/ḏny	to fornicate	1213	*z/ḏny	to fornicate	PWS	1	1	Amh Arb Gez Hbr Hrs JewAram Jib Mhr Mnd Syr Tgr Ugr	Amh Arb Gez Hbr Hrs JewAram Jib Mhr Mnd Syr Tgr Ugr			0
+2N:1	*ʔabbVk-	kind of bird	359	*ˀabbVk-	kind of bird	PS	1	1	JewAram Syr Tgr	Syr Tgr	JewAram		0
+2N:2	*ʔibil-	camel	360	*ˀibil-	camel	Areal reconstruction	1	1	Arb Hrs Jib Mhr Sab Syr	Akk Arb Hrs Jib Mhr Sab Syr		Akk	0
+2N:3	*ʔVbbVl-	kind of bird	361	*ˀVbbVl-	kind of bird	PS	1	1	Akk Amh Arb Tgr	Akk Amh Arb Gez Tgr		Gez	0
+2N:4	*ʔalp-	cattle	362	*ˀalp-	cattle	PS	1	1	Akk Hbr Pho Soq Ugr	Akk Hbr Pho Soq Ugr			1
+2N:5	*ʔimmar-	lamb	363	*ˀimmar-	lamb	PS	1	1	Akk Arb Hbr JewAram Mnd Pho Syr Ugr	Akk Arb Hbr JewAram Mnd Pho Syr Ugr			1
+2N:6	*ʔan(V)ḳ-	a bird of prey	364	*ˀan(V)ḳ-	a bird of prey	PWS	1	1	Amh Arb Gez JewAram	Amh Arb Gez JewAram Syr		Syr	0
+2N:8	*ʔVnar-, *ʔVran-	a small predatory mammal	366	*ˀVnar-, *ˀVran-	a small predatory mammal	PS	1	1	Akk Amh Arb Ugr	Akk Amh Arb Ugr			1
+2N:9	*ʔa(n)z/ḏar-	kind of wild cat	367	*ˀa(n)z/ḏar-	kind of wild cat	PS	1	1	Akk Gez	Akk Arb Gez		Arb	0
+2N:10	*ʔapʕaw-	kind of snake (viper?)	368	*ˀapˁaw-	kind of snake (viper?)	PS	1	1	Akk Amh Arb Ebl Gez Har Hbr Tgr Tna Ugr	Amh Arb Ebl Gez Har Hbr Tgr Tna Ugr	Akk		0
+2N:11	*ʔa/irbay-	locust	369	*ˀa/irbay-	locust	PS	1	1	Akk Ebl Hbr Hrs Jib Mhr Sab Soq Ugr	Akk Amh Arb Ebl Hbr Hrs Jib Mhr Sab Soq Syr Ugr		Amh Arb Syr	0
+2N:12	*ʔarḫ-	cow, heifer	370	*ˀarḫ-	cow, heifer	PS	1	1	Akk Arb Soq Tna Ugr	Akk Arb Soq Tna Ugr			1
+2N:13	*ʔarm-, *ʔarn-	wild goat	371	*ˀarm-, *ˀarn-	wild goat	PS	1	1	Akk Gez Hrs Jib Mhr Soq Syr	Akk Gez Syr	Hrs Jib Mhr Soq		0
+2N:14	*ʔarnab(-at)-	hare	372	*ˀarnab(-at)-	hare	PS	1	1	Akk Arb Gez Har Hbr Hrs JewAram Jib Mhr Mnd Syr	Akk Arb Gez Har Hbr Jib Mhr Syr	Hrs JewAram Mnd		0
+2N:15	*ʔarVr-	kind of bird	373	*ˀarVr-	kind of bird	PS	1	1	Akk Tna	Akk Amh Arb Syr Tna		Amh Arb Syr	0
+2N:16	*ʔi/arw-ān-, *ʔawr-	calf, bull	374	*ˀi/arw-ān-, *ˀawr-	calf, bull	PWS	1	1	Amh Arb Syr	Amh Arb Syr			0
+2N:17	*ʔarway-	wild beast; lion	135	*ˀarway-	wild beast, lion	PWS	1	1	Amh Gez Har Hbr JewAram Mnd Pho Syr Tna Ugr	Amh Gez Har Tgr Tna	Hbr JewAram Mnd Pho Syr Ugr	Tgr	0
+2N:18	*ʔarwiy-	(wild) goat, gazelle	382	*ˀarwiy-	(wild) goat gazelle	PS	1	1	Akk Arb Ebl Mhr Sab	Akk Arb Ebl Mhr Sab			1
+2N:19	*ʔatān-	donkey mare	384	*ˀatān-	donkey mare	PS	1	1	Akk Arb Hbr JewAram Mnd Syr Ugr	Akk Arb Hbr JewAram Mnd Syr Ugr			1
+2N:20	*ʔaṯ(h)al-	a mythical reptile, dragon	383	*ˀaṯ(h)al-	a mythical reptile, dragon	PS	1	1	Mnd Syr Tgr Tna	Gez Mnd Syr Tgr Tna		Gez	0
+2N:21	*ʔVwVy-	jackal	481	*ˀVwVy-	jackal	PS	1	1	Arb Hbr Syr	Amh Arb Har Hbr Syr Tgr		Amh Har Tgr	0
+2N:22	*ʔa/iw(a)z-, *waz(z)-	goose	493	*ˀa/iw(a)z-, *waz(z)-	goose	PS	1	1	Akk Arb Hbr JewAram Mnd Syr Ugr	Akk Amh Arb Gez JewAram Mnd Syr Ugr	Hbr	Amh Gez	0
+2N:23	*ʔay-	bird of prey	494	*ˀay-	bird of prey	PS	1	1	Akk Arb Ebl Hbr	Akk Arb Ebl Hbr Tgr		Tgr	0
+2N:24	*ʔayl-, *ʔVl-	ram	495	*ˀayl-, *ˀVl-	ram	PS	1	1	Akk Hbr Tna Ugr	Akk Hbr JewAram Tna Ugr		JewAram	0
+2N:25	*ʔayyal-	stag, deer	496	*ˀayyal-	stag, deer	PS	1	1	Akk Arb Hbr JewAram Jib Mnd Pho Sab Syr Ugr	Akk Amh Arb Gez Hbr JewAram Jib Mnd Pho Sab Syr Tna Ugr		Amh Gez Tna	0
+2N:26	*ʔa(n)yaṣ-, *ʔanṣaw/y-	weasel, mouse	497	*ˀa(n)yaṣ-, *ˀanṣaw/y-	weasel, mouse	PS	1	1	Akk Amh Gez Tgr Tna	Akk Amh Gez Tgr Tna			1
+2N:27	*ʕabVw-	kind of fish	498	*ˁabVw-	kind of ﬁsh	PS	1	0	Akk Soq	Akk Soq			0
+2N:28	*ʕigʷal- // *ʕigl-	calf	499	*ˁigwal- // ˁigl-	calf	PS	0	1	Ebl Hbr JewAram Mnd Pho Syr Ugr	Amh Arb Ebl Gez Har Hbr JewAram Jib Mhr Mnd Pho Syr Tgr Tna Ugr		Amh Arb Gez Har Jib Mhr Tgr Tna	0
+2N:30	*ʕakbar-	mouse, jerboa	504	*ˁakbar-	mouse, jerboa	PS	1	1	Akk Arb Hbr JewAram	Akk Arb Hbr Hrs JewAram Jib Mhr Syr Tgr		Hrs Jib Mhr Syr Tgr	0
+2N:31	*ʕaḳrab-	scorpion	505	*ˁaḳrab-	scorpion	PWS	1	1	Arb Gez Hbr Hrs JewAram Jib Mnd Syr Tgr Tna Ugr	Akk Amh Arb Gez Hbr JewAram Jib Mnd Syr Tgr Tna Ugr	Hrs	Akk Amh	0
+2N:32	*ʕala/ūḳ(-at)-	leech	506	*ˁala/ūḳ(-at)-	leech	PS	1	1	Akk Amh Arb Gez Har Hbr JewAram Jib Mhr Syr Tgr Tna	Akk Amh Arb Gez Har Hbr JewAram Jib Mhr Syr Tgr Tna			1
+2N:33	*ʕankab(īṯ)-	spider	507	*ˁankab(īṯ)-	spider	PWS	1	1	Amh Arb Gez Hbr Hrs JewAram Jib Mhr Tna	Amh Arb Gez Hbr Hrs Jib Mhr Mnd Tgr Tna	JewAram	Mnd Tgr	0
+2N:34	*ʕVnV̄ḳ-	female kid	607	*ˁVnVḳ-	female kid	PS	0	1	Akk Arb	Akk Arb			0
+2N:35	*ʕVnz-	goat	508	*ˁVnz-	goat	PS	1	1	Akk Arb Hbr Hrs JewAram Mhr Mnd Pho Sab Soq Syr Tgr Ugr	Akk Arb Hbr JewAram Mnd Pho Sab Syr Tgr Tna Ugr	Hrs Mhr Soq	Tna	0
+2N:36	*ʕa/urub-	kind of vermin, worm	526	*ˁa/urub-	kind of vermin, worm	PS	1	1	Akk Hbr JewAram Syr	Akk Hbr JewAram Syr			1
+2N:37	*ʕar(ā)d-	wild ass	527	*ˁar(ā)d-	wild ass	PCS	1	1	Arb Hbr JewAram Mnd Syr	Akk Arb Hbr JewAram Mnd Syr		Akk	0
+2N:39	*ʕVrīṯ-	male kid	606	*ˁurīṯ̣-	male kid	PS	0	1	Akk Hrs Mhr	Akk Mhr	Hrs		0
+2N:40	*ʕarw/y-, *ʕawr-	bird of prey	528	*ˁarw/y-, ˁawr-	bird of prey	PS	1	1	Akk Arb JewAram	Akk Arb Ebl Har Tgr	JewAram	Ebl Har Tgr	0
+2N:41	*ʕVrw/y-	kind of wild cat	1609	*ˁVrw/y-	kind of wild cat	PS	1	1	Arb Jib Mhr Tna	Arb Jib Mhr Tna			1
+2N:42	*ʕVsVb-	kind of bird	1610	*ˁVsVb-	kind of bird	PS	1	1	Akk	Akk Arb		Arb	0
+2N:43	*ʕVṣṣūr-	bird	640	*ˁVṣṣūr-	bird	PS	1	1	Akk Tgr Tna Ugr	Akk Ugr	Tgr Tna		0
+2N:44	*ʕatūd-	male of small cattle	605	*ˁat(t)ūd-	male of small cattle	PS	0	1	Akk Arb Hbr	Akk Arb Hbr			0
+2N:45	*ʕVṯ(V)ṯ-	moth	676	*ˁVṯ(V)ṯ-	moth	PS	1	1	Akk Arb Hbr JewAram Syr	Akk Arb Hbr Syr	JewAram		0
+2N:46	*ʕiṯ̣āy-	kind of lizard	657	*ˁVṯ̣āy-	gecko	PS	0	0	Akk Amh Arb Tna	Akk Arb	Amh Tna		0
+2N:47	*ʕVwVl-	young of domestic animals, foal	1246	*ˁVwVl-	young animal, foal, suckling	PWS	1	0	Gez JewAram Syr Tgr Tna Ugr	Gez Hbr Syr Tgr Tna Ugr	JewAram	Hbr	0
+2N:48	*ʕawp-	bird	158	*ˁawp-	bird	PWS	1	1	Amh Arb Gez Har Hbr JewAram Pho Syr Tgr Tna Ugr	Amh Arb Gez Har Hbr JewAram Pho Syr Tgr Tna Ugr			0
+2N:49	*ʕayp-, *pa(y)ʕ-	kid	1612	*ˁayp-, *pa(y)ˁ-	kid	PS	1	1	Soq	Arb Soq		Arb	0
+2N:50	*ʕayr-	(young) donkey	612	*ˁayr-	donkey	PWS	1	0	Arb Hbr Hrs JewAram Jib Mhr Tgr Ugr	Arb Hbr Hrs Jib Mhr Tgr Ugr	JewAram		0
+2N:51	*ʕVz-	bird of prey	1616	*ˁVz-	bird of prey	PS	1	1	Arb JewAram	Arb Hbr JewAram Syr		Hbr Syr	0
+2N:52	*bVʔ(w)-, *būh-	owl	1617	*bVˀ(w)-, *būh-	owl	PS	1	1	Akk Arb Hbr JewAram Syr	Arb Hbr JewAram Syr	Akk		0
+2N:53	*bVʕVr-	household animal; beast of burden	590	*bVˁVr-	bull	PS	1	0	Arb Gez Hbr Hrs JewAram Mhr Sab Soq Syr Tgr Tna	Akk Amh Arb Gez Har Hbr JewAram Mhr Mnd Sab Syr Tgr Tna	Hrs Soq	Akk Amh Har Mnd	0
+2N:54	*bVb(b)-	a wild hoofed animal	630	*bVb(b)-	a wild ruminant	PS	1	0	Akk Tgr	Akk Tgr			0
+2N:55	*bayγ/ḳl-	mule	616	*baḳl-, *baγl-	mule	Areal reconstruction	0	1	Amh Arb Gez Har Hrs Mhr Sab Tgr Tna	Amh Arb Gez Har Hrs Mhr Sab Tgr Tna			0
+2N:56	*bVk(ʷ)Vr(-at)- // *bVkVr(-at)-	young (she-)camel	798	*bVkr-	camel	Areal reconstruction	0	0	Akk Arb Hbr Hrs Jib Mhr Sab Soq Syr Tgr	Akk Arb Hbr Hrs Jib Mhr Sab Soq Tgr	Syr		0
+2N:57	*bik(ʷ)ay- // *bukay-	kind of insect or worm	1618	*bik(ʷ)ay-, *bukay-	kind of insect or worm	PS	0	1	Akk Hbr Tna	Akk Hbr Tna			0
+2N:58	*baḳḳ-	gnat	667	*baḳḳ-	gnat	PS	1	1	Akk Arb Hrs JewAram Syr	Akk Arb Hrs JewAram Syr			1
+2N:59	*baḳar-	large cattle	593	*baḳar-	large cattle	PCS	1	1	Arb Ebl Hbr Hrs JewAram Mhr Mnd Pho Sab Syr	Akk Arb Ebl Hbr Hrs Mhr Mnd Pho Sab Syr Ugr	JewAram	Akk Ugr	0
+2N:60	*bVl-	kind of small bird	1635	*bVl-	kind of small bird	PS	1	1	Akk Amh Arb Tgr	Akk Amh Arb Tgr			1
+2N:61	*bar-	kind of bird	1636	*bar-	kind of bird	PS	1	1	Amh Hbr Tna	Amh Hbr Tna			1
+2N:62	*bur-	kind of insect	1637	*bur-	kind of insect	PS	1	1	Akk	Akk			1
+2N:63	*baṯan-	snake	650	*baṯan-	snake	PS	1	1	Akk Arb Ebl Hbr Ugr	Akk Arb Ebl Hbr JewAram Syr Ugr		JewAram Syr	0
+2N:64	*daʔy(-at)-	bird of prey	1639	*daˀy(-at)-	bird of prey	PS	1	1	Akk Amh Arb Hbr JewAram Mnd Syr Tgr Tna Ugr	Arb Hbr JewAram Mnd Syr Ugr	Akk Amh Tgr Tna		0
+2N:65	*da/ubb-	bear	623	*dubb-	bear	PS	0	1	Akk Amh Arb Ebl Gez Hbr JewAram Jib Syr Tgr Tna Ugr	Akk Amh Arb Ebl Gez Hbr JewAram Jib Syr Tgr Tna Ugr			0
+2N:66	*di/ab(b)ūr-	bee, wasp	665	*dVbr-	bee	PWS	0	0	Amh Arb Gez Hbr JewAram Mhr Soq Syr	Amh Arb Hbr Hrs JewAram Mhr Soq Syr	Gez	Hrs	0
+2N:67	*dVg-	kind of insect	1657	*dVg-	kind of insect	PS	1	1	Arb Hrs Jib Mhr Tna	Arb Hrs Jib Mhr Tna			1
+2N:68	*dVlVl-	kind of small creature	1658	*dVlVl-	kind of small creature	PS	1	1	Akk Arb Jib	Akk Jib	Arb		0
+2N:69	*dim-	kind of insect	1659	*dim-	kind of insect	PS	1	1	Akk Arb	Akk Arb			1
+2N:70	*dVm(V)m-	(wild) cat	1660	*dVm(V)m-	(wild) cat	PS	1	1	Akk Amh Arb Gez Tgr Tna	Akk Amh Gez Tgr Tna	Arb		0
+2N:71	*dVrr-	kind of bird	1669	*dVrr-	kind of bird	PS	1	1	Arb Hbr	Arb Hbr			1
+2N:72	*ḏiʔb-	wolf, jackal	620	*ḏiˀb-	wolf	PS	1	0	Akk Amh Arb Gez Hbr JewAram Jib Mnd Soq Syr Tgr Tna	Akk Amh Arb Gez Hbr JewAram Mnd Syr Tgr Tna	Jib Soq		0
+2N:73	*ḏVb(V)b-	fly	666	*ḏVb(V)b-	fly	PS	1	1	Akk Amh Arb Ebl Gez Har Hbr Hrs JewAram Jib Mhr Soq Syr Tna	Akk Amh Arb Gez Har Hbr Jib Mhr Soq Syr Tna	Ebl Hrs JewAram		0
+2N:74	*ḏVr(r)-	kind of worm, insect	1674	*ḏVr(r)-	kind of worm, insect	PS	1	1	Arb Hbr Hrs JewAram Jib Mhr Soq	Hbr Hrs Jib Mhr	Arb JewAram Soq		0
+2N:75	*g(ʷ)Vb- // *gVb-	locust	1684	*g(ʷ)Vb-	locust	PS	0	1	Akk Arb Hbr JewAram Tna	Arb Hbr JewAram Tna	Akk		0
+2N:76	*gady-	kid	609	*gady-	kid	PCS	1	1	Arb Hbr JewAram Mnd Pho Ugr	Akk Arb Gez Hbr JewAram Mnd Pho Syr Ugr		Akk Gez Syr	0
+2N:77	*gūg-	kind of insect	1688	*gūg-	kind of insect	PS	1	1		Gez Syr		Gez Syr	0
+2N:78	*g(ʷ)amg(ʷ)am- // *gVmgVm-	kind of bird	1689	*g(ʷ)amg(ʷ)am-, *gVmgVm-	kind of bird	PS	0	1	Akk Tgr Tna	Akk Gez Tgr Tna		Gez	0
+2N:79	*gam(a)l-	camel	799	*gamal-	camel	Areal reconstruction	0	1	Amh Arb Har Hbr JewAram Jib Mnd Tgr Tna	Akk Amh Arb Gez Har Hbr JewAram Jib Mnd Sab Soq Syr Tgr Tna		Akk Gez Sab Soq Syr	0
+2N:80	*gʷa(n)dab- // *ga(n)dab-	cricket, locust	1698	*ga(n)dab-	cricket, locust	PS	0	1	Arb Tna	Arb Tna			0
+2N:81	*gʷa(n)dVr- // *ga(n)dVr-	kind of worm	1699	*ga(n)dVr-	kind of worm	Areal reconstruction	0	1	Amh Hrs Jib Mhr Tna	Amh Hrs Jib Mhr Tna			0
+2N:82	*gūr-, *gury/w-	whelp, cub	1706	*gūr-, *gury/w-	whelp, cub	PS	1	1	Arb Hbr JewAram Mnd Pho Tgr	Arb Hbr Hrs JewAram Mnd Pho Syr Tgr		Hrs Syr	0
+2N:83	*garad-	kind of insect	1727	*garad-	kind of insect	PS	1	1	Arb Jib Tna	Arb Jib Tna			1
+2N:84	*gVrVḏ(-Vn)-	kind of rodent	1728	*gVrVḏ(-Vn)-	kind of rodent	PS	1	1	Arb Hrs Mhr	Arb Hrs Mhr Syr		Syr	0
+2N:85	*gVrr/w(-at)-	small hoofed animal	1733	*gVrr/w(-at)-	small hoofed animal	PS	1	1	Akk Tgr	Akk Tgr			1
+2N:87	*gʷaz- // *gVz-	kind of bird of prey	1734	*gʷaz-, *gVz-	kind of bird of prey	PS	0	1	Amh Hbr JewAram	Amh Gez Hbr	JewAram	Gez	0
+2N:88	*γ/ʕVṗr-	young of ungulate	627	*γupr-	young fallow deer	PCS	0	0	Arb Hbr	Arb Hbr			0
+2N:89	*γārib-, *γurāb-	crow, raven	642	*γārib-, *γurā̆b-	crow, raven	PS	0	1	Akk Arb Ebl Hbr JewAram Jib Mhr Mnd Soq Syr	Akk Arb Ebl Hbr Hrs JewAram Jib Mhr Mnd Soq Syr		Hrs	0
+2N:90	*γVrVn-	eagle	1075	*γVrVn-	eagle	PS	1	1	Akk Arb	Akk Arb			1
+2N:91	*γVrnīḳ-	crane	1735	*γVrnīḳ-	crane	PS	1	1	Akk Arb	Akk Arb			1
+2N:92	*γVzāl-	gazelle	628	*γVzāl-	gazelle	PS	1	1	Akk Arb JewAram Syr	Akk Arb Syr	JewAram		0
+2N:93	*hVm/wām-	large wild beast	1619	*hVm/wām-	large wild beast	PS	1	1	Akk Arb Tgr	Akk Arb Tgr			1
+2N:94	*hatatVw/y-at-	spider	1620	*hatatVw/y-at-	spider	PS	1	1	Akk Tgr	Akk Tgr			1
+2N:95	*hVwVy-	kind of worm, snake	1622	*hVwVy-	kind of worm, snake	PWS	1	1	JewAram Jib	JewAram Jib			0
+2N:96	*ḥVbVŝₓ-	kind of insect	1736	*ḥVbVŝₓ-	kind of insect	PS	1	1	Arb Syr Tgr	Arb Syr Tgr			1
+2N:97	*ḥagal-	partridge	1621	*ḥagal-	partridge	PWS	1	1	Arb Syr Tgr	Arb Syr Tgr			0
+2N:98	*ḥimār-	donkey	610	*ḥimār-	donkey	PS	1	1	Akk Arb Hbr JewAram Mnd Sab Syr Ugr	Akk Arb Hbr JewAram Mnd Sab Syr Ugr			1
+2N:99	*ḥVm(V)ṭ-	kind of snake, lizard	659	*ḥVmṭ-	(a lizard)	PS	0	0	Akk Arb Hbr JewAram	Akk Arb Hbr	JewAram		0
+2N:100	*ḥV(n)g-	kind of worm, centipede	1627	*ḥV(n)g-	kind of a worm, centipede	PWS	1	0	Jib Tna	Jib Tna			0
+2N:101	*ḥVrb-	chameleon	655	*ḥVrb-	chameleon	PS	1	1	Akk Arb Ebl	Akk Arb Ebl			1
+2N:102	*ḥVrd/ḏān-	kind of lizard	660	*ḥVrd/ḏān-	(a lizard)	PS	1	0	Amh Arb Ebl Har Hbr JewAram Syr	Amh Arb Ebl Har Hbr Syr	JewAram		0
+2N:103	*ḥargVl-	locust	677	*ḥargal-	locust	PS	0	1	Akk Arb Ebl Hbr JewAram Syr	Akk Arb Ebl Hbr Sab Syr	JewAram	Sab	0
+2N:104	*ḥarSap-	young of animals, larva	1628	*ḥarSap-	'young of animals, larva'	PS	1	1	Akk Arb	Akk Arb			1
+2N:105	*ḥVsVn-	kind of insect	679	*ḥVsVn-	a kind of harmful insect	PWS	1	0	Amh Gez Tna Ugr	Amh Gez Hbr Tna Ugr		Hbr	0
+2N:106	*ḥVwār-	young camel	1630	*ḥVwār-	young camel	PS	1	1	Arb Hrs Mhr Tgr	Arb Hrs Mhr Tgr			1
+2N:107	*ḫVl-	kind of bird	1632	*ḫVl-	kind of bird	PS	1	1	Arb Hbr	Arb Hbr			1
+2N:108	*ḫuld-	mole	637	*ḫuld-	mole	PCS	1	1	Arb Hbr JewAram Syr	Arb Hbr JewAram Syr			0
+2N:109	*ḫaml-, *ḫVlVm-	kind of insect	1633	*ḫaml-, *ḫVlVm-	kind of insect	PS	1	1	Akk Hrs Jib Mhr Soq	Akk Hrs Jib Mhr Soq			1
+2N:110	*ḫVnnVṣ-	piglet	825	*ḫVnnVṣ-	piglet	PCS	1	1	Arb Syr Ugr	Arb Syr Ugr			0
+2N:111	*ḫV(n)zīr-	pig	618	*ḫV(n)zīr-	pig	PS	1	1	Akk Arb Gez Hbr JewAram Jib Mhr Mnd Syr Ugr	Akk Arb Gez Hbr JewAram Jib Mhr Mnd Syr Ugr			1
+2N:112	*ḫVnz(i/uz)-	kind of insect	1076	*ḫVnz(i/u)z-	kind of insect	PS	0	1	Akk Amh Arb Tgr Tna	Akk Arb	Amh Tgr Tna		0
+2N:113	*ḫVrVp-	young sheep	603	*ḫVrVp-	lamb	PS	1	0	Akk Arb Hrs JewAram Jib Mnd Syr Ugr	Akk Arb Hrs Jib Mnd Syr Ugr	JewAram		0
+2N:114	*kabŝ-	young ram	600	*kabŝ-	ram	PS	1	0	Akk Arb Hbr Hrs Jib Mhr Mnd Soq Syr	Akk Arb Hbr Hrs Jib Mhr Soq Syr	Mnd		0
+2N:115	*kalb-	dog	1	*kalb-	dog	PS	1	1	Akk Amh Arb Gez Hbr Hrs JewAram Jib Mhr Mnd Pho Sab Soq Syr Tgr Tna Ugr	Akk Amh Arb Gez Hbr Hrs JewAram Jib Mhr Mnd Pho Sab Soq Syr Tgr Tna Ugr			1
+2N:116	*ki/ann(-Vm)-	a harmful insect	672	*kVnVm-	louse	PS	0	0	Ebl Hbr Hrs JewAram Jib Mhr Soq	Ebl Hbr Hrs JewAram Jib Mhr	Soq		0
+2N:117	*k(ʷ)arkiy- // *kurkiy-	goose, crane	1650	*kurkiy-	goose, crane	PS	0	1	Akk Arb Gez JewAram Mnd Syr	Akk Arb Gez JewAram Mnd Syr			0
+2N:118	*ka/irr-	ram	1077	*ka/irr-	ram	PS	1	1	Akk Hbr Ugr	Akk Hbr Ugr			1
+2N:119	*kʷaraz- // *karaʒ-	kind of insect	1757	*kʷaraz-, karaʒ-	kind of insect	PS	0	1	Gez JewAram	Gez JewAram			0
+2N:120	*kVS-	a (mythical) aquatic reptile	1758	*kVS-	a (mythical) aquatic reptile	PS	1	1	Akk Gez Tgr Tna	Akk Gez Tgr Tna			1
+2N:121	*kVs(Vs)-	kind of bird of prey	1765	*kVs(Vs)-	kind of bird of prey	PS	1	1	Akk Hbr JewAram	Akk Hbr	JewAram		0
+2N:122	*kʷVt(t)ān-, *tukʷān- // *kut(t)ān-, *tukān-	bug	1771	*tukʷān-	bedbug	PES	0	0	Amh Arb Gez Har Mhr Tgr Tna	Amh Arb Gez Har Tgr Tna	Mhr		0
+2N:123	*kVw-	kind of bird	1785	*kVw-	kind of bird	PS	1	1	Akk JewAram Tgr	Akk Tgr	JewAram		0
+2N:124	*kawdan-	mule	617	*kawdan-	mule	Areal reconstruction	1	1	Akk Arb Ebl JewAram Mnd Syr Ugr	Akk Arb Ebl Mnd Syr Ugr	JewAram		0
+2N:125	*kVwVr-	kind of fish	1731	*kVwVr-	kind of fish	PS	1	1	Akk JewAram Mnd Soq	JewAram Mnd Soq	Akk		0
+2N:126	*ḳ(ʷ)aʔ(ḳ(ʷ)aʔ)- // *ḳaʔ(ḳaʔ)-	kind of bird	1732	*ḳ(ʷ)aˀ(ḳ(ʷ)aˀ)-	kind of bird	PS	0	1	Akk Amh Ebl Hbr JewAram Syr	Akk Amh Hbr JewAram Syr	Ebl		0
+2N:127	*ḳʷāʕ- // *ḳāʕ-	crow	1786	*ḳāˁ-	crow	PS	0	1	Gez Syr Tgr	Gez Syr Tgr			0
+2N:128	*ḳʷaʕḳʷaʕ- // *ḳaʕḳaʕ-	frog	1788	*ḳaˁḳaˁ-	frog	PS	0	1	Jib Mhr	Jib Mhr			0
+2N:129	*ḳVmḥ-	kind of insect	1789	*ḳVmḥ-	kind of insect	PS	1	1	Syr Tgr	Syr Tgr			1
+2N:130	*ḳ(ʷ)aml- // *ḳumāl-, *ḳalm-	louse	670	*ḳumāl-	kind of harmful insect, louse	PWS	0	0	Amh Arb Gez Har Sab Tgr Tna	Amh Arb Gez Har Sab Tgr Tna			0
+2N:131	*ḳam(a)ṣ-	kind of (harmful) insect	680	*ḳVṣVm-, *ḳVmVṣ-/*ḳamṣ-	a kind of harmful insect	PWS	0	0	Arb Har JewAram Jib Mnd Syr	Amh Arb Gez JewAram Jib Mnd Syr Ugr	Har	Amh Gez Ugr	0
+2N:132	*ḳ(ʷ)a(n)ḳ(ʷ)an- // *ḳV(n)ḳVn-	kind of worm, insect	1778	*ḳV(n)ḳVn-	kind of worm, insect	PS	0	1	Akk Amh Arb Gez Har JewAram Tgr	Akk Amh Arb Gez Har JewAram Tgr			0
+2N:133	*ḳ(ʷ)inpaḏ- // *ḳunpuḏ-	hedgehog	636	*ḳunpuḏ-	hedgehog	PWS	0	1	Arb Ebl Gez Hbr JewAram Mnd Syr Tgr Tna	Arb Ebl Gez Hbr Mnd Syr Tgr Tna	JewAram		0
+2N:134	*ḳʷāriʔ/y- // *ḳāriʔ/y-	kind of bird, partridge	1780	*ḳāriˀ/y-	kind of bird, partridge	PWS	0	1	Amh Arb Hbr JewAram Tna	Amh Arb Hbr JewAram	Tna		0
+2N:135	*ḳʷVrVd- // *ḳVrd-	tick	1604	*ḳʷVrVd-, *ḳVrd-	tick	PS	0	1	Arb Har JewAram Syr Tgr Tna	Arb Har Syr Tgr Tna	JewAram		0
+2N:136	*ḳVr(Vl)l-	kind of bird	1838	*ḳVr(Vl)l-	kind of bird	PWS	1	1	Arb Syr	Syr	Arb		0
+2N:137	*ḳVr(V)r-	frog	1787	*ḳVr(V)r-	frog	PS	1	1	Amh Arb Gez Har JewAram Tna	Arb Gez Syr	Amh Har JewAram Tna	Syr	0
+2N:138	*ḳarṣ-	kind of harmful insect; mosquito	1781	*ḳarṣ-	kind of harmful insect; mosquito	PCS	1	1	Arb Hbr Hrs JewAram Jib Mhr	Arb Hbr Hrs Jib Mhr	JewAram		0
+2N:139	*ḳVṣam-	locust, (locust) larva	680	*ḳVṣVm-, *ḳVmVṣ-/*ḳamṣ-	a kind of harmful insect	PWS	0	0	Amh Arb Ugr	Amh Arb Gez JewAram Jib Mnd Syr Ugr		Gez JewAram Jib Mnd Syr	0
+2N:140	*ḳut-	kind of insect	1824	*ḳut-	kind of insect	PWS	1	1	Syr Tgr	Syr Tgr			0
+2N:141	*ḳʷVṭVn- // *ḳVṭVn-	kind of insect	1783	*ḳVṭVn-	kind of insect	PWS	0	1	Amh Gez Syr	Amh Gez Syr			0
+2N:142	*liʔ(-at)-, *laʔay-at-	head of large cattle	591	*laˀay-at-, *layˀ-at-	cow	PS	0	0	Akk Arb Ebl Hrs Jib Mhr Soq	Akk Arb Ebl Hrs Jib Mhr Soq			0
+2N:143	*lVʔlVʔ-	head of small cattle	608	*laˀlaˀ-	head of small cattle	PS	0	1	Akk Soq Ugr	Akk Ugr	Soq		0
+2N:144	*labVʔ-	lion(ess)	136	*labVˀ-	lion	PS	1	0	Akk Arb Ebl Hbr Sab Ugr	Akk Arb Ebl Hbr Sab Ugr			0
+2N:145	*lVḫVm-	kind of large aquatic animal	785	*lVḫVm-	kind of large aquatic animal	PS	1	1	Akk Arb Hrs Jib Mhr Soq	Akk Arb Hrs Jib Mhr	Soq		0
+2N:146	*laḳlaḳ-	stork	645	*laḳlaḳ-	stork	PS	1	1	Akk Arb Ebl	Akk Arb Ebl			1
+2N:147	*layṯ-	lion	1140	*layṯ-	lion	PCS	1	1	Arb Hbr JewAram	Arb Hbr	JewAram		0
+2N:149	*muhr-	foal	614	*muhr-	foal	PS	1	1	Akk Arb Gez Sab Syr Tna	Akk Gez Sab Syr Tna	Arb		0
+2N:150	*mVḳ(Vḳ)-	kind of insect	1623	*mVḳ(Vḳ)-	kind of insect	PS	1	1	Akk Arb JewAram	Akk Arb JewAram			1
+2N:151	*mV(n)dīn-	a large wild cat	1624	*mV(n)dīn-	a large wild cat	PS	1	1	Akk Arb Ebl	Akk Arb Ebl			1
+2N:152	*mVn(Vn)-	kind of insect	1078	*mVn(Vn)-	kind of insect	PS	1	1	Akk Arb Ebl Syr	Akk Arb Ebl Syr			1
+2N:153	*mir(Vʔ)-	bull	1079	*mir(Vˀ)-	bull	PS	1	1	Akk Hbr	Akk	Hbr		0
+2N:154	*mVSVṭ-	kind of insect	1625	*mVs/ŝVṭ-	kind of insect	PS	0	1	Amh Gez Syr	Amh Gez Syr			0
+2N:155	*nu/aʕ(ā)m-	ostrich	1626	*nu/aˁ(ā)m-	ostrich	PS	1	1	Arb Hbr JewAram Syr	Arb Hbr JewAram Syr			1
+2N:156	*nūb(-at)-	bee	249	*nūb(-at)-	bee	PS	1	1	Akk Amh Arb Ebl Gez Hbr Jib Mhr Tgr Tna	Akk Amh Arb Ebl Gez Jib Mhr Tgr Tna	Hbr		0
+2N:157	*nāb-, *nib(b)-	louse, nit	674	*nāb-, *nib(b)-	nit	PS	1	0	Akk Ebl JewAram Mhr Soq Syr	Akk JewAram Mhr Soq Syr	Ebl		0
+2N:158	*nVγVr-	kind of bird	1629	*nVγVr-	kind of bird	PS	1	1	Akk Arb Mhr	Akk Arb Mhr			1
+2N:159	*nVhVš-	lion	271	*naḥaš-	snake	PC	0	0	Akk Arb Ebl Ugr	Hbr Ugr	Akk Arb Ebl	Hbr	0
+2N:160	*nVḥl-	swarm of bees	1631	*nVḥl-	swarm of bees	PS	1	1	Arb Hbr JewAram	Arb Hbr	JewAram		0
+2N:161	*nāḳ-at-	she-camel	800	*nāḳ-at-	camel	Areal reconstruction	1	0	Akk Arb Gez Hbr JewAram Sab	Akk Arb Gez Hbr JewAram Sab			0
+2N:162	*nVḳVr-	kind of bird	1634	*nVḳVr-	kind of bird	PS	1	1	Arb JewAram Mhr Syr	Arb Mhr	JewAram Syr		0
+2N:163	*nam(V)l-	ant	668	*namal-/*naml-	ant	PWS	0	1	Akk Arb Hbr Hrs Jib Mhr Soq Syr	Arb Hbr Hrs Jib Mhr Syr	Akk Soq		0
+2N:164	*namir-	leopard	619	*namir-	leopard	PS	1	1	Akk Amh Arb Ebl Gez Hbr Hrs JewAram Mhr Mnd Sab Syr Tgr Tna	Akk Amh Arb Gez Hbr JewAram Mnd Sab Syr Tgr Tna	Ebl Hrs Mhr		0
+2N:165	*nVšVp-	kind of bird	1080	*nVšVp-	kind of bird	PS	1	1	Akk Arb Hbr	Akk Arb Hbr			1
+2N:166	*nVšr-	eagle, vulture	643	*našr-	eagle	PWS	0	0	Akk Amh Arb Gez Hbr JewAram Jib Mhr Mnd Soq Syr Tgr Tna Ugr	Akk Amh Arb Gez Hbr Jib Mhr Mnd Syr Tgr Ugr	JewAram Soq Tna		0
+2N:167	*nVṣVr-	cricket	1640	*nVṣVr-	cricket	PS	1	1	Amh Hbr Syr Tgr Tna	Amh Hbr Syr Tgr Tna			1
+2N:168	*na/iṣ(ṣ)-	kind of bird	1641	*na/iṣ(ṣ)-	kind of a bird	PS	1	0	Akk Arb Hbr JewAram Pho Syr Ugr	Akk Arb Hbr JewAram Pho Syr Ugr			0
+2N:169	*na(ya)l-	a wild hoofed animal	629	*na(ya)l-	a wild ruminant	PS	1	0	Akk Amh Tgr Tna	Akk Amh Tgr Tna			0
+2N:170	*paʔr-	mouse	633	*paˀr-	mouse	PS	1	1	Har	Akk Amh Arb Ebl Har		Akk Amh Arb Ebl	0
+2N:171	*pahd-	cheetah	1081	*pahd-	cheetah	PWS	1	1	Mhr	Arb Jib Mhr Mnd Syr		Arb Jib Mnd Syr	0
+2N:172	*pVḥVr-	kind of worm	1082	*pVḥVr-	kind of worm	PWS	1	1		Arb Har Jib		Arb Har Jib	0
+2N:173	*pVl-	elephant(?); a large hoofed animal(?)	639	*pīl-, *pīr-	elephant	PS	0	0	Gez Hbr JewAram Mnd	Akk Arb Gez Hbr JewAram Mnd Syr		Akk Arb Syr	0
+2N:174	*pVlw/y-	yearling foal, small of domestic animals	1642	*pVlw/y-	yearling foal, small of domestic animals	PS	1	1	Arb Tgr	Arb Soq Tgr		Soq	0
+2N:175	*pVl(y)-	kind of insect, louse	673	*ply	to delouse	PWS	0	0	Akk JewAram	Amh Arb Hrs JewAram Jib Mhr Soq Syr	Akk	Amh Arb Hrs Jib Mhr Soq Syr	0
+2N:176	*par(a)ʔ-	wild ass	631	*par(a)ˀ-	wild ass	PS	1	1	Hbr Sab	Akk Arb Hbr Sab		Akk Arb	0
+2N:177	*pi/ard-	an equid	615	*pVrd-	mule	Areal reconstruction	0	0	Arb JewAram Sab	Akk Hbr JewAram Ugr	Arb Sab	Akk Hbr Ugr	0
+2N:179	*parḫ-	chick, brood	108	*parḫ-	chick, brood, young of a bird	PWS	1	0	Arb Hbr JewAram	Arb Gez Hbr JewAram Mnd Soq Syr		Gez Mnd Soq Syr	0
+2N:180	*pVrpVr-, *parr/w-	kind of bird	1647	*pVrpVr-, *parr/w-	kind of bird	PS	1	1	JewAram	Amh Arb Gez JewAram Syr Tgr		Amh Arb Gez Syr Tgr	0
+2N:181	*parr-	young of small or large cattle	594	*parr(-at)-	(meaning is uncertain)	PS	0	0	Hbr JewAram Mnd	Akk Arb Hbr JewAram Mnd Syr Ugr		Akk Arb Syr Ugr	0
+2N:182	*paraš-	horse	613	*paraš-	horse	PWS	1	1	Amh Arb JewAram Mhr	Amh Arb Gez Har Hbr Hrs JewAram Jib Mhr Mnd Sab Soq Syr Tgr Tna		Gez Har Hbr Hrs Jib Mnd Sab Soq Syr Tgr Tna	0
+2N:183	*pVšpVš-	bug	1648	*pVšpVš-	bug	PCS	1	1	Arb Hbr Syr	Arb Hbr Syr			0
+2N:184	*pVṣγ-	gecko	658	*pVṣγ-	gecko	PS	1	1	Jib	Jib Mhr		Mhr	0
+2N:185	*ṗVrγVṯ-, *ṗVrṯaγ-	flea	669	*pVrγVṯ-	flea	PS	0	1	Akk Arb Hbr	Akk Arb Ebl Hbr Syr		Ebl Syr	0
+2N:186	*riʔm-	aurochs	625	*riˀm-	wild bull (bos primigenius)	PS	1	0	Akk Arb Hbr JewAram Syr Ugr	Akk Arb Hbr JewAram Syr Ugr			0
+2N:187	*raʔ/w/hy-	kind of bird	1675	*raˀ/w/hy-	kind of bird	PS	1	1	Arb Hbr Tgr Tna	Arb Hbr Tgr Tna			1
+2N:188	*raḫil-	ewe	599	*raḫil-	ewe	PWS	1	1	Akk Arb Hbr JewAram Soq	Akk Arb Hbr JewAram	Soq		0
+2N:189	*raḫam-	bird of prey	644	*raḫam-	Egyptian vulture	PWS	1	0	Arb Hbr Hrs Jib Mhr	Arb Hbr Hrs Jib Mhr			0
+2N:190	*raḳḳ-	turtle	662	*raḳḳ-	turtle	PS	1	1	Akk Arb JewAram Mnd Syr	Akk Arb Mnd Syr	JewAram		0
+2N:191	*rimm-at-	kind of insect, worm	684	*rimm-at-	(meaning is uncertain)	PWS	1	0	Akk Arb Hbr JewAram Mnd Syr	Arb Hbr JewAram Mnd Syr	Akk		0
+2N:192	*sVḥ/ḫVṭ-	kind of insect	1676	*sVḥ/ḫVṭ-	kind of insect	PS	1	1	Akk Gez	Akk Gez			1
+2N:193	*SVkk-	kind of small mammal	828	*šVkk-	kind of small mammal	PS	0	1	Akk Amh	Akk Amh			0
+2N:194	*saḳʷāt-	kind of bird	1678	*saḳʷāt-/*saḳāt-	kind of bird	PS	0	1	Akk Tna	Akk Tna			0
+2N:195	*SVlw-	quail	1677	*SVlw-	quail	PS	1	1	Arb Hbr JewAram Soq Syr	Arb Hbr JewAram Syr	Soq		0
+2N:196	*sVm(V)m(-at)-	kind of bird	1679	*sVm(V)m(-at)-	kind of bird	PS	1	1	Akk Arb	Akk Arb			1
+2N:197	*su/inūn(Vw/y)-at-	swallow	647	*sVnūn(Vw)-at-	swallow	PS	0	1	Akk Arb Hbr JewAram Syr Ugr	Akk Arb Hbr Syr Ugr	JewAram		0
+2N:198	*sā/ūs-	moth	675	*sā/ūs-	moth	PS	1	1	Akk Amh Arb Ebl Har Hbr JewAram Mhr Mnd Syr	Akk Amh Arb Ebl Har Hbr JewAram Mhr Mnd Syr			1
+2N:200	*šibb-	kind of snake, worm	1084	*šibb-	kind of snake, worm	PS	1	1	Akk Hrs Mhr	Akk Hrs Jib Mhr		Jib	0
+2N:201	*šVl-	kind of bird	1685	*šVl-	kind of bird	PS	1	1	Amh Gez JewAram Syr Tna	Amh Gez JewAram Syr Tna			1
+2N:202	*šalaḥpaw/y-, *šalapḥaw/y-	turtle	663	*šalaḥpaw/y-, *šalapḥaw/y-	turtle	PS	1	1	Akk Arb Ebl Mhr	Akk Arb Ebl Mhr			1
+2N:203	*šVl(V)k-	kind of bird	1686	*šVl(V)k-	kind of bird	PS	1	1	Arb Hbr	Arb Hbr			1
+2N:204	*š/ŝVmm-	kind of reptile (snake, lizard)	1687	*š/ŝVmm-	kind of reptile (snake, lizard)	PS	1	1	Akk Arb Hbr JewAram	Akk Arb Hbr JewAram			1
+2N:205	*šumšum-	ant	1690	*šumšum-	ant	PS	1	1	Arb JewAram Mnd Syr	Arb JewAram Mnd Syr			1
+2N:206	*šu/in(n)ār-, *šurān-	cat	1085	*šu/in(n)ār-, *šurān-	cat	PS	1	1	Akk Arb Hrs JewAram Jib Mhr Mnd Syr	Akk Arb Hrs JewAram Jib Mhr Mnd Syr			1
+2N:207	*šVpp-	kind of snake, worm, insect larvae	1691	*šVpp-	kind of snake, worm, insect larvae	PS	1	1	Arb Hbr JewAram Syr Tgr	Arb Hbr JewAram Syr Tgr			1
+2N:209	*ṣVl(Vl)-	kind of bird of prey	1692	*ṣVl(Vl)-	kind of bird of prey	PS	1	1	Akk Amh Gez Har JewAram Syr	Akk Amh Gez Har JewAram Syr			1
+2N:212	*ṣVp(p)Vr-	(kind of small) bird	106	*ṣVp(p)Vr-	(kind of small) bird	PWS	1	1	Akk Amh Arb Hbr Hrs JewAram Jib Mnd Pho Soq Syr Ugr	Akk Arb Hbr Hrs JewAram Jib Mnd Pho Soq Syr	Amh Ugr		0
+2N:213	*ṣarṣa/ūr-	cricket	678	*ṣarṣar-, *ṣarṣūr-	cricket	PS	0	1	Akk Arb Ebl Hbr JewAram Syr	Akk Arb Hbr JewAram Syr	Ebl		0
+2N:214	*ŝVm-	kind of mouse, rat	1707	*ŝVm-	kind of mouse, rat	PS	1	1	Akk Arb Ebl	Akk Arb	Ebl		0
+2N:215	*ŝarap-	kind of creeping creature	1708	*ŝarap-	kind of creeping creature	PS	1	1	Hbr Mhr	Hbr Mhr			1
+2N:216	*ŝVrŝūr-	kind of bird	1709	*ŝVrŝūr-	kind of bird	PS	1	1	Akk Arb	Akk Arb			1
+2N:217	*ŝaw-	sheep	597	*ŝaw/y-	a single head of small cattle	PCS	0	0	Akk Arb Hbr Pho Sab Ugr	Arb Hbr Pho Sab Ugr	Akk		0
+2N:218	*ŝₓVbay(-at)-	kind of insect	1711	*ŝₓVbay(-at)-	kind of insect	PS	1	1	Akk Arb Hbr	Akk Arb Hbr			1
+2N:219	*ṣ̂aʔn-	small cattle	596	*ṣ̂aˀn-	small cattle	PS	1	1	Akk Arb Hbr JewAram Mnd Pho Sab Syr Ugr	Akk Arb Hbr JewAram Mnd Pho Sab Syr Ugr			1
+2N:220	*ṣ̂ab(u)ʕ-	hyena	622	*ṣ̂VbVˁ-	hyena	PS	0	1	Arb Gez Hbr Mnd Soq Syr	Akk Arb Gez Hbr JewAram Mnd Syr	Soq	Akk JewAram	0
+2N:221	*ṣ̂abb-	kind of lizard	656	*ṣ̂abb-	monitor lizard	PWS	1	0	Arb Hbr Hrs JewAram Jib Mhr Syr	Arb Hbr Hrs Jib Mhr Syr	JewAram		0
+2N:222	*ṣ̂Vpardiʕ-	frog	648	*ṣ̂VpardVˁ-	frog	PWS	0	1	Akk Arb Hbr Hrs JewAram Mhr Syr	Arb Hbr Hrs JewAram Mhr Syr	Akk		0
+2N:223	*ṣ̂Vrʕ(-at)-	wasp	1712	*ṣ̂Vrˁ(-at)-	wasp	PCS	1	1	Hbr JewAram Jib	Hbr JewAram Jib			0
+2N:224	*ṣ̂ayw-	wild cat	1713	*ṣ̂ayw-	wild cat	PS	1	1	Arb Hbr	Arb Hbr			1
+2N:225	*tāʔ/y-	kind of antelope	1714	*tāˀ/y-	kind of antelope	PS	1	1	Amh Hbr Tgr	Amh Hbr Tgr			1
+2N:226	*tVkur(r)-	kind of bird	1715	*tVkur(r)-	kind of bird	PS	1	1	Akk Tgr	Akk Tgr			1
+2N:227	*tVnnVn-	(mythical) snake, dragon	651	*tVnVn-	a myhical snake (dragon)	PWS	0	0	Hbr JewAram Mnd Syr Ugr	Hbr JewAram Mnd Syr Ugr			0
+2N:228	*tVrbal-, *bVrtal-	large hoofed animal	1716	*tVrbal-, *bVrtal-	large-hoofed animal	PS	1	1	JewAram Tgr	JewAram Tgr			1
+2N:229	*tVrr-	kind of bird	1087	*tVrr-	kind of bird	PS	1	1	Akk Hbr Syr Ugr	Akk Hbr Syr Ugr			1
+2N:230	*tawliʕ(-at)-	worm	682	*tawliˁ-at-	worm	PS	0	1	Akk Amh Ebl Har Hbr Hrs JewAram Jib Mhr Mnd Soq Syr	Akk Amh Har Hbr Hrs JewAram Jib Mhr Mnd Syr	Ebl Soq		0
+2N:231	*tayš-	he-goat	604	*tayš-	billy goat	PS	1	0	Akk Arb Ebl Hbr Hrs JewAram Jib Mhr Soq Syr Tgr	Akk Arb Hbr Hrs JewAram Jib Mhr Soq Syr Tgr	Ebl		0
+2N:232	*ṭalay-	lamb, kid	602	*ṭalay-	lamb	PWS	1	0	Amh Arb Gez Har Hbr JewAram Mnd Sab Tgr Tna	Arb Gez Har Hbr JewAram Mnd Sab Syr Tgr Tna	Amh	Syr	0
+2N:233	*ṭVrVḳay-, *ṭVḳVray-	kind of insect (bee, wasp)	1717	*ṭVrVḳay-, *ṭVḳVray-	kind of insect (bee, wasp)	PS	1	1	JewAram Tna	Tna	JewAram		0
+2N:234	*ṭaγ-	(young) bull	1718	*ṭaγ-	(young) bull	PS	1	1	Arb Gez Tna	Arb Gez Tna			1
+2N:235	*ṭayr-	bird	107	*ṭayr-	bird	PS	1	1	Amh Arb Gez Syr Tgr	Arb Gez Hbr JewAram Syr	Amh Tgr	Hbr JewAram	0
+2N:236	*ṯaʔ(w/y)-at-	ewe	598	*ṯaˀ(w)-at-	ewe	PS	0	1	Arb Hrs Jib Mhr Mnd Soq Ugr	Akk Arb Hrs Jib Mhr Mnd Ugr	Soq	Akk	0
+2N:237	*ṯVʕ(V)l-, *ṯaʕlab-	fox	621	*ṯVˁVl-, *ṯaˁlab-	fox	PS	0	1	Akk Arb Hbr Hrs JewAram Jib Mhr Mnd Syr	Akk Arb Hbr Hrs JewAram Jib Mhr Mnd Syr			0
+2N:238	*ṯVbl(Vl)-	kind of insect, snail	1719	*ṯVbl(Vl)-	kind of insect, snail	PS	1	1	Akk Hbr JewAram	Akk Hbr	JewAram		0
+2N:239	*ṯVl-	head of small cattle	1088	*ṯVl-	head of small cattle	PS	1	1	Akk Arb Hrs Mhr Tgr	Akk Arb Hrs Mhr Tgr			1
+2N:240	*ṯapan-	rock hyrax	638	*ṯapan-	rock hyrax	PWS	1	1	Hbr Jib Mhr	Hbr Jib Mhr			0
+2N:241	*ṯawr-	bull, ox	345	*ṯawr-	bull, ox	PS	1	1	Akk Arb Ebl Gez Hbr Hrs JewAram Mhr Mnd Sab Syr Tgr Tna Ugr	Akk Arb Ebl Gez Hbr Hrs Mhr Sab Tgr Tna Ugr	JewAram Mnd Syr		0
+2N:242	*ṯ̣aby(-at)-	gazelle	624	*ṯ̣aby(-at)-	gazelle	PS	1	1	Akk Arb Ebl Hbr JewAram Mnd Sab Syr Ugr	Akk Arb Ebl Hbr JewAram Mnd Sab Syr Ugr			1
+2N:243	*wVʕ-	kind of bird	1720	*wVˁ-	kind of bird	PS	1	1	Syr Tgr	Syr Tgr			1
+2N:244	*waʕil-	ibex	626	*waˁil-	ibex	PWS	1	1	Amh Arb Ebl Gez Hbr Hrs JewAram Jib Mhr Sab Tna	Amh Arb Ebl Gez Hbr Hrs Jib Mhr Sab Syr Tna Ugr	JewAram	Syr Ugr	0
+2N:245	*wābil-	ram	1721	*wābil-	ram	PS	1	1	Arb JewAram	Arb Hbr JewAram Pho		Hbr Pho	0
+2N:246	*waran-, *waral-	kind of large lizard (varan?)	661	*waran/l-	(a lizard)	PS	0	0	Akk Arb Hrs Mhr	Akk Arb Hrs JewAram Mhr Syr		JewAram Syr	0
+2N:247	*waw-at-	kind of bird	1722	*waw-at-	kind of bird	PS	1	1	JewAram	JewAram			1
+2N:248	*w/yaʕr-, *w/yarʕ-	(young of) ungulate	1723	*w/yaˁr-, *w/yarˁ-	(young of) ungulate	PS	1	1	Tgr	Arb Hbr Tgr		Arb Hbr	0
+2N:249	*yaḥmūr-	kind of antelope, roebuck	1169	*yaḥmūr-	kind of antelope	PCS	1	0	Hbr JewAram Mnd Ugr	Arb Hbr JewAram Mnd Syr Ugr		Arb Syr	0
+2N:250	*yapan-	young bull	1089	*yapan-	young bull	PWS	1	1	Amh Arb Gez Tna Ugr	Amh Arb Gez Tna Ugr			0
+2N:251	*yarbVʕ-	kind of rodent	635	*yarbVˁ-	jerboa	PS	1	0	Akk Arb Ebl	Akk Arb Ebl Syr		Syr	0
+2N:252	*yawn(-at)-, *wānay-	dove	646	*yawn(-at)-, *wānay-	dove	PWS	1	1	Amh Hbr JewAram Mnd Ugr	Amh Gez Hbr JewAram Mnd Syr Ugr		Gez Syr	0
+2N:253	*zVmr-	gazelle	1724	*zVmr-	gazelle	PS	1	1	Arb Hbr Ugr	Arb Hbr Ugr			1
+2N:254	*zarzī/ūr-	starling	1725	*zarzī/ūr-	starling	PS	1	1	Akk Arb Hbr Syr	Akk Arb Hbr Syr			1
+2N:255	*zīz-	kind of insect	1726	*zīz-	kind of insect	PS	1	1	Akk Arb Hbr JewAram	Akk Arb Hbr	JewAram		0

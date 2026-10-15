@@ -1,0 +1,28 @@
+{{reconstructed}}
+==Proto-Semitic==
+
+===Noun===
+{{sem-noun|m}}
+
+# [[lamb]]
+
+====Inflection====
+{{sem-decl-noun}}
+
+====Descendants====
+* East Semitic:
+** {{desc|akk|immerum|tr=immerum|t=sheep, ram}}
+* West Semitic:
+** Central Semitic:
+*** {{desc|ar|-|tr=ʔimmar-|t=lamb}}
+*** Northwest Semitic:
+**** {{desc|syc|ܐܡܪܐ|tr=ʔemmrā|t=lamb}}
+**** Canaanite:
+***** {{desc|hbo|אִמֵּר|tr=ʔimmēr|t=lamb}}
+***** {{desc|phn|𐤀𐤌𐤓|tr=ʔmr|t=lamb}}
+**** {{desc|uga|𐎀𐎎𐎗|tr=ʔmr|t=lamb}}
+
+===References===
+* {{R:sem-pro:SED|volume=II|id=363|entry=*ʔimmar-}}
+
+{{C|sem-pro|Mammals}}

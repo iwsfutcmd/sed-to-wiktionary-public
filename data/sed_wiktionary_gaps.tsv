@@ -11,7 +11,6 @@ vol	section	no	protoform	gloss	status	wikt_ps	wikt_pws	same_skeleton	n_branches	
 1	nominal	157	*kʷirāʕ-	knee and shin-bone; lower leg (of animal)	gap	no	no		7	22	0	293
 2	nominal	111	*ḫV(n)zīr-	pig	gap	no	no		7	22	0	240
 1	verbal	5	*ʕwr	to be blind	gap	no	no		7	20	0	427
-1	verbal	79	*ṯ̣mʔ	to be thirsty	gap	no	no		7	20	0	483
 1	nominal	231	*raḥ(i)m-, *riḥm-	womb	gap	no	no		7	20	0	356
 2	nominal	73	*ḏVb(V)b-	fly	gap	no	no		7	18	17	199
 1	verbal	44	*nhḳ	to bray (of donkey); cry, groan; roar	gap	no	no		7	18	0	456
@@ -526,9 +525,10 @@ vol	section	no	protoform	gloss	status	wikt_ps	wikt_pws	same_skeleton	n_branches	
 1	verbal	43	*mwt	to die	same_skeleton	no	no	PS:mawut-	8	29	0	455
 1	verbal	80	*wld	to bear, give birth to	same_skeleton	no	no	PS:walad-	8	19	0	484
 2	nominal	35	*ʕVnz-	goat	same_skeleton	no	no	PS:ʕVnz-	7	30	0	144
+1	verbal	79	*ṯ̣mʔ	to be thirsty	same_skeleton	no	no	PS:ṯ̣amiʔ-	7	20	0	483
 1	nominal	6	*ʔamm-at-	elbow, forearm	same_skeleton	no	no	PS:ʔamat-;PS:ʾamt-	7	15	0	160
 1	nominal	11	*ʔi/ušk(-at)-	testiculus	same_skeleton	no	no	PS:ʔVšk-	7	9	0	165
-1	nominal	285	*ṯ̣ip(V)r-	nail	same_skeleton	no	no	PS:ṱupr-	6	25	0	407
+1	nominal	285	*ṯ̣ip(V)r-	nail	same_skeleton	no	no	PS:θ̣ipr-;PS:θ̣upr-;PS:ṯ̣upr-;PS:ṱupr-	6	25	0	407
 1	verbal	45	*npḫ	to blow, breathe, inflate	same_skeleton	no	no	PS:napaḫ-	6	21	0	457
 1	nominal	185	*maʕay/w(-at)-	intestines, entrails	same_skeleton	no	no	PS:miʕay-	6	17	0	320
 1	verbal	77	*ṯyn	to urinate	same_skeleton	no	no	PS:ṯayan-;PS:ṯayn-	6	12	0	482
@@ -617,7 +617,7 @@ vol	section	no	protoform	gloss	status	wikt_ps	wikt_pws	same_skeleton	n_branches	
 1	nominal	259	*ŝV(ʕ)p-at-	(tuft of) hair	covered	pattern	no	PS:śapat-	5	9	0	382
 2	nominal	149	*muhr-	foal	covered	yes	no	PS:muhr-	5	9	0	293
 2	nominal	220	*ṣ̂ab(u)ʕ-	hyena	covered	yes	no	PS:ṣ́abuʕ-;PS:ṣ́abuʿ-	5	9	0	376
-2	nominal	4	*ʔalp-	cattle	covered	yes	no	PS:ʔalp-;PS:ʾalp-	5	7	0	97
+2	nominal	4	*ʔalp-	cattle	covered	yes	yes	PS:ʔalp-;PS:ʾalp-;PWS:ʔalp-	5	7	0	97
 2	nominal	103	*ḥargVl-	locust	covered	pattern	no	PS:ḥargil-	5	7	0	233
 1	nominal	223	*pay-	mouth	covered	yes	no		4	27	0	347
 2	nominal	17	*ʔarway-	wild beast; lion	covered	yes	no	PS:ʔarway-	4	25	7	115

@@ -3,12 +3,22 @@ import csv,json,re,unicodedata as U
 from collections import Counter
 from paths import DATA,INTER,WIKT
 ps=json.loads((WIKT/'wik_ps.json').read_text(encoding='utf-8'));pw=json.loads((WIKT/'wik_pws.json').read_text(encoding='utf-8'))
+def canon(s):
+    """NFC, with each run of combining marks sorted, so ṯ+dot-below and dot-below+ṯ compare equal."""
+    out, run = [], []
+    for ch in U.normalize('NFD', s):
+        if U.combining(ch):
+            run.append(ch)
+        else:
+            out += sorted(run); run = []; out.append(ch)
+    out += sorted(run)
+    return U.normalize('NFC', ''.join(out))
 def fold(s):
     s=U.normalize('NFC',s)
     for a,b in [('ʾ','ʔ'),('ˀ','ʔ'),('ʿ','ʕ'),('ʻ','ʕ'),('ð','ḏ'),('θ','ṯ'),('ḳ','q'),('γ','ġ'),('ŝ','ś'),('ḡ','ġ'),('δ','ḏ')]:
         s=s.replace(a,b)
-    s=U.normalize('NFC',s).replace('-','').replace('*','').strip()
-    return s
+    s=s.replace('ṱ','ṯ̣')          # U+1E71 (t + circumflex below) is the same sound as ṯ̣; Wiktionary mostly writes ṯ + dot below
+    return canon(s).replace('-','').replace('*','').strip()
 def idx(titles):
     d={}
     for t in titles:
