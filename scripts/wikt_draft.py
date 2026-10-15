@@ -66,6 +66,7 @@ AKK_LEMMA = {"warkatu": "warkatum", "warki": "warki", "marāṣu": "marāṣum",
 # no lemma page: (lemma, cuneiform, its transliteration). The cuneiform is as cited on Wiktionary's Arabic بق and Classical Syriac ܒܩܐ;
 # tests/test_cuneiform.py checks that the transliteration really gives it (eBL sign list).
 AKK_OVERRIDE = {"baḳḳu": ("baqqu", "𒁀𒀝𒄣", "ba-aq-qu"),
+                "ṣabītu": ("ṣabītum", "𒈦𒁕", "MAŠ.DA"),    # the Sumerogram is the usual writing (CAD Ṣ 42 "wr. syll. and MAŠ.DÀ"); signs as drawn at assyrianlanguages.org/akkadian (entry ṣabītu 2, MAŠ.DA)
                 "gildu": ("gildu", "𒋢𒄀𒅋𒁺", None)}   # cuneiform as on Wiktionary's Hebrew גלד / Syriac ܓܠܕܐ (transliteration of the spelling not given)
 def akkadian(form):
     """-> (lemma, phonetic cuneiform spelling from the page's {{cunsp}}, or None)"""
@@ -104,7 +105,7 @@ def one(code, form, notes, first, gloss, lang):
     if code == "akk":
         lemma, cun = akkadian(form)
         if not cun: notes.append(f"Akkadian {lemma}: no cuneiform (no Wiktionary lemma page, no convertible normalised spelling)")
-        elif lemma not in AKK_ON_WIKT_CACHE(): notes.append(f"Akkadian {lemma}: {cun} (NORMALISED spelling {cuneiform.normalise(lemma)}, not an attestation)")
+        elif form not in AKK_OVERRIDE and lemma not in AKK_ON_WIKT_CACHE(): notes.append(f"Akkadian {lemma}: {cun} (NORMALISED spelling {cuneiform.normalise(lemma)}, not an attestation)")
         return f"{{{{{head}|akk|{lemma}" + (f"|alt={cun}" if cun else "") + f"|tr={lemma}{t}}}}}"
     if code in LATIN_TERM:
         return f"{{{{{head}|{code}|{tr_of(form)}{t}}}}}"
@@ -138,7 +139,7 @@ PAGES = {   # title -> SEDonline reconstruction id and page content
                 defs=["[[hip]], [[hipbone]]", "[[haunch]], upper [[thigh]]"], cat="{{C|sem-pro|Anatomy}}",
                 etym="Reconstructed in Militarev & Kogan's ''Semitic Etymological Dictionary'' with an optional feminine suffix {{m|sem-pro|*-at-}}: {{m|sem-pro|*warik(-at)-}}."),
  "θ̣aby-": dict(rec="624", vol="II", entry="*ṯ̣aby(-at)-", override={("Mandaic", "ṭabia"): dict(gloss="gazelle, deer", reason="print: ṭabia 'gazelle, deer' [DM 173], site: 'deer'")}, pos="{{sem-noun|m|g2=f}}", infl=True, defs=["[[gazelle]]"], cat="{{C|sem-pro|Mammals}}",
-               etym="Reconstructed in Militarev & Kogan's ''Semitic Etymological Dictionary'' with an optional feminine suffix {{m|sem-pro|*-at-}}: {{m|sem-pro|*θ̣aby(-at)-}}. Akkadian {{m|akk|ṣabītum}} is written syllabically and with the logogram MAŠ.DA (𒈦𒁕; CAD Ṣ 42)."),
+               etym="Reconstructed in Militarev & Kogan's ''Semitic Etymological Dictionary'' with an optional feminine suffix {{m|sem-pro|*-at-}}: {{m|sem-pro|*θ̣aby(-at)-}}. Akkadian {{m|akk|ṣabītum}} is written with the logogram MAŠ.DA (𒈦𒁕) and syllabically (CAD Ṣ 42)."),
  "maraṣ̂-": dict(rec="894", vol="I", entry="*mrṣ̂", pos="{{head|sem-pro|verb}}", infl=False,
                  conj="{{sem-pro-conj/*paʕala-*yipʕal|m|r|ṣ̂|vn=marṣ̂}}",        # SED: Akkadian marāṣu (a/a)
  defs=["to be [[sick]], [[ill]]"], cat="", etym=""),

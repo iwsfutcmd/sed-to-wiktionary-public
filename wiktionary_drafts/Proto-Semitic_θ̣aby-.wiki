@@ -2,7 +2,7 @@
 ==Proto-Semitic==
 
 ===Etymology===
-Reconstructed in Militarev & Kogan's ''Semitic Etymological Dictionary'' with an optional feminine suffix {{m|sem-pro|*-at-}}: {{m|sem-pro|*θ̣aby(-at)-}}. Akkadian {{m|akk|ṣabītum}} is written syllabically and with the logogram MAŠ.DA (𒈦𒁕; CAD Ṣ 42).
+Reconstructed in Militarev & Kogan's ''Semitic Etymological Dictionary'' with an optional feminine suffix {{m|sem-pro|*-at-}}: {{m|sem-pro|*θ̣aby(-at)-}}. Akkadian {{m|akk|ṣabītum}} is written with the logogram MAŠ.DA (𒈦𒁕) and syllabically (CAD Ṣ 42).
 
 ===Noun===
 {{sem-noun|m|g2=f}}
@@ -14,7 +14,7 @@ Reconstructed in Militarev & Kogan's ''Semitic Etymological Dictionary'' with an
 
 ====Descendants====
 * East Semitic:
-** {{desc|akk|ṣabītum|alt=𒍝𒁉𒄿𒌅|tr=ṣabītum|t=gazelle}}
+** {{desc|akk|ṣabītum|alt=𒈦𒁕|tr=ṣabītum|t=gazelle}}
 ** {{desc|xeb|ṣa-ba-a-tum|t=gazelle}}
 * West Semitic:
 ** Central Semitic:
