@@ -31,3 +31,12 @@ sed_key	entry	language	site_form	print_form	status	note
 1N:78	gi/ald-	Bathari	gawd, gōd	-	site only	Gasparini-Morris 2025; not in the print: left out
 1N:78	gi/ald-	Harsusi	gōd	gōd, pl. gelēd	agree	
 1N:78	gi/ald-	Soqotri	-	gad, pl. ʔegélid; Qalan. gēldəh	print only	LS 101; SSL LS 1457
+1N:215	pan-	Akkadian	panu	pānu	differs	print marks the long ā (OAkk. on); Wiktionary lemma pānum
+1N:215	pan-	Ugaritic	pnm	pn; also pl. t. pnm	differs	print lemma pn
+1N:215	pan-	Moabite	pny	pny (pl. constr.)	agree	left out: no verified Wiktionary code/script
+1N:215	pan-	Phoenician	pn	pn	agree	
+1N:215	pan-	Hebrew	pānīm	pānīm (pl. t.)	agree	
+1N:215	pan-	Official Aramaic	pnh	pnh	agree	
+1N:215	pan-	Jibbali	fέnε	fέnε (also 'front part')	agree	
+1N:215	pan-	Soqotri	fíni	fáne (féne)	differs	print followed
+1N:215	pan-	Old Aramaic / JPA / JBA / Syriac / Mandaic / Ge'ez / Tigre / Tigrinya / Amharic / Harari / Gurage / Mehri words	(many)	-	site only	site's *pan(ay)- cognate set (pny 'turn' etc.) is not in the print entry: left out

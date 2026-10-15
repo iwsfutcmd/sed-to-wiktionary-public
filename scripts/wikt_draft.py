@@ -40,6 +40,7 @@ DIALECT = {"Chaha": "Chaha", "Ezha": "Ezha", "Endegen": "Endegen", "Ennemor": "E
 CURATED = {
  ("uga", "ˀmr"): "𐎛𐎎𐎗",                    # Wiktionary writes ʾi (𐎛), the consonants alone give 𐎀
  ("hbo", "géleḏ"): "גֶּלֶד",              # Wiktionary's own Hebrew lemma גלד (etymology: from *gild-)
+ ("hbo", "pānīm"): "פָּנִים",                  # plural tantum; the lemma page פנים
  ("hbo", "yārēk"): "יָרֵךְ", ("hbo", "ṣəbī"): "צְבִי", ("hbo", "ˀimmēr"): "אִמֵּר", ("tru", "bōḳo"): "ܒܩܐ",      # Turoyo is written in Syriac script on Wiktionary (entry ܒܩܐ)
 
  ("ar", "mrḍ"): "مَرِضَ", ("ar", "ḍrṭ"): "ضَرَطَ", ("ar", "nyk"): "نَاكَ", ("ar", "ḫrs"): "خَرَّسَ",    # bare roots: the verb forms are chosen by hand
@@ -60,7 +61,7 @@ def page(title):
     r = api(action="query", prop="revisions", rvprop="content", rvslots="main", titles=title)["query"]["pages"][0]
     c = r["revisions"][0]["slots"]["main"]["content"] if "revisions" in r else ""
     f.write_text(c, encoding="utf-8"); return c or None
-AKK_LEMMA = {"warkatu": "warkatum", "warki": "warki", "marāṣu": "marāṣum", "immeru": "immerum", "ṣabītu": "ṣabītum", "baqqu": "baqqum", "baḳḳu": "baqqum", "ṣarātu": "ṣarātum", "nâku": "nâkum", "ḫarāšu": "ḫarāšum", "šīru": "šīrum", "šēmu": "šēmum"}
+AKK_LEMMA = {"warkatu": "warkatum", "warki": "warki", "marāṣu": "marāṣum", "immeru": "immerum", "ṣabītu": "ṣabītum", "baqqu": "baqqum", "baḳḳu": "baqqum", "ṣarātu": "ṣarātum", "nâku": "nâkum", "ḫarāšu": "ḫarāšum", "šīru": "šīrum", "šēmu": "šēmum", "pānu": "pānum"}
 # no lemma page: (lemma, cuneiform, its transliteration). The cuneiform is as cited on Wiktionary's Arabic بق and Classical Syriac ܒܩܐ;
 # tests/test_cuneiform.py checks that the transliteration really gives it (eBL sign list).
 AKK_OVERRIDE = {"baḳḳu": ("baqqu", "𒁀𒀝𒄣", "ba-aq-qu"),
@@ -168,6 +169,21 @@ PAGES = {   # title -> SEDonline reconstruction id and page content
                       dict(lang="Jibbali", form="gɔ́d", gloss="skin (pl. gíẑéd)"),
                       dict(lang="Soqotri", form="gad", gloss="skin, leather (pl. ʔegélid)"),
                       dict(lang="Soqotri", form="gēldəh", gloss="skin", q="Qalansiyah")]),
+ # SED I no. 215 *pan- 'face'. SEDonline files it as *pan(ay)- with a much wider word list (and Soqotri fíni), so the words are those of the
+ # PRINTED entry, read by eye (data/sedonline/form_check.tsv). Left out: Moabite pny (no verified code/script), and the words the SED
+ # calls derived (Arabic fināʔ-, Sabaic fnw, Minaean fnwt, Mehri fənfənw-, fōnəh, Harsusi fēn, fenōhen), mentioned in the etymology.
+ "pan-": dict(rec="347", vol="I", entry="*pan-", print_sourced=True, pos="{{sem-noun|m}}", infl=True, defs=["[[face]]"],
+              cat="{{C|sem-pro|Anatomy}}",
+              etym="Reconstructed in Militarev & Kogan's ''Semitic Etymological Dictionary'' as {{m|sem-pro|*pan-}}. The SED regards Arabic {{m|ar|فِنَاء}} (\"yard\") "
+                   "and Sabaic and Minaean ''fnw(t)'' (\"space outside a building\") as probably derived from this root, as well as the Modern South Arabian adverbs "
+                   "such as Mehri {{m|gdq|fōnəh}} (\"earlier\"). Hebrew {{m|hbo|פָּנִים|tr=pānīm}} is a plural-only noun.",
+              words=[dict(lang="Akkadian", form="pānu", gloss="front side, face"),
+                     dict(lang="Ugaritic", form="pn", gloss="face"),
+                     dict(lang="Phoenician", form="pn", gloss="face"),
+                     dict(lang="Hebrew", form="pānīm", gloss="face"),
+                     dict(lang="Official Aramaic", form="pnh", gloss="face"),
+                     dict(lang="Jibbali", form="fέnε", gloss="face, front part"),
+                     dict(lang="Soqotri", form="fáne", gloss="face")]),
  "baḳḳ-": dict(rec="667", vol="II", entry="*baḳḳ-", pos="{{sem-noun|m}}", infl=True, defs=["[[gnat]]"], cat="{{C|sem-pro|Insects}}", etym=""),
 }
 def tree_lines(words, notes, exclude=(), override=None):

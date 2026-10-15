@@ -1,0 +1,33 @@
+{{reconstructed}}
+==Proto-Semitic==
+
+===Etymology===
+Reconstructed in Militarev & Kogan's ''Semitic Etymological Dictionary'' as {{m|sem-pro|*pan-}}. The SED regards Arabic {{m|ar|فِنَاء}} ("yard") and Sabaic and Minaean ''fnw(t)'' ("space outside a building") as probably derived from this root, as well as the Modern South Arabian adverbs such as Mehri {{m|gdq|fōnəh}} ("earlier"). Hebrew {{m|hbo|פָּנִים|tr=pānīm}} is a plural-only noun.
+
+===Noun===
+{{sem-noun|m}}
+
+# [[face]]
+
+====Inflection====
+{{sem-decl-noun}}
+
+====Descendants====
+* East Semitic:
+** {{desc|akk|pānum|alt=𒉺𒀀𒉡|tr=pānum|t=front side, face}}
+* West Semitic:
+** Central Semitic:
+*** Northwest Semitic:
+**** Official {{desc|arc|פנה|tr=pnh|t=face}}
+**** Canaanite:
+***** {{desc|hbo|פָּנִים|tr=pānīm|t=face}}
+***** {{desc|phn|𐤐𐤍|tr=pn|t=face}}
+**** {{desc|uga|𐎔𐎐|t=face}}
+** Modern South Arabian:
+*** {{desc|shv|fέnε|t=face, front part}}
+*** {{desc|sqt|fáne|t=face}}
+
+===References===
+* {{R:sem-pro:SED|volume=I|id=347|entry=*pan-}}
+
+{{C|sem-pro|Anatomy}}
