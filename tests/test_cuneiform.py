@@ -69,7 +69,7 @@ class Drafts(unittest.TestCase):
         for lemma, key, cun, tr in gold():
             known.setdefault(lemma, []).append((cun, tr))
         for lemma, (lem, cun, tr) in WD.AKK_OVERRIDE.items():
-            known.setdefault(lem, []).append((cun, tr))
+            known.setdefault(lem, []).append((cun, tr or ""))          # tr None: copied from Wiktionary, spelling not given
         seen = 0
         for f in TD.NEW + TD.DONE:
             for tpl, code, term, params in TD.entries(f.read_text(encoding="utf-8")):
@@ -83,7 +83,7 @@ class Drafts(unittest.TestCase):
                         self.skipTest(f"no attested spelling on record for {term}")
                     self.assertIn(params["alt"], [c for c, _ in pairs], f"{params['alt']} is not a Wiktionary spelling of {term}")
                     for c, tr in pairs:
-                        if c == params["alt"] and C.convert(tr) is not None:
+                        if c == params["alt"] and tr and C.convert(tr) is not None:
                             self.assertEqual(C.convert(tr), c)
         self.assertGreater(seen, 0)
 

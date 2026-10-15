@@ -23,7 +23,7 @@ ETH = ("West Semitic", "Ethiopian Semitic"); GUR = ETH + ("Gurage",); MSA = ("We
 LANG = {"Akkadian": ("akk", EAST, ""), "Ebla": ("xeb", EAST, ""), "Arabic": ("ar", CS, ""),
         "Old Aramaic": ("arc", NW, "Old "), "Official Aramaic": ("arc", NW, "Official "), "Biblical Aramaic": ("arc", NW, "Biblical "),
         "Palmyrean": ("arc", NW, "Palmyrene "), "Jewish Palestinian Aramaic": ("jpa", NW, ""), "Jewish Babylonian Aramaic": ("tmr", NW, ""),
-        "Samaritan": ("sam", NW, ""), "Syriac": ("syc", NW, ""), "Mandaic": ("myz", NW, ""), "Turoyo": ("tru", NW, ""), "Maalula": ("amw", NW, ""),
+        "Samaritan": ("sam", NW, ""), "Syriac": ("syc", NW, ""), "Mandaic": ("myz", NW, ""), "Turoyo": ("tru", NW, ""), "Maalula": ("amw", NW, ""), "Assyrian Neo-Aramaic": ("aii", NW, ""),
         "Hebrew": ("hbo", CAN, ""), "Phoenician": ("phn", CAN, ""), "Ugaritic": ("uga", NW, ""),
         "Sabaic": ("xsa", OSA, ""), "Hadramitic": ("sem-srb", OSA, "Hadramitic "), "Geez": ("gez", ETH, ""), "Tigre": ("tig", ETH, ""),
         "Tigrinya": ("ti", ETH, ""), "Amharic": ("am", ETH, ""), "Argobba": ("agj", ETH, ""), "Harari": ("har", ETH, ""), "Gafat": ("gft", ETH, ""),
@@ -39,6 +39,7 @@ DIALECT = {"Chaha": "Chaha", "Ezha": "Ezha", "Endegen": "Endegen", "Ennemor": "E
 # (lang code, SEDonline form) -> script, for spellings no converter can derive (vowelled or lexical). --verify checks them on Wiktionary.
 CURATED = {
  ("uga", "ˀmr"): "𐎛𐎎𐎗",                    # Wiktionary writes ʾi (𐎛), the consonants alone give 𐎀
+ ("hbo", "géleḏ"): "גֶּלֶד",              # Wiktionary's own Hebrew lemma גלד (etymology: from *gild-)
  ("hbo", "yārēk"): "יָרֵךְ", ("hbo", "ṣəbī"): "צְבִי", ("hbo", "ˀimmēr"): "אִמֵּר", ("tru", "bōḳo"): "ܒܩܐ",      # Turoyo is written in Syriac script on Wiktionary (entry ܒܩܐ)
 
  ("ar", "mrḍ"): "مَرِضَ", ("ar", "ḍrṭ"): "ضَرَطَ", ("ar", "nyk"): "نَاكَ", ("ar", "ḫrs"): "خَرَّسَ",    # bare roots: the verb forms are chosen by hand
@@ -62,7 +63,8 @@ def page(title):
 AKK_LEMMA = {"warkatu": "warkatum", "warki": "warki", "marāṣu": "marāṣum", "immeru": "immerum", "ṣabītu": "ṣabītum", "baqqu": "baqqum", "baḳḳu": "baqqum", "ṣarātu": "ṣarātum", "nâku": "nâkum", "ḫarāšu": "ḫarāšum", "šīru": "šīrum", "šēmu": "šēmum"}
 # no lemma page: (lemma, cuneiform, its transliteration). The cuneiform is as cited on Wiktionary's Arabic بق and Classical Syriac ܒܩܐ;
 # tests/test_cuneiform.py checks that the transliteration really gives it (eBL sign list).
-AKK_OVERRIDE = {"baḳḳu": ("baqqu", "𒁀𒀝𒄣", "ba-aq-qu")}
+AKK_OVERRIDE = {"baḳḳu": ("baqqu", "𒁀𒀝𒄣", "ba-aq-qu"),
+                "gildu": ("gildu", "𒋢𒄀𒅋𒁺", None)}   # cuneiform as on Wiktionary's Hebrew גלד / Syriac ܓܠܕܐ (transliteration of the spelling not given)
 def akkadian(form):
     """-> (lemma, phonetic cuneiform spelling from the page's {{cunsp}}, or None)"""
     if form in AKK_OVERRIDE:
@@ -74,7 +76,7 @@ def akkadian(form):
     return lemma, (m.group(1) if m else None)
 
 def tr_of(f):
-    return U.normalize("NFC", f).replace("ˀ", "ʔ").replace("ˁ", "ʕ").replace("ḳ", "q").replace("ǝ", "ə")      # descendants: Wiktionary's tr uses q (PS titles keep ḳ)
+    return U.normalize("NFC", f).replace("ˀ", "ʔ").replace("ˁ", "ʕ").replace("ḳ", "q").replace("ǝ", "ə").replace("γ", "ɣ")      # descendants: Wiktionary's tr uses q (PS titles keep ḳ)
 TRANSLATE = {"im Kindbett liegen": "to be in childbed", "partorire (to give birth)": "to give birth", "accouché": "woman who has given birth", "the sacrup or rump of a butchered animal": "the sacrum or rump of a butchered animal", "Hüfte": "hip", "Wanzen (bugs)": "bugs", "Mücke (mosquito)": "mosquito", "guérir": "to heal"}
 def script_for(code, form):
     """-> (script, how) with how in curated / ethiopic / abjad, or (None, None)."""
@@ -141,6 +143,31 @@ PAGES = {   # title -> SEDonline reconstruction id and page content
  "ḫaraš-": dict(rec="960", vol="I", entry="*ḫrš", exclude={("Amharic", "arräsä"): "Wiktionary's Amharic አረሰ is 'to plough', from *ḥaraṯ- (tests/test_conflicts.py)"}, pos="{{head|sem-pro|verb}}", infl=False, defs=["to be in [[childbed]], to be in [[confinement]]"], cat="", etym=""),
  "šiʔr-": dict(rec="691", vol="I", entry="*šiʔr-", pos="{{sem-noun|m}}", infl=True, defs=["[[flesh]]"], cat="{{C|sem-pro|Anatomy}}", etym=""),
  "śaḥm-": dict(rec="698", vol="I", entry="*ŝaḥm-", pos="{{sem-noun|m}}", infl=True, defs=["[[fat]]"], cat="", etym=""),
+# SED I no. 78 *gi/ald- 'skin, hide'. SEDonline files it as Proto-West Semitic and differs from the print (it lacks Official Aramaic, Palmyrene,
+ # Neo-Aramaic, Soqotri; it adds Turoyo and Bathari, which the print does not have), so the words are those of the PRINTED entry, read by eye
+ # from tests/../build crops (data/sedonline/form_check.tsv). Left out: Middle Mandaic gelda (no code), Azerbaijan and Iranian Neo-Aramaic
+ # (Garbell, Pennacchietti: no verified Wiktionary code), Turoyo galdo and Bathari gawd (site only).
+ "gild-": dict(rec="704", vol="I", entry="*gi/ald-", print_sourced=True, pos="{{sem-noun|m}}", infl=True, defs=["[[skin]], [[hide]]"],
+               cat="{{C|sem-pro|Anatomy}}",
+               etym="Reconstructed in Militarev & Kogan's ''Semitic Etymological Dictionary'' as {{m|sem-pro|*gi/ald-}}. The SED notes that Akkadian {{m|akk|gildu}} is, "
+                    "according to von Soden, from Aramaic, and that the only attested Hebrew form, the hapax {{m|hbo|גלדי|tr=gildī}} \"my skin\" (Job 16:15), is usually considered an Aramaic borrowing.",
+               words=[dict(lang="Akkadian", form="gildu", gloss="hide", unc=True),
+                      dict(lang="Hebrew", form="géleḏ", gloss="skin", unc=True),
+                      dict(lang="Official Aramaic", form="gldʔ", gloss="hide, skin"),
+                      dict(lang="Palmyrean", form="gldyʔ", gloss="hide, skin"),
+                      dict(lang="Jewish Babylonian Aramaic", form="gildā", gloss="plate, covering, skin, leather"),
+                      dict(lang="Syriac", form="geldā", gloss="skin, hide"),
+                      dict(lang="Mandaic", form="gilda", gloss="testicle, leather"),
+                      dict(lang="Maalula", form="γelta", gloss="skin"),
+                      dict(lang="Assyrian Neo-Aramaic", form="γildä", gloss="skin, hide"),
+                      dict(lang="Arabic", form="ǧild-, ǧalad-, ǧilid-", gloss="skin, leather"),
+                      dict(lang="Geez", form="gald", gloss="skin, hide"),
+                      dict(lang="Tigre", form="gəldät", gloss="hairless skin of animals"),
+                      dict(lang="Mehri", form="gēd", gloss="skin, hide (pl. gəlēd)"),
+                      dict(lang="Harsusi", form="gōd", gloss="skin, leather (pl. gelēd)"),
+                      dict(lang="Jibbali", form="gɔ́d", gloss="skin (pl. gíẑéd)"),
+                      dict(lang="Soqotri", form="gad", gloss="skin, leather (pl. ʔegélid)"),
+                      dict(lang="Soqotri", form="gēldəh", gloss="skin", q="Qalansiyah")]),
  "baḳḳ-": dict(rec="667", vol="II", entry="*baḳḳ-", pos="{{sem-noun|m}}", infl=True, defs=["[[gnat]]"], cat="{{C|sem-pro|Insects}}", etym=""),
 }
 def tree_lines(words, notes, exclude=(), override=None):
@@ -153,15 +180,16 @@ def tree_lines(words, notes, exclude=(), override=None):
         code, path, label = LANG[w["lang"]]
         g = re.sub(r"\s+", " ", w["gloss"]).strip().replace("|", "/")
         e = entry(code, w["form"], g, w["lang"], notes)
-        if DIALECT.get(w["lang"]):
-            e = re.sub(r"\}\}", "|q=" + DIALECT[w["lang"]] + "}}", e, count=1)
+        for key, val in (("q", w.get("q") or DIALECT.get(w["lang"])), ("unc", "1" if w.get("unc") else None)):
+            if val:
+                e = re.sub(r"\}\}", f"|{key}={val}}}}}", e, count=1)
         for d in range(len(path)):
             if path[:d + 1] not in shown:
                 shown.add(path[:d + 1]); lines.append("*" * (d + 1) + " " + path[d] + ":")
         lines.append("*" * (len(path) + 1) + " " + label + e)
     return lines
 def build(title, cfg, out=None):
-    words = [w for w in read(DATA / "sedonline" / "sedonline_words.tsv") if w["rec_id"] == cfg["rec"]]
+    words = cfg["words"] if cfg.get("words") else [w for w in read(DATA / "sedonline" / "sedonline_words.tsv") if w["rec_id"] == cfg["rec"]]
     miss = sorted({w["lang"] for w in words} - set(LANG))
     if miss: raise SystemExit(f"{title}: unmapped languages {miss}")
     notes = []

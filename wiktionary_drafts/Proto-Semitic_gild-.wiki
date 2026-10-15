@@ -1,0 +1,44 @@
+{{reconstructed}}
+==Proto-Semitic==
+
+===Etymology===
+Reconstructed in Militarev & Kogan's ''Semitic Etymological Dictionary'' as {{m|sem-pro|*gi/ald-}}. The SED notes that Akkadian {{m|akk|gildu}} is, according to von Soden, from Aramaic, and that the only attested Hebrew form, the hapax {{m|hbo|גלדי|tr=gildī}} "my skin" (Job 16:15), is usually considered an Aramaic borrowing.
+
+===Noun===
+{{sem-noun|m}}
+
+# [[skin]], [[hide]]
+
+====Inflection====
+{{sem-decl-noun}}
+
+====Descendants====
+* East Semitic:
+** {{desc|akk|gildu|alt=𒋢𒄀𒅋𒁺|tr=gildu|t=hide|unc=1}}
+* West Semitic:
+** Central Semitic:
+*** {{desc|ar|جِلْد|t=skin, leather}}, {{l|ar|جَلَد}}, {{l|ar|جِلِد}}
+*** Northwest Semitic:
+**** Official {{desc|arc|גלדא|tr=gldʔ|t=hide, skin}}
+**** Palmyrene {{desc|arc|גלדיא|tr=gldyʔ|t=hide, skin}}
+**** {{desc|tmr|גלדא|tr=gildā|t=plate, covering, skin, leather}}
+**** {{desc|syc|ܓܠܕܐ|tr=geldā|t=skin, hide}}
+**** {{desc|myz|-|tr=gilda|t=testicle, leather}}
+**** {{desc|amw|ɣelta|t=skin}}
+**** {{desc|aii|-|tr=ɣildä|t=skin, hide}}
+**** Canaanite:
+***** {{desc|hbo|גֶּלֶד|tr=géleḏ|t=skin|unc=1}}
+** Ethiopian Semitic:
+*** {{desc|gez|-|tr=gald|t=skin, hide}}
+*** {{desc|tig|ግልደት|tr=gəldät|t=hairless skin of animals}}
+** Modern South Arabian:
+*** {{desc|gdq|gēd|t=skin, hide (pl. gəlēd)}}
+*** {{desc|shv|gɔ́d|t=skin (pl. gíẑéd)}}
+*** {{desc|hss|gōd|t=skin, leather (pl. gelēd)}}
+*** {{desc|sqt|gad|t=skin, leather (pl. ʔegélid)}}
+*** {{desc|sqt|gēldəh|t=skin|q=Qalansiyah}}
+
+===References===
+* {{R:sem-pro:SED|volume=I|id=704|entry=*gi/ald-}}
+
+{{C|sem-pro|Anatomy}}

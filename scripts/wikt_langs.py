@@ -6,7 +6,7 @@ LANGS = {
  "akk": ("Akkadian", {"Latin", "Cuneiform"}), "xeb": ("Eblaite", {"Latin"}), "ar": ("Arabic", {"Arabic"}),
  "arc": ("Aramaic", {"Hebrew"}), "jpa": ("Jewish Palestinian Aramaic", {"Hebrew"}), "tmr": ("Jewish Babylonian Aramaic", {"Hebrew"}),
  "sam": ("Samaritan Aramaic", {"Samaritan"}), "syc": ("Classical Syriac", {"Syriac"}), "myz": ("Classical Mandaic", {"Mandaic"}),
- "tru": ("Turoyo", {"Syriac"}), "amw": ("Western Neo-Aramaic", {"Latin"}), "hbo": ("Biblical Hebrew", {"Hebrew"}), "he": ("Hebrew", {"Hebrew"}),
+ "tru": ("Turoyo", {"Syriac"}), "aii": ("Assyrian Neo-Aramaic", {"Syriac", "Latin"}), "amw": ("Western Neo-Aramaic", {"Latin"}), "hbo": ("Biblical Hebrew", {"Hebrew"}), "he": ("Hebrew", {"Hebrew"}),
  "phn": ("Phoenician", {"Phoenician"}), "uga": ("Ugaritic", {"Ugaritic"}), "xsa": ("Sabaean", {"Old South Arabian"}),
  "sem-srb": ("Old South Arabian", {"Old South Arabian"}), "gez": ("Ge'ez", {"Ethiopic"}), "tig": ("Tigre", {"Ethiopic"}),
  "ti": ("Tigrinya", {"Ethiopic"}), "am": ("Amharic", {"Ethiopic"}), "agj": ("Argobba", {"Ethiopic"}), "har": ("Harari", {"Ethiopic"}),

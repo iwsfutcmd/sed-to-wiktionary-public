@@ -53,7 +53,7 @@ def rec_of(text):
     m = re.search(r"\{\{R:sem-pro:SED\|volume=(I+)\|id=(\d+)\|entry=([^}]*)\}\}", text)
     return m.groups() if m else None
 def norm(s):
-    s = U.normalize("NFC", s).replace("ˀ", "ʔ").replace("ˁ", "ʕ").replace("ḳ", "q").replace("ǝ", "ə").lower()
+    s = U.normalize("NFC", s).replace("ˀ", "ʔ").replace("ˁ", "ʕ").replace("ḳ", "q").replace("ǝ", "ə").replace("γ", "ɣ").lower()
     return re.sub(r"[\s*\-()]", "", s)
 
 def forall(files):
@@ -121,7 +121,8 @@ class Drafts(unittest.TestCase):
         vol, rid, entry = ref
         self.assertIn(rid, RECS, "unknown SEDonline id")
         rec = RECS[rid]
-        self.assertEqual(rec["level"], "PS", "the printed volumes reconstruct Proto-Semitic")
+        if not WD.PAGES.get(title, {}).get("print_sourced"):        # print-sourced pages may differ from SEDonline (e.g. its PWS level)
+            self.assertEqual(rec["level"], "PS", "the printed volumes reconstruct Proto-Semitic")
         keys = [k for k in rec["sed_ref"].split(";") if k]
         self.assertIn({"I": "1", "II": "2"}[vol], [k[0] for k in keys], "volume does not match the SED number SEDonline cites")
         # entry = the SED spelling; compare consonant skeletons so ṣ̂/ṣ́, ŝ/ś, ˀ/ʔ do not matter
@@ -137,6 +138,11 @@ class Drafts(unittest.TestCase):
     @forall(NEW + DONE)
     def test_print_and_site_agree(self, t, title):
         _, rid, _ = rec_of(t)
+        if WD.PAGES.get(title, {}).get("print_sourced"):            # words come from the printed page: it must be documented, not match the site
+            key = f"{WD.PAGES[title]['vol'] == 'I' and 1 or 2}"
+            self.assertTrue([r for r in read(DATA / "sedonline" / "form_check.tsv") if r["entry"] == WD.PAGES[title]["entry"].lstrip("*")],
+                            "a print-sourced page needs rows in data/sedonline/form_check.tsv")
+            return
         self.assertIn(rid, AGREE, "entry is not cited by number from the printed SED")
         a = AGREE[rid]
         self.assertEqual(a["agree"], "1", f"print and site differ: {a['protoform']} / {a['web_form']}; "
@@ -165,7 +171,8 @@ class Drafts(unittest.TestCase):
         self.assertTrue(ents)
         skip = WD.PAGES.get(title, {}).get("exclude", {})              # words left out on purpose, each with a reason
         over = WD.PAGES.get(title, {}).get("override", {})            # words changed to follow the printed page
-        words_ = [{**w, **{k: v for k, v in over.get((w["lang"], w["form"]), {}).items() if k in ("form", "gloss")}} for w in WORDS[rid]
+        source = WD.PAGES.get(title, {}).get("words") or WORDS[rid]      # print-sourced pages list their own words
+        words_ = [{**w, **{k: v for k, v in over.get((w["lang"], w["form"]), {}).items() if k in ("form", "gloss")}} for w in source
                   if (w["lang"], w["form"]) not in skip]
         per = Counter(code for _, code, _, _ in ents)
         expect = Counter(WD.LANG[w["lang"]][0] for w in words_)
@@ -198,6 +205,7 @@ class Drafts(unittest.TestCase):
         for tpl, code, term, params in entries(t):
             g = params.get("t", "")
             self.assertLessEqual(len(g), 100, f"{code}: gloss too long: {g}")
+            g = re.sub(r"\s*\(pl\.[^)]*\)", "", g)                  # a plural form in parentheses is data, not a foreign gloss
             self.assertFalse(re.search(r"[^\x00-\x7F]", g), f"{code}: non-ASCII in gloss {g!r}")
             self.assertIsNone(foreign.search(g), f"{code}: gloss looks non-English: {g!r}")
             self.assertFalse(g.startswith("="), f"{code}: gloss is a note, not a meaning: {g!r}")

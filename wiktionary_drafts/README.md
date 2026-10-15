@@ -20,6 +20,7 @@ Semitic "lamb" words as borrowings from Akkadian, which conflicts with an inheri
 | `maraṣ́-` | I no. 42 (verbal) | 894 | 13 |
 | `ṣ́araṭ-` | I no. 71 (verbal) | 1023 | 8 |
 | `baḳḳ-` | II no. 58 | 667 | 7 |
+| `gild-` | I no. 78 | 704 | 17 (from the print) |
 | `nayak-` | I no. 53 (verbal) | 995 | 5 |
 | `ḫaraš-` | I no. 31 (verbal) | 960 | 14 |
 | `šiʔr-` | I no. 238 | 691 | 4 |
@@ -31,6 +32,13 @@ Special:WantedPages is capped at 5,000 results (down to 55 incoming links) and c
 spellings; for verbs the root and the vocalised stems CaCaC-/CaCiC-/CaCuC-) and asks, in batches, which of them are missing but linked
 (`prop=linkshere`). Output: `data/wiktionary/wanted_semitic.tsv` (title, number of linking pages, some of them, SED entry, `agree` flag).
 Writing a page at a title Wiktionary already links to also settles the spelling questions (ḳ/q, ṯ̣/θ̣, ṣ́/ṣ̂).
+
+## Pages written from the printed entry
+`gild-` (SED I no. 78 *gi/ald-) is built from the printed cognate set, because SEDonline differs from the print: it files the entry as
+Proto-West Semitic (treating Akkadian and Hebrew as Aramaisms), lacks Official Aramaic, Palmyrene, Neo-Aramaic and Soqotri, and adds Turoyo
+and Bathari, which the print does not have. Wiktionary's own Hebrew, Aramaic, Syriac and Arabic pages already say they inherit `*gild-` (13 pages
+link it), which agrees with the print's Proto-Semitic reading. The comparison is in `form_check.tsv`; left out and why is in `wikt_draft.py`.
+Tests: the SED reference must resolve and every printed word must be on the page, but the page does not have to match the site.
 
 ## Verbs: vocalised stems
 Verbs are titled by their perfect stem, as on `pataḥ-`, `našaḳ-`, `patal-` (`maraṣ́-`, `nayak-`, `ḫaraš-`, `ṣ́araṭ-`), with the SED root

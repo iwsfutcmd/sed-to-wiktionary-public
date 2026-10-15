@@ -13,3 +13,21 @@ sed_key	entry	language	site_form	print_form	status	note
 1V:71	ṣ̂rṭ	Soqotri	ẓ̂éraṭ	ẑerót	form differs	650 dpi: print ẑerót (ẑ without dot, plain t, vowels e/ó), site ẓ̂éraṭ; print cites LS 365. Draft follows the print
 1V:71	ṣ̂rṭ	Amharic	-	zäräṭṭ alä 'to let a series of farts'; anzärtäṭä 'to break wind'	print only	in the print's notes ('regarded as Arabisms in Leslau Loanwords 34, but compared to the present root in DRS 795-6')
 1V:71	ṣ̂rṭ	Mehri/Harsusi/Jibbali	-	ẑāṭər / ẑaṭarét / ẓ̂éṭər, ẓ̂ətrét 'buttocks'	print only	a possibly related root with metathesis, in the print's comparison note
+1N:78	gi/ald-	(level)	PWS *gild- 'skin'	PS *gi/ald- 'skin, hide'	level differs	site files it as Proto-West Semitic (Akkadian and Hebrew treated as Aramaisms); the print and Wiktionary's pages treat it as Proto-Semitic
+1N:78	gi/ald-	Akkadian	gildu	(?) gil(a)du 'hide' NB, LB	agree	print marks (?) and 'according to von Soden, from Arm.'; draft marks it uncertain
+1N:78	gi/ald-	Hebrew	gēläd	*gäläd or *gēläd 'skin'; hapax gildī (Job 16:15)	form differs	print reconstructs Hebrew *gäläd or *gēläd and notes the only attestation gildī 'my skin' (Job 16:15), usually an Aramaism; draft links Wiktionary's Hebrew lemma גֶּלֶד géleḏ (marked uncertain) and keeps the hapax in the etymology
+1N:78	gi/ald-	Official Aramaic / Palmyrene	-	gldʔ (det.); gldyʔ (pl. det.) 'hide, skin'	print only	HJ 222
+1N:78	gi/ald-	Jewish Aramaic	gildā	gildā 'plate, covering, skin, leather' [Ja. 245]	agree	site: Jewish Babylonian Aramaic [DJBA 280]; draft uses tmr
+1N:78	gi/ald-	Syriac	geldā	geldā 'cutis, pellis'	agree	
+1N:78	gi/ald-	Mandaic	gilda	gilda 'testicle, leather'; Middle Mandaic gelda	agree	Middle Mandaic left out (no Wiktionary code)
+1N:78	gi/ald-	Maalula	γelta	γelta 'Haut'	agree	
+1N:78	gi/ald-	Neo-Aramaic	-	NAssyr. γildä; Azr. gilda; Iran. gʸldâ	print only	draft has Assyrian Neo-Aramaic (aii); Azerbaijan and Iranian left out (no verified Wiktionary code)
+1N:78	gi/ald-	Turoyo	galdo	-	site only	RW 168; not in the print: left out
+1N:78	gi/ald-	Arabic	ǯild-	ǧild-, ǧalad-, ǧilid-	form differs	the print gives three forms
+1N:78	gi/ald-	Geez	gald	gald	agree	
+1N:78	gi/ald-	Tigre	gəldät	gəldät	agree	
+1N:78	gi/ald-	Mehri	gɛ̄d	gēd, pl. gəlēd	form differs	vowel symbol; draft follows the print
+1N:78	gi/ald-	Jibbali	gɔ́d	gɔ́d, pl. gíẑéd	agree	
+1N:78	gi/ald-	Bathari	gawd, gōd	-	site only	Gasparini-Morris 2025; not in the print: left out
+1N:78	gi/ald-	Harsusi	gōd	gōd, pl. gelēd	agree	
+1N:78	gi/ald-	Soqotri	-	gad, pl. ʔegélid; Qalan. gēldəh	print only	LS 101; SSL LS 1457
