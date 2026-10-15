@@ -4,7 +4,7 @@ usage: build_sedonline_site.py"""
 import csv, json
 from collections import defaultdict
 from paths import DATA, SITE
-from sedonline_compare import fold, titles, variants, read
+from sedonline_compare import fold, titles, variants, read, skeleton_index, near_titles
 
 PFX = {"PS": "Reconstruction:Proto-Semitic/", "PWS": "Reconstruction:Proto-West Semitic/"}
 
@@ -14,6 +14,7 @@ def main():
     sed = {f"{r['vol']}{'V' if r['section'] == 'verbal' else 'N'}:{r['no']}": r["protoform"]
            for r in read(DATA / "sed_vol1_vol2_reconstructions.tsv")}
     ix = {"PS": titles("wik_ps.json"), "PWS": titles("wik_pws.json")}
+    sx = {"PS": skeleton_index("wik_ps.json"), "PWS": skeleton_index("wik_pws.json")}
 
     langs, lid = [], {}
     by = defaultdict(list)
@@ -25,16 +26,19 @@ def main():
     out = []
     for r in recs:
         keys = [k for k in r["sed_ref"].split(";") if k]
-        wikt = {}
+        wikt, near = {}, {}
         for lv in ("PS", "PWS"):
             t = sorted({x for v in variants(r["form"]) for x in ix[lv].get(v, [])})
             if t:
                 wikt[lv] = t
+            n = near_titles(sx[lv], r["form"], t)       # same consonants, other vocalisation (ptḥ ~ pataḥ-)
+            if n:
+                near[lv] = n
         out.append(dict(id=int(r["rec_id"]), lv=r["level"], f=r["form"], g=r["gloss"], ref=r["ref"], n=r["note"],
                         sed=[[k, sed.get(k, "")] for k in keys],
                         up=[p.rsplit(":", 1) for p in r["parents"].split(";") if p],
                         dn=[p.rsplit(":", 1) for p in r["children"].split(";") if p],
-                        wk=wikt, w=by[r["rec_id"]]))
+                        wk=wikt, wn=near, w=by[r["rec_id"]]))
     pr = [[r["key"], r["protoform"], r["gloss"], r["pdf_page"], r["status"],
            [c.split(":") for c in r["candidates"].split(";") if c]]
           for r in read(DATA / "sedonline" / "sed_print_vs_site.tsv")]

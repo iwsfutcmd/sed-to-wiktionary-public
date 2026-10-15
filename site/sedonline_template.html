@@ -110,11 +110,11 @@ const STR = {en:{dir:"ltr",
   sub:(n,w,s)=>`${n} reconstructions and ${w} cited words from the Semitic Etymological Database Online (Kogan, Arkhipov et al., sed-online.ru, beta), compared with the printed SED volumes and with English Wiktionary's Proto-Semitic and Proto-West Semitic page titles (snapshot ${s}).`,
   q:"Search", qph:"form or gloss, e.g. ʔab or kalb", lv:"Level", wk:"Wiktionary", sd:"Printed SED", nl:"Languages ≥", so:"Sort",
   deep:"Also search cited words", all:"All", any:"Any",
-  wkOn:"Has a page", wkOff:"No page (PS/PWS)", sdYes:"In SED vols. 1–2", sdNo:"Not in SED vols. 1–2",
+  wkOn:"Has a page", wkOff:"No page (PS/PWS)", wkNear:"Same consonants, other vocalisation", wkNearPill:"Wikt ≈", wkNearText:"No page with this exact form, but one with the same consonants (another vocalisation, or a stem for a root)", sdYes:"In SED vols. 1–2", sdNo:"Not in SED vols. 1–2",
   sMore:"Most languages", sForm:"Form A–Z", sId:"Site order",
   count:(a,b)=>`${a} of ${b}`, more:n=>`Show ${n} more`, none:"No reconstruction matches.", pick:"Choose a reconstruction from the list.",
   langs:n=>`${n} language${n==1?"":"s"}`, words:"Cited words", parents:"Reconstructed from", children:"Further reconstructions",
-  sed:"Printed SED", vol:{1:"Vol. 1",2:"Vol. 2"}, nominal:"nominal", verbal:"verbal", wkPage:"Wiktionary page", noWk:"No Wiktionary page with this skeleton",
+  sed:"Printed SED", vol:{1:"Vol. 1",2:"Vol. 2"}, nominal:"nominal", verbal:"verbal", wkPage:"Wiktionary page", noWk:"No Wiktionary page with this exact form",
   tabR:"Reconstructions", tabP:"Printed SED check", pq:"Search", pqph:"printed form or gloss", ps:"Status", pun:"Only entries I haven't reviewed",
   stNot:"Not found on the site", stMat:"On the site, no SED number", stCit:"Cited by number", stAll:"All printed entries",
   stText:{not_found:"No SEDonline reconstruction cites this entry, and none has the same skeleton and gloss. Check the candidates, or the site, by hand.",matched:"A SEDonline reconstruction has the same skeleton and a shared gloss word, but does not cite this entry's number.",cited:"A SEDonline reconstruction cites this entry by number."},
@@ -138,11 +138,12 @@ for (const r of R) {
   r.nl = new Set(r.w.map(w => w[0])).size;
   r.cmp = r.lv === "PS" || r.lv === "PWS";
   r.onWk = !!(r.wk.PS || r.wk.PWS);
+  r.nearWk = !r.onWk && !!(r.wn.PS || r.wn.PWS);
 }
 const LV = ["PS","PWS","PCS","PNWS","PC","PArm","PES","Proto-MSA","Areal reconstruction"].filter(l => R.some(r => r.lv === l));
 const opt = (el, items) => el.innerHTML = items.map(([v,t]) => `<option value="${esc(v)}">${esc(t)}</option>`).join("");
 opt($("lv"), [["",S.all], ...LV.map(l => [l, `${l} (${R.filter(r=>r.lv===l).length})`])]);
-opt($("wk"), [["",S.any],["on",S.wkOn],["off",S.wkOff]]);
+opt($("wk"), [["",S.any],["on",S.wkOn],["near",S.wkNear],["off",S.wkOff]]);
 opt($("sd"), [["",S.any],["yes",S.sdYes],["no",S.sdNo]]);
 opt($("nl"), [0,2,3,5,8,12,20,30].map(n => [n, n || S.any]));
 opt($("so"), [["nl",S.sMore],["f",S.sForm],["id",S.sId]]);
@@ -161,7 +162,7 @@ function filter() {
         nl = +$("nl").value, deep = $("deep").checked;
   hits = R.filter(r =>
     (!lv || r.lv === lv) &&
-    (!wk || (wk === "on" ? r.onWk : r.cmp && !r.onWk)) &&
+    (!wk || (wk === "on" ? r.onWk : wk === "near" ? r.nearWk : r.cmp && !r.onWk && !r.nearWk)) &&
     (!sd || (sd === "yes") === (r.sed.length > 0)) &&
     r.nl >= nl &&
     (!q || r.k.includes(qf) || r.gk.includes(ql) || (deep && r.wk2.includes(qf)) || (deep && r.wk2.includes(ql))));
@@ -174,7 +175,7 @@ function filter() {
 function pills(r) {
   let h = "";
   if (r.sed.length) h += `<span class="pill">SED</span>`;
-  if (r.cmp) h += r.onWk ? `<span class="pill ok">Wikt</span>` : `<span class="pill warn">no Wikt</span>`;
+  if (r.cmp) h += r.onWk ? `<span class="pill ok">Wikt</span>` : r.nearWk ? `<span class="pill" title="${esc(S.wkNearText)}">${esc(S.wkNearPill)}</span>` : `<span class="pill warn">no Wikt</span>`;
   return h;
 }
 function more() {
@@ -197,8 +198,9 @@ const rel = (arr) => arr.map(([lv,id]) => { const r = byId.get(+id); return r ? 
 function show(id, push, from) {
   const r = byId.get(id); if (!r) return; cur = id;
   document.querySelectorAll(".row").forEach(b => b.setAttribute("aria-current", +b.dataset.id === id));
-  const wkLinks = ["PS","PWS"].flatMap(l => (r.wk[l] || []).map(t =>
-    `<a class="ext" target="_blank" rel="noopener" href="https://en.wiktionary.org/wiki/${encodeURI(D.pfx[l].replace(/ /g,"_") + t.replace(/ /g,"_"))}"><bdi lang="sem-Latn">${esc(D.pfx[l].split(":")[1].replace(/\/$/,"") + "/" + t)}</bdi></a>`));
+  const wkA = (src) => ["PS","PWS"].flatMap(l => (src[l] || []).map(x =>
+    `<a class="ext" target="_blank" rel="noopener" href="https://en.wiktionary.org/wiki/${encodeURI(D.pfx[l].replace(/ /g,"_") + x.replace(/ /g,"_"))}"><bdi lang="sem-Latn">${esc(D.pfx[l].split(":")[1].replace(/\/$/,"") + "/" + x)}</bdi></a>`));
+  const wkLinks = wkA(r.wk), wnLinks = wkA(r.wn);
   const by = new Map(); for (const w of r.w) { if (!by.has(w[0])) by.set(w[0], []); by.get(w[0]).push(w); }
   const rows = [...by.values()].map(ws => ws.map((w,i) =>
     `<tr><td class="l" lang="en">${i ? "" : esc(D.langs[w[0]])}</td><td><bdi class="form" lang="sem-Latn">${esc(w[1])}</bdi></td><td lang="en">${esc(w[2])}${w[4] ? `<br><span class="r" style="color:var(--muted);font-size:13px">${esc(w[4])}</span>` : ""}</td><td class="r"><a class="ext" target="_blank" rel="noopener" href="http://sed-online.ru/words/${w[5]}">${esc(w[3] || "·")}</a></td></tr>`).join("")).join("");
@@ -211,6 +213,7 @@ function show(id, push, from) {
       ? esc(S.sed) + ": " + r.sed.map(([k,f]) => `${esc(S.vol[k[0]])} ${k[1]==="V" ? esc(S.verbal) : esc(S.nominal)} no. ${esc(k.split(":")[1])}${f ? ` <bdi class="form" lang="sem-Latn">${esc(f)}</bdi>` : ""}`).join("; ")
       : esc(S.noSed)}</p>
     ${r.cmp ? `<p class="meta">${wkLinks.length ? esc(S.wkPage) + ": " + wkLinks.join(", ") : esc(S.noWk)}</p>` : ""}
+    ${r.cmp && !wkLinks.length && wnLinks.length ? `<p class="meta">${esc(S.wkNearText)}: ${wnLinks.join(", ")}</p>` : ""}
     ${r.n ? `<div class="note" lang="en">${esc(r.n)}</div>` : ""}
     ${r.up.length ? `<h3>${esc(S.parents)}</h3><div class="rel">${rel(r.up)}</div>` : ""}
     ${r.dn.length ? `<h3>${esc(S.children)}</h3><div class="rel">${rel(r.dn)}</div>` : ""}
