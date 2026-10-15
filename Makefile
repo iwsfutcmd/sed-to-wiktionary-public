@@ -39,3 +39,4 @@ sedonline-site: sedonline # self-contained browsing page for the SEDonline table
 test:                    # converter and draft tests (no network; ONLINE=1 make test also checks the live wiki)
 	$(PY) tests/test_tr2script.py
 	$(PY) tests/test_drafts.py
+	$(PY) tests/test_cuneiform.py

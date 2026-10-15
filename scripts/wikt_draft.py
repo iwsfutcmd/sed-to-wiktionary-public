@@ -61,11 +61,13 @@ def page(title):
     c = r["revisions"][0]["slots"]["main"]["content"] if "revisions" in r else ""
     f.write_text(c, encoding="utf-8"); return c or None
 AKK_LEMMA = {"warkatu": "warkatum", "warki": "warki", "marāṣu": "marāṣum", "immeru": "immerum", "ṣabītu": "ṣabītum", "baqqu": "baqqum", "baḳḳu": "baqqum", "ṣarātu": "ṣarātum", "nâku": "nâkum", "ḫarāšu": "ḫarāšum", "šīru": "šīrum", "šēmu": "šēmum"}
-AKK_OVERRIDE = {"baḳḳu": ("baqqu", "𒁀𒀝𒄣")}     # no lemma page; cuneiform as cited on Wiktionary's Arabic بق and Classical Syriac ܒܩܐ
+# no lemma page: (lemma, cuneiform, its transliteration). The cuneiform is as cited on Wiktionary's Arabic بق and Classical Syriac ܒܩܐ;
+# tests/test_cuneiform.py checks that the transliteration really gives it (eBL sign list).
+AKK_OVERRIDE = {"baḳḳu": ("baqqu", "𒁀𒀝𒄣", "ba-aq-qu")}
 def akkadian(form):
     """-> (lemma, phonetic cuneiform spelling from the page's {{cunsp}}, or None)"""
     if form in AKK_OVERRIDE:
-        return AKK_OVERRIDE[form]
+        return AKK_OVERRIDE[form][:2]
     lemma = AKK_LEMMA.get(form, form)
     c = page(lemma)
     sec = c[c.find("==Akkadian=="):] if c and "==Akkadian==" in c else ""
