@@ -131,7 +131,7 @@ PAGES = {   # title -> SEDonline reconstruction id and page content
  "warik-": dict(rec="758", vol="I", entry="*warik(-at)-", pos="{{sem-noun|m|g2=f}}", infl=True,
                 defs=["[[hip]], [[hipbone]]", "[[haunch]], upper [[thigh]]"], cat="{{C|sem-pro|Anatomy}}",
                 etym="Reconstructed in Militarev & Kogan's ''Semitic Etymological Dictionary'' with an optional feminine suffix {{m|sem-pro|*-at-}}: {{m|sem-pro|*warik(-at)-}}."),
- "θ̣aby-": dict(rec="624", vol="II", entry="*ṯ̣aby(-at)-", pos="{{sem-noun|m|g2=f}}", infl=True, defs=["[[gazelle]]"], cat="{{C|sem-pro|Mammals}}",
+ "θ̣aby-": dict(rec="624", vol="II", entry="*ṯ̣aby(-at)-", override={("Mandaic", "ṭabia"): dict(gloss="gazelle, deer", reason="print: ṭabia 'gazelle, deer' [DM 173], site: 'deer'")}, pos="{{sem-noun|m|g2=f}}", infl=True, defs=["[[gazelle]]"], cat="{{C|sem-pro|Mammals}}",
                etym="Reconstructed in Militarev & Kogan's ''Semitic Etymological Dictionary'' with an optional feminine suffix {{m|sem-pro|*-at-}}: {{m|sem-pro|*θ̣aby(-at)-}}."),
  "maraṣ̂-": dict(rec="894", vol="I", entry="*mrṣ̂", pos="{{head|sem-pro|verb}}", infl=False,
                  conj="{{sem-pro-conj/*paʕala-*yipʕal|m|r|ṣ̂|vn=marṣ̂}}",        # SED: Akkadian marāṣu (a/a)
@@ -147,7 +147,9 @@ PAGES = {   # title -> SEDonline reconstruction id and page content
  defs=["to have [[sexual intercourse]]"], cat="", etym=""),
  "ḫaraš-": dict(rec="960", vol="I", entry="*ḫrš", exclude={("Amharic", "arräsä"): "Wiktionary's Amharic አረሰ is 'to plough', from *ḥaraṯ- (tests/test_conflicts.py)"}, pos="{{head|sem-pro|verb}}", infl=False, defs=["to be in [[childbed]], to be in [[confinement]]"], cat="", etym=""),
  "šiʔr-": dict(rec="691", vol="I", entry="*šiʔr-", pos="{{sem-noun|m}}", infl=True, defs=["[[flesh]]"], cat="{{C|sem-pro|Anatomy}}", etym=""),
- "śaḥm-": dict(rec="698", vol="I", entry="*ŝaḥm-", pos="{{sem-noun|m}}", infl=True, defs=["[[fat]]"], cat="", etym=""),
+ "śaḥm-": dict(rec="698", vol="I", entry="*ŝaḥm-",
+              exclude={("Arabic", "šaḥuma"): "site only: the print gives Arabic šaḥm- (BK 1 1199) alone"},
+              override={("Jibbali", "ŝḥm\u1f73t"): dict(form="śḥəmét", reason="print: ŝḥəmét [JJ 250] (with ə), site ŝḥmέt")}, pos="{{sem-noun|m}}", infl=True, defs=["[[fat]]"], cat="", etym=""),
 # SED I no. 78 *gi/ald- 'skin, hide'. SEDonline files it as Proto-West Semitic and differs from the print (it lacks Official Aramaic, Palmyrene,
  # Neo-Aramaic, Soqotri; it adds Turoyo and Bathari, which the print does not have), so the words are those of the PRINTED entry, read by eye
  # from tests/../build crops (data/sedonline/form_check.tsv). Left out: Middle Mandaic gelda (no code), Azerbaijan and Iranian Neo-Aramaic

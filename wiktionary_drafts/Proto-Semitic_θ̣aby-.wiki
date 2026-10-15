@@ -26,7 +26,7 @@ Reconstructed in Militarev & Kogan's ''Semitic Etymological Dictionary'' with an
 **** {{desc|tmr|טביא|tr=ṭabyā|t=deer}}
 **** {{desc|sam|ࠈࠁࠉ|tr=ṭby|t=deer}}
 **** {{desc|syc|ܛܒܝܐ|tr=ṭabyā|t=gazelle, deer}}
-**** {{desc|myz|ࡈࡀࡁࡉࡀ|t=deer}}
+**** {{desc|myz|ࡈࡀࡁࡉࡀ|t=gazelle, deer}}
 **** Canaanite:
 ***** {{desc|hbo|צְבִי|tr=ṣəbī|t=gazelle}}
 **** {{desc|uga|𐎑𐎁𐎊|t=gazelle}}

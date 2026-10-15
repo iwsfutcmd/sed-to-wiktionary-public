@@ -14,10 +14,9 @@
 ** {{desc|akk|šēmum|tr=šēmum|t=fat}}
 * West Semitic:
 ** Central Semitic:
-*** {{desc|ar|شَحُمَ|t=to be fat}}
 *** {{desc|ar|شَحْم|t=fat}}
 ** Modern South Arabian:
-*** {{desc|shv|śḥmέt|t=temple}}
+*** {{desc|shv|śḥəmét|t=temple}}
 
 ===References===
 * {{R:sem-pro:SED|volume=I|id=698|entry=*ŝaḥm-}}

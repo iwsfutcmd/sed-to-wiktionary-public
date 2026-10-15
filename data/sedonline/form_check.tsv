@@ -49,3 +49,10 @@ sed_key	entry	language	site_form	print_form	status	note
 1N:209	pagr-	all	(Ugaritic pgr, Arabic fǯr)	Akk Hbr Anc/Off/Plm pgr; Jud pagrā, pgr; Syr Mnd NAssyr	differs	site adds Ugaritic pgr 'body, corpse' (print: Ugr. pgr 'monument, stela', very obscure) and Arabic fǯr (print: note on a semantic shift only): left out. Print's NAssyr payra and Iranian Neo-Aramaic not drafted
 2N:30	ʕakbar-	all	(Hrs Jib Mhr Syr Tgr)	Akk Hbr Jud Sam Arb	differs	site adds the MSA, Syriac and Tigre words which the print lists only as 'comparable' with metathesis/meaning shifts: left out (two of them named in the etymology). Print's Akkadian arkabu 'bat' also left out
 1N:147	ki(n)šād-	Geez	kəsād	kəsād, kəŝād	differs	ŝ is purely graphic (print): the Ge'ez spelling has ሠ, so the draft gives kəśād = ክሣድ
+1N:263	ŝaḥm-	Akkadian	šēmu	šēmu 'fat, grease' (+ šēmētu f. pl.)	agree	
+1N:263	ŝaḥm-	Arabic	šaḥm-	šaḥm-	agree	
+1N:263	ŝaḥm-	Arabic	šaḥuma	-	site only	print has only šaḥm-: left out
+1N:263	ŝaḥm-	Jibbali	ŝḥmέt	ŝḥəmét	differs	print has ə; gloss 'temple (as far as the eye)'
+1V:31	ḫrš	all	-	Akk Arb Gez Tgr Tna Amh Arg Gaf Sel Wol Zwy	agree	the print's Ge'ez variants ḫarasa, ḫaraŝa, ḥaraŝa 'bear a child' and ḫaraŝa, ḥarasa, ḫarrasa 'feed' are graphic variants (the print says so); the draft's split of them follows the site. Print also has Akkadian ḫarištu, Arabic ḫrs (II): not drafted
+2N:242	ṯ̣aby(-at)-	all	-	Akk Ebl Ugr Hbr Anc Off Jud Sam Syr Mnd Arb Sab Hdr	agree	forms agree
+2N:242	ṯ̣aby(-at)-	Mandaic	ṭabia	ṭabia 'gazelle, deer'	differs	gloss follows the print
