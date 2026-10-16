@@ -1,0 +1,284 @@
+"""Respell references to Proto-Semitic / Proto-West Semitic reconstructions to the WT:ASEM notation, page by page, with a human saying yes to each diff.
+
+  python wikt_fix_refs.py plan                 fetch the pages that link to a non-standard spelling and work out the new wikitext (touches nothing on Wiktionary)
+  python wikt_fix_refs.py show [PAGE ...]      print the planned diffs
+  python wikt_fix_refs.py apply --user NAME    log in (bot password), show each diff, ask y/n, edit.  Password: env WIKT_PASSWORD or a prompt.
+
+What it changes, and only this: the TERM of a reconstruction reference. A term is the positional argument after `sem-pro` / `sem-wes-pro` in a template
+({{inh|ar|sem-pro|*ʾab-}}, {{cog|sem-pro|*ʾab-}}, {{m|sem-pro|*ʾab-}}, {{l|..}}, {{desc|..}}), the `sem-pro:*ʾab-` of an {{ety}} chain, and the title of a
+[[Reconstruction:Proto-Semitic/ʾab-]] link. Never: tr=/t= text, entry= (that quotes a source), anything of another language, named parameters.
+
+Which respellings: only those where the non-standard title is a redirect to exactly the standard spelling of the same stem (ʾ->ʔ ʿ->ʕ q->ḳ θ->ṯ ṣ̂->ṣ́ ...),
+plus non-standard spellings with no page whose standard spelling exists. A redirect to ANOTHER stem (ʾab- -> ʔabw-) is a different question and is listed
+by `plan` as "needs a person" without any edit.  A planned page where a link was not found in a recognised place is listed as "unmatched": it is left alone.
+
+Everything that decides what is edited is in fix_text(), which is pure and tested offline (tests/test_fix_refs.py)."""
+import csv, difflib, getpass, http.cookiejar, json, os, re, sys, time, unicodedata as U, urllib.error, urllib.parse, urllib.request
+from paths import BUILD, WIKT
+from wikt_orthography import standardise, PFX
+
+API = "https://en.wiktionary.org/w/api.php"
+UA = {"User-Agent": "sed-to-wiktionary/1.0 (orthography respelling, supervised; https://github.com/iwsfutcmd/sed-to-wiktionary)"}
+OUT = BUILD / "orth_fixes"
+LANGS = {"sem-pro": "PS", "sem-wes-pro": "PWS"}
+nfc = lambda s: U.normalize("NFC", s)
+
+# ---------------------------------------------------------------- parsing
+def parse(text):
+    """-> [dict(start, end, args=[(a, b), ...])] for every {{...}} (nested ones too); text[a:b] is one argument without its pipe, args[0] is the name.
+    A pipe inside a nested {{ }} or a [[link]] does not split."""
+    res, stack, i, n = [], [], 0, len(text)
+    while i < n:
+        if text.startswith("{{", i):
+            stack.append(dict(start=i, starts=[i + 2], links=0)); i += 2; continue
+        if text.startswith("}}", i) and stack:
+            t = stack.pop(); st = t["starts"]
+            args = [(st[k], (st[k + 1] - 1) if k + 1 < len(st) else i) for k in range(len(st))]
+            res.append(dict(start=t["start"], end=i + 2, args=args)); i += 2; continue
+        if text.startswith("[[", i) and stack:
+            stack[-1]["links"] += 1; i += 2; continue
+        if text.startswith("]]", i) and stack:
+            stack[-1]["links"] = max(0, stack[-1]["links"] - 1); i += 2; continue
+        if text[i] == "|" and stack and stack[-1]["links"] == 0:
+            stack[-1]["starts"].append(i + 1)
+        i += 1
+    return res
+
+def positional(text, args):
+    """The positional arguments (no top-level `name=`) of a template after the name: [(a, b)]"""
+    out = []
+    for a, b in args[1:]:
+        v = text[a:b]
+        if re.match(r"\s*[\w-]+\s*=", v) and not v.lstrip().startswith("["):
+            continue
+        out.append((a, b))
+    return out
+
+# ---------------------------------------------------------------- the edit
+def term_core(value):
+    """'*ʾab-<t:x>' -> (prefix, stem, suffix) so that prefix+stem+suffix == value"""
+    m = re.fullmatch(r"(\s*\*?)([^<>|{}\[\]]+?)(\s*(?:<[^>]*>)*\s*)", value)
+    return m.groups() if m else None
+
+def fix_text(text, mapping):
+    """text, {(level, stem): standard stem} -> (new text, [(kind, old, new)]).  Pure; idempotent."""
+    edits = []                                                   # (a, b, replacement, kind)
+    def term_edit(level, a, b, kind):
+        parts = term_core(text[a:b])
+        if not parts:
+            return
+        pre, stem, suf = parts
+        new = mapping.get((level, nfc(stem)))
+        if new and nfc(stem) != new:
+            edits.append((a, b, pre + new + suf, kind, stem, new))
+    for t in parse(text):
+        pos = positional(text, t["args"])
+        for k, (a, b) in enumerate(pos):
+            level = LANGS.get(text[a:b].strip())
+            if level:
+                for a2, b2 in pos[k + 1:k + 3]:                  # the term; {{l|sem-pro||*X}} keeps it one argument further on
+                    if text[a2:b2].strip():
+                        term_edit(level, a2, b2, "term")
+        for a, b in t["args"][1:]:                               # {{ety|ar|:inh|sem-pro:*X}}
+            v = text[a:b]
+            m = re.fullmatch(r"(\s*(sem-pro|sem-wes-pro):)(\*?)([^<>|{}\[\]]+?)(\s*(?:<[^>]*>)*\s*)", v)
+            if m:
+                level = LANGS[m.group(2)]
+                new = mapping.get((level, nfc(m.group(4))))
+                if new and nfc(m.group(4)) != new:
+                    edits.append((a + len(m.group(1)) + len(m.group(3)), a + len(m.group(1)) + len(m.group(3)) + len(m.group(4)), new, "ety", m.group(4), new))
+    for m in re.finditer(r"\[\[(Reconstruction:Proto-(?:West )?Semitic/)([^\]|#]+)(\|[^\]]*)?\]\]", text):
+        level = "PWS" if "West" in m.group(1) else "PS"
+        stem = m.group(2).strip()
+        new = mapping.get((level, nfc(stem)))
+        if new and nfc(stem) != new:
+            edits.append((m.start(2), m.end(2), new, "link", stem, new))
+            disp = (m.group(3) or "")[1:]
+            if disp.strip() in ("*" + stem, stem):                # the shown text is the old spelling too
+                edits.append((m.start(3) + 1, m.end(3), ("*" if disp.startswith("*") else "") + new, "link-text", stem, new))
+    seen, uniq = set(), []
+    for e in sorted(edits, key=lambda e: (e[0], e[1])):
+        if (e[0], e[1]) not in seen:
+            seen.add((e[0], e[1])); uniq.append(e)
+    for e1, e2 in zip(uniq, uniq[1:]):
+        assert e1[1] <= e2[0], "overlapping edits"
+    out = text
+    for a, b, rep, *_ in reversed(uniq):
+        out = out[:a] + rep + out[b:]
+    return out, [(e[3], e[4], e[5]) for e in uniq]
+
+# ---------------------------------------------------------------- what to respell
+def read_tsv(path):
+    with open(path, encoding="utf-8", newline="") as f:
+        return list(csv.DictReader(f, delimiter="\t"))
+
+def load_mapping():
+    """-> ({(level, stem): standard stem}, [needs a person], {title: [linking pages]})  from the orthography survey."""
+    survey, links = read_tsv(WIKT / "orthography_survey.tsv"), read_tsv(WIKT / "orthography_links.tsv")
+    exists = {(r["level"], nfc(r["title"])) for r in survey}
+    mapping, person = {}, []
+    for r in survey:
+        if r["action"] != "redirect ok":
+            continue
+        std = nfc(standardise(r["title"])[0])
+        dest = nfc(r["redirect_to"])
+        if dest == std:
+            mapping[(r["level"], nfc(r["title"]))] = std
+        else:
+            person.append((r["level"], r["title"], r["redirect_to"]))
+    for r in read_tsv(WIKT / "orthography_refs.tsv"):                          # variants of standard titles
+        key = (r["level"], nfc(r["variant"]))
+        if key not in mapping and key not in exists:
+            mapping[key] = nfc(r["standard"])
+    for r in links:                                                         # every link row names a (nonstandard, standard) pair for a page that is not a stem change
+        key = (r["level"], nfc(r["nonstandard_title"]))
+        if r["standard_title"] and key not in mapping and key not in {(l, nfc(t)) for l, t, _ in person} and (r["level"], nfc(r["standard_title"])) in exists:
+            mapping[key] = nfc(r["standard_title"])
+    pages = {}
+    for r in links:
+        if (r["level"], nfc(r["nonstandard_title"])) in mapping:
+            pages.setdefault(r["linking_page"], set()).add((r["level"], nfc(r["nonstandard_title"])))
+    return mapping, person, pages
+
+# ---------------------------------------------------------------- Wiktionary API
+class Api:
+    def __init__(self, opener=None):
+        self.jar = http.cookiejar.CookieJar()
+        self.opener = opener or urllib.request.build_opener(urllib.request.HTTPCookieProcessor(self.jar))
+    def call(self, post=None, **q):
+        data = urllib.parse.urlencode(dict(format="json", formatversion=2, maxlag=5, **(post or q))).encode()
+        for i in range(8):
+            try:
+                r = json.load(self.opener.open(urllib.request.Request(API, data=data, headers=UA), timeout=60))
+            except urllib.error.HTTPError as e:
+                if e.code != 429:
+                    raise
+                time.sleep(min(float(e.headers.get("Retry-After") or 10), 60)); continue
+            if r.get("error", {}).get("code") == "maxlag":
+                time.sleep(5); continue
+            return r
+        raise RuntimeError("API busy")
+    def pages(self, titles):
+        """-> {title: (revid, timestamp, text)} for existing pages, 50 titles a request"""
+        out = {}
+        titles = list(dict.fromkeys(titles))
+        for i in range(0, len(titles), 40):
+            r = self.call(action="query", prop="revisions", rvprop="ids|timestamp|content", rvslots="main", titles="|".join(titles[i:i + 40]))
+            for p in r["query"]["pages"]:
+                if "revisions" in p:
+                    rv = p["revisions"][0]
+                    out[nfc(p["title"])] = (rv["revid"], rv["timestamp"], rv["slots"]["main"]["content"])
+            time.sleep(2)
+        return out
+    def login(self, user, password):
+        tok = self.call(action="query", meta="tokens", type="login")["query"]["tokens"]["logintoken"]
+        r = self.call(post=dict(action="login", lgname=user, lgpassword=password, lgtoken=tok))
+        if r.get("login", {}).get("result") != "Success":
+            raise SystemExit("login failed: " + json.dumps(r.get("login", r))[:200])
+    def edit(self, title, text, summary, baserevid, bot=False):
+        tok = self.call(action="query", meta="tokens")["query"]["tokens"]["csrftoken"]
+        post = dict(action="edit", title=title, text=text, summary=summary, baserevid=baserevid, nocreate=1, token=tok, assert_="user")
+        post["assert"] = post.pop("assert_")
+        if bot:
+            post["bot"] = 1
+        return self.call(post=post)
+
+def summary_for(changes):
+    pairs = sorted({(o, n) for _, o, n in changes})
+    shown = ", ".join(f"*{o} → *{n}" for o, n in pairs[:4]) + (" …" if len(pairs) > 4 else "")
+    return f"respell Proto-Semitic reference to the WT:ASEM notation ({shown}) (semi-automated)"
+
+# ---------------------------------------------------------------- commands
+def plan(api=None):
+    api = api or Api()
+    mapping, person, pages = load_mapping()
+    OUT.mkdir(parents=True, exist_ok=True)
+    got = api.pages(list(pages))
+    items, unmatched = [], []
+    for title, want in sorted(pages.items()):
+        if title not in got:
+            unmatched.append((title, "page not found")); continue
+        revid, ts, text = got[title]
+        new, changes = fix_text(text, mapping)
+        found = {(lv, o) for lv in ("PS", "PWS") for _, o, n in changes if (lv, nfc(o)) in mapping}
+        if changes:
+            items.append(dict(title=title, revid=revid, timestamp=ts, old=text, new=new, changes=changes))
+        if not changes or {w[1] for w in want} - {nfc(o) for _, o, _ in changes}:
+            missing = sorted({w[1] for w in want} - {nfc(o) for _, o, _ in changes})
+            via = "<ety:" in text or "sem-pro" not in text and "sem-wes-pro" not in text
+            unmatched.append((title, ("linked through another page's etymology chain ({{ety|..<ety:inh<ar:term>>}}); follows when that page is respelled: " if via else
+                                      "no recognised reference to ") + ", ".join(missing)))
+    (OUT / "plan.json").write_text(json.dumps(dict(mapping=[[lv, b, g] for (lv, b), g in mapping.items()], items=items), ensure_ascii=False), encoding="utf-8")
+    with open(WIKT / "orthography_fixes.tsv", "w", encoding="utf-8", newline="") as f:
+        w = csv.writer(f, delimiter="\t", lineterminator="\n"); w.writerow(["page", "status", "changes"])
+        for it in items:
+            w.writerow([it["title"], "planned", "; ".join(f"{k}: {o} → {n}" for k, o, n in it["changes"])])
+        for t, why in unmatched:
+            w.writerow([t, "unmatched", why])
+        for lv, t, d in person:
+            w.writerow([f"{lv}/{t}", "needs a person", f"redirect leads to another stem: {d}"])
+    print(f"{len(items)} pages planned ({sum(len(i['changes']) for i in items)} respellings), {len(unmatched)} unmatched, {len(person)} redirects to another stem (needs a person)")
+    print("see data/wiktionary/orthography_fixes.tsv; diffs: show")
+    return items, unmatched, person
+
+def diff_of(item):
+    a, b = item["old"].splitlines(), item["new"].splitlines()
+    return "\n".join(l for l in difflib.unified_diff(a, b, "current", "proposed", n=0, lineterm="") if not l.startswith(("---", "+++")))
+
+def apply(user, bot=False, api=None, ask=input, pause=6.0, out=print):
+    plan_f = OUT / "plan.json"
+    if not plan_f.exists():
+        raise SystemExit("run `plan` first")
+    saved = json.loads(plan_f.read_text(encoding="utf-8"))
+    items, mapping = saved["items"], {(lv, b): g for lv, b, g in saved["mapping"]}      # the mapping the plan was made with
+    api = api or Api()
+    api.login(user, os.environ.get("WIKT_PASSWORD") or getpass.getpass(f"bot password for {user}: "))
+    log = OUT / "applied.tsv"
+    done = {r.split("\t")[0] for r in log.read_text(encoding="utf-8").splitlines()} if log.exists() else set()
+    everything = False
+    for n, it in enumerate(items, 1):
+        if it["title"] in done:
+            continue
+        cur = api.pages([it["title"]]).get(it["title"])
+        if cur is None:
+            continue
+        if cur[0] != it["revid"]:                                  # edited since the plan: recompute from the live text
+            new, changes = fix_text(cur[2], mapping)
+            it = dict(it, revid=cur[0], old=cur[2], new=new, changes=changes)
+        if not it["changes"]:
+            continue
+        out(f"\n[{n}/{len(items)}] {it['title']}   https://en.wiktionary.org/wiki/{urllib.parse.quote(it['title'])}\n{diff_of(it)}")
+        ans = "y" if everything else ask("apply? [y]es / [n]o / [a]ll the rest / [q]uit: ").strip().lower()[:1]
+        if ans == "q":
+            break
+        if ans == "a":
+            everything, ans = True, "y"
+        if ans != "y":
+            continue
+        r = api.edit(it["title"], it["new"], summary_for(it["changes"]), it["revid"], bot=bot)
+        ok = r.get("edit", {}).get("result") == "Success"
+        out("  done" if ok else "  FAILED: " + json.dumps(r)[:200])
+        if ok:
+            with open(log, "a", encoding="utf-8") as f:
+                f.write(f"{it['title']}\t{r['edit'].get('newrevid', '')}\n")
+        time.sleep(pause)
+
+def main(argv):
+    if not argv or argv[0] not in ("plan", "show", "apply"):
+        print(__doc__); return 2
+    if argv[0] == "plan":
+        plan()
+    elif argv[0] == "show":
+        items = json.loads((OUT / "plan.json").read_text(encoding="utf-8"))["items"]
+        for it in items:
+            if len(argv) == 1 or it["title"] in argv[1:]:
+                print(f"\n== {it['title']}\n{diff_of(it)}")
+    else:
+        user = argv[argv.index("--user") + 1] if "--user" in argv else os.environ.get("WIKT_USER")
+        if not user:
+            raise SystemExit("give --user NAME (or env WIKT_USER)")
+        apply(user, bot="--bot" in argv)
+    return 0
+
+if __name__ == "__main__":
+    sys.exit(main(sys.argv[1:]))
