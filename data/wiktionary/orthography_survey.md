@@ -4,6 +4,13 @@ Reproduce: `python scripts/wikt_orthography.py --scan --fresh` (scans titles, in
 Standard notation (Wiktionary:Proto-Semitic entry guidelines): `p t ṭ k ḳ ʔ b d g ṯ s š ś ḫ ḥ h ṯ̣ ṣ ṣ́ ḏ z ḡ ʕ r w y l m n`, vowels `a i u ā ī ū`, `V`/`V̄`; entry name = root/stem + hyphen; East + West attestation = Proto-Semitic, West only = Proto-West Semitic.
 Variants found: `q ʾ ˀ ʿ ˁ θ θ̣ ṱ ð ṣ̂ ɣ ḍ x̣ č`.
 
+## Resurvey 2026-10-16 (after the moves done by hand)
+- The three pages in §1 have been moved: `maraṣ́-` (real page), `ṯ̣aby-`, `ṣaḡir-`; the old titles are redirects. **No non-standard title is a real page any more**: 358 standard titles (385 PS + 43 PWS = 428 titles), 68 redirects from non-standard spellings, 2 redirects with an unreadable letter (`x̣arb-`, `čaʿlab-`).
+- References: 187 (link, page) pairs from 185 pages (was 199 / 197). The pages that linked to `θ̣aby-` and `ṣaɣir-` have been repointed (4 → 0, 6 → 0); `maraṣ̂-` still has 10 (was 12). The other 35 non-standard titles are unchanged, including the 4 red links (`našaq-`, `ʾarṣ́-`, `ʾayyal-`, `ʿaḳrab-`).
+- Levels (§3): unchanged, the same 20 PS pages without an Akkadian/Eblaite entry; PWS pages are consistent.
+- Optional segments in titles (`šaḥ(a)r-`, `šu(n)bulat-`, `ʕankab(īṯ)-`): unchanged.
+- Conventions (§5): unchanged (`he` 292 vs `hbo` 46, `arc-imp` 33, `arc-old` 10, `arc-pal` 10, `arc-bib` 14, `xhd` 12).
+
 ## 1. Titles (426: 383 Proto-Semitic, 43 Proto-West Semitic; 319 real pages, 107 redirects)
 | | count |
 |---|---|

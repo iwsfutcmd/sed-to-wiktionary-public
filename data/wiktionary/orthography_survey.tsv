@@ -74,8 +74,8 @@ PS	mVdr-	OK	absent				0
 PS	malik-	OK	absent				0		
 PS	malk-	OK	absent				0		
 PS	malkat-	OK	absent				0		
-PS	maraṣ́-	OK	redirect	maraṣ̂-			0		
-PS	maraṣ̂-	MOVE OVER REDIRECT	page		maraṣ́-	ṣ̂→ṣ́	12	מרץ; marad; מרע; maraz; mard; مرض; marazzi; marāṣum	
+PS	maraṣ́-	OK	page				2	marāṣum; Reconstruction:Proto-Semitic/maraṣ̂-	
+PS	maraṣ̂-	redirect ok	redirect	maraṣ́-	maraṣ́-	ṣ̂→ṣ́	10	מרץ; marad; מרע; maraz; mard; مرض; marazzi; măraz	
 PS	mataḳ-	OK	absent				0		
 PS	matḳ-	OK	absent				0		
 PS	mawut-	OK	absent				56	matadero; matanza; checkmate; mate; weak; matar; mata; mutu	
@@ -153,7 +153,7 @@ PS	warad-	OK	absent				0
 PS	waral-	OK	absent				0		
 PS	waran-	OK	absent				0		
 PS	waraq-	redirect ok	redirect	waraḳ-	waraḳ-	q→ḳ	9	يرقان; ܝܘܪܩܐ; ܝܪܘܩܐ; ܝܪܩܐ; jꜣqt; ܝܪܩܢܐ; wꜣḏ; مريق	
-PS	waraḳ-	OK	page				16	ירק; ورق; ወርቅ; awraɣ; ⲏϫⲓ; weraq; ወረቀት; warāqum	
+PS	waraḳ-	OK	page				18	ירק; ورق; ወርቅ; awraɣ; ⲏϫⲓ; vərəq; weraq; vərəqləmək	
 PS	warik-	OK	absent				0		
 PS	warq-	redirect ok	redirect	waraḳ-	warḳ-	q→ḳ	0		
 PS	waruḳ-	OK	absent				3	ירק; 𐎊𐎗𐎖; ירוק	
@@ -176,10 +176,10 @@ PS	śaʕr-	OK	page				17	شعر; שער; xagħar; שיער; ܣܥܪܐ; ሳር; �
 PS	śaʿr-	redirect ok	redirect	śaʕr-	śaʕr-	ʿ→ʕ	0		
 PS	śimaʔl-	OK	absent				0		
 PS	šabaṭ-	OK	absent				0		
-PS	šabʕ-	OK	page				269	September; septuplet; siete; zettagram; zeptogram; hepta-; zettasecond; zeptosecond	
+PS	šabʕ-	OK	page				272	September; septuplet; siete; zettagram; zeptogram; hepta-; zettasecond; zeptosecond	
 PS	šabʿ-	redirect ok	redirect	šabʕ-	šabʕ-	ʿ→ʕ	7	ሸውዓተ; ܫܘܥܐ; ሰባት; ሰቡዕ; ሰብዐቱ; ܐܫܒܥ; ܫܒܥܐ	
 PS	šabṭ-	OK	absent				0		
-PS	šamaʕ-	OK	page				30	Ismaeli; שמע; Ismael; Simeón; سمع; sḏm; ܫܡܥ; İsmail	
+PS	šamaʕ-	OK	page				32	Ismaeli; שמע; Ismael; Simeón; سمع; sḏm; ܫܡܥ; İsmail	
 PS	šamaʿ-	redirect ok	redirect	šamaʕ-	šamaʕ-	ʿ→ʕ	2	𐩪𐩣𐩲; 𐎌𐎎𐎓	
 PS	šamn-	OK	absent				0		
 PS	šamāy-	OK	absent				0		
@@ -237,7 +237,7 @@ PS	ʔatān-	OK	absent				0
 PS	ʔaw	OK	absent				0		yes
 PS	ʔayy-	OK	absent				0		
 PS	ʔayyal-	OK	absent				0		
-PS	ʔaḥad-	OK	page				21	واحد; אחד; חדא; 𐤀𐤇𐤕; 𐎀𐎈𐎄; አንድ; wieħed; أول	
+PS	ʔaḥad-	OK	page				22	واحد; אחד; חדא; 𐤀𐤇𐤕; 𐎀𐎈𐎄; አንድ; wieħed; أول	
 PS	ʔaḫaḏ	OK	absent				0		yes
 PS	ʔaḫaḏ-	OK	page				5	ܐܚܕ; أخذ; א־ח־ז; Reconstruction:Proto-Semitic/ʾaḫað-; Reconstruction:Proto-Semitic/ʾaḫaḏ-	
 PS	ʔaḫw-	OK	page				0		
@@ -248,7 +248,7 @@ PS	ʔbd-	OK	absent				0
 PS	ʔdm	OK	absent				0		yes
 PS	ʔdw-	OK	absent				0		
 PS	ʔibr-	OK	absent				0		
-PS	ʔil-	OK	page				108	Michael; Allah; الله; אל; Elizabeth; Mikhail; Ala; Ismaeli	
+PS	ʔil-	OK	page				113	Michael; Allah; الله; אל; Elizabeth; Mikhail; Ala; Ismaeli	
 PS	ʔimm-	OK	absent				0		
 PS	ʔināš-	OK	absent				0		
 PS	ʔirbay-	OK	page				5	erbum; Reconstruction:Proto-Semitic/ʾirbay-; Reconstruction:Proto-Semitic/ḥargil-; Reconstruction:Proto-Semitic/šawmān-; Reconstruction:Proto-Semitic/-b	
@@ -265,7 +265,7 @@ PS	ʕabar-	OK	absent				0
 PS	ʕalay-	OK	absent				0		
 PS	ʕaly-	OK	absent				0		
 PS	ʕapar-	OK	page				7	Africa; עפר; 𐎓𐎔𐎗; عفر; eperum; ܥܘܦܪܐ; Reconstruction:Proto-Semitic/ʿapar-	
-PS	ʕayn-	OK	page				15	عين; עין; עינא; عینک; għajn; 𒀀𒈾𒈾; cayn; ܥܝܢܐ	
+PS	ʕayn-	OK	page				16	عين; עין; עינא; عینک; għajn; 𒀀𒈾𒈾; cayn; ܥܝܢܐ	
 PS	ʕazab-	OK	page				4	עזב; عزب; ezēbum; Reconstruction:Proto-Semitic/ʿazab-	
 PS	ʕaśar-	OK	page				0		
 PS	ʕašt-	OK	absent				0		
@@ -301,7 +301,7 @@ PS	θaʿlab-	redirect ok	redirect	ṯaʕlab-	ṯaʕlab-	θ→ṯ ʿ→ʕ	0
 PS	θnā-	redirect ok	redirect	ṯin-	ṯnā-	θ→ṯ	0		
 PS	θūm-	redirect ok	redirect	ṯūm-	ṯūm-	θ→ṯ	0		
 PS	θ̣Vrr-	redirect ok	redirect	ṯ̣urr-	ṯ̣Vrr-	θ̣→ṯ̣	0		
-PS	θ̣aby-	MOVE	page		ṯ̣aby-	θ̣→ṯ̣	4	Abu-Dabio; ظبي; Абузабӣ; Abudábi	
+PS	θ̣aby-	redirect ok	redirect	ṯ̣aby-	ṯ̣aby-	θ̣→ṯ̣	0		
 PS	θ̣ill-	redirect ok	redirect	ṯ̣ill-	ṯ̣ill-	θ̣→ṯ̣	1	ጽላሎት	
 PS	θ̣ipr-	redirect ok	redirect	ṯ̣upr-	ṯ̣ipr-	θ̣→ṯ̣	2	ܛܦܪܐ; ציפורן	
 PS	θ̣upr-	redirect ok	redirect	ṯ̣upr-	ṯ̣upr-	θ̣→ṯ̣	3	ܛܦܪܐ; ציפורן; ܛܘܦܪܐ	
@@ -350,7 +350,8 @@ PS	ḳarib-	OK	page				5	قرب; ቀረበ; ܩܪܒ; 𐩤𐩧𐩨; Reconstruction
 PS	ḳarn-	OK	page				13	角; קרנא; قرن; karne; קרן; 𐎖𐎗𐎐; ܩܪܢܐ; krtj	
 PS	ḳarḳar-	OK	page				4	קרקע; qaqqarum; Reconstruction:Proto-Semitic/kabkab-; Reconstruction:Proto-Semitic/qarqar-	
 PS	ḳudš-	OK	page				8	קדוש; 𐤒𐤃𐤔𐤍; 𐩤𐩵𐩪; قدس; ቅዱስ; qdš; ܩܕܝܫܐ; Reconstruction:Proto-Semitic/qudš-	
-PS	ṣaɣir-	MOVE	page		ṣaḡir-	ɣ→ḡ	6	צעיר; صغير; صغر; ṣeḫrum; ṣeḫērum; ܙܥܘܪܐ	
+PS	ṣaɣir-	redirect ok	redirect	ṣaḡir-	ṣaḡir-	ɣ→ḡ	0		
+PS	ṣaḡir-	OK	page				7	צעיר; صغير; صغر; ṣeḫrum; ṣeḫērum; ܙܥܘܪܐ; Reconstruction:Proto-Semitic/ṣaɣir-	
 PS	ṣ́abuʕ-	OK	page				6	ܐܦܥܐ; ضبع; צבוע; Reconstruction:Proto-Semitic/ḍabuʿ-; Reconstruction:Proto-Semitic/ṣ́abuʿ-; Reconstruction:Proto-Semitic/-b	
 PS	ṣ́abuʿ-	redirect ok	redirect	ṣ́abuʕ-	ṣ́abuʕ-	ʿ→ʕ	2	ضبع; Reconstruction:Proto-Semitic/ḏiʔb-	
 PS	ṣ́amr	OK	absent				0		yes
@@ -374,6 +375,7 @@ PS	ṯaʿlab-	redirect ok	redirect	ṯaʕlab-	ṯaʕlab-	ʿ→ʕ	1	ܬܥܠܬܐ
 PS	ṯin-	OK	page				0		
 PS	ṯnā-	OK	redirect	ṯin-			2	ⲥⲛⲁⲩ; ⲥⲛⲉⲩ	
 PS	ṯūm-	OK	page				6	שום; توم; ثوم; ܬܘܡܐ; šūmū; Reconstruction:Proto-Semitic/θūm-	
+PS	ṯ̣aby-	OK	page				8	טביא; Abu-Dabio; ظبي; צבי; 𐎑𐎁𐎊; Абузабӣ; Abudábi; Reconstruction:Proto-Semitic/θ̣aby-	
 PS	ṯ̣amiʔ-	OK	absent				4	צמא; ظمئ; ጸምአ; ጽምእ	
 PS	ṯ̣ill-	OK	page				8	צל; ظل; ܛܠܠܐ; ጽላሎት; 𐎑𐎍; ṣillum; Reconstruction:Proto-Semitic/θ̣ill-; Reconstruction:Proto-Semitic/ṱill-	
 PS	ṯ̣upr-	OK	page				6	ظفر; ጥፍር; ṣuprum; Reconstruction:Proto-Semitic/θ̣ipr-; Reconstruction:Proto-Semitic/θ̣upr-; Reconstruction:Proto-Semitic/ṱupr-	
