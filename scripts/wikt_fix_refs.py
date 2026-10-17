@@ -3,6 +3,7 @@
   python wikt_fix_refs.py plan                 fetch the pages that link to a non-standard spelling and work out the new wikitext (touches nothing on Wiktionary)
   python wikt_fix_refs.py show [PAGE ...]      print the planned diffs
   python wikt_fix_refs.py apply --user NAME    log in (bot password), show each diff, ask y/n, edit.  Password: env WIKT_PASSWORD or a prompt.
+  python wikt_fix_refs.py checklist            the MANUAL route (no bot): site/orthography_fix.html + site/wikt_respell.user.js, see data/wiktionary/orthography_survey.md
 
 What it changes, and only this: the TERM of a reconstruction reference. A term is the positional argument after `sem-pro` / `sem-wes-pro` in a template
 ({{inh|ar|sem-pro|*ʾab-}}, {{cog|sem-pro|*ʾab-}}, {{m|sem-pro|*ʾab-}}, {{l|..}}, {{desc|..}}), the `sem-pro:*ʾab-` of an {{ety}} chain, and the title of a
@@ -13,6 +14,7 @@ plus non-standard spellings with no page whose standard spelling exists. A redir
 by `plan` as "needs a person" without any edit.  A planned page where a link was not found in a recognised place is listed as "unmatched": it is left alone.
 
 Everything that decides what is edited is in fix_text(), which is pure and tested offline (tests/test_fix_refs.py)."""
+from pathlib import Path
 import csv, difflib, getpass, http.cookiejar, json, os, re, sys, time, unicodedata as U, urllib.error, urllib.parse, urllib.request
 from paths import BUILD, WIKT
 from wikt_orthography import standardise, PFX
@@ -263,11 +265,70 @@ def apply(user, bot=False, api=None, ask=input, pause=6.0, out=print):
                 f.write(f"{it['title']}\t{r['edit'].get('newrevid', '')}\n")
         time.sleep(pause)
 
+# ---------------------------------------------------------------- manual route: a user script + a checklist page
+SITE = BUILD.parent / "site"
+LOADER = r"""
+(function () {
+  var MAP = __MAP__;
+  mw.loader.using(["jquery.textSelection"]).then(function () { $(function () {
+    if (mw.config.get("wgAction") !== "edit" || !/[?&]respell=1(&|$)/.test(location.search)) return;   // only for the links of the checklist page
+    var $ta = $("#wpTextbox1");
+    if (!$ta.length) { mw.notify("Respell: no plain edit box here (turn CodeMirror off).", { type: "error", autoHide: false }); return; }
+    var r = WiktRespell.fixText($ta.textSelection("getContents"), MAP);
+    if (!r.changes.length) { mw.notify("Respell: nothing to change on this page (already fixed?).", { type: "warn", autoHide: false }); return; }
+    $ta.textSelection("setContents", r.text);
+    var seen = {}, pairs = [];
+    r.changes.forEach(function (c) { var k = "*" + c[1] + " → *" + c[2]; if (!seen[k]) { seen[k] = 1; pairs.push(k); } });
+    $("#wpSummary").val("respell Proto-Semitic reference to the WT:ASEM notation (" + pairs.slice(0, 4).join(", ") + (pairs.length > 4 ? " …" : "") + ") (script-assisted)");
+    mw.notify("Respell: " + r.changes.length + " change(s). Check the diff, then Save.", { autoHide: false });
+    setTimeout(function () { $("#wpDiff").trigger("click"); }, 400);
+  }); });
+})();
+"""
+def userscript(mapping):
+    core = (Path(__file__).resolve().parent / "respell_core.js").read_text(encoding="utf-8")
+    m = {f"{lv}\t{b}": g for (lv, b), g in sorted(mapping.items())}
+    return "// ASEM respeller (https://github.com/iwsfutcmd/sed-to-wiktionary, scripts/respell_core.js). Acts only on edit links ending in &respell=1.\n" + core.strip() + "\n" + \
+        LOADER.replace("__MAP__", json.dumps(m, ensure_ascii=False, indent=1))
+
+def checklist():
+    """Write site/orthography_fix.html (the page you click through) and site/wikt_respell.user.js from build/orth_fixes/plan.json."""
+    saved = json.loads((OUT / "plan.json").read_text(encoding="utf-8"))
+    mapping = {(lv, b): g for lv, b, g in saved["mapping"]}
+    rows = read_tsv(WIKT / "orthography_fixes.tsv")
+    survey = {(r["level"], nfc(r["title"])): r for r in read_tsv(WIKT / "orthography_survey.tsv")}
+    items = []
+    for it in saved["items"]:
+        agg = {}
+        for _, o, n in it["changes"]:
+            agg[(o, n)] = agg.get((o, n), 0) + 1
+        items.append(dict(title=it["title"], changes=[f"*{o} → *{n}" + (f" ×{c}" if c > 1 else "") for (o, n), c in agg.items()]))
+    person = []
+    for r in rows:
+        if r["status"] == "needs a person":
+            lv, t = r["page"].split("/", 1)
+            sv = survey.get((lv, nfc(t)), {})
+            person.append(dict(from_=t, to=r["changes"].split(": ", 1)[-1], page=PFX[lv] + t, n=int(sv.get("n_links") or 0)))
+    for p in person:
+        p["from"] = p.pop("from_")
+    indirect = [r["page"] for r in rows if r["status"] == "unmatched" and r["changes"].startswith("linked through")]
+    data = json.dumps(dict(items=items, person=person, indirect=indirect), ensure_ascii=False).replace("</", "<\\/")
+    us = userscript(mapping)
+    html = (Path(__file__).resolve().parent / "respell_checklist.template.html").read_text(encoding="utf-8")
+    html = html.replace("__DATA__", data).replace("__TOTAL__", str(len(items))).replace("__NPERSON__", str(len(person))).replace("__NINDIRECT__", str(len(indirect)))
+    html = html.replace("__USERSCRIPT__", us.replace("&", "&amp;").replace("<", "&lt;"))
+    SITE.mkdir(exist_ok=True)
+    (SITE / "orthography_fix.html").write_text(html, encoding="utf-8")
+    (SITE / "wikt_respell.user.js").write_text(us, encoding="utf-8")
+    print(f"site/orthography_fix.html ({len(html) // 1024} KB, {len(items)} pages, {len(person)} to decide, {len(indirect)} indirect) and site/wikt_respell.user.js")
+
 def main(argv):
-    if not argv or argv[0] not in ("plan", "show", "apply"):
+    if not argv or argv[0] not in ("plan", "show", "apply", "checklist"):
         print(__doc__); return 2
     if argv[0] == "plan":
         plan()
+    elif argv[0] == "checklist":
+        checklist()
     elif argv[0] == "show":
         items = json.loads((OUT / "plan.json").read_text(encoding="utf-8"))["items"]
         for it in items:

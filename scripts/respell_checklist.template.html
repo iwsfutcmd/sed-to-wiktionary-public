@@ -1,0 +1,182 @@
+<title>ASEM Respell Checklist</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: one working column. Progress and the big "Open next" button on top, the one-time install folded below it, then the page list. */
+:root {
+  --bg: #f6f7f9; --surface: #ffffff; --fg: #1d2530; --muted: #5b6676; --line: #d9dee6;
+  --accent: #1f5fbf; --accent-fg: #ffffff; --done: #1f7a4d; --done-bg: #e3f3ea; --skip: #8a6a1a; --skip-bg: #f6edd3; --code-bg: #eef1f5;
+  --sans: "IBM Plex Sans", system-ui, -apple-system, "Segoe UI", sans-serif; --mono: "IBM Plex Mono", ui-monospace, "SFMono-Regular", Menlo, monospace;
+}
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) {
+  --bg: #12161c; --surface: #1a2029; --fg: #e5e9ef; --muted: #98a3b3; --line: #2d3644;
+  --accent: #6fa3f0; --accent-fg: #0d1522; --done: #6fcf9a; --done-bg: #1a3025; --skip: #e0c070; --skip-bg: #35301b; --code-bg: #232b36; color-scheme: dark; } }
+:root[data-theme="dark"] {
+  --bg: #12161c; --surface: #1a2029; --fg: #e5e9ef; --muted: #98a3b3; --line: #2d3644;
+  --accent: #6fa3f0; --accent-fg: #0d1522; --done: #6fcf9a; --done-bg: #1a3025; --skip: #e0c070; --skip-bg: #35301b; --code-bg: #232b36; color-scheme: dark; }
+* { box-sizing: border-box; }
+body { background: var(--bg); color: var(--fg); font: 15px/1.5 var(--sans); padding-block: 24px 48px; padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); }
+main { max-width: 56rem; margin: 0 auto; display: grid; gap: 20px; }
+h1 { font-size: 1.5rem; font-weight: 600; margin: 0; text-wrap: balance; }
+h2 { font-size: 1.05rem; font-weight: 600; margin: 0 0 8px; }
+p { margin: 0 0 8px; max-width: 65ch; } .muted { color: var(--muted); }
+a { color: var(--accent); }
+code, .mono { font-family: var(--mono); font-size: .9em; }
+code { background: var(--code-bg); padding: 1px 5px; border-radius: 3px; }
+.panel { background: var(--surface); border: 1px solid var(--line); border-radius: 8px; padding: 16px; min-width: 0; }
+.top { display: grid; gap: 14px; }
+.bar { height: 10px; background: var(--code-bg); border-radius: 5px; overflow: hidden; display: flex; }
+.bar i { display: block; height: 100%; } .bar .d { background: var(--done); } .bar .s { background: var(--skip); }
+.stats { display: flex; flex-wrap: wrap; gap: 6px 18px; font-variant-numeric: tabular-nums; }
+.cta { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; }
+.btn { font: inherit; font-weight: 500; border: 1px solid var(--line); background: var(--surface); color: var(--fg); border-radius: 6px; padding: 7px 12px; cursor: pointer; text-decoration: none; display: inline-block; }
+.btn:hover { border-color: var(--accent); }
+.btn.primary { background: var(--accent); color: var(--accent-fg); border-color: var(--accent); font-size: 1.05rem; padding: 11px 20px; }
+.btn.primary[aria-disabled="true"] { opacity: .5; pointer-events: none; }
+:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+ol.steps { margin: 0; padding-left: 1.2em; display: grid; gap: 6px; } ol.steps li { max-width: 65ch; }
+details summary { cursor: pointer; font-weight: 600; } details[open] summary { margin-bottom: 10px; }
+textarea { width: 100%; min-height: 9rem; font: 12px/1.45 var(--mono); background: var(--code-bg); color: var(--fg); border: 1px solid var(--line); border-radius: 6px; padding: 10px; resize: vertical; }
+.tabs { display: flex; gap: 6px; flex-wrap: wrap; margin-bottom: 10px; }
+.tabs button { font: inherit; border: 1px solid var(--line); background: transparent; color: var(--muted); padding: 4px 12px; border-radius: 999px; cursor: pointer; }
+.tabs button[aria-pressed="true"] { background: var(--accent); border-color: var(--accent); color: var(--accent-fg); }
+.tablewrap { overflow-x: auto; }
+table { width: 100%; border-collapse: collapse; }
+th, td { text-align: left; padding: 7px 10px; border-bottom: 1px solid var(--line); vertical-align: top; }
+th { font-size: .75rem; letter-spacing: .04em; text-transform: uppercase; color: var(--muted); font-weight: 500; }
+td.n { color: var(--muted); font-variant-numeric: tabular-nums; width: 3rem; }
+td.pg { min-width: 9rem; } td.pg bdi { font-size: 1.05rem; }
+td.ch { font-size: .92rem; }
+td.ch span { white-space: nowrap; } td.ch span + span { margin-left: .8em; }
+td.act { white-space: nowrap; text-align: right; }
+td.act .btn { padding: 3px 9px; font-size: .85rem; }
+tr.done td.pg a { color: var(--muted); } tr.done { background: var(--done-bg); } tr.skip { background: var(--skip-bg); } tr.cur td { box-shadow: inset 3px 0 var(--accent); }
+.tag { font-size: .75rem; padding: 1px 7px; border-radius: 999px; border: 1px solid currentColor; }
+.tag.done { color: var(--done); } .tag.skip { color: var(--skip); } .tag.cur { color: var(--accent); }
+.list { display: grid; gap: 4px; margin: 0; padding: 0; list-style: none; }
+.list li { display: flex; flex-wrap: wrap; gap: 4px 14px; align-items: baseline; border-bottom: 1px solid var(--line); padding: 5px 0; }
+.empty { color: var(--muted); padding: 14px 0; }
+@media (max-width: 560px) { td.ch { font-size: .85rem; } th:nth-child(1), td.n { display: none; } }
+@media (prefers-reduced-motion: no-preference) { .bar i { transition: width .25s; } }
+</style>
+
+<main>
+  <header class="top panel">
+    <h1>Respell Proto-Semitic references</h1>
+    <p class="muted">__TOTAL__ pages link to a spelling that WT:ASEM does not use. Each one opens in the edit form with the fix already made and the diff showing. You read it and press Save.</p>
+    <div class="bar" role="img" aria-label="progress"><i class="d" id="bd"></i><i class="s" id="bs"></i></div>
+    <div class="stats" id="stats"></div>
+    <div class="cta">
+      <a class="btn primary" id="next" href="#" target="_blank" rel="noopener">Open next page</a>
+      <span class="muted" id="hint"></span>
+    </div>
+    <ol class="steps">
+      <li>Press <b>Open next page</b> (or <kbd>N</kbd>). The page opens in a new tab as an edit form, the fixed text is in the box and “Show changes” has been pressed for you.</li>
+      <li>Check the highlighted changes, then press <b>Save changes</b> on Wiktionary. If something looks wrong, close the tab; nothing was saved.</li>
+      <li>Come back here and press <b>Open next page</b> again. That also ticks off the page you just did.</li>
+    </ol>
+  </header>
+
+  <details class="panel" id="install">
+    <summary>One-time setup: install the script on your Wiktionary account</summary>
+    <ol class="steps">
+      <li>Open <a href="https://en.wiktionary.org/wiki/Special:MyPage/common.js?action=edit" target="_blank" rel="noopener">your common.js</a> (it may be empty or new).</li>
+      <li>Paste everything below at the end of it and save. Then reload with Ctrl+Shift+R.</li>
+      <li>The script does nothing on any other edit. It only acts on edit links from this page, which end in <code>&amp;respell=1</code>.</li>
+    </ol>
+    <textarea id="script" readonly spellcheck="false" aria-label="user script">__USERSCRIPT__</textarea>
+    <div class="cta" style="margin-top:8px"><button class="btn" id="copy" type="button">Copy script</button><span class="muted" id="copied"></span></div>
+    <p class="muted" style="margin-top:10px">It needs the plain edit box. If you use CodeMirror syntax highlighting, switch it off for these edits.</p>
+  </details>
+
+  <section class="panel">
+    <h2>Pages</h2>
+    <div class="tabs" id="tabs" role="group" aria-label="filter">
+      <button type="button" data-f="todo" aria-pressed="true">To do</button><button type="button" data-f="done" aria-pressed="false">Done</button><button type="button" data-f="skip" aria-pressed="false">Skipped</button><button type="button" data-f="all" aria-pressed="false">All</button>
+    </div>
+    <div class="tablewrap"><table><thead><tr><th>#</th><th>Page</th><th>Changes</th><th></th></tr></thead><tbody id="rows"></tbody></table></div>
+    <div class="empty" id="empty" hidden>Nothing here.</div>
+  </section>
+
+  <section class="panel" id="decide">
+    <h2>Left for you to decide (__NPERSON__)</h2>
+    <p class="muted">These spellings are redirects to a different stem, not just a respelling (for example <code>ʾab-</code> now leads to <code>ʔabw-</code>). The script does not touch them. “Links” lists the pages that use them.</p>
+    <ul class="list" id="person"></ul>
+  </section>
+
+  <section class="panel" id="indirect">
+    <h2>Will follow on their own (__NINDIRECT__)</h2>
+    <p class="muted">These pages reach a Proto-Semitic page only through another page’s etymology chain. They need no edit; they update once the page they point to is respelled.</p>
+    <ul class="list" id="ind"></ul>
+  </section>
+</main>
+
+<script id="data" type="application/json">__DATA__</script>
+<script>
+(function () {
+  var D = JSON.parse(document.getElementById("data").textContent);
+  var KEY = "asem-respell-v1", state = { s: {}, cur: null };
+  try { var saved = JSON.parse(localStorage.getItem(KEY) || "null"); if (saved && saved.s) state = saved; } catch (e) {}
+  function save() { try { localStorage.setItem(KEY, JSON.stringify(state)); } catch (e) {} }
+  var filter = "todo";
+  var $ = function (id) { return document.getElementById(id); };
+  function editUrl(t) { return "https://en.wiktionary.org/w/index.php?title=" + encodeURIComponent(t.replace(/ /g, "_")) + "&action=edit&respell=1"; }
+  function wiki(t) { return "https://en.wiktionary.org/wiki/" + encodeURIComponent(t.replace(/ /g, "_")).replace(/%2F/g, "/").replace(/%3A/g, ":"); }
+  function el(tag, props, kids) { var e = document.createElement(tag); for (var k in props || {}) { if (k === "class") e.className = props[k]; else if (k === "text") e.textContent = props[k]; else e.setAttribute(k, props[k]); } (kids || []).forEach(function (c) { e.appendChild(c); }); return e; }
+  function status(t) { return state.s[t] || "todo"; }
+  function nextTarget() { for (var i = 0; i < D.items.length; i++) { var t = D.items[i].title; if (status(t) === "todo" && t !== state.cur) return t; } return null; }
+  function count(s) { return D.items.filter(function (i) { return status(i.title) === s; }).length; }
+  function render() {
+    var n = D.items.length, d = count("done"), s = count("skip"), todo = n - d - s;
+    $("bd").style.width = (100 * d / n) + "%"; $("bs").style.width = (100 * s / n) + "%";
+    $("stats").textContent = ""; [[d, "done"], [todo, "to do"], [s, "skipped"]].forEach(function (p) { $("stats").appendChild(el("span", { text: p[0] + " " + p[1] })); });
+    var nt = nextTarget(), a = $("next");
+    if (nt) { a.href = editUrl(nt); a.removeAttribute("aria-disabled"); a.textContent = d + s ? "Open next page" : "Open the first page"; $("hint").textContent = "Next: "; $("hint").appendChild(el("bdi", { text: nt })); }
+    else { a.href = "#"; a.setAttribute("aria-disabled", "true"); a.textContent = "All pages done"; $("hint").textContent = ""; }
+    var tb = $("rows"); tb.textContent = ""; var shown = 0;
+    D.items.forEach(function (it, i) {
+      var st = status(it.title); if (filter !== "all" && st !== filter) return; shown++;
+      var cls = st === "done" ? "done" : st === "skip" ? "skip" : (it.title === state.cur ? "cur" : "");
+      var ch = el("td", { class: "ch" }); it.changes.forEach(function (c) { ch.appendChild(el("span", { text: c })); });
+      var act = el("td", { class: "act" });
+      var open = el("a", { class: "btn", href: editUrl(it.title), target: "_blank", rel: "noopener", text: "Open" });
+      open.addEventListener("click", function () { state.cur = it.title; save(); setTimeout(render, 0); });
+      if (st === "todo") {
+        var dn = el("button", { class: "btn", type: "button", text: "Done" }); dn.addEventListener("click", function () { state.s[it.title] = "done"; if (state.cur === it.title) state.cur = null; save(); render(); });
+        var sk = el("button", { class: "btn", type: "button", text: "Skip" }); sk.addEventListener("click", function () { state.s[it.title] = "skip"; if (state.cur === it.title) state.cur = null; save(); render(); });
+        [open, document.createTextNode(" "), dn, document.createTextNode(" "), sk].forEach(function (x) { act.appendChild(x); });
+      } else {
+        var un = el("button", { class: "btn", type: "button", text: "Undo" }); un.addEventListener("click", function () { delete state.s[it.title]; save(); render(); });
+        [el("span", { class: "tag " + st, text: st === "done" ? "done" : "skipped" }), document.createTextNode(" "), un].forEach(function (x) { act.appendChild(x); });
+      }
+      var pg = el("td", { class: "pg" }); var link = el("a", { href: wiki(it.title), target: "_blank", rel: "noopener" }); link.appendChild(el("bdi", { text: it.title })); pg.appendChild(link);
+      if (it.title === state.cur && st === "todo") pg.appendChild(document.createTextNode(" ")), pg.appendChild(el("span", { class: "tag cur", text: "open" }));
+      tb.appendChild(el("tr", { class: cls }, [el("td", { class: "n", text: String(i + 1) }), pg, ch, act]));
+    });
+    $("empty").hidden = shown > 0;
+    Array.prototype.forEach.call($("tabs").children, function (b) { b.setAttribute("aria-pressed", String(b.dataset.f === filter)); });
+  }
+  $("next").addEventListener("click", function (e) {
+    var nt = nextTarget(); if (!nt) { e.preventDefault(); return; }
+    if (state.cur && status(state.cur) === "todo") state.s[state.cur] = "done";
+    state.cur = nt; save(); setTimeout(render, 0);
+  });
+  $("tabs").addEventListener("click", function (e) { var f = e.target.dataset && e.target.dataset.f; if (f) { filter = f; render(); } });
+  document.addEventListener("keydown", function (e) { if ((e.key === "n" || e.key === "N") && !e.ctrlKey && !e.metaKey && !e.altKey && !/^(INPUT|TEXTAREA)$/.test((e.target.tagName || ""))) { $("next").click(); } });
+  $("copy").addEventListener("click", function () {
+    var ta = $("script"), msg = $("copied");
+    function fallback() { ta.focus(); ta.select(); msg.textContent = "Selected. Press Ctrl+C."; }
+    try { navigator.clipboard.writeText(ta.value).then(function () { msg.textContent = "Copied."; }, fallback); } catch (e) { fallback(); }
+  });
+  var inst = $("install"); try { if (localStorage.getItem(KEY + "-installed")) inst.open = false; } catch (e) {}
+  $("script").addEventListener("copy", function () { try { localStorage.setItem(KEY + "-installed", "1"); } catch (e) {} });
+  D.person.forEach(function (p) {
+    var li = el("li"); li.appendChild(el("bdi", { class: "mono", text: p.from })); li.appendChild(el("span", { class: "muted", text: "→ " + p.to }));
+    var l = el("a", { href: wiki("Special:WhatLinksHere/" + p.page), target: "_blank", rel: "noopener", text: "Links (" + p.n + ")" }); li.appendChild(l); $("person").appendChild(li);
+  });
+  D.indirect.forEach(function (p) { var li = el("li"); li.appendChild(el("bdi", { text: p })); $("ind").appendChild(li); });
+  if (!D.person.length) $("decide").hidden = true; if (!D.indirect.length) $("indirect").hidden = true;
+  render();
+})();
+</script>

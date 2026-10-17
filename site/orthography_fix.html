@@ -1,0 +1,348 @@
+<title>ASEM Respell Checklist</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: one working column. Progress and the big "Open next" button on top, the one-time install folded below it, then the page list. */
+:root {
+  --bg: #f6f7f9; --surface: #ffffff; --fg: #1d2530; --muted: #5b6676; --line: #d9dee6;
+  --accent: #1f5fbf; --accent-fg: #ffffff; --done: #1f7a4d; --done-bg: #e3f3ea; --skip: #8a6a1a; --skip-bg: #f6edd3; --code-bg: #eef1f5;
+  --sans: "IBM Plex Sans", system-ui, -apple-system, "Segoe UI", sans-serif; --mono: "IBM Plex Mono", ui-monospace, "SFMono-Regular", Menlo, monospace;
+}
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) {
+  --bg: #12161c; --surface: #1a2029; --fg: #e5e9ef; --muted: #98a3b3; --line: #2d3644;
+  --accent: #6fa3f0; --accent-fg: #0d1522; --done: #6fcf9a; --done-bg: #1a3025; --skip: #e0c070; --skip-bg: #35301b; --code-bg: #232b36; color-scheme: dark; } }
+:root[data-theme="dark"] {
+  --bg: #12161c; --surface: #1a2029; --fg: #e5e9ef; --muted: #98a3b3; --line: #2d3644;
+  --accent: #6fa3f0; --accent-fg: #0d1522; --done: #6fcf9a; --done-bg: #1a3025; --skip: #e0c070; --skip-bg: #35301b; --code-bg: #232b36; color-scheme: dark; }
+* { box-sizing: border-box; }
+body { background: var(--bg); color: var(--fg); font: 15px/1.5 var(--sans); padding-block: 24px 48px; padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); }
+main { max-width: 56rem; margin: 0 auto; display: grid; gap: 20px; }
+h1 { font-size: 1.5rem; font-weight: 600; margin: 0; text-wrap: balance; }
+h2 { font-size: 1.05rem; font-weight: 600; margin: 0 0 8px; }
+p { margin: 0 0 8px; max-width: 65ch; } .muted { color: var(--muted); }
+a { color: var(--accent); }
+code, .mono { font-family: var(--mono); font-size: .9em; }
+code { background: var(--code-bg); padding: 1px 5px; border-radius: 3px; }
+.panel { background: var(--surface); border: 1px solid var(--line); border-radius: 8px; padding: 16px; min-width: 0; }
+.top { display: grid; gap: 14px; }
+.bar { height: 10px; background: var(--code-bg); border-radius: 5px; overflow: hidden; display: flex; }
+.bar i { display: block; height: 100%; } .bar .d { background: var(--done); } .bar .s { background: var(--skip); }
+.stats { display: flex; flex-wrap: wrap; gap: 6px 18px; font-variant-numeric: tabular-nums; }
+.cta { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; }
+.btn { font: inherit; font-weight: 500; border: 1px solid var(--line); background: var(--surface); color: var(--fg); border-radius: 6px; padding: 7px 12px; cursor: pointer; text-decoration: none; display: inline-block; }
+.btn:hover { border-color: var(--accent); }
+.btn.primary { background: var(--accent); color: var(--accent-fg); border-color: var(--accent); font-size: 1.05rem; padding: 11px 20px; }
+.btn.primary[aria-disabled="true"] { opacity: .5; pointer-events: none; }
+:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+ol.steps { margin: 0; padding-left: 1.2em; display: grid; gap: 6px; } ol.steps li { max-width: 65ch; }
+details summary { cursor: pointer; font-weight: 600; } details[open] summary { margin-bottom: 10px; }
+textarea { width: 100%; min-height: 9rem; font: 12px/1.45 var(--mono); background: var(--code-bg); color: var(--fg); border: 1px solid var(--line); border-radius: 6px; padding: 10px; resize: vertical; }
+.tabs { display: flex; gap: 6px; flex-wrap: wrap; margin-bottom: 10px; }
+.tabs button { font: inherit; border: 1px solid var(--line); background: transparent; color: var(--muted); padding: 4px 12px; border-radius: 999px; cursor: pointer; }
+.tabs button[aria-pressed="true"] { background: var(--accent); border-color: var(--accent); color: var(--accent-fg); }
+.tablewrap { overflow-x: auto; }
+table { width: 100%; border-collapse: collapse; }
+th, td { text-align: left; padding: 7px 10px; border-bottom: 1px solid var(--line); vertical-align: top; }
+th { font-size: .75rem; letter-spacing: .04em; text-transform: uppercase; color: var(--muted); font-weight: 500; }
+td.n { color: var(--muted); font-variant-numeric: tabular-nums; width: 3rem; }
+td.pg { min-width: 9rem; } td.pg bdi { font-size: 1.05rem; }
+td.ch { font-size: .92rem; }
+td.ch span { white-space: nowrap; } td.ch span + span { margin-left: .8em; }
+td.act { white-space: nowrap; text-align: right; }
+td.act .btn { padding: 3px 9px; font-size: .85rem; }
+tr.done td.pg a { color: var(--muted); } tr.done { background: var(--done-bg); } tr.skip { background: var(--skip-bg); } tr.cur td { box-shadow: inset 3px 0 var(--accent); }
+.tag { font-size: .75rem; padding: 1px 7px; border-radius: 999px; border: 1px solid currentColor; }
+.tag.done { color: var(--done); } .tag.skip { color: var(--skip); } .tag.cur { color: var(--accent); }
+.list { display: grid; gap: 4px; margin: 0; padding: 0; list-style: none; }
+.list li { display: flex; flex-wrap: wrap; gap: 4px 14px; align-items: baseline; border-bottom: 1px solid var(--line); padding: 5px 0; }
+.empty { color: var(--muted); padding: 14px 0; }
+@media (max-width: 560px) { td.ch { font-size: .85rem; } th:nth-child(1), td.n { display: none; } }
+@media (prefers-reduced-motion: no-preference) { .bar i { transition: width .25s; } }
+</style>
+
+<main>
+  <header class="top panel">
+    <h1>Respell Proto-Semitic references</h1>
+    <p class="muted">151 pages link to a spelling that WT:ASEM does not use. Each one opens in the edit form with the fix already made and the diff showing. You read it and press Save.</p>
+    <div class="bar" role="img" aria-label="progress"><i class="d" id="bd"></i><i class="s" id="bs"></i></div>
+    <div class="stats" id="stats"></div>
+    <div class="cta">
+      <a class="btn primary" id="next" href="#" target="_blank" rel="noopener">Open next page</a>
+      <span class="muted" id="hint"></span>
+    </div>
+    <ol class="steps">
+      <li>Press <b>Open next page</b> (or <kbd>N</kbd>). The page opens in a new tab as an edit form, the fixed text is in the box and “Show changes” has been pressed for you.</li>
+      <li>Check the highlighted changes, then press <b>Save changes</b> on Wiktionary. If something looks wrong, close the tab; nothing was saved.</li>
+      <li>Come back here and press <b>Open next page</b> again. That also ticks off the page you just did.</li>
+    </ol>
+  </header>
+
+  <details class="panel" id="install">
+    <summary>One-time setup: install the script on your Wiktionary account</summary>
+    <ol class="steps">
+      <li>Open <a href="https://en.wiktionary.org/wiki/Special:MyPage/common.js?action=edit" target="_blank" rel="noopener">your common.js</a> (it may be empty or new).</li>
+      <li>Paste everything below at the end of it and save. Then reload with Ctrl+Shift+R.</li>
+      <li>The script does nothing on any other edit. It only acts on edit links from this page, which end in <code>&amp;respell=1</code>.</li>
+    </ol>
+    <textarea id="script" readonly spellcheck="false" aria-label="user script">// ASEM respeller (https://github.com/iwsfutcmd/sed-to-wiktionary, scripts/respell_core.js). Acts only on edit links ending in &amp;respell=1.
+// Respell references to Proto-Semitic / Proto-West Semitic reconstructions to the WT:ASEM notation.
+// A line-for-line port of fix_text() in scripts/wikt_fix_refs.py (tests/test_respell_js.py checks that both give the same text).
+// Pure: fixText(text, mapping) -> { text, changes }.  mapping: { "PS\tʾab-": "ʔab-", ... } (level TAB stem -> standard stem).
+(function (root) {
+  "use strict";
+  var LANGS = { "sem-pro": "PS", "sem-wes-pro": "PWS" };
+  function nfc(s) { return s.normalize("NFC"); }
+
+  // every {{...}} (nested ones too): args[k] = [a, b] with text.slice(a, b) one argument without its pipe; args[0] is the name
+  function parse(text) {
+    var res = [], stack = [], i = 0, n = text.length;
+    while (i &lt; n) {
+      if (text.startsWith("{{", i)) { stack.push({ start: i, starts: [i + 2], links: 0 }); i += 2; continue; }
+      if (text.startsWith("}}", i) &amp;&amp; stack.length) {
+        var t = stack.pop(), st = t.starts, args = [];
+        for (var k = 0; k &lt; st.length; k++) args.push([st[k], k + 1 &lt; st.length ? st[k + 1] - 1 : i]);
+        res.push({ start: t.start, end: i + 2, args: args }); i += 2; continue;
+      }
+      if (text.startsWith("[[", i) &amp;&amp; stack.length) { stack[stack.length - 1].links++; i += 2; continue; }
+      if (text.startsWith("]]", i) &amp;&amp; stack.length) { var s = stack[stack.length - 1]; s.links = Math.max(0, s.links - 1); i += 2; continue; }
+      if (text[i] === "|" &amp;&amp; stack.length &amp;&amp; stack[stack.length - 1].links === 0) stack[stack.length - 1].starts.push(i + 1);
+      i++;
+    }
+    return res;
+  }
+
+  // positional arguments (no top-level `name=`) after the template name
+  function positional(text, args) {
+    var out = [];
+    for (var k = 1; k &lt; args.length; k++) {
+      var v = text.slice(args[k][0], args[k][1]);
+      if (/^\s*[\w-]+\s*=/.test(v) &amp;&amp; !v.replace(/^\s+/, "").startsWith("[")) continue;
+      out.push(args[k]);
+    }
+    return out;
+  }
+
+  // '*ʾab-&lt;t:x>' -> [prefix, stem, suffix]
+  function termCore(value) {
+    var m = /^(\s*\*?)([^&lt;>|{}\[\]]+?)(\s*(?:&lt;[^>]*>)*\s*)$/.exec(value);
+    return m ? [m[1], m[2], m[3]] : null;
+  }
+
+  function fixText(text, mapping) {
+    var edits = []; // [a, b, replacement, kind, old, new]
+    function lookup(level, stem) { var v = mapping[level + "\t" + nfc(stem)]; return v &amp;&amp; nfc(stem) !== v ? v : null; }
+    function termEdit(level, a, b) {
+      var parts = termCore(text.slice(a, b));
+      if (!parts) return;
+      var nw = lookup(level, parts[1]);
+      if (nw) edits.push([a, b, parts[0] + nw + parts[2], "term", parts[1], nw]);
+    }
+    var tpls = parse(text);
+    tpls.forEach(function (t) {
+      var pos = positional(text, t.args);
+      pos.forEach(function (ab, k) {
+        var level = LANGS[text.slice(ab[0], ab[1]).trim()];
+        if (!level) return;
+        pos.slice(k + 1, k + 3).forEach(function (c) { if (text.slice(c[0], c[1]).trim()) termEdit(level, c[0], c[1]); });
+      });
+      t.args.slice(1).forEach(function (ab) { // {{ety|ar|:inh|sem-pro:*X}}
+        var m = /^(\s*(sem-pro|sem-wes-pro):)(\*?)([^&lt;>|{}\[\]]+?)(\s*(?:&lt;[^>]*>)*\s*)$/.exec(text.slice(ab[0], ab[1]));
+        if (!m) return;
+        var nw = lookup(LANGS[m[2]], m[4]);
+        if (nw) { var a0 = ab[0] + m[1].length + m[3].length; edits.push([a0, a0 + m[4].length, nw, "ety", m[4], nw]); }
+      });
+    });
+    var re = /\[\[(Reconstruction:Proto-(?:West )?Semitic\/)([^\]|#]+)(\|[^\]]*)?\]\]/g, m;
+    while ((m = re.exec(text)) !== null) {
+      var level = m[1].indexOf("West") >= 0 ? "PWS" : "PS", stem = m[2].trim(), nw = lookup(level, stem);
+      if (!nw) continue;
+      var s2 = m.index + m[0].indexOf(m[2], m[0].indexOf("/") + 1);
+      edits.push([s2, s2 + m[2].length, nw, "link", stem, nw]);
+      var disp = (m[3] || "").slice(1);
+      if (m[3] &amp;&amp; (disp.trim() === "*" + stem || disp.trim() === stem)) {
+        var s3 = m.index + m[0].indexOf(m[3]);
+        edits.push([s3 + 1, s3 + m[3].length, (disp.startsWith("*") ? "*" : "") + nw, "link-text", stem, nw]);
+      }
+    }
+    edits.sort(function (x, y) { return x[0] - y[0] || x[1] - y[1]; });
+    var seen = {}, uniq = [];
+    edits.forEach(function (e) { var key = e[0] + ":" + e[1]; if (!seen[key]) { seen[key] = 1; uniq.push(e); } });
+    for (var i = 0; i + 1 &lt; uniq.length; i++) if (uniq[i][1] > uniq[i + 1][0]) throw new Error("overlapping edits");
+    var out = text;
+    for (var j = uniq.length - 1; j >= 0; j--) out = out.slice(0, uniq[j][0]) + uniq[j][2] + out.slice(uniq[j][1]);
+    return { text: out, changes: uniq.map(function (e) { return [e[3], e[4], e[5]]; }) };
+  }
+
+  var api = { fixText: fixText, parse: parse };
+  if (typeof module !== "undefined" &amp;&amp; module.exports) module.exports = api; else root.WiktRespell = api;
+})(typeof window !== "undefined" ? window : this);
+
+(function () {
+  var MAP = {
+ "PS\tbaʿl-": "baʕl-",
+ "PS\tlabiʾ-": "labiʔ-",
+ "PS\tmaraṣ̂-": "maraṣ́-",
+ "PS\tmiʾat-": "miʔat-",
+ "PS\tnašaq-": "našaḳ-",
+ "PS\tqaraṣ-": "ḳaraṣ-",
+ "PS\tqarib-": "ḳarib-",
+ "PS\tqarn-": "ḳarn-",
+ "PS\tqarqar-": "ḳarḳar-",
+ "PS\tqudš-": "ḳudš-",
+ "PS\traʾš-": "raʔš-",
+ "PS\ttišʿ-": "tišʕ-",
+ "PS\twaraq-": "waraḳ-",
+ "PS\tðikar-": "ḏikar-",
+ "PS\tśaʿr-": "śaʕr-",
+ "PS\tšabʿ-": "šabʕ-",
+ "PS\tšamaʿ-": "šamaʕ-",
+ "PS\tšidθ-": "šidṯ-",
+ "PS\tʾabn-": "ʔabn-",
+ "PS\tʾakal-": "ʔakal-",
+ "PS\tʾalp-": "ʔalp-",
+ "PS\tʾarṣ́-": "ʔarṣ́-",
+ "PS\tʾasar-": "ʔasar-",
+ "PS\tʾayyal-": "ʔayyal-",
+ "PS\tʾaḥad-": "ʔaḥad-",
+ "PS\tʾaḫað-": "ʔaḫaḏ-",
+ "PS\tʾaḫaḏ-": "ʔaḫaḏ-",
+ "PS\tʾil-": "ʔil-",
+ "PS\tʾirbay-": "ʔirbay-",
+ "PS\tʾiš-": "ʔiš-",
+ "PS\tʾuðn-": "ʔuḏn-",
+ "PS\tʾuḏn-": "ʔuḏn-",
+ "PS\tʿapar-": "ʕapar-",
+ "PS\tʿayn-": "ʕayn-",
+ "PS\tʿazab-": "ʕazab-",
+ "PS\tʿaḳrab-": "ʕaḳrab-",
+ "PS\tʿaṯtar-": "ʕaṯtar-",
+ "PS\tθalg-": "ṯalg-",
+ "PS\tθamāniy-": "ṯamāniy-",
+ "PS\tθawr-": "ṯawr-",
+ "PS\tθaʿlab-": "ṯaʕlab-",
+ "PS\tθūm-": "ṯūm-",
+ "PS\tθ̣aby-": "ṯ̣aby-",
+ "PS\tθ̣ill-": "ṯ̣ill-",
+ "PS\tθ̣upr-": "ṯ̣upr-",
+ "PS\tḍabuʿ-": "ṣ́abuʕ-",
+ "PS\tḏiʾb-": "ḏiʔb-",
+ "PS\tḥaql-": "ḥaḳl-",
+ "PS\tḥaraθ-": "ḥaraṯ-",
+ "PS\tḥdθ-": "ḥdṯ-",
+ "PS\tṣaɣir-": "ṣaḡir-",
+ "PS\tṣ́abuʿ-": "ṣ́abuʕ-",
+ "PS\tṣ́aʾn-": "ṣ́aʔn-",
+ "PS\tṯaʿlab-": "ṯaʕlab-",
+ "PS\tṱill-": "ṯ̣ill-",
+ "PS\tṱupr-": "ṯ̣upr-"
+};
+  mw.loader.using(["jquery.textSelection"]).then(function () { $(function () {
+    if (mw.config.get("wgAction") !== "edit" || !/[?&amp;]respell=1(&amp;|$)/.test(location.search)) return;   // only for the links of the checklist page
+    var $ta = $("#wpTextbox1");
+    if (!$ta.length) { mw.notify("Respell: no plain edit box here (turn CodeMirror off).", { type: "error", autoHide: false }); return; }
+    var r = WiktRespell.fixText($ta.textSelection("getContents"), MAP);
+    if (!r.changes.length) { mw.notify("Respell: nothing to change on this page (already fixed?).", { type: "warn", autoHide: false }); return; }
+    $ta.textSelection("setContents", r.text);
+    var seen = {}, pairs = [];
+    r.changes.forEach(function (c) { var k = "*" + c[1] + " → *" + c[2]; if (!seen[k]) { seen[k] = 1; pairs.push(k); } });
+    $("#wpSummary").val("respell Proto-Semitic reference to the WT:ASEM notation (" + pairs.slice(0, 4).join(", ") + (pairs.length > 4 ? " …" : "") + ") (script-assisted)");
+    mw.notify("Respell: " + r.changes.length + " change(s). Check the diff, then Save.", { autoHide: false });
+    setTimeout(function () { $("#wpDiff").trigger("click"); }, 400);
+  }); });
+})();
+</textarea>
+    <div class="cta" style="margin-top:8px"><button class="btn" id="copy" type="button">Copy script</button><span class="muted" id="copied"></span></div>
+    <p class="muted" style="margin-top:10px">It needs the plain edit box. If you use CodeMirror syntax highlighting, switch it off for these edits.</p>
+  </details>
+
+  <section class="panel">
+    <h2>Pages</h2>
+    <div class="tabs" id="tabs" role="group" aria-label="filter">
+      <button type="button" data-f="todo" aria-pressed="true">To do</button><button type="button" data-f="done" aria-pressed="false">Done</button><button type="button" data-f="skip" aria-pressed="false">Skipped</button><button type="button" data-f="all" aria-pressed="false">All</button>
+    </div>
+    <div class="tablewrap"><table><thead><tr><th>#</th><th>Page</th><th>Changes</th><th></th></tr></thead><tbody id="rows"></tbody></table></div>
+    <div class="empty" id="empty" hidden>Nothing here.</div>
+  </section>
+
+  <section class="panel" id="decide">
+    <h2>Left for you to decide (16)</h2>
+    <p class="muted">These spellings are redirects to a different stem, not just a respelling (for example <code>ʾab-</code> now leads to <code>ʔabw-</code>). The script does not touch them. “Links” lists the pages that use them.</p>
+    <ul class="list" id="person"></ul>
+  </section>
+
+  <section class="panel" id="indirect">
+    <h2>Will follow on their own (10)</h2>
+    <p class="muted">These pages reach a Proto-Semitic page only through another page’s etymology chain. They need no edit; they update once the page they point to is respelled.</p>
+    <ul class="list" id="ind"></ul>
+  </section>
+</main>
+
+<script id="data" type="application/json">{"items": [{"title": "Alaho", "changes": ["*ʾil- → *ʔil-"]}, {"title": "Allah", "changes": ["*ʾil- → *ʔil- ×7"]}, {"title": "Baal", "changes": ["*baʿl- → *baʕl- ×3"]}, {"title": "Baalo", "changes": ["*baʿl- → *baʕl-"]}, {"title": "Baʻl", "changes": ["*baʿl- → *baʕl-"]}, {"title": "Elagabalus", "changes": ["*ʾil- → *ʔil-"]}, {"title": "Ellah", "changes": ["*ʾil- → *ʔil-"]}, {"title": "Erd", "changes": ["*ʾarṣ́- → *ʔarṣ́-"]}, {"title": "Gabriel", "changes": ["*ʾil- → *ʔil- ×2"]}, {"title": "Reconstruction:Proto-Kartvelian/c₁xar-", "changes": ["*tišʿ- → *tišʕ-"]}, {"title": "Reconstruction:Proto-Semitic/ḏiʔb-", "changes": ["*ṣ́abuʿ- → *ṣ́abuʕ-"]}, {"title": "Reconstruction:Proto-Sino-Tibetan/m-hla", "changes": ["*ʾil- → *ʔil-"]}, {"title": "ain", "changes": ["*ʿayn- → *ʕayn- ×2"]}, {"title": "ardi", "changes": ["*ʾarṣ́- → *ʔarṣ́-"]}, {"title": "ayin", "changes": ["*ʿayn- → *ʕayn-"]}, {"title": "bꜥr", "changes": ["*baʿl- → *baʕl-"]}, {"title": "edēšum", "changes": ["*ḥdθ- → *ḥdṯ-"]}, {"title": "ilah", "changes": ["*ʾil- → *ʔil- ×2"]}, {"title": "jꜣqt", "changes": ["*waraq- → *waraḳ-"]}, {"title": "leon", "changes": ["*labiʾ- → *labiʔ-"]}, {"title": "ljón", "changes": ["*labiʾ- → *labiʔ-"]}, {"title": "rais", "changes": ["*raʾš- → *raʔš-"]}, {"title": "ras", "changes": ["*raʾš- → *raʔš-"]}, {"title": "resh", "changes": ["*raʾš- → *raʔš-"]}, {"title": "wꜣḏ", "changes": ["*waraq- → *waraḳ-"]}, {"title": "zeker", "changes": ["*ðikar- → *ḏikar-"]}, {"title": "İlah", "changes": ["*ʾil- → *ʔil-"]}, {"title": "βαλλήν", "changes": ["*baʿl- → *baʕl-"]}, {"title": "λέων", "changes": ["*labiʾ- → *labiʔ-"]}, {"title": "կրծեմ", "changes": ["*qaraṣ- → *ḳaraṣ-"]}, {"title": "א־ז־ן", "changes": ["*ʾuðn- → *ʔuḏn-"]}, {"title": "אבנא", "changes": ["*ʾabn- → *ʔabn-"]}, {"title": "אוכלא", "changes": ["*ʾakal- → *ʔakal-"]}, {"title": "איל", "changes": ["*ʾil- → *ʔil-"]}, {"title": "אינא", "changes": ["*ʿayn- → *ʕayn-"]}, {"title": "אישה", "changes": ["*ʾiš- → *ʔiš-"]}, {"title": "אכלר", "changes": ["*ʾakal- → *ʔakal-"]}, {"title": "אלהא", "changes": ["*ʾil- → *ʔil-"]}, {"title": "אלוה", "changes": ["*ʾil- → *ʔil-"]}, {"title": "ארבה", "changes": ["*ʾirbay- → *ʔirbay-"]}, {"title": "גבריאל", "changes": ["*ʾil- → *ʔil-"]}, {"title": "חד", "changes": ["*ʾaḥad- → *ʔaḥad-"]}, {"title": "חרש", "changes": ["*ḥaraθ- → *ḥaraṯ-"]}, {"title": "לביאה", "changes": ["*labiʾ- → *labiʔ-"]}, {"title": "לביה", "changes": ["*labiʾ- → *labiʔ-"]}, {"title": "מאא", "changes": ["*miʾat- → *miʔat-"]}, {"title": "מאה", "changes": ["*miʾat- → *miʔat-"]}, {"title": "מאתא", "changes": ["*miʾat- → *miʔat-"]}, {"title": "מרע", "changes": ["*maraṣ̂- → *maraṣ́-"]}, {"title": "מרץ", "changes": ["*maraṣ̂- → *maraṣ́-"]}, {"title": "ענא", "changes": ["*ṣ́aʾn- → *ṣ́aʔn-"]}, {"title": "ציפורן", "changes": ["*θ̣upr- → *ṯ̣upr-"]}, {"title": "תשעא", "changes": ["*tišʿ- → *tišʕ-"]}, {"title": "תשעה", "changes": ["*tišʿ- → *tišʕ-"]}, {"title": "أحد", "changes": ["*ʾaḥad- → *ʔaḥad-"]}, {"title": "إربيان", "changes": ["*ʾirbay- → *ʔirbay-"]}, {"title": "إل", "changes": ["*ʾil- → *ʔil-"]}, {"title": "ارض", "changes": ["*ʾarṣ́- → *ʔarṣ́- ×2"]}, {"title": "الله", "changes": ["*ʾil- → *ʔil- ×3"]}, {"title": "خردل", "changes": ["*ḥaraθ- → *ḥaraṯ-"]}, {"title": "ذكر", "changes": ["*ðikar- → *ḏikar- ×2"]}, {"title": "روبيان", "changes": ["*ʾirbay- → *ʔirbay-"]}, {"title": "ضأن", "changes": ["*ṣ́aʾn- → *ṣ́aʔn-"]}, {"title": "ضبع", "changes": ["*ṣ́abuʿ- → *ṣ́abuʕ-"]}, {"title": "عقرب", "changes": ["*ʿaḳrab- → *ʕaḳrab-"]}, {"title": "لبؤة", "changes": ["*labiʾ- → *labiʔ-"]}, {"title": "مرض", "changes": ["*maraṣ̂- → *maraṣ́-"]}, {"title": "مريق", "changes": ["*waraq- → *waraḳ-"]}, {"title": "ܐܒܢܐ", "changes": ["*ʾabn- → *ʔabn-"]}, {"title": "ܐܚܕ", "changes": ["*ʾaḥad- → *ʔaḥad-"]}, {"title": "ܐܚܕܐ", "changes": ["*ʾaḥad- → *ʔaḥad-"]}, {"title": "ܐܛܫܥ", "changes": ["*tišʿ- → *tišʕ-"]}, {"title": "ܐܝܠ", "changes": ["*ʾil- → *ʔil-"]}, {"title": "ܐܝܠܬܐ", "changes": ["*ʾayyal- → *ʔayyal-"]}, {"title": "ܐܪܒܝܬܐ", "changes": ["*ʾirbay- → *ʔirbay-"]}, {"title": "ܐܫܒܥ", "changes": ["*šabʿ- → *šabʕ-"]}, {"title": "ܚܕ", "changes": ["*ʾaḥad- → *ʔaḥad-"]}, {"title": "ܚܕܐ", "changes": ["*ʾaḥad- → *ʔaḥad- ×2"]}, {"title": "ܛܘܦܪܐ", "changes": ["*θ̣upr- → *ṯ̣upr-"]}, {"title": "ܛܦܪܐ", "changes": ["*θ̣upr- → *ṯ̣upr-"]}, {"title": "ܝܘܪܩܐ", "changes": ["*waraq- → *waraḳ-"]}, {"title": "ܝܪܘܩܐ", "changes": ["*waraq- → *waraḳ-"]}, {"title": "ܝܪܩܐ", "changes": ["*waraq- → *waraḳ- ×2"]}, {"title": "ܝܪܩܢܐ", "changes": ["*waraq- → *waraḳ- ×3"]}, {"title": "ܡܐ", "changes": ["*miʾat- → *miʔat-"]}, {"title": "ܡܐܐ", "changes": ["*miʾat- → *miʔat-"]}, {"title": "ܡܪܥ", "changes": ["*maraṣ̂- → *maraṣ́-"]}, {"title": "ܢܫܩ", "changes": ["*našaq- → *našaḳ-"]}, {"title": "ܥܝܢܐ", "changes": ["*ʿayn- → *ʕayn- ×2"]}, {"title": "ܥܢܐ", "changes": ["*ṣ́aʾn- → *ṣ́aʔn-"]}, {"title": "ܪܝܫܢܐ", "changes": ["*raʾš- → *raʔš-"]}, {"title": "ܪܝܫܢܘܬܐ", "changes": ["*raʾš- → *raʔš-"]}, {"title": "ܫܒܥܐ", "changes": ["*šabʿ- → *šabʕ-"]}, {"title": "ܫܘܥܐ", "changes": ["*šabʿ- → *šabʕ-"]}, {"title": "ܬܥܠܬܐ", "changes": ["*ṯaʿlab- → *ṯaʕlab-"]}, {"title": "ܬܫܥܐ", "changes": ["*tišʿ- → *tišʕ-"]}, {"title": "ࠀࠋ", "changes": ["*ʾil- → *ʔil-"]}, {"title": "ࠀࠋࠄ", "changes": ["*ʾil- → *ʔil-"]}, {"title": "ࠀࠋࠄࠉࠌ", "changes": ["*ʾil- → *ʔil-"]}, {"title": "अर्ज़", "changes": ["*ʾarṣ́- → *ʔarṣ́-"]}, {"title": "ሓደ", "changes": ["*ʾaḥad- → *ʔaḥad-"]}, {"title": "መቶ", "changes": ["*miʾat- → *miʔat- ×2"]}, {"title": "ሚእቲ", "changes": ["*miʾat- → *miʔat-"]}, {"title": "ሰቡዕ", "changes": ["*šabʿ- → *šabʕ-"]}, {"title": "ሰባት", "changes": ["*šabʿ- → *šabʕ-"]}, {"title": "ሰብዐቱ", "changes": ["*šabʿ- → *šabʕ-"]}, {"title": "ሸውዓተ", "changes": ["*šabʿ- → *šabʕ-"]}, {"title": "ተስዐቱ", "changes": ["*tišʿ- → *tišʕ-"]}, {"title": "ትስዑ", "changes": ["*tišʿ- → *tišʕ-"]}, {"title": "ትሽዓተ", "changes": ["*tišʿ- → *tišʕ-"]}, {"title": "አሐዱ", "changes": ["*ʾaḥad- → *ʔaḥad-"]}, {"title": "እምኒ", "changes": ["*ʾabn- → *ʔabn-"]}, {"title": "እዝኒ", "changes": ["*ʾuðn- → *ʔuḏn-"]}, {"title": "ዓይኒ", "changes": ["*ʿayn- → *ʕayn-"]}, {"title": "ዓይን", "changes": ["*ʿayn- → *ʕayn-"]}, {"title": "ጽላሎት", "changes": ["*θ̣ill- → *ṯ̣ill-"]}, {"title": "Ἔλισσα", "changes": ["*ʾil- → *ʔil- ×2"]}, {"title": "ἴουλος", "changes": ["*raʾš- → *raʔš-"]}, {"title": "𐎀𐎁𐎐", "changes": ["*ʾabn- → *ʔabn-"]}, {"title": "𐎈𐎗𐎘", "changes": ["*ḥaraθ- → *ḥaraṯ-"]}, {"title": "𐎊𐎈𐎄", "changes": ["*ʾaḥad- → *ʔaḥad-"]}, {"title": "𐎌𐎎𐎓", "changes": ["*šamaʿ- → *šamaʕ-"]}, {"title": "𐎎𐎛𐎚", "changes": ["*miʾat- → *miʔat-"]}, {"title": "𐎓𐎊𐎐", "changes": ["*ʿayn- → *ʕayn-"]}, {"title": "𐎚𐎌𐎓𐎚", "changes": ["*tišʿ- → *tišʕ-"]}, {"title": "𐎛𐎗𐎁𐎊", "changes": ["*ʾirbay- → *ʔirbay-"]}, {"title": "𐤀𐤁𐤍", "changes": ["*ʾabn- → *ʔabn- ×2"]}, {"title": "𐤀𐤋𐤌", "changes": ["*ʾil- → *ʔil- ×2"]}, {"title": "𐤀𐤔", "changes": ["*ʾiš- → *ʔiš- ×2"]}, {"title": "𐤇𐤓𐤔", "changes": ["*ḥaraθ- → *ḥaraṯ-"]}, {"title": "𐤌𐤀𐤕", "changes": ["*miʾat- → *miʔat- ×2"]}, {"title": "𐤏𐤉𐤍", "changes": ["*ʿayn- → *ʕayn-"]}, {"title": "𐤏𐤍", "changes": ["*ʿayn- → *ʕayn-"]}, {"title": "𐤕𐤔𐤏", "changes": ["*tišʿ- → *tišʕ-"]}, {"title": "𐩠𐩨𐩲𐩡", "changes": ["*baʿl- → *baʕl- ×2"]}, {"title": "𐩠𐩨𐩲𐩡𐩬", "changes": ["*baʿl- → *baʕl-"]}, {"title": "𐩣𐩨𐩲𐩡", "changes": ["*baʿl- → *baʕl- ×2"]}, {"title": "𐩣𐩨𐩲𐩡𐩣", "changes": ["*baʿl- → *baʕl-"]}, {"title": "𐩣𐩨𐩲𐩡𐩫", "changes": ["*baʿl- → *baʕl-"]}, {"title": "𐩣𐩨𐩲𐩡𐩬", "changes": ["*baʿl- → *baʕl-"]}, {"title": "𐩨𐩲𐩡", "changes": ["*baʿl- → *baʕl- ×2"]}, {"title": "𐩨𐩲𐩡𐩣", "changes": ["*baʿl- → *baʕl-"]}, {"title": "𐩨𐩲𐩡𐩩", "changes": ["*baʿl- → *baʕl- ×2"]}, {"title": "𐩨𐩲𐩡𐩩𐩣", "changes": ["*baʿl- → *baʕl-"]}, {"title": "𐩨𐩲𐩡𐩩𐩺", "changes": ["*baʿl- → *baʕl-"]}, {"title": "𐩨𐩲𐩡𐩬", "changes": ["*baʿl- → *baʕl-"]}, {"title": "𐩪𐩣𐩲", "changes": ["*šamaʿ- → *šamaʕ-"]}, {"title": "𐩱𐩡", "changes": ["*ʾil- → *ʔil- ×2"]}, {"title": "𐩱𐩡𐩠𐩩", "changes": ["*ʾil- → *ʔil-"]}, {"title": "𐩱𐩨𐩲𐩡", "changes": ["*baʿl- → *baʕl-"]}, {"title": "𐭫𐭥𐭩𐭱𐭤", "changes": ["*raʾš- → *raʔš-"]}], "person": [{"to": "baraḳ-", "page": "Reconstruction:Proto-Semitic/bariq-", "n": 1, "from": "bariq-"}, {"to": "māy-", "page": "Reconstruction:Proto-Semitic/maʾ-", "n": 5, "from": "maʾ-"}, {"to": "Reconstruction:Proto-West Semitic/rpʔ", "page": "Reconstruction:Proto-Semitic/rpˀ", "n": 0, "from": "rpˀ"}, {"to": "waraḳ-", "page": "Reconstruction:Proto-Semitic/warq-", "n": 0, "from": "warq-"}, {"to": "ṯalāṯ-", "page": "Reconstruction:Proto-Semitic/śalāθ-", "n": 0, "from": "śalāθ-"}, {"to": "śaʕr-", "page": "Reconstruction:Proto-Semitic/šaʿr-", "n": 0, "from": "šaʿr-"}, {"to": "ʔabw-", "page": "Reconstruction:Proto-Semitic/ʾab-", "n": 7, "from": "ʾab-"}, {"to": "ʔamat-", "page": "Reconstruction:Proto-Semitic/ʾamt-", "n": 0, "from": "ʾamt-"}, {"to": "ʔaḫw-", "page": "Reconstruction:Proto-Semitic/ʾaḫ-", "n": 0, "from": "ʾaḫ-"}, {"to": "yad-", "page": "Reconstruction:Proto-Semitic/ʾid-", "n": 3, "from": "ʾid-"}, {"to": "ʕaśar-", "page": "Reconstruction:Proto-Semitic/ʿaśr-", "n": 8, "from": "ʿaśr-"}, {"to": "ṯin-", "page": "Reconstruction:Proto-Semitic/θnā-", "n": 0, "from": "θnā-"}, {"to": "ṯ̣urr-", "page": "Reconstruction:Proto-Semitic/θ̣Vrr-", "n": 0, "from": "θ̣Vrr-"}, {"to": "ṯ̣upr-", "page": "Reconstruction:Proto-Semitic/θ̣ipr-", "n": 2, "from": "θ̣ipr-"}, {"to": "ḥaraṯ-", "page": "Reconstruction:Proto-Semitic/ḥarāθ-", "n": 0, "from": "ḥarāθ-"}, {"to": "ṯ̣urr-", "page": "Reconstruction:Proto-Semitic/ṱVrr-", "n": 0, "from": "ṱVrr-"}], "indirect": ["ddker", "dhakari", "marad", "maraz", "marazzi", "mard", "măraz", "مرضی", "يرقان", "یرقان"]}</script>
+<script>
+(function () {
+  var D = JSON.parse(document.getElementById("data").textContent);
+  var KEY = "asem-respell-v1", state = { s: {}, cur: null };
+  try { var saved = JSON.parse(localStorage.getItem(KEY) || "null"); if (saved && saved.s) state = saved; } catch (e) {}
+  function save() { try { localStorage.setItem(KEY, JSON.stringify(state)); } catch (e) {} }
+  var filter = "todo";
+  var $ = function (id) { return document.getElementById(id); };
+  function editUrl(t) { return "https://en.wiktionary.org/w/index.php?title=" + encodeURIComponent(t.replace(/ /g, "_")) + "&action=edit&respell=1"; }
+  function wiki(t) { return "https://en.wiktionary.org/wiki/" + encodeURIComponent(t.replace(/ /g, "_")).replace(/%2F/g, "/").replace(/%3A/g, ":"); }
+  function el(tag, props, kids) { var e = document.createElement(tag); for (var k in props || {}) { if (k === "class") e.className = props[k]; else if (k === "text") e.textContent = props[k]; else e.setAttribute(k, props[k]); } (kids || []).forEach(function (c) { e.appendChild(c); }); return e; }
+  function status(t) { return state.s[t] || "todo"; }
+  function nextTarget() { for (var i = 0; i < D.items.length; i++) { var t = D.items[i].title; if (status(t) === "todo" && t !== state.cur) return t; } return null; }
+  function count(s) { return D.items.filter(function (i) { return status(i.title) === s; }).length; }
+  function render() {
+    var n = D.items.length, d = count("done"), s = count("skip"), todo = n - d - s;
+    $("bd").style.width = (100 * d / n) + "%"; $("bs").style.width = (100 * s / n) + "%";
+    $("stats").textContent = ""; [[d, "done"], [todo, "to do"], [s, "skipped"]].forEach(function (p) { $("stats").appendChild(el("span", { text: p[0] + " " + p[1] })); });
+    var nt = nextTarget(), a = $("next");
+    if (nt) { a.href = editUrl(nt); a.removeAttribute("aria-disabled"); a.textContent = d + s ? "Open next page" : "Open the first page"; $("hint").textContent = "Next: "; $("hint").appendChild(el("bdi", { text: nt })); }
+    else { a.href = "#"; a.setAttribute("aria-disabled", "true"); a.textContent = "All pages done"; $("hint").textContent = ""; }
+    var tb = $("rows"); tb.textContent = ""; var shown = 0;
+    D.items.forEach(function (it, i) {
+      var st = status(it.title); if (filter !== "all" && st !== filter) return; shown++;
+      var cls = st === "done" ? "done" : st === "skip" ? "skip" : (it.title === state.cur ? "cur" : "");
+      var ch = el("td", { class: "ch" }); it.changes.forEach(function (c) { ch.appendChild(el("span", { text: c })); });
+      var act = el("td", { class: "act" });
+      var open = el("a", { class: "btn", href: editUrl(it.title), target: "_blank", rel: "noopener", text: "Open" });
+      open.addEventListener("click", function () { state.cur = it.title; save(); setTimeout(render, 0); });
+      if (st === "todo") {
+        var dn = el("button", { class: "btn", type: "button", text: "Done" }); dn.addEventListener("click", function () { state.s[it.title] = "done"; if (state.cur === it.title) state.cur = null; save(); render(); });
+        var sk = el("button", { class: "btn", type: "button", text: "Skip" }); sk.addEventListener("click", function () { state.s[it.title] = "skip"; if (state.cur === it.title) state.cur = null; save(); render(); });
+        [open, document.createTextNode(" "), dn, document.createTextNode(" "), sk].forEach(function (x) { act.appendChild(x); });
+      } else {
+        var un = el("button", { class: "btn", type: "button", text: "Undo" }); un.addEventListener("click", function () { delete state.s[it.title]; save(); render(); });
+        [el("span", { class: "tag " + st, text: st === "done" ? "done" : "skipped" }), document.createTextNode(" "), un].forEach(function (x) { act.appendChild(x); });
+      }
+      var pg = el("td", { class: "pg" }); var link = el("a", { href: wiki(it.title), target: "_blank", rel: "noopener" }); link.appendChild(el("bdi", { text: it.title })); pg.appendChild(link);
+      if (it.title === state.cur && st === "todo") pg.appendChild(document.createTextNode(" ")), pg.appendChild(el("span", { class: "tag cur", text: "open" }));
+      tb.appendChild(el("tr", { class: cls }, [el("td", { class: "n", text: String(i + 1) }), pg, ch, act]));
+    });
+    $("empty").hidden = shown > 0;
+    Array.prototype.forEach.call($("tabs").children, function (b) { b.setAttribute("aria-pressed", String(b.dataset.f === filter)); });
+  }
+  $("next").addEventListener("click", function (e) {
+    var nt = nextTarget(); if (!nt) { e.preventDefault(); return; }
+    if (state.cur && status(state.cur) === "todo") state.s[state.cur] = "done";
+    state.cur = nt; save(); setTimeout(render, 0);
+  });
+  $("tabs").addEventListener("click", function (e) { var f = e.target.dataset && e.target.dataset.f; if (f) { filter = f; render(); } });
+  document.addEventListener("keydown", function (e) { if ((e.key === "n" || e.key === "N") && !e.ctrlKey && !e.metaKey && !e.altKey && !/^(INPUT|TEXTAREA)$/.test((e.target.tagName || ""))) { $("next").click(); } });
+  $("copy").addEventListener("click", function () {
+    var ta = $("script"), msg = $("copied");
+    function fallback() { ta.focus(); ta.select(); msg.textContent = "Selected. Press Ctrl+C."; }
+    try { navigator.clipboard.writeText(ta.value).then(function () { msg.textContent = "Copied."; }, fallback); } catch (e) { fallback(); }
+  });
+  var inst = $("install"); try { if (localStorage.getItem(KEY + "-installed")) inst.open = false; } catch (e) {}
+  $("script").addEventListener("copy", function () { try { localStorage.setItem(KEY + "-installed", "1"); } catch (e) {} });
+  D.person.forEach(function (p) {
+    var li = el("li"); li.appendChild(el("bdi", { class: "mono", text: p.from })); li.appendChild(el("span", { class: "muted", text: "→ " + p.to }));
+    var l = el("a", { href: wiki("Special:WhatLinksHere/" + p.page), target: "_blank", rel: "noopener", text: "Links (" + p.n + ")" }); li.appendChild(l); $("person").appendChild(li);
+  });
+  D.indirect.forEach(function (p) { var li = el("li"); li.appendChild(el("bdi", { text: p })); $("ind").appendChild(li); });
+  if (!D.person.length) $("decide").hidden = true; if (!D.indirect.length) $("indirect").hidden = true;
+  render();
+})();
+</script>
