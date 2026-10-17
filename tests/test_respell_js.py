@@ -52,10 +52,11 @@ class UserScript(unittest.TestCase):
     HARNESS = r"""
 const fs=require('fs'), vm=require('vm');
 const cfg=JSON.parse(process.argv[1]);
-const box={val:cfg.text, summary:'', diff:0, notes:[]};
+const box={val:cfg.text, summary:'', diff:0, notes:[], minor:null, watch:null};
 function wrap(sel){ return {length: sel==='#wpTextbox1'&&!cfg.noBox?1:1,
   textSelection(op,v){ if(op==='getContents') return box.val; if(op==='setContents') box.val=v; },
   val(v){ if(sel==='#wpSummary'){ if(v===undefined) return box.summary; box.summary=v; } },
+  prop(n,v){ if(n==='checked'){ if(sel==='#wpMinoredit') box.minor=v; if(sel==='#wpWatchthis') box.watch=v; } return this; },
   trigger(e){ if(sel==='#wpDiff'&&e==='click') box.diff++; } }; }
 const $=function(a){ if(typeof a==='function'){ a(); return; } if(a==='#wpTextbox1'&&cfg.noBox) return {length:0}; return wrap(a); };
 const mw={config:{get:k=>({wgAction:cfg.action})[k]}, loader:{using:()=>({then:f=>{f();}})}, notify:(m,o)=>box.notes.push(m)};
@@ -77,13 +78,15 @@ console.log(JSON.stringify(box));
         self.assertEqual(b["val"], "{{inh|ar|sem-pro|*ʕayn-}} x [[Reconstruction:Proto-Semitic/ʕayn-]]")
         self.assertIn("*ʿayn- → *ʕayn-", b["summary"]); self.assertIn("script-assisted", b["summary"])
         self.assertEqual(b["diff"], 1)
+        self.assertIs(b["minor"], True); self.assertIs(b["watch"], False)       # minor edit, page not watched
     def test_only_on_the_checklist_links(self):
         for cfg in (dict(search="?title=X&action=edit"), dict(search="?title=X&action=edit&respell=0"), dict(action="view"), dict(action="submit")):
             b = self.run_js(text="{{inh|ar|sem-pro|*ʿayn-}}", **cfg)
             self.assertEqual((b["val"], b["diff"], b["summary"]), ("{{inh|ar|sem-pro|*ʿayn-}}", 0, ""), cfg)
+            self.assertEqual((b["minor"], b["watch"]), (None, None), cfg)       # the checkboxes are left alone too
     def test_nothing_to_change(self):
         b = self.run_js(text="{{inh|ar|sem-pro|*ʕayn-}}")
-        self.assertEqual((b["diff"], b["summary"]), (0, "")); self.assertTrue(any("nothing to change" in n for n in b["notes"]))
+        self.assertEqual((b["diff"], b["summary"], b["minor"], b["watch"]), (0, "", None, None)); self.assertTrue(any("nothing to change" in n for n in b["notes"]))
 
 if __name__ == "__main__":
     unittest.main(verbosity=1)

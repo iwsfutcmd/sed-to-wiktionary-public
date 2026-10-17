@@ -247,6 +247,8 @@ tr.done td.pg a { color: var(--muted); } tr.done { background: var(--done-bg); }
     var seen = {}, pairs = [];
     r.changes.forEach(function (c) { var k = "*" + c[1] + " → *" + c[2]; if (!seen[k]) { seen[k] = 1; pairs.push(k); } });
     $("#wpSummary").val("respell Proto-Semitic reference to the WT:ASEM notation (" + pairs.slice(0, 4).join(", ") + (pairs.length > 4 ? " …" : "") + ") (script-assisted)");
+    $("#wpMinoredit").prop("checked", true);                                  // minor edit
+    $("#wpWatchthis").prop("checked", false);                                 // and do not add the page to the watchlist
     mw.notify("Respell: " + r.changes.length + " change(s). Check the diff, then Save.", { autoHide: false });
     setTimeout(function () { $("#wpDiff").trigger("click"); }, 400);
   }); });
