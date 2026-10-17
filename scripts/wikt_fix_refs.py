@@ -114,6 +114,10 @@ def fix_text(text, mapping):
         out = out[:a] + rep + out[b:]
     return out, [(e[3], e[4], e[5]) for e in uniq]
 
+def editable(title):
+    """Entries, appendices and reconstruction pages. Not talk pages, user pages, archives, project pages or templates: those are other people's words."""
+    return (title.split(":", 1)[0] if ":" in title else "") in ("", "Appendix", "Reconstruction")
+
 class GenericMap:
     """The mapping fix_text() is given: the explicit (level, stem) -> stem pairs of the survey (redirects to another stem included), and for every other term its
     plain respelling into the ASEM notation (standardise(): ʾ->ʔ q->ḳ θ->ṯ ...) unless it holds a letter no rule reads (x̣, č)."""
@@ -223,7 +227,7 @@ def plan(api=None):
     if corpus.exists():                                                  # pages that use sem-pro with a variant character, found by wikt_asem_check.py
         from wikt_asem_check import structural
         for t, text in json.loads(corpus.read_text(encoding="utf-8")).items():
-            if structural(text) and t not in pages:
+            if structural(text) and t not in pages and editable(t):
                 pages[t] = {("?", "(variant characters)")}
     OUT.mkdir(parents=True, exist_ok=True)
     got = api.pages(list(pages))

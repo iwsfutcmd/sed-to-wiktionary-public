@@ -16,8 +16,8 @@ Semitic "lamb" words as borrowings from Akkadian, which conflicts with an inheri
 | page | SED | SEDonline id | cited words |
 |---|---|---|---|
 | `warik-` | I no. 288 | 758 | 27 |
-| `θ̣aby-` | II no. 242 | 624 | 14 |
-| `maraṣ̂-` | I no. 42 (verbal) | 894 | 13 |
+| `ṯ̣aby-` | II no. 242 | 624 | 14 |
+| `maraṣ́-` | I no. 42 (verbal) | 894 | 13 |
 | `ṣ́araṭ-` | I no. 71 (verbal) | 1023 | 8 |
 | `baḳḳ-` | II no. 58 | 667 | 7 |
 | `gild-` | I no. 78 | 704 | 17 (from the print) |
@@ -45,15 +45,14 @@ link it), which agrees with the print's Proto-Semitic reading. The comparison is
 Tests: the SED reference must resolve and every printed word must be on the page, but the page does not have to match the site.
 
 ## Verbs: vocalised stems
-Verbs are titled by their perfect stem, as on `pataḥ-`, `našaḳ-`, `patal-` (`maraṣ̂-`, `nayak-`, `ḫaraš-`, `ṣ́araṭ-`), with the SED root
+Verbs are titled by their perfect stem, as on `pataḥ-`, `našaḳ-`, `patal-` (`maraṣ́-`, `nayak-`, `ḫaraš-`, `ṣ́araṭ-`), with the SED root
 (`*mrṣ̂`, `*nyk`, ...) in the reference. The SED gives only roots, so the vowels come from evidence, not from the source:
-- `maraṣ̂-`: the printed Akkadian *marāṣu* is marked `(a/a)` -> `{{sem-pro-conj/*paʕala-*yipʕal}}`; three Wiktionary pages already link `*maraṣ̂-`.
+- `maraṣ́-`: the printed Akkadian *marāṣu* is marked `(a/a)` -> `{{sem-pro-conj/*paʕala-*yipʕal}}`; three Wiktionary pages already link `*maraṣ̂-`.
 - `nayak-`: medial y (hollow) -> `*payala-*yipīl`; two Wiktionary pages already link `*nayak-`.
 - `ḫaraš-`: Ge'ez *ḫarasa*, Akkadian *ḫarāšu*; no class marker in the print, so no conjugation table.
 - `ṣ́araṭ-`: Akkadian `(u/u)`, Arabic `(u)` = u-class, but Wiktionary has no plain u-class template, so no table.
   Where the print differs from SEDonline the draft follows the print (`override` in `wikt_draft.py`, documented in `form_check.tsv`, tested): Harsusi `ẑerōṭ`, Soqotri `ẑerót`, Syriac gloss "flatulence". The print's Amharic forms (noted there as possible Arabisms) are not included.
-`vn=` is the CaCC verbal noun, as on the existing pages. Wiktionary's titles otherwise write the lateral emphatic `ṣ́` (15 titles, none with `ṣ̂`), but five pages already link `*maraṣ̂-`,
-so this page is titled `maraṣ̂-` to fill those links (a deliberate exception; `ṣ́araṭ-` has no incoming links and keeps `ṣ́`). A test checks each conjugation block against its title.
+`vn=` is the CaCC verbal noun, as on the existing pages. Titles and conjugation blocks write the lateral emphatic as `ṣ́` (WT:ASEM); `ṣ̂` is SED's notation and stays only in the quoted `entry=`. A test checks each conjugation block against its title.
 
 ## Pages already on Wiktionary (`done/`)
 Move a page to `done/` once you have saved it. `python3 scripts/wikt_draft.py` and `make done-check` rebuild every `done/` page
@@ -83,7 +82,7 @@ form with the printed entry (200-dpi crops from `scripts/entry_crop.py VOL KEY`,
 
 ## Titles
 Checked against incoming links (`list=backlinks`), because Wiktionary's Proto-Semitic titles mix `ḳ`/`q` and `ṯ̣`/`θ̣`:
-`baḳḳ-` is already linked from the Arabic entry بق ("from Proto-Semitic *baḳḳ-"), `θ̣aby-` from ظبي (`{{ety|ar|:inh|sem-pro:*θ̣aby-}}`).
+`baḳḳ-` is already linked from the Arabic entry بق ("from Proto-Semitic *baḳḳ-"), `ṯ̣aby-` from ظبي (`{{ety|ar|:inh|sem-pro:*θ̣aby-}}`).
 Where nothing links in, the SED's own spelling is used with Wiktionary's `ś ṣ́ ʔ`. In descendants, `tr=` follows Wiktionary (`q`).
 Pages already saved to Wiktionary are moved to `done/` (`warik-`, 2026-10-15); `wikt_draft.py` does not regenerate them.
 

@@ -17,6 +17,7 @@ BAD = [
     "{{ety|ar|:inh|sem-pro:*ʾab-}}", "{{ety|ota|:bor|ar:x<ety:uder<sem-pro:*maraṣ̂-<t:to be ill>>>|text=2}}",
     "[[Reconstruction:Proto-Semitic/ʾab-]]", "[[Reconstruction:Proto-West Semitic/qarn-|*qarn-]]",
     "{{m|sem-pro|*" + U.normalize("NFD", "θ̣aby-") + "}}",
+    "{{sem-pro-conj/*paʕala-*yipʕal|m|r|ṣ̂|vn=marṣ́}}", "{{sem-pro-conj/*paʕala-*yipʕal|ʾ|b|d|vn=ʔbd}}", "{{sem-pro-conj/*paʕala-*yipʕal|r|p|ʔ|vn=rpʾ}}",     # the root letters of a conjugation table
 ]
 GOOD = [
     "{{inh|ar|sem-pro|*ʔab-}}", "{{inh|ar|sem-pro|*ʕayn-|t=eye}}", "{{cog|sem-pro|*ḳarn-}}", "{{m|sem-pro|*ṯalg-}}", "{{m|sem-pro|*ṯ̣aby-}}", "{{m|sem-pro|*maraṣ́-}}", "{{m|sem-pro|*śaḥm-}}",
@@ -25,6 +26,7 @@ GOOD = [
     "{{R:sem-pro:SED|volume=I|id=1|entry=*ʾab-}}",                                    # quotes a source
     "{{m|he|ʾab-}} {{inh|he|arc|ʾab-}} {{m|ar|*qarn-}}",                              # other languages
     "{{inh|sem-pro|afa-pro|*sṗɣ||seven}}", "{{der|sem-pro|akk|*ʾab-}}", "{{ety|x|afa-pro:*ʾab-}}",          # Proto-Semitic as the language that inherits
+    "{{sem-pro-conj/*paʕala-*yipʕal|m|r|ṣ́|vn=marṣ́}}", "{{sem-pro-conj/*paʕala-*yipʕal|ʔ|b|d|vn=ʔbd}}",
     "{{af|ar|sem-pro|*ʾab-}}", "From ʾab- 'father'.", "", "[[Reconstruction:Proto-Dravidian/appa]]",
 ]
 
@@ -38,6 +40,7 @@ class Parser(unittest.TestCase):
     def test_reports_the_standard_spelling(self):
         self.assertEqual(A.structural("{{m|sem-pro|*ʾab-}}"), [("term", "ʾab-", "ʔab-")])
         self.assertEqual(A.structural("{{m|sem-pro|*θ̣aby-}}"), [("term", "θ̣aby-", "ṯ̣aby-")])
+        self.assertEqual(A.structural("{{sem-pro-conj/*paʕala-*yipʕal|m|r|ṣ̂|vn=marṣ́}}"), [("conj", "ṣ̂", "ṣ́")])
 
 class Regex(unittest.TestCase):
     def test_flags(self):
