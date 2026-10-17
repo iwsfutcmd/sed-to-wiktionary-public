@@ -60,15 +60,21 @@ class Untouched(unittest.TestCase):
         self.assertEqual({k for k, _, _ in ch}, {"term", "ety", "link"})
 
 class Mapping(unittest.TestCase):
-    def test_pure_respellings_only(self):
+    def test_respellings_and_same_level_redirects(self):
         m, person, pages = F.load_mapping()
-        self.assertEqual(m[("PS", "baʿl-")], "baʕl-")
-        self.assertEqual(m[("PS", "waraq-")] if ("PS", "waraq-") in m else None, "waraḳ-")
-        self.assertNotIn(("PS", "ʾab-"), m)                       # ʾab- redirects to the stem ʔabw-: a person decides
-        self.assertIn(("PS", "ʾab-"), {(l, t) for l, t, _ in person})
+        self.assertEqual(m[("PS", "baʿl-")], "baʕl-")                   # a respelling of the same stem
+        self.assertEqual(m[("PS", "ʾab-")], "ʔabw-")                   # redirect to another stem of the same level: the reference follows it
+        self.assertEqual(m[("PS", "ʾid-")], "yad-")
         for (lv, bad), good in m.items():
             self.assertNotEqual(bad, good)
-            self.assertEqual(F.nfc(F.standardise(bad)[0]), good, (bad, good))      # never anything but the standard spelling of the same stem
+            self.assertEqual(F.nfc(F.standardise(good)[0]), good, (bad, good))      # whatever it points to is itself in the standard notation
+            self.assertNotIn("/", good)
+    def test_other_level_redirects_are_left_to_a_person(self):
+        m, person, pages = F.load_mapping()
+        self.assertIn(("PS", "rpˀ"), {(l, t) for l, t, _ in person})     # PS -> PWS: the language code would have to change as well
+        self.assertNotIn(("PS", "rpˀ"), m)
+        for l, t, d in person:
+            self.assertTrue("/" in d or ":" in d)
 
 class Apply(unittest.TestCase):
     """The editing loop, against a fake API: nothing is written without a y, an edit since the plan is recomputed, results are logged."""
@@ -97,7 +103,7 @@ class Apply(unittest.TestCase):
         self.assertEqual([e[0] for e in api.edits], ["A", "C"])
         self.assertTrue(api.logged_in)
         self.assertEqual(api.edits[0][1], "{{inh|ar|sem-pro|*ʔab-}}")
-        self.assertIn("*ʾab- → *ʔab-", api.edits[0][2]); self.assertIn("semi-automated", api.edits[0][2])
+        self.assertIn("*ʾab- → *ʔab-", api.edits[0][2]); self.assertIn("semi-automated", api.edits[0][2]); self.assertIn("current WT:ASEM title", api.edits[0][2])
     def test_quit_and_all(self):
         self.assertEqual([e[0] for e in self.run_apply(["y", "q"]).edits], ["A"])
     def test_all_the_rest(self):

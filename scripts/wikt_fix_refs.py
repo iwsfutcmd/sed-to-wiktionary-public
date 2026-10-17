@@ -9,9 +9,9 @@ What it changes, and only this: the TERM of a reconstruction reference. A term i
 ({{inh|ar|sem-pro|*ʾab-}}, {{cog|sem-pro|*ʾab-}}, {{m|sem-pro|*ʾab-}}, {{l|..}}, {{desc|..}}), the `sem-pro:*ʾab-` of an {{ety}} chain, and the title of a
 [[Reconstruction:Proto-Semitic/ʾab-]] link. Never: tr=/t= text, entry= (that quotes a source), anything of another language, named parameters.
 
-Which respellings: only those where the non-standard title is a redirect to exactly the standard spelling of the same stem (ʾ->ʔ ʿ->ʕ q->ḳ θ->ṯ ṣ̂->ṣ́ ...),
-plus non-standard spellings with no page whose standard spelling exists. A redirect to ANOTHER stem (ʾab- -> ʔabw-) is a different question and is listed
-by `plan` as "needs a person" without any edit.  A planned page where a link was not found in a recognised place is listed as "unmatched": it is left alone.
+Which respellings: a non-standard title that is a redirect to the standard spelling of the same stem (ʾ->ʔ ʿ->ʕ q->ḳ θ->ṯ ṣ̂->ṣ́ ...), a redirect to ANOTHER stem
+of the same level (ʾab- -> ʔabw-: the reference follows the redirect, which someone already decided), and non-standard spellings with no page whose standard
+spelling exists. A redirect to the other level (PS -> PWS) would need the language code changed too: listed by `plan` as "needs a person", no edit.  A planned page where a link was not found in a recognised place is listed as "unmatched": it is left alone.
 
 Everything that decides what is edited is in fix_text(), which is pure and tested offline (tests/test_fix_refs.py)."""
 from pathlib import Path
@@ -126,8 +126,10 @@ def load_mapping():
         dest = nfc(r["redirect_to"])
         if dest == std:
             mapping[(r["level"], nfc(r["title"]))] = std
-        else:
+        elif "/" in dest or ":" in dest:                                       # leads to the other level (PS -> PWS needs the language code changed too): a person
             person.append((r["level"], r["title"], r["redirect_to"]))
+        else:                                                                    # a redirect to another stem of the same level: references follow the redirect
+            mapping[(r["level"], nfc(r["title"]))] = dest
     for r in read_tsv(WIKT / "orthography_refs.tsv"):                          # variants of standard titles
         key = (r["level"], nfc(r["variant"]))
         if key not in mapping and key not in exists:
@@ -188,7 +190,7 @@ class Api:
 def summary_for(changes):
     pairs = sorted({(o, n) for _, o, n in changes})
     shown = ", ".join(f"*{o} → *{n}" for o, n in pairs[:4]) + (" …" if len(pairs) > 4 else "")
-    return f"respell Proto-Semitic reference to the WT:ASEM notation ({shown}) (semi-automated)"
+    return f"update Proto-Semitic reference to its current WT:ASEM title ({shown}) (semi-automated)"
 
 # ---------------------------------------------------------------- commands
 def plan(api=None):
@@ -279,7 +281,7 @@ LOADER = r"""
     $ta.textSelection("setContents", r.text);
     var seen = {}, pairs = [];
     r.changes.forEach(function (c) { var k = "*" + c[1] + " → *" + c[2]; if (!seen[k]) { seen[k] = 1; pairs.push(k); } });
-    $("#wpSummary").val("respell Proto-Semitic reference to the WT:ASEM notation (" + pairs.slice(0, 4).join(", ") + (pairs.length > 4 ? " …" : "") + ") (script-assisted)");
+    $("#wpSummary").val("update Proto-Semitic reference to its current WT:ASEM title (" + pairs.slice(0, 4).join(", ") + (pairs.length > 4 ? " …" : "") + ") (script-assisted)");
     $("#wpMinoredit").prop("checked", true);                                  // minor edit
     $("#wpWatchthis").prop("checked", false);                                 // and do not add the page to the watchlist
     mw.notify("Respell: " + r.changes.length + " change(s). Check the diff, then Save.", { autoHide: false });
@@ -304,7 +306,7 @@ def checklist():
         agg = {}
         for _, o, n in it["changes"]:
             agg[(o, n)] = agg.get((o, n), 0) + 1
-        items.append(dict(title=it["title"], changes=[f"*{o} → *{n}" + (f" ×{c}" if c > 1 else "") for (o, n), c in agg.items()]))
+        items.append(dict(title=it["title"], changes=[f"*{o} → *{n}" + (" (new stem)" if nfc(standardise(o)[0]) != nfc(n) else "") + (f" ×{c}" if c > 1 else "") for (o, n), c in agg.items()]))
     person = []
     for r in rows:
         if r["status"] == "needs a person":

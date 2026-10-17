@@ -64,7 +64,7 @@ tr.done td.pg a { color: var(--muted); } tr.done { background: var(--done-bg); }
 <main>
   <header class="top panel">
     <h1>Respell Proto-Semitic references</h1>
-    <p class="muted" id="intro">0 pages link to a spelling that WT:ASEM does not use. Each one opens in the edit form with the fix already made and the diff showing. You read it and press Save.</p>
+    <p class="muted" id="intro">25 pages link to a spelling that WT:ASEM does not use. Each one opens in the edit form with the fix already made and the diff showing. You read it and press Save. A change marked <b>(new stem)</b> points the reference at the stem its old spelling already redirects to, for example <code>*ʾab-</code> to <code>*ʔabw-</code>.</p>
     <div class="bar" role="img" aria-label="progress"><i class="d" id="bd"></i><i class="s" id="bs"></i></div>
     <div class="stats" id="stats"></div>
     <div class="cta">
@@ -180,9 +180,11 @@ tr.done td.pg a { color: var(--muted); } tr.done { background: var(--done-bg); }
 
 (function () {
   var MAP = {
+ "PS\tbariq-": "baraḳ-",
  "PS\tbaʿl-": "baʕl-",
  "PS\tlabiʾ-": "labiʔ-",
  "PS\tmaraṣ̂-": "maraṣ́-",
+ "PS\tmaʾ-": "māy-",
  "PS\tmiʾat-": "miʔat-",
  "PS\tqaraṣ-": "ḳaraṣ-",
  "PS\tqarib-": "ḳarib-",
@@ -192,18 +194,25 @@ tr.done td.pg a { color: var(--muted); } tr.done { background: var(--done-bg); }
  "PS\traʾš-": "raʔš-",
  "PS\ttišʿ-": "tišʕ-",
  "PS\twaraq-": "waraḳ-",
+ "PS\twarq-": "waraḳ-",
  "PS\tðikar-": "ḏikar-",
+ "PS\tśalāθ-": "ṯalāṯ-",
  "PS\tśaʿr-": "śaʕr-",
  "PS\tšabʿ-": "šabʕ-",
  "PS\tšamaʿ-": "šamaʕ-",
+ "PS\tšaʿr-": "śaʕr-",
  "PS\tšidθ-": "šidṯ-",
+ "PS\tʾab-": "ʔabw-",
  "PS\tʾabn-": "ʔabn-",
  "PS\tʾakal-": "ʔakal-",
  "PS\tʾalp-": "ʔalp-",
+ "PS\tʾamt-": "ʔamat-",
  "PS\tʾasar-": "ʔasar-",
  "PS\tʾaḥad-": "ʔaḥad-",
+ "PS\tʾaḫ-": "ʔaḫw-",
  "PS\tʾaḫað-": "ʔaḫaḏ-",
  "PS\tʾaḫaḏ-": "ʔaḫaḏ-",
+ "PS\tʾid-": "yad-",
  "PS\tʾil-": "ʔil-",
  "PS\tʾirbay-": "ʔirbay-",
  "PS\tʾiš-": "ʔiš-",
@@ -212,24 +221,30 @@ tr.done td.pg a { color: var(--muted); } tr.done { background: var(--done-bg); }
  "PS\tʿapar-": "ʕapar-",
  "PS\tʿayn-": "ʕayn-",
  "PS\tʿazab-": "ʕazab-",
+ "PS\tʿaśr-": "ʕaśar-",
  "PS\tʿaṯtar-": "ʕaṯtar-",
  "PS\tθalg-": "ṯalg-",
  "PS\tθamāniy-": "ṯamāniy-",
  "PS\tθawr-": "ṯawr-",
  "PS\tθaʿlab-": "ṯaʕlab-",
+ "PS\tθnā-": "ṯin-",
  "PS\tθūm-": "ṯūm-",
+ "PS\tθ̣Vrr-": "ṯ̣urr-",
  "PS\tθ̣aby-": "ṯ̣aby-",
  "PS\tθ̣ill-": "ṯ̣ill-",
+ "PS\tθ̣ipr-": "ṯ̣upr-",
  "PS\tθ̣upr-": "ṯ̣upr-",
  "PS\tḍabuʿ-": "ṣ́abuʕ-",
  "PS\tḏiʾb-": "ḏiʔb-",
  "PS\tḥaql-": "ḥaḳl-",
  "PS\tḥaraθ-": "ḥaraṯ-",
+ "PS\tḥarāθ-": "ḥaraṯ-",
  "PS\tḥdθ-": "ḥdṯ-",
  "PS\tṣaɣir-": "ṣaḡir-",
  "PS\tṣ́abuʿ-": "ṣ́abuʕ-",
  "PS\tṣ́aʾn-": "ṣ́aʔn-",
  "PS\tṯaʿlab-": "ṯaʕlab-",
+ "PS\tṱVrr-": "ṯ̣urr-",
  "PS\tṱill-": "ṯ̣ill-",
  "PS\tṱupr-": "ṯ̣upr-"
 };
@@ -242,7 +257,7 @@ tr.done td.pg a { color: var(--muted); } tr.done { background: var(--done-bg); }
     $ta.textSelection("setContents", r.text);
     var seen = {}, pairs = [];
     r.changes.forEach(function (c) { var k = "*" + c[1] + " → *" + c[2]; if (!seen[k]) { seen[k] = 1; pairs.push(k); } });
-    $("#wpSummary").val("respell Proto-Semitic reference to the WT:ASEM notation (" + pairs.slice(0, 4).join(", ") + (pairs.length > 4 ? " …" : "") + ") (script-assisted)");
+    $("#wpSummary").val("update Proto-Semitic reference to its current WT:ASEM title (" + pairs.slice(0, 4).join(", ") + (pairs.length > 4 ? " …" : "") + ") (script-assisted)");
     $("#wpMinoredit").prop("checked", true);                                  // minor edit
     $("#wpWatchthis").prop("checked", false);                                 // and do not add the page to the watchlist
     mw.notify("Respell: " + r.changes.length + " change(s). Check the diff, then Save.", { autoHide: false });
@@ -264,8 +279,8 @@ tr.done td.pg a { color: var(--muted); } tr.done { background: var(--done-bg); }
   </section>
 
   <section class="panel" id="decide">
-    <h2>Left for you to decide (16)</h2>
-    <p class="muted">These spellings are redirects to a different stem, not just a respelling (for example <code>ʾab-</code> now leads to <code>ʔabw-</code>). The script does not touch them. “Links” lists the pages that use them.</p>
+    <h2>Left for you to decide (1)</h2>
+    <p class="muted">These spellings are redirects to the other level (Proto-Semitic to Proto-West Semitic). Repointing them also means changing the language code, so the script does not touch them. “Links” lists the pages that use them.</p>
     <ul class="list" id="person"></ul>
   </section>
 
@@ -276,7 +291,7 @@ tr.done td.pg a { color: var(--muted); } tr.done { background: var(--done-bg); }
   </section>
 </main>
 
-<script id="data" type="application/json">{"items": [], "person": [{"to": "baraḳ-", "page": "Reconstruction:Proto-Semitic/bariq-", "n": 1, "from": "bariq-"}, {"to": "māy-", "page": "Reconstruction:Proto-Semitic/maʾ-", "n": 5, "from": "maʾ-"}, {"to": "Reconstruction:Proto-West Semitic/rpʔ", "page": "Reconstruction:Proto-Semitic/rpˀ", "n": 0, "from": "rpˀ"}, {"to": "waraḳ-", "page": "Reconstruction:Proto-Semitic/warq-", "n": 0, "from": "warq-"}, {"to": "ṯalāṯ-", "page": "Reconstruction:Proto-Semitic/śalāθ-", "n": 0, "from": "śalāθ-"}, {"to": "śaʕr-", "page": "Reconstruction:Proto-Semitic/šaʿr-", "n": 0, "from": "šaʿr-"}, {"to": "ʔabw-", "page": "Reconstruction:Proto-Semitic/ʾab-", "n": 7, "from": "ʾab-"}, {"to": "ʔamat-", "page": "Reconstruction:Proto-Semitic/ʾamt-", "n": 0, "from": "ʾamt-"}, {"to": "ʔaḫw-", "page": "Reconstruction:Proto-Semitic/ʾaḫ-", "n": 0, "from": "ʾaḫ-"}, {"to": "yad-", "page": "Reconstruction:Proto-Semitic/ʾid-", "n": 3, "from": "ʾid-"}, {"to": "ʕaśar-", "page": "Reconstruction:Proto-Semitic/ʿaśr-", "n": 8, "from": "ʿaśr-"}, {"to": "ṯin-", "page": "Reconstruction:Proto-Semitic/θnā-", "n": 0, "from": "θnā-"}, {"to": "ṯ̣urr-", "page": "Reconstruction:Proto-Semitic/θ̣Vrr-", "n": 0, "from": "θ̣Vrr-"}, {"to": "ṯ̣upr-", "page": "Reconstruction:Proto-Semitic/θ̣ipr-", "n": 1, "from": "θ̣ipr-"}, {"to": "ḥaraṯ-", "page": "Reconstruction:Proto-Semitic/ḥarāθ-", "n": 0, "from": "ḥarāθ-"}, {"to": "ṯ̣urr-", "page": "Reconstruction:Proto-Semitic/ṱVrr-", "n": 0, "from": "ṱVrr-"}], "indirect": ["ddker", "dhakari", "marad", "maraz", "marazzi", "mard", "măraz", "مرضی", "يرقان", "یرقان"]}</script>
+<script id="data" type="application/json">{"items": [{"title": "Ab", "changes": ["*ʾab- → *ʔabw- (new stem)"]}, {"title": "Reconstruction:Proto-Dravidian/appa", "changes": ["*ʾab- → *ʔabw- (new stem)"]}, {"title": "abas", "changes": ["*ʾab- → *ʔabw- (new stem)"]}, {"title": "abi", "changes": ["*ʾab- → *ʔabw- (new stem)"]}, {"title": "abt", "changes": ["*ʾab- → *ʔabw- (new stem) ×2"]}, {"title": "mem", "changes": ["*maʾ- → *māy- (new stem)"]}, {"title": "myōh", "changes": ["*maʾ- → *māy- (new stem)"]}, {"title": "míh", "changes": ["*maʾ- → *māy- (new stem)"]}, {"title": "אבא", "changes": ["*ʾab- → *ʔabw- (new stem)"]}, {"title": "עסרא", "changes": ["*ʿaśr- → *ʕaśar- (new stem)"]}, {"title": "עשרה", "changes": ["*ʿaśr- → *ʕaśar- (new stem)"]}, {"title": "ܐܥܣܪ", "changes": ["*ʿaśr- → *ʕaśar- (new stem)"]}, {"title": "ܙܡܪܓܕܐ", "changes": ["*bariq- → *baraḳ- (new stem)"]}, {"title": "ܛܦܪܐ", "changes": ["*θ̣ipr- → *ṯ̣upr- (new stem)"]}, {"title": "ܥܣܪܐ", "changes": ["*ʿaśr- → *ʕaśar- (new stem) ×2"]}, {"title": "ࡀࡐࡀ", "changes": ["*ʾab- → *ʔabw- (new stem)"]}, {"title": "ኢድ", "changes": ["*ʾid- → *yad- (new stem)"]}, {"title": "እዴ", "changes": ["*ʾid- → *yad- (new stem)"]}, {"title": "እድ", "changes": ["*ʾid- → *yad- (new stem)"]}, {"title": "ዐሠርቱ", "changes": ["*ʿaśr- → *ʕaśar- (new stem)"]}, {"title": "ዐሥሩ", "changes": ["*ʿaśr- → *ʕaśar- (new stem)"]}, {"title": "ዐሥር", "changes": ["*ʿaśr- → *ʕaśar- (new stem)"]}, {"title": "ዐስር", "changes": ["*ʿaśr- → *ʕaśar- (new stem)"]}, {"title": "ḥmo", "changes": ["*maʾ- → *māy- (new stem)"]}, {"title": "ⲙⲁⲟⲩ", "changes": ["*maʾ- → *māy- (new stem)"]}], "person": [{"to": "Reconstruction:Proto-West Semitic/rpʔ", "page": "Reconstruction:Proto-Semitic/rpˀ", "n": 0, "from": "rpˀ"}], "indirect": ["ddker", "dhakari", "marad", "maraz", "marazzi", "mard", "măraz", "مرضی", "يرقان", "یرقان"]}</script>
 <script>
 (function () {
   var D = JSON.parse(document.getElementById("data").textContent);

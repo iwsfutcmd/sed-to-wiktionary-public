@@ -93,9 +93,11 @@
 
 (function () {
   var MAP = {
+ "PS\tbariq-": "baraḳ-",
  "PS\tbaʿl-": "baʕl-",
  "PS\tlabiʾ-": "labiʔ-",
  "PS\tmaraṣ̂-": "maraṣ́-",
+ "PS\tmaʾ-": "māy-",
  "PS\tmiʾat-": "miʔat-",
  "PS\tqaraṣ-": "ḳaraṣ-",
  "PS\tqarib-": "ḳarib-",
@@ -105,18 +107,25 @@
  "PS\traʾš-": "raʔš-",
  "PS\ttišʿ-": "tišʕ-",
  "PS\twaraq-": "waraḳ-",
+ "PS\twarq-": "waraḳ-",
  "PS\tðikar-": "ḏikar-",
+ "PS\tśalāθ-": "ṯalāṯ-",
  "PS\tśaʿr-": "śaʕr-",
  "PS\tšabʿ-": "šabʕ-",
  "PS\tšamaʿ-": "šamaʕ-",
+ "PS\tšaʿr-": "śaʕr-",
  "PS\tšidθ-": "šidṯ-",
+ "PS\tʾab-": "ʔabw-",
  "PS\tʾabn-": "ʔabn-",
  "PS\tʾakal-": "ʔakal-",
  "PS\tʾalp-": "ʔalp-",
+ "PS\tʾamt-": "ʔamat-",
  "PS\tʾasar-": "ʔasar-",
  "PS\tʾaḥad-": "ʔaḥad-",
+ "PS\tʾaḫ-": "ʔaḫw-",
  "PS\tʾaḫað-": "ʔaḫaḏ-",
  "PS\tʾaḫaḏ-": "ʔaḫaḏ-",
+ "PS\tʾid-": "yad-",
  "PS\tʾil-": "ʔil-",
  "PS\tʾirbay-": "ʔirbay-",
  "PS\tʾiš-": "ʔiš-",
@@ -125,24 +134,30 @@
  "PS\tʿapar-": "ʕapar-",
  "PS\tʿayn-": "ʕayn-",
  "PS\tʿazab-": "ʕazab-",
+ "PS\tʿaśr-": "ʕaśar-",
  "PS\tʿaṯtar-": "ʕaṯtar-",
  "PS\tθalg-": "ṯalg-",
  "PS\tθamāniy-": "ṯamāniy-",
  "PS\tθawr-": "ṯawr-",
  "PS\tθaʿlab-": "ṯaʕlab-",
+ "PS\tθnā-": "ṯin-",
  "PS\tθūm-": "ṯūm-",
+ "PS\tθ̣Vrr-": "ṯ̣urr-",
  "PS\tθ̣aby-": "ṯ̣aby-",
  "PS\tθ̣ill-": "ṯ̣ill-",
+ "PS\tθ̣ipr-": "ṯ̣upr-",
  "PS\tθ̣upr-": "ṯ̣upr-",
  "PS\tḍabuʿ-": "ṣ́abuʕ-",
  "PS\tḏiʾb-": "ḏiʔb-",
  "PS\tḥaql-": "ḥaḳl-",
  "PS\tḥaraθ-": "ḥaraṯ-",
+ "PS\tḥarāθ-": "ḥaraṯ-",
  "PS\tḥdθ-": "ḥdṯ-",
  "PS\tṣaɣir-": "ṣaḡir-",
  "PS\tṣ́abuʿ-": "ṣ́abuʕ-",
  "PS\tṣ́aʾn-": "ṣ́aʔn-",
  "PS\tṯaʿlab-": "ṯaʕlab-",
+ "PS\tṱVrr-": "ṯ̣urr-",
  "PS\tṱill-": "ṯ̣ill-",
  "PS\tṱupr-": "ṯ̣upr-"
 };
@@ -155,7 +170,7 @@
     $ta.textSelection("setContents", r.text);
     var seen = {}, pairs = [];
     r.changes.forEach(function (c) { var k = "*" + c[1] + " → *" + c[2]; if (!seen[k]) { seen[k] = 1; pairs.push(k); } });
-    $("#wpSummary").val("respell Proto-Semitic reference to the WT:ASEM notation (" + pairs.slice(0, 4).join(", ") + (pairs.length > 4 ? " …" : "") + ") (script-assisted)");
+    $("#wpSummary").val("update Proto-Semitic reference to its current WT:ASEM title (" + pairs.slice(0, 4).join(", ") + (pairs.length > 4 ? " …" : "") + ") (script-assisted)");
     $("#wpMinoredit").prop("checked", true);                                  // minor edit
     $("#wpWatchthis").prop("checked", false);                                 // and do not add the page to the watchlist
     mw.notify("Respell: " + r.changes.length + " change(s). Check the diff, then Save.", { autoHide: false });
