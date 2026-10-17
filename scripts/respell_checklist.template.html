@@ -64,14 +64,14 @@ tr.done td.pg a { color: var(--muted); } tr.done { background: var(--done-bg); }
 <main>
   <header class="top panel">
     <h1>Respell Proto-Semitic references</h1>
-    <p class="muted">__TOTAL__ pages link to a spelling that WT:ASEM does not use. Each one opens in the edit form with the fix already made and the diff showing. You read it and press Save.</p>
+    <p class="muted" id="intro">__TOTAL__ pages link to a spelling that WT:ASEM does not use. Each one opens in the edit form with the fix already made and the diff showing. You read it and press Save.</p>
     <div class="bar" role="img" aria-label="progress"><i class="d" id="bd"></i><i class="s" id="bs"></i></div>
     <div class="stats" id="stats"></div>
     <div class="cta">
       <a class="btn primary" id="next" href="#" target="_blank" rel="noopener">Open next page</a>
       <span class="muted" id="hint"></span>
     </div>
-    <ol class="steps">
+    <ol class="steps" id="howto">
       <li>Press <b>Open next page</b> (or <kbd>N</kbd>). The page opens in a new tab as an edit form, the fixed text is in the box and “Show changes” has been pressed for you.</li>
       <li>Check the highlighted changes, then press <b>Save changes</b> on Wiktionary. If something looks wrong, close the tab; nothing was saved.</li>
       <li>Come back here and press <b>Open next page</b> again. That also ticks off the page you just did.</li>
@@ -90,7 +90,7 @@ tr.done td.pg a { color: var(--muted); } tr.done { background: var(--done-bg); }
     <p class="muted" style="margin-top:10px">It needs the plain edit box. If you use CodeMirror syntax highlighting, switch it off for these edits.</p>
   </details>
 
-  <section class="panel">
+  <section class="panel" id="pages">
     <h2>Pages</h2>
     <div class="tabs" id="tabs" role="group" aria-label="filter">
       <button type="button" data-f="todo" aria-pressed="true">To do</button><button type="button" data-f="done" aria-pressed="false">Done</button><button type="button" data-f="skip" aria-pressed="false">Skipped</button><button type="button" data-f="all" aria-pressed="false">All</button>
@@ -129,11 +129,11 @@ tr.done td.pg a { color: var(--muted); } tr.done { background: var(--done-bg); }
   function count(s) { return D.items.filter(function (i) { return status(i.title) === s; }).length; }
   function render() {
     var n = D.items.length, d = count("done"), s = count("skip"), todo = n - d - s;
-    $("bd").style.width = (100 * d / n) + "%"; $("bs").style.width = (100 * s / n) + "%";
+    $("bd").style.width = (n ? 100 * d / n : 100) + "%"; $("bs").style.width = (n ? 100 * s / n : 0) + "%";
     $("stats").textContent = ""; [[d, "done"], [todo, "to do"], [s, "skipped"]].forEach(function (p) { $("stats").appendChild(el("span", { text: p[0] + " " + p[1] })); });
     var nt = nextTarget(), a = $("next");
     if (nt) { a.href = editUrl(nt); a.removeAttribute("aria-disabled"); a.textContent = d + s ? "Open next page" : "Open the first page"; $("hint").textContent = "Next: "; $("hint").appendChild(el("bdi", { text: nt })); }
-    else { a.href = "#"; a.setAttribute("aria-disabled", "true"); a.textContent = "All pages done"; $("hint").textContent = ""; }
+    else { a.href = "#"; a.setAttribute("aria-disabled", "true"); a.textContent = "All pages done"; $("hint").textContent = n ? "" : "Every reference is already respelled. What is left is below."; }
     var tb = $("rows"); tb.textContent = ""; var shown = 0;
     D.items.forEach(function (it, i) {
       var st = status(it.title); if (filter !== "all" && st !== filter) return; shown++;
@@ -177,6 +177,7 @@ tr.done td.pg a { color: var(--muted); } tr.done { background: var(--done-bg); }
   });
   D.indirect.forEach(function (p) { var li = el("li"); li.appendChild(el("bdi", { text: p })); $("ind").appendChild(li); });
   if (!D.person.length) $("decide").hidden = true; if (!D.indirect.length) $("indirect").hidden = true;
+  if (!D.items.length) { $("intro").textContent = "Every reference that only needed a respelling is done."; $("howto").hidden = true; $("pages").hidden = true; $("install").hidden = true; }
   render();
 })();
 </script>

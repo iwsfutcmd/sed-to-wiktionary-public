@@ -16,9 +16,9 @@ PS	barr-	OK	absent				0
 PS	batūl-	OK	absent				0		
 PS	bayt	OK	absent				0		yes
 PS	bayt-	OK	absent				0		
-PS	baʕl-	OK	page				31	Baal; Baalism; Baalist; בעל; 𐤁𐤏𐤋; baqla; 𐎁𐎓𐎍; በዓል	
+PS	baʕl-	OK	page				41	Baal; Baalism; Baalist; בעל; 𐤁𐤏𐤋; baqla; 𐎁𐎓𐎍; በዓል	
 PS	baʕlat-	OK	absent				0		
-PS	baʿl-	redirect ok	redirect	baʕl-	baʕl-	ʿ→ʕ	11	𐩨𐩲𐩡; 𐩨𐩲𐩡𐩩; 𐩣𐩨𐩲𐩡; 𐩣𐩨𐩲𐩡𐩣; 𐩣𐩨𐩲𐩡𐩬; 𐩣𐩨𐩲𐩡𐩫; 𐩱𐩨𐩲𐩡; 𐩨𐩲𐩡𐩣	
+PS	baʿl-	redirect ok	redirect	baʕl-	baʕl-	ʿ→ʕ	0		
 PS	baḳḳ-	OK	absent				1	بق	
 PS	baṭal-	OK	absent				0		
 PS	baṯan-	OK	absent				0		
@@ -129,10 +129,10 @@ PS	rabb-	OK	absent				0
 PS	ramay-	OK	absent				0		
 PS	rawam-	OK	absent				0		
 PS	rayam-	OK	absent				0		
-PS	raʔš-	OK	page				38	resh; ראש; رأس; ras; Rastafarian; rasi; rix; רישא	
+PS	raʔš-	OK	page				39	resh; ראש; رأس; ras; Rastafarian; rasi; rix; רישא	
 PS	raʕay-	OK	absent				0		
 PS	raʕd-	OK	absent				0		
-PS	raʾš-	redirect ok	redirect	raʔš-	raʔš-	ʾ→ʔ	1	𐭫𐭥𐭩𐭱𐭤	
+PS	raʾš-	redirect ok	redirect	raʔš-	raʔš-	ʾ→ʔ	0		
 PS	raḥat-	OK	absent				0		
 PS	raḳḳ-	OK	absent				0		
 PS	rigl-	OK	absent				0		
@@ -179,8 +179,8 @@ PS	šabaṭ-	OK	absent				0
 PS	šabʕ-	OK	page				278	September; septuplet; siete; zettagram; zeptogram; hepta-; zettasecond; zeptosecond	
 PS	šabʿ-	redirect ok	redirect	šabʕ-	šabʕ-	ʿ→ʕ	0		
 PS	šabṭ-	OK	absent				0		
-PS	šamaʕ-	OK	page				33	Ismaeli; שמע; Ismael; Simeón; سمع; sḏm; ܫܡܥ; İsmail	
-PS	šamaʿ-	redirect ok	redirect	šamaʕ-	šamaʕ-	ʿ→ʕ	1	𐩪𐩣𐩲	
+PS	šamaʕ-	OK	page				34	Ismaeli; שמע; Ismael; Simeón; سمع; sḏm; ܫܡܥ; İsmail	
+PS	šamaʿ-	redirect ok	redirect	šamaʕ-	šamaʕ-	ʿ→ʕ	0		
 PS	šamn-	OK	absent				0		
 PS	šamāy-	OK	absent				0		
 PS	šanat-	OK	absent				0		
@@ -248,7 +248,7 @@ PS	ʔbd-	OK	absent				0
 PS	ʔdm	OK	absent				0		yes
 PS	ʔdw-	OK	absent				0		
 PS	ʔibr-	OK	absent				0		
-PS	ʔil-	OK	page				132	Michael; Allah; الله; Gabriel; גבריאל; אל; Elizabeth; Mikhail	
+PS	ʔil-	OK	page				134	Michael; Allah; الله; Gabriel; גבריאל; אל; Elizabeth; Mikhail	
 PS	ʔimm-	OK	absent				0		
 PS	ʔināš-	OK	absent				0		
 PS	ʔirbay-	OK	page				10	ארבה; ܐܪܒܝܬܐ; 𐎛𐎗𐎁𐎊; إربيان; روبيان; erbum; Reconstruction:Proto-Semitic/ʾirbay-; Reconstruction:Proto-Semitic/ḥargil-	
@@ -284,7 +284,7 @@ PS	ʾaḫ-	redirect ok	redirect	ʔaḫw-	ʔaḫ-	ʾ→ʔ	0
 PS	ʾaḫað-	redirect ok	redirect	ʔaḫaḏ-	ʔaḫaḏ-	ð→ḏ ʾ→ʔ	0		
 PS	ʾaḫaḏ-	redirect ok	redirect	ʔaḫaḏ-	ʔaḫaḏ-	ʾ→ʔ	0		
 PS	ʾid-	redirect ok	redirect	yad-	ʔid-	ʾ→ʔ	3	ኢድ; እዴ; እድ	
-PS	ʾil-	redirect ok	redirect	ʔil-	ʔil-	ʾ→ʔ	2	𐩱𐩡; 𐩱𐩡𐩠𐩩	
+PS	ʾil-	redirect ok	redirect	ʔil-	ʔil-	ʾ→ʔ	0		
 PS	ʾirbay-	redirect ok	redirect	ʔirbay-	ʔirbay-	ʾ→ʔ	0		
 PS	ʾiš-	redirect ok	redirect	ʔiš-	ʔiš-	ʾ→ʔ	0		
 PS	ʾuðn-	redirect ok	redirect	ʔuḏn-	ʔuḏn-	ð→ḏ ʾ→ʔ	0		
