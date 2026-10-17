@@ -4,7 +4,18 @@
 (function (root) {
   "use strict";
   var LANGS = { "sem-pro": "PS", "sem-wes-pro": "PWS" };
+  function set(a) { var o = {}; a.forEach(function (x) { o[x] = 1; }); return o; }
+  var ETY_TPL = set(["inh", "inh+", "der", "der+", "bor", "bor+", "lbor", "slbor", "cal", "calque", "pcal", "psm"]);
+  var REF_TPL = set(["m", "m+", "l", "l+", "cog", "noncog", "ncog", "desc", "desctree", "syn", "ant", "cf", "cognate", "mention", "link", "nc"]);
   function nfc(s) { return s.normalize("NFC"); }
+  // the ASEM notation: variant -> standard pairs and the letters no rule reads, handed over by the caller (they come from scripts/wikt_orthography.py)
+  var VARIANTS = [], MANUAL = [];
+  function setNotation(variants, manual) { VARIANTS = variants; MANUAL = manual; }
+  function standardise(stem) {
+    var s = nfc(stem);
+    VARIANTS.forEach(function (p) { s = s.split(nfc(p[0])).join(nfc(p[1])); });
+    return nfc(s);
+  }
 
   // every {{...}} (nested ones too): args[k] = [a, b] with text.slice(a, b) one argument without its pipe; args[0] is the name
   function parse(text) {
@@ -41,9 +52,16 @@
     return m ? [m[1], m[2], m[3]] : null;
   }
 
-  function fixText(text, mapping) {
+  function fixText(text, mapping, generic) {
     var edits = []; // [a, b, replacement, kind, old, new]
-    function lookup(level, stem) { var v = mapping[level + "\t" + nfc(stem)]; return v && nfc(stem) !== v ? v : null; }
+    function lookup(level, stem) {
+      var v = mapping[level + "\t" + nfc(stem)];
+      if (!v && generic) { // any other term: its plain respelling, unless it holds a letter no rule reads
+        var s = standardise(stem);
+        if (s !== nfc(stem) && !MANUAL.some(function (m) { return s.indexOf(m) >= 0; })) v = s;
+      }
+      return v && nfc(stem) !== v ? v : null;
+    }
     function termEdit(level, a, b) {
       var parts = termCore(text.slice(a, b));
       if (!parts) return;
@@ -52,17 +70,24 @@
     }
     var tpls = parse(text);
     tpls.forEach(function (t) {
+      var name = text.slice(t.args[0][0], t.args[0][1]).trim().toLowerCase();
       var pos = positional(text, t.args);
-      pos.forEach(function (ab, k) {
-        var level = LANGS[text.slice(ab[0], ab[1]).trim()];
-        if (!level) return;
-        pos.slice(k + 1, k + 3).forEach(function (c) { if (text.slice(c[0], c[1]).trim()) termEdit(level, c[0], c[1]); });
-      });
-      t.args.slice(1).forEach(function (ab) { // {{ety|ar|:inh|sem-pro:*X}}
-        var m = /^(\s*(sem-pro|sem-wes-pro):)(\*?)([^<>|{}\[\]]+?)(\s*(?:<[^>]*>)*\s*)$/.exec(text.slice(ab[0], ab[1]));
-        if (!m) return;
-        var nw = lookup(LANGS[m[2]], m[4]);
-        if (nw) { var a0 = ab[0] + m[1].length + m[3].length; edits.push([a0, a0 + m[4].length, nw, "ety", m[4], nw]); }
+      var li = ETY_TPL[name] ? 1 : REF_TPL[name] ? 0 : null; // index of the positional argument that names the language of the term
+      if (li !== null && pos.length > li) {
+        var level = LANGS[text.slice(pos[li][0], pos[li][1]).trim()];
+        if (level) {
+          for (var j = li + 1; j < Math.min(li + 4, pos.length); j++) { // the term, then alternative forms written *X
+            var v = text.slice(pos[j][0], pos[j][1]).trim();
+            if (v && (j === li + 1 || v.startsWith("*"))) termEdit(level, pos[j][0], pos[j][1]);
+          }
+        }
+      }
+      t.args.slice(1).forEach(function (ab) { // ety chains: every sem-pro:*X inside an argument, also nested <ety:uder<sem-pro:*X>>
+        var argText = text.slice(ab[0], ab[1]), em, ere = /(?<![\w-])(sem-pro|sem-wes-pro):(\*?)([^<>|{}\[\]\s]+?)(?=[<>|}\s]|$)/g;
+        while ((em = ere.exec(argText)) !== null) {
+          var nw = lookup(LANGS[em[1]], em[3]);
+          if (nw) { var a0 = ab[0] + em.index + em[1].length + 1 + em[2].length; edits.push([a0, a0 + em[3].length, nw, "ety", em[3], nw]); }
+        }
       });
     });
     var re = /\[\[(Reconstruction:Proto-(?:West )?Semitic\/)([^\]|#]+)(\|[^\]]*)?\]\]/g, m;
@@ -86,6 +111,6 @@
     return { text: out, changes: uniq.map(function (e) { return [e[3], e[4], e[5]]; }) };
   }
 
-  var api = { fixText: fixText, parse: parse };
+  var api = { fixText: fixText, parse: parse, standardise: standardise, setNotation: setNotation };
   if (typeof module !== "undefined" && module.exports) module.exports = api; else root.WiktRespell = api;
 })(typeof window !== "undefined" ? window : this);

@@ -21,6 +21,9 @@ class Templates(unittest.TestCase):
                               ("{{l|sem-pro||*ʾab-|pos=masculine}}", "{{l|sem-pro||*ʔab-|pos=masculine}}"),
                               ("{{desc|sem-pro|*ʾab-}}", "{{desc|sem-pro|*ʔab-}}")]:
             self.assertEqual(fix(before), after)
+    def test_alternative_forms_and_nested_chains(self):
+        self.assertEqual(fix("{{inh|amw|sem-pro|*ʿayn-|*ʿayn-}}"), "{{inh|amw|sem-pro|*ʕayn-|*ʕayn-}}")          # the 2nd *form is a shown reconstruction too
+        self.assertEqual(fix("{{ety|ota|:bor|ar:x<ety:uder<sem-pro:*ʾab-<t:to be>>>|text=2}}"), "{{ety|ota|:bor|ar:x<ety:uder<sem-pro:*ʔab-<t:to be>>>|text=2}}")
     def test_ety_chain(self):
         self.assertEqual(fix("{{ety|ar|:inh|sem-pro:*ʾab-}}"), "{{ety|ar|:inh|sem-pro:*ʔab-}}")
     def test_wikilink(self):
@@ -45,6 +48,11 @@ class Untouched(unittest.TestCase):
         self.same("{{inh|ar|sem-pro|*qarn-}}")                    # PWS key, PS context
         self.same("{{m|he|ʾab-}}")                                # Hebrew term
         self.same("{{m|ar|*ʾab-}}")
+    def test_the_language_of_the_term(self):
+        self.same("{{inh|sem-pro|afa-pro|*ʾab-}}")                # Proto-Semitic INHERITS this Afroasiatic term: not a Proto-Semitic term
+        self.same("{{der|sem-pro|akk|*ʾab-}}")
+        self.same("{{af|ar|sem-pro|*ʾab-}}")                      # templates that are not about one reconstructed term are not read
+        self.same("{{ety|x|afa-pro:*ʾab-}}")
     def test_only_the_term(self):
         self.same("{{inh|ar|sem-pro|*ʔab-|tr=ʾab-|t=ʾab- father}}")
         self.same("{{R:sem-pro:SED|volume=I|id=1|entry=*ʾab-}}")  # quotes a source
@@ -58,6 +66,25 @@ class Untouched(unittest.TestCase):
         self.assertEqual(len(ch), 4)
         self.assertEqual(F.fix_text(once, M), (once, []))
         self.assertEqual({k for k, _, _ in ch}, {"term", "ety", "link"})
+
+class Generic(unittest.TestCase):
+    """GenericMap: the survey's explicit pairs first, otherwise the plain respelling into the ASEM notation."""
+    def gfix(self, text):
+        return F.fix_text(text, F.GenericMap(M))[0]
+    def test_any_variant_term_is_respelled(self):
+        self.assertEqual(self.gfix("{{m|sem-pro|*qarn-}} {{m|sem-pro|*ʔanθ-at-}} {{inh|amw|sem-pro|*šabʕ-|*šabʿum}} {{m|sem-pro|*ŝVbVr-}}"),
+                         "{{m|sem-pro|*ḳarn-}} {{m|sem-pro|*ʔanṯ-at-}} {{inh|amw|sem-pro|*šabʕ-|*šabʕum}} {{m|sem-pro|*śVbVr-}}")
+    def test_explicit_pairs_win(self):
+        self.assertEqual(self.gfix("{{m|sem-pro|*ʾab-}}"), "{{m|sem-pro|*ʔab-}}")
+        m = {("PS", "ʾab-"): "ʔabw-"}
+        self.assertEqual(F.fix_text("{{m|sem-pro|*ʾab-}}", F.GenericMap(m))[0], "{{m|sem-pro|*ʔabw-}}")
+    def test_letters_no_rule_reads_and_notation_that_is_not_a_variant_are_left(self):
+        for t in ("{{m|sem-pro|*x̣arb-}}", "{{m|sem-pro|*čaʿlab-}}", "{{m|sem-pro|*sₓawm-}}", "{{m|sem-pro|*rawḏ̣-}}", "{{m|sem-pro|*ṣ́abuʕ-}}", "{{m|ar|*qarn-}}"):
+            self.assertEqual(self.gfix(t), t)
+    def test_idempotent(self):
+        t = "{{m|sem-pro|*qarn-}} {{ety|x|:inh|sem-pro:*θalg-}} [[Reconstruction:Proto-Semitic/θnā-]]"
+        once = self.gfix(t)
+        self.assertEqual(self.gfix(once), once)
 
 class Mapping(unittest.TestCase):
     def test_respellings_and_same_level_redirects(self):

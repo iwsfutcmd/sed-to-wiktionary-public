@@ -43,6 +43,7 @@ test:                    # converter and draft tests (no network; ONLINE=1 make 
 	$(PY) tests/test_conflicts.py
 	$(PY) tests/test_fix_refs.py
 	$(PY) tests/test_respell_js.py
+	$(PY) tests/test_asem_check.py
 done-check:             # rebuild the pages already saved to Wiktionary (wiktionary_drafts/done/), print a diff of what changed; exit 1 if any did
 	cd scripts && $(PY) wikt_draft.py --check-done
 conflicts:              # read the Wiktionary page behind each descendant and report contradictions (CONFLICT/WARN); --fetch downloads missing pages

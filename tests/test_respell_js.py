@@ -15,17 +15,21 @@ SYNTH = [
     "{{inh|ar|sem-pro|*" + U.normalize("NFD", "θ̣aby-") + "}} {{m|sem-pro|*ṣ̂-}}",
     "{{inh|he|sem-wes-pro|*ʾab-}} {{inh|ar|sem-pro|*qarn-}} {{m|he|ʾab-}} {{m|ar|*ʾab-}} {{inh|ar|sem-wes-pro|*qarn-}}",
     "{{inh|ar|sem-pro|*ʔab-|tr=ʾab-|t=ʾab- father}} {{R:sem-pro:SED|volume=I|id=1|entry=*ʾab-}} {{inh|ar|sem-pro|alt=*ʾab-|*ʔab-}} From ʾab- 'father'. {{m|sem-pro|*ʾab-ʾab-}} {{inh|ar|sem-pro|*{{foo|ʾab-}}}}",
+    "{{inh|sem-pro|afa-pro|*ʾab-}} {{der|sem-pro|akk|*ʾab-}} {{af|ar|sem-pro|*ʾab-}} {{R:sem-pro:SED|entry=*ʾab-}}",
+    "{{inh|amw|sem-pro|*ʿayn-|*ʿayn-um}} {{m|sem-pro|*ʾab-|*ʾab-um|t=x}} {{l|sem-pro||*ʾab-}}",
+    "{{ety|ota|:bor|ar:x<ety:uder<sem-pro:*ʾab-<t:to be>>>|text=2|tree=1}} {{ety|ar|:inh|sem-pro:*ʿayn-|text=+}} {{ety|x|afa-pro:*ʾab-}}",
     "", "no templates at all ʾab-", "{{unclosed|sem-pro|*ʾab-", "}} stray {{m|sem-pro|*ʾab-}}",
     "{{inh|ar|sem-pro|id=x|*ʾab-|t=x}}\n{{inh|ar|sem-pro|*waraq-}}\n[[Reconstruction:Proto-Semitic/waraq-]]",
 ]
 
 @unittest.skipUnless(shutil.which("node"), "node is not installed")
 class SamePythonAndJs(unittest.TestCase):
-    def js(self, cases, mapping):
+    def js(self, cases, mapping, generic=False):
         m = {f"{lv}\t{b}": g for (lv, b), g in mapping.items()}
-        code = ("const R=require(process.argv[1]);let s='';process.stdin.on('data',d=>s+=d).on('end',()=>{const j=JSON.parse(s);"
-                "console.log(JSON.stringify(j.cases.map(t=>R.fixText(t,j.mapping))));});")
-        r = subprocess.run(["node", "-e", code, str(ROOT / "scripts" / "respell_core.js")], input=json.dumps(dict(cases=cases, mapping=m)), capture_output=True, text=True)
+        code = ("const R=require(process.argv[1]);let s='';process.stdin.on('data',d=>s+=d).on('end',()=>{const j=JSON.parse(s);R.setNotation(j.variants,j.manual);"
+                "console.log(JSON.stringify(j.cases.map(t=>R.fixText(t,j.mapping,j.generic))));});")
+        notation = dict(variants=[[F.nfc(a), F.nfc(b)] for a, b in F.VARIANTS], manual=[F.nfc(x) for x in F.MANUAL])
+        r = subprocess.run(["node", "-e", code, str(ROOT / "scripts" / "respell_core.js")], input=json.dumps(dict(cases=cases, mapping=m, generic=generic, **notation)), capture_output=True, text=True)
         self.assertEqual(r.returncode, 0, r.stderr)
         return json.loads(r.stdout)
     def test_synthetic(self):
@@ -33,6 +37,17 @@ class SamePythonAndJs(unittest.TestCase):
             new, ch = F.fix_text(text, M)
             self.assertEqual(got["text"], new, text)
             self.assertEqual([tuple(c) for c in got["changes"]], [tuple(c) for c in ch], text)
+    def test_generic_respelling(self):
+        """Any other term is respelled into the ASEM notation (ʾ->ʔ, q->ḳ, θ->ṯ ...), as GenericMap does in Python; x̣ and č are left alone."""
+        cases = SYNTH + ["{{inh|amw|sem-pro|*šabʕ-|*šabʿum}} {{m|sem-pro|*qarn-}} {{cog|sem-pro|*x̣arb-}} {{m|sem-pro|*čaʿlab-}} {{m|sem-pro|*ṣ́abuʿ-}}",
+                         "{{ety|ota|:bor|ar:x<ety:uder<sem-pro:*maraṣ̂-<t:to be ill>>>|text=2}} {{inh|he|sem-pro|*ʔanθ-at-}} {{m|sem-pro|*ŝVbVr-}} {{m|sem-pro|*θ̣ipr-}}",
+                         "{{inh|he|sem-pro|*ʾila}} {{m|sem-pro|*ḳarn-}} {{m|sem-pro|*sₓawm-}} {{m|sem-pro|*rawḏ̣-}}"]
+        for text, got in zip(cases, self.js(cases, M, generic=True)):
+            new, ch = F.fix_text(text, F.GenericMap(M))
+            self.assertEqual(got["text"], new, text)
+            self.assertEqual([tuple(c) for c in got["changes"]], [tuple(c) for c in ch], text)
+        got = self.js(["{{cog|sem-pro|*x̣arb-}} {{m|sem-pro|*sₓawm-}}"], {}, generic=True)[0]
+        self.assertEqual(got["changes"], [])
     def test_real_pages(self):
         data = json.loads((ROOT / "tests" / "data" / "respell_pages.json").read_text(encoding="utf-8"))
         mapping = {(lv, b): g for lv, b, g in data["mapping"]}

@@ -17,12 +17,16 @@ Everything that decides what is edited is in fix_text(), which is pure and teste
 from pathlib import Path
 import csv, difflib, getpass, http.cookiejar, json, os, re, sys, time, unicodedata as U, urllib.error, urllib.parse, urllib.request
 from paths import BUILD, WIKT
-from wikt_orthography import standardise, PFX
+from wikt_orthography import standardise, PFX, MANUAL, VARIANTS
 
 API = "https://en.wiktionary.org/w/api.php"
 UA = {"User-Agent": "sed-to-wiktionary/1.0 (orthography respelling, supervised; https://github.com/iwsfutcmd/sed-to-wiktionary)"}
 OUT = BUILD / "orth_fixes"
 LANGS = {"sem-pro": "PS", "sem-wes-pro": "PWS"}
+# templates whose terms are looked at: the first group names the term's language in its 2nd positional argument ({{inh|ar|sem-pro|*X}}: the 1st is the
+# language that inherits, so {{inh|sem-pro|afa-pro|*X}} is a Proto-Afroasiatic term and is left alone), the second in its 1st ({{m|sem-pro|*X}})
+ETY_TPL = {"inh", "inh+", "der", "der+", "bor", "bor+", "lbor", "slbor", "cal", "calque", "pcal", "psm"}
+REF_TPL = {"m", "m+", "l", "l+", "cog", "noncog", "ncog", "desc", "desctree", "syn", "ant", "cf", "cognate", "mention", "link", "nc"}
 nfc = lambda s: U.normalize("NFC", s)
 
 # ---------------------------------------------------------------- parsing
@@ -74,21 +78,22 @@ def fix_text(text, mapping):
         if new and nfc(stem) != new:
             edits.append((a, b, pre + new + suf, kind, stem, new))
     for t in parse(text):
+        name = text[t["args"][0][0]:t["args"][0][1]].strip().lower()
         pos = positional(text, t["args"])
-        for k, (a, b) in enumerate(pos):
-            level = LANGS.get(text[a:b].strip())
+        li = 1 if name in ETY_TPL else 0 if name in REF_TPL else None      # index of the positional argument that names the language of the term
+        if li is not None and len(pos) > li:
+            level = LANGS.get(text[pos[li][0]:pos[li][1]].strip())
             if level:
-                for a2, b2 in pos[k + 1:k + 3]:                  # the term; {{l|sem-pro||*X}} keeps it one argument further on
-                    if text[a2:b2].strip():
+                for j in range(li + 1, min(li + 4, len(pos))):             # the term, then alternative forms written *X ({{l|sem-pro||*X}} too)
+                    a2, b2 = pos[j]
+                    if text[a2:b2].strip() and (j == li + 1 or text[a2:b2].strip().startswith("*")):
                         term_edit(level, a2, b2, "term")
-        for a, b in t["args"][1:]:                               # {{ety|ar|:inh|sem-pro:*X}}
-            v = text[a:b]
-            m = re.fullmatch(r"(\s*(sem-pro|sem-wes-pro):)(\*?)([^<>|{}\[\]]+?)(\s*(?:<[^>]*>)*\s*)", v)
-            if m:
-                level = LANGS[m.group(2)]
-                new = mapping.get((level, nfc(m.group(4))))
-                if new and nfc(m.group(4)) != new:
-                    edits.append((a + len(m.group(1)) + len(m.group(3)), a + len(m.group(1)) + len(m.group(3)) + len(m.group(4)), new, "ety", m.group(4), new))
+        for a, b in t["args"][1:]:                                         # ety chains: every sem-pro:*X inside an argument, also nested <ety:uder<sem-pro:*X>>
+            for m in re.finditer(r"(?<![\w-])(sem-pro|sem-wes-pro):(\*?)([^<>|{}\[\]\s]+?)(?=[<>|}\s]|$)", text[a:b]):
+                level = LANGS[m.group(1)]
+                new = mapping.get((level, nfc(m.group(3))))
+                if new and nfc(m.group(3)) != new:
+                    edits.append((a + m.start(3), a + m.end(3), new, "ety", m.group(3), new))
     for m in re.finditer(r"\[\[(Reconstruction:Proto-(?:West )?Semitic/)([^\]|#]+)(\|[^\]]*)?\]\]", text):
         level = "PWS" if "West" in m.group(1) else "PS"
         stem = m.group(2).strip()
@@ -109,6 +114,20 @@ def fix_text(text, mapping):
         out = out[:a] + rep + out[b:]
     return out, [(e[3], e[4], e[5]) for e in uniq]
 
+class GenericMap:
+    """The mapping fix_text() is given: the explicit (level, stem) -> stem pairs of the survey (redirects to another stem included), and for every other term its
+    plain respelling into the ASEM notation (standardise(): ʾ->ʔ q->ḳ θ->ṯ ...) unless it holds a letter no rule reads (x̣, č)."""
+    def __init__(self, explicit):
+        self.explicit = explicit
+    def get(self, key, default=None):
+        v = self.explicit.get(key)
+        if v:
+            return v
+        std, dev, man = standardise(key[1])
+        if dev and std != nfc(key[1]) and not any(m in std for m in MANUAL):
+            return std
+        return default
+
 # ---------------------------------------------------------------- what to respell
 def read_tsv(path):
     with open(path, encoding="utf-8", newline="") as f:
@@ -120,6 +139,9 @@ def load_mapping():
     exists = {(r["level"], nfc(r["title"])) for r in survey}
     mapping, person = {}, []
     for r in survey:
+        if r["action"] == "MANUAL" and r["redirect_to"] and "/" not in r["redirect_to"] and ":" not in r["redirect_to"]:     # x̣arb- -> ḥarb-: a letter no rule reads, a redirect that does
+            mapping[(r["level"], nfc(r["title"]))] = nfc(r["redirect_to"])
+            continue
         if r["action"] != "redirect ok":
             continue
         std = nfc(standardise(r["title"])[0])
@@ -196,6 +218,13 @@ def summary_for(changes):
 def plan(api=None):
     api = api or Api()
     mapping, person, pages = load_mapping()
+    gmap = GenericMap(mapping)
+    corpus = BUILD / "asem_corpus.json"
+    if corpus.exists():                                                  # pages that use sem-pro with a variant character, found by wikt_asem_check.py
+        from wikt_asem_check import structural
+        for t, text in json.loads(corpus.read_text(encoding="utf-8")).items():
+            if structural(text) and t not in pages:
+                pages[t] = {("?", "(variant characters)")}
     OUT.mkdir(parents=True, exist_ok=True)
     got = api.pages(list(pages))
     items, unmatched = [], []
@@ -203,12 +232,11 @@ def plan(api=None):
         if title not in got:
             unmatched.append((title, "page not found")); continue
         revid, ts, text = got[title]
-        new, changes = fix_text(text, mapping)
-        found = {(lv, o) for lv in ("PS", "PWS") for _, o, n in changes if (lv, nfc(o)) in mapping}
+        new, changes = fix_text(text, gmap)
         if changes:
             items.append(dict(title=title, revid=revid, timestamp=ts, old=text, new=new, changes=changes))
-        if not changes or {w[1] for w in want} - {nfc(o) for _, o, _ in changes}:
-            missing = sorted({w[1] for w in want} - {nfc(o) for _, o, _ in changes})
+        missing = sorted({w[1] for w in want if w[0] != "?"} - {nfc(o) for _, o, _ in changes})
+        if not changes or missing:
             via = "<ety:" in text or "sem-pro" not in text and "sem-wes-pro" not in text
             unmatched.append((title, ("linked through another page's etymology chain ({{ety|..<ety:inh<ar:term>>}}); follows when that page is respelled: " if via else
                                       "no recognised reference to ") + ", ".join(missing)))
@@ -247,7 +275,7 @@ def apply(user, bot=False, api=None, ask=input, pause=6.0, out=print):
         if cur is None:
             continue
         if cur[0] != it["revid"]:                                  # edited since the plan: recompute from the live text
-            new, changes = fix_text(cur[2], mapping)
+            new, changes = fix_text(cur[2], GenericMap(mapping))
             it = dict(it, revid=cur[0], old=cur[2], new=new, changes=changes)
         if not it["changes"]:
             continue
@@ -272,11 +300,12 @@ SITE = BUILD.parent / "site"
 LOADER = r"""
 (function () {
   var MAP = __MAP__;
+  WiktRespell.setNotation(__VARIANTS__, __MANUAL__);
   mw.loader.using(["jquery.textSelection"]).then(function () { $(function () {
     if (mw.config.get("wgAction") !== "edit" || !/[?&]respell=1(&|$)/.test(location.search)) return;   // only for the links of the checklist page
     var $ta = $("#wpTextbox1");
     if (!$ta.length) { mw.notify("Respell: no plain edit box here (turn CodeMirror off).", { type: "error", autoHide: false }); return; }
-    var r = WiktRespell.fixText($ta.textSelection("getContents"), MAP);
+    var r = WiktRespell.fixText($ta.textSelection("getContents"), MAP, true);
     if (!r.changes.length) { mw.notify("Respell: nothing to change on this page (already fixed?).", { type: "warn", autoHide: false }); return; }
     $ta.textSelection("setContents", r.text);
     var seen = {}, pairs = [];
@@ -290,10 +319,12 @@ LOADER = r"""
 })();
 """
 def userscript(mapping):
+    variants = json.dumps([[nfc(a), nfc(b)] for a, b in VARIANTS], ensure_ascii=False)
+    manual = json.dumps([nfc(m) for m in MANUAL], ensure_ascii=False)
     core = (Path(__file__).resolve().parent / "respell_core.js").read_text(encoding="utf-8")
     m = {f"{lv}\t{b}": g for (lv, b), g in sorted(mapping.items())}
     return "// ASEM respeller (https://github.com/iwsfutcmd/sed-to-wiktionary, scripts/respell_core.js). Acts only on edit links ending in &respell=1.\n" + core.strip() + "\n" + \
-        LOADER.replace("__MAP__", json.dumps(m, ensure_ascii=False, indent=1))
+        LOADER.replace("__MAP__", json.dumps(m, ensure_ascii=False, indent=1)).replace("__VARIANTS__", variants).replace("__MANUAL__", manual)
 
 def checklist():
     """Write site/orthography_fix.html (the page you click through) and site/wikt_respell.user.js from build/orth_fixes/plan.json."""
