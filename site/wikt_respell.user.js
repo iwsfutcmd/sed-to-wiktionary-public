@@ -10,8 +10,20 @@
   var REF_TPL = set(["m", "m+", "l", "l+", "cog", "noncog", "ncog", "desc", "desctree", "syn", "ant", "cf", "cognate", "mention", "link", "nc"]);
   function nfc(s) { return s.normalize("NFC"); }
   // the ASEM notation: variant -> standard pairs and the letters no rule reads, handed over by the caller (they come from scripts/wikt_orthography.py)
-  var VARIANTS = [], MANUAL = [];
-  function setNotation(variants, manual) { VARIANTS = variants; MANUAL = manual; }
+  var VARIANTS = [], MANUAL = [], CONSONANTS = [];
+  function setNotation(variants, manual, consonants) { VARIANTS = variants; MANUAL = manual; CONSONANTS = consonants || []; }
+  function graphemes(s) { // a letter with its combining marks
+    var out = [];
+    for (var ch of nfc(s)) { if (/\p{M}/u.test(ch) && out.length) out[out.length - 1] += ch; else out.push(ch); }
+    return out.map(nfc);
+  }
+  function rootify(stem) { // a root: ʔbd -> ʔ-b-d (hyphen between the radicals, none at the end); anything else is returned unchanged
+    var s = nfc(stem);
+    if (s.indexOf("-") >= 0) return s;
+    var gs = graphemes(s);
+    if (gs.length >= 2 && gs.length <= 5 && gs.every(function (g) { return CONSONANTS.indexOf(g) >= 0; })) return gs.join("-");
+    return s;
+  }
   function standardise(stem) {
     var s = nfc(stem);
     VARIANTS.forEach(function (p) { s = s.split(nfc(p[0])).join(nfc(p[1])); });
@@ -59,7 +71,7 @@
       var v = mapping[level + "\t" + nfc(stem)];
       if (!v && generic) { // any other term: its plain respelling, unless it holds a letter no rule reads
         var s = standardise(stem);
-        if (s !== nfc(stem) && !MANUAL.some(function (m) { return s.indexOf(m) >= 0; })) v = s;
+        if (!MANUAL.some(function (m) { return s.indexOf(m) >= 0; })) { var r = rootify(s); if (r !== nfc(stem)) v = r; }
       }
       return v && nfc(stem) !== v ? v : null;
     }
@@ -112,7 +124,7 @@
     return { text: out, changes: uniq.map(function (e) { return [e[3], e[4], e[5]]; }) };
   }
 
-  var api = { fixText: fixText, parse: parse, standardise: standardise, setNotation: setNotation };
+  var api = { fixText: fixText, parse: parse, standardise: standardise, rootify: rootify, setNotation: setNotation };
   if (typeof module !== "undefined" && module.exports) module.exports = api; else root.WiktRespell = api;
 })(typeof window !== "undefined" ? window : this);
 
@@ -188,7 +200,7 @@
  "PS\tṱill-": "ṯ̣ill-",
  "PS\tṱupr-": "ṯ̣upr-"
 };
-  WiktRespell.setNotation([["θ̣", "ṯ̣"], ["ṱ", "ṯ̣"], ["θ", "ṯ"], ["ð", "ḏ"], ["δ", "ḏ"], ["ṣ̂", "ṣ́"], ["ŝ", "ś"], ["ɣ", "ḡ"], ["ġ", "ḡ"], ["γ", "ḡ"], ["q", "ḳ"], ["ʾ", "ʔ"], ["ˀ", "ʔ"], ["ʼ", "ʔ"], ["ʿ", "ʕ"], ["ˁ", "ʕ"], ["ʻ", "ʕ"], ["ḍ", "ṣ́"]], ["x̣", "č"]);
+  WiktRespell.setNotation([["θ̣", "ṯ̣"], ["ṱ", "ṯ̣"], ["θ", "ṯ"], ["ð", "ḏ"], ["δ", "ḏ"], ["ṣ̂", "ṣ́"], ["ŝ", "ś"], ["ɣ", "ḡ"], ["ġ", "ḡ"], ["γ", "ḡ"], ["q", "ḳ"], ["ʾ", "ʔ"], ["ˀ", "ʔ"], ["ʼ", "ʔ"], ["ʿ", "ʕ"], ["ˁ", "ʕ"], ["ʻ", "ʕ"], ["ḍ", "ṣ́"]], ["x̣", "č"], ["p", "t", "ṭ", "k", "ḳ", "ʔ", "b", "d", "g", "ṯ", "s", "š", "ś", "ḫ", "ḥ", "h", "ṯ̣", "ṣ", "ṣ́", "ḏ", "z", "ḡ", "ʕ", "r", "w", "y", "l", "m", "n"]);
   mw.loader.using(["jquery.textSelection"]).then(function () { $(function () {
     if (mw.config.get("wgAction") !== "edit" || !/[?&]respell=1(&|$)/.test(location.search)) return;   // only for the links of the checklist page
     var $ta = $("#wpTextbox1");

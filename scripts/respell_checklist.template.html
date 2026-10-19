@@ -99,6 +99,12 @@ tr.done td.pg a { color: var(--muted); } tr.done { background: var(--done-bg); }
     <div class="empty" id="empty" hidden>Nothing here.</div>
   </section>
 
+  <section class="panel" id="moves">
+    <h2>Root pages to move (__NMOVES__)</h2>
+    <p class="muted">A root is written <code>ʔ-b-d</code>: hyphens between the radicals, none at the end. These titles are still bare (<code>ʔbd</code>). <b>Move</b> opens the move form with the new title filled in; a target that already exists has to be merged by hand (or by an administrator), so it only gets links to look at both pages.</p>
+    <ul class="list" id="movelist"></ul>
+  </section>
+
   <section class="panel" id="decide">
     <h2>Left for you to decide (__NPERSON__)</h2>
     <p class="muted">These spellings are redirects to the other level (Proto-Semitic to Proto-West Semitic). Repointing them also means changing the language code, so the script does not touch them. “Links” lists the pages that use them.</p>
@@ -171,6 +177,23 @@ tr.done td.pg a { color: var(--muted); } tr.done { background: var(--done-bg); }
   });
   var inst = $("install"); try { if (localStorage.getItem(KEY + "-installed")) inst.open = false; } catch (e) {}
   $("script").addEventListener("copy", function () { try { localStorage.setItem(KEY + "-installed", "1"); } catch (e) {} });
+  (D.moves || []).forEach(function (m) {
+    var li = el("li"), old = D.pfx[m.level] + m.title, nw = D.pfx[m.level] + m.target;
+    li.appendChild(el("bdi", { class: "mono", text: (m.level === "PWS" ? "PWS " : "") + m.title })); li.appendChild(el("span", { class: "muted", text: "→ " + m.target }));
+    if (m.action === "move") {
+      var q = "?wpNewTitleNs=118&wpNewTitleMain=" + encodeURIComponent(nw.replace(/^Reconstruction:/, "")) + "&wpReason=" + encodeURIComponent("root written with hyphens between the radicals (WT:ASEM notation)");
+      li.appendChild(el("a", { href: wiki("Special:MovePage/" + old) + q, target: "_blank", rel: "noopener", text: "Move" }));
+    } else if (m.action === "redirect") {
+      li.appendChild(el("span", { class: "tag", text: "a redirect: after the moves, point it at the new title of the page it leads to" }));
+      li.appendChild(el("a", { href: wiki(old) + "?redirect=no", target: "_blank", rel: "noopener", text: "see it" }));
+    } else {
+      li.appendChild(el("span", { class: "tag skip", text: "target exists" }));
+      li.appendChild(el("a", { href: wiki(old), target: "_blank", rel: "noopener", text: "old page" }));
+      li.appendChild(el("a", { href: wiki(nw), target: "_blank", rel: "noopener", text: "target" }));
+    }
+    $("movelist").appendChild(li);
+  });
+  if (!(D.moves || []).length) $("moves").hidden = true;
   D.person.forEach(function (p) {
     var li = el("li"); li.appendChild(el("bdi", { class: "mono", text: p.from })); li.appendChild(el("span", { class: "muted", text: "→ " + p.to }));
     var l = el("a", { href: wiki("Special:WhatLinksHere/" + p.page), target: "_blank", rel: "noopener", text: "Links (" + p.n + ")" }); li.appendChild(l); $("person").appendChild(li);

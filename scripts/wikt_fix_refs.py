@@ -17,7 +17,7 @@ Everything that decides what is edited is in fix_text(), which is pure and teste
 from pathlib import Path
 import csv, difflib, getpass, http.cookiejar, json, os, re, sys, time, unicodedata as U, urllib.error, urllib.parse, urllib.request
 from paths import BUILD, WIKT
-from wikt_orthography import standardise, PFX, MANUAL, VARIANTS
+from wikt_orthography import standardise, rootify, PFX, MANUAL, VARIANTS, CONSONANTS
 
 API = "https://en.wiktionary.org/w/api.php"
 UA = {"User-Agent": "sed-to-wiktionary/1.0 (orthography respelling, supervised; https://github.com/iwsfutcmd/sed-to-wiktionary)"}
@@ -120,7 +120,8 @@ def editable(title):
 
 class GenericMap:
     """The mapping fix_text() is given: the explicit (level, stem) -> stem pairs of the survey (redirects to another stem included), and for every other term its
-    plain respelling into the ASEM notation (standardise(): ʾ->ʔ q->ḳ θ->ṯ ...) unless it holds a letter no rule reads (x̣, č)."""
+    plain respelling into the ASEM notation (standardise(): ʾ->ʔ q->ḳ θ->ṯ ...) unless it holds a letter no rule reads (x̣, č), and a term that is only consonants is
+    written as a root with a hyphen between the radicals (rootify(): ʔbd -> ʔ-b-d, bn -> b-n)."""
     def __init__(self, explicit):
         self.explicit = explicit
     def get(self, key, default=None):
@@ -128,9 +129,10 @@ class GenericMap:
         if v:
             return v
         std, dev, man = standardise(key[1])
-        if dev and std != nfc(key[1]) and not any(m in std for m in MANUAL):
-            return std
-        return default
+        if any(m in std for m in MANUAL):
+            return default
+        new = rootify(std)                                                    # a root: ʔbd -> ʔ-b-d
+        return new if new != nfc(key[1]) else default
 
 # ---------------------------------------------------------------- what to respell
 def read_tsv(path):
@@ -224,11 +226,11 @@ def plan(api=None):
     mapping, person, pages = load_mapping()
     gmap = GenericMap(mapping)
     corpus = BUILD / "asem_corpus.json"
-    if corpus.exists():                                                  # pages that use sem-pro with a variant character, found by wikt_asem_check.py
-        from wikt_asem_check import structural
+    if corpus.exists():                                                  # pages that use sem-pro with a variant character or a bare root, found by wikt_asem_check.py
+        extend_corpus_for_roots(api, corpus)
         for t, text in json.loads(corpus.read_text(encoding="utf-8")).items():
-            if structural(text) and t not in pages and editable(t):
-                pages[t] = {("?", "(variant characters)")}
+            if t not in pages and editable(t) and fix_text(text, gmap)[1]:
+                pages[t] = {("?", "(notation)")}
     OUT.mkdir(parents=True, exist_ok=True)
     got = api.pages(list(pages))
     items, unmatched = [], []
@@ -244,7 +246,8 @@ def plan(api=None):
             via = "<ety:" in text or "sem-pro" not in text and "sem-wes-pro" not in text
             unmatched.append((title, ("linked through another page's etymology chain ({{ety|..<ety:inh<ar:term>>}}); follows when that page is respelled: " if via else
                                       "no recognised reference to ") + ", ".join(missing)))
-    (OUT / "plan.json").write_text(json.dumps(dict(mapping=[[lv, b, g] for (lv, b), g in mapping.items()], items=items), ensure_ascii=False), encoding="utf-8")
+    moves = root_moves(api)
+    (OUT / "plan.json").write_text(json.dumps(dict(mapping=[[lv, b, g] for (lv, b), g in mapping.items()], items=items, moves=moves), ensure_ascii=False), encoding="utf-8")
     with open(WIKT / "orthography_fixes.tsv", "w", encoding="utf-8", newline="") as f:
         w = csv.writer(f, delimiter="\t", lineterminator="\n"); w.writerow(["page", "status", "changes"])
         for it in items:
@@ -253,9 +256,62 @@ def plan(api=None):
             w.writerow([t, "unmatched", why])
         for lv, t, d in person:
             w.writerow([f"{lv}/{t}", "needs a person", f"redirect leads to another stem: {d}"])
+    print(f"root pages: {sum(m['action'] == 'move' for m in moves)} to move, {sum(m['action'] == 'merge' for m in moves)} to merge, {sum(m['action'] == 'redirect' for m in moves)} already redirects")
     print(f"{len(items)} pages planned ({sum(len(i['changes']) for i in items)} respellings), {len(unmatched)} unmatched, {len(person)} redirects to another stem (needs a person)")
     print("see data/wiktionary/orthography_fixes.tsv; diffs: show")
     return items, unmatched, person
+
+def extend_corpus_for_roots(api, corpus_file, log=print):
+    """Add to the corpus the pages that link to a root, bare or hyphenated (ʔbd, ʔ-b-d), found through the link tables of every root the corpus mentions."""
+    from wikt_wanted import scan
+    corpus = json.loads(corpus_file.read_text(encoding="utf-8"))
+    class Rec:
+        def __init__(self): self.k = set()
+        def get(self, key, default=None): self.k.add(key); return None
+    rec = Rec()
+    for text in corpus.values():
+        fix_text(text, rec)
+    probe = set()
+    for lv, stem in rec.k:
+        std = standardise(stem)[0]
+        bare = std.replace("-", "")
+        r = rootify(bare)
+        if r != bare and "-" not in std or r == std and "-" in std:         # a root, in either spelling
+            for form in {std, bare, r, stem}:
+                probe.add(PFX[lv] + form)
+    cache = scan(sorted(probe), log=lambda *_: None)
+    linkers = {l for t in probe for l in ((cache.get(t) or {}).get("links") or [])} - set(corpus)
+    linkers = {l for l in linkers if editable(l)}
+    got = api.pages(sorted(linkers))
+    corpus.update({t: v[2] for t, v in got.items()})
+    corpus_file.write_text(json.dumps(corpus, ensure_ascii=False), encoding="utf-8")
+    log(f"  corpus: {len(got)} more pages through {len(probe)} root titles")
+
+def root_moves(api):
+    """The Proto-Semitic / Proto-West Semitic titles that are bare roots (ʔdm, npy, rpy ...): each should be the hyphenated root (ʔ-d-m, n-p-y, r-p-y).
+    -> [dict(level, title, target, action: move | merge | redirect, target_state)] with the live state of both pages."""
+    from wikt_orthography import load_titles
+    pairs = []
+    for lv, st in load_titles():
+        new = rootify(standardise(st)[0])
+        if new != nfc(st) and "-" not in st:
+            pairs.append((lv, nfc(st), new))
+    live = api.pages([PFX[lv] + t for lv, t, _ in pairs] + [PFX[lv] + n for lv, _, n in pairs])
+    out = []
+    for lv, t, n in pairs:
+        src, dst = live.get(nfc(PFX[lv] + t)), live.get(nfc(PFX[lv] + n))
+        sk = "redirect" if src and re.match(r"\s*#REDIRECT", src[2], re.I) else "page" if src else "absent"
+        dk = "absent" if not dst else "redirect" if re.match(r"\s*#REDIRECT", dst[2], re.I) else "page"
+        if sk != "page":
+            action = "redirect" if sk == "redirect" else "absent"
+        elif dk == "absent":
+            action = "move"
+        elif dk == "redirect" and nfc(t) in nfc(dst[2]):                          # the target is a redirect back to this page: a move over it is allowed
+            action = "move"
+        else:
+            action = "merge"
+        out.append(dict(level=lv, title=t, target=n, action=action, target_state=dk))
+    return out
 
 def diff_of(item):
     a, b = item["old"].splitlines(), item["new"].splitlines()
@@ -304,7 +360,7 @@ SITE = BUILD.parent / "site"
 LOADER = r"""
 (function () {
   var MAP = __MAP__;
-  WiktRespell.setNotation(__VARIANTS__, __MANUAL__);
+  WiktRespell.setNotation(__VARIANTS__, __MANUAL__, __CONSONANTS__);
   mw.loader.using(["jquery.textSelection"]).then(function () { $(function () {
     if (mw.config.get("wgAction") !== "edit" || !/[?&]respell=1(&|$)/.test(location.search)) return;   // only for the links of the checklist page
     var $ta = $("#wpTextbox1");
@@ -325,10 +381,11 @@ LOADER = r"""
 def userscript(mapping):
     variants = json.dumps([[nfc(a), nfc(b)] for a, b in VARIANTS], ensure_ascii=False)
     manual = json.dumps([nfc(m) for m in MANUAL], ensure_ascii=False)
+    consonants = json.dumps(CONSONANTS, ensure_ascii=False)
     core = (Path(__file__).resolve().parent / "respell_core.js").read_text(encoding="utf-8")
     m = {f"{lv}\t{b}": g for (lv, b), g in sorted(mapping.items())}
     return "// ASEM respeller (https://github.com/iwsfutcmd/sed-to-wiktionary, scripts/respell_core.js). Acts only on edit links ending in &respell=1.\n" + core.strip() + "\n" + \
-        LOADER.replace("__MAP__", json.dumps(m, ensure_ascii=False, indent=1)).replace("__VARIANTS__", variants).replace("__MANUAL__", manual)
+        LOADER.replace("__MAP__", json.dumps(m, ensure_ascii=False, indent=1)).replace("__VARIANTS__", variants).replace("__MANUAL__", manual).replace("__CONSONANTS__", consonants)
 
 def checklist():
     """Write site/orthography_fix.html (the page you click through) and site/wikt_respell.user.js from build/orth_fixes/plan.json."""
@@ -351,10 +408,11 @@ def checklist():
     for p in person:
         p["from"] = p.pop("from_")
     indirect = [r["page"] for r in rows if r["status"] == "unmatched" and r["changes"].startswith("linked through")]
-    data = json.dumps(dict(items=items, person=person, indirect=indirect), ensure_ascii=False).replace("</", "<\\/")
+    moves = [m for m in saved.get("moves", []) if m["action"] in ("move", "merge", "redirect")]
+    data = json.dumps(dict(items=items, person=person, indirect=indirect, moves=moves, pfx=PFX), ensure_ascii=False).replace("</", "<\\/")
     us = userscript(mapping)
     html = (Path(__file__).resolve().parent / "respell_checklist.template.html").read_text(encoding="utf-8")
-    html = html.replace("__DATA__", data).replace("__TOTAL__", str(len(items))).replace("__NPERSON__", str(len(person))).replace("__NINDIRECT__", str(len(indirect)))
+    html = html.replace("__DATA__", data).replace("__TOTAL__", str(len(items))).replace("__NPERSON__", str(len(person))).replace("__NINDIRECT__", str(len(indirect))).replace("__NMOVES__", str(sum(m["action"] != "redirect" for m in moves)))
     html = html.replace("__USERSCRIPT__", us.replace("&", "&amp;").replace("<", "&lt;"))
     SITE.mkdir(exist_ok=True)
     (SITE / "orthography_fix.html").write_text(html, encoding="utf-8")

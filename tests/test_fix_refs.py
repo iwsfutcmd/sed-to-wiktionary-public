@@ -81,6 +81,14 @@ class Generic(unittest.TestCase):
     def test_letters_no_rule_reads_and_notation_that_is_not_a_variant_are_left(self):
         for t in ("{{m|sem-pro|*x̣arb-}}", "{{m|sem-pro|*čaʿlab-}}", "{{m|sem-pro|*sₓawm-}}", "{{m|sem-pro|*rawḏ̣-}}", "{{m|sem-pro|*ṣ́abuʕ-}}", "{{m|ar|*qarn-}}"):
             self.assertEqual(self.gfix(t), t)
+    def test_roots_are_hyphenated(self):
+        self.assertEqual(self.gfix("{{inh|ar|sem-pro|*ʔbd}} {{m|sem-pro|*ṯql}} {{m|sem-pro|*bn}} {{m|sem-pro|*ḏbb}} {{inh|phn|sem-pro|*ʾš}} {{m|sem-pro|*ṣ́rb}}"),
+                         "{{inh|ar|sem-pro|*ʔ-b-d}} {{m|sem-pro|*ṯ-ḳ-l}} {{m|sem-pro|*b-n}} {{m|sem-pro|*ḏ-b-b}} {{inh|phn|sem-pro|*ʔ-š}} {{m|sem-pro|*ṣ́-r-b}}")   # two radicals stay two, a doubled radical stays doubled
+        self.assertEqual(self.gfix("{{m|sem-pro|*q-n-y}}"), "{{m|sem-pro|*ḳ-n-y}}")
+    def test_not_a_root(self):
+        for t in ("{{m|sem-pro|*ʔalp-}}", "{{m|sem-pro|*bV-}}", "{{m|sem-pro|*ʔabd}}", "{{m|sem-pro|*b}}", "{{m|sem-pro|*ʔ-b-d}}", "{{m|sem-pro|*-at}}", "{{m|ar|*ʔbd}}",
+                  "{{m|sem-pro|*ʔbdʔbd}}", "{{m|sem-pro|*x̣rb}}"):
+            self.assertEqual(self.gfix(t), t, t)
     def test_idempotent(self):
         t = "{{m|sem-pro|*qarn-}} {{ety|x|:inh|sem-pro:*θalg-}} [[Reconstruction:Proto-Semitic/θnā-]]"
         once = self.gfix(t)

@@ -14,6 +14,7 @@ from wikt_wanted import scan, SCAN
 
 PFX = {"PS": "Reconstruction:Proto-Semitic/", "PWS": "Reconstruction:Proto-West Semitic/"}
 STD = {U.normalize("NFC", g) for g in "p t ṭ k ḳ ʔ b d g ṯ s š ś ḫ ḥ h ṯ̣ ṣ ṣ́ ḏ z ḡ ʕ r w y l m n a i u ā ī ū V V̄ - ( ) ".split()}
+CONSONANTS = [U.normalize("NFC", g) for g in "p t ṭ k ḳ ʔ b d g ṯ s š ś ḫ ḥ h ṯ̣ ṣ ṣ́ ḏ z ḡ ʕ r w y l m n".split()]
 # variant -> standard (longest first); each entry names the kind of deviation
 VARIANTS = [("θ̣", "ṯ̣"), ("ṱ", "ṯ̣"), ("θ", "ṯ"), ("ð", "ḏ"), ("δ", "ḏ"), ("ṣ̂", "ṣ́"), ("ŝ", "ś"), ("ɣ", "ḡ"), ("ġ", "ḡ"), ("γ", "ḡ"),
             ("q", "ḳ"), ("ʾ", "ʔ"), ("ˀ", "ʔ"), ("ʼ", "ʔ"), ("ʿ", "ʕ"), ("ˁ", "ʕ"), ("ʻ", "ʕ"), ("ḍ", "ṣ́")]
@@ -27,6 +28,17 @@ def graphemes(s):
         else:
             out.append(ch)
     return [U.normalize("NFC", g) for g in out]
+
+def rootify(stem):
+    """A root is written with a hyphen between the radicals and none at the end: ʔbd -> ʔ-b-d, ṯql -> ṯ-q-l, ʿṯn -> ʕ-ṯ-n (after standardise), a two-radical root
+    stays two (bn -> b-n), a doubled radical is kept as written (ḏbb -> ḏ-b-b). Anything that is not only consonants, or is already spelled with hyphens, is returned unchanged."""
+    s = U.normalize("NFC", stem)
+    if "-" in s:
+        return s
+    gs = graphemes(s)
+    if 2 <= len(gs) <= 5 and all(g in CONSONANTS for g in gs):
+        return "-".join(gs)
+    return s
 
 def standardise(stem):
     """-> (standard stem, [deviations], manual?)"""
