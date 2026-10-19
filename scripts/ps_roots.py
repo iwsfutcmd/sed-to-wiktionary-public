@@ -2,8 +2,8 @@
 """Enumerate possible bi- and triconsonantal Proto-Semitic roots under toggleable
 phonotactic filters (after Greenberg 1950, McCarthy's OCP work).
 
-Inventory: the 29 consonants of the Huehnergard/Kogan reconstruction, without
-the optional emphatic velar fricative *ḫ̣.
+Inventory: the 29 consonants of the Huehnergard/Kogan reconstruction. The optional
+emphatic velar fricative *ḫ̣ is a 30th consonant, added with `--emphatic-x`.
 
 Every filter is binary (on/off). `--json` dumps the inventory, filters and
 results in a shape a browsing UI can consume directly.
@@ -57,8 +57,7 @@ INVENTORY = [
 ]
 assert len(INVENTORY) == 29
 
-EMPHATIC = {c.sym for c in INVENTORY if c.series == "emphatic"}
-BY_SYM = {c.sym: c for c in INVENTORY}
+EMPHATIC_X = C("ḫ̣", "xʼ~χʼ", "dorsal", "dorsal-fric", "emphatic")
 
 
 def same_cls(a, b, classes):
@@ -103,8 +102,8 @@ FILTERS = {
         "no two consonants differing only in voicing/emphasis, in any position",
         lambda cs: not any(x.group == y.group and x != y for x, y in pairs(cs)), BOTH),
     "one-emphatic": (
-        "at most one emphatic (ṭ q ṣ ṯ̣ ṣ́) per root",
-        lambda cs: n_of(cs, lambda x: x.sym in EMPHATIC) <= 1, BOTH),
+        "at most one emphatic (ṭ q ṣ ṯ̣ ṣ́, and ḫ̣ if included) per root",
+        lambda cs: n_of(cs, lambda x: x.series == "emphatic") <= 1, BOTH),
     "one-guttural": (
         "at most one guttural (ʔ h ḥ ʕ) per root",
         lambda cs: n_of(cs, lambda x: x.cls == "guttural") <= 1, BOTH),
@@ -158,6 +157,8 @@ def main(argv=None):
     ap.add_argument("--all", action="store_true", help="enable every filter")
     ap.add_argument("--length", choices=["2", "3", "both"], default="both",
                     help="root length(s) to enumerate (default: both)")
+    ap.add_argument("--emphatic-x", action="store_true",
+                    help="add the optional emphatic ḫ̣ as a 30th consonant")
     ap.add_argument("--list", action="store_true", help="list filters and exit")
     ap.add_argument("--show", type=int, metavar="N", help="print N surviving roots")
     ap.add_argument("--json", metavar="PATH", help="write inventory/filters/roots as JSON")
@@ -169,6 +170,8 @@ def main(argv=None):
             print(f"{'*' if k in DEFAULT_ON else ' '} {k:<26}{desc}{only}")
         print("\n* = on by default")
         return
+    if args.emphatic_x:
+        INVENTORY.append(EMPHATIC_X)
     split = lambda s: [x for x in (s or "").split(",") if x]
     active = list(FILTERS) if args.all else split(args.on) if args.on is not None else list(DEFAULT_ON)
     active += [k for k in split(args.add) if k not in active]
