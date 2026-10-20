@@ -148,12 +148,15 @@ PAGES = {   # title -> SEDonline reconstruction id and page content
                  # where the printed SED differs from SEDonline the draft follows the print (read at 650 dpi; data/sedonline/form_check.tsv)
                  override={("Harsusi", "ẑərōṭ"): dict(form="ẑerōṭ", reason="print: ẑerōṭ (e, not ə)"),
                            ("Soqotri", "ẓ̂éraṭ"): dict(form="ẑerót", reason="print: ẑerót (ẑ without dot, plain t; LS 365)"),
-                           ("Syriac", "ˁurṭē, ˁurṭāyā"): dict(gloss="flatulence", reason="print: 'crepitus ventris', site: 'stomach growling'")}, pos="{{head|sem-pro|verb}}", infl=False, defs=["to [[fart]], to break [[wind]] audibly"], cat="", etym=""),
+                           ("Syriac", "ˁurṭē, ˁurṭāyā"): dict(gloss="flatulence", reason="print: 'crepitus ventris', site: 'stomach growling'")}, pos="{{head|sem-pro|verb}}", infl=False,
+                 conj="{{sem-pro-conj/*paʕal-*yipʕul|ṣ́|r|ṭ|vn=ṣ́arṭ}}",         # SED: Akkadian ṣarātum (u/u), Arabic ḍaraṭa (u) -- u-class template added to Wiktionary since the draft was first written
+                 defs=["to [[fart]], to break [[wind]] audibly"], cat="", etym=""),
  "nayak-": dict(rec="995", vol="I", entry="*nyk", pos="{{head|sem-pro|verb}}", infl=False,
                 conj="{{sem-pro-conj/*payala-*yipīl|n|y|k|vn=nayk}}",           # hollow root (medial y)
                 override={("Arabic", "nyk"): dict(gloss="to cohabit with a woman", reason="print: 'cohabiter avec une femme' [BK 2 1376]; site: 'to marry a woman'")},
  defs=["to have [[sexual intercourse]]"], cat="", etym=""),
- "ḫaraš-": dict(rec="960", vol="I", entry="*ḫrš", exclude={("Amharic", "arräsä"): "Wiktionary's Amharic አረሰ is 'to plough', from *ḥaraṯ- (tests/test_conflicts.py)"}, pos="{{head|sem-pro|verb}}", infl=False, defs=["to be in [[childbed]], to be in [[confinement]]"], cat="", etym=""),
+ "ḫaraš-": dict(rec="960", vol="I", entry="*ḫrš", exclude={("Amharic", "arräsä"): "Wiktionary's Amharic አረሰ is 'to plough', from *ḥaraṯ- (tests/test_conflicts.py)"}, pos="{{head|sem-pro|verb}}", infl=False, defs=["to be in [[childbed]], to be in [[confinement]]"], cat="", etym="",
+              extra_refs=["{{R:akk:CAD|volume=6|pages=95-96|entry=ḫarāšu A}}"]),  # sense (3), "(uncert. mng.)"; only D- and Š-stem forms cited there, no bare G-stem -- doesn't give the conjugation class either, but worth citing
  "šiʔr-": dict(rec="691", vol="I", entry="*šiʔr-", pos="{{sem-noun|m}}", infl=True, defs=["[[flesh]]"], cat="{{C|sem-pro|Anatomy}}", etym=""),
  "śaḥm-": dict(rec="698", vol="I", entry="*ŝaḥm-",
               exclude={("Arabic", "šaḥuma"): "site only: the print gives Arabic šaḥm- (BK 1 1199) alone"},
@@ -267,6 +270,7 @@ def build(title, cfg, out=None):
     if cfg.get("conj"): d += ["====Conjugation====", cfg["conj"], ""]
     d += ["====Descendants===="] + tree_lines(words, notes, cfg.get("exclude", {}), cfg.get("override")) + ["",
           "===References===", "* {{R:sem-pro:SED|volume=%s|id=%s|entry=%s}}" % (cfg["vol"], cfg["rec"], cfg["entry"])]
+    for r in cfg.get("extra_refs", []): d.append("* " + r)
     if cfg["cat"]: d += ["", cfg["cat"]]
     dest = Path(out) if out else OUT
     dest.mkdir(exist_ok=True)

@@ -12,6 +12,8 @@ import wikt_asem_check as A
 BAD = [
     "{{inh|ar|sem-pro|*ʾab-}}", "{{inh|ar|sem-pro|*ʿayn-|t=eye}}", "{{cog|sem-pro|*qarn-}}", "{{m|sem-pro|*θalg-}}", "{{m|sem-pro|*θ̣aby-}}", "{{m|sem-pro|*ṱill-}}",
     "{{m|sem-pro|*maraṣ̂-}}", "{{m|sem-pro|*ŝaḥm-}}", "{{m|sem-pro|*ṣaɣir-}}", "{{m|sem-pro|*ðikar-}}", "{{m|sem-pro|*ḍabuʕ-}}", "{{m|sem-pro|*x̣arb-}}", "{{m|sem-pro|*čaʕlab-}}",
+    "{{der|aii|sem-pro|*qyẓ}}",                                                      # ẓ (ẓ ~ Arabic ظ, Hebrew ץ): another spelling of the interdental emphatic, for ṯ̣
+
     "{{desc|sem-pro|*ʾab-}}", "{{l|sem-pro||*ʾab-}}", "{{der|en|sem-pro|*baʿl-||owner}}", "{{inh+|he|sem-wes-pro|*qarn-}}",
     "{{inh|amw|sem-pro|*šabʕ-|*šabʿum}}",                                           # an alternative form shown with the term
     "{{ety|ar|:inh|sem-pro:*ʾab-}}", "{{ety|ota|:bor|ar:x<ety:uder<sem-pro:*maraṣ̂-<t:to be ill>>>|text=2}}",
@@ -40,6 +42,7 @@ class Parser(unittest.TestCase):
     def test_reports_the_standard_spelling(self):
         self.assertEqual(A.structural("{{m|sem-pro|*ʾab-}}"), [("term", "ʾab-", "ʔab-")])
         self.assertEqual(A.structural("{{m|sem-pro|*θ̣aby-}}"), [("term", "θ̣aby-", "ṯ̣aby-")])
+        self.assertEqual(A.structural("{{der|aii|sem-pro|*qyẓ}}"), [("term", "qyẓ", "ḳyṯ̣")])
         self.assertEqual(A.structural("{{sem-pro-conj/*paʕala-*yipʕal|m|r|ṣ̂|vn=marṣ́}}"), [("conj", "ṣ̂", "ṣ́")])
 
 class Regex(unittest.TestCase):

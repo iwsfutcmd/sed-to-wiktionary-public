@@ -200,7 +200,22 @@
  "PS\tṱill-": "ṯ̣ill-",
  "PS\tṱupr-": "ṯ̣upr-"
 };
-  WiktRespell.setNotation([["θ̣", "ṯ̣"], ["ṱ", "ṯ̣"], ["θ", "ṯ"], ["ð", "ḏ"], ["δ", "ḏ"], ["ṣ̂", "ṣ́"], ["ŝ", "ś"], ["ɣ", "ḡ"], ["ġ", "ḡ"], ["γ", "ḡ"], ["q", "ḳ"], ["ʾ", "ʔ"], ["ˀ", "ʔ"], ["ʼ", "ʔ"], ["ʿ", "ʕ"], ["ˁ", "ʕ"], ["ʻ", "ʕ"], ["ḍ", "ṣ́"]], ["x̣", "č"], ["p", "t", "ṭ", "k", "ḳ", "ʔ", "b", "d", "g", "ṯ", "s", "š", "ś", "ḫ", "ḥ", "h", "ṯ̣", "ṣ", "ṣ́", "ḏ", "z", "ḡ", "ʕ", "r", "w", "y", "l", "m", "n"]);
+  var CLOSE_FLAG = "asemRespellPending";                                      // sessionStorage: the exact title a respell save is in flight for, in this tab
+  WiktRespell.setNotation([["θ̣", "ṯ̣"], ["ṱ", "ṯ̣"], ["ẓ", "ṯ̣"], ["θ", "ṯ"], ["ð", "ḏ"], ["δ", "ḏ"], ["ṣ̂", "ṣ́"], ["ŝ", "ś"], ["ɣ", "ḡ"], ["ġ", "ḡ"], ["γ", "ḡ"], ["q", "ḳ"], ["ʾ", "ʔ"], ["ˀ", "ʔ"], ["ʼ", "ʔ"], ["ʿ", "ʕ"], ["ˁ", "ʕ"], ["ʻ", "ʕ"], ["ḍ", "ṣ́"]], ["x̣", "č"], ["p", "t", "ṭ", "k", "ḳ", "ʔ", "b", "d", "g", "ṯ", "s", "š", "ś", "ḫ", "ḥ", "h", "ṯ̣", "ṣ", "ṣ́", "ḏ", "z", "ḡ", "ʕ", "r", "w", "y", "l", "m", "n"]);
+  // Runs on EVERY page load (not just edit pages): if this tab just saved the page it was flagged for (we have
+  // landed somewhere that is not the edit form any more), tell the checklist tab which page is done and close --
+  // no manual tab-switching. Keyed by the exact title, not just a boolean, so several tabs open at once each
+  // report their own result without tripping over each other's flag.
+  try {
+    var pending = sessionStorage.getItem(CLOSE_FLAG);
+    if (pending && mw.config.get("wgAction") !== "edit") {
+      sessionStorage.removeItem(CLOSE_FLAG);                                 // stale either way: consume it regardless of what follows
+      if (pending === mw.config.get("wgPageName").replace(/_/g, " ")) {      // only report/close if this really is the page we saved
+        if (window.opener) { try { window.opener.postMessage({ asemRespellSaved: pending }, "*"); } catch (e) {} }
+        window.close();                                                      // no-op if the tab was not opened by script; never errors
+      }
+    }
+  } catch (e) {}
   mw.loader.using(["jquery.textSelection"]).then(function () { $(function () {
     if (mw.config.get("wgAction") !== "edit" || !/[?&]respell=1(&|$)/.test(location.search)) return;   // only for the links of the checklist page
     var $ta = $("#wpTextbox1");
@@ -215,5 +230,12 @@
     $("#wpWatchthis").prop("checked", false);                                 // and do not add the page to the watchlist
     mw.notify("Respell: " + r.changes.length + " change(s). Check the diff, then Save.", { autoHide: false });
     setTimeout(function () { $("#wpDiff").trigger("click"); }, 400);
+    var form = document.getElementById("editform");
+    if (form) form.addEventListener("submit", function (e) {
+      // #editform has three submit buttons (Save, Show changes, Preview); "Show changes" is auto-clicked above
+      // and must NOT arm the close-and-report -- only a real Save should.
+      if (!(e.submitter && e.submitter.id === "wpSave")) return;
+      try { sessionStorage.setItem(CLOSE_FLAG, mw.config.get("wgPageName").replace(/_/g, " ")); } catch (e2) {}
+    });
   }); });
 })();

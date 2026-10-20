@@ -28,3 +28,4 @@
 
 ===References===
 * {{R:sem-pro:SED|volume=I|id=960|entry=*ḫrš}}
+* {{R:akk:CAD|volume=6|pages=95-96|entry=ḫarāšu A}}

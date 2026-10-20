@@ -6,6 +6,9 @@
 
 # to [[fart]], to break [[wind]] audibly
 
+====Conjugation====
+{{sem-pro-conj/*paʕal-*yipʕul|ṣ́|r|ṭ|vn=ṣ́arṭ}}
+
 ====Descendants====
 * East Semitic:
 ** {{desc|akk|ṣarātum|alt=𒍝𒊏𒀀𒌅|tr=ṣarātum|t=to fart}}

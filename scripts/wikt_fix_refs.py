@@ -242,6 +242,11 @@ def plan(api=None):
         if changes:
             items.append(dict(title=title, revid=revid, timestamp=ts, old=text, new=new, changes=changes))
         missing = sorted({w[1] for w in want if w[0] != "?"} - {nfc(o) for _, o, _ in changes})
+        # a corpus-only candidate, refetched and found already standard, is simply done -- except when it holds
+        # an x̣/č: GenericMap deliberately declines those, so an empty `changes` there means "still needs a
+        # person", not "already fixed", and stays visible rather than risk hiding it.
+        if not changes and not any(w[0] != "?" for w in want) and not any(m in text for m in MANUAL):
+            continue
         if not changes or missing:
             via = "<ety:" in text or "sem-pro" not in text and "sem-wes-pro" not in text
             unmatched.append((title, ("linked through another page's etymology chain ({{ety|..<ety:inh<ar:term>>}}); follows when that page is respelled: " if via else
@@ -360,7 +365,22 @@ SITE = BUILD.parent / "site"
 LOADER = r"""
 (function () {
   var MAP = __MAP__;
+  var CLOSE_FLAG = "asemRespellPending";                                      // sessionStorage: the exact title a respell save is in flight for, in this tab
   WiktRespell.setNotation(__VARIANTS__, __MANUAL__, __CONSONANTS__);
+  // Runs on EVERY page load (not just edit pages): if this tab just saved the page it was flagged for (we have
+  // landed somewhere that is not the edit form any more), tell the checklist tab which page is done and close --
+  // no manual tab-switching. Keyed by the exact title, not just a boolean, so several tabs open at once each
+  // report their own result without tripping over each other's flag.
+  try {
+    var pending = sessionStorage.getItem(CLOSE_FLAG);
+    if (pending && mw.config.get("wgAction") !== "edit") {
+      sessionStorage.removeItem(CLOSE_FLAG);                                 // stale either way: consume it regardless of what follows
+      if (pending === mw.config.get("wgPageName").replace(/_/g, " ")) {      // only report/close if this really is the page we saved
+        if (window.opener) { try { window.opener.postMessage({ asemRespellSaved: pending }, "*"); } catch (e) {} }
+        window.close();                                                      // no-op if the tab was not opened by script; never errors
+      }
+    }
+  } catch (e) {}
   mw.loader.using(["jquery.textSelection"]).then(function () { $(function () {
     if (mw.config.get("wgAction") !== "edit" || !/[?&]respell=1(&|$)/.test(location.search)) return;   // only for the links of the checklist page
     var $ta = $("#wpTextbox1");
@@ -375,6 +395,13 @@ LOADER = r"""
     $("#wpWatchthis").prop("checked", false);                                 // and do not add the page to the watchlist
     mw.notify("Respell: " + r.changes.length + " change(s). Check the diff, then Save.", { autoHide: false });
     setTimeout(function () { $("#wpDiff").trigger("click"); }, 400);
+    var form = document.getElementById("editform");
+    if (form) form.addEventListener("submit", function (e) {
+      // #editform has three submit buttons (Save, Show changes, Preview); "Show changes" is auto-clicked above
+      // and must NOT arm the close-and-report -- only a real Save should.
+      if (!(e.submitter && e.submitter.id === "wpSave")) return;
+      try { sessionStorage.setItem(CLOSE_FLAG, mw.config.get("wgPageName").replace(/_/g, " ")); } catch (e2) {}
+    });
   }); });
 })();
 """

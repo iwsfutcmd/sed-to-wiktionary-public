@@ -38,7 +38,7 @@ def structural(text):
 BAD = [["02BE"], ["02BF"], ["02C0"], ["02C1"], ["02BC"], ["02BB"],              # ʾ ʿ ˀ ˁ ʼ ʻ  (for ʔ ʕ)
        ["0071"],                                                                # q (for ḳ)
        ["03B8"], ["00F0"], ["03B4"], ["0263"], ["03B3"], ["0121"],              # θ ð δ ɣ γ ġ  (for ṯ ḏ ḡ)
-       ["1E71"], ["0074", "032D"],                                              # ṱ, t + circumflex below (for ṯ̣)
+       ["1E71"], ["0074", "032D"], ["1E93"],                                    # ṱ, t + circumflex below, ẓ (for ṯ̣)
        ["1E63", "0302"], ["0073", "0323", "0302"], ["0073", "0302", "0323"],    # ṣ̂ (for ṣ́)
        ["015D"], ["0073", "0302"],                                              # ŝ (for ś)
        ["1E0D"], ["0064", "0323"],                                              # ḍ (for ṣ́)
@@ -66,7 +66,7 @@ def regex_hits(text):
     return [m.group(0) for m in _FILTER_PY.finditer(U.normalize("NFC", text))]
 
 # ---- finding the pages: Wiktionary's own search (CirrusSearch regular expressions) over the whole wiki, one query per variant character
-SEARCH_CHARS = ["ʾ", "ʿ", "ˀ", "ˁ", "ʼ", "ʻ", "q", "θ", "ð", "δ", "ɣ", "γ", "ġ", "ṱ", "ḍ", "ŝ", "ṣ̂", "ṣ̂", "x̣", "č"]      # the two ṣ̂ are NFC and the other order of the marks
+SEARCH_CHARS = ["ʾ", "ʿ", "ˀ", "ˁ", "ʼ", "ʻ", "q", "θ", "ð", "δ", "ɣ", "γ", "ġ", "ṱ", "ẓ", "ḍ", "ŝ", "ṣ̂", "ṣ̂", "x̣", "č"]      # the two ṣ̂ are NFC and the other order of the marks
 def search_pages(log=print):
     """-> {page: wikitext} of every page where a sem-pro / sem-wes-pro term holds one of the variant characters (any namespace), merged into build/asem_corpus.json."""
     import time

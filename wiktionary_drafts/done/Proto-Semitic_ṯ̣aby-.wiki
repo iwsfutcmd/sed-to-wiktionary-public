@@ -2,7 +2,7 @@
 ==Proto-Semitic==
 
 ===Etymology===
-Reconstructed in Militarev & Kogan's ''Semitic Etymological Dictionary'' with an optional feminine suffix {{m|sem-pro|*-at-}}: {{m|sem-pro|*θ̣aby(-at)-}}.
+Reconstructed in Militarev & Kogan's ''Semitic Etymological Dictionary'' with an optional feminine suffix {{m|sem-pro|*-at-}}: {{m|sem-pro|*ṯ̣aby(-at)-}}.
 
 ===Noun===
 {{sem-noun|m|g2=f}}

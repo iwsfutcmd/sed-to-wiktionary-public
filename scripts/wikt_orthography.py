@@ -16,7 +16,7 @@ PFX = {"PS": "Reconstruction:Proto-Semitic/", "PWS": "Reconstruction:Proto-West 
 STD = {U.normalize("NFC", g) for g in "p t ṭ k ḳ ʔ b d g ṯ s š ś ḫ ḥ h ṯ̣ ṣ ṣ́ ḏ z ḡ ʕ r w y l m n a i u ā ī ū V V̄ - ( ) ".split()}
 CONSONANTS = [U.normalize("NFC", g) for g in "p t ṭ k ḳ ʔ b d g ṯ s š ś ḫ ḥ h ṯ̣ ṣ ṣ́ ḏ z ḡ ʕ r w y l m n".split()]
 # variant -> standard (longest first); each entry names the kind of deviation
-VARIANTS = [("θ̣", "ṯ̣"), ("ṱ", "ṯ̣"), ("θ", "ṯ"), ("ð", "ḏ"), ("δ", "ḏ"), ("ṣ̂", "ṣ́"), ("ŝ", "ś"), ("ɣ", "ḡ"), ("ġ", "ḡ"), ("γ", "ḡ"),
+VARIANTS = [("θ̣", "ṯ̣"), ("ṱ", "ṯ̣"), ("ẓ", "ṯ̣"), ("θ", "ṯ"), ("ð", "ḏ"), ("δ", "ḏ"), ("ṣ̂", "ṣ́"), ("ŝ", "ś"), ("ɣ", "ḡ"), ("ġ", "ḡ"), ("γ", "ḡ"),
             ("q", "ḳ"), ("ʾ", "ʔ"), ("ˀ", "ʔ"), ("ʼ", "ʔ"), ("ʿ", "ʕ"), ("ˁ", "ʕ"), ("ʻ", "ʕ"), ("ḍ", "ṣ́")]
 MANUAL = {"x̣": "ḫ with emphasis?", "č": "ṯ? (Russian/Leslau č)"}        # letters with no safe automatic reading
 

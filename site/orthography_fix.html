@@ -34,6 +34,7 @@ code { background: var(--code-bg); padding: 1px 5px; border-radius: 3px; }
 .btn:hover { border-color: var(--accent); }
 .btn.primary { background: var(--accent); color: var(--accent-fg); border-color: var(--accent); font-size: 1.05rem; padding: 11px 20px; }
 .btn.primary[aria-disabled="true"] { opacity: .5; pointer-events: none; }
+input[type="number"] { font: inherit; width: 3.2em; border: 1px solid var(--line); background: var(--surface); color: var(--fg); border-radius: 6px; padding: 6px 8px; }
 :focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
 ol.steps { margin: 0; padding-left: 1.2em; display: grid; gap: 6px; } ol.steps li { max-width: 65ch; }
 details summary { cursor: pointer; font-weight: 600; } details[open] summary { margin-bottom: 10px; }
@@ -64,19 +65,28 @@ tr.done td.pg a { color: var(--muted); } tr.done { background: var(--done-bg); }
 <main>
   <header class="top panel">
     <h1>Respell Proto-Semitic references</h1>
-    <p class="muted" id="intro">185 pages link to a spelling that WT:ASEM does not use. Each one opens in the edit form with the fix already made and the diff showing. You read it and press Save. A change marked <b>(new stem)</b> points the reference at the stem its old spelling already redirects to, for example <code>*ʾab-</code> to <code>*ʔabw-</code>.</p>
+    <p class="muted" id="intro">1 pages link to a spelling that WT:ASEM does not use. Each one opens in the edit form with the fix already made and the diff showing. You read it and press Save. A change marked <b>(new stem)</b> points the reference at the stem its old spelling already redirects to, for example <code>*ʾab-</code> to <code>*ʔabw-</code>.</p>
     <div class="bar" role="img" aria-label="progress"><i class="d" id="bd"></i><i class="s" id="bs"></i></div>
     <div class="stats" id="stats"></div>
     <div class="cta">
-      <a class="btn primary" id="next" href="#" target="_blank" rel="noopener">Open next page</a>
+      <a class="btn primary" id="next" href="#" target="_blank">Open next page</a>
+      <span class="muted" style="display:inline-flex;align-items:center;gap:6px">or next <input type="number" id="batch" min="1" max="20" value="5" aria-label="how many tabs at once"> at once <button class="btn" id="openN" type="button">Open</button></span>
       <span class="muted" id="hint"></span>
     </div>
     <ol class="steps" id="howto">
-      <li>Press <b>Open next page</b> (or <kbd>N</kbd>). The page opens in a new tab as an edit form, the fixed text is in the box and “Show changes” has been pressed for you.</li>
-      <li>Check the highlighted changes, then press <b>Save changes</b> on Wiktionary. If something looks wrong, close the tab; nothing was saved.</li>
-      <li>Come back here and press <b>Open next page</b> again. That also ticks off the page you just did.</li>
+      <li>Press <b>Open next page</b> (or <kbd>N</kbd>) for one tab, or <b>Open next … at once</b> to open several tabs in a row. Each opens as an edit form with the fix already made and the diff showing.</li>
+      <li>In each tab, check the highlighted changes, then press <b>Save changes</b> on Wiktionary — in any order, whenever you get to it. If something looks wrong, close the tab instead; nothing was saved.</li>
+      <li>The tab closes itself once the save goes through. Coming back to this tab, you'll be asked once whether everything still "open" actually saved — say yes and the whole batch is ticked off in one click. (A lone page can still be marked with its own Done/Skip in the table below.) Repeat.</li>
     </ol>
   </header>
+
+  <section class="panel" id="catchup" hidden style="border-color:var(--accent)">
+    <p class="muted" style="margin:0">Welcome back. You have <b id="catchupCount"></b> page(s) still marked "open" — did they save?</p>
+    <div class="cta" style="margin-top:8px">
+      <button class="btn primary" type="button" id="catchupDone">Yes, mark them all done</button>
+      <button class="btn" type="button" id="catchupLater">Not yet, check back later</button>
+    </div>
+  </section>
 
   <details class="panel" id="install">
     <summary>One-time setup: install the script on your Wiktionary account</summary>
@@ -287,7 +297,22 @@ tr.done td.pg a { color: var(--muted); } tr.done { background: var(--done-bg); }
  "PS\tṱill-": "ṯ̣ill-",
  "PS\tṱupr-": "ṯ̣upr-"
 };
-  WiktRespell.setNotation([["θ̣", "ṯ̣"], ["ṱ", "ṯ̣"], ["θ", "ṯ"], ["ð", "ḏ"], ["δ", "ḏ"], ["ṣ̂", "ṣ́"], ["ŝ", "ś"], ["ɣ", "ḡ"], ["ġ", "ḡ"], ["γ", "ḡ"], ["q", "ḳ"], ["ʾ", "ʔ"], ["ˀ", "ʔ"], ["ʼ", "ʔ"], ["ʿ", "ʕ"], ["ˁ", "ʕ"], ["ʻ", "ʕ"], ["ḍ", "ṣ́"]], ["x̣", "č"], ["p", "t", "ṭ", "k", "ḳ", "ʔ", "b", "d", "g", "ṯ", "s", "š", "ś", "ḫ", "ḥ", "h", "ṯ̣", "ṣ", "ṣ́", "ḏ", "z", "ḡ", "ʕ", "r", "w", "y", "l", "m", "n"]);
+  var CLOSE_FLAG = "asemRespellPending";                                      // sessionStorage: the exact title a respell save is in flight for, in this tab
+  WiktRespell.setNotation([["θ̣", "ṯ̣"], ["ṱ", "ṯ̣"], ["ẓ", "ṯ̣"], ["θ", "ṯ"], ["ð", "ḏ"], ["δ", "ḏ"], ["ṣ̂", "ṣ́"], ["ŝ", "ś"], ["ɣ", "ḡ"], ["ġ", "ḡ"], ["γ", "ḡ"], ["q", "ḳ"], ["ʾ", "ʔ"], ["ˀ", "ʔ"], ["ʼ", "ʔ"], ["ʿ", "ʕ"], ["ˁ", "ʕ"], ["ʻ", "ʕ"], ["ḍ", "ṣ́"]], ["x̣", "č"], ["p", "t", "ṭ", "k", "ḳ", "ʔ", "b", "d", "g", "ṯ", "s", "š", "ś", "ḫ", "ḥ", "h", "ṯ̣", "ṣ", "ṣ́", "ḏ", "z", "ḡ", "ʕ", "r", "w", "y", "l", "m", "n"]);
+  // Runs on EVERY page load (not just edit pages): if this tab just saved the page it was flagged for (we have
+  // landed somewhere that is not the edit form any more), tell the checklist tab which page is done and close --
+  // no manual tab-switching. Keyed by the exact title, not just a boolean, so several tabs open at once each
+  // report their own result without tripping over each other's flag.
+  try {
+    var pending = sessionStorage.getItem(CLOSE_FLAG);
+    if (pending &amp;&amp; mw.config.get("wgAction") !== "edit") {
+      sessionStorage.removeItem(CLOSE_FLAG);                                 // stale either way: consume it regardless of what follows
+      if (pending === mw.config.get("wgPageName").replace(/_/g, " ")) {      // only report/close if this really is the page we saved
+        if (window.opener) { try { window.opener.postMessage({ asemRespellSaved: pending }, "*"); } catch (e) {} }
+        window.close();                                                      // no-op if the tab was not opened by script; never errors
+      }
+    }
+  } catch (e) {}
   mw.loader.using(["jquery.textSelection"]).then(function () { $(function () {
     if (mw.config.get("wgAction") !== "edit" || !/[?&amp;]respell=1(&amp;|$)/.test(location.search)) return;   // only for the links of the checklist page
     var $ta = $("#wpTextbox1");
@@ -302,6 +327,13 @@ tr.done td.pg a { color: var(--muted); } tr.done { background: var(--done-bg); }
     $("#wpWatchthis").prop("checked", false);                                 // and do not add the page to the watchlist
     mw.notify("Respell: " + r.changes.length + " change(s). Check the diff, then Save.", { autoHide: false });
     setTimeout(function () { $("#wpDiff").trigger("click"); }, 400);
+    var form = document.getElementById("editform");
+    if (form) form.addEventListener("submit", function (e) {
+      // #editform has three submit buttons (Save, Show changes, Preview); "Show changes" is auto-clicked above
+      // and must NOT arm the close-and-report -- only a real Save should.
+      if (!(e.submitter &amp;&amp; e.submitter.id === "wpSave")) return;
+      try { sessionStorage.setItem(CLOSE_FLAG, mw.config.get("wgPageName").replace(/_/g, " ")); } catch (e2) {}
+    });
   }); });
 })();
 </textarea>
@@ -331,18 +363,18 @@ tr.done td.pg a { color: var(--muted); } tr.done { background: var(--done-bg); }
   </section>
 
   <section class="panel" id="indirect">
-    <h2>Will follow on their own (12)</h2>
+    <h2>Will follow on their own (1)</h2>
     <p class="muted">These pages reach a Proto-Semitic page only through another page’s etymology chain. They need no edit; they update once the page they point to is respelled.</p>
     <ul class="list" id="ind"></ul>
   </section>
 </main>
 
-<script id="data" type="application/json">{"items": [{"title": "Appendix:Akkadian roots/'-d-š", "changes": ["*ḥdθ- → *ḥdṯ-"]}, {"title": "Appendix:Arabic roots/ث ق ل", "changes": ["*ṯḳl → *ṯ-ḳ-l (new stem)"]}, {"title": "Appendix:Proto-Semitic stems", "changes": ["*ʔarṣ̂- → *ʔarṣ́-", "*ŝamš- → *śamš-", "*ŝap-at- → *śap-at-", "*ŝaʕr- → *śaʕr-"]}, {"title": "Beeroth", "changes": ["*biʾrāt- → *biʔrāt-"]}, {"title": "Beirut", "changes": ["*biʾrāt- → *biʔrāt-"]}, {"title": "Reconstruction:Proto-Berber/arəw", "changes": ["*hry → *h-r-y (new stem)"]}, {"title": "Reconstruction:Proto-Berber/ăqqəd", "changes": ["*waqada → *waḳada"]}, {"title": "Reconstruction:Proto-Kartvelian/loḳ-", "changes": ["*laqq- → *laḳḳ-"]}, {"title": "Reconstruction:Proto-Semitic/ʔḏn", "changes": ["*ʔḏn → *ʔ-ḏ-n (new stem)"]}, {"title": "Reconstruction:Proto-Semitic/ḥaṣ́ad-", "changes": ["*qaṣar- → *ḳaṣar-"]}, {"title": "Reconstruction:Proto-West Semitic/pataw-", "changes": ["*pataq- → *pataḳ-"]}, {"title": "Reconstruction:Proto-West Semitic/ʔḏn", "changes": ["*ʔḏn → *ʔ-ḏ-n (new stem)"]}, {"title": "aššatum", "changes": ["*ʔanθ-at- → *ʔanṯ-at-"]}, {"title": "leqûm", "changes": ["*laqāḥ- → *laḳāḥ-"]}, {"title": "lûm", "changes": ["*layʾ- ~ laʾay- → *layʔ- ~ laʔay-"]}, {"title": "lītum", "changes": ["*layʾ-at- ~ laʾay-at- → *layʔ-at- ~ laʔay-at-"]}, {"title": "macramè", "changes": ["*q-r-m → *ḳ-r-m"]}, {"title": "macramé", "changes": ["*q-r-m → *ḳ-r-m ×2"]}, {"title": "mem", "changes": ["*maʾ-/*may- → *maʔ-/*may-"]}, {"title": "mꜥbꜣ", "changes": ["*ʿ-r-p → *ʕ-r-p"]}, {"title": "nḏm", "changes": ["*nʿm- → *nʕm-"]}, {"title": "qaqqadum", "changes": ["*qadqad- → *ḳadḳad-"]}, {"title": "quppum", "changes": ["*q-f-f- → *ḳ-f-f-"]}, {"title": "wazzunum", "changes": ["*ʔḏn → *ʔ-ḏ-n (new stem) ×2"]}, {"title": "šiqlum", "changes": ["*ṯql → *ṯ-ḳ-l (new stem)"]}, {"title": "šīpātum", "changes": ["*ŝVp- → *śVp-"]}, {"title": "Βηρυτός", "changes": ["*biʾrāt- → *biʔrāt-"]}, {"title": "Κάδμος", "changes": ["*q-d-m → *ḳ-d-m"]}, {"title": "καδμεία", "changes": ["*q-d-m → *ḳ-d-m ×2"]}, {"title": "ϩⲁϫⲓ", "changes": ["*lqḥ → *l-ḳ-ḥ (new stem)"]}, {"title": "ϩⲁϭⲉ", "changes": ["*lqḥ → *l-ḳ-ḥ (new stem)"]}, {"title": "бахрома", "changes": ["*q-r-m → *ḳ-r-m"]}, {"title": "אבעבועה", "changes": ["*bVˁbVˁ- → *bVʕbVʕ-"]}, {"title": "איקרא", "changes": ["*waqar- → *waḳar-"]}, {"title": "אישה", "changes": ["*ʔanθ-at- → *ʔanṯ-at-"]}, {"title": "איתתא", "changes": ["*ʾanθ-at- → *ʔanṯ-at-"]}, {"title": "ארבעים", "changes": ["*ʾarbaʿū- → *ʔarbaʕū-"]}, {"title": "ארון", "changes": ["*ʾarān- → *ʔarān-", "*ʾirān- → *ʔirān-"]}, {"title": "זולת", "changes": ["*ðū lā → *ḏū lā"]}, {"title": "יקר", "changes": ["*waqar- → *waḳar-"]}, {"title": "לאה", "changes": ["*layʾ-at- ~ laʾay-at- → *layʔ-at- ~ laʔay-at-", "*l-ʾ-y → *l-ʔ-y"]}, {"title": "מדד", "changes": ["*mdd → *m-d-d (new stem)"]}, {"title": "ע־מ־ד", "changes": ["*ʕmd → *ʕ-m-d (new stem)"]}, {"title": "עכבר", "changes": ["*ʿakbar- → *ʕakbar-"]}, {"title": "עשן", "changes": ["*ʿṯn → *ʕ-ṯ-n (new stem)"]}, {"title": "עשרים", "changes": ["*ʿiśrū- → *ʕiśrū-"]}, {"title": "צדע", "changes": ["*ṣdġ → *ṣ-d-ḡ (new stem)"]}, {"title": "ק־ד־ם", "changes": ["*q-d-m//*qdm → *ḳ-d-m//*ḳdm"]}, {"title": "קדם", "changes": ["*q-d-m → *ḳ-d-m ×2"]}, {"title": "קדמאי", "changes": ["*q-d-m → *ḳ-d-m"]}, {"title": "קודם", "changes": ["*q-d-m → *ḳ-d-m"]}, {"title": "קטא", "changes": ["*qyẓ → *ḳyẓ"]}, {"title": "קיץ", "changes": ["*qayθ̣- → *ḳayṯ̣-"]}, {"title": "רבקה", "changes": ["*r-b-q → *r-b-ḳ"]}, {"title": "שבעים", "changes": ["*šabʿū- → *šabʕū-"]}, {"title": "שד", "changes": ["*ṯdʾ → *ṯ-d-ʔ (new stem)"]}, {"title": "שישים", "changes": ["*šidθū- → *šidṯū-"]}, {"title": "שלושים", "changes": ["*śalāθū- → *śalāṯū-"]}, {"title": "שמונים", "changes": ["*θamāniyū- → *ṯamāniyū-"]}, {"title": "שקל", "changes": ["*ṯql → *ṯ-ḳ-l (new stem)"]}, {"title": "שקמה", "changes": ["*qāma → *ḳāma"]}, {"title": "תדא", "changes": ["*ṯdʾ → *ṯ-d-ʔ (new stem)"]}, {"title": "תקל", "changes": ["*ṯql → *ṯ-ḳ-l (new stem)"]}, {"title": "תשעים", "changes": ["*tišʿū- → *tišʕū-"]}, {"title": "أنثى", "changes": ["*ʔanθ-at- → *ʔanṯ-at-"]}, {"title": "إلى", "changes": ["*ʾila → *ʔila"]}, {"title": "ثقل", "changes": ["*ṯql → *ṯ-ḳ-l (new stem) ×2"]}, {"title": "جبة", "changes": ["*gbb → *g-b-b (new stem)"]}, {"title": "حظوة", "changes": ["*ḥiθ̣- → *ḥiṯ̣-"]}, {"title": "خلق", "changes": ["*ḫalaq- → *ḫalaḳ-"]}, {"title": "دقل", "changes": ["*daqal- → *daḳal-"]}, {"title": "صدغ", "changes": ["*ṣdġ → *ṣ-d-ḡ (new stem)"]}, {"title": "ضبع", "changes": ["*ṣ́abuʿ- → *ṣ́abuʕ-"]}, {"title": "ضفدع", "changes": ["*ṣ̂Vpardiʕ- → *ṣ́Vpardiʕ- ×2"]}, {"title": "ضمد", "changes": ["*ṣ̂amad- → *ṣ́amad-"]}, {"title": "ظلل", "changes": ["*θ̣allil- → *ṯ̣allil-"]}, {"title": "عشرون", "changes": ["*ʿiśrū- → *ʕiśrū-"]}, {"title": "عنب", "changes": ["*ʿanbab- → *ʕanbab- ×2"]}, {"title": "فرأ", "changes": ["*faraʾ- → *faraʔ-"]}, {"title": "قبر", "changes": ["*qabr- → *ḳabr-"]}, {"title": "قدم", "changes": ["*q-d-m → *ḳ-d-m"]}, {"title": "قطف", "changes": ["*qaṭap- → *ḳaṭap-"]}, {"title": "قفة", "changes": ["*q-f-f- → *ḳ-f-f-"]}, {"title": "قيظ", "changes": ["*qayθ̣- → *ḳayṯ̣-"]}, {"title": "كلا", "changes": ["*kilʾ- → *kilʔ-"]}, {"title": "مرض", "changes": ["*maraṣ̂- → *maraṣ́-"]}, {"title": "وقار", "changes": ["*waqar- → *waḳar- ×2"]}, {"title": "ܐܛܫܥ", "changes": ["*tišʿum → *tišʕum"]}, {"title": "ܐܝܩܪܐ", "changes": ["*waqar- → *waḳar- ×2"]}, {"title": "ܐܠܥܐ", "changes": ["*ṣ́lʿ → *ṣ́-l-ʕ (new stem) ×2"]}, {"title": "ܐܥܣܪ", "changes": ["*ʿaśarum → *ʕaśarum"]}, {"title": "ܐܫܒܥ", "changes": ["*šabʿum → *šabʕum"]}, {"title": "ܐܫܬܝܢ", "changes": ["*šidθū- → *šidṯū-"]}, {"title": "ܕܕܒܐ", "changes": ["*ḏbb → *ḏ-b-b (new stem)"]}, {"title": "ܕܚܠܬ", "changes": ["*ḏḥl → *ḏ-ḥ-l (new stem)"]}, {"title": "ܚܡܝܥܐ", "changes": ["*ḥ-m-ḍ → *ḥ-m-ṣ́"]}, {"title": "ܚܥܢܐ", "changes": ["*ḥ-ḍ-n → *ḥ-ṣ́-n"]}, {"title": "ܛܦܪܐ", "changes": ["*θ̣ipr- → *ṯ̣upr- (new stem)"]}, {"title": "ܡܪܥܐ", "changes": ["*m-r-ḍ → *m-r-ṣ́"]}, {"title": "ܡܪܥܝܬܐ", "changes": ["*r-ʿ-y → *r-ʕ-y"]}, {"title": "ܡܬܩܠܐ", "changes": ["*ṯ-q-l → *ṯ-ḳ-l"]}, {"title": "ܥܘܕܐ", "changes": ["*ʿ-ṣ́-d → *ʕ-ṣ́-d"]}, {"title": "ܥܝܕܐ", "changes": ["*ʿḍd → *ʕ-ṣ́-d (new stem)"]}, {"title": "ܥܡܘܕܐ", "changes": ["*ʿ-m-d → *ʕ-m-d", "*ġ-m-d → *ḡ-m-d"]}, {"title": "ܥܢܒܐ", "changes": ["*ʿanbab- → *ʕanbab-"]}, {"title": "ܥܢܒܝܬܐ", "changes": ["*ʿanbab- → *ʕanbab-"]}, {"title": "ܥܣܪܐ", "changes": ["*ʿaśaratum → *ʕaśaratum ×2"]}, {"title": "ܥܪܒܐ", "changes": ["*ḍrb → *ṣ́-r-b (new stem) ×2", "*ġrb → *ḡ-r-b (new stem)"]}, {"title": "ܥܪܣܐ", "changes": ["*ʿ-r-ś → *ʕ-r-ś ×2"]}, {"title": "ܥܪܦܠܐ", "changes": ["*ʿ-r-p → *ʕ-r-p ×2"]}, {"title": "ܥܪܫܐ", "changes": ["*ḍ-r-š → *ṣ́-r-š"]}, {"title": "ܨܒܥܐ", "changes": ["*ṣabaġ- → *ṣabaḡ-"]}, {"title": "ܨܕܥܐ", "changes": ["*ṣdġ → *ṣ-d-ḡ (new stem)"]}, {"title": "ܨܘܒܥܐ", "changes": ["*ṣabaġ- → *ṣabaḡ-"]}, {"title": "ܩܝܛܐ", "changes": ["*qyẓ → *ḳyẓ ×2"]}, {"title": "ܪܥܝܐ", "changes": ["*rʿy → *r-ʕ-y (new stem) ×2"]}, {"title": "ܫܒܥܐ", "changes": ["*šabʿatum → *šabʕatum"]}, {"title": "ܫܘܥܐ", "changes": ["*šabʿatum → *šabʕatum"]}, {"title": "ܬܕܐ", "changes": ["*ṯdʾ → *ṯ-d-ʔ (new stem) ×2"]}, {"title": "ܬܠܬܝܢ", "changes": ["*talāθū- → *talāṯū-"]}, {"title": "ܬܡܢܝܢ", "changes": ["*θamāniyū- → *ṯamāniyū-"]}, {"title": "ܬܢܢܐ", "changes": ["*ʿṯn → *ʕ-ṯ-n (new stem) ×2"]}, {"title": "ܬܩܠ", "changes": ["*ṯql → *ṯ-ḳ-l (new stem)", "*ṯaqal → *ṯaḳal"]}, {"title": "ܬܩܠܐ", "changes": ["*ṯql → *ṯ-ḳ-l (new stem)"]}, {"title": "ܬܫܥܐ", "changes": ["*tišʿatum → *tišʕatum"]}, {"title": "परशु", "changes": ["*palaq- → *palaḳ-"]}, {"title": "परस्वत्", "changes": ["*faraʾ- → *faraʔ-"]}, {"title": "ሁለት", "changes": ["*kilʾ- → *kilʔ-"]}, {"title": "ሰብዑ", "changes": ["*šabʻ- → *šabʕ-"]}, {"title": "ሳለ", "changes": ["*(s/š)aˁel- → *(s/š)aʕel-"]}, {"title": "ስዕ", "changes": ["*tišʻ- → *tišʕ-"]}, {"title": "ቀደመ", "changes": ["*q-d-m → *ḳ-d-m ×2"]}, {"title": "ክልተ", "changes": ["*kilʾ- → *kilʔ-"]}, {"title": "ክልኤቱ", "changes": ["*kilʾ- → *kilʔ-"]}, {"title": "ክልኦት", "changes": ["*kilʾ- → *kilʔ-"]}, {"title": "ዱካ", "changes": ["*q-d-m → *ḳ-d-m"]}, {"title": "ጸለለ", "changes": ["*θ̣allil- → *ṯ̣allil-"]}, {"title": "ṣamādum", "changes": ["*ṣ̂amad- → *ṣ́amad-"]}, {"title": "ṣābum", "changes": ["*ṣābaʾ- → *ṣābaʔ-"]}, {"title": "Ἄβιλα", "changes": ["*ʾabal- → *ʔabal-"]}, {"title": "ⲁⲇⲱⲛⲓⲥ", "changes": ["*ʾadan- → *ʔadan-"]}, {"title": "ꜣꜥꜥ", "changes": ["*lɣz- → *lḡz-"]}, {"title": "𐎀𐎄𐎐", "changes": ["*ʔḏn → *ʔ-ḏ-n (new stem) ×3"]}, {"title": "𐎓𐎌𐎗𐎎", "changes": ["*ʿiśrū- → *ʕiśrū-"]}, {"title": "𐎖𐎁𐎗", "changes": ["*qabr- → *ḳabr-"]}, {"title": "𐤀𐤓𐤍", "changes": ["*ʾarān- → *ʔarān-"]}, {"title": "𐤀𐤔", "changes": ["*ʾš → *ʔ-š (new stem)"]}, {"title": "𐤁𐤓𐤕", "changes": ["*biʾrāt- → *biʔrāt- ×2"]}, {"title": "𐤒𐤋", "changes": ["*qawl → *ḳawl ×2"]}, {"title": "𐩠𐩤𐩬𐩥", "changes": ["*q-n-y → *ḳ-n-y"]}, {"title": "𐩠𐩤𐩬𐩩𐩺", "changes": ["*q-n-y → *ḳ-n-y"]}, {"title": "𐩠𐩤𐩬𐩺", "changes": ["*q-n-y → *ḳ-n-y"]}, {"title": "𐩠𐩤𐩬𐩺𐩥", "changes": ["*q-n-y → *ḳ-n-y"]}, {"title": "𐩠𐩤𐩬𐩺𐩩", "changes": ["*q-n-y → *ḳ-n-y ×2"]}, {"title": "𐩠𐩤𐩬𐩺𐩩𐩣", "changes": ["*q-n-y → *ḳ-n-y"]}, {"title": "𐩠𐩤𐩬𐩺𐩩𐩥", "changes": ["*q-n-y → *ḳ-n-y"]}, {"title": "𐩠𐩤𐩬𐩺𐩩𐩺", "changes": ["*q-n-y → *ḳ-n-y"]}, {"title": "𐩠𐩤𐩬𐩺𐩬", "changes": ["*q-n-y → *ḳ-n-y"]}, {"title": "𐩠𐩤𐩬𐩺𐩺", "changes": ["*q-n-y → *ḳ-n-y"]}, {"title": "𐩣𐩤𐩬𐩩", "changes": ["*q-n-y → *ḳ-n-y"]}, {"title": "𐩣𐩤𐩬𐩺", "changes": ["*q-n-y → *ḳ-n-y"]}, {"title": "𐩤𐩬", "changes": ["*q-n-y → *ḳ-n-y"]}, {"title": "𐩤𐩬𐩥𐩺𐩣", "changes": ["*q-n-y → *ḳ-n-y"]}, {"title": "𐩤𐩬𐩺", "changes": ["*q-n-y → *ḳ-n-y ×4"]}, {"title": "𐩤𐩬𐩺𐩣", "changes": ["*q-n-y → *ḳ-n-y"]}, {"title": "𐩤𐩬𐩺𐩥", "changes": ["*q-n-y → *ḳ-n-y"]}, {"title": "𐩤𐩬𐩺𐩩", "changes": ["*q-n-y → *ḳ-n-y"]}, {"title": "𐩤𐩬𐩺𐩩𐩺", "changes": ["*q-n-y → *ḳ-n-y"]}, {"title": "𐩤𐩬𐩺𐩬", "changes": ["*q-n-y → *ḳ-n-y ×2"]}, {"title": "𐩤𐩬𐩺𐩺", "changes": ["*q-n-y → *ḳ-n-y"]}, {"title": "𐩥𐩲𐩡𐩣", "changes": ["*waʿl- → *waʕl-"]}, {"title": "𐩩𐩠𐩤𐩬𐩺𐩬", "changes": ["*q-n-y → *ḳ-n-y"]}, {"title": "𐩱𐩤𐩬𐩺", "changes": ["*q-n-y → *ḳ-n-y"]}, {"title": "𐩱𐩤𐩬𐩺𐩣", "changes": ["*q-n-y → *ḳ-n-y"]}, {"title": "𐩱𐩤𐩬𐩺𐩩", "changes": ["*q-n-y → *ḳ-n-y ×2"]}, {"title": "𐩱𐩤𐩬𐩺𐩩𐩣", "changes": ["*q-n-y → *ḳ-n-y"]}, {"title": "𐩱𐩤𐩬𐩺𐩩𐩬", "changes": ["*q-n-y → *ḳ-n-y"]}, {"title": "𐩱𐩤𐩬𐩺𐩬", "changes": ["*q-n-y → *ḳ-n-y"]}, {"title": "𐩱𐩲𐩬𐩨", "changes": ["*ʿanbab- → *ʕanbab-"]}, {"title": "𐩺𐩠𐩤𐩬𐩺𐩬", "changes": ["*q-n-y → *ḳ-n-y"]}, {"title": "𐩺𐩠𐩤𐩬𐩺𐩬𐩬", "changes": ["*q-n-y → *ḳ-n-y"]}, {"title": "𐩺𐩤𐩬𐩬", "changes": ["*q-n-y → *ḳ-n-y"]}, {"title": "𐩺𐩤𐩬𐩺", "changes": ["*q-n-y → *ḳ-n-y"]}, {"title": "𐩺𐩤𐩬𐩺𐩬", "changes": ["*q-n-y → *ḳ-n-y"]}, {"title": "𐩺𐩤𐩬𐩺𐩬𐩬", "changes": ["*q-n-y → *ḳ-n-y"]}], "person": [{"to": "Reconstruction:Proto-West Semitic/rpʔ", "page": "Reconstruction:Proto-Semitic/rpˀ", "n": 0, "from": "rpˀ"}], "indirect": ["abi", "ddker", "dhakari", "marad", "maraz", "marazzi", "mard", "măraz", "عرقوب", "مرضی", "يرقان", "یرقان"], "moves": [{"level": "PS", "title": "npy", "target": "n-p-y", "action": "move", "target_state": "absent"}, {"level": "PS", "title": "rpʔ", "target": "r-p-ʔ", "action": "redirect", "target_state": "absent"}, {"level": "PS", "title": "rpˀ", "target": "r-p-ʔ", "action": "redirect", "target_state": "absent"}, {"level": "PS", "title": "ʔbd", "target": "ʔ-b-d", "action": "merge", "target_state": "page"}, {"level": "PS", "title": "ʔdm", "target": "ʔ-d-m", "action": "move", "target_state": "absent"}, {"level": "PS", "title": "ʔtm", "target": "ʔ-t-m", "action": "move", "target_state": "absent"}, {"level": "PS", "title": "ʔḏn", "target": "ʔ-ḏ-n", "action": "move", "target_state": "absent"}, {"level": "PS", "title": "ʔḫḏ", "target": "ʔ-ḫ-ḏ", "action": "move", "target_state": "absent"}, {"level": "PWS", "title": "rpy", "target": "r-p-y", "action": "move", "target_state": "absent"}, {"level": "PWS", "title": "rpʔ", "target": "r-p-ʔ", "action": "move", "target_state": "absent"}, {"level": "PWS", "title": "ʔdm", "target": "ʔ-d-m", "action": "move", "target_state": "absent"}, {"level": "PWS", "title": "ʔdr", "target": "ʔ-d-r", "action": "merge", "target_state": "page"}, {"level": "PWS", "title": "ʔdw", "target": "ʔ-d-w", "action": "move", "target_state": "absent"}, {"level": "PWS", "title": "ʔḏn", "target": "ʔ-ḏ-n", "action": "move", "target_state": "absent"}], "pfx": {"PS": "Reconstruction:Proto-Semitic/", "PWS": "Reconstruction:Proto-West Semitic/"}}</script>
+<script id="data" type="application/json">{"items": [{"title": "Reconstruction:Proto-Berber/arəw", "changes": ["*hry → *h-r-y (new stem)"]}], "person": [{"to": "Reconstruction:Proto-West Semitic/rpʔ", "page": "Reconstruction:Proto-Semitic/rpˀ", "n": 0, "from": "rpˀ"}], "indirect": ["قدم"], "moves": [{"level": "PS", "title": "npy", "target": "n-p-y", "action": "move", "target_state": "absent"}, {"level": "PS", "title": "rpʔ", "target": "r-p-ʔ", "action": "redirect", "target_state": "absent"}, {"level": "PS", "title": "rpˀ", "target": "r-p-ʔ", "action": "redirect", "target_state": "absent"}, {"level": "PS", "title": "ʔbd", "target": "ʔ-b-d", "action": "merge", "target_state": "page"}, {"level": "PS", "title": "ʔdm", "target": "ʔ-d-m", "action": "move", "target_state": "absent"}, {"level": "PS", "title": "ʔtm", "target": "ʔ-t-m", "action": "move", "target_state": "absent"}, {"level": "PS", "title": "ʔḏn", "target": "ʔ-ḏ-n", "action": "move", "target_state": "absent"}, {"level": "PS", "title": "ʔḫḏ", "target": "ʔ-ḫ-ḏ", "action": "move", "target_state": "absent"}, {"level": "PWS", "title": "rpy", "target": "r-p-y", "action": "move", "target_state": "absent"}, {"level": "PWS", "title": "rpʔ", "target": "r-p-ʔ", "action": "move", "target_state": "absent"}, {"level": "PWS", "title": "ʔdm", "target": "ʔ-d-m", "action": "move", "target_state": "absent"}, {"level": "PWS", "title": "ʔdr", "target": "ʔ-d-r", "action": "merge", "target_state": "page"}, {"level": "PWS", "title": "ʔdw", "target": "ʔ-d-w", "action": "move", "target_state": "absent"}, {"level": "PWS", "title": "ʔḏn", "target": "ʔ-ḏ-n", "action": "move", "target_state": "absent"}], "pfx": {"PS": "Reconstruction:Proto-Semitic/", "PWS": "Reconstruction:Proto-West Semitic/"}}</script>
 <script>
 (function () {
   var D = JSON.parse(document.getElementById("data").textContent);
-  var KEY = "asem-respell-v1", state = { s: {}, cur: null };
-  try { var saved = JSON.parse(localStorage.getItem(KEY) || "null"); if (saved && saved.s) state = saved; } catch (e) {}
+  var KEY = "asem-respell-v1", state = { s: {}, open: {} };
+  try { var saved = JSON.parse(localStorage.getItem(KEY) || "null"); if (saved && saved.s) state = { s: saved.s, open: saved.open || {} }; } catch (e) {}
   function save() { try { localStorage.setItem(KEY, JSON.stringify(state)); } catch (e) {} }
   var filter = "todo";
   var $ = function (id) { return document.getElementById(id); };
@@ -350,8 +382,24 @@ tr.done td.pg a { color: var(--muted); } tr.done { background: var(--done-bg); }
   function wiki(t) { return "https://en.wiktionary.org/wiki/" + encodeURIComponent(t.replace(/ /g, "_")).replace(/%2F/g, "/").replace(/%3A/g, ":"); }
   function el(tag, props, kids) { var e = document.createElement(tag); for (var k in props || {}) { if (k === "class") e.className = props[k]; else if (k === "text") e.textContent = props[k]; else e.setAttribute(k, props[k]); } (kids || []).forEach(function (c) { e.appendChild(c); }); return e; }
   function status(t) { return state.s[t] || "todo"; }
-  function nextTarget() { for (var i = 0; i < D.items.length; i++) { var t = D.items[i].title; if (status(t) === "todo" && t !== state.cur) return t; } return null; }
+  function nextTarget() { for (var i = 0; i < D.items.length; i++) { var t = D.items[i].title; if (status(t) === "todo" && !state.open[t]) return t; } return null; }
   function count(s) { return D.items.filter(function (i) { return status(i.title) === s; }).length; }
+  function openOne(t) { if (!t) return; window.open(editUrl(t), "_blank"); state.open[t] = true; }   // postMessage is a bonus if it arrives; see below for why it cannot be relied on
+  // This page cannot ask Wiktionary directly whether an open page was saved: it is itself served from a
+  // sandboxed origin, and that sandbox's CSP blocks outgoing fetch/XHR to any other host (confirmed: even
+  // with CORS allowed on Wiktionary's side, the request never leaves this page). postMessage back from the
+  // opened tab is attempted (see wikt_respell.user.js) but its window.opener is not reliably available
+  // either in this hosting, so it is a bonus, not something to depend on. Instead: when you come back to
+  // this tab (the one moment we know a save attempt just happened), ask once, for all open pages at once --
+  // one click confirms a whole batch, instead of one click per page.
+  var dismissedFor = null;                                                    // the exact open-set (sorted, joined) last dismissed; shown again once it changes
+  function openKey() { return Object.keys(state.open).sort().join("\n"); }
+  function checkCatchup() {
+    var titles = Object.keys(state.open), box = $("catchup");
+    if (!titles.length || openKey() === dismissedFor) { box.hidden = true; return; }
+    box.hidden = false;
+    $("catchupCount").textContent = titles.length;
+  }
   function render() {
     var n = D.items.length, d = count("done"), s = count("skip"), todo = n - d - s;
     $("bd").style.width = (n ? 100 * d / n : 100) + "%"; $("bs").style.width = (n ? 100 * s / n : 0) + "%";
@@ -362,30 +410,40 @@ tr.done td.pg a { color: var(--muted); } tr.done { background: var(--done-bg); }
     var tb = $("rows"); tb.textContent = ""; var shown = 0;
     D.items.forEach(function (it, i) {
       var st = status(it.title); if (filter !== "all" && st !== filter) return; shown++;
-      var cls = st === "done" ? "done" : st === "skip" ? "skip" : (it.title === state.cur ? "cur" : "");
+      var cls = st === "done" ? "done" : st === "skip" ? "skip" : (state.open[it.title] ? "cur" : "");
       var ch = el("td", { class: "ch" }); it.changes.forEach(function (c) { ch.appendChild(el("span", { text: c })); });
       var act = el("td", { class: "act" });
-      var open = el("a", { class: "btn", href: editUrl(it.title), target: "_blank", rel: "noopener", text: "Open" });
-      open.addEventListener("click", function () { state.cur = it.title; save(); setTimeout(render, 0); });
+      var openLink = el("a", { class: "btn", href: editUrl(it.title), target: "_blank", text: "Open" }); // no noopener: the tab self-closes via window.close() after a successful save
+      openLink.addEventListener("click", function () { state.open[it.title] = true; save(); setTimeout(render, 0); });
       if (st === "todo") {
-        var dn = el("button", { class: "btn", type: "button", text: "Done" }); dn.addEventListener("click", function () { state.s[it.title] = "done"; if (state.cur === it.title) state.cur = null; save(); render(); });
-        var sk = el("button", { class: "btn", type: "button", text: "Skip" }); sk.addEventListener("click", function () { state.s[it.title] = "skip"; if (state.cur === it.title) state.cur = null; save(); render(); });
-        [open, document.createTextNode(" "), dn, document.createTextNode(" "), sk].forEach(function (x) { act.appendChild(x); });
+        var dn = el("button", { class: "btn", type: "button", text: "Done" }); dn.addEventListener("click", function () { state.s[it.title] = "done"; delete state.open[it.title]; save(); render(); });
+        var sk = el("button", { class: "btn", type: "button", text: "Skip" }); sk.addEventListener("click", function () { state.s[it.title] = "skip"; delete state.open[it.title]; save(); render(); });
+        [openLink, document.createTextNode(" "), dn, document.createTextNode(" "), sk].forEach(function (x) { act.appendChild(x); });
       } else {
         var un = el("button", { class: "btn", type: "button", text: "Undo" }); un.addEventListener("click", function () { delete state.s[it.title]; save(); render(); });
         [el("span", { class: "tag " + st, text: st === "done" ? "done" : "skipped" }), document.createTextNode(" "), un].forEach(function (x) { act.appendChild(x); });
       }
       var pg = el("td", { class: "pg" }); var link = el("a", { href: wiki(it.title), target: "_blank", rel: "noopener" }); link.appendChild(el("bdi", { text: it.title })); pg.appendChild(link);
-      if (it.title === state.cur && st === "todo") pg.appendChild(document.createTextNode(" ")), pg.appendChild(el("span", { class: "tag cur", text: "open" }));
+      if (state.open[it.title] && st === "todo") pg.appendChild(document.createTextNode(" ")), pg.appendChild(el("span", { class: "tag cur", text: "open" }));
       tb.appendChild(el("tr", { class: cls }, [el("td", { class: "n", text: String(i + 1) }), pg, ch, act]));
     });
     $("empty").hidden = shown > 0;
     Array.prototype.forEach.call($("tabs").children, function (b) { b.setAttribute("aria-pressed", String(b.dataset.f === filter)); });
+    checkCatchup();
   }
   $("next").addEventListener("click", function (e) {
     var nt = nextTarget(); if (!nt) { e.preventDefault(); return; }
-    if (state.cur && status(state.cur) === "todo") state.s[state.cur] = "done";
-    state.cur = nt; save(); setTimeout(render, 0);
+    state.open[nt] = true; save(); setTimeout(render, 0);
+  });
+  $("openN").addEventListener("click", function () {
+    var n = Math.max(1, Math.min(20, parseInt($("batch").value, 10) || 5));
+    for (var i = 0; i < n; i++) { var nt = nextTarget(); if (!nt) break; openOne(nt); }
+    save(); render();
+  });
+  window.addEventListener("message", function (e) {                          // a respell tab reporting that it saved, so we can tick it off without the user switching back
+    var t = e.data && typeof e.data === "object" ? e.data.asemRespellSaved : null;
+    if (typeof t !== "string" || status(t) !== "todo") return;
+    state.s[t] = "done"; delete state.open[t]; save(); render();
   });
   $("tabs").addEventListener("click", function (e) { var f = e.target.dataset && e.target.dataset.f; if (f) { filter = f; render(); } });
   document.addEventListener("keydown", function (e) { if ((e.key === "n" || e.key === "N") && !e.ctrlKey && !e.metaKey && !e.altKey && !/^(INPUT|TEXTAREA)$/.test((e.target.tagName || ""))) { $("next").click(); } });
@@ -420,6 +478,12 @@ tr.done td.pg a { color: var(--muted); } tr.done { background: var(--done-bg); }
   D.indirect.forEach(function (p) { var li = el("li"); li.appendChild(el("bdi", { text: p })); $("ind").appendChild(li); });
   if (!D.person.length) $("decide").hidden = true; if (!D.indirect.length) $("indirect").hidden = true;
   if (!D.items.length) { $("intro").textContent = "Every reference that only needed a respelling is done."; $("howto").hidden = true; $("pages").hidden = true; $("install").hidden = true; }
+  $("catchupDone").addEventListener("click", function () {
+    Object.keys(state.open).forEach(function (t) { state.s[t] = "done"; delete state.open[t]; });
+    save(); render();
+  });
+  $("catchupLater").addEventListener("click", function () { dismissedFor = openKey(); checkCatchup(); });
+  window.addEventListener("focus", checkCatchup);                             // the one moment we know a save attempt just happened
   render();
 })();
 </script>

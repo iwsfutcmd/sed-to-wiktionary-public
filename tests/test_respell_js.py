@@ -76,10 +76,19 @@ function wrap(sel){ return {length: sel==='#wpTextbox1'&&!cfg.noBox?1:1,
   prop(n,v){ if(n==='checked'){ if(sel==='#wpMinoredit') box.minor=v; if(sel==='#wpWatchthis') box.watch=v; } return this; },
   trigger(e){ if(sel==='#wpDiff'&&e==='click') box.diff++; } }; }
 const $=function(a){ if(typeof a==='function'){ a(); return; } if(a==='#wpTextbox1'&&cfg.noBox) return {length:0}; return wrap(a); };
-const mw={config:{get:k=>({wgAction:cfg.action})[k]}, loader:{using:()=>({then:f=>{f();}})}, notify:(m,o)=>box.notes.push(m)};
-const ctx={mw,$,location:{search:cfg.search},setTimeout:f=>f(),console};
+const mw={config:{get:k=>({wgAction:cfg.action,wgPageName:cfg.pageName||'X'})[k]}, loader:{using:()=>({then:f=>{f();}})}, notify:(m,o)=>box.notes.push(m)};
+const ss={}; const sessionStorage={getItem:k=>(k in ss?ss[k]:null), setItem:(k,v)=>{ss[k]=v;}, removeItem:k=>{delete ss[k];}};
+if (cfg.pendingFor) ss.asemRespellPending = cfg.pendingFor;
+box.form = {listeners:[], addEventListener(ev,fn){ this.listeners.push(fn); }};
+const document={getElementById:id=>id==='editform'?box.form:null};
+box.closed=false; box.posted=null;
+const ctx={mw,$,sessionStorage,document,close(){ box.closed=true; },
+  opener: cfg.noOpener ? null : {postMessage(data,origin){ box.posted={data,origin}; }},
+  location:{search:cfg.search},setTimeout:f=>f(),console};
 ctx.window=ctx; vm.createContext(ctx);
 vm.runInContext(fs.readFileSync(process.argv[2],'utf8'),ctx);
+if (cfg.simulateSubmit) box.form.listeners.forEach(f=>f({submitter:{id:cfg.submitterId||'wpSave'}}));
+box.pending = sessionStorage.getItem("asemRespellPending");
 console.log(JSON.stringify(box));
 """
     def run_js(self, **cfg):
@@ -104,6 +113,32 @@ console.log(JSON.stringify(box));
     def test_nothing_to_change(self):
         b = self.run_js(text="{{inh|ar|sem-pro|*ʕayn-}}")
         self.assertEqual((b["diff"], b["summary"], b["minor"], b["watch"]), (0, "", None, None)); self.assertTrue(any("nothing to change" in n for n in b["notes"]))
+    def test_saving_arms_the_close_flag_with_the_page_title(self):
+        b = self.run_js(simulateSubmit=True, pageName="Reconstruction:Proto-Semitic/ʔab-")
+        self.assertEqual(b["pending"], "Reconstruction:Proto-Semitic/ʔab-")
+        self.assertFalse(b["closed"])                                          # still on the edit page: does not close itself
+    def test_show_changes_and_preview_do_not_arm_the_close_flag(self):
+        for submitter in ("wpDiff", "wpPreview"):
+            b = self.run_js(simulateSubmit=True, submitterId=submitter)
+            self.assertIsNone(b["pending"], submitter)                        # only a real Save arms it -- this was the "closes immediately" bug
+    def test_a_flagged_tab_closes_and_reports_once_it_lands_on_the_saved_article(self):
+        b = self.run_js(action="view", pageName="Reconstruction:Proto-Semitic/ʔab-", pendingFor="Reconstruction:Proto-Semitic/ʔab-")
+        self.assertTrue(b["closed"])
+        self.assertIsNone(b["pending"])                                       # the flag is consumed, not left behind
+        self.assertEqual(b["posted"]["data"], {"asemRespellSaved": "Reconstruction:Proto-Semitic/ʔab-"})
+    def test_underscores_in_the_page_name_are_matched_as_spaces(self):
+        b = self.run_js(action="view", pageName="Two_words", pendingFor="Two words")
+        self.assertTrue(b["closed"])
+    def test_a_flag_for_a_different_page_consumes_but_does_not_close(self):
+        b = self.run_js(action="view", pageName="other-page", pendingFor="Reconstruction:Proto-Semitic/ʔab-")
+        self.assertFalse(b["closed"]); self.assertIsNone(b["posted"])
+        self.assertIsNone(b["pending"])                                       # still consumed: a stray flag does not linger
+    def test_no_opener_still_closes_without_erroring(self):
+        b = self.run_js(action="view", pageName="X", pendingFor="X", noOpener=True)
+        self.assertTrue(b["closed"]); self.assertIsNone(b["posted"])
+    def test_an_unflagged_tab_never_closes_itself(self):
+        b = self.run_js(action="view")
+        self.assertFalse(b["closed"])
 
 if __name__ == "__main__":
     unittest.main(verbosity=1)

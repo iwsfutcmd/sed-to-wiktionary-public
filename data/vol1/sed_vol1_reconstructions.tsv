@@ -76,7 +76,7 @@ vol	section	no	protoform	affricate_variant	gloss	wikt_norm	pdf_page	wikt_ps	wikt
 1	nominal	75	*gall-		dung	*gall-	222	no		no	
 1	nominal	76	*gilʕ-		prepuce, clitoris	*gilʕ-	223	no		no	
 1	nominal	77	*gu/alb-		(piece of) skin	*gu/alb-	224	no		no	
-1	nominal	78	*gi/ald-		skin, hide	*gi/ald-	224	no		no	
+1	nominal	78	*gi/ald-		skin, hide	*gi/ald-	224	yes	gild-	no	
 1	nominal	79	*ga/ulga/ul-at-		skull	*ga/ulga/ul-at-	226	no		no	
 1	nominal	80	*gVl(a)p-at-		skin; peel; scales; test	*gVl(a)p-at-	227	no		no	
 1	nominal	81	*ga/umm(-at)-		(long) hair, mane	*ga/umm(-at)-	227	no		no	
@@ -145,7 +145,7 @@ vol	section	no	protoform	affricate_variant	gloss	wikt_norm	pdf_page	wikt_ps	wikt
 1	nominal	144	*kVm(V)d-		forearm, cubit	*kVm(V)d-	281	no		no	
 1	nominal	145	*kanap-, *kinp-		wing	*kanap-	282	yes	kanap-	no	
 1	nominal	146	*ka/inpa/ir-		tip of the nose; lip	*ka/inpa/ir-	283	no		no	
-1	nominal	147	*ki(n)šād-	*ki(n)sād-	neck, top of shoulder	*ki(n)šād-	285	no		no	
+1	nominal	147	*ki(n)šād-	*ki(n)sād-	neck, top of shoulder	*ki(n)šād-	285	yes	kišād-	no	
 1	nominal	148	*kapp-		palm, flap of hand or foot	*kapp-	286	yes	kapp-	no	
 1	nominal	149	*kVr(V)m-		joint of limb bones; flexion, bend of limbs	*kVr(V)m-	287	no		no	
 1	nominal	150	*kursū/iʕ-	*kurcū/iʕ-	fetlock joint, tarsus	*kursū/iʕ-	287	no		no	
@@ -207,13 +207,13 @@ vol	section	no	protoform	affricate_variant	gloss	wikt_norm	pdf_page	wikt_ps	wikt
 1	nominal	206	*pVʔw/y(-at)-		genital organ	*pVʔw/y(-at)-	335	no		no	
 1	nominal	207	*paʕm-, *paʕn-		leg	*paʕm-	335	no		no	
 1	nominal	208	*pidr-		fat	*pidr-	336	no		no	
-1	nominal	209	*pagr-		body; corpse	*pagr-	336	no		no	
+1	nominal	209	*pagr-		body; corpse	*pagr-	336	yes	pagr-	no	
 1	nominal	210	*paḥ(a)l-		thigh; penis	*paḥ(a)l-	337	yes	paḥal-	no	
 1	nominal	211	*paḫ(i)ḏ-	*paḫ(i)ǯ-	hip, thigh	*paḫ(i)ḏ-	338	no		no	
 1	nominal	212	*pakk-		jaw, joint of the jaw	*pakk-	339	no		no	
 1	nominal	213	*pVḳ-		neck	*pVq-	339	no		no	
 1	nominal	214	*pVḳVm-		(animal's) mouth, muzzle	*pVqVm-	340	no		no	
-1	nominal	215	*pan-		face	*pan-	340	no		no	
+1	nominal	215	*pan-		face	*pan-	340	yes	pan-	no	
 1	nominal	216	*p/ban/md(-at)-		back, podex	*p/ban/md(-at)-	342	no		no	
 1	nominal	217	*par-		skin, shell, husk	*par-	344	no		no	
 1	nominal	218	*parʕ-		(loose) hair of the head	*parʕ-	344	no		no	
@@ -236,7 +236,7 @@ vol	section	no	protoform	affricate_variant	gloss	wikt_norm	pdf_page	wikt_ps	wikt
 1	nominal	235	*si/anṗ-	*ci/anṗ-	lung	*si/anṗ-	359	no		no	
 1	nominal	236	*si(n)ṭ-	*ci(n)ṭ-	flat hand with wrist	*si(n)ṭ-	361	no		no	
 1	nominal	237	*sur(u)m-	*cur(u)m-	intestine	*sur(u)m-	362	no		no	
-1	nominal	238	*šiʔr-	*siʔr-	flesh	*šiʔr-	362	no		no	
+1	nominal	238	*šiʔr-	*siʔr-	flesh	*šiʔr-	362	yes	šiʔr-	no	
 1	nominal	239	*š/sVb-, *ʔV-š/sVb-	*ś/cVb-, *ʔV-ś/cVb-	pubic hair	*š/sVb-	363	no		no	
 1	nominal	240	*šaḫw/y-at-	*saḫw/y-at-	armpit	*šaḫw/y-at-	364	no		no	
 1	nominal	241	*šāḳ-	*sāḳ-	thigh, leg	*šāq-	364	no		no	
@@ -286,7 +286,7 @@ vol	section	no	protoform	affricate_variant	gloss	wikt_norm	pdf_page	wikt_ps	wikt
 1	nominal	285	*ṯ̣ip(V)r-	*č̣ip(V)r-	nail	*ṱip(V)r-	407	no		no	
 1	nominal	286	*ṯ̣ayVʔ(-at)-	*č̣ayVʔ(-at)-	excrement; excreta	*ṱayVʔ(-at)-	408	no		no	
 1	nominal	287	*warīd-		jugular vein; trachea	*warīd-	410	no		no	
-1	nominal	288	*warik(-at)-		hip(-bone)	*warik(-at)-	410	no		no	
+1	nominal	288	*warik(-at)-		hip(-bone)	*warik(-at)-	410	yes	warik-	no	
 1	nominal	289	*waṣil-	*wac̣il-	joint, articulation (of the humerus)	*waṣil-	412	no		no	
 1	nominal	290	*wat(a)r-		tendon	*wat(a)r-	412	no		no	
 1	nominal	291	*yad-, *ʔid-		hand	*yad-	414	yes	yad-;ʾid-	no	

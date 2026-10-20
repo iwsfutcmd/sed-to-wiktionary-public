@@ -56,7 +56,7 @@ vol	section	no	protoform	affricate_variant	gloss	wikt_norm	pdf_page	wikt_ps	wikt
 2	nominal	55	*bayγ/ḳl-		mule	*bayġ/ql-	168	no		no	
 2	nominal	56	*bVk(ʷ)Vr(-at)- // *bVkVr(-at)-		young (she-)camel	*bVk(ʷ)Vr(-at)-	169	no		no	
 2	nominal	57	*bik(ʷ)ay- // *bukay-		kind of insect or worm	*bik(ʷ)ay-	171	no		no	
-2	nominal	58	*baḳḳ-		gnat	*baqq-	173	no		no	
+2	nominal	58	*baḳḳ-		gnat	*baqq-	173	yes	baḳḳ-	no	
 2	nominal	59	*baḳar-		large cattle	*baqar-	174	no		no	
 2	nominal	60	*bVl-		kind of small bird	*bVl-	176	no		no	
 2	nominal	61	*bar-		kind of bird	*bar-	177	no		no	
@@ -240,7 +240,7 @@ vol	section	no	protoform	affricate_variant	gloss	wikt_norm	pdf_page	wikt_ps	wikt
 2	nominal	239	*ṯVl-	*čVl-	head of small cattle	*ṯVl-	396	no		no	
 2	nominal	240	*ṯapan-	*čapan-	rock hyrax	*ṯapan-	397	no		no	
 2	nominal	241	*ṯawr-	*čawr-	bull, ox	*ṯawr-	398	yes	θawr-;ṯawr-	no	
-2	nominal	242	*ṯ̣aby(-at)-	*č̣aby(-at)-	gazelle	*ṱaby(-at)-	401	no		no	
+2	nominal	242	*ṯ̣aby(-at)-	*č̣aby(-at)-	gazelle	*ṱaby(-at)-	401	yes	θ̣aby-;ṯ̣aby-	no	
 2	nominal	243	*wVʕ-		kind of bird	*wVʕ-	403	no		no	
 2	nominal	244	*waʕil-		ibex	*waʕil-	403	yes	waʕil-	no	
 2	nominal	245	*wābil-		ram	*wābil-	405	no		no	

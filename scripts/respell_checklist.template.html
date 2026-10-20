@@ -34,6 +34,7 @@ code { background: var(--code-bg); padding: 1px 5px; border-radius: 3px; }
 .btn:hover { border-color: var(--accent); }
 .btn.primary { background: var(--accent); color: var(--accent-fg); border-color: var(--accent); font-size: 1.05rem; padding: 11px 20px; }
 .btn.primary[aria-disabled="true"] { opacity: .5; pointer-events: none; }
+input[type="number"] { font: inherit; width: 3.2em; border: 1px solid var(--line); background: var(--surface); color: var(--fg); border-radius: 6px; padding: 6px 8px; }
 :focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
 ol.steps { margin: 0; padding-left: 1.2em; display: grid; gap: 6px; } ol.steps li { max-width: 65ch; }
 details summary { cursor: pointer; font-weight: 600; } details[open] summary { margin-bottom: 10px; }
@@ -68,15 +69,24 @@ tr.done td.pg a { color: var(--muted); } tr.done { background: var(--done-bg); }
     <div class="bar" role="img" aria-label="progress"><i class="d" id="bd"></i><i class="s" id="bs"></i></div>
     <div class="stats" id="stats"></div>
     <div class="cta">
-      <a class="btn primary" id="next" href="#" target="_blank" rel="noopener">Open next page</a>
+      <a class="btn primary" id="next" href="#" target="_blank">Open next page</a>
+      <span class="muted" style="display:inline-flex;align-items:center;gap:6px">or next <input type="number" id="batch" min="1" max="20" value="5" aria-label="how many tabs at once"> at once <button class="btn" id="openN" type="button">Open</button></span>
       <span class="muted" id="hint"></span>
     </div>
     <ol class="steps" id="howto">
-      <li>Press <b>Open next page</b> (or <kbd>N</kbd>). The page opens in a new tab as an edit form, the fixed text is in the box and “Show changes” has been pressed for you.</li>
-      <li>Check the highlighted changes, then press <b>Save changes</b> on Wiktionary. If something looks wrong, close the tab; nothing was saved.</li>
-      <li>Come back here and press <b>Open next page</b> again. That also ticks off the page you just did.</li>
+      <li>Press <b>Open next page</b> (or <kbd>N</kbd>) for one tab, or <b>Open next … at once</b> to open several tabs in a row. Each opens as an edit form with the fix already made and the diff showing.</li>
+      <li>In each tab, check the highlighted changes, then press <b>Save changes</b> on Wiktionary — in any order, whenever you get to it. If something looks wrong, close the tab instead; nothing was saved.</li>
+      <li>The tab closes itself once the save goes through. Coming back to this tab, you'll be asked once whether everything still "open" actually saved — say yes and the whole batch is ticked off in one click. (A lone page can still be marked with its own Done/Skip in the table below.) Repeat.</li>
     </ol>
   </header>
+
+  <section class="panel" id="catchup" hidden style="border-color:var(--accent)">
+    <p class="muted" style="margin:0">Welcome back. You have <b id="catchupCount"></b> page(s) still marked "open" — did they save?</p>
+    <div class="cta" style="margin-top:8px">
+      <button class="btn primary" type="button" id="catchupDone">Yes, mark them all done</button>
+      <button class="btn" type="button" id="catchupLater">Not yet, check back later</button>
+    </div>
+  </section>
 
   <details class="panel" id="install">
     <summary>One-time setup: install the script on your Wiktionary account</summary>
@@ -122,8 +132,8 @@ tr.done td.pg a { color: var(--muted); } tr.done { background: var(--done-bg); }
 <script>
 (function () {
   var D = JSON.parse(document.getElementById("data").textContent);
-  var KEY = "asem-respell-v1", state = { s: {}, cur: null };
-  try { var saved = JSON.parse(localStorage.getItem(KEY) || "null"); if (saved && saved.s) state = saved; } catch (e) {}
+  var KEY = "asem-respell-v1", state = { s: {}, open: {} };
+  try { var saved = JSON.parse(localStorage.getItem(KEY) || "null"); if (saved && saved.s) state = { s: saved.s, open: saved.open || {} }; } catch (e) {}
   function save() { try { localStorage.setItem(KEY, JSON.stringify(state)); } catch (e) {} }
   var filter = "todo";
   var $ = function (id) { return document.getElementById(id); };
@@ -131,8 +141,24 @@ tr.done td.pg a { color: var(--muted); } tr.done { background: var(--done-bg); }
   function wiki(t) { return "https://en.wiktionary.org/wiki/" + encodeURIComponent(t.replace(/ /g, "_")).replace(/%2F/g, "/").replace(/%3A/g, ":"); }
   function el(tag, props, kids) { var e = document.createElement(tag); for (var k in props || {}) { if (k === "class") e.className = props[k]; else if (k === "text") e.textContent = props[k]; else e.setAttribute(k, props[k]); } (kids || []).forEach(function (c) { e.appendChild(c); }); return e; }
   function status(t) { return state.s[t] || "todo"; }
-  function nextTarget() { for (var i = 0; i < D.items.length; i++) { var t = D.items[i].title; if (status(t) === "todo" && t !== state.cur) return t; } return null; }
+  function nextTarget() { for (var i = 0; i < D.items.length; i++) { var t = D.items[i].title; if (status(t) === "todo" && !state.open[t]) return t; } return null; }
   function count(s) { return D.items.filter(function (i) { return status(i.title) === s; }).length; }
+  function openOne(t) { if (!t) return; window.open(editUrl(t), "_blank"); state.open[t] = true; }   // postMessage is a bonus if it arrives; see below for why it cannot be relied on
+  // This page cannot ask Wiktionary directly whether an open page was saved: it is itself served from a
+  // sandboxed origin, and that sandbox's CSP blocks outgoing fetch/XHR to any other host (confirmed: even
+  // with CORS allowed on Wiktionary's side, the request never leaves this page). postMessage back from the
+  // opened tab is attempted (see wikt_respell.user.js) but its window.opener is not reliably available
+  // either in this hosting, so it is a bonus, not something to depend on. Instead: when you come back to
+  // this tab (the one moment we know a save attempt just happened), ask once, for all open pages at once --
+  // one click confirms a whole batch, instead of one click per page.
+  var dismissedFor = null;                                                    // the exact open-set (sorted, joined) last dismissed; shown again once it changes
+  function openKey() { return Object.keys(state.open).sort().join("\n"); }
+  function checkCatchup() {
+    var titles = Object.keys(state.open), box = $("catchup");
+    if (!titles.length || openKey() === dismissedFor) { box.hidden = true; return; }
+    box.hidden = false;
+    $("catchupCount").textContent = titles.length;
+  }
   function render() {
     var n = D.items.length, d = count("done"), s = count("skip"), todo = n - d - s;
     $("bd").style.width = (n ? 100 * d / n : 100) + "%"; $("bs").style.width = (n ? 100 * s / n : 0) + "%";
@@ -143,30 +169,40 @@ tr.done td.pg a { color: var(--muted); } tr.done { background: var(--done-bg); }
     var tb = $("rows"); tb.textContent = ""; var shown = 0;
     D.items.forEach(function (it, i) {
       var st = status(it.title); if (filter !== "all" && st !== filter) return; shown++;
-      var cls = st === "done" ? "done" : st === "skip" ? "skip" : (it.title === state.cur ? "cur" : "");
+      var cls = st === "done" ? "done" : st === "skip" ? "skip" : (state.open[it.title] ? "cur" : "");
       var ch = el("td", { class: "ch" }); it.changes.forEach(function (c) { ch.appendChild(el("span", { text: c })); });
       var act = el("td", { class: "act" });
-      var open = el("a", { class: "btn", href: editUrl(it.title), target: "_blank", rel: "noopener", text: "Open" });
-      open.addEventListener("click", function () { state.cur = it.title; save(); setTimeout(render, 0); });
+      var openLink = el("a", { class: "btn", href: editUrl(it.title), target: "_blank", text: "Open" }); // no noopener: the tab self-closes via window.close() after a successful save
+      openLink.addEventListener("click", function () { state.open[it.title] = true; save(); setTimeout(render, 0); });
       if (st === "todo") {
-        var dn = el("button", { class: "btn", type: "button", text: "Done" }); dn.addEventListener("click", function () { state.s[it.title] = "done"; if (state.cur === it.title) state.cur = null; save(); render(); });
-        var sk = el("button", { class: "btn", type: "button", text: "Skip" }); sk.addEventListener("click", function () { state.s[it.title] = "skip"; if (state.cur === it.title) state.cur = null; save(); render(); });
-        [open, document.createTextNode(" "), dn, document.createTextNode(" "), sk].forEach(function (x) { act.appendChild(x); });
+        var dn = el("button", { class: "btn", type: "button", text: "Done" }); dn.addEventListener("click", function () { state.s[it.title] = "done"; delete state.open[it.title]; save(); render(); });
+        var sk = el("button", { class: "btn", type: "button", text: "Skip" }); sk.addEventListener("click", function () { state.s[it.title] = "skip"; delete state.open[it.title]; save(); render(); });
+        [openLink, document.createTextNode(" "), dn, document.createTextNode(" "), sk].forEach(function (x) { act.appendChild(x); });
       } else {
         var un = el("button", { class: "btn", type: "button", text: "Undo" }); un.addEventListener("click", function () { delete state.s[it.title]; save(); render(); });
         [el("span", { class: "tag " + st, text: st === "done" ? "done" : "skipped" }), document.createTextNode(" "), un].forEach(function (x) { act.appendChild(x); });
       }
       var pg = el("td", { class: "pg" }); var link = el("a", { href: wiki(it.title), target: "_blank", rel: "noopener" }); link.appendChild(el("bdi", { text: it.title })); pg.appendChild(link);
-      if (it.title === state.cur && st === "todo") pg.appendChild(document.createTextNode(" ")), pg.appendChild(el("span", { class: "tag cur", text: "open" }));
+      if (state.open[it.title] && st === "todo") pg.appendChild(document.createTextNode(" ")), pg.appendChild(el("span", { class: "tag cur", text: "open" }));
       tb.appendChild(el("tr", { class: cls }, [el("td", { class: "n", text: String(i + 1) }), pg, ch, act]));
     });
     $("empty").hidden = shown > 0;
     Array.prototype.forEach.call($("tabs").children, function (b) { b.setAttribute("aria-pressed", String(b.dataset.f === filter)); });
+    checkCatchup();
   }
   $("next").addEventListener("click", function (e) {
     var nt = nextTarget(); if (!nt) { e.preventDefault(); return; }
-    if (state.cur && status(state.cur) === "todo") state.s[state.cur] = "done";
-    state.cur = nt; save(); setTimeout(render, 0);
+    state.open[nt] = true; save(); setTimeout(render, 0);
+  });
+  $("openN").addEventListener("click", function () {
+    var n = Math.max(1, Math.min(20, parseInt($("batch").value, 10) || 5));
+    for (var i = 0; i < n; i++) { var nt = nextTarget(); if (!nt) break; openOne(nt); }
+    save(); render();
+  });
+  window.addEventListener("message", function (e) {                          // a respell tab reporting that it saved, so we can tick it off without the user switching back
+    var t = e.data && typeof e.data === "object" ? e.data.asemRespellSaved : null;
+    if (typeof t !== "string" || status(t) !== "todo") return;
+    state.s[t] = "done"; delete state.open[t]; save(); render();
   });
   $("tabs").addEventListener("click", function (e) { var f = e.target.dataset && e.target.dataset.f; if (f) { filter = f; render(); } });
   document.addEventListener("keydown", function (e) { if ((e.key === "n" || e.key === "N") && !e.ctrlKey && !e.metaKey && !e.altKey && !/^(INPUT|TEXTAREA)$/.test((e.target.tagName || ""))) { $("next").click(); } });
@@ -201,6 +237,12 @@ tr.done td.pg a { color: var(--muted); } tr.done { background: var(--done-bg); }
   D.indirect.forEach(function (p) { var li = el("li"); li.appendChild(el("bdi", { text: p })); $("ind").appendChild(li); });
   if (!D.person.length) $("decide").hidden = true; if (!D.indirect.length) $("indirect").hidden = true;
   if (!D.items.length) { $("intro").textContent = "Every reference that only needed a respelling is done."; $("howto").hidden = true; $("pages").hidden = true; $("install").hidden = true; }
+  $("catchupDone").addEventListener("click", function () {
+    Object.keys(state.open).forEach(function (t) { state.s[t] = "done"; delete state.open[t]; });
+    save(); render();
+  });
+  $("catchupLater").addEventListener("click", function () { dismissedFor = openKey(); checkCatchup(); });
+  window.addEventListener("focus", checkCatchup);                             // the one moment we know a save attempt just happened
   render();
 })();
 </script>
