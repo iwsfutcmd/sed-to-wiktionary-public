@@ -24,8 +24,8 @@ LANG = {"Akkadian": ("akk", EAST, ""), "Ebla": ("xeb", EAST, ""), "Arabic": ("ar
         "Old Aramaic": ("arc", NW, "Old "), "Official Aramaic": ("arc", NW, "Official "), "Biblical Aramaic": ("arc", NW, "Biblical "),
         "Palmyrean": ("arc", NW, "Palmyrene "), "Jewish Palestinian Aramaic": ("jpa", NW, ""), "Jewish Babylonian Aramaic": ("tmr", NW, ""),
         "Samaritan": ("sam", NW, ""), "Syriac": ("syc", NW, ""), "Mandaic": ("myz", NW, ""), "Turoyo": ("tru", NW, ""), "Maalula": ("amw", NW, ""), "Assyrian Neo-Aramaic": ("aii", NW, ""),
-        "Hebrew": ("hbo", CAN, ""), "Phoenician": ("phn", CAN, ""), "Ugaritic": ("uga", NW, ""),
-        "Sabaic": ("xsa", OSA, ""), "Hadramitic": ("sem-srb", OSA, "Hadramitic "), "Geez": ("gez", ETH, ""), "Tigre": ("tig", ETH, ""),
+        "Hebrew": ("hbo", CAN, ""), "Phoenician": ("phn", CAN, ""), "Ugaritic": ("uga", NW, ""), "Ammonite": ("sem-amm", CAN, ""),
+        "Sabaic": ("xsa", OSA, ""), "Minaean": ("inm", OSA, ""), "Hadramitic": ("sem-srb", OSA, "Hadramitic "), "Geez": ("gez", ETH, ""), "Tigre": ("tig", ETH, ""),
         "Tigrinya": ("ti", ETH, ""), "Amharic": ("am", ETH, ""), "Argobba": ("agj", ETH, ""), "Harari": ("har", ETH, ""), "Gafat": ("gft", ETH, ""),
         "Selti": ("stv", GUR, ""), "Wolane": ("wle", GUR, ""), "Zway": ("zwa", GUR, ""), "Soddo": ("gru", GUR, ""), "Gogot": ("gru", GUR, ""),
         "Chaha": ("sgw", GUR, ""), "Ezha": ("sgw", GUR, ""), "Endegen": ("sgw", GUR, ""), "Ennemor": ("sgw", GUR, ""), "Gyeto": ("sgw", GUR, ""),
@@ -129,7 +129,9 @@ def entry(code, form, gloss, lang, notes):
     if m and re.search(r"suff|det|pl|fem|masc", m.group(2)):
         form = m.group(1); gloss = (gloss + f" ({m.group(2)})").strip()
     if "/" in form:                                         # slash alternations: keep the printed string, no guessing
-        return f"{{{{desc|{code}|-|tr={tr_of(form)}" + (f"|t={gloss}" if gloss else "") + "}}}}"
+        if code in LATIN_TERM:                              # the term itself is already the transliteration: no separate tr=
+            return f"{{{{desc|{code}|{tr_of(form)}" + (f"|t={gloss}" if gloss else "") + "}}"
+        return f"{{{{desc|{code}|-|tr={tr_of(form)}" + (f"|t={gloss}" if gloss else "") + "}}"
     variants = [v.strip() for v in form.split(",") if v.strip()]
     if code == "xeb":                                       # Eblaite variants are alternative spellings of one word
         variants = variants[:1]
@@ -239,6 +241,66 @@ PAGES = {   # title -> SEDonline reconstruction id and page content
                         dict(lang="Jewish Babylonian Aramaic", form="ʕakbərā", gloss="mouse"),
                         dict(lang="Arabic", form="ʕakābir-", gloss="a kind of mouse (plural)")]),
  "baḳḳ-": dict(rec="667", vol="II", entry="*baḳḳ-", pos="{{sem-noun|m}}", infl=True, defs=["[[gnat]]"], cat="{{C|sem-pro|Insects}}", etym=""),
+ "sūs-": dict(rec="675", vol="II", entry="*sā/ūs-", pos="{{sem-noun|m}}", infl=True, defs=["[[moth]]"], cat="{{C|sem-pro|Insects}}", etym="",
+              # Syriac is cited by SEDonline as "sūstā, sāsā" under one combined gloss; sūstā is the unrelated word for "mare" (fem. of sūsyā
+              # "horse"), bundled in as a cross-reference. Only sāsā, the real cognate, is kept here.
+              words=[dict(lang="Akkadian", form="sāsu", gloss="moth"),
+                     dict(lang="Ebla", form="zazum /sāsum/", gloss="moth", unc=True),
+                     dict(lang="Hebrew", form="sās", gloss="clothes moth"),
+                     dict(lang="Old Aramaic", form="ss", gloss="moth"),
+                     dict(lang="Official Aramaic", form="ss", gloss="moth"),
+                     dict(lang="Jewish Palestinian Aramaic", form="ss", gloss="moth, worm"),
+                     dict(lang="Syriac", form="sāsā", gloss="kind of worm that infests the grapevine"),
+                     dict(lang="Mandaic", form="sasa", gloss="moth, maggot"),
+                     dict(lang="Arabic", form="sūs-", gloss="moth"),
+                     dict(lang="Amharic", form="šuš(š)", gloss="moth"),
+                     dict(lang="Harari", form="sūs", gloss="moth"),
+                     dict(lang="Mehri", form="sust", gloss="large worm")]),
+ # SED II no. 53 *bVʕVr- 'household animal; beast of burden' (rec. 590). SEDonline's word list and gloss ("bull") both differ from the
+ # print (data/sedonline/sed_print_vs_site_agreement.tsv: agree=0); read by eye (pdf/vol2.pdf pp. 164-165). The print explicitly excludes
+ # a whole cluster of forms without -ʕ- that SEDonline includes anyway (Akkadian bīru/būru, Mandaic bira, Amharic bäre, Harari bāra, and
+ # the Gurage forms), discussing them separately as a *possibly* related but distinct root -- not something to fold into this entry.
+ # Also left out: Tigre baʕer "young camel", which the print itself flags as "an obvious Arabism".
+ "bVʕVr-": dict(rec="590", vol="II", entry="*bVʕVr-", print_sourced=True, pos="{{sem-noun|m}}", infl=True,
+                defs=["[[household]] [[animal]]", "[[beast of burden]]"], cat="{{C|sem-pro|Mammals}}",
+                etym="Reconstructed in Militarev & Kogan's ''Semitic Etymological Dictionary'' as {{m|sem-pro|*bVʕVr-}}. The SED notes that a cluster of semantically "
+                     "similar forms lacking the {{m|sem-pro|*ʕ}} (Akkadian {{m|akk|bīru}}, Mandaic {{m|myz|ࡁࡉࡓࡀ|tr=bira}}, and several Ethiopian Semitic forms such "
+                     "as Amharic {{m|am|በሬ|tr=bäre}}) may continue a separate, though probably related, root.",
+                words=[dict(lang="Ammonite", form="bʕr", gloss="ox, beast of burden", unc=True),
+                       dict(lang="Hebrew", form="bəʕīr", gloss="livestock, cattle"),
+                       dict(lang="Jewish Babylonian Aramaic", form="bəʕīrā", gloss="grazing animal, cattle"),
+                       dict(lang="Syriac", form="bəʕīrā", gloss="cattle, beast of burden"),
+                       dict(lang="Assyrian Neo-Aramaic", form="bîrâ", gloss="large cattle"),
+                       dict(lang="Arabic", form="baʕīr-", gloss="camel; beast of burden"),
+                       dict(lang="Sabaic", form="bʕr", gloss="cattle, head of cattle; camel"),
+                       dict(lang="Minaean", form="bʕr", gloss="camel; head of cattle"),
+                       dict(lang="Hadramitic", form="bʕr", gloss="commercial livestock"),
+                       dict(lang="Geez", form="bəʕər, bəʕərā, bəʕərāy, bəʕərāwi", gloss="ox, bull, horned cattle"),
+                       dict(lang="Tigre", form="bəʕrāy", gloss="ox, bull"),
+                       dict(lang="Tigrinya", form="bəʕray, bäʕray", gloss="ox, bull"),
+                       dict(lang="Mehri", form="bəʕáyr", gloss="male camel"),
+                       dict(lang="Mehri", form="béyr", gloss="male camel"),
+                       dict(lang="Harsusi", form="beʕîr", gloss="male camel"),
+                       dict(lang="Soqotri", form="beʕer", gloss="camel"),
+                       dict(lang="Soqotri", form="baʕáhar", gloss="she-camel")]),
+ # SED II no. 221 *ŝabb- ~ *ĉabb- 'kind of lizard' (rec. 656). SEDonline's gloss ("monitor lizard") is narrower than the print's, and it
+ # drops Jewish Aramaic entirely (data/sed_print_vs_site_agreement.tsv: agree=0); read by eye (pdf/vol2.pdf p. 378). The print itself
+ # explains the vaguer gloss: Hebrew and Jewish Aramaic point to a different (spiny-tailed) lizard than the monitor lizard of Arabic and
+ # the Modern South Arabian languages, so "kind of lizard" is the honest common denominator, not a simplification.
+ "ṣ́abb-": dict(rec="656", vol="II", entry="*ṣ̂abb-", print_sourced=True, pos="{{sem-noun|m}}", infl=True, defs=["kind of [[lizard]]"], cat="{{C|sem-pro|Reptiles}}",
+               etym="Reconstructed in Militarev & Kogan's ''Semitic Etymological Dictionary'' as {{m|sem-pro|*ṣ́abb-}}. The reflexes split between a "
+                    "thorn-tailed/spiny-tailed lizard (Hebrew, Jewish Aramaic) and the monitor lizard (Arabic, Modern South Arabian); the SED keeps the gloss "
+                    "general for this reason. The Jewish Aramaic form is noted in the SED as possibly a Hebrew borrowing, since its {{m|sem-pro|*ṣ}} is irregular.",
+               words=[dict(lang="Hebrew", form="ṣāb", gloss="thorn-tailed lizard"),
+                      dict(lang="Jewish Babylonian Aramaic", form="ṣabbā", gloss="kind of lizard", unc=True),
+                      dict(lang="Syriac", form="ʕabbā", gloss="kind of lizard"),
+                      dict(lang="Arabic", form="ḍabb-", gloss="monitor lizard; African lizard (eaten by some peoples)"),
+                      dict(lang="Mehri", form="ẑōb", gloss="male monitor lizard"),
+                      dict(lang="Mehri", form="ẑəbbūt", gloss="female monitor lizard"),
+                      dict(lang="Harsusi", form="ẑōb", gloss="monitor lizard"),
+                      dict(lang="Harsusi", form="ẑebbēt", gloss="female monitor lizard"),
+                      dict(lang="Jibbali", form="ẓ̂ɔb", gloss="monitor lizard"),
+                      dict(lang="Jibbali", form="ẓ̂ēt", gloss="female monitor lizard")]),
 }
 def tree_lines(words, notes, exclude=(), override=None):
     lines, shown = [], set()

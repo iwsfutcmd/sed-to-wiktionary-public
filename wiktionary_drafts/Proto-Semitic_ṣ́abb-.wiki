@@ -1,0 +1,35 @@
+{{reconstructed}}
+==Proto-Semitic==
+
+===Etymology===
+Reconstructed in Militarev & Kogan's ''Semitic Etymological Dictionary'' as {{m|sem-pro|*ṣ́abb-}}. The reflexes split between a thorn-tailed/spiny-tailed lizard (Hebrew, Jewish Aramaic) and the monitor lizard (Arabic, Modern South Arabian); the SED keeps the gloss general for this reason. The Jewish Aramaic form is noted in the SED as possibly a Hebrew borrowing, since its {{m|sem-pro|*ṣ}} is irregular.
+
+===Noun===
+{{sem-noun|m}}
+
+# kind of [[lizard]]
+
+====Inflection====
+{{sem-decl-noun}}
+
+====Descendants====
+* West Semitic:
+** Central Semitic:
+*** {{desc|ar|ضَبّ|t=monitor lizard; African lizard (eaten by some peoples)}}
+*** Northwest Semitic:
+**** {{desc|tmr|צבא|tr=ṣabbā|t=kind of lizard|unc=1}}
+**** {{desc|syc|ܥܒܐ|tr=ʕabbā|t=kind of lizard}}
+**** Canaanite:
+***** {{desc|hbo|צב|tr=ṣāb|t=thorn-tailed lizard}}
+** Modern South Arabian:
+*** {{desc|gdq|ẑōb|t=male monitor lizard}}
+*** {{desc|gdq|ẑəbbūt|t=female monitor lizard}}
+*** {{desc|shv|ẓ̂ɔb|t=monitor lizard}}
+*** {{desc|shv|ẓ̂ēt|t=female monitor lizard}}
+*** {{desc|hss|ẑōb|t=monitor lizard}}
+*** {{desc|hss|ẑebbēt|t=female monitor lizard}}
+
+===References===
+* {{R:sem-pro:SED|volume=II|id=656|entry=*ṣ̂abb-}}
+
+{{C|sem-pro|Reptiles}}

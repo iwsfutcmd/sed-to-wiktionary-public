@@ -34,7 +34,7 @@ TABLES = {k: dict(v) for k, v in PAIRS.items()}
 FINAL = {"כ": "ך", "מ": "ם", "נ": "ן", "פ": "ף", "צ": "ץ"}
 # Wiktionary language code -> table
 CODES = {"he": "he", "sam": "sam", "hbo": "he", "arc": "he", "jpa": "he", "tmr": "he", "syc": "syc", "uga": "uga", "phn": "phn", "xsa": "osa", "sem-srb": "osa",
-         "inm": "osa", "xqt": "osa"}
+         "inm": "osa", "xqt": "osa", "sem-amm": "phn"}
 SRC = {"ˀ": "ʾ", "ʔ": "ʾ", "ʼ": "ʾ", "ˁ": "ʿ", "ʕ": "ʿ", "ʻ": "ʿ", "ḳ": "q", "ṯ̣": "ẓ", "ḏ̣": "ẓ", "ŝ": "ś"}
 VOWEL = "aeiouāēīōūəǝ"
 MATRES_RISK = re.compile("[īūōuo]")      # vowels these orthographies often write with y/w: the bare skeleton may be wrong
