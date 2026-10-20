@@ -287,7 +287,9 @@ PAGES = {   # title -> SEDonline reconstruction id and page content
  # drops Jewish Aramaic entirely (data/sed_print_vs_site_agreement.tsv: agree=0); read by eye (pdf/vol2.pdf p. 378). The print itself
  # explains the vaguer gloss: Hebrew and Jewish Aramaic point to a different (spiny-tailed) lizard than the monitor lizard of Arabic and
  # the Modern South Arabian languages, so "kind of lizard" is the honest common denominator, not a simplification.
- "ṣ́abb-": dict(rec="656", vol="II", entry="*ṣ̂abb-", print_sourced=True, pos="{{sem-noun|m}}", infl=True, defs=["kind of [[lizard]]"], cat="{{C|sem-pro|Reptiles}}",
+ # No East Semitic member and SEDonline's own "level" field marks this PWS (sed_print_vs_site_agreement.tsv, rec 656), so it belongs
+ # at Proto-West Semitic, not Proto-Semitic -- {{head|sem-wes-pro|noun}}, no Inflection section (no Template:sem-wes-decl-noun exists).
+ "ṣ́abb-": dict(rec="656", vol="II", entry="*ṣ̂abb-", print_sourced=True, level="PWS", pos="{{head|sem-wes-pro|noun|g=m}}", infl=True, defs=["kind of [[lizard]]"], cat="{{C|sem-wes-pro|Reptiles}}",
                etym="Reconstructed in Militarev & Kogan's ''Semitic Etymological Dictionary'' as {{m|sem-pro|*ṣ́abb-}}. The reflexes split between a "
                     "thorn-tailed/spiny-tailed lizard (Hebrew, Jewish Aramaic) and the monitor lizard (Arabic, Modern South Arabian); the SED keeps the gloss "
                     "general for this reason. The Jewish Aramaic form is noted in the SED as possibly a Hebrew borrowing, since its {{m|sem-pro|*ṣ}} is irregular.",
@@ -302,7 +304,8 @@ PAGES = {   # title -> SEDonline reconstruction id and page content
                       dict(lang="Jibbali", form="ẓ̂ɔb", gloss="monitor lizard"),
                       dict(lang="Jibbali", form="ẓ̂ēt", gloss="female monitor lizard")]),
 }
-def tree_lines(words, notes, exclude=(), override=None):
+def tree_lines(words, notes, exclude=(), override=None, strip=()):
+    """strip: a leading path prefix to drop (e.g. ("West Semitic",) on a Proto-West Semitic page, where it is implied)."""
     lines, shown = [], set()
     for w in sorted(words, key=lambda w: ORDER.index(w["lang"])):
         if (w["lang"], w["form"]) in exclude:
@@ -310,6 +313,8 @@ def tree_lines(words, notes, exclude=(), override=None):
         if override and (w["lang"], w["form"]) in override:
             w = {**w, **{k: v for k, v in override[(w["lang"], w["form"])].items() if k in ("form", "gloss")}}
         code, path, label = LANG[w["lang"]]
+        if strip and path[:len(strip)] == strip:
+            path = path[len(strip):]
         g = re.sub(r"\s+", " ", w["gloss"]).strip().replace("|", "/")
         e = entry(code, w["form"], g, w["lang"], notes)
         for key, val in (("q", w.get("q") or DIALECT.get(w["lang"])), ("unc", "1" if w.get("unc") else None)):
@@ -325,18 +330,21 @@ def build(title, cfg, out=None):
     miss = sorted({w["lang"] for w in words} - set(LANG))
     if miss: raise SystemExit(f"{title}: unmapped languages {miss}")
     notes = []
-    d = ["{{reconstructed}}", "==Proto-Semitic==", ""]
+    pws = cfg.get("level") == "PWS"                             # PWS: no Template:sem-wes-decl-noun / sem-wes-noun exist yet (checked live);
+    lang = "Proto-West Semitic" if pws else "Proto-Semitic"      # {{head|sem-wes-pro|...}} and no declension table, following real PWS pages
+    d = ["{{reconstructed}}", f"=={lang}==", ""]
     if cfg["etym"]: d += ["===Etymology===", cfg["etym"], ""]
     d += ["===" + ("Verb" if "verb" in cfg["pos"] else "Noun") + "===", cfg["pos"], ""] + ["# " + x for x in cfg["defs"]] + [""]
-    if cfg["infl"]: d += ["====Inflection====", "{{sem-decl-noun}}", ""]
+    if cfg["infl"] and not pws: d += ["====Inflection====", "{{sem-decl-noun}}", ""]
     if cfg.get("conj"): d += ["====Conjugation====", cfg["conj"], ""]
-    d += ["====Descendants===="] + tree_lines(words, notes, cfg.get("exclude", {}), cfg.get("override")) + ["",
+    d += ["====Descendants===="] + tree_lines(words, notes, cfg.get("exclude", {}), cfg.get("override"), strip=("West Semitic",) if pws else ()) + ["",
           "===References===", "* {{R:sem-pro:SED|volume=%s|id=%s|entry=%s}}" % (cfg["vol"], cfg["rec"], cfg["entry"])]
     for r in cfg.get("extra_refs", []): d.append("* " + r)
     if cfg["cat"]: d += ["", cfg["cat"]]
     dest = Path(out) if out else OUT
     dest.mkdir(exist_ok=True)
-    (dest / f"Proto-Semitic_{title}.wiki").write_text("\n".join(d) + "\n", encoding="utf-8")
+    fname = f"Proto-West_Semitic_{title}.wiki" if pws else f"Proto-Semitic_{title}.wiki"
+    (dest / fname).write_text("\n".join(d) + "\n", encoding="utf-8")
     if not out:
         print(f"{title}: {len(words)} words; notes:", *notes, sep="\n   ")
 

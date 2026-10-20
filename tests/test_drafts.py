@@ -22,8 +22,9 @@ import wikt_draft as WD
 from tr2script import mandaic
 
 DRAFTS = ROOT / "wiktionary_drafts"
-NEW = sorted(DRAFTS.glob("Proto-Semitic_*.wiki"))
-DONE = sorted((DRAFTS / "done").glob("Proto-Semitic_*.wiki"))
+PREFIXES = {"Proto-Semitic_": "Proto-Semitic", "Proto-West_Semitic_": "Proto-West Semitic"}
+NEW = sorted(p for pfx in PREFIXES for p in DRAFTS.glob(f"{pfx}*.wiki"))
+DONE = sorted(p for pfx in PREFIXES for p in (DRAFTS / "done").glob(f"{pfx}*.wiki"))
 ONLINE = bool(os.environ.get("ONLINE"))
 
 from wikt_langs import LANGS, RANGES
@@ -48,8 +49,11 @@ def entries(text):
         params = dict(p.split("=", 1) for p in m.group(4).split("|") if "=" in p)
         out.append((m.group(1), m.group(2), m.group(3), params))
     return out
+def level_of(path):
+    return next(lang for pfx, lang in PREFIXES.items() if path.name.startswith(pfx))
 def title_of(path):
-    return path.name[len("Proto-Semitic_"):-len(".wiki")]
+    pfx = next(p for p in PREFIXES if path.name.startswith(p))
+    return path.name[len(pfx):-len(".wiki")]
 def rec_of(text):
     m = re.search(r"\{\{R:sem-pro:SED\|volume=(I+)\|id=(\d+)\|entry=([^}]*)\}\}", text)
     return m.groups() if m else None
@@ -99,7 +103,8 @@ class Drafts(unittest.TestCase):
     # ---------- structure ----------
     @forall(NEW + DONE)
     def test_wikitext_is_well_formed(self, t, title):
-        self.assertTrue(t.startswith("{{reconstructed}}\n==Proto-Semitic==\n"), "must start with {{reconstructed}} and ==Proto-Semitic==")
+        lang = "Proto-West Semitic" if WD.PAGES.get(title, {}).get("level") == "PWS" else "Proto-Semitic"
+        self.assertTrue(t.startswith(f"{{{{reconstructed}}}}\n=={lang}==\n"), f"must start with {{{{reconstructed}}}} and =={lang}==")
         self.assertEqual(t.count("{{"), t.count("}}"), "unbalanced {{ }}")
         self.assertEqual(t.count("[["), t.count("]]"), "unbalanced [[ ]]")
         pos = re.findall(r"^={3}(Noun|Verb)={3}$", t, flags=re.M)
@@ -109,7 +114,7 @@ class Drafts(unittest.TestCase):
         self.assertLess(t.index("====Descendants===="), t.index("===References==="))
         self.assertRegex(t, r"(?m)^# \S", "needs at least one definition")
         if pos[0] == "Noun":
-            self.assertRegex(t, r"\{\{sem-noun\|", "noun needs {{sem-noun|...}}")
+            self.assertRegex(t, r"\{\{sem-noun\||\{\{head\|sem-wes-pro\|noun", "noun needs {{sem-noun|...}} (or {{head|sem-wes-pro|noun...}} for PWS)")
         else:
             self.assertIn("{{head|sem-pro|verb}}", t)
         self.assertNotRegex(t, r"TODO|FIXME|\?\?\?|\[script needed\]")
@@ -258,7 +263,8 @@ class Drafts(unittest.TestCase):
             self.skipTest("no Wiktionary page cache (run scripts/wikt_draft.py once, it needs the network)")
         with tempfile.TemporaryDirectory() as tmp:
             for title, cfg in WD.PAGES.items():
-                f = DRAFTS / f"Proto-Semitic_{title}.wiki"
+                fname = f"Proto-West_Semitic_{title}.wiki" if cfg.get("level") == "PWS" else f"Proto-Semitic_{title}.wiki"
+                f = DRAFTS / fname
                 if not f.exists():
                     continue
                 with self.subTest(draft=title):
@@ -295,22 +301,25 @@ def spellings(title):
 @unittest.skipUnless(ONLINE, "set ONLINE=1 to check against en.wiktionary.org")
 class Online(unittest.TestCase):
     """A handful of requests, each with a 20 s timeout."""
-    PFX = "Reconstruction:Proto-Semitic/"
+    PFX = "Reconstruction:Proto-Semitic/"                       # default namespace; pfx(title) below is level-aware
+    @staticmethod
+    def pfx(title):
+        return "Reconstruction:Proto-West Semitic/" if WD.PAGES.get(title, {}).get("level") == "PWS" else "Reconstruction:Proto-Semitic/"
     def test_titles_are_free_and_not_linked_under_another_spelling(self):
         alts = {t: sorted(spellings(t)) for t in map(title_of, NEW)}
         say("  titles (one request)")
-        names = [self.PFX + x for t, a in alts.items() for x in [t] + a]
+        names = [self.pfx(t) + x for t, a in alts.items() for x in [t] + a]
         exists = {}
         for i in range(0, len(names), 50):
             for pg in api(action="query", titles="|".join(names[i:i + 50]))["query"]["pages"]:
                 exists[pg["title"]] = not pg.get("missing")
         for title, others in alts.items():
             with self.subTest(draft=title):
-                self.assertFalse(exists.get(self.PFX + title), "a page with this title already exists on Wiktionary")
+                self.assertFalse(exists.get(self.pfx(title) + title), "a page with this title already exists on Wiktionary")
                 for alt in others:
-                    self.assertFalse(exists.get(self.PFX + alt), f"{alt!r} already exists: use that title")
+                    self.assertFalse(exists.get(self.pfx(title) + alt), f"{alt!r} already exists: use that title")
                     say(f"  links to {alt}")
-                    bl = api(action="query", list="backlinks", bltitle=self.PFX + alt, bllimit=5, blnamespace="0|118")["query"]["backlinks"]
+                    bl = api(action="query", list="backlinks", bltitle=self.pfx(title) + alt, bllimit=5, blnamespace="0|118")["query"]["backlinks"]
                     self.assertFalse(bl, f"{alt!r} is linked from {[b['title'] for b in bl]}: use that title")
 
     def test_language_codes_mean_what_we_think(self):
