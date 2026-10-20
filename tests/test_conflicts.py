@@ -87,6 +87,29 @@ class Analyzer(unittest.TestCase):
         w = levels(K.analyze(draft("* {{desc|ar|وَرِك|t=hip}}"), "warik-", pages), "WARN")
         self.assertTrue([m for _, m in w if "borrowed" in m], w)
 
+    def test_clean_page_with_no_reference_is_a_backlink_candidate(self):
+        d = draft("* {{desc|akk|warkatum|tr=warkatum|t=rear}}")
+        f = K.analyze(d, "warik-", PAGES)
+        c = levels(f, "CANDIDATE")
+        self.assertEqual(len(c), 1, c)
+        self.assertIn("warkatum", c[0][1]); self.assertIn("does not cite *warik-", c[0][1])
+        self.assertEqual(levels(f, "CONFLICT"), []); self.assertEqual(levels(f, "WARN"), [])
+
+    def test_no_candidate_when_the_etymology_already_names_us(self):
+        d = draft("* {{desc|ar|بَقّ|t=gnat}}")
+        self.assertEqual(levels(K.analyze(d, "baḳḳ-", PAGES), "CANDIDATE"), [])
+
+    def test_no_candidate_when_the_word_is_borrowed_or_a_borrowing_conflict(self):
+        pages = {"ورك": "==Arabic==\n===Etymology===\n{{bor|ar|akk|warkatum}}\n===Noun===\n# [[hip]]\n"}
+        self.assertEqual(levels(K.analyze(draft("* {{desc|ar|وَرِك|t=hip}}"), "warik-", pages), "CANDIDATE"), [])
+        d = draft("* {{desc|akk|immerum|tr=immerum|t=sheep}}", "* {{desc|hbo|אִמֵּר|tr=ʔimmēr|t=lamb}}")
+        self.assertEqual(levels(K.analyze(d, "ʔimmar-", PAGES), "CANDIDATE"), [])
+
+    def test_no_candidate_for_red_links_or_missing_sections(self):
+        d = draft("* {{desc|ar|غغغ|t=x}}", "* {{desc|he|ܒܩܐ|t=x}}")
+        f = K.analyze(d, "baḳḳ-", {"غغغ": "", "ܒܩܐ": PAGES["ܒܩܐ"]})
+        self.assertEqual(levels(f, "CANDIDATE"), [])
+
 class RealDrafts(unittest.TestCase):
     def test_no_conflict_in_any_draft_with_cached_pages(self):
         if not (K.CACHE.exists() and any(K.CACHE.iterdir())):

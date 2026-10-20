@@ -122,8 +122,9 @@ def analyze(draft_text, title, pages, source=None):
         if sec is None:
             findings.append(("INFO", label, f"page exists, but has no {LANGS[code][0]} section")); continue
         ety = etymology(sec)
+        refs = ps_references(ety)
         # 1. inherited / derived from another Proto-Semitic form
-        for ref in ps_references(ety):
+        for ref in refs:
             if fold(ref) == fold(title):
                 findings.append(("INFO", label, f"etymology already names *{ref}"))
             elif skeleton(ref) == skeleton(title):
@@ -132,14 +133,18 @@ def analyze(draft_text, title, pages, source=None):
                 findings.append(("CONFLICT", label, f"etymology names a different Proto-Semitic form: *{ref}"))
         # 2. the page calls the word borrowed
         lead = ety.strip()[:220]                          # what the etymology OPENS with: later mentions ("not borrowed from X") are not claims
-        if re.search(r"\{\{(?:bor\+?|lbor|slbor|calque|cal|pcal)\|", lead) or re.search(r":(?:bor|lbor|slbor|cal)\b", lead) \
-                or re.match(r"(?i)\s*(?:borrowed|a loan|loan(?:word)?)\b", lead):
+        is_borrowed = bool(re.search(r"\{\{(?:bor\+?|lbor|slbor|calque|cal|pcal)\|", lead) or re.search(r":(?:bor|lbor|slbor|cal)\b", lead)
+                or re.match(r"(?i)\s*(?:borrowed|a loan|loan(?:word)?)\b", lead))
+        if is_borrowed:
             findings.append(("WARN", label, "etymology says the word is borrowed: " + re.sub(r"\s+", " ", ety.strip())[:110]))
         # 3. the page lists other descendants of ours as borrowed from it
         borrowed = {m.group(1) for m in re.finditer(r"\{\{desc\|([\w-]+)\|[^{}]*?\|bor=1[^{}]*\}\}", sec)}
         both = sorted((borrowed & codes) - {ALIAS.get(code, code)})
         if both:
             findings.append(("CONFLICT", label, "page lists " + ", ".join(LANGS[c][0] for c in both) + " as BORROWED from it (bor=1)"))
+        # 5. a clean descendant page that does not yet cite us at all: a candidate to add {{inh|...}} to (see wikt_backlink.py)
+        if not refs and not is_borrowed and not both:
+            findings.append(("CANDIDATE", label, f"{t!r} does not cite *{title} yet" + ("" if ety.strip() else " (no Etymology section)")))
         # 4. gloss overlap with the page's definitions
         ours = words(params.get("t", ""))
         theirs = words(" ".join(definitions(sec)))
@@ -174,13 +179,13 @@ def main(argv):
     bad = 0
     for name, fs in res.items():
         print(f"\n== {name}")
-        for lvl in ("CONFLICT", "WARN", "INFO"):
+        for lvl in ("CONFLICT", "WARN", "CANDIDATE", "INFO"):
             for l, term, msg in fs:
                 if l == lvl and (lvl != "INFO" or "--info" in argv):
                     print(f"  {lvl:8} {term}: {msg}")
                     bad += lvl == "CONFLICT"
-        n = {k: sum(1 for l, _, _ in fs if l == k) for k in ("CONFLICT", "WARN", "INFO")}
-        print(f"  ({n['CONFLICT']} conflict, {n['WARN']} warn, {n['INFO']} info)")
+        n = {k: sum(1 for l, _, _ in fs if l == k) for k in ("CONFLICT", "WARN", "CANDIDATE", "INFO")}
+        print(f"  ({n['CONFLICT']} conflict, {n['WARN']} warn, {n['CANDIDATE']} candidate, {n['INFO']} info)")
     return 1 if bad else 0
 
 if __name__ == "__main__":
