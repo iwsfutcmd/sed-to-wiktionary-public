@@ -18,7 +18,8 @@ class Backlink(unittest.TestCase):
         page = "==Akkadian==\n===Noun===\n# [[rear]]\n"
         s = B.suggestion(page, "akk", "PS", "warik-")
         self.assertEqual(s["mode"], "create")
-        self.assertIn("===Etymology===", s["insert"]); self.assertIn("{{inh|akk|sem-pro|*warik-}}", s["insert"])
+        self.assertEqual(s["insert"], "{{inh|akk|sem-pro|*warik-}}")
+        self.assertIn("===Etymology===", s["full"]); self.assertIn("{{inh|akk|sem-pro|*warik-}}", s["full"])
 
     def test_append_mode_when_the_etymology_does_not_mention_us(self):
         page = "==Akkadian==\n===Etymology===\nCognate with {{cog|ar|وَرِك|t=hip}}.\n===Noun===\n# [[rear]]\n"
@@ -26,6 +27,7 @@ class Backlink(unittest.TestCase):
         self.assertEqual(s["mode"], "append")
         self.assertIn("Cognate with", s["current"])
         self.assertEqual(s["insert"], "{{inh|akk|sem-pro|*warik-}}")
+        self.assertEqual(s["full"], "From {{inh|akk|sem-pro|*warik-}}. Cognate with {{cog|ar|وَرِك|t=hip}}.")
 
     def test_candidates_for_matches_only_the_clean_entry(self):
         d = draft("* {{desc|akk|warkatum|tr=warkatum|t=rear}}", "* {{desc|ar|بَقّ|t=gnat}}")
@@ -45,6 +47,7 @@ class RealDrafts(unittest.TestCase):
         for r in B.plan():
             self.assertIn(r["mode"], ("create", "append"))
             self.assertTrue(r["insert"].startswith("{{inh|"))
+            self.assertIn(r["insert"], r["full"])
 
 if __name__ == "__main__":
     unittest.main(verbosity=1)
