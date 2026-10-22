@@ -109,6 +109,12 @@ tr.done td.pg a { color: var(--muted); } tr.done { background: var(--done-bg); }
     <div class="empty" id="empty" hidden>Nothing here.</div>
   </section>
 
+  <section class="panel" id="newpages">
+    <h2>New pages (<span id="nnew"></span>)</h2>
+    <p class="muted">Reconstructions drafted from the SED that Wiktionary does not have yet. <b>Create</b> opens the empty edit form with the summary filled in; <b>Copy</b> puts the page text on the clipboard; paste it and Save. A root such as <bdi class="mono">ṯḳl</bdi> also turns the red links that the respelling above creates blue.</p>
+    <ul class="list" id="newlist"></ul>
+  </section>
+
   <section class="panel" id="moves">
     <h2>Root pages to move (__NMOVES__)</h2>
     <p class="muted">A root is written <code>ʔ-b-d</code>: hyphens between the radicals, none at the end. These titles are still bare (<code>ʔbd</code>). <b>Move</b> opens the move form with the new title filled in; a target that already exists has to be merged by hand (or by an administrator), so it only gets links to look at both pages.</p>
@@ -213,6 +219,22 @@ tr.done td.pg a { color: var(--muted); } tr.done { background: var(--done-bg); }
   });
   var inst = $("install"); try { if (localStorage.getItem(KEY + "-installed")) inst.open = false; } catch (e) {}
   $("script").addEventListener("copy", function () { try { localStorage.setItem(KEY + "-installed", "1"); } catch (e) {} });
+  (D.new || []).forEach(function (n) {
+    var li = el("li"), sum = "new Proto-Semitic reconstruction from Militarev & Kogan, ''Semitic Etymological Dictionary'' (WT:ASEM notation)";
+    li.appendChild(el("bdi", { class: "mono", text: n.title }));
+    li.appendChild(el("a", { href: wiki(n.page).replace("/wiki/", "/w/index.php?title=") + "&action=edit&summary=" + encodeURIComponent(sum), target: "_blank", rel: "noopener", text: "Create" }));
+    var b = el("button", { class: "btn", type: "button", text: "Copy" }), msg = el("span", { class: "muted" });
+    b.addEventListener("click", function () {
+      function fb() { ta.focus(); ta.select(); msg.textContent = "Selected. Press Ctrl+C."; }
+      try { navigator.clipboard.writeText(n.text).then(function () { msg.textContent = "Copied."; }, fb); } catch (e) { fb(); }
+    });
+    li.appendChild(b); li.appendChild(msg);
+    var det = el("details"), ta = el("textarea", { readonly: "", spellcheck: "false", "aria-label": n.title, rows: "12" });
+    ta.value = n.text; ta.style.width = "100%";
+    det.appendChild(el("summary", { text: "text" })); det.appendChild(ta); li.appendChild(det);
+    $("newlist").appendChild(li);
+  });
+  $("nnew").textContent = (D.new || []).length; if (!(D.new || []).length) $("newpages").hidden = true;
   (D.moves || []).forEach(function (m) {
     var li = el("li"), old = D.pfx[m.level] + m.title, nw = D.pfx[m.level] + m.target;
     li.appendChild(el("bdi", { class: "mono", text: (m.level === "PWS" ? "PWS " : "") + m.title })); li.appendChild(el("span", { class: "muted", text: "→ " + m.target }));

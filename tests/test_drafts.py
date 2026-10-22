@@ -55,8 +55,8 @@ def title_of(path):
     pfx = next(p for p in PREFIXES if path.name.startswith(p))
     return path.name[len(pfx):-len(".wiki")]
 def rec_of(text):
-    m = re.search(r"\{\{R:sem-pro:SED\|volume=(I+)\|id=(\d+)\|entry=([^}]*)\}\}", text)
-    return m.groups() if m else None
+    m = re.search(r"\{\{R:sem-pro:SED\|(?:volume=(I+)\|)?id=(\d+)\|entry=([^}]*)\}\}", text)
+    return (m.group(1) or "", m.group(2), m.group(3)) if m else None
 def norm(s):
     s = U.normalize("NFC", s).replace("ˀ", "ʔ").replace("ˁ", "ʕ").replace("ḳ", "q").replace("ǝ", "ə").replace("γ", "ɣ").replace("ŝ", "ś").lower()
     return re.sub(r"[\s*\-()]", "", s)
@@ -107,14 +107,16 @@ class Drafts(unittest.TestCase):
         self.assertTrue(t.startswith(f"{{{{reconstructed}}}}\n=={lang}==\n"), f"must start with {{{{reconstructed}}}} and =={lang}==")
         self.assertEqual(t.count("{{"), t.count("}}"), "unbalanced {{ }}")
         self.assertEqual(t.count("[["), t.count("]]"), "unbalanced [[ ]]")
-        pos = re.findall(r"^={3}(Noun|Verb)={3}$", t, flags=re.M)
-        self.assertEqual(len(pos), 1, "exactly one ===Noun=== or ===Verb===")
+        pos = re.findall(r"^={3}(Noun|Verb|Root)={3}$", t, flags=re.M)
+        self.assertEqual(len(pos), 1, "exactly one ===Noun===, ===Verb=== or ===Root===")
         self.assertIn("====Descendants====", t); self.assertIn("===References===", t)
         self.assertLess(t.index("===" + pos[0] + "==="), t.index("====Descendants===="))
         self.assertLess(t.index("====Descendants===="), t.index("===References==="))
         self.assertRegex(t, r"(?m)^# \S", "needs at least one definition")
         if pos[0] == "Noun":
             self.assertRegex(t, r"\{\{sem-noun\||\{\{head\|sem-wes-pro\|noun", "noun needs {{sem-noun|...}} (or {{head|sem-wes-pro|noun...}} for PWS)")
+        elif pos[0] == "Root":
+            self.assertIn("{{head|sem-pro|root}}", t)
         else:
             self.assertIn("{{head|sem-pro|verb}}", t)
         self.assertNotRegex(t, r"TODO|FIXME|\?\?\?|\[script needed\]")
@@ -130,7 +132,11 @@ class Drafts(unittest.TestCase):
         if not WD.PAGES.get(title, {}).get("print_sourced"):        # print-sourced pages may differ from SEDonline (e.g. its PWS level)
             self.assertEqual(rec["level"], "PS", "the printed volumes reconstruct Proto-Semitic")
         keys = [k for k in rec["sed_ref"].split(";") if k]
-        self.assertIn({"I": "1", "II": "2"}[vol], [k[0] for k in keys], "volume does not match the SED number SEDonline cites")
+        if not vol:                                                 # SEDonline only: no printed entry, so no volume and no SED number
+            self.assertTrue(WD.PAGES.get(title, {}).get("site_only"), "a reference without volume= must be marked site_only")
+            self.assertEqual(keys, [], "SEDonline cites a printed SED entry: add volume=")
+        else:
+            self.assertIn({"I": "1", "II": "2"}[vol], [k[0] for k in keys], "volume does not match the SED number SEDonline cites")
         # entry = the SED spelling; compare consonant skeletons so ṣ̂/ṣ́, ŝ/ś, ˀ/ʔ do not matter
         self.assertEqual(skeleton(entry), skeleton(rec["form"]), f"entry {entry!r} vs SEDonline {rec['form']!r}")
 
@@ -143,7 +149,11 @@ class Drafts(unittest.TestCase):
     # ---------- selection rule ----------
     @forall(NEW + DONE)
     def test_print_and_site_agree(self, t, title):
-        _, rid, _ = rec_of(t)
+        vol, rid, _ = rec_of(t)
+        if not vol:                                                 # SEDonline only: nothing in print to compare; the page must be documented in form_check.tsv
+            self.assertTrue(WD.PAGES[title].get("site_only") and [r for r in read(DATA / "sedonline" / "form_check.tsv") if r["entry"] == WD.PAGES[title]["entry"].lstrip("*") and "site only" in r["status"]],
+                            "a site-only page needs a 'site only' row in data/sedonline/form_check.tsv")
+            return
         if WD.PAGES.get(title, {}).get("print_sourced"):            # words come from the printed page: it must be documented, not match the site
             key = f"{WD.PAGES[title]['vol'] == 'I' and 1 or 2}"
             self.assertTrue([r for r in read(DATA / "sedonline" / "form_check.tsv") if r["entry"] == WD.PAGES[title]["entry"].lstrip("*")],
@@ -181,14 +191,14 @@ class Drafts(unittest.TestCase):
         words_ = [{**w, **{k: v for k, v in over.get((w["lang"], w["form"]), {}).items() if k in ("form", "gloss")}} for w in source
                   if (w["lang"], w["form"]) not in skip]
         per = Counter(code for _, code, _, _ in ents)
-        expect = Counter(WD.LANG[w["lang"]][0] for w in words_)
+        expect = Counter(WD.PAGES.get(title, {}).get("codes", {}).get(w["lang"]) or WD.LANG[w["lang"]][0] for w in words_)
         for code, n in expect.items():
             need = 1 if code == "xeb" else n               # Eblaite spelling variants are one word
             self.assertGreaterEqual(per[code], need, f"{LANGS.get(code, (code,))[0]}: {per[code]} entries for {n} SEDonline words")
         blob = norm(" ".join(term + " " + p.get("tr", "") + (" " + mandaic.translit(term).replace("ʿ", "ʕ") if code == "myz" else "")   # Mandaic: Wiktionary's own transliteration
                              for _, code, term, p in ents))
         for w in words_:                                    # forms are checkable where the page keeps Latin (tr= or a Latin term)
-            code = WD.LANG[w["lang"]][0]
+            code = WD.PAGES.get(title, {}).get("codes", {}).get(w["lang"]) or WD.LANG[w["lang"]][0]
             if code in WD.AUTO_TR or code == "xeb":
                 continue
             first = re.sub(r"\s*\((suff|det)[^)]*\)$", "", w["form"]).split(",")[0].split("/")[0].strip()

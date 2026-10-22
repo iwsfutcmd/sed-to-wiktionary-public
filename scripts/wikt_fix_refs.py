@@ -16,7 +16,7 @@ spelling exists. A redirect to the other level (PS -> PWS) would need the langua
 Everything that decides what is edited is in fix_text(), which is pure and tested offline (tests/test_fix_refs.py)."""
 from pathlib import Path
 import csv, difflib, getpass, http.cookiejar, json, os, re, sys, time, unicodedata as U, urllib.error, urllib.parse, urllib.request
-from paths import BUILD, WIKT
+from paths import BUILD, ROOT, WIKT
 from wikt_orthography import standardise, PFX, MANUAL, VARIANTS, CONSONANTS
 
 API = "https://en.wiktionary.org/w/api.php"
@@ -434,7 +434,11 @@ def checklist():
         p["from"] = p.pop("from_")
     indirect = [r["page"] for r in rows if r["status"] == "unmatched" and r["changes"].startswith("linked through")]
     moves = [m for m in saved.get("moves", []) if m["action"] in ("move", "merge", "redirect")]
-    data = json.dumps(dict(items=items, person=person, indirect=indirect, moves=moves, pfx=PFX), ensure_ascii=False).replace("</", "<\\/")
+    new = []                                                   # drafts not yet on Wiktionary (wiktionary_drafts/*.wiki; posted ones are moved to done/)
+    for f in sorted((ROOT / "wiktionary_drafts").glob("Proto-*Semitic_*.wiki")):
+        m = re.match(r"Proto-(West_)?Semitic_(.+)\.wiki$", f.name)
+        new.append(dict(title=("PWS " if m.group(1) else "") + m.group(2), page="Reconstruction:Proto-" + ("West " if m.group(1) else "") + "Semitic/" + m.group(2), text=f.read_text(encoding="utf-8")))
+    data = json.dumps(dict(items=items, person=person, indirect=indirect, moves=moves, new=new, pfx=PFX), ensure_ascii=False).replace("</", "<\\/")
     us = userscript(mapping)
     html = (Path(__file__).resolve().parent / "respell_checklist.template.html").read_text(encoding="utf-8")
     html = html.replace("__DATA__", data).replace("__TOTAL__", str(len(items))).replace("__NPERSON__", str(len(person))).replace("__NINDIRECT__", str(len(indirect))).replace("__NMOVES__", str(sum(m["action"] != "redirect" for m in moves)))

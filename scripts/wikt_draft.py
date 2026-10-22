@@ -24,7 +24,7 @@ LANG = {"Akkadian": ("akk", EAST, ""), "Ebla": ("xeb", EAST, ""), "Arabic": ("ar
         "Old Aramaic": ("arc", NW, "Old "), "Official Aramaic": ("arc", NW, "Official "), "Biblical Aramaic": ("arc", NW, "Biblical "),
         "Palmyrean": ("arc", NW, "Palmyrene "), "Jewish Palestinian Aramaic": ("jpa", NW, ""), "Jewish Babylonian Aramaic": ("tmr", NW, ""),
         "Samaritan": ("sam", NW, ""), "Syriac": ("syc", NW, ""), "Mandaic": ("myz", NW, ""), "Turoyo": ("tru", NW, ""), "Maalula": ("amw", NW, ""), "Assyrian Neo-Aramaic": ("aii", NW, ""),
-        "Hebrew": ("hbo", CAN, ""), "Phoenician": ("phn", CAN, ""), "Ugaritic": ("uga", NW, ""), "Ammonite": ("sem-amm", CAN, ""),
+        "Christian Palestinian Aramaic": ("arc-cpa", NW, ""), "Hebrew": ("hbo", CAN, ""), "Phoenician": ("phn", CAN, ""), "Ugaritic": ("uga", NW, ""), "Ammonite": ("sem-amm", CAN, ""),
         "Sabaic": ("xsa", OSA, ""), "Minaean": ("inm", OSA, ""), "Hadramitic": ("sem-srb", OSA, "Hadramitic "), "Geez": ("gez", ETH, ""), "Tigre": ("tig", ETH, ""),
         "Tigrinya": ("ti", ETH, ""), "Amharic": ("am", ETH, ""), "Argobba": ("agj", ETH, ""), "Harari": ("har", ETH, ""), "Gafat": ("gft", ETH, ""),
         "Selti": ("stv", GUR, ""), "Wolane": ("wle", GUR, ""), "Zway": ("zwa", GUR, ""), "Soddo": ("gru", GUR, ""), "Gogot": ("gru", GUR, ""),
@@ -46,6 +46,8 @@ CURATED = {
  ("hbo", "yārēk"): "יָרֵךְ", ("hbo", "ṣəbī"): "צְבִי", ("hbo", "ˀimmēr"): "אִמֵּר", ("tru", "bōḳo"): "ܒܩܐ",      # Turoyo is written in Syriac script on Wiktionary (entry ܒܩܐ)
 
  ("ar", "mrḍ"): "مَرِضَ", ("ar", "ḍrṭ"): "ضَرَطَ", ("ar", "nyk"): "نَاكَ", ("ar", "ḫrs"): "خَرَّسَ",    # bare roots: the verb forms are chosen by hand
+ ("he", "šḳl"): "שָׁקַל", ("phn", "šḳl"): "𐤔𐤒𐤋", ("uga", "ṯḳl"): "𐎘𐎖𐎍", ("ar", "ṯql"): "ثَقُلَ",        # *ṯḳl: bare NWS roots, lemmas as on Wiktionary (שקל, ثقل)
+ ("arc", "tḳl"): "תקל", ("jpa", "tḳl"): "תקל", ("tmr", "tḳl"): "תקל", ("syc", "tḳl"): "ܬܩܠ", ("arc-cpa", "tḳl"): "ܬܩܠ", ("myz", "tḳl"): "ࡕࡒࡋ",
  ("hbo", "šəˀēr"): "שְׁאֵר", ("uga", "šˀir"): "𐎌𐎛𐎗",          # both as on Wiktionary's Akkadian šīrum page
 }
 def api(**q):
@@ -63,7 +65,7 @@ def page(title):
     r = api(action="query", prop="revisions", rvprop="content", rvslots="main", titles=title)["query"]["pages"][0]
     c = r["revisions"][0]["slots"]["main"]["content"] if "revisions" in r else ""
     f.write_text(c, encoding="utf-8"); return c or None
-AKK_LEMMA = {"warkatu": "warkatum", "warki": "warki", "marāṣu": "marāṣum", "immeru": "immerum", "ṣabītu": "ṣabītum", "baqqu": "baqqum", "baḳḳu": "baqqum", "ṣarātu": "ṣarātum", "nâku": "nâkum", "ḫarāšu": "ḫarāšum", "šīru": "šīrum", "šēmu": "šēmum", "pānu": "pānum", "nâku": "niākum", "kišādu": "kišādum", "pagru": "pagrum", "akbaru": "akbarum"}
+AKK_LEMMA = {"šaḳālu": "šaqālu", "warkatu": "warkatum", "warki": "warki", "marāṣu": "marāṣum", "immeru": "immerum", "ṣabītu": "ṣabītum", "baqqu": "baqqum", "baḳḳu": "baqqum", "ṣarātu": "ṣarātum", "nâku": "nâkum", "ḫarāšu": "ḫarāšum", "šīru": "šīrum", "šēmu": "šēmum", "pānu": "pānum", "nâku": "niākum", "kišādu": "kišādum", "pagru": "pagrum", "akbaru": "akbarum"}
 # no lemma page: (lemma, cuneiform, its transliteration). The cuneiform is as cited on Wiktionary's Arabic بق and Classical Syriac ܒܩܐ;
 # tests/test_cuneiform.py checks that the transliteration really gives it (eBL sign list).
 AKK_OVERRIDE = {"baḳḳu": ("baqqu", "𒁀𒀝𒄣", "ba-aq-qu"),
@@ -304,7 +306,11 @@ PAGES = {   # title -> SEDonline reconstruction id and page content
                       dict(lang="Jibbali", form="ẓ̂ɔb", gloss="monitor lizard"),
                       dict(lang="Jibbali", form="ẓ̂ēt", gloss="female monitor lizard")]),
 }
-def tree_lines(words, notes, exclude=(), override=None, strip=()):
+# SED has no printed entry for this root: SEDonline (rec 2030, source HALOT 1642) alone reconstructs it, so there is no volume= and the page is flagged in data/sedonline/form_check.tsv.
+PAGES["ṯḳl"] = dict(rec="2030", entry="*ṯḳl", site_only=True, codes={"Hebrew": "he"},
+    override={("Ebla", "ša-ga-lum /ṯaḳālum/"): dict(form="ṯaḳālum", reason="site: ša-ga-lum /ṯaḳālum/ (the cited spelling and its reading)")},
+    pos="{{head|sem-pro|root}}", infl=False, defs=["{{non-gloss|Forming words pertaining to {{l|en|[[weigh]]}}, to [[suspend]], and to [[weight]]}}"], cat="", etym="")
+def tree_lines(words, notes, exclude=(), override=None, strip=(), codes=None):
     """strip: a leading path prefix to drop (e.g. ("West Semitic",) on a Proto-West Semitic page, where it is implied)."""
     lines, shown = [], set()
     for w in sorted(words, key=lambda w: ORDER.index(w["lang"])):
@@ -315,6 +321,7 @@ def tree_lines(words, notes, exclude=(), override=None, strip=()):
         code, path, label = LANG[w["lang"]]
         if strip and path[:len(strip)] == strip:
             path = path[len(strip):]
+        code = (codes or {}).get(w["lang"], code)                  # a page may use another Wiktionary code for a language (Hebrew: he, as WT:ASEM's tree has it)
         g = re.sub(r"\s+", " ", w["gloss"]).strip().replace("|", "/")
         e = entry(code, w["form"], g, w["lang"], notes)
         for key, val in (("q", w.get("q") or DIALECT.get(w["lang"])), ("unc", "1" if w.get("unc") else None)):
@@ -334,11 +341,11 @@ def build(title, cfg, out=None):
     lang = "Proto-West Semitic" if pws else "Proto-Semitic"      # {{head|sem-wes-pro|...}} and no declension table, following real PWS pages
     d = ["{{reconstructed}}", f"=={lang}==", ""]
     if cfg["etym"]: d += ["===Etymology===", cfg["etym"], ""]
-    d += ["===" + ("Verb" if "verb" in cfg["pos"] else "Noun") + "===", cfg["pos"], ""] + ["# " + x for x in cfg["defs"]] + [""]
+    d += ["===" + ("Root" if "root" in cfg["pos"] else "Verb" if "verb" in cfg["pos"] else "Noun") + "===", cfg["pos"], ""] + ["# " + x for x in cfg["defs"]] + [""]
     if cfg["infl"] and not pws: d += ["====Inflection====", "{{sem-decl-noun}}", ""]
     if cfg.get("conj"): d += ["====Conjugation====", cfg["conj"], ""]
-    d += ["====Descendants===="] + tree_lines(words, notes, cfg.get("exclude", {}), cfg.get("override"), strip=("West Semitic",) if pws else ()) + ["",
-          "===References===", "* {{R:sem-pro:SED|volume=%s|id=%s|entry=%s}}" % (cfg["vol"], cfg["rec"], cfg["entry"])]
+    d += ["====Descendants===="] + tree_lines(words, notes, cfg.get("exclude", {}), cfg.get("override"), strip=("West Semitic",) if pws else (), codes=cfg.get("codes")) + ["",
+          "===References===", "* {{R:sem-pro:SED|" + (f"volume={cfg['vol']}|" if cfg.get("vol") else "") + f"id={cfg['rec']}|entry={cfg['entry']}}}}}"]
     for r in cfg.get("extra_refs", []): d.append("* " + r)
     if cfg["cat"]: d += ["", cfg["cat"]]
     dest = Path(out) if out else OUT
