@@ -306,10 +306,11 @@ PAGES = {   # title -> SEDonline reconstruction id and page content
                       dict(lang="Jibbali", form="ẓ̂ɔb", gloss="monitor lizard"),
                       dict(lang="Jibbali", form="ẓ̂ēt", gloss="female monitor lizard")]),
 }
-# SED has no printed entry for this root: SEDonline (rec 2030, source HALOT 1642) alone reconstructs it, so there is no volume= and the page is flagged in data/sedonline/form_check.tsv.
+# SED has no printed entry for this verb: SEDonline (rec 2030, source HALOT 1642) alone reconstructs it, so there is no volume= and the page is flagged in data/sedonline/form_check.tsv.
 PAGES["ṯḳl"] = dict(rec="2030", entry="*ṯḳl", site_only=True, codes={"Hebrew": "he"},
     override={("Ebla", "ša-ga-lum /ṯaḳālum/"): dict(form="ṯaḳālum", reason="site: ša-ga-lum /ṯaḳālum/ (the cited spelling and its reading)")},
-    pos="{{head|sem-pro|root}}", infl=False, defs=["{{non-gloss|Forming words pertaining to {{l|en|[[weigh]]}}, to [[suspend]], and to [[weight]]}}"], cat="", etym="")
+    pos="{{head|sem-pro|verb}}", infl=False, conj="{{sem-pro-conj/*paʕala-*yipʕal|ṯ|ḳ|l|vn=ṯaḳl}}",          # a/u in Akkadian šaqālu; the bare verb page, as ʔbd and ʔdm (data/wiktionary/root_vs_verb.md)
+    defs=["to [[weigh]]", "to [[suspend]]"], cat="", etym="")
 def tree_lines(words, notes, exclude=(), override=None, strip=(), codes=None):
     """strip: a leading path prefix to drop (e.g. ("West Semitic",) on a Proto-West Semitic page, where it is implied)."""
     lines, shown = [], set()

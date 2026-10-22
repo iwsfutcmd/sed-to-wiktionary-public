@@ -1,10 +1,14 @@
 {{reconstructed}}
 ==Proto-Semitic==
 
-===Root===
-{{head|sem-pro|root}}
+===Verb===
+{{head|sem-pro|verb}}
 
-# {{non-gloss|Forming words pertaining to {{l|en|[[weigh]]}}, to [[suspend]], and to [[weight]]}}
+# to [[weigh]]
+# to [[suspend]]
+
+====Conjugation====
+{{sem-pro-conj/*paʕala-*yipʕal|ṯ|ḳ|l|vn=ṯaḳl}}
 
 ====Descendants====
 * East Semitic:
