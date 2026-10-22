@@ -1,6 +1,8 @@
 # Roots in Proto-Semitic: `p-ʕ-l`
 
-Proposal (decided 2026-10-19): a root is written with a hyphen between the radicals and none at the end, `ʔ-b-d`, `p-ʕ-l`. A stem keeps its trailing hyphen (`paʕl-`), a vocalised verb stem is `paʕal-`. Radicals are written as they are reconstructed: a two-radical root is two (`b-n`, `ʔ-š`), a root with a doubled radical keeps both (`ḏ-b-b`, `m-d-d`). Nothing is merged or duplicated by the tools.
+> **Correction (2026-10-21): this is our own proposal, not WT:ASEM.** ASEM gives no indication that a root should be spelled with hyphens between the radicals, so it is not an "ASEM respelling". The respell tools (`wikt_fix_refs.py`, `respell_core.js`) therefore no longer hyphenate bare roots and no longer plan root-page moves; they only respell letters (ʾ→ʔ, q→ḳ ...) and leave `ʔbd` as `ʔbd` and `ʔ-b-d` as `ʔ-b-d`. The rest of this note records the proposal and the earlier measurements; `rootify()` and `root_moves()` remain in the code, unused, in case it is ever adopted by consensus.
+
+Proposal (decided 2026-10-19, now withdrawn as an ASEM matter): a root is written with a hyphen between the radicals and none at the end, `ʔ-b-d`, `p-ʕ-l`. A stem keeps its trailing hyphen (`paʕl-`), a vocalised verb stem is `paʕal-`. Radicals are written as they are reconstructed: a two-radical root is two (`b-n`, `ʔ-š`), a root with a doubled radical keeps both (`ḏ-b-b`, `m-d-d`). Nothing is merged or duplicated by the tools.
 
 ## What exists now (measured 2026-10-19, 1,580 pages + 426 titles)
 - 61 distinct roots mentioned 161 times: 79 bare (`ʔbd`, `ṯql`, `ʿṯn`), 82 hyphenated (`q-n-y` on 41 pages, `q-d-m` on 14). Five roots are written both ways.

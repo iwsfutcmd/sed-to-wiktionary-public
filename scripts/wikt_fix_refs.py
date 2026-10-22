@@ -17,7 +17,7 @@ Everything that decides what is edited is in fix_text(), which is pure and teste
 from pathlib import Path
 import csv, difflib, getpass, http.cookiejar, json, os, re, sys, time, unicodedata as U, urllib.error, urllib.parse, urllib.request
 from paths import BUILD, WIKT
-from wikt_orthography import standardise, rootify, PFX, MANUAL, VARIANTS, CONSONANTS
+from wikt_orthography import standardise, PFX, MANUAL, VARIANTS, CONSONANTS
 
 API = "https://en.wiktionary.org/w/api.php"
 UA = {"User-Agent": "sed-to-wiktionary/1.0 (orthography respelling, supervised; https://github.com/iwsfutcmd/sed-to-wiktionary)"}
@@ -120,8 +120,8 @@ def editable(title):
 
 class GenericMap:
     """The mapping fix_text() is given: the explicit (level, stem) -> stem pairs of the survey (redirects to another stem included), and for every other term its
-    plain respelling into the ASEM notation (standardise(): ʾ->ʔ q->ḳ θ->ṯ ...) unless it holds a letter no rule reads (x̣, č), and a term that is only consonants is
-    written as a root with a hyphen between the radicals (rootify(): ʔbd -> ʔ-b-d, bn -> b-n)."""
+    plain respelling into the ASEM notation (standardise(): ʾ->ʔ q->ḳ θ->ṯ ...) unless it holds a letter no rule reads (x̣, č).
+    WT:ASEM says nothing about writing a root with hyphens between the radicals, so a bare root (ʔbd) is NOT rewritten (ʔ-b-d)."""
     def __init__(self, explicit):
         self.explicit = explicit
     def get(self, key, default=None):
@@ -131,8 +131,7 @@ class GenericMap:
         std, dev, man = standardise(key[1])
         if any(m in std for m in MANUAL):
             return default
-        new = rootify(std)                                                    # a root: ʔbd -> ʔ-b-d
-        return new if new != nfc(key[1]) else default
+        return std if std != nfc(key[1]) else default
 
 # ---------------------------------------------------------------- what to respell
 def read_tsv(path):
@@ -227,7 +226,6 @@ def plan(api=None):
     gmap = GenericMap(mapping)
     corpus = BUILD / "asem_corpus.json"
     if corpus.exists():                                                  # pages that use sem-pro with a variant character or a bare root, found by wikt_asem_check.py
-        extend_corpus_for_roots(api, corpus)
         for t, text in json.loads(corpus.read_text(encoding="utf-8")).items():
             if t not in pages and editable(t) and fix_text(text, gmap)[1]:
                 pages[t] = {("?", "(notation)")}
@@ -251,7 +249,7 @@ def plan(api=None):
             via = "<ety:" in text or "sem-pro" not in text and "sem-wes-pro" not in text
             unmatched.append((title, ("linked through another page's etymology chain ({{ety|..<ety:inh<ar:term>>}}); follows when that page is respelled: " if via else
                                       "no recognised reference to ") + ", ".join(missing)))
-    moves = root_moves(api)
+    moves = []                                                           # root page moves (ʔbd -> ʔ-b-d) are not ASEM: see data/wiktionary/root_notation.md
     (OUT / "plan.json").write_text(json.dumps(dict(mapping=[[lv, b, g] for (lv, b), g in mapping.items()], items=items, moves=moves), ensure_ascii=False), encoding="utf-8")
     with open(WIKT / "orthography_fixes.tsv", "w", encoding="utf-8", newline="") as f:
         w = csv.writer(f, delimiter="\t", lineterminator="\n"); w.writerow(["page", "status", "changes"])

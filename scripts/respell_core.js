@@ -70,7 +70,7 @@
       var v = mapping[level + "\t" + nfc(stem)];
       if (!v && generic) { // any other term: its plain respelling, unless it holds a letter no rule reads
         var s = standardise(stem);
-        if (!MANUAL.some(function (m) { return s.indexOf(m) >= 0; })) { var r = rootify(s); if (r !== nfc(stem)) v = r; }
+        if (!MANUAL.some(function (m) { return s.indexOf(m) >= 0; })) { if (s !== nfc(stem)) v = s; }
       }
       return v && nfc(stem) !== v ? v : null;
     }
