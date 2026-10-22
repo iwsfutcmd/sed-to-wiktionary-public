@@ -383,12 +383,15 @@ LOADER = r"""
     if (mw.config.get("wgAction") !== "edit" || !/[?&]respell=1(&|$)/.test(location.search)) return;   // only for the links of the checklist page
     var $ta = $("#wpTextbox1");
     if (!$ta.length) { mw.notify("Respell: no plain edit box here (turn CodeMirror off).", { type: "error", autoHide: false }); return; }
-    var r = WiktRespell.fixText($ta.textSelection("getContents"), MAP, true);
+    var rt = /[?&]retarget=([^&]+)/.exec(location.search), rtm = rt && /^(PWS?|PS):(.+)>(.+)$/.exec(decodeURIComponent(rt[1])), one = {};   // &retarget=PS:ṯ-ḳ-l>ṯḳl: point that one term elsewhere (root -> verb), nothing else
+    if (rtm) one[rtm[1] + "\t" + rtm[2]] = rtm[3];
+    var r = WiktRespell.fixText($ta.textSelection("getContents"), rtm ? one : MAP, !rtm);
     if (!r.changes.length) { mw.notify("Respell: nothing to change on this page (already fixed?).", { type: "warn", autoHide: false }); return; }
     $ta.textSelection("setContents", r.text);
     var seen = {}, pairs = [];
     r.changes.forEach(function (c) { var k = "*" + c[1] + " → *" + c[2]; if (!seen[k]) { seen[k] = 1; pairs.push(k); } });
-    $("#wpSummary").val("update Proto-Semitic reference to its current WT:ASEM title (" + pairs.slice(0, 4).join(", ") + (pairs.length > 4 ? " …" : "") + ") (script-assisted)");
+    if (rtm) $("#wpSummary").val("point the Proto-Semitic reference at the verb *" + rtm[3] + ", not the root *" + rtm[2] + " (script-assisted)");
+    else $("#wpSummary").val("update Proto-Semitic reference to its current WT:ASEM title (" + pairs.slice(0, 4).join(", ") + (pairs.length > 4 ? " …" : "") + ") (script-assisted)");
     $("#wpMinoredit").prop("checked", true);                                  // minor edit
     $("#wpWatchthis").prop("checked", false);                                 // and do not add the page to the watchlist
     mw.notify("Respell: " + r.changes.length + " change(s). Check the diff, then Save.", { autoHide: false });
@@ -438,7 +441,8 @@ def checklist():
     for f in sorted((ROOT / "wiktionary_drafts").glob("Proto-*Semitic_*.wiki")):
         m = re.match(r"Proto-(West_)?Semitic_(.+)\.wiki$", f.name)
         new.append(dict(title=("PWS " if m.group(1) else "") + m.group(2), page="Reconstruction:Proto-" + ("West " if m.group(1) else "") + "Semitic/" + m.group(2), text=f.read_text(encoding="utf-8")))
-    data = json.dumps(dict(items=items, person=person, indirect=indirect, moves=moves, new=new, pfx=PFX), ensure_ascii=False).replace("</", "<\\/")
+    rv = json.loads((OUT / "root_verb.json").read_text(encoding="utf-8")) if (OUT / "root_verb.json").exists() else []
+    data = json.dumps(dict(items=items, person=person, indirect=indirect, moves=moves, new=new, rootverb=rv, pfx=PFX), ensure_ascii=False).replace("</", "<\\/")
     us = userscript(mapping)
     html = (Path(__file__).resolve().parent / "respell_checklist.template.html").read_text(encoding="utf-8")
     html = html.replace("__DATA__", data).replace("__TOTAL__", str(len(items))).replace("__NPERSON__", str(len(person))).replace("__NINDIRECT__", str(len(indirect))).replace("__NMOVES__", str(sum(m["action"] != "redirect" for m in moves)))

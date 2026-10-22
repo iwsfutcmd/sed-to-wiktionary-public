@@ -115,6 +115,12 @@ tr.done td.pg a { color: var(--muted); } tr.done { background: var(--done-bg); }
     <ul class="list" id="newlist"></ul>
   </section>
 
+  <section class="panel" id="rootverb">
+    <h2>Root or verb? (<span id="nrv"></span>)</h2>
+    <p class="muted">These pages cite a hyphenated root such as <bdi class="mono">ṯ-ḳ-l</bdi> where the bare verb page (<bdi class="mono">ṯḳl</bdi>) exists. A bare page is the verb, a hyphenated page is the abstract root (<code>data/wiktionary/root_vs_verb.md</code>). “Guess” reads the line: a root-style gloss (“related to …”) is the root and needs nothing; a plain word gloss is the verb; “check” mentions a root in the line, so read it. <b>To verb</b> opens the edit form with only that one reference pointed at the bare page (it needs the script above).</p>
+    <ul class="list" id="rvlist"></ul>
+  </section>
+
   <section class="panel" id="moves">
     <h2>Root pages to move (__NMOVES__)</h2>
     <p class="muted">A root is written <code>ʔ-b-d</code>: hyphens between the radicals, none at the end. These titles are still bare (<code>ʔbd</code>). <b>Move</b> opens the move form with the new title filled in; a target that already exists has to be merged by hand (or by an administrator), so it only gets links to look at both pages.</p>
@@ -235,6 +241,18 @@ tr.done td.pg a { color: var(--muted); } tr.done { background: var(--done-bg); }
     $("newlist").appendChild(li);
   });
   $("nnew").textContent = (D.new || []).length; if (!(D.new || []).length) $("newpages").hidden = true;
+  (D.rootverb || []).forEach(function (r) {
+    var li = el("li"), act = r.guess !== "root";
+    li.appendChild(el("bdi", { class: "mono", text: r.page }));
+    li.appendChild(el("span", { class: "muted", text: "*" + r.root + " → *" + r.bare }));
+    li.appendChild(el("span", { class: "tag" + (act ? "" : " done"), text: "guess: " + r.guess }));
+    li.appendChild(el("span", { class: "tag", text: r.root_page_exists === "yes" ? "root page exists" : "root page red" }));
+    if (act) li.appendChild(el("a", { href: editUrl(r.page) + "&retarget=" + encodeURIComponent(r.level + ":" + r.root + ">" + r.bare), target: "_blank", rel: "noopener", text: "To verb" }));
+    li.appendChild(el("a", { href: wiki(r.page), target: "_blank", rel: "noopener", text: "page" }));
+    li.appendChild(el("code", { text: r.line, style: "flex-basis:100%;overflow-wrap:anywhere" }));
+    $("rvlist").appendChild(li);
+  });
+  $("nrv").textContent = (D.rootverb || []).length; if (!(D.rootverb || []).length) $("rootverb").hidden = true;
   (D.moves || []).forEach(function (m) {
     var li = el("li"), old = D.pfx[m.level] + m.title, nw = D.pfx[m.level] + m.target;
     li.appendChild(el("bdi", { class: "mono", text: (m.level === "PWS" ? "PWS " : "") + m.title })); li.appendChild(el("span", { class: "muted", text: "→ " + m.target }));

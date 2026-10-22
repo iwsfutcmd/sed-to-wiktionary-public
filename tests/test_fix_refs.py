@@ -112,6 +112,13 @@ class Mapping(unittest.TestCase):
         for l, t, d in person:
             self.assertTrue("/" in d or ":" in d)
 
+class Retarget(unittest.TestCase):
+    def test_one_term_points_to_the_verb_and_nothing_else_moves(self):
+        """the checklist's `To verb` link: {PS ṯ-ḳ-l: ṯḳl} alone (explicit pair only), also inside a nested ety chain"""
+        text = "{{inh+|he|sem-pro|*ṯ-ḳ-l||to weigh}} {{ety|ar|:inh|sem-wes-pro:<ety:inh<sem-pro:*ṯ-ḳ-l>>}} {{inh|akk|sem-pro|*ʔ-b-d}} {{inh|x|sem-pro|*ʔbd}}"
+        out, ch = F.fix_text(text, {("PS", "ṯ-ḳ-l"): "ṯḳl"})
+        self.assertEqual(out, "{{inh+|he|sem-pro|*ṯḳl||to weigh}} {{ety|ar|:inh|sem-wes-pro:<ety:inh<sem-pro:*ṯḳl>>}} {{inh|akk|sem-pro|*ʔ-b-d}} {{inh|x|sem-pro|*ʔbd}}")
+
 class Apply(unittest.TestCase):
     """The editing loop, against a fake API: nothing is written without a y, an edit since the plan is recomputed, results are logged."""
     class Fake:

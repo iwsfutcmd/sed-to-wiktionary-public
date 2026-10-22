@@ -220,12 +220,15 @@
     if (mw.config.get("wgAction") !== "edit" || !/[?&]respell=1(&|$)/.test(location.search)) return;   // only for the links of the checklist page
     var $ta = $("#wpTextbox1");
     if (!$ta.length) { mw.notify("Respell: no plain edit box here (turn CodeMirror off).", { type: "error", autoHide: false }); return; }
-    var r = WiktRespell.fixText($ta.textSelection("getContents"), MAP, true);
+    var rt = /[?&]retarget=([^&]+)/.exec(location.search), rtm = rt && /^(PWS?|PS):(.+)>(.+)$/.exec(decodeURIComponent(rt[1])), one = {};   // &retarget=PS:ṯ-ḳ-l>ṯḳl: point that one term elsewhere (root -> verb), nothing else
+    if (rtm) one[rtm[1] + "\t" + rtm[2]] = rtm[3];
+    var r = WiktRespell.fixText($ta.textSelection("getContents"), rtm ? one : MAP, !rtm);
     if (!r.changes.length) { mw.notify("Respell: nothing to change on this page (already fixed?).", { type: "warn", autoHide: false }); return; }
     $ta.textSelection("setContents", r.text);
     var seen = {}, pairs = [];
     r.changes.forEach(function (c) { var k = "*" + c[1] + " → *" + c[2]; if (!seen[k]) { seen[k] = 1; pairs.push(k); } });
-    $("#wpSummary").val("update Proto-Semitic reference to its current WT:ASEM title (" + pairs.slice(0, 4).join(", ") + (pairs.length > 4 ? " …" : "") + ") (script-assisted)");
+    if (rtm) $("#wpSummary").val("point the Proto-Semitic reference at the verb *" + rtm[3] + ", not the root *" + rtm[2] + " (script-assisted)");
+    else $("#wpSummary").val("update Proto-Semitic reference to its current WT:ASEM title (" + pairs.slice(0, 4).join(", ") + (pairs.length > 4 ? " …" : "") + ") (script-assisted)");
     $("#wpMinoredit").prop("checked", true);                                  // minor edit
     $("#wpWatchthis").prop("checked", false);                                 // and do not add the page to the watchlist
     mw.notify("Respell: " + r.changes.length + " change(s). Check the diff, then Save.", { autoHide: false });
