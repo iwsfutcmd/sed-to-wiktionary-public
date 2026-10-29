@@ -73,6 +73,19 @@ class ChosenSection(unittest.TestCase):
         with self.assertRaises(ValueError):
             B.edited_page(self.PAGE, "ar", "PS", "ṣ́araṭ-", section="Etymology 3")
 
+class Replaced(unittest.TestCase):
+    PAGE = "==Arabic==\n===Etymology===\nX or {{der|ar|syc|y}}?\n\n==Hebrew==\nX or {{der|ar|syc|y}}?\n"
+    def test_only_that_language(self):
+        new = B.replaced(self.PAGE, "ar", [("X or {{der|ar|syc|y}}?", "{{inh+|ar|sem-pro|*z-}}. Compare {{cog|syc|y}}.")])
+        self.assertEqual(new, "==Arabic==\n===Etymology===\n{{inh+|ar|sem-pro|*z-}}. Compare {{cog|syc|y}}.\n\n==Hebrew==\nX or {{der|ar|syc|y}}?\n")
+    def test_changed_page_is_an_error(self):
+        with self.assertRaises(ValueError):
+            B.replaced(self.PAGE, "ar", [("not there", "z")])
+
+class Senses(unittest.TestCase):
+    def test_tcl_gloss_is_read(self):                           # Hebrew עלוקה: {{tcl|he|leech|id=Q43012|nogloss=1}}
+        self.assertIn("leech", K.definitions("# {{tcl|he|leech|id=Q43012|nogloss=1}}\n")[0])
+
 class Chains(unittest.TestCase):
     def test_ety_chain_gets_the_step(self):
         page = "==Arabic==\n{{ar-rootbox|ش ح م}}\n{{ety|ar|id=fat|:root|ش ح م<id:root>|tree=1}}\n\n===Noun===\n# [[fat]]\n"

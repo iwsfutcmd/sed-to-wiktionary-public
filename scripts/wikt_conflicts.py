@@ -90,6 +90,7 @@ def definitions(sec):
     out = []
     for line in re.findall(r"(?m)^# (.*)$", sec):
         line = re.sub(r"\{\{(?:lb|label|gloss|gl|q|qualifier|sense)\|[^}]*\}\}", "", line)
+        line = re.sub(r"\{\{tcl\|[^|}]*\|([^|}]*)[^}]*\}\}", r"\1", line)        # {{tcl|he|leech|id=..|nogloss=1}}: the gloss is its 2nd argument
         line = re.sub(r"\{\{[^}]*\|([^|}]+)\}\}", r"\1", line)
         line = re.sub(r"\[\[(?:[^|\]]*\|)?([^\]]*)\]\]", r"\1", line)
         out.append(re.sub(r"[^\w\s]", " ", line.lower()))

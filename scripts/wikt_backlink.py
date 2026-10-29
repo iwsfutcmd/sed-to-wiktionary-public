@@ -33,6 +33,15 @@ DECISIONS = {
     ("خرس", "ar"): ("leave", "none of its etymologies is our word"),
     ("ܒܩܐ", "syc"): ("section", "Etymology 1"),
     ("ضرط", "ar"): ("section", "Etymology 1.1"),
+    ("ܥܠܩܬܐ", "syc"): ("section", "Etymology 1"),
+    ("علق", "ar"): ("leave", "the leech noun shares Etymology 5 with the verbal noun of عَلِقَ 'to hang'; the singulative عَلَقَة carries the link"),
+    # ("replace", [(old, new), ...]): wording a person chose, applied to that language's section. علقة: the uncited "{{der|ar|syc}} ... or ... ?" becomes
+    # a comparison, as the SED (II 32) gives Arabic as inherited and notes no Aramaism (see memory: SED over uncited Wiktionary)
+    ("علقة", "ar"): ("replace", [("{{ety|ar|id=leech}}", "{{ety|ar|id=leech|:inh|sem-pro:*ʕalaḳ-}}"),
+                                 ("Compare {{cog|he|עֲלוּקָה|tr='aluká}}; {{cog|ar|علق}} (various verbs); {{der|ar|syc|ܥܰܠܘܽܩܳܐ|tr=ˁallūq, ˁallūqā}} or "
+                                  "{{cog|tmr|עַלקָא|tr=ˁelləqā, ˁellaqṯā}}, or {{cog|akk||tr=ilku, ilḳitu}}?",
+                                  "{{inh+|ar|sem-pro|*ʕalaḳ-}}. Compare {{cog|he|עֲלוּקָה|tr='aluká}}; {{cog|ar|علق}} (various verbs); {{cog|syc|ܥܰܠܘܽܩܳܐ|tr=ˁallūq, ˁallūqā}}, "
+                                  "{{cog|tmr|עַלקָא|tr=ˁelləqā, ˁellaqṯā}}, {{cog|akk||tr=ilku, ilḳitu}}.")]),
 }
 PREFIXES = {"Proto-Semitic_": "PS", "Proto-West_Semitic_": "PWS"}
 
@@ -142,6 +151,23 @@ def edited_page(page, code, level, title, section=None):
         new_sec = sec[:at] + f"===Etymology===\nFrom {tpl}.\n\n" + sec[at:]
     return page[:start] + new_sec + page[end:]
 
+def replaced(page, code, pairs):
+    """The page with each (old, new) applied once inside that language's section; an `old` that is not there exactly once is an error (the page changed)."""
+    for name in K.sections(code):
+        m = re.search(r"(?m)^==" + re.escape(name) + r"==\s*$", page)
+        if m:
+            break
+    else:
+        raise ValueError("no section")
+    nxt = re.search(r"(?m)^==[^=]", page[m.end():])
+    end = m.end() + nxt.start() if nxt else len(page)
+    sec = page[m.end():end]
+    for old, new in pairs:
+        if sec.count(old) != 1:
+            raise ValueError(f"not found exactly once: {old[:40]!r}")
+        sec = sec.replace(old, new)
+    return page[:m.end()] + sec + page[end:]
+
 def gloss_of(row):
     text = (ROOT / "wiktionary_drafts" / "done" / row["draft"]) if (ROOT / "wiktionary_drafts" / "done" / row["draft"]).exists() else ROOT / "wiktionary_drafts" / row["draft"]
     for code, term, params in K.entries(text.read_text(encoding="utf-8")):
@@ -166,7 +192,7 @@ def pages(refresh=True):
         if verdict == "leave":
             out.append(dict(page=r["page"], lang=r["lang"], code=r["code"], term=r["term"], title=r["title"], level=r["level"], left=arg))
             continue
-        why = None if verdict == "section" else skip_reason(page, r["code"])                     # structural: a person has to write the edit
+        why = None if verdict in ("section", "replace") else skip_reason(page, r["code"])                     # structural: a person has to write the edit
         unsure = None if why or verdict else skip_reason(page, r["code"], gloss_of(r))     # senses differ: the edit is ready, a person confirms it is the same word
         item = dict(page=r["page"], lang=r["lang"], code=r["code"], term=r["term"], title=r["title"], level=r["level"], gloss=gloss_of(r))
         if why:
@@ -175,10 +201,12 @@ def pages(refresh=True):
             if unsure:
                 sec = K.language_section(page, r["code"]) or ""
                 item.update(confirm=unsure, their_senses=[re.sub(r"\s+", " ", d).strip() for d in re.findall(r"(?m)^# (.*)$", sec)][:6])
-            new = edited_page(page, r["code"], r["level"], r["title"], section=arg)
+            new = replaced(page, r["code"], arg) if verdict == "replace" else edited_page(page, r["code"], r["level"], r["title"], section=arg if verdict == "section" else None)
             if verdict == "section":
                 item["section"] = arg
-            item.update(full=new, summary=summary(r["level"], r["title"]),
+            if verdict == "replace":
+                item["reworded"] = True
+            item.update(full=new, summary=summary(r["level"], r["title"]) + ("; borrowing claim without a source made a comparison (the SED notes none)" if verdict == "replace" else ""),
                         diff=[l for l in __import__("difflib").unified_diff(page.split("\n"), new.split("\n"), lineterm="", n=0)
                               if l[:1] in "+-" and l[:3] not in ("+++", "---")])
         out.append(item)
