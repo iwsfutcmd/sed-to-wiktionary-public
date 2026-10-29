@@ -74,6 +74,9 @@ definitions; the page names our consonants with other vowels, so the page may be
 the same entry and ranks them by how many the page lacks (`data/wiktionary/enrich_candidates.tsv`; the worklist's section 2b). The counts
 are an upper bound: SEDonline has some words the print does not. A page is then filled out from the *printed* entry by adding lines to the
 live text, never removing or rewording anything, and saved as `merges/<title>.wiki` (first: `ʕaṯ̣m-` "bone", SED I 25).
+Before a card is made, `make merge-check` (`scripts/wikt_merge.py`) confirms that no language we add is already on the page, whether on a
+line of its own or through a `{{desctree}}`, which shows another page's whole descendant list (on `ʕayn-`, `{{desctree|tmr|עַיְנָא}}` already
+shows Syriac, Mandaic, Turoyo and Assyrian). `tests/test_merge.py` replays that case offline.
 
 ## Back-links from the daughter pages
 `make backlink` re-downloads every daughter page that does not cite its reconstruction yet and writes whole-page edits

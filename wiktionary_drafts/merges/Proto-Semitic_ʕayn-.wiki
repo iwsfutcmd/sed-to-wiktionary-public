@@ -29,12 +29,8 @@ From {{inh|sem-pro|afa-pro|*ʕayVn-|t=eye}}.
 ***** {{desc|arc-nab|𐢖𐢍𐢔|tr=ʕyn}}
 ***** {{desc|arc-pal|𐡰𐡩𐡭}}
 ***** {{desc|jpa|עין|tr=ʕayn}}
-***** {{desc|syc|ܥܝܢܐ|tr=ʕaynā}}
-***** {{desc|myz|ࡀࡉࡍࡀ}}
 ***** {{desc|amw|ʕayna}}
-***** {{desc|tru|ܥܰܝܢܳܐ}}
 ***** {{desc|lhs|ʕayno}}
-***** {{desc|aii|ܥܲܝܢܵܐ}}
 ***** {{desc|hrt|-|tr=ʔena}}
 **** Canaanite:
 ***** {{desc|he|עַיִן|tr='áyin, ʿáyin}}
