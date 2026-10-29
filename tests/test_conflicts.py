@@ -21,6 +21,13 @@ def draft(*entries):
 def levels(findings, level):
     return [(t, m) for l, t, m in findings if l == level]
 
+class References(unittest.TestCase):
+    def test_wikilinked_alternatives_and_reference_templates(self):
+        ety = "{{inh+|uga|sem-pro|[[*karr-]] / [[*kirr-]]|t=ram}}{{ref|{{R:sem-pro:SED|volume=2|page=162}}}}"
+        self.assertEqual(K.ps_references(ety), ["karr-", "kirr-"])
+        self.assertEqual(K.ps_references("{{ety|ar|:inh|sem-pro:*ṣ́abb-|text=+}}"), ["ṣ́abb-"])
+        self.assertEqual(K.ps_references("{{ety|ar|:root|ث ق ل|:inh|sem-wes-pro:<ety:inh<sem-pro:*ṯḳl>>|tree=1}}"), ["ṯḳl"])
+
 class Analyzer(unittest.TestCase):
     def test_fixtures_exist(self):
         for t, p in PAGES.items():

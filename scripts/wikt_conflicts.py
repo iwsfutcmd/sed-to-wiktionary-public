@@ -100,13 +100,29 @@ def words(s):
 
 def ps_references(ety):
     """Proto-Semitic forms named in an etymology: {{inh|ar|sem-pro|*x}}, {{ety|ar|:inh|sem-pro:*x}}, {{der|..|sem-pro|*x}}, {{cog|sem-pro|*x}}."""
-    return [re.sub(r"<[^>]*>", "", m).strip().lstrip("*") for m in re.findall(r"sem-pro[|:]\*?([^|}]+)", ety)]
+    out = []
+    for m in re.findall(r"(?<![\w:-])sem-pro[|:]\*?([^|}]+)", ety):                   # not {{R:sem-pro:SED}} (a reference template)
+        m = re.sub(r"<[^>]*>", "", m).replace("<", "").replace(">", "")     # also the closing >> of a nested <ety:inh<sem-pro:*x>>
+        for alt in re.split(r"\s+/\s+|,\s*", m):                                    # "[[*karr-]] / [[*kirr-]]": alternatives, each a form
+            alt = re.sub(r"\[\[(?:[^]|]*\|)?([^]]*)\]\]", r"\1", alt).strip().lstrip("*")
+            if alt:
+                out.append(alt)
+    return out
+
+# Conflicts looked at and kept on purpose: (draft title, language code) -> why. Reported as WARN, not CONFLICT.
+ACCEPT = {("sūs-", "gdq"): "Wiktionary's سوس lists Mehri sust as borrowed from Arabic without a citation; the SED (II 259) gives no such note "
+                           "(it does for Amharic and Harari, which the page shows as borrowed)"}
 
 def analyze(draft_text, title, pages, source=None):
     """-> [(level, term, message)] for one draft. `pages` maps a Wiktionary title to its wikitext ('' = no such page)."""
     findings = []
     ents = entries(draft_text)
     codes = {ALIAS.get(code, code) for code, _, _ in ents}
+    our_terms = {}                                               # language -> our terms, without vowel marks
+    loaned = {ALIAS.get(code, code) for code, _, params in ents if params.get("bor")}     # shown as borrowed in our draft too: no contradiction
+    for code, term, _ in ents:
+        if term and term != "-":
+            our_terms.setdefault(ALIAS.get(code, code), set()).add(strip_marks(term).strip())
     gloss_of = {}
     for code, term, params in ents:
         t = term_title(code, term, params)
@@ -138,8 +154,17 @@ def analyze(draft_text, title, pages, source=None):
         if is_borrowed:
             findings.append(("WARN", label, "etymology says the word is borrowed: " + re.sub(r"\s+", " ", ety.strip())[:110]))
         # 3. the page lists other descendants of ours as borrowed from it
-        borrowed = {m.group(1) for m in re.finditer(r"\{\{desc\|([\w-]+)\|[^{}]*?\|bor=1[^{}]*\}\}", sec)}
-        both = sorted((borrowed & codes) - {ALIAS.get(code, code)})
+        # only OUR word counts: Hebrew שקל lists Arabic شَيْقَل 'shekel' as borrowed, which is not our Arabic ثَقَلَ. A term we give no
+        # script for ('-') cannot be compared, so the language alone decides there, as before.
+        borrowed = set()
+        for m in re.finditer(r"\{\{desc\|([\w-]+)\|([^|{}]*)[^{}]*?\|bor=1[^{}]*\}\}", sec):
+            lang, term = ALIAS.get(m.group(1), m.group(1)), strip_marks(m.group(2)).strip()
+            if lang in codes and (not our_terms.get(lang) or not term or term == "-" or term in our_terms[lang]):
+                borrowed.add(lang)
+        both = sorted(borrowed - {ALIAS.get(code, code)} - loaned)
+        for c in [c for c in both if (title, c) in ACCEPT]:
+            findings.append(("WARN", label, f"page lists {LANGS[c][0]} as BORROWED from it; kept as inherited: {ACCEPT[(title, c)]}"))
+            both.remove(c)
         if both:
             findings.append(("CONFLICT", label, "page lists " + ", ".join(LANGS[c][0] for c in both) + " as BORROWED from it (bor=1)"))
         # 5. a clean descendant page that does not yet cite us at all: a candidate to add {{inh|...}} to (see wikt_backlink.py)
