@@ -58,6 +58,21 @@ class WholePage(unittest.TestCase):
         page = "==Akkadian==\n===Etymology===\n\n===Noun===\n# [[pig]]\n"
         self.assertEqual(B.edited_page(page, "akk", "PS", "ḫVzīr-"), "==Akkadian==\n===Etymology===\nFrom {{inh|akk|sem-pro|*ḫVzīr-}}.\n\n===Noun===\n# [[pig]]\n")
 
+class ChosenSection(unittest.TestCase):
+    PAGE = ("==Arabic==\n{{ar-rootbox|ض ر ط}}\n\n===Etymology 1.1===\n\n====Verb====\n# to fart\n\n===Etymology 1.2===\n\n====Noun====\n# x\n\n"
+            "==Classical Syriac==\n\n===Etymology 1===\n{{syc-rootbox|ܒ ܩ ܩ}}\nCompare y.\n\n====Noun====\n# gnat\n\n===Etymology 2===\nZ.\n")
+    def test_empty_chosen_section(self):
+        new = B.edited_page(self.PAGE, "ar", "PS", "ṣ́araṭ-", section="Etymology 1.1")
+        self.assertIn("===Etymology 1.1===\nFrom {{inh|ar|sem-pro|*ṣ́araṭ-}}.\n\n====Verb====", new)
+        self.assertEqual(new.count("{{inh"), 1)
+    def test_chosen_section_after_its_rootbox(self):
+        new = B.edited_page(self.PAGE, "syc", "PS", "baḳḳ-", section="Etymology 1")
+        self.assertIn("{{syc-rootbox|ܒ ܩ ܩ}}\nFrom {{inh|syc|sem-pro|*baḳḳ-}}. Compare y.", new)
+        self.assertIn("===Etymology 2===\nZ.", new)
+    def test_missing_section_is_an_error(self):
+        with self.assertRaises(ValueError):
+            B.edited_page(self.PAGE, "ar", "PS", "ṣ́araṭ-", section="Etymology 3")
+
 class Chains(unittest.TestCase):
     def test_ety_chain_gets_the_step(self):
         page = "==Arabic==\n{{ar-rootbox|ش ح م}}\n{{ety|ar|id=fat|:root|ش ح م<id:root>|tree=1}}\n\n===Noun===\n# [[fat]]\n"

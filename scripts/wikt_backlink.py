@@ -20,6 +20,20 @@ PAGES_OUT = WIKT / "backlink_pages.json"
 # later stages of a language the draft also cites: they inherit through it, so the Proto-Semitic link belongs on the ancestor's page
 LATER_STAGE = {"aii": "Aramaic / Classical Syriac", "tru": "Aramaic / Classical Syriac", "lhs": "Aramaic", "amw": "Aramaic"}
 OPENS_WITH_A_SOURCE = re.compile(r"(?i)\s*(?:from|borrowed|a loan|loan|unknown|uncertain|perhaps|possibly|probably|ultimately|via|through)\b")
+# A person's verdict on a page the rules could not settle, keyed (page, code): ("leave", why) takes it off the list,
+# ("section", heading) writes the edit into that Etymology section of a page that has several.
+DECISIONS = {
+    ("כר", "hbo"): ("leave", "no entry on the page is our word (its כַּר is 'cushion, pillow')"),
+    ("ሓረሰ", "ti"): ("leave", "'to plough' is too far from our sense"),
+    ("ܒܥܝܪܐ", "aii"): ("leave", "a later stage: it inherits through Aramaic, as it should"),
+    ("בעיר", "hbo"): ("leave", "already good as it is"),
+    ("ܒܩܐ", "tru"): ("leave", "leads back to Aramaic: no need to go all the way to Proto-Semitic"),
+    ("فجر", "ar"): ("leave", "fine as it is"),
+    ("שאר", "hbo"): ("leave", "fine as it is"),
+    ("خرس", "ar"): ("leave", "none of its etymologies is our word"),
+    ("ܒܩܐ", "syc"): ("section", "Etymology 1"),
+    ("ضرط", "ar"): ("section", "Etymology 1.1"),
+}
 PREFIXES = {"Proto-Semitic_": "PS", "Proto-West_Semitic_": "PWS"}
 
 def draft_title_level(path):
@@ -69,7 +83,7 @@ def skip_reason(page, code, gloss=""):
         return f"the etymology already opens with a source ({ety[:50]!r}…): prepending would garble it"
     return None
 
-def edited_page(page, code, level, title):
+def edited_page(page, code, level, title, section=None):
     """The whole page with the {{inh}} added to that language's section only: 'From {{inh}}. ' before the existing etymology, or a new
     Etymology section before the first subsection (after Alternative forms, which comes first by WT:ELE)."""
     tpl = inh_template(code, level, title)
@@ -84,7 +98,7 @@ def edited_page(page, code, level, title):
     end = start + nxt.start() if nxt else len(page)
     sec = page[start:end]
     ety_tpl = re.search(r"\{\{ety\|[^{}]*\}\}", sec)
-    if ety_tpl:
+    if ety_tpl and not section:
         # {{ety|ar|:root|...|tree=1}} draws only a tree, so the step goes in the chain AND in the prose, as Arabic ثقل has it:
         # {{inh+}} ("Inherited from Proto-Semitic *x") as its own sentence, so the existing words are not reworded.
         lang_code = "sem-wes-pro" if level == "PWS" else "sem-pro"
@@ -105,7 +119,11 @@ def edited_page(page, code, level, title):
         else:
             prose = "\n" + sentence + prose
         return page[:start] + sec[:ety_tpl.start()] + new_tpl + prose + after[prose_end:] + page[end:]
-    em = re.search(r"(?ms)^===+\s*Etymology[^=\n]*===+\s*\n(.*?)(?=^===+(?!Etymology)|\Z)", sec)
+    head = re.escape(section) if section else r"Etymology[^=\n]*"            # `section`: that one of several Etymology sections
+    em = re.search(r"(?ms)^===+\s*" + head + r"\s*===+\s*\n(.*?)(?=^===|\Z)" if section else
+                   r"(?ms)^===+\s*" + head + r"===+\s*\n(.*?)(?=^===+(?!Etymology)|\Z)", sec)
+    if section and not em:
+        raise ValueError(f"no {section} section")
     if em and em.group(1).strip():
         body = em.group(1)
         lead = len(body) - len(body.lstrip())
@@ -144,8 +162,12 @@ def pages(refresh=True):
     out = []
     for r in plan():                                            # again, on the fresh text: a page fixed meanwhile drops out
         page = K.cached(r["page"]) or ""
-        why = skip_reason(page, r["code"])                     # structural: a person has to write the edit
-        unsure = None if why else skip_reason(page, r["code"], gloss_of(r))     # senses differ: the edit is ready, a person confirms it is the same word
+        verdict, arg = DECISIONS.get((r["page"], r["code"]), (None, None))
+        if verdict == "leave":
+            out.append(dict(page=r["page"], lang=r["lang"], code=r["code"], term=r["term"], title=r["title"], level=r["level"], left=arg))
+            continue
+        why = None if verdict == "section" else skip_reason(page, r["code"])                     # structural: a person has to write the edit
+        unsure = None if why or verdict else skip_reason(page, r["code"], gloss_of(r))     # senses differ: the edit is ready, a person confirms it is the same word
         item = dict(page=r["page"], lang=r["lang"], code=r["code"], term=r["term"], title=r["title"], level=r["level"], gloss=gloss_of(r))
         if why:
             item["skip"] = why
@@ -153,14 +175,16 @@ def pages(refresh=True):
             if unsure:
                 sec = K.language_section(page, r["code"]) or ""
                 item.update(confirm=unsure, their_senses=[re.sub(r"\s+", " ", d).strip() for d in re.findall(r"(?m)^# (.*)$", sec)][:6])
-            new = edited_page(page, r["code"], r["level"], r["title"])
+            new = edited_page(page, r["code"], r["level"], r["title"], section=arg)
+            if verdict == "section":
+                item["section"] = arg
             item.update(full=new, summary=summary(r["level"], r["title"]),
                         diff=[l for l in __import__("difflib").unified_diff(page.split("\n"), new.split("\n"), lineterm="", n=0)
                               if l[:1] in "+-" and l[:3] not in ("+++", "---")])
         out.append(item)
     PAGES_OUT.write_text(json.dumps(out, ensure_ascii=False, indent=1), encoding="utf-8")
-    n = sum("full" in x and "confirm" not in x for x in out); c = sum("confirm" in x for x in out)
-    print(f"{n} page(s) ready to edit, {c} ready once a person confirms the sense, {len(out) - n - c} need a person; see {PAGES_OUT.relative_to(ROOT)}")
+    n = sum("full" in x and "confirm" not in x for x in out); c = sum("confirm" in x for x in out); l = sum("left" in x for x in out)
+    print(f"{n} page(s) ready to edit, {c} ready once a person confirms the sense, {l} left as decided, {len(out) - n - c - l} need a person; see {PAGES_OUT.relative_to(ROOT)}")
     return out
 
 def candidates_for(draft_text, title, pages):

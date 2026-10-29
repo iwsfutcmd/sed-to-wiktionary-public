@@ -168,7 +168,8 @@ def analyze(draft_text, title, pages, source=None):
         if both:
             findings.append(("CONFLICT", label, "page lists " + ", ".join(LANGS[c][0] for c in both) + " as BORROWED from it (bor=1)"))
         # 5. a clean descendant page that does not yet cite us at all: a candidate to add {{inh|...}} to (see wikt_backlink.py)
-        if not refs and not is_borrowed and not both:
+        # anywhere in the section counts: Arabic شحم has its {{ety|..|:inh|sem-pro:*x}} chain and {{inh+}} above any Etymology heading
+        if not refs and not ps_references(sec) and not is_borrowed and not both:
             findings.append(("CANDIDATE", label, f"{t!r} does not cite *{title} yet" + ("" if ety.strip() else " (no Etymology section)")))
         # 4. gloss overlap with the page's definitions
         ours = words(params.get("t", ""))
