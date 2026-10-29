@@ -1,0 +1,41 @@
+{{reconstructed}}
+==Proto-Semitic==
+
+===Etymology===
+Reconstructed in Militarev & Kogan's ''Semitic Etymological Dictionary'' as {{m|sem-pro||*ʕigʷal-}} / {{m|sem-pro||*ʕigl-}}, with Eblaite ''ù-gi-l[um]'' (equated with Sumerian ALI[M?] in a lexical list) as the East Semitic witness. The SED finds the often-cited comparison with Akkadian ''agālu'' “an equid” and Eblaite ''aglum'' “hinny” hardly tenable semantically, though the prominence of “foal, colt” in the Ethiopian Semitic reduplicated forms ({{m|sem-pro||*gVlgVl-}}) may reflect contamination with it.
+
+===Noun===
+{{head|sem-pro|noun|g=m}}
+
+# [[calf]]
+
+====Descendants====
+* East Semitic:
+** {{desc|xeb|ù-gi-lum|alt=ù-gi-l[um]|t=calf}}
+* West Semitic:
+** Central Semitic:
+*** {{desc|ar|عِجْل|t=calf}}
+**** {{desc|mt|għoġol}}
+**** {{desc|hss|ʔáyyel|t=calf|bor=1}}
+*** Northwest Semitic:
+**** {{desc|arc|עִגְלָא|tr=ʿiḡlā}}
+***** {{desc|syc|ܥܶܓܠܳܐ|tr=ʿeḡlā}}
+***** {{desc|arc-old|𐤏𐤂𐤋|t=calf}}
+***** {{desc|jpa|עגל|tr=ʕgl|t=calf}}
+***** {{desc|sam|ࠏࠂࠋ|tr=ʕgl|t=calf}}
+***** {{desc|myz|ࡀࡍࡂࡋࡉࡀ|t=calves|unc=1}}
+***** {{desc|tru|-|tr=ʔaḡlo|t=calf}}
+**** Canaanite:
+***** {{desc|he|עֵגֶל|tr='égel, ʿēḡel|t=calf}}
+***** {{desc|phn|*𐤀𐤂𐤋}}
+****** {{desc|xpu|𐤀𐤂𐤋}}
+**** {{desc|uga|𐎓𐎂𐎍|ts=ʿiglu|t=calf}}
+** Ethiopian Semitic:
+*** {{desc|gez|እጕል|tr=ʾəgʷl, ʾəgʷəl|t=young of any animal, even a human}} {{q|irregular morphological developments and semantically like Aramaic for {{m|sem-wes-pro|*ṭalay-}}}}
+*** {{desc|tig|እግል|tr=ʾəgəl|t=calf}}
+
+===References===
+* {{R:sem:Barth-ES|page=18}}
+* {{R:sem-pro:SED|volume=2|pages=43–46 Nr. 28|id=499|entry=*ʕigʷal- // *ʕigl-}}
+
+{{c|sem-pro|Mammals|Baby animals}}

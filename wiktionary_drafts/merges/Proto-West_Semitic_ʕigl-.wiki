@@ -33,6 +33,6 @@ Perhaps of {{cog|sem-pro|-}} origin if related to {{cog|akk|𒀲𒅇|tr=aggalu|t
 
 ===References===
 * {{R:sem:Barth-ES|page=18}}
-* {{R:sem-pro:SED|volume=2|pages=43–46 Nr. 28|id=499|entry=*ʕigʷal- // *ʕigl-}}
+* {{R:sem-pro:SED|volume=2|pages=43–46 Nr. 28}}
 
 {{c|sem-wes-pro|Mammals|Baby animals}}
