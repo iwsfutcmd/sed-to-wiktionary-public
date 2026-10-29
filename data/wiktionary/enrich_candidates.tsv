@@ -1,16 +1,8 @@
 key	protoform	gloss	title	match	rec	page_langs	sed_langs	n_missing	missing	cites_sed
-1N:256	*ṣVbʕ(-at)-, *ʔV-ṣbaʕ-	finger	Proto-Semitic/ʔiṣbaʕ-	exact	739	7	26	19	Akkadian, Amharic, Argobba, Classical Mandaic, Eblaite, Gafat, Harari, Harsusi, Kistane, Mehri, Mesqan, Sabaean, Sebat Bet Gurage, Shehri, Silt'e, Soqotri, Tigre, Wolane, Zay	no
-1N:291	*yad-, *ʔid-	hand	Proto-Semitic/yad-	exact	23	16	30	16	Argobba, Bathari, Classical Mandaic, Harari, Harsusi, Kistane, Mehri, Mesqan, Mlahsö, Sebat Bet Gurage, Shehri, Silt'e, Turoyo, Western Neo-Aramaic, Wolane, Zay	no
-1N:168	*ḳarn-	horn	Proto-Semitic/ḳarn-	exact	29	10	24	15	Argobba, Classical Mandaic, Gafat, Ge'ez, Harari, Kistane, Mehri, Mesqan, Sebat Bet Gurage, Shehri, Silt'e, Tigre, Turoyo, Wolane, Zay	no
-1N:141	*kabid(-at)-	liver	Proto-Semitic/kabid-	exact	33	9	22	13	Argobba, Bathari, Classical Mandaic, Harari, Harsusi, Mehri, Mesqan, Sebat Bet Gurage, Shehri, Silt'e, Soqotri, Tigre, Wolane	no
-1N:28	*ʕayn-	eye	Proto-Semitic/ʕayn-	exact	19	13	26	13	Argobba, Classical Mandaic, Classical Syriac, Harari, Kistane, Mehri, Mesqan, Mlahsö, Sebat Bet Gurage, Shehri, Tigre, Turoyo, Western Neo-Aramaic	no
-2N:28	*ʕigʷal- // *ʕigl-	calf	Proto-West Semitic/ʕigl-	exact	499	11	21	13	Amharic, Classical Mandaic, Eblaite, Harari, Kistane, Mehri, Mesqan, Sebat Bet Gurage, Shehri, Silt'e, Tigrinya, Turoyo, Wolane	yes
 1N:50	*dam-, *ʔa-dam-	blood	Proto-West Semitic/ʔadam-	exact	5	4	15	12	Akkadian, Amharic, Arabic, Classical Mandaic, Classical Syriac, Ge'ez, Harari, Mlahsö, Sabaean, Tigre, Tigrinya, Turoyo	yes
 1N:129	*ḥi/uṣ̂(a)n-	lap, bosom	Proto-Semitic/ḥiṣ́n-	exact	727	5	15	11	Akkadian, Amharic, Argobba, Gafat, Harari, Sebat Bet Gurage, Silt'e, Tigre, Tigrinya, Wolane, Zay	no
-1N:174	*libb-	heart	Proto-Semitic/libb-	exact	27	14	24	11	Argobba, Classical Mandaic, Gafat, Harsusi, Kistane, Mehri, Sebat Bet Gurage, Shehri, Soqotri, Turoyo, Western Neo-Aramaic	no
-1N:285	*ṯ̣ip(V)r-	nail	Proto-Semitic/ṯ̣upr-	exact	10	17	24	11	Argobba, Classical Mandaic, Gafat, Harari, Harsusi, Kistane, Mesqan, Silt'e, Western Neo-Aramaic, Wolane, Zay	no
-1N:39	*bi/ark-	knee	Proto-Semitic/birk-	exact	31	11	19	11	Bathari, Classical Mandaic, Harari, Harsusi, Mehri, Mlahsö, Shehri, Silt'e, Tigre, Turoyo, Wolane	no
 1N:50	*dam-, *ʔa-dam-	blood	Proto-Semitic/ʔadam-	exact	5	5	15	11	Amharic, Arabic, Classical Mandaic, Classical Syriac, Ge'ez, Harari, Mlahsö, Sabaean, Tigre, Tigrinya, Turoyo	no
+2N:28	*ʕigʷal- // *ʕigl-	calf	Proto-West Semitic/ʕigl-	exact	499	14	21	11	Amharic, Eblaite, Harari, Kistane, Mehri, Mesqan, Sebat Bet Gurage, Shehri, Silt'e, Tigrinya, Wolane	yes
 1N:223	*pay-	mouth	Proto-Semitic/pay-	exact	35	17	23	10	Classical Mandaic, Kistane, Mesqan, Mlahsö, Sabaean, Silt'e, Turoyo, Western Neo-Aramaic, Wolane, Zay	no
 1N:225	*raʔ(i)š-	head	Proto-Semitic/raʔš-	exact	24	14	21	9	Classical Mandaic, Classical Syriac, Harari, Harsusi, Mehri, Shehri, Soqotri, Turoyo, Western Neo-Aramaic	no
 1N:249	*šinn-	tooth	Proto-Semitic/šinn-	exact	64	11	20	9	Classical Mandaic, Gafat, Kistane, Mesqan, Sebat Bet Gurage, Shehri, Silt'e, Wolane, Zay	no
@@ -40,14 +32,19 @@ key	protoform	gloss	title	match	rec	page_langs	sed_langs	n_missing	missing	cites
 1N:185	*maʕay/w(-at)-	intestines, entrails	Proto-Semitic/miʕay-	pattern	34	12	13	3	Classical Mandaic, Turoyo, Western Neo-Aramaic	yes
 1N:210	*paḥ(a)l-	thigh; penis	Proto-Semitic/paḥal-	exact	752	11	12	3	Kistane, Mesqan, Sebat Bet Gurage	yes
 1N:228	*rigl-	foot	Proto-Semitic/rigl-	exact	120	22	11	3	Mlahsö, Turoyo, Western Neo-Aramaic	yes
+1N:28	*ʕayn-	eye	Proto-Semitic/ʕayn-	exact	19	30	26	3	Classical Mandaic, Classical Syriac, Turoyo	yes
+1N:39	*bi/ark-	knee	Proto-Semitic/birk-	exact	31	20	19	3	Bathari, Harari, Turoyo	yes
 1N:50	*dam-, *ʔa-dam-	blood	Proto-Semitic/dam-	exact	5	14	15	3	Classical Mandaic, Mlahsö, Turoyo	no
 1N:8	*ʔanp-	nose	Proto-Semitic/ʔanp-	exact	96	13	14	3	Eblaite, Kistane, Shehri	yes
 2N:31	*ʕaḳrab-	scorpion	Proto-Semitic/ʕaḳrab-	exact	505	10	13	3	Classical Mandaic, Shehri, Turoyo	no
 2N:65	*da/ubb-	bear	Proto-Semitic/dubb-	exact	623	11	13	3	Eblaite, Shehri, Turoyo	no
 2N:72	*ḏiʔb-	wolf, jackal	Proto-Semitic/ḏiʔb-	exact	620	11	12	3	Argobba, Gafat, Tigre	yes
 1N:122	*ḥVmṯ-	(lower) belly, uterus, womb	Proto-Semitic/ḥamṯ-	exact	724	13	12	2	Argobba, Bathari	yes
+1N:141	*kabid(-at)-	liver	Proto-Semitic/kabid-	exact	33	20	22	2	Argobba, Bathari	yes
+1N:174	*libb-	heart	Proto-Semitic/libb-	exact	27	25	24	2	Argobba, Gafat	yes
 1N:187	*muḫḫ-	brain	Proto-Semitic/muḫḫ-	exact	804	7	7	2	Classical Mandaic, Classical Syriac	no
 1N:25	*ʕaṯ̣m(-at)-	bone	Proto-Semitic/ʕaṯ̣m-	exact	44	26	24	2	Silt'e, Soqotri	yes
+1N:256	*ṣVbʕ(-at)-, *ʔV-ṣbaʕ-	finger	Proto-Semitic/ʔiṣbaʕ-	exact	739	27	26	2	Gafat, Sabaean	yes
 1N:259	*ŝV(ʕ)p-at-	(tuft of) hair	Proto-Semitic/śapat-	pattern	738	9	5	2	Amharic, Tigrinya	yes
 1N:85	*ganb-	side and back of torso	Proto-Semitic/ganb-	exact	140	16	14	2	Classical Mandaic, Turoyo	yes
 2N:11	*ʔa/irbay-	locust	Proto-Semitic/ʔirbay-	exact	369	17	15	2	Amharic, Bathari	yes
@@ -58,8 +55,10 @@ key	protoform	gloss	title	match	rec	page_langs	sed_langs	n_missing	missing	cites
 2N:95	*hVwVy-	kind of worm, snake	Proto-Semitic/haway-	pattern	1622	6	3	2	Sebat Bet Gurage, Shehri	no
 1N:1	*ʔa/ibr-	pinion, wing	Proto-Semitic/ʔibr-	exact	375	5	6	1	Classical Mandaic	yes
 1N:154	*kat(i)p-	(back of) shoulder, shoulder blade	Proto-West Semitic/katip-	exact	841	16	15	1	Akkadian	yes
+1N:168	*ḳarn-	horn	Proto-Semitic/ḳarn-	exact	29	27	24	1	Turoyo	yes
 1N:2	*ʔibr(-at)-	membrum virile	Proto-Semitic/ʔibr-	exact	376	5	3	1	Arabic	yes
 1N:278	*ṭiḥāl-, *ṭu/alḥīm-	spleen	Proto-Semitic/ṭiḥāl-	exact	747	21	12	1	Classical Mandaic	yes
+1N:291	*yad-, *ʔid-	hand	Proto-Semitic/yad-	exact	23	33	30	1	Bathari	yes
 1N:63	*ḏi/aḳan-	beard	Proto-Semitic/ḏaḳan-	exact	833	11	10	1	Western Neo-Aramaic	yes
 2N:101	*ḥVrb-	chameleon	Proto-Semitic/ḥarb-	pattern	655	13	3	1	Eblaite	no
 2N:166	*nVšr-	eagle, vulture	Proto-West Semitic/našr-	exact	643	17	13	1	Classical Mandaic	yes
@@ -72,6 +71,7 @@ key	protoform	gloss	title	match	rec	page_langs	sed_langs	n_missing	missing	cites
 1N:204	*pVʔ-at-	face, front	Proto-Semitic/piʔat-	pattern	772	21	0	0		yes
 1N:23	*ʕaṣay-	backbone	Proto-West Semitic/ʕaṣay-	exact	733	5	4	0		yes
 1N:246	*ša/ily(-at)-	afterbirth, fetal membrane	Proto-Semitic/šilyat-	exact	753	15	12	0		yes
+1N:285	*ṯ̣ip(V)r-	nail	Proto-Semitic/ṯ̣upr-	exact	10	30	24	0		yes
 1N:292	*yamīn-, *yamān-	right hand (side)	Proto-Semitic/yamīn-	exact		8	0	0		no
 1N:41	*bi/aŝar-	flesh, (human) body	Proto-West Semitic/baśar-	exact		14	0	0		yes
 1N:5	*ʔaly-at-	fat tail (of a certain race of sheep)	Proto-West Semitic/ʔalyat-	exact	385	9	8	0		yes
