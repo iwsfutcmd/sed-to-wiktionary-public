@@ -1,0 +1,56 @@
+{{reconstructed}}
+==Proto-Semitic==
+
+===Etymology===
+{{etymon|sem-pro|id=knee}}
+Often compared to {{cog|egy|bꜣk}} and to Cushitic forms such as {{cog|aa|gulúb}}.
+
+===Noun===
+{{sem-noun|m|g2=f}}
+
+# [[knee]]
+
+====Reconstruction notes====
+In Common Semitic, there was a [[metathetic]] root formed, which yielded {{m|sem-pro||*ruk(u)b-at-|t=knee}} (compare Arabic {{m|ar|رُكْبَة}}), both of which had reflexes preserved in Arabic, Aramaic{{,}} and Ge'ez.
+
+====Inflection====
+Masculine:
+{{sem-decl-noun}}
+Feminine:
+{{sem-decl-noun|fpl=birk}}
+
+====Descendants====
+* East Semitic:
+** {{desc|akk|birkum|alt=𒄭|tr=birkum}}
+* West Semitic:
+** Central Semitic:
+*** {{desctree|ar|رُكْبَة<qq:by metathesis>}}
+*** Northwest Semitic:
+**** {{desc|arc|-}}
+****: {{desc|aii|ܒܼܪܟ݁ܵܐ|tr=birka}}
+****: Jewish Aramaic: {{l|arc|בִּרְכָּא|tr=birkā}}
+***** {{desc|syc|ܒܾ݁ܘܪܟܴ݁ܐ|tr=burkā}}
+***** {{desc|myz|ࡁࡅࡓࡊࡀ}}
+***** {{desc|lhs|berko}}
+***** {{desc|hrt|-|tr=berka}}
+**** Canaanite:
+***** {{desc|he|בֶּרֶךְ|tr=bérekh, béreḵ}}
+**** {{desc|uga|𐎁𐎗𐎋|ts=birku}}
+** Ethiopian Semitic:
+*** {{desc|am|ብርክ}}
+*** {{desc|gez|ብርክ}}
+*** {{desc|ti|ብርኪ}}
+*** {{desc|tig|ብርክ|tr=bərək}}
+*** Gurage:
+**** {{desc|stv|ብርክ|tr=bərk|t=knee; elbow, joint of a finger}}
+**** {{desc|wle|ብርክ|tr=bərk|t=knee; elbow, joint of a finger}}
+** Modern South Arabian:
+*** {{desc|sqt|برك|tr=bɛrk}}
+*** {{desc|gdq|bark}}
+*** {{desc|hss|bark}}
+*** {{desc|shv|bɛrk}}
+
+===References===
+* {{R:sem-pro:SED|volume=I|id=31|entry=*bi/ark-}}
+
+{{c|sem-pro|Anatomy}}

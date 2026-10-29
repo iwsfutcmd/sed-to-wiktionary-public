@@ -1,0 +1,58 @@
+{{reconstructed}}
+==Proto-Semitic==
+
+===Noun===
+{{sem-noun|m|head=*ṯ̣upr- or *ṯ̣ipr-}}
+
+# [[nail]]
+# [[claw]]
+
+====Inflection====
+{{sem-decl-noun}}
+
+====Descendants====
+* East Semitic:
+** {{desc|akk|ṣuprum|alt=𒌢|tr=ṣuprum}}
+* West Semitic:
+** Central Semitic:
+*** {{desc|ar|ظُفْر|ظُفُر|ظِفْر}}
+**** {{desc|arz|ضفر|tr=ḍufr}}
+**** {{desc|afb|ظفر|tr=ḏ̣ifir|g=m}}
+**** {{desc|acw|ظفر|tr=ḍifir, ḏ̣ifir|g=m}}
+**** {{desc|mt|difer|g=m}}
+*** {{desc|arc|טֻפְרָא|tr=ṭuprā}}
+**** {{desc|syc|ܛܶܦ݂ܪܳܐ|tr=ṭeprā}}
+**** {{desc|myz|ࡈࡅࡐࡓࡀ|t=claw, nail}}
+**** {{desc|amw|ṭefra}}
+**** {{desc|aii|-|tr=ṭɔrpɔ}}
+**** {{desc|hrt|-|tr=ṭepra|t=fingernail, toenail}}
+**** {{desc|he-IL|טופר|alt=טֹפֶר|tr=tófer, ṭṓfer|g=m|bor=1}}
+*** Canaanite:
+**** {{desc|he|ציפורן|alt=צִפֹּרֶן|tr=tsippóren, ṣippṓren|g=f}}
+** Ethiopian Semitic:
+*** {{desc|am|ጥፍር|tr=ṭəfər}}
+*** {{desc|gez|ጽፍር}}
+*** {{desc|sgw|ጥፍር|tr=ṭəfər}}
+*** {{desc|ti|ጽፍሪ}}
+*** {{desc|tig|ጽፍር|tr=ṣəfər}}
+*** {{desc|agj|ጭፍር|tr=č̣əfər}}
+*** {{desc|gft|ጽፍረ|tr=ṣəfrä|t=nail, claw}}
+*** {{desc|har|ጢፊር|tr=ṭifir|t=claw, fingernail}}
+*** Gurage:
+**** {{desc|stv|ጢፍር|tr=ṭifər}}
+**** {{desc|wle|ጥፍር|tr=ṭəfər}}
+**** {{desc|zwa|ጥፍር|tr=ṭəfər}}
+**** {{desc|gru|ጥፍር|tr=ṭəfər|q=Gogot, Soddo}}
+**** {{desc|mvz|ጥፍር|tr=ṭəfər}}
+** Modern South Arabian:
+*** {{desc|gdq|ḏ̣éfɛ́r|sc=Latn}}
+*** {{desc|hss|ḏ̣efīr}}
+*** {{desc|shv|śɛ́fər|ɛśpɔ́r}}
+*** {{desc|sqt||alt=ṭifer}}
+
+===References===
+* {{R:sem-pro:Weninger-Handbook|page=224}}
+* {{R:gez:Leslau-Comp.|page=549}}
+* {{R:sem-pro:SED|volume=I|id=10|entry=*ṯ̣ip(V)r-}}
+
+{{c|sem-pro|Body}}
