@@ -52,5 +52,96 @@
   "title": "ḫaraš-",
   "level": "PS",
   "left": "'to plough' is too far from our sense"
+ },
+ {
+  "page": "ܦܪܫܐ",
+  "lang": "Classical Syriac",
+  "code": "syc",
+  "term": "ܦܪܫܐ",
+  "title": "paraš-",
+  "level": "PWS",
+  "gloss": "horseman",
+  "section": "Etymology 1",
+  "full": "==Classical Syriac==\n\n===Etymology 1===\nFrom {{inh|syc|sem-wes-pro|*paraš-}}. Compare {{cog|ar|فَرَس}} and {{cog|he|פָּרָשׁ|tr=pārāš}}.\n\n====Pronunciation====\n* {{IPA|syc|[parrɑʃɑ]<qq:singular>}}\n* {{IPA|syc|[parrɑʃe]<qq:plural>}}\n\n====Noun====\n{{syc-noun|m|ܦܪܫܐ}}\n\n# [[horseman]]\n# {{lb|syc|military|in the plural}} [[cavalry]]\n\n=====Inflection=====\n{{syc-decl-noun-m|ܦܪܫ}}\n\n===Etymology 2===\nFrom the root {{syc-root|ܦ ܪ ܫ}} related to separating. Compare {{cog|akk|𒁇|ts=paruššu}}.\n\n====Pronunciation====\n* {{IPA|syc|[p(ə)rɑʃɑ]<qq:singular>}}\n* {{IPA|syc|[p(ə)rɑʃe]<qq:plural>}}\n\n====Noun====\n{{syc-noun|m|ܦܪܫܐ}}\n\n# [[difference]], [[separation]]\n# [[selection]]\n# [[oxgoad]]\n\n=====Inflection=====\n{{syc-decl-noun-m|ܦܪܫ}}\n\n===References===\n* {{R:CAL|pr$}}\n* {{R:Costaz 1963|page=292b}}\n* {{R:Payne Smith 1902|page=466a}}\n* {{R:Sokoloff 2009|page=1254b}}\n\n{{C|syc|Equestrianism}}",
+  "summary": "Etymology: inherited from Proto-West Semitic *paraš- ([[Reconstruction:Proto-West Semitic/paraš-]], after Militarev & Kogan's SED)",
+  "diff": [
+   "-Compare {{cog|ar|فَرَس}} and {{cog|he|פָּרָשׁ|tr=pārāš}}.",
+   "+From {{inh|syc|sem-wes-pro|*paraš-}}. Compare {{cog|ar|فَرَس}} and {{cog|he|פָּרָשׁ|tr=pārāš}}."
+  ]
+ },
+ {
+  "page": "פרש",
+  "lang": "Biblical Hebrew",
+  "code": "hbo",
+  "term": "פָּרָשׁ",
+  "title": "paraš-",
+  "level": "PWS",
+  "gloss": "team of horses, horses for a chariot; horseman",
+  "section": "Etymology 1",
+  "full": "==Aramaic==\n\n===Verb===\n{{head|arc|verbs}}\n\n# to [[separate]], [[cut off]]\n\n==Hebrew==\n{{attention|he|many missing terms – see Hebrew Wiktionary}}\n\n===Etymology 1===\n{{he-rootbox|פ־ר־שׁ}}\nFrom {{inh|hbo|sem-wes-pro|*paraš-}}. Cognate with {{cog|ar|فَرَس||horse}}.\n\n====Noun====\n{{he-noun|wv=פָּרָשׁ|tr=parásh|g=m|pl=פָּרָשִׁים|cons=פָּרַשׁ|plcons=פָּרָשֵׁי}}\n\n# [[horseman]], [[cavalier]], [[dragoon]]\n# {{tcl|he|knight|id=Q136|nogloss=1}}\n\n=====See also=====\n* {{l|he|אַבִּיר|tr=abír}}\n{{table:chess pieces/he}}\n\n=====References=====\n* {{R:Strong's|H|6571}}\n\n===Etymology 2===\n{{he-rootbox|פ־ר־שׁ}}\n\n====Verb====\n{{he-verb|wv=פָּרַשׁ|tr=parásh|pa}}\n\n# to [[retire]]\n# to [[quit]]\n# {{lb|he|biblical}} to make clear, [[expound]] clearly\n\n=====Conjugation=====\n{{he-conj|pa|פרשׁ}}\n\n====Verb====\n{{he-verb|tr=perésh|wv=פֵּרֵשׁ|pi}}\n\n# {{he-defective spelling of|פירש|nocap=1}}\n\n===Etymology 3===\n{{he-rootbox|פ־ר־שׂ}}\n\n====Verb====\n{{he-verb|pa|wv=פָּרַשׂ|tr=parás|pass=נִפְרַשׂ}}\n\n# to [[spread]]\n# to [[stretch out]]\n\n=====Conjugation=====\n{{he-conj|pa|פרשׂ}}\n\n====References====\n* {{R:Strong's|H|6567}}\n* {{R:Hebrew Terms Database}}\n\n===Etymology 4===\n{{glossary|Cognate}} with {{cog|ar|فَرْث|t=digestive substances}}.\n\n====Noun====\n{{he-noun|wv=פֶּרֶשׁ|tr=péresh|g=f|pl=-|pat=קֶטֶל}}\n\n# [[excrement]]s of [[slaughter]]ed [[animal]]s found inside their [[entrails]]\n#* {{RQ:Tanach|2|29|14|tsrc=JPS|passage=וְאֶת־בְּשַׂר הַפָּר וְאֶת־עֹרוֹ וְאֶת־'''פִּרְשׁ'''וֹ תִּשְׂרֹף בָּאֵשׁ מִחוּץ לַמַּחֲנֶה חַטָּאת הוּא׃|t=The rest of the flesh of the bull, its hide, and its '''dung''' shall be put to the fire outside the camp; it is a sin offering.}}\n#* {{RQ:Tanach|24|2|3|tsrc=JPS|passage=הִנְנִי גֹעֵר לָכֶם אֶת־הַזֶּרַע וְזֵרִיתִי '''פֶרֶשׁ''' עַל־פְּנֵיכֶם פֶּרֶשׁ חַגֵּיכֶם וְנָשָׂא אֶתְכֶם אֵלָיו׃|t=I will put your seed under a ban, and I will strew '''dung''' upon your faces, the dung of your festal sacrifices, and you shall be carried out to its [heap].}}\n\n=====Declension=====\n{{he-decl|nolink=1|פֶּרֶשׁ|פִּרְשׁוֹ}}\n\n=====Synonyms=====\n* {{l|he|צוֹאָה|tr=tso'á|t=excrements, feces}}\n* {{l|he|צֵאָה|tr=tse'á}}\n\n====References====\n* {{R:Strong's|H|6569}}\n* {{R:CEDHL|533c|פֶּרֶשׁ}}\n* {{R:Jastrow 1903|page=1243a}}\n\n===Further reading===\n* {{pedia|lang=he}}\n\n===Anagrams===\n* {{l|he|שרף}}",
+  "summary": "Etymology: inherited from Proto-West Semitic *paraš- ([[Reconstruction:Proto-West Semitic/paraš-]], after Militarev & Kogan's SED)",
+  "diff": [
+   "-Cognate with {{cog|ar|فَرَس||horse}}.",
+   "+From {{inh|hbo|sem-wes-pro|*paraš-}}. Cognate with {{cog|ar|فَرَس||horse}}."
+  ]
+ },
+ {
+  "page": "𐩰𐩧𐩪",
+  "lang": "Sabaean",
+  "code": "xsa",
+  "term": "𐩰𐩧𐩪",
+  "title": "paraš-",
+  "level": "PWS",
+  "left": "a state form of 𐩰𐩧𐩪𐩣: the link goes on that lemma (EXTRA)"
+ },
+ {
+  "page": "ፈረስ",
+  "lang": "Ge'ez, Tigrinya",
+  "code": "gez,ti",
+  "term": "ፈረስ",
+  "title": "paraš-",
+  "level": "PWS",
+  "gloss": "horse, steed",
+  "full": "==Amharic==\n{{multiple images|image1=Dole eating grass.jpg|width1=250|caption1=ፈረስ(1)።\n|image2=Chess piece - White knight.JPG|width2=96|caption2=ፈረስ(2)።}}\n\n===Etymology===\nFrom {{inh|am|sem-wes-pro|*paraš-}}. Cognates include {{cog|gez|ፈረስ}} and {{cog|ar|فَرَس}}.\n\n===Pronunciation===\n* {{IPA|am|/ˈfəɾəs/}}\n* {{hyph|am|ፈ|ረስ}}\n\n===Noun===\n{{am-noun|g=mfbysense|pl=ፈረሶች|trpl=färäsočč}}\n\n# [[horse]]\n# {{lb|am|chess|rare}} [[knight]]\n\n====Declension====\n{{am-decl|färäs|mf}}\n\n====Derived terms====\n* {{l|am|ፈረሰኛ}}\n\n===References===\n* {{R:am:AT.com}}\n* {{R:am:Kane|+}}\n* {{R:am:Leslau:2000|page=20}}\n\n{{C|am|Equids}}\n\n==Ge'ez==\n\n===Etymology===\nFrom {{inh|gez|sem-wes-pro|*paraš-}}. Cognate with {{cog|ar|فَرَس}}, {{cog|he|פָּרָשׁ}}.\n\n===Noun===\n{{head|gez|noun|g1=m|g2=f|plural|አፍራስ}}\n\n# [[horse]]\n\n====Related terms====\n* {{l|gez|ፈረሳዊ}}\n* {{l|gez|አፍራሲ}}\n\n===References===\n* {{R:gez:Dillmann|entry=ፈረስ}}\n\n{{C|gez|Mammals}}\n\n==Tigrinya==\n\n===Etymology===\nFrom {{inh|ti|sem-wes-pro|*paraš-}}. Cognate with {{cog|ar|فَرَس}}\n\n===Noun===\n{{ti-noun|pl=ኣፍራሰ}}\n\n# [[horse]]",
+  "summary": "Etymology: inherited from Proto-West Semitic *paraš- ([[Reconstruction:Proto-West Semitic/paraš-]], after Militarev & Kogan's SED)",
+  "diff": [
+   "-Cognate with {{cog|ar|فَرَس}}, {{cog|he|פָּרָשׁ}}.",
+   "+From {{inh|gez|sem-wes-pro|*paraš-}}. Cognate with {{cog|ar|فَرَس}}, {{cog|he|פָּרָשׁ}}.",
+   "-Cognate with {{cog|ar|فَرَس}}",
+   "+From {{inh|ti|sem-wes-pro|*paraš-}}. Cognate with {{cog|ar|فَرَس}}"
+  ]
+ },
+ {
+  "page": "𐩰𐩧𐩪𐩣",
+  "lang": "Sabaean",
+  "code": "xsa",
+  "term": "𐩰𐩧𐩪𐩣",
+  "title": "paraš-",
+  "level": "PWS",
+  "gloss": "",
+  "full": "==Sabaean==\n\n===Etymology===\nFrom {{inh|xsa|sem-wes-pro|*paraš-}}. Belongs to a widespread Semitic equestrian word-family. Cognate with {{cog|ar|فَرَس|t=horse, mare}} and {{cog|gez|ፈረስ|tr=färäs|t=horse}}. Compare Ḥaḍramitic {{m|xhd|𐩱𐩰𐩧𐩪|tr=ʾfrs¹|t=cavalry}}, Safaitic <span class=\"mention-tr tr Latn\" lang=\"und\">frs</span> “horse; horseman”, and Yemeni Arabic {{m|ar|فَرَس|t=mare}}.\n\nThe human sense belongs to the same equestrian family; compare {{m|ar|فَارِس|t=horseman, rider}} and Yemeni Arabic {{m|ar|فَارِس|t=rider}}. Mehri <span class=\"mention-tr tr Latn\" lang=\"und\">fərháyn</span> and Ḥarsusi <span class=\"mention-tr tr Latn\" lang=\"und\">ferhīn</span>, both “mare; horse”, provide further Modern South Arabian parallels, though with a different final radical.\n\nThe Sabaean plural stem {{m|xsa|𐩱𐩰𐩧𐩪|tr=ʾfrs¹}} closely resembles Arabic {{m|ar|أَفْرَاس|t=horses}}, the broken plural of {{m|ar|فَرَس}}.\n\n===Noun===\n{{xsa-noun|tr=frs¹m}}\n\n# A [[horse]]; [[mare]].\n#* {{RQ:DASI|title=Ja 745|url=https://dasi.cnr.it/csai-epi-6120|section=lines 6–10|passage=ḥmdm b-ḏt s¹twfy '''frs¹ mlkn''' Gdn b-kn rkb-hw ʿdy S¹hrtn w-ḥmdm b-ḏt mtʿ '''frs¹nhn''' Dynrm w-Ẓbym|translation=in praise because He protected the king's horse Gdn when he rode it to S¹hrtn, and in praise because He saved the two horses Dynrm and Ẓbym}}\n# A representation of a horse, especially a [[horse]] [[statuette]] or other votive image.\n#* {{RQ:DASI|title=Ja 666|url=https://dasi.cnr.it/csai-epi-6061|section=lines 3–5|passage=hqnyw mrʾ-hmw ʾlmqh bʿl ʾwm '''frs¹m w-rkb-hw kly ḏhbm''' ḏ-s²ft-hw|translation=they dedicated to their lord ʾlmqh, Lord of ʾwm, a horse and its rider, both in bronze, which they had promised Him}}\n#* {{RQ:DASI|title=Ja 752|url=https://dasi.cnr.it/csai-epi-6127|section=lines 5–9|passage=hqnyw mrʾ-hmw ʾlmqhw bʿl ʾwm '''frs¹m ḏt ḏhbm''' ḏt s²ft-hw|translation=they dedicated to their lord ʾlmqhw, Lord of ʾwm, a horse in bronze which they had promised Him}}\n# A [[horseman]], mounted [[rider]] or member of a cavalry force, especially in the plural.\n#* {{RQ:DASI|title=Ja 665|url=https://dasi.cnr.it/csai-epi-6060|section=lines 15–17|passage=ʾttmn kl gys²-hmw ḫms¹y w-s¹bʿ mʾtm ʾs¹dm rkbm w-'''s¹bʿy ʾfrs¹m'''|translation=their entire contingent assembled and mustered, seven hundred and fifty soldiers mounted on camels and seventy horsemen}}\n\n====Usage notes====\nThe distinction between a horse and a horseman is normally supplied by context. In military enumerations, plural {{m|xsa|𐩱𐩰𐩧𐩪𐩣|tr=ʾfrs¹m}} can count horsemen; in descriptions of booty or captured animals, the same plural refers to horses.\n\nDedicatory inscriptions provide a third characteristic context. A horse described as {{m|xsa|𐩹𐩩𐩽𐩹𐩠𐩨𐩣|tr=ḏt ḏhbm|t=of bronze}} is a represented horse or horse-shaped votive object rather than a living animal. Horse and rider can be dedicated together as a pair.\n\nThe construct and suffix-bearing singular is {{m|xsa|𐩰𐩧𐩪|tr=frs¹}}. The determinate singular is {{m|xsa|𐩰𐩧𐩪𐩬|tr=frs¹n}}. The plural has construct/suffix form {{m|xsa|𐩱𐩰𐩧𐩪|tr=ʾfrs¹}}, indeterminate {{m|xsa|𐩱𐩰𐩧𐩪𐩣|tr=ʾfrs¹m}}, and determinate {{m|xsa|𐩱𐩰𐩧𐩪𐩬|tr=ʾfrs¹n}}.\n\n====Inflection====\n{{xsa-decl\n|sg={{l|xsa|𐩰𐩧𐩪|tr=frs¹}}\n|sg_ind={{l|xsa|𐩰𐩧𐩪𐩣|tr=frs¹m}}\n|sg_det={{l|xsa|𐩰𐩧𐩪𐩬|tr=frs¹n}}\n|sg_pron={{l|xsa|𐩰𐩧𐩪|tr=frs¹}}\n|du_ind=<span class=\"mention-tr tr Latn\" lang=\"und\">frs¹nyw</span>\n|du_det=<span class=\"mention-tr tr Latn\" lang=\"und\">frs¹nhn</span> / <span class=\"mention-tr tr Latn\" lang=\"und\">frs¹ynhn</span>\n|pl={{l|xsa|𐩱𐩰𐩧𐩪|tr=ʾfrs¹}}\n|pl_ind={{l|xsa|𐩱𐩰𐩧𐩪𐩣|tr=ʾfrs¹m}}\n|pl_det={{l|xsa|𐩱𐩰𐩧𐩪𐩬|tr=ʾfrs¹n}}\n|pl_pron={{l|xsa|𐩱𐩰𐩧𐩪|tr=ʾfrs¹}}\n}}\n\n===See also===\n{{col|xsa\n|𐩧𐩫𐩨<tr:rkb>\n|𐩻𐩥𐩧𐩣<tr:ṯwrm>\n|𐩱𐩨𐩡<tr:ʾbl>\n}}\n\n===References===\n* {{R:Sabaweb|frsm/f, “horse; horseman”|url=http://sabaweb.uni-jena.de/SabaWeb/Suche/Suche/SearchResultDetail?idxLemma=1461&showAll=0}}\n* {{R:DASI|Ja 745}}\n* {{R:DASI|Ja 666}}\n* {{R:DASI|Ja 752}}\n* {{R:DASI|Ja 665}}",
+  "summary": "Etymology: inherited from Proto-West Semitic *paraš- ([[Reconstruction:Proto-West Semitic/paraš-]], after Militarev & Kogan's SED)",
+  "diff": [
+   "-Belongs to a widespread Semitic equestrian word-family. Cognate with {{cog|ar|فَرَس|t=horse, mare}} and {{cog|gez|ፈረስ|tr=färäs|t=horse}}. Compare Ḥaḍramitic {{m|xhd|𐩱𐩰𐩧𐩪|tr=ʾfrs¹|t=cavalry}}, Safaitic <span class=\"mention-tr tr Latn\" lang=\"und\">frs</span> “horse; horseman”, and Yemeni Arabic {{m|ar|فَرَس|t=mare}}.",
+   "+From {{inh|xsa|sem-wes-pro|*paraš-}}. Belongs to a widespread Semitic equestrian word-family. Cognate with {{cog|ar|فَرَس|t=horse, mare}} and {{cog|gez|ፈረስ|tr=färäs|t=horse}}. Compare Ḥaḍramitic {{m|xhd|𐩱𐩰𐩧𐩪|tr=ʾfrs¹|t=cavalry}}, Safaitic <span class=\"mention-tr tr Latn\" lang=\"und\">frs</span> “horse; horseman”, and Yemeni Arabic {{m|ar|فَرَس|t=mare}}."
+  ]
+ },
+ {
+  "page": "فرس",
+  "lang": "Arabic",
+  "code": "ar",
+  "term": "فرس",
+  "title": "paraš-",
+  "level": "PWS",
+  "gloss": "",
+  "note": "Save the paraš- re-save on the worklist (1b) FIRST: until our page names this etymology (id=horse), Wiktionary calls the link to فرس ambiguous. Then Show changes here should show no red error text.",
+  "full": "{{also|فرش|قرش|ف ر س}}\n==Arabic==\n\n===Etymology 1===\n{{ety|ar|id=to maul}}\nFrom {{inh|ar|sem-pro|*paras-}}, compare {{cog|gez|ፈረሰ|t=to demolish}}, {{cog|he|פָּרַס|t=to divide|tr=pārás}}, {{cog|arc|פְּרַס|t=to divide|tr=pᵊras}}, {{cog|akk|parāsum|𒋻|tr=parāsum|t=to cut off}}. From the root {{ar-root|ف ر س}}.\n\nAlso, from {{inh|ar|sem-pro|*paraš-}}, {{cog|arc|פְרַשׁ|tr=pᵊraš|t=to cut off}}.\n\nFurther, {{cog|ar|فَرَصَ|t=to slit}}, {{cog|he|פָּרַץ|tr=pāraṣ|t=to breach}}, {{cog|akk|parāṣum|𒉺𒊏𒍮|tr=parāṣum|t=to lie, to break an oath or breach trust}}, {{cog|gez|ፈረጸ|t=to break open}}, {{cog|uga|𐎔𐎗𐎕|t=to open}}, as well as {{cog|ar|فَرَضَ|t=to notch}}.\n\nAlso, {{cog|ar|فَرَقَ|t=to separate}}, widespread in Semitic.\n\nAlso, {{cog|ar|فَرَثَ|t=to scatter}}, {{cog|arc|פְּרַת|tr=pᵊraṯ|t=to tear apart}}\n\n====Verb====\n{{ar-verb|I/a~i.vn:فَرْس}}\n\n# to [[maul]], to [[tear up]], to [[tatter]]\n\n=====Conjugation=====\n{{ar-conj|I/a~i.vn:فَرْس}}\n\n====Noun====\n{{ar-noun|فَرْس|m}}\n\n# {{ar-verbal noun of|فَرَسَ|form=I}}\n\n=====Declension=====\n{{ar-decl-noun|فَرْس}}\n\n===Etymology 2===\n{{etymon|ar|id=horse|:inh|sem-wes-pro:*paraš-}}\n{{inh+|ar|sem-wes-pro|*paraš-}}. Cognate with {{cog|he|פָּרָשׁ|tr=pārā́š|t=horseman}}, {{cog|syc|ܦܪܫܐ|tr=parašā|t=horseman}}, {{cog|gez|ፈረስ|t=horse}}.\n\n====Noun====\n{{ar-noun|فَرَس|m,f|pl=أَفْرَاس}}\n\n# [[horse]], [[mare]]\n#: {{syn|ar|حِصَان|خَيْل}}\n\n=====Declension=====\n{{ar-decl-noun|فَرَس|pl=أَفْرَاس}}\n\n=====Descendants=====\n* {{desc|aa|farás|bor=1}}\n* {{desc|bdn|pilish|bor=1}} {{q|possibly}}\n* {{desc|pt|alfaraz|Alfaraz|bor=1}}\n* {{desctree|sw|farasi|bor=1}}\n\n=====References=====\n* {{R:ar:Lane|page=2367}}\n\n===Etymology 3===\n{{etymon|ar|id=Persian|:der|peo:𐎱𐎠𐎼𐎿<id:Persian>}}\nFrom {{der|ar|peo|𐎱𐎠𐎼𐎿|tr=Pārsa}}.\n\n====Verb====\n{{ar-verb|II}}\n\n# to [[persianize]]/[[persify]]\n\n=====Conjugation=====\n{{ar-conj|II}}\n\n====Noun====\n{{ar-coll-noun|فُرْس|sing=فَارِسِيّ<g:m>}}\n\n# [[Persian]]s\n\n=====Declension=====\n{{ar-decl-noun|فُرْس}}\n\n=====Related terms=====\n* {{l|ar|فَارِس}}\n\n{{C|ar|Nationalities}}\n{{C|ar|Equids}}\n\n==Persian==\n\n===Etymology 1===\n{{ety|fa|:bor|ar:فَرَس|text=+|tree=1}}\n\n====Pronunciation====\n{{fa-IPA|faˈras}}\n\n====Noun====\n{{fa-noun|tr=faras|pl=افراس|pltr=afrâs}}\n\n# {{tlb|fa|literary}} [[horse]]\n#: {{syn|fa|اسب<tr:asb>}}\n#* {{RQ:fa:Selim Divan|102\n|دور از رکاب او شرفی بس که گه گهی<br>گردی رسد بدیده ز راه '''فرس''' مرا\n|دُور اَز رِکَابِ او شَرَفی بَس کِه گَهْ گَهی<br>گَرْدی رَسَد بَ-دِیدَه زِه رَاهِ '''فَرَس''' مَ-رَا\n|Far away from her saddle, the honor is enough that from time to time,<br>A mote of dust reaches my eyes from the road of her '''horse'''.\n}}\n\n===Etymology 2===\n{{ety|fa|:bor|ar:فُرْس|text=+|tree=1}}\n\n====Pronunciation====\n{{fa-IPA|furs}}\n\n====Noun====\n{{fa-noun|tr=fors}} {{tlb|fa|literary}}\n\n# the [[Persian]]s, the [[Iranian]]s (as a whole); [[Iran]], [[Persia]]\n#: {{syn|fa|فارس<alt:فارس‌ها><tr:fârs-hâ>|ایرانیان<tr:irâniyân>|عجم<tr:ajam>}}\n# the [[Persian]] language; {{n-g|mainly in {{m|fa|فرس قدیم|tr=fors-e qadim|t=[[Old Persian]], ancient Persian language}}}}.\n#: {{syn|fa|فارسی<tr:fârsi>|پارسی<tr:pârsi>|دری<tr:dari>}}\n\n===Further reading===\n* {{NPED}}\n\n==South Levantine Arabic==\n\n===Etymology 1===\n{{ety|ajp|:inh|ar:فَرَس|text=+|tree=1}}\n\n====Pronunciation====\n* {{ajp-IPA|faras<p:ˈfa.ras>}}\n* {{audio|ajp|LL-Q55633582 (ajp)-Muhammad (AdrianAbdulBaha)-فرس.wav|a=Ramallah}}\n\n====Noun====\n{{ajp-noun|g=m|tr=faras|pl=أفراس|pltr=ʔafrās}}\n\n# [[mare]]\n\n=====Derived terms=====\n* {{l|ajp|فرس النهر|tr=faras in-nahr|t=hippo}}\n\n=====See also=====\n* {{l|ajp|حصان|tr=ḥsān|t=horse}}\n\n===Etymology 2===\n{{ety|ajp|:inh|ar:فُرْس|text=+|tree=1}}\n\n====Pronunciation====\n* {{ajp-IPA|furs<p:fʊrs>}}\n* {{audio|ajp|LL-Q55633582 (ajp)-Muhammad (AdrianAbdulBaha)-فُرس.wav|a=Ramallah}}\n\n====Noun====\n{{head|ajp|noun form|g=p|tr=furs}}\n\n# {{plural of|ajp|فارسي|tr=fārsi|t=Persian}}\n\n====Adjective====\n{{head|ajp|adjective form|tr=furs}}\n\n# {{plural of|ajp|فارسي|tr=fārsi|t=Persian}}\n\n{{c|ajp|Animals|Mammals}}",
+  "summary": "Etymology: inherited from Proto-West Semitic *paraš- ([[Reconstruction:Proto-West Semitic/paraš-]], after Militarev & Kogan's SED)",
+  "diff": [
+   "-{{etymon|ar|id=horse}}",
+   "-Cognate with {{cog|he|פָּרָשׁ|tr=pārā́š|t=horseman}}, {{cog|syc|ܦܪܫܐ|tr=parašā|t=horseman}}, {{cog|gez|ፈረስ|t=horse}}.",
+   "+{{etymon|ar|id=horse|:inh|sem-wes-pro:*paraš-}}",
+   "+{{inh+|ar|sem-wes-pro|*paraš-}}. Cognate with {{cog|he|פָּרָשׁ|tr=pārā́š|t=horseman}}, {{cog|syc|ܦܪܫܐ|tr=parašā|t=horseman}}, {{cog|gez|ፈረስ|t=horse}}."
+  ]
  }
 ]

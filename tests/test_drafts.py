@@ -203,6 +203,10 @@ class Drafts(unittest.TestCase):
             code = WD.PAGES.get(title, {}).get("codes", {}).get(w["lang"]) or WD.LANG[w["lang"]][0]
             if code in WD.AUTO_TR or code == "xeb":
                 continue
+            if w["lang"] in WD.ARC_SCRIPT and WD.ARC_SCRIPT[w["lang"]][1] != "Nbat":   # period script, transliterated by Wiktionary: the script must be the form's
+                table = WD.ARC_SCRIPT[w["lang"]][0]
+                self.assertTrue(any(term == WD.abjad.convert(table, w["form"]) for _, c, term, _ in ents if c == code), f"{w['lang']} {w['form']!r} is missing")
+                continue
             first = re.sub(r"\s*\((suff|det)[^)]*\)$", "", w["form"]).split(",")[0].split("/")[0].strip()
             if code == "akk":
                 first = WD.AKK_LEMMA.get(first, first)        # the page uses Wiktionary's lemma (nâku -> niākum)

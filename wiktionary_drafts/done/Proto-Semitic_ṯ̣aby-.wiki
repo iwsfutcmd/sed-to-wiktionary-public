@@ -32,7 +32,7 @@ Reconstructed in Militarev & Kogan's ''Semitic Etymological Dictionary'' with an
 **** {{desc|uga|𐎑𐎁𐎊|t=gazelle}}
 *** Old South Arabian:
 **** {{desc|xsa|𐩮𐩨𐩺|tr=ṣby|t=gazelle}}
-**** Hadramitic {{desc|sem-srb|𐩮𐩨𐩺|tr=ṣby|t=gazelle}}
+**** {{desc|xhd|𐩮𐩨𐩺|tr=ṣby|t=gazelle}}
 
 ===References===
 * {{R:sem-pro:SED|volume=II|id=624|entry=*ṯ̣aby(-at)-}}

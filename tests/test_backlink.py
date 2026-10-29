@@ -82,6 +82,14 @@ class Replaced(unittest.TestCase):
         with self.assertRaises(ValueError):
             B.replaced(self.PAGE, "ar", [("not there", "z")])
 
+class SamePage(unittest.TestCase):
+    def test_two_languages_of_one_page_make_one_card(self):
+        a = dict(page="P", lang="Ge'ez", code="gez", full="x1", diff=[])
+        b = dict(page="P", lang="Tigrinya", code="ti", full="x12", diff=[])
+        c = dict(page="Q", lang="Arabic", code="ar", full="y", diff=[])
+        out = B.merge_same_page([a, c, b])
+        self.assertEqual([(x["page"], x["lang"], x["full"]) for x in out], [("P", "Ge'ez, Tigrinya", "x12"), ("Q", "Arabic", "y")])
+
 class Senses(unittest.TestCase):
     def test_tcl_gloss_is_read(self):                           # Hebrew עלוקה: {{tcl|he|leech|id=Q43012|nogloss=1}}
         self.assertIn("leech", K.definitions("# {{tcl|he|leech|id=Q43012|nogloss=1}}\n")[0])

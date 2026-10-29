@@ -21,8 +21,8 @@ CAN = NW + ("Canaanite",); CS = ("West Semitic", "Central Semitic"); OSA = CS + 
 ETH = ("West Semitic", "Ethiopian Semitic"); GUR = ETH + ("Gurage",); MSA = ("West Semitic", "Modern South Arabian")
 # SEDonline language -> (Wiktionary code, tree path, label before the entry)
 LANG = {"Akkadian": ("akk", EAST, ""), "Ebla": ("xeb", EAST, ""), "Arabic": ("ar", CS, ""),
-        "Old Aramaic": ("arc", NW, "Old "), "Official Aramaic": ("arc", NW, "Official "), "Biblical Aramaic": ("arc", NW, "Biblical "),
-        "Palmyrean": ("arc", NW, "Palmyrene "), "Nabataean": ("arc", NW, "Nabataean "), "Jewish Palestinian Aramaic": ("jpa", NW, ""), "Jewish Babylonian Aramaic": ("tmr", NW, ""),
+        "Old Aramaic": ("arc-old", NW, ""), "Official Aramaic": ("arc-imp", NW, ""), "Biblical Aramaic": ("arc-bib", NW, ""),      # Wiktionary's etymology-only codes
+        "Palmyrean": ("arc-pal", NW, ""), "Nabataean": ("arc-nab", NW, ""), "Jewish Palestinian Aramaic": ("jpa", NW, ""), "Jewish Babylonian Aramaic": ("tmr", NW, ""),
         "Samaritan": ("sam", NW, ""), "Syriac": ("syc", NW, ""), "Mandaic": ("myz", NW, ""), "Turoyo": ("tru", NW, ""), "Maalula": ("amw", NW, ""), "Assyrian Neo-Aramaic": ("aii", NW, ""), "Mlaḥso": ("lhs", NW, ""), "Jilu": ("aii", NW, ""),
         "Christian Palestinian Aramaic": ("arc-cpa", NW, ""), "Hebrew": ("hbo", CAN, ""), "Phoenician": ("phn", CAN, ""), "Ugaritic": ("uga", NW, ""), "Ammonite": ("sem-amm", CAN, ""),
         "Sabaic": ("xsa", OSA, ""), "Qatabanian": ("xqt", OSA, ""), "Minaean": ("inm", OSA, ""), "Hadramitic": ("xhd", OSA, ""), "Geez": ("gez", ETH, ""), "Tigre": ("tig", ETH, ""),
@@ -128,7 +128,8 @@ def one(code, form, notes, first, gloss, lang):
         sc = same_spelling(lambda f: abjad.convert(table, f), form)
         if sc:
             notes.append(f"{lang} {form}: {sc} (abjad, {scode})")
-            return f"{{{{{head}|{code}|{sc}|tr={tr_of(form)}{t}|sc={scode}}}}}"
+            tr = f"|tr={tr_of(form)}" if scode == "Nbat" else ""      # Wiktionary detects these scripts and transliterates all but Nabataean
+            return f"{{{{{head}|{code}|{sc}{tr}{t}}}}}"
     sc, how = script_for(code, form)
     if sc == "-":                                          # CURATED "-": no script on purpose (e.g. a syllabic Ugaritic form; the alphabetic spelling is another word)
         sc = None
@@ -382,7 +383,7 @@ PAGES = {   # title -> SEDonline reconstruction id and page content
                        dict(lang="Jewish Babylonian Aramaic", form="parrāšā", gloss="horseman"),
                        dict(lang="Syriac", form="parrāšā", gloss="horseman"),
                        dict(lang="Mandaic", form="paraša", gloss="mounted soldier, horseman"),
-                       dict(lang="Arabic", form="faras", gloss="horse, mare"),
+                       dict(lang="Arabic", form="faras", gloss="horse, mare", id="horse"),
                        dict(lang="Sabaic", form="frs₁", gloss="horse, mare; cavalryman, cavalry"),
                        dict(lang="Qatabanian", form="frs₁", gloss="horse"),
                        dict(lang="Hadramitic", form="ˀfrs₁n", gloss="horse leaders (plural)"),
@@ -414,7 +415,7 @@ def tree_lines(words, notes, exclude=(), override=None, strip=(), codes=None, lo
         if (w["lang"], w["form"]) in exclude or (w["lang"], w["form"]) in loans:
             continue
         if override and (w["lang"], w["form"]) in override:
-            w = {**w, **{k: v for k, v in override[(w["lang"], w["form"])].items() if k in ("form", "gloss", "after", "alt")}}
+            w = {**w, **{k: v for k, v in override[(w["lang"], w["form"])].items() if k in ("form", "gloss", "after", "alt", "id")}}
         code, path, label = LANG[w["lang"]]
         if strip and path[:len(strip)] == strip:
             path = path[len(strip):]
@@ -423,7 +424,8 @@ def tree_lines(words, notes, exclude=(), override=None, strip=(), codes=None, lo
         e = entry(code, w["form"], g, w["lang"], notes)
         if w.get("alt"):                                       # shown spelling (e.g. Ugaritic syllabic cuneiform) for the lemma linked; the reading goes in tr=
             e = re.sub(r"^(\{\{desc\|[^|]+\|[^|}]+)", lambda m: m.group(1) + f"|alt={w['alt']}" + ("" if "|tr=" in e else f"|tr={tr_of(w['form'])}"), e, count=1)
-        for key, val in (("q", w.get("q") or DIALECT.get(w["lang"])), ("unc", "1" if w.get("unc") else None)):
+        # id: which {{etymon}} of a page with several the link means (Arabic فرس: 'to maul', 'horse', 'Persian'), as Wiktionary asks
+        for key, val in (("id", w.get("id")), ("q", w.get("q") or DIALECT.get(w["lang"])), ("unc", "1" if w.get("unc") else None)):
             if val:
                 e = re.sub(r"\}\}", f"|{key}={val}}}}}", e, count=1)
         for d in range(len(path)):

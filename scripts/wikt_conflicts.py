@@ -20,7 +20,8 @@ from wikt_langs import LANGS, sections, strip_marks
 UA = {"User-Agent": "sed-to-wiktionary/1.0 (research; https://github.com/iwsfutcmd/sed-to-wiktionary)"}
 CACHE = BUILD / "wikt_pages"
 ENT = re.compile(r"\{\{(desc|l)\|([^|{}]+)\|([^|{}]*)((?:\|[^{}]*)?)\}\}")
-ALIAS = {"hbo": "he"}                 # Biblical Hebrew entries sit under Hebrew; pages use he in {{desc}}
+ALIAS = {"hbo": "he",                 # Biblical Hebrew entries sit under Hebrew; pages use he in {{desc}}
+         "arc-old": "arc", "arc-imp": "arc", "arc-pal": "arc", "arc-nab": "arc", "arc-bib": "arc"}      # Aramaic varieties (etymology-only codes) are Aramaic
 STOP = set("a an the of to be or and in on with for by from as at is it its that this one kind some".split())
 
 def entries(text):

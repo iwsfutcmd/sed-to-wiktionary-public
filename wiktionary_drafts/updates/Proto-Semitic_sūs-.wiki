@@ -1,0 +1,35 @@
+{{reconstructed}}
+==Proto-Semitic==
+
+===Noun===
+{{sem-noun|m}}
+
+# [[moth]]
+
+====Inflection====
+{{sem-decl-noun}}
+
+====Descendants====
+* East Semitic:
+** {{desc|akk|sāsum|alt=𒍝𒀀𒍮|tr=sāsum|t=moth}}
+** {{desc|xeb|sāsum|t=moth|unc=1}}
+* West Semitic:
+** Central Semitic:
+*** {{desc|ar|سُوس|t=moth}}
+**** {{desc|am|ሹሽ|tr=šuš(š)|t=moth|bor=1}}
+**** {{desc|har|ሱስ|tr=sūs|t=moth|bor=1}}
+*** Northwest Semitic:
+**** {{desc|arc-old|𐤎𐤎|t=moth}}
+**** {{desc|arc-imp|𐡎𐡎|t=moth}}
+**** {{desc|jpa|סס|tr=ss|t=moth, worm}}
+**** {{desc|syc|ܣܣܐ|tr=sāsā|t=kind of worm that infests the grapevine}}
+**** {{desc|myz|ࡎࡀࡎࡀ|t=moth, maggot}}
+**** Canaanite:
+***** {{desc|hbo|סס|tr=sās|t=clothes moth}}
+** Modern South Arabian:
+*** {{desc|gdq|sust|t=large worm}}
+
+===References===
+* {{R:sem-pro:SED|volume=II|id=675|entry=*sā/ūs-}}
+
+{{C|sem-pro|Insects}}

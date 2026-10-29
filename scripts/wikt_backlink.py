@@ -37,12 +37,26 @@ DECISIONS = {
     ("علق", "ar"): ("leave", "the leech noun shares Etymology 5 with the verbal noun of عَلِقَ 'to hang'; the singulative عَلَقَة carries the link"),
     # ("replace", [(old, new), ...]): wording a person chose, applied to that language's section. علقة: the uncited "{{der|ar|syc}} ... or ... ?" becomes
     # a comparison, as the SED (II 32) gives Arabic as inherited and notes no Aramaism (see memory: SED over uncited Wiktionary)
+    ("פרש", "hbo"): ("section", "Etymology 1"),
+    ("ܦܪܫܐ", "syc"): ("section", "Etymology 1"),
+    ("𐩰𐩧𐩪", "xsa"): ("leave", "a state form of 𐩰𐩧𐩪𐩣: the link goes on that lemma (EXTRA)"),
+    # فرس: the horse noun is Etymology 2, an {{etymon}} tree that shows no text: the step goes in the tree and as a sentence, as on شحم.
+    # Needs our page's {{desc|ar|فَرَس|id=horse}} saved first: otherwise the module calls the link to فرس ambiguous (three etymons there)
+    ("فرس", "ar"): ("replace", [("{{etymon|ar|id=horse}}\nCognate with", "{{etymon|ar|id=horse|:inh|sem-wes-pro:*paraš-}}\n{{inh+|ar|sem-wes-pro|*paraš-}}. Cognate with")]),
     ("علقة", "ar"): ("replace", [("{{ety|ar|id=leech}}", "{{ety|ar|id=leech|:inh|sem-pro:*ʕalaḳ-}}"),
                                  ("Compare {{cog|he|עֲלוּקָה|tr='aluká}}; {{cog|ar|علق}} (various verbs); {{der|ar|syc|ܥܰܠܘܽܩܳܐ|tr=ˁallūq, ˁallūqā}} or "
                                   "{{cog|tmr|עַלקָא|tr=ˁelləqā, ˁellaqṯā}}, or {{cog|akk||tr=ilku, ilḳitu}}?",
                                   "{{inh+|ar|sem-pro|*ʕalaḳ-}}. Compare {{cog|he|עֲלוּקָה|tr='aluká}}; {{cog|ar|علق}} (various verbs); {{cog|syc|ܥܰܠܘܽܩܳܐ|tr=ˁallūq, ˁallūqā}}, "
                                   "{{cog|tmr|עַלקָא|tr=ˁelləqā, ˁellaqṯā}}, {{cog|akk||tr=ilku, ilḳitu}}.")]),
 }
+# Shown on a card before its button: an order to keep, or something to check
+NOTES = {("فرس", "ar"): "Save the paraš- re-save on the worklist (1b) FIRST: until our page names this etymology (id=horse), "
+                        "Wiktionary calls the link to فرس ambiguous. Then Show changes here should show no red error text."}
+
+# Pages the scan cannot find by itself, named by a person: a lemma our page does not link (only one of its forms), or a page whose
+# Etymology 1 is another word, so the conflict check never lists it. Each is edited by its DECISIONS entry, or as usual if it has none.
+EXTRA = [dict(page="𐩰𐩧𐩪𐩣", code="xsa", title="paraš-", level="PWS"),
+         dict(page="فرس", code="ar", title="paraš-", level="PWS")]
 PREFIXES = {"Proto-Semitic_": "PS", "Proto-West_Semitic_": "PWS"}
 
 def draft_title_level(path):
@@ -168,7 +182,33 @@ def replaced(page, code, pairs):
         sec = sec.replace(old, new)
     return page[:m.end()] + sec + page[end:]
 
+def merge_same_page(items):
+    """One card per page: an edit built on an earlier one of the same page (see pages()) replaces it, with both languages, its diff against the
+    live text, and every note. Saving two cards of one page from the live text would undo the first."""
+    import difflib
+    out, at = [], {}
+    for x in items:
+        if "full" in x and x["page"] in at:
+            prev = out[at[x["page"]]]
+            live = K.cached(x["page"]) or ""
+            x = dict(x, lang=prev["lang"] + ", " + x["lang"], code=prev["code"] + "," + x["code"],
+                     diff=[l for l in difflib.unified_diff(live.split("\n"), x["full"].split("\n"), lineterm="", n=0) if l[:1] in "+-" and l[:3] not in ("+++", "---")])
+            out[at[x["page"]]] = x
+            continue
+        if "full" in x:
+            at[x["page"]] = len(out)
+        out.append(x)
+    return out
+
+def r_cites_not(x):
+    """An EXTRA page still to do: it has the language and does not cite the reconstruction yet."""
+    sec = K.language_section(K.cached(x["page"]) or "", x["code"])
+    lang = "sem-wes-pro" if x["level"] == "PWS" else "sem-pro"          # the level counts: فرس cites Proto-Semitic *paraš- 'to separate'
+    return sec is not None and not re.search(r"(?<![\w:-])" + lang + r"[|:]\*" + re.escape(x["title"]) + r"[|}<]", sec)
+
 def gloss_of(row):
+    if not row.get("draft"):
+        return ""
     text = (ROOT / "wiktionary_drafts" / "done" / row["draft"]) if (ROOT / "wiktionary_drafts" / "done" / row["draft"]).exists() else ROOT / "wiktionary_drafts" / row["draft"]
     for code, term, params in K.entries(text.read_text(encoding="utf-8")):
         if code == row["code"] and term == row["term"]:
@@ -182,12 +222,13 @@ def summary(level, title):
 def pages(refresh=True):
     """Re-download every candidate page, then write the edited page for the safe ones and the reason for the rest."""
     rows = plan()
-    titles = sorted({r["page"] for r in rows})
+    extra = [dict(x, lang=K.LANGS[x["code"]][0], term=x["page"], draft=None) for x in EXTRA]
+    titles = sorted({r["page"] for r in rows + extra})
     if refresh and titles:
         K.fetch(titles, refresh=True)
-    out = []
-    for r in plan():                                            # again, on the fresh text: a page fixed meanwhile drops out
-        page = K.cached(r["page"]) or ""
+    out, edited = [], {}                                        # edited: page -> its text with the edits so far (two languages of one page, as Ge'ez and Tigrinya ፈረስ)
+    for r in plan() + [x for x in extra if r_cites_not(x)]:     # again, on the fresh text: a page fixed meanwhile drops out
+        page = edited.get(r["page"]) or K.cached(r["page"]) or ""
         verdict, arg = DECISIONS.get((r["page"], r["code"]), (None, None))
         if verdict == "leave":
             out.append(dict(page=r["page"], lang=r["lang"], code=r["code"], term=r["term"], title=r["title"], level=r["level"], left=arg))
@@ -204,12 +245,17 @@ def pages(refresh=True):
             new = replaced(page, r["code"], arg) if verdict == "replace" else edited_page(page, r["code"], r["level"], r["title"], section=arg if verdict == "section" else None)
             if verdict == "section":
                 item["section"] = arg
-            if verdict == "replace":
+            if verdict == "replace" and any("{{der|" in o for o, _ in arg):
                 item["reworded"] = True
-            item.update(full=new, summary=summary(r["level"], r["title"]) + ("; borrowing claim without a source made a comparison (the SED notes none)" if verdict == "replace" else ""),
+            if (r["page"], r["code"]) in NOTES:
+                item["note"] = NOTES[(r["page"], r["code"])]
+            item.update(full=new, summary=summary(r["level"], r["title"]) + ("; borrowing claim without a source made a comparison (the SED notes none)" if verdict == "replace" and any("{{der|" in o for o, _ in arg) else ""),
                         diff=[l for l in __import__("difflib").unified_diff(page.split("\n"), new.split("\n"), lineterm="", n=0)
                               if l[:1] in "+-" and l[:3] not in ("+++", "---")])
+        if "full" in item:
+            edited[r["page"]] = item["full"]
         out.append(item)
+    out = merge_same_page(out)
     PAGES_OUT.write_text(json.dumps(out, ensure_ascii=False, indent=1), encoding="utf-8")
     n = sum("full" in x and "confirm" not in x for x in out); c = sum("confirm" in x for x in out); l = sum("left" in x for x in out)
     print(f"{n} page(s) ready to edit, {c} ready once a person confirms the sense, {l} left as decided, {len(out) - n - c - l} need a person; see {PAGES_OUT.relative_to(ROOT)}")

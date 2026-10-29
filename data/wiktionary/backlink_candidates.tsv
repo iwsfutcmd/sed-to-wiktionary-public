@@ -1,15 +1,4 @@
 draft	level	title	code	lang	term	page	mode	insert	full	current
-Proto-West_Semitic_paraš-.wiki	PWS	paraš-	syc	Classical Syriac	ܦܪܫܐ	ܦܪܫܐ	append	{{inh|syc|sem-wes-pro|*paraš-}}	From {{inh|syc|sem-wes-pro|*paraš-}}. Compare {{cog|ar|فَرَس}} and {{cog|he|פָּרָשׁ|tr=pārāš}}.	Compare {{cog|ar|فَرَس}} and {{cog|he|פָּרָשׁ|tr=pārāš}}.
-Proto-West_Semitic_paraš-.wiki	PWS	paraš-	hbo	Biblical Hebrew	פָּרָשׁ	פרש	append	{{inh|hbo|sem-wes-pro|*paraš-}}	"From {{inh|hbo|sem-wes-pro|*paraš-}}. {{he-rootbox|פ־ר־שׁ}}
-Cognate with {{cog|ar|فَرَس||horse}}."	"{{he-rootbox|פ־ר־שׁ}}
-Cognate with {{cog|ar|فَرَس||horse}}."
-Proto-West_Semitic_paraš-.wiki	PWS	paraš-	xsa	Sabaean	𐩰𐩧𐩪	𐩰𐩧𐩪	append	{{inh|xsa|sem-wes-pro|*paraš-}}	"From {{inh|xsa|sem-wes-pro|*paraš-}}. A state form of {{m|xsa|𐩰𐩧𐩪𐩣|tr=frs¹m|t=horse; horseman}}.
-
-The underlying lexeme is cognate with {{cog|ar|فَرَس|t=horse, mare}} and {{cog|gez|ፈረስ|tr=färäs|t=horse}}. Compare Ḥaḍramitic {{m|xhd|𐩱𐩰𐩧𐩪|tr=ʾfrs¹|t=cavalry}} and Yemeni Arabic {{m|ar|فَرَس|t=mare}}."	"A state form of {{m|xsa|𐩰𐩧𐩪𐩣|tr=frs¹m|t=horse; horseman}}.
-
-The underlying lexeme is cognate with {{cog|ar|فَرَس|t=horse, mare}} and {{cog|gez|ፈረስ|tr=färäs|t=horse}}. Compare Ḥaḍramitic {{m|xhd|𐩱𐩰𐩧𐩪|tr=ʾfrs¹|t=cavalry}} and Yemeni Arabic {{m|ar|فَرَس|t=mare}}."
-Proto-West_Semitic_paraš-.wiki	PWS	paraš-	gez	Ge'ez	ፈረስ	ፈረስ	append	{{inh|gez|sem-wes-pro|*paraš-}}	From {{inh|gez|sem-wes-pro|*paraš-}}. Cognate with {{cog|ar|فَرَس}}, {{cog|he|פָּרָשׁ}}.	Cognate with {{cog|ar|فَرَس}}, {{cog|he|פָּרָשׁ}}.
-Proto-West_Semitic_paraš-.wiki	PWS	paraš-	ti	Tigrinya	ፈረስ	ፈረስ	append	{{inh|ti|sem-wes-pro|*paraš-}}	From {{inh|ti|sem-wes-pro|*paraš-}}. Cognate with {{cog|ar|فَرَس}}	Cognate with {{cog|ar|فَرَس}}
 Proto-Semitic_bVʕVr-.wiki	PS	bVʕVr-	aii	Assyrian Neo-Aramaic	ܒܥܝܼܪܵܐ	ܒܥܝܪܐ	append	{{inh|aii|sem-pro|*bVʕVr-}}	From {{inh|aii|sem-pro|*bVʕVr-}}. {{inh+|aii|arc|בְּעִירָא|tr=bəʿīrā}}; cognate to {{cog|ar|بَعِير}} and {{cog|he|בְּעִיר|tr=b'ír}}, {{cog|akk|būrum|𒀫|tr=būrum|t=calf}}, {{cog|uga|𐎛𐎁𐎗|t=bull}}, {{cog|gez|ብዕር|tr=bəʿər|t=ox, horned cattle}}, {{cog|am|በሬ}}, {{cog|sem-srb|𐩨𐩲𐩧|tr=bʿr|t=cattle}}.	{{inh+|aii|arc|בְּעִירָא|tr=bəʿīrā}}; cognate to {{cog|ar|بَعِير}} and {{cog|he|בְּעִיר|tr=b'ír}}, {{cog|akk|būrum|𒀫|tr=būrum|t=calf}}, {{cog|uga|𐎛𐎁𐎗|t=bull}}, {{cog|gez|ብዕር|tr=bəʿər|t=ox, horned cattle}}, {{cog|am|በሬ}}, {{cog|sem-srb|𐩨𐩲𐩧|tr=bʿr|t=cattle}}.
 Proto-Semitic_baḳḳ-.wiki	PS	baḳḳ-	tru	Turoyo	ܒܩܐ	ܒܩܐ	append	{{inh|tru|sem-pro|*baḳḳ-}}	From {{inh|tru|sem-pro|*baḳḳ-}}. From {{inh|tru|arc|בקא|tr=bāqā}}.	From {{inh|tru|arc|בקא|tr=bāqā}}.
 Proto-Semitic_karr-.wiki	PS	karr-	hbo	Biblical Hebrew	כַּר	כר	create	{{inh|hbo|sem-pro|*karr-}}	"===Etymology===
@@ -25,3 +14,14 @@ Proto-Semitic_ḫaraš-.wiki	PS	ḫaraš-	ti	Tigrinya	ሓረሰ	ሓረሰ	create
 {{inh|ti|sem-pro|*ḫaraš-}}.
 
 "	
+Proto-West_Semitic_paraš-.wiki	PWS	paraš-	syc	Classical Syriac	ܦܪܫܐ	ܦܪܫܐ	append	{{inh|syc|sem-wes-pro|*paraš-}}	From {{inh|syc|sem-wes-pro|*paraš-}}. Compare {{cog|ar|فَرَس}} and {{cog|he|פָּרָשׁ|tr=pārāš}}.	Compare {{cog|ar|فَرَس}} and {{cog|he|פָּרָשׁ|tr=pārāš}}.
+Proto-West_Semitic_paraš-.wiki	PWS	paraš-	hbo	Biblical Hebrew	פָּרָשׁ	פרש	append	{{inh|hbo|sem-wes-pro|*paraš-}}	"From {{inh|hbo|sem-wes-pro|*paraš-}}. {{he-rootbox|פ־ר־שׁ}}
+Cognate with {{cog|ar|فَرَس||horse}}."	"{{he-rootbox|פ־ר־שׁ}}
+Cognate with {{cog|ar|فَرَس||horse}}."
+Proto-West_Semitic_paraš-.wiki	PWS	paraš-	xsa	Sabaean	𐩰𐩧𐩪	𐩰𐩧𐩪	append	{{inh|xsa|sem-wes-pro|*paraš-}}	"From {{inh|xsa|sem-wes-pro|*paraš-}}. A state form of {{m|xsa|𐩰𐩧𐩪𐩣|tr=frs¹m|t=horse; horseman}}.
+
+The underlying lexeme is cognate with {{cog|ar|فَرَس|t=horse, mare}} and {{cog|gez|ፈረስ|tr=färäs|t=horse}}. Compare Ḥaḍramitic {{m|xhd|𐩱𐩰𐩧𐩪|tr=ʾfrs¹|t=cavalry}} and Yemeni Arabic {{m|ar|فَرَس|t=mare}}."	"A state form of {{m|xsa|𐩰𐩧𐩪𐩣|tr=frs¹m|t=horse; horseman}}.
+
+The underlying lexeme is cognate with {{cog|ar|فَرَس|t=horse, mare}} and {{cog|gez|ፈረስ|tr=färäs|t=horse}}. Compare Ḥaḍramitic {{m|xhd|𐩱𐩰𐩧𐩪|tr=ʾfrs¹|t=cavalry}} and Yemeni Arabic {{m|ar|فَرَس|t=mare}}."
+Proto-West_Semitic_paraš-.wiki	PWS	paraš-	gez	Ge'ez	ፈረስ	ፈረስ	append	{{inh|gez|sem-wes-pro|*paraš-}}	From {{inh|gez|sem-wes-pro|*paraš-}}. Cognate with {{cog|ar|فَرَس}}, {{cog|he|פָּרָשׁ}}.	Cognate with {{cog|ar|فَرَس}}, {{cog|he|פָּרָשׁ}}.
+Proto-West_Semitic_paraš-.wiki	PWS	paraš-	ti	Tigrinya	ፈረስ	ፈረስ	append	{{inh|ti|sem-wes-pro|*paraš-}}	From {{inh|ti|sem-wes-pro|*paraš-}}. Cognate with {{cog|ar|فَرَس}}	Cognate with {{cog|ar|فَرَس}}

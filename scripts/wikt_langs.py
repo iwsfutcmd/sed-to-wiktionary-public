@@ -5,6 +5,8 @@ import re, unicodedata as U
 LANGS = {
  "akk": ("Akkadian", {"Latin", "Cuneiform"}), "xeb": ("Eblaite", {"Latin"}), "ar": ("Arabic", {"Arabic"}),
  "arc": ("Aramaic", {"Hebrew", "Phoenician", "Imperial Aramaic", "Palmyrene", "Nabataean"}), "jpa": ("Jewish Palestinian Aramaic", {"Hebrew"}), "tmr": ("Jewish Babylonian Aramaic", {"Hebrew"}),
+ "arc-old": ("Old Aramaic", {"Phoenician", "Imperial Aramaic", "Hebrew"}), "arc-imp": ("Imperial Aramaic", {"Imperial Aramaic", "Hebrew"}),
+ "arc-pal": ("Palmyrene Aramaic", {"Palmyrene"}), "arc-nab": ("Nabataean Aramaic", {"Nabataean"}), "arc-bib": ("Biblical Aramaic", {"Hebrew"}),
  "arc-cpa": ("Christian Palestinian Aramaic", {"Syriac"}), "sam": ("Samaritan Aramaic", {"Samaritan"}), "syc": ("Classical Syriac", {"Syriac"}), "myz": ("Classical Mandaic", {"Mandaic"}),
  "tru": ("Turoyo", {"Syriac"}), "lhs": ("Mlahsö", {"Latin", "Syriac"}), "aii": ("Assyrian Neo-Aramaic", {"Syriac", "Latin"}), "amw": ("Western Neo-Aramaic", {"Latin"}), "hbo": ("Biblical Hebrew", {"Hebrew"}), "he": ("Hebrew", {"Hebrew"}),
  "phn": ("Phoenician", {"Phoenician"}), "sem-amm": ("Ammonite", {"Phoenician"}), "uga": ("Ugaritic", {"Ugaritic"}), "xsa": ("Sabaean", {"Old South Arabian"}),
@@ -20,7 +22,9 @@ RANGES = [("Hebrew", 0x590, 0x5FF), ("Arabic", 0x600, 0x6FF), ("Syriac", 0x700, 
           ("Old South Arabian", 0x10A60, 0x10A7F), ("Cuneiform", 0x12000, 0x1254F)]
 
 # Section heading(s) a lemma of that language sits under on en.wiktionary.org
-SECTIONS = {"hbo": ["Hebrew", "Biblical Hebrew"], "he": ["Hebrew"], "arc": ["Aramaic"], "xsa": ["Sabaean"], "sem-srb": ["Old South Arabian"]}
+SECTIONS = {"hbo": ["Hebrew", "Biblical Hebrew"], "he": ["Hebrew"], "arc": ["Aramaic"],
+            "arc-old": ["Aramaic"], "arc-imp": ["Aramaic"], "arc-pal": ["Aramaic"], "arc-nab": ["Aramaic"], "arc-bib": ["Aramaic"],      # etymology-only varieties: entries sit under Aramaic
+            "xsa": ["Sabaean"], "sem-srb": ["Old South Arabian"]}
 def sections(code):
     return SECTIONS.get(code) or [LANGS[code][0]]
 

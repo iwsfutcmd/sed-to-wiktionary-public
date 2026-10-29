@@ -49,7 +49,7 @@ PALM_FINAL_NUN = (chr(0x1086E), chr(0x1086D))
 # Wiktionary language code -> table
 CODES = {"he": "he", "sam": "sam", "hbo": "he", "arc": "he", "jpa": "he", "tmr": "he", "syc": "syc", "uga": "uga", "phn": "phn", "xsa": "osa", "sem-srb": "osa",
          "inm": "osa", "xqt": "osa", "xhd": "osa", "sem-amm": "phn",
-         "arc-old": "oarc", "arc-off": "armi", "arc-pal": "palm", "arc-nab": "nbat"}      # Aramaic varieties by period script (not Wiktionary codes: all are arc)
+         "arc-old": "oarc", "arc-off": "armi", "arc-imp": "armi", "arc-pal": "palm", "arc-nab": "nbat", "arc-bib": "he"}      # Aramaic varieties by period script (not Wiktionary codes: all are arc)
 ARAMAIC = ("he", "sam", "syc", "armi", "palm", "oarc", "nbat")                   # orthography rules shared by the Aramaic/Hebrew-type scripts
 SRC = {"s₁": "s", "s₂": "š", "s₃": "ś",      # Old South Arabian sibilants, as Wiktionary's s¹ s² s³ (𐩪 𐩦 𐩯)
        "ˀ": "ʾ", "ʔ": "ʾ", "ʼ": "ʾ", "ˁ": "ʿ", "ʕ": "ʿ", "ʻ": "ʿ", "ḳ": "q", "ṯ̣": "ẓ", "ḏ̣": "ẓ", "ŝ": "ś"}

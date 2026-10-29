@@ -1,0 +1,37 @@
+{{reconstructed}}
+==Proto-Semitic==
+
+===Etymology===
+Reconstructed in Militarev & Kogan's ''Semitic Etymological Dictionary'' as {{m|sem-pro|*pagr-}}.
+
+===Noun===
+{{sem-noun|m}}
+
+# [[body]]
+# [[corpse]]
+
+====Inflection====
+{{sem-decl-noun}}
+
+====Descendants====
+* East Semitic:
+** {{desc|akk|pagrum|alt=𒉺𒀝𒀸|tr=pagrum|t=body, trunk}}
+* West Semitic:
+** Central Semitic:
+*** {{desc|ar|فَجَرَ|t=to commit adultery, fornication with a woman|unc=1}}
+*** Northwest Semitic:
+**** {{desc|arc-old|𐤐𐤂𐤓|t=body}}
+**** {{desc|arc-imp|𐡐𐡂𐡓|t=body}}
+**** {{desc|arc-pal|𐡱𐡢𐡴|t=body}}
+**** {{desc|jpa|פגר|tr=pgr|t=body}}
+**** {{desc|tmr|פגרא|tr=pagrā|t=body}}
+**** {{desc|syc|ܦܓܪܐ|tr=pagrā|t=body, corpse}}
+**** {{desc|myz|ࡐࡀࡂࡓࡀ|t=body}}
+**** Canaanite:
+***** {{desc|hbo|פֶּגֶר|tr=péger|t=corpse}}
+**** {{desc|uga|𐎔𐎂𐎗|t=body, corpse as a funerary offering|unc=1}}
+
+===References===
+* {{R:sem-pro:SED|volume=I|id=688|entry=*pagr-}}
+
+{{C|sem-pro|Anatomy}}
