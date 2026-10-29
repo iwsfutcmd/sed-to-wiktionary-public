@@ -18,11 +18,11 @@ Reconstructed in Militarev & Kogan's ''Semitic Etymological Dictionary'' as {{m|
 ** Central Semitic:
 *** {{desc|ar|بَعِير|t=camel; beast of burden}}
 *** Northwest Semitic:
-**** {{desc|tmr|-|tr=bəʕīrā|t=grazing animal, cattle}}
-**** {{desc|syc|-|tr=bəʕīrā|t=cattle, beast of burden}}
-**** {{desc|aii|-|tr=bîrâ|t=large cattle}}
+**** {{desc|tmr|בְּעִירָא|tr=bəʕīrā|t=grazing animal, cattle}}
+**** {{desc|syc|ܒܥܝܪܐ|tr=bəʕīrā|t=cattle, beast of burden}}
+**** {{desc|aii|ܒܥܝܼܪܵܐ|tr=bîrâ|t=large cattle}}
 **** Canaanite:
-***** {{desc|hbo|-|tr=bəʕīr|t=livestock, cattle}}
+***** {{desc|hbo|בְּעִיר|tr=bəʕīr|t=livestock, cattle}}
 ***** {{desc|sem-amm|𐤁𐤏𐤓|tr=bʕr|t=ox, beast of burden|unc=1}}
 *** Old South Arabian:
 **** {{desc|xsa|𐩨𐩲𐩧|tr=bʕr|t=cattle, head of cattle; camel}}

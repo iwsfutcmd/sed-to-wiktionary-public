@@ -62,3 +62,7 @@ sed_key	entry	language	site_form	print_form	status	note
 2N:221	ṣ̂abb-	(gloss)	monitor lizard	kind of lizard	gloss differs	print keeps the gloss general: Hebrew and Jewish Aramaic point to a different (spiny-tailed) lizard than the monitor lizard of Arabic and the Modern South Arabian languages; draft follows the print
 	ṯḳl	(whole entry)	*ṯḳl		site only	SEDonline record 2030 (source HALOT 1642) has no printed SED entry; the root page is drafted from the site alone, so its reference has no volume=
 	ṯḳl	Ebla	ša-ga-lum /ṯaḳālum/		differs	no print: the draft cites the reading between the slashes (ṯaḳālum) as the term instead of a '-' placeholder
+	ṯḳl	Arabic	ṯql		differs	no print: the live page was changed by Wad Yaẓimẓn (2026-10-23) to ثَقَلَ 'to weigh' (the site's 'to be heavy' is ثَقُلَ); the generator follows the live page
+2N:198	sūs-	Ebla	za-zu-um /sāsum/		differs	the draft cites the reading between the slashes (sāsum) as the term, as on ṯḳl
+1V:42	maraṣ́-	Hebrew	mrṣ		differs	live page (2026-10-19): the root written m-r-ṣ (מ־ר־ץ) with a pointer to Modern Hebrew הִמְרִיץ; the generator follows the live page
+1N:209	pagr-	Hebrew	pāgār	pāgār	differs	live page: Enoshd (2026-10-15) corrected the Hebrew to פֶּגֶר péger; the generator follows the live page

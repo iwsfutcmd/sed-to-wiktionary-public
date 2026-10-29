@@ -16,12 +16,12 @@
 ** Central Semitic:
 *** {{desc|ar|مَرِضَ|t=to be diseased, disordered, distempered, sick, ill}}
 *** Northwest Semitic:
-**** Old {{desc|arc|מרק|tr=mrq|t=illness}}
-**** Official {{desc|arc|מרע|tr=mrʕ|t=illness}}
+**** Old {{desc|arc|𐤌𐤓𐤒|tr=mrq|t=illness|sc=Phnx}}
+**** Official {{desc|arc|𐡌𐡓𐡏|tr=mrʕ|t=illness|sc=Armi}}
 **** {{desc|jpa|מרע|tr=mrʕ|t=to be sick}}
 **** {{desc|syc|ܡܪܥ|tr=məraʕ|t=to be ill, sick}}
 **** Canaanite:
-***** {{desc|hbo|מרץ|tr=mrṣ|t=to be bad, painful}}
+***** {{desc|hbo|מ־ר־ץ|tr=m-r-ṣ|t=to be bad, painful}} (see {{m|he|הִמְרִיץ|tr=himrîṣ|t=invigorate, energize}})
 **** {{desc|uga|𐎎𐎗𐎕|t=to fall ill}}
 *** Old South Arabian:
 **** {{desc|xsa|𐩣𐩧𐩳|tr=mrḍ|t=to suffer from disease}}

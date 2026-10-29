@@ -16,9 +16,9 @@
 ** {{desc|xeb|ṯaqālum|t=to weigh}}
 * West Semitic:
 ** Central Semitic:
-*** {{desc|ar|ثَقُلَ|t=to be heavy}}
+*** {{desc|ar|ثَقَلَ|t=to weigh}}
 *** Northwest Semitic:
-**** Official {{desc|arc|תקל|tr=tql|t=to weigh out}}
+**** Official {{desc|arc|𐡕𐡒𐡋|tr=tql|t=to weigh out|sc=Armi}}
 **** {{desc|jpa|תקל|tr=tql|t=to weigh}}
 **** {{desc|tmr|תקל|tr=tql|t=to weigh, be even}}
 **** {{desc|syc|ܬܩܠ|tr=tql|t=to suspend, weigh out, balance}}

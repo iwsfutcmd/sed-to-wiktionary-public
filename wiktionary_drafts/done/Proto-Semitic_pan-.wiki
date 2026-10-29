@@ -18,7 +18,7 @@ Reconstructed in Militarev & Kogan's ''Semitic Etymological Dictionary'' as {{m|
 * West Semitic:
 ** Central Semitic:
 *** Northwest Semitic:
-**** Official {{desc|arc|פנה|tr=pnh|t=face}}
+**** Official {{desc|arc|𐡐𐡍𐡄|tr=pnh|t=face|sc=Armi}}
 **** Canaanite:
 ***** {{desc|hbo|פָּנִים|tr=pānīm|t=face}}
 ***** {{desc|phn|𐤐𐤍|tr=pn|t=face}}

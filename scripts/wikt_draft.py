@@ -10,7 +10,7 @@ from collections import defaultdict
 from pathlib import Path
 from paths import DATA, BUILD, ROOT
 from sedonline_compare import read
-from tr2script import abjad, arabic, ethiopic, mandaic, cuneiform
+from tr2script import abjad, arabic, ethiopic, mandaic, cuneiform, same_spelling
 
 UA = {"User-Agent": "sed-to-wiktionary/1.0 (research; https://github.com/iwsfutcmd/sed-to-wiktionary)"}
 CACHE = BUILD / "wikt_pages"
@@ -41,12 +41,14 @@ CURATED = {
  ("uga", "ˀmr"): "𐎛𐎎𐎗",                    # Wiktionary writes ʾi (𐎛), the consonants alone give 𐎀
  ("hbo", "géleḏ"): "גֶּלֶד",              # Wiktionary's own Hebrew lemma גלד (etymology: from *gild-)
  ("hbo", "pānīm"): "פָּנִים",                  # plural tantum; the lemma page פנים
-  ("hbo", "ʕakbār"): "עַכְבָּר", ("hbo", "pāgār"): "פָּגָר",
+  ("hbo", "ʕakbār"): "עַכְבָּר", ("hbo", "pāgār"): "פָּגָר", ("hbo", "péger"): "פֶּגֶר",
+  ("hbo", "bəʕīr"): "בְּעִיר", ("tmr", "bəʕīrā"): "בְּעִירָא", ("syc", "bəʕīrā"): "ܒܥܝܪܐ", ("aii", "bîrâ"): "ܒܥܝܼܪܵܐ",     # *bVʕVr-: as on Wiktionary (בעיר, בעירא, ܒܥܝܪܐ incl. its Assyrian section)
+  ("hbo", "m-r-ṣ"): "מ־ר־ץ",
  ("ar", "f\u01efr"): "فَجَرَ",                   # fajara, as Wiktionary's Arabic فجر
  ("hbo", "yārēk"): "יָרֵךְ", ("hbo", "ṣəbī"): "צְבִי", ("hbo", "ˀimmēr"): "אִמֵּר", ("tru", "bōḳo"): "ܒܩܐ",      # Turoyo is written in Syriac script on Wiktionary (entry ܒܩܐ)
 
  ("ar", "mrḍ"): "مَرِضَ", ("ar", "ḍrṭ"): "ضَرَطَ", ("ar", "nyk"): "نَاكَ", ("ar", "ḫrs"): "خَرَّسَ",    # bare roots: the verb forms are chosen by hand
- ("he", "šḳl"): "שָׁקַל", ("phn", "šḳl"): "𐤔𐤒𐤋", ("uga", "ṯḳl"): "𐎘𐎖𐎍", ("ar", "ṯql"): "ثَقُلَ",        # *ṯḳl: bare NWS roots, lemmas as on Wiktionary (שקל, ثقل)
+ ("he", "šḳl"): "שָׁקַל", ("phn", "šḳl"): "𐤔𐤒𐤋", ("uga", "ṯḳl"): "𐎘𐎖𐎍", ("ar", "ṯql"): "ثَقَلَ",        # *ṯḳl: bare NWS roots, lemmas as on Wiktionary (שקל, ثقل)
  ("arc", "tḳl"): "תקל", ("jpa", "tḳl"): "תקל", ("tmr", "tḳl"): "תקל", ("syc", "tḳl"): "ܬܩܠ", ("arc-cpa", "tḳl"): "ܬܩܠ", ("myz", "tḳl"): "ࡕࡒࡋ",
  ("hbo", "šəˀēr"): "שְׁאֵר", ("uga", "šˀir"): "𐎌𐎛𐎗",          # both as on Wiktionary's Akkadian šīrum page
 }
@@ -77,6 +79,10 @@ def akkadian(form):
         return AKK_OVERRIDE[form][:2]
     lemma = AKK_LEMMA.get(form, form)
     c = page(lemma)
+    if not (c and "==Akkadian==" in c) and form not in AKK_LEMMA and lemma[-1:] in "aeiuāēīū":     # Wiktionary's lemmas carry mimation:
+        cm = page(lemma + "m")                                                                    # SED sāsu is Wiktionary sāsum
+        if cm and "==Akkadian==" in cm:
+            lemma, c = lemma + "m", cm
     sec = c[c.find("==Akkadian=="):] if c and "==Akkadian==" in c else ""
     m = re.search(r"\|phon=([^<\n|]+)", sec)
     if m: return lemma, m.group(1)
@@ -84,8 +90,6 @@ def akkadian(form):
     cun = cuneiform.convert(n) if n else None
     return lemma, cun
 
-def AKK_ON_WIKT_CACHE():
-    return {l for l in set(AKK_LEMMA.values()) | {"niākum"} if (page(l) or "").find("|phon=") >= 0}
 def tr_of(f):
     return U.normalize("NFC", f).replace("ˀ", "ʔ").replace("ˁ", "ʕ").replace("ḳ", "q").replace("ǝ", "ə").replace("γ", "ɣ").replace("ŝ", "ś")      # descendants: Wiktionary's tr uses q (PS titles keep ḳ)
 TRANSLATE = {"im Kindbett liegen": "to be in childbed", "partorire (to give birth)": "to give birth", "accouché": "woman who has given birth", "the sacrup or rump of a butchered animal": "the sacrum or rump of a butchered animal", "Hüfte": "hip", "Wanzen (bugs)": "bugs", "Mücke (mosquito)": "mosquito", "guérir": "to heal"}
@@ -93,14 +97,14 @@ def script_for(code, form):
     """-> (script, how) with how in curated / ethiopic / abjad, or (None, None)."""
     if (code, form) in CURATED:
         return CURATED[(code, form)], "curated"
-    sc = ethiopic.convert(code, form) if code in ethiopic.PROFILES else None
-    if sc: return sc, "ethiopic"
-    sc = arabic.convert(form) if code == "ar" else None
-    if sc: return sc, "arabic"
-    sc = mandaic.convert(code, form) if code == "myz" else None
-    if sc: return sc, "mandaic"
-    sc = abjad.convert(code, form)
-    return (sc, "abjad") if sc else (None, None)
+    for how, ok, conv in (("ethiopic", code in ethiopic.PROFILES, lambda f: ethiopic.convert(code, f)), ("arabic", code == "ar", arabic.convert),
+                          ("mandaic", code == "myz", lambda f: mandaic.convert(code, f)), ("abjad", True, lambda f: abjad.convert(code, f))):
+        sc = same_spelling(conv, form) if ok else None      # a form with variants (šuš(š), mwt/myt) only if every reading is spelled alike
+        if sc: return sc, how
+    return None, None
+# Epigraphic Aramaic in its period script, as other Wiktionary editors cite it (Old *ṯalāṯ- sc=Phnx; Official baʕl-, šidṯ- 𐡁𐡏𐡋, 𐡔𐡕𐡀):
+# SEDonline language -> (abjad table, Wiktionary script code). Biblical, Jewish and later Aramaic stay in the square (Hebrew) script.
+ARC_SCRIPT = {"Old Aramaic": ("arc-old", "Phnx"), "Official Aramaic": ("arc-off", "Armi"), "Palmyrean": ("arc-pal", "Palm")}
 def one(code, form, notes, first, gloss, lang):
     """One {{desc}} (first variant) or {{l}} (further variants) with the best script available."""
     head = "desc" if first else "l"
@@ -108,10 +112,16 @@ def one(code, form, notes, first, gloss, lang):
     if code == "akk":
         lemma, cun = akkadian(form)
         if not cun: notes.append(f"Akkadian {lemma}: no cuneiform (no Wiktionary lemma page, no convertible normalised spelling)")
-        elif form not in AKK_OVERRIDE and lemma not in AKK_ON_WIKT_CACHE(): notes.append(f"Akkadian {lemma}: {cun} (NORMALISED spelling {cuneiform.normalise(lemma)}, not an attestation)")
+        elif form not in AKK_OVERRIDE and "|phon=" not in (page(lemma) or ""): notes.append(f"Akkadian {lemma}: {cun} (NORMALISED spelling {cuneiform.normalise(lemma)}, not an attestation)")
         return f"{{{{{head}|akk|{lemma}" + (f"|alt={cun}" if cun else "") + f"|tr={lemma}{t}}}}}"
     if code in LATIN_TERM:
         return f"{{{{{head}|{code}|{tr_of(form)}{t}}}}}"
+    if lang in ARC_SCRIPT:
+        table, scode = ARC_SCRIPT[lang]
+        sc = same_spelling(lambda f: abjad.convert(table, f), form)
+        if sc:
+            notes.append(f"{lang} {form}: {sc} (abjad, {scode})")
+            return f"{{{{{head}|{code}|{sc}|tr={tr_of(form)}{t}|sc={scode}}}}}"
     sc, how = script_for(code, form)
     if sc and how != "curated":
         notes.append(f"{lang} {form}: {sc} ({how})")
@@ -130,7 +140,8 @@ def entry(code, form, gloss, lang, notes):
     m = re.match(r"^(.*?)\s*\(([^)]*)\)$", form)           # 'yarḵāṯēh (suff.)' -> form + note
     if m and re.search(r"suff|det|pl|fem|masc", m.group(2)):
         form = m.group(1); gloss = (gloss + f" ({m.group(2)})").strip()
-    if "/" in form:                                         # slash alternations: keep the printed string, no guessing
+    if "/" in form and not (code not in LATIN_TERM and code != "akk" and " " not in form and "," not in form
+                            and (one(code, form, [], True, gloss, lang).split("|")[2] != "-")):   # unless every reading has the same script form
         if code in LATIN_TERM:                              # the term itself is already the transliteration: no separate tr=
             return f"{{{{desc|{code}|{tr_of(form)}" + (f"|t={gloss}" if gloss else "") + "}}"
         return f"{{{{desc|{code}|-|tr={tr_of(form)}" + (f"|t={gloss}" if gloss else "") + "}}"
@@ -146,6 +157,8 @@ PAGES = {   # title -> SEDonline reconstruction id and page content
  "ṯ̣aby-": dict(rec="624", vol="II", entry="*ṯ̣aby(-at)-", override={("Mandaic", "ṭabia"): dict(gloss="gazelle, deer", reason="print: ṭabia 'gazelle, deer' [DM 173], site: 'deer'")}, pos="{{sem-noun|m|g2=f}}", infl=True, defs=["[[gazelle]]"], cat="{{C|sem-pro|Mammals}}",
                etym="Reconstructed in Militarev & Kogan's ''Semitic Etymological Dictionary'' with an optional feminine suffix {{m|sem-pro|*-at-}}: {{m|sem-pro|*ṯ̣aby(-at)-}}."),
  "maraṣ́-": dict(rec="894", vol="I", entry="*mrṣ̂", pos="{{head|sem-pro|verb}}", infl=False,
+                 override={("Hebrew", "mrṣ"): dict(form="m-r-ṣ", after="(see {{m|he|הִמְרִיץ|tr=himrîṣ|t=invigorate, energize}})",
+                                                   reason="live page (2026-10-19): the Hebrew root written m-r-ṣ, with a pointer to הִמְרִיץ")},
                  conj="{{sem-pro-conj/*paʕala-*yipʕal|m|r|ṣ́|vn=marṣ́}}",        # SED: Akkadian marāṣu (a/a)
  defs=["to be [[sick]], [[ill]]"], cat="", etym=""),
  "ṣ́araṭ-": dict(rec="1023", vol="I", entry="*ṣ̂rṭ",
@@ -220,7 +233,7 @@ PAGES = {   # title -> SEDonline reconstruction id and page content
                        dict(lang="Mehri", form="kənsīd", gloss="top of the shoulder"),
                        dict(lang="Harsusi", form="kənsīd", gloss="shoulder"),
                        dict(lang="Jibbali", form="kənséd", gloss="shoulder")]),
- "pagr-": dict(rec="688", vol="I", entry="*pagr-", print_sourced=True, pos="{{sem-noun|m}}", infl=True, defs=["[[body]]", "[[corpse]]"],
+ "pagr-": dict(rec="688", vol="I", entry="*pagr-", print_sourced=True, override={("Hebrew", "pāgār"): dict(form="péger", reason="live page: Enoshd (2026-10-15) corrected the Hebrew to פֶּגֶר péger")}, pos="{{sem-noun|m}}", infl=True, defs=["[[body]]", "[[corpse]]"],
                cat="{{C|sem-pro|Anatomy}}", etym="Reconstructed in Militarev & Kogan's ''Semitic Etymological Dictionary'' as {{m|sem-pro|*pagr-}}.",
                words=[dict(lang="Akkadian", form="pagru", gloss="body, trunk"),
                       dict(lang="Ugaritic", form="pgr", gloss="body, corpse as a funerary offering", unc=True),
@@ -247,7 +260,7 @@ PAGES = {   # title -> SEDonline reconstruction id and page content
               # Syriac is cited by SEDonline as "sūstā, sāsā" under one combined gloss; sūstā is the unrelated word for "mare" (fem. of sūsyā
               # "horse"), bundled in as a cross-reference. Only sāsā, the real cognate, is kept here.
               words=[dict(lang="Akkadian", form="sāsu", gloss="moth"),
-                     dict(lang="Ebla", form="zazum /sāsum/", gloss="moth", unc=True),
+                     dict(lang="Ebla", form="sāsum", gloss="moth", unc=True),
                      dict(lang="Hebrew", form="sās", gloss="clothes moth"),
                      dict(lang="Old Aramaic", form="ss", gloss="moth"),
                      dict(lang="Official Aramaic", form="ss", gloss="moth"),
@@ -292,7 +305,7 @@ PAGES = {   # title -> SEDonline reconstruction id and page content
  # No East Semitic member and SEDonline's own "level" field marks this PWS (sed_print_vs_site_agreement.tsv, rec 656), so it belongs
  # at Proto-West Semitic, not Proto-Semitic -- {{head|sem-wes-pro|noun}}, no Inflection section (no Template:sem-wes-decl-noun exists).
  "ṣ́abb-": dict(rec="656", vol="II", entry="*ṣ̂abb-", print_sourced=True, level="PWS", pos="{{head|sem-wes-pro|noun|g=m}}", infl=True, defs=["kind of [[lizard]]"], cat="{{C|sem-wes-pro|Reptiles}}",
-               etym="Reconstructed in Militarev & Kogan's ''Semitic Etymological Dictionary'' as {{m|sem-pro|*ṣ́abb-}}. The reflexes split between a "
+               etym="Reconstructed in Militarev & Kogan's ''Semitic Etymological Dictionary'' as {{m|sem-pro||*ṣ́abb-}}. The reflexes split between a "
                     "thorn-tailed/spiny-tailed lizard (Hebrew, Jewish Aramaic) and the monitor lizard (Arabic, Modern South Arabian); the SED keeps the gloss "
                     "general for this reason. The Jewish Aramaic form is noted in the SED as possibly a Hebrew borrowing, since its {{m|sem-pro|*ṣ}} is irregular.",
                words=[dict(lang="Hebrew", form="ṣāb", gloss="thorn-tailed lizard"),
@@ -308,7 +321,8 @@ PAGES = {   # title -> SEDonline reconstruction id and page content
 }
 # SED has no printed entry for this verb: SEDonline (rec 2030, source HALOT 1642) alone reconstructs it, so there is no volume= and the page is flagged in data/sedonline/form_check.tsv.
 PAGES["ṯḳl"] = dict(rec="2030", entry="*ṯḳl", site_only=True, codes={"Hebrew": "he"},
-    override={("Ebla", "ša-ga-lum /ṯaḳālum/"): dict(form="ṯaḳālum", reason="site: ša-ga-lum /ṯaḳālum/ (the cited spelling and its reading)")},
+    override={("Ebla", "ša-ga-lum /ṯaḳālum/"): dict(form="ṯaḳālum", reason="site: ša-ga-lum /ṯaḳālum/ (the cited spelling and its reading)"),
+              ("Arabic", "ṯql"): dict(gloss="to weigh", reason="live page: Wad Yaẓimẓn, 2026-10-23, ثَقَلَ 'to weigh' (the site has ṯql 'to be heavy', i.e. ثَقُلَ)")},
     pos="{{head|sem-pro|verb}}", infl=False, conj="{{sem-pro-conj/*paʕala-*yipʕal|ṯ|ḳ|l|vn=ṯaḳl}}",          # a/u in Akkadian šaqālu; the bare verb page, as ʔbd and ʔdm (data/wiktionary/root_vs_verb.md)
     defs=["to [[weigh]]", "to [[suspend]]"], cat="", etym="")
 def tree_lines(words, notes, exclude=(), override=None, strip=(), codes=None):
@@ -318,7 +332,7 @@ def tree_lines(words, notes, exclude=(), override=None, strip=(), codes=None):
         if (w["lang"], w["form"]) in exclude:
             continue
         if override and (w["lang"], w["form"]) in override:
-            w = {**w, **{k: v for k, v in override[(w["lang"], w["form"])].items() if k in ("form", "gloss")}}
+            w = {**w, **{k: v for k, v in override[(w["lang"], w["form"])].items() if k in ("form", "gloss", "after")}}
         code, path, label = LANG[w["lang"]]
         if strip and path[:len(strip)] == strip:
             path = path[len(strip):]
@@ -331,7 +345,7 @@ def tree_lines(words, notes, exclude=(), override=None, strip=(), codes=None):
         for d in range(len(path)):
             if path[:d + 1] not in shown:
                 shown.add(path[:d + 1]); lines.append("*" * (d + 1) + " " + path[d] + ":")
-        lines.append("*" * (len(path) + 1) + " " + label + e)
+        lines.append("*" * (len(path) + 1) + " " + label + e + (" " + w["after"] if w.get("after") else ""))      # after: text following the entry
     return lines
 def build(title, cfg, out=None):
     words = cfg["words"] if cfg.get("words") else [w for w in read(DATA / "sedonline" / "sedonline_words.tsv") if w["rec_id"] == cfg["rec"]]
@@ -351,7 +365,7 @@ def build(title, cfg, out=None):
     if cfg["cat"]: d += ["", cfg["cat"]]
     dest = Path(out) if out else OUT
     dest.mkdir(exist_ok=True)
-    fname = f"Proto-West_Semitic_{title}.wiki" if pws else f"Proto-Semitic_{title}.wiki"
+    fname = filename(title, cfg)
     (dest / fname).write_text("\n".join(d) + "\n", encoding="utf-8")
     if not out:
         print(f"{title}: {len(words)} words; notes:", *notes, sep="\n   ")
@@ -404,6 +418,9 @@ def verify():
         n_no += not ok
     print(f"{len(rows)} script forms; {n_no} have no Wiktionary entry of that language (red links)")
 
+def filename(title, cfg):
+    return f"Proto-West_Semitic_{title}.wiki" if cfg.get("level") == "PWS" else f"Proto-Semitic_{title}.wiki"
+
 def check_done(only=None):
     """Rebuild every page that is in wiktionary_drafts/done/ and compare it with the saved copy. The saved copy is never touched: a changed
     page is written to wiktionary_drafts/updates/ and a diff is printed, so you can decide what to change on the live page.
@@ -412,7 +429,7 @@ def check_done(only=None):
     UPD = OUT / "updates"
     changed = []
     for title, cfg in PAGES.items():
-        saved = OUT / "done" / f"Proto-Semitic_{title}.wiki"
+        saved = OUT / "done" / filename(title, cfg)
         if not saved.exists():
             continue
         with tempfile.TemporaryDirectory() as tmp:
@@ -436,7 +453,7 @@ if __name__ == "__main__":
     if "--check-done" in sys.argv:
         sys.exit(1 if check_done() else 0)
     for t, cfg in PAGES.items():
-        if (OUT / "done" / f"Proto-Semitic_{t}.wiki").exists():
+        if (OUT / "done" / filename(t, cfg)).exists():
             continue                                   # saved to Wiktionary: never overwritten; see check_done()
         if len(sys.argv) == 1 or t in sys.argv[1:]:
             build(t, cfg)

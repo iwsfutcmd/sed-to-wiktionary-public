@@ -11,22 +11,22 @@
 
 ====Descendants====
 * East Semitic:
-** {{desc|akk|sāsu|alt=𒊓𒀀𒋢|tr=sāsu|t=moth}}
-** {{desc|xeb|zazum /sāsum/|t=moth|unc=1}}
+** {{desc|akk|sāsum|alt=𒍝𒀀𒍮|tr=sāsum|t=moth}}
+** {{desc|xeb|sāsum|t=moth|unc=1}}
 * West Semitic:
 ** Central Semitic:
 *** {{desc|ar|سُوس|t=moth}}
 *** Northwest Semitic:
-**** Old {{desc|arc|ס|tr=ss|t=moth}}
-**** Official {{desc|arc|ס|tr=ss|t=moth}}
-**** {{desc|jpa|ס|tr=ss|t=moth, worm}}
-**** {{desc|syc|ܣܐ|tr=sāsā|t=kind of worm that infests the grapevine}}
+**** Old {{desc|arc|𐤎𐤎|tr=ss|t=moth|sc=Phnx}}
+**** Official {{desc|arc|𐡎𐡎|tr=ss|t=moth|sc=Armi}}
+**** {{desc|jpa|סס|tr=ss|t=moth, worm}}
+**** {{desc|syc|ܣܣܐ|tr=sāsā|t=kind of worm that infests the grapevine}}
 **** {{desc|myz|ࡎࡀࡎࡀ|t=moth, maggot}}
 **** Canaanite:
-***** {{desc|hbo|ס|tr=sās|t=clothes moth}}
+***** {{desc|hbo|סס|tr=sās|t=clothes moth}}
 ** Ethiopian Semitic:
-*** {{desc|am|-|tr=šuš(š)|t=moth}}
-*** {{desc|har|-|tr=sūs|t=moth}}
+*** {{desc|am|ሹሽ|tr=šuš(š)|t=moth}}
+*** {{desc|har|ሱስ|tr=sūs|t=moth}}
 ** Modern South Arabian:
 *** {{desc|gdq|sust|t=large worm}}
 

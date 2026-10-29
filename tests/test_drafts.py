@@ -65,7 +65,8 @@ def forall(files):
     """Run the decorated check on every file, each as its own subTest named after the draft."""
     def deco(fn):
         def test(self):
-            self.assertTrue(files, "no drafts found")
+            if not files:
+                self.skipTest("no unposted drafts (every page is in done/)")
             for f in files:
                 with self.subTest(draft=title_of(f)):
                     fn(self, f.read_text(encoding="utf-8"), title_of(f))
