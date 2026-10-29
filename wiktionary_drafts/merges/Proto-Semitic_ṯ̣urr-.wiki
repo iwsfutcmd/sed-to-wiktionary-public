@@ -1,0 +1,40 @@
+{{reconstructed}}
+==Proto-Semitic==
+
+===Noun===
+{{sem-noun|m|g2=f}}
+
+# [[barrow]], [[crag]]
+# [[flint]]
+
+====Inflection====
+{{sem-decl-noun}}
+
+====Alternative reconstructions====
+* {{alter|sem-pro|*ṯ̣ūr-}}
+
+====Descendants====
+* East Semitic:
+** {{desc|akk|ṣurrum|alt=𒎎𒅗|tr=ṣurrum}}
+* West Semitic:
+** Central Semitic:
+*** Ancient North Arabian:
+**** {{desc|ar|ظُرَر|ظُرَرَة|ظِرّ}}
+**** {{desc|sem-saf|𐪜𐪇|𐪜𐪇𐪗}}
+*** Northwest Semitic:
+**** Aramaic:
+***: {{desc|arc|טוּרָא|tr=ṭūrā|sclang=1}}
+***: {{desc|syc|ܛܘܪܐ|tr=ṭūrā|sclang=1}}
+***: {{desc|syc|ܛܲܪܵܢܵܐ|tr=ṭarrānā|der=1}}
+**** Canaanite:
+***** {{desc|he|צור|alt=צֹר|tr1=ṣōr|צוּר|tr2=ṣūr}}
+** Old South Arabian:
+*** {{desc|xsa|𐩼𐩥𐩧|𐩼𐩧}}
+
+===References===
+* {{R:sem-pro:Weninger-Handbook|page=95}}
+* {{R:sem-pro:Weninger-Handbook|page=190}}
+* {{R:sem-saf:Walter W. Müller:1971|page=135}}
+* {{R:sem-pro:SED|id=520|entry=*ṯ̣Vrr-}}
+
+{{c|sem-pro|Landforms}}
