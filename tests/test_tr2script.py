@@ -16,6 +16,7 @@ class Variants(unittest.TestCase):
         am = lambda f: ethiopic.convert("am", f)
         self.assertEqual(same_spelling(am, "šuš(š)"), "ሹሽ")               # gemination unwritten: both readings ሹሽ
         self.assertIsNone(same_spelling(lambda f: ethiopic.convert("tig", f), "ḥāl/ḥal"))      # one reading not convertible: refuse
+        self.assertEqual(ethiopic.convert("am", "əǯǯ"), "እጅ")                                  # SED ǯ = Wiktionary ǧ (Amharic እጅ 'hand')
         self.assertIsNone(same_spelling(am, "(a)dāmäsä"))                  # readings spelled differently: refuse
         self.assertIsNone(same_spelling(lambda f: abjad.convert("arc", f), "mwt/myt"))
         self.assertEqual(same_spelling(lambda f: abjad.convert("he", f), "nāˀ/nā"), "נא")      # final ā is written alef: both נא

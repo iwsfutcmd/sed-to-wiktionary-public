@@ -28,6 +28,7 @@
 ***: {{desc|syc|ܛܲܪܵܢܵܐ|tr=ṭarrānā|der=1}}
 **** Canaanite:
 ***** {{desc|he|צור|alt=צֹר|tr1=ṣōr|צוּר|tr2=ṣūr}}
+**** {{desc|uga|𐎕𐎗|tr=ṣr|pos1=oikonym}}
 ** Old South Arabian:
 *** {{desc|xsa|𐩼𐩥𐩧|𐩼𐩧}}
 

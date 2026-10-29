@@ -1,0 +1,72 @@
+{{reconstructed}}
+==Proto-Semitic==
+
+===Etymology===
+Possibly related to {{cog|bej|ayi|t=hand}} and {{cog|egy|ꜥ|{{egy-h|a:Z1}}|tr={{m|egy|ꜥ}}|t=arm}}.
+
+===Noun===
+{{sem-noun|f}}
+
+# [[hand]]
+
+====Reconstruction notes====
+The stem *''ʔid-'' appears in multiple branches, raising the question of whether the usual reconstruction is maximally parsimonious.<!--see talk page-->
+
+====Inflection====
+{{sem-decl-noun}}
+{{sem-decl-noun|fpl=yad}}
+
+====Descendants====
+* East Semitic:
+** {{desc|akk|idum|alt=𒀉|tr=idum|t=arm}}
+* West Semitic:
+** Central Semitic:
+*** {{desctree|ar|يَد}}
+*** Northwest Semitic:
+**** {{desc|arc|יְדָא|tr=yəḏā|יַד|tr2=yaḏ}}
+***** {{desc|syc|ܐܺܝܕܳܐ|tr=ʾīḏā}}
+***** {{desc|arc-imp|𐡉𐡃}}
+***** {{desc|arc-nab|𐢍𐢅|tr=yd}}
+***** {{desc|arc-pal|𐡩𐡣}}
+***** {{desc|jpa|יד|tr=yad}}
+***** {{desc|myz|ࡏࡃࡀ}}
+***** {{desc|amw|īḏa|t=hand, (rarer) arm}}
+***** {{desc|tru|ܐܝܕ݂ܳܐ|tr=īḏo}}
+***** {{desc|lhs|izo}}
+***** {{desc|aii|ܐܝܼܕ݂ܵܐ|tr=īdä}}
+***** {{desc|hrt|-|tr=ʔida|t=hand; side}}
+**** Canaanite:
+***** {{desc|he|יָד|tr=yad, yāḏ}}
+***** {{desc|phn|𐤉𐤃}}
+**** {{desc|uga|𐎊𐎄|ts=yadu}}
+*** Old South Arabian:
+**** {{desc|inm|𐩺𐩵}}
+**** {{desc|sem-srb|𐩺𐩵}}
+**** {{desc|xqt|𐩺𐩵}}
+**** {{desc|xsa|𐩺𐩵}}
+** Ethiopian Semitic:
+*** {{desc|am|እጅ|tr=ʾəǧǧ}}
+*** {{desc|gez|እድ}}
+*** {{desc|tig|እዴ}}
+*** {{desc|ti|ኢድ}}
+*** {{desc|agj|እንጅ|tr=ənǧ}}
+*** {{desc|har|ኢጂ|tr=iǧi}}
+*** Gurage:
+**** {{desc|stv|እንጄ|tr=ənǧe|t=hand, arm, handle}}
+**** {{desc|wle|እንጅ|tr=ənǧ|t=hand, arm, handle}}
+**** {{desc|zwa|እኝጂ|tr=əñǧi|t=hand, arm, handle}}
+**** {{desc|gru|አጅ|tr=äǧ|q=Gogot, Soddo}}
+**** {{desc|sgw|አጅ|tr=äǧ|q=Chaha, Ezha, Endegen, Ennemor, Gyeto, Muher}}
+**** {{desc|mvz|አጅ|tr=äǧ}}
+** Modern South Arabian:
+*** {{desc|sqt|أأد|tr=ə́ʔəd}}
+*** {{desc|gdq|ḥayd|t=hand, arm}}
+*** {{desc|hss|ḥayd|t=hand, arm, forepaw}}
+*** {{desc|shv|éd|t=arm (from fingertip to shoulder), hand}}
+
+===References===
+* {{R:sem-pro:GC}}
+* {{R:sem-pro:Huehnergard 2019}}
+* {{R:sem-pro:SED|volume=I|id=23|entry=*yad-, *ʔid-}}
+
+{{C|sem-pro|Body parts}}

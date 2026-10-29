@@ -59,7 +59,13 @@ def fetch(titles, patience=600, log=print, refresh=False):
         while True:
             try:
                 r = json.load(urllib.request.urlopen(urllib.request.Request("https://en.wiktionary.org/w/api.php", data=data, headers=UA), timeout=30))
-                break
+                if "query" in r:
+                    break
+                code = (r.get("error") or {}).get("code", "no query in the answer")      # e.g. ratelimited, sent as HTTP 200: wait as for a 429
+                if waited > patience:
+                    log(f"  stopped: {code} after waiting {waited:.0f}s; run again later")
+                    return sum(cached(t) is None for t in todo)
+                log(f"  {code}, waiting 20s"); time.sleep(20); waited += 20
             except urllib.error.HTTPError as e:
                 if e.code != 429 or waited > patience:
                     log(f"  stopped: HTTP {e.code} after waiting {waited:.0f}s; run again later")

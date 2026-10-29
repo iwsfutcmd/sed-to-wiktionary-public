@@ -32,7 +32,8 @@ PROFILES["gez"] = {"ŝ": "ś", "ṣ̂": "ṣ́", "ḍ": "ṣ́", "ī": "i", "ū"
 LONG_A = {"am", "agj", "gft", "stv", "wle", "zwa", "gru", "sgw", "mvz", "har"}
 INITIAL_A = {"am", "agj", "gft", "stv", "wle", "zwa", "gru", "sgw", "mvz"}
 # source spellings -> Wiktionary's symbols
-COMMON = {"ˀ": "ʾ", "ʔ": "ʾ", "ʼ": "ʾ", "ˁ": "ʿ", "ʕ": "ʿ", "ʻ": "ʿ", "ṣ̂": "ṣ́", "ɨ": "ə", "ǝ": "ə"}
+COMMON = {"ǯ": "ǧ",                 # SED's ǯ (Leslau's Gurage, Harari) is Wiktionary's ǧ: ጅ
+          "ˀ": "ʾ", "ʔ": "ʾ", "ʼ": "ʾ", "ˁ": "ʿ", "ʕ": "ʿ", "ʻ": "ʿ", "ṣ̂": "ṣ́", "ɨ": "ə", "ǝ": "ə"}
 
 @lru_cache(None)
 def _inverse():
