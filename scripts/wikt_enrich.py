@@ -90,7 +90,7 @@ def main(argv):
             out.append(dict(key=x["key"], protoform=x["protoform"], gloss=x["gloss"], title=t.split(":", 1)[1], match=x["match"], rec=x["rec"],
                             page_langs=len(have), sed_langs=len(sed), n_missing=len(missing),
                             missing=", ".join(K.LANGS.get(c, (c,))[0] for c in missing),
-                            cites_sed="yes" if re.search(r"R:sem-pro:SED|Militarev|Semitic Etymological Dictionary|SED\b", text) else "no"))
+                            cites_sed="yes" if re.search(r"R:sem-pro:SED|Militarev|(?<!Hamito-)Semitic Etymological Dictionary|(?<![A-Z])SED\b", text) else "no"))
     out.sort(key=lambda d: (-d["n_missing"], d["key"]))
     with open(OUT, "w", encoding="utf-8", newline="") as f:
         w = csv.DictWriter(f, list(out[0]), delimiter="\t", lineterminator="\n"); w.writeheader(); w.writerows(out)

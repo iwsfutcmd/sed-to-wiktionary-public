@@ -1,0 +1,57 @@
+{{reconstructed}}
+==Proto-Semitic==
+
+===Etymology===
+A possible loan relation with Indo-European {{m|ine-pro||*ḱr̥h₂-nó-s|horn}} (from {{m|ine-pro|*ḱerh₂-||horn, head}}) has been suggested, but the direction of loaning is disputed. Alternatively suggested to be cognate with a {{cog|omv-pro|*ḳar-||horn}}, from {{der|sem-pro|afa-pro|*ḳar-||horn}} (tentative reconstructions).<ref>{{R:HSED|*ḳar-|passage=1549. *ḳar- “horn”}}</ref> Despite Orel and Stolbova’s connection with a supposed {{cog|egy|qrtj||horns|pos=dual}}, however, the Egyptian word is properly {{m|egy|krtj}} and cannot correspond to the Semitic. Militarev and Kogan suggest an original {{m|sem-pro||*ḳar-n-}}, pointing to Tigre {{m|tig|ቀር|tr=qär}} and similar Ethiopian Semitic forms with no trace of the {{m|sem-pro||*-n}}, and refer to Dolgopolsky for the Afroasiatic, Kartvelian and Indo-European comparisons.<ref>{{R:sem-pro:SED|volume=I|id=29|entry=*ḳarn-}}</ref>
+
+===Noun===
+{{sem-noun|f}}
+
+# {{topic|sem-pro|Anatomy}} [[horn]]
+
+====Inflection====
+Masculine:
+{{sem-decl-noun}}
+Femenine:
+{{sem-decl-noun|fpl=ḳarn}}
+
+====Descendants====
+* East Semitic:
+** {{desc|akk|qarnum|alt=𒋛|tr=qarnum}}
+* {{desc|sem-wes-pro|*ḳarn-}}
+** Central Semitic:
+*** {{desc|ar|قَرْن}} {{see desc}}
+*** Northwest Semitic:
+**** {{desc|arc|קְרַן|tr=qəran|קַרְנָא|tr2=qarnā}}
+***** {{desc|syc|ܩܪܶܢ|tr=qəren|ܩܰܰܪܢܳܐ|tr2=qarnā}}
+***** {{desc|arc-pal|𐡳𐡴𐡮𐡠}}
+***** {{desc|jpa|קרן|tr=qrn}}
+***** {{desc|myz|ࡒࡀࡓࡍࡀ}}
+***** {{desc|aii|ܩܲܪܢܵܐ}}
+**** Canaanite:
+***** {{desc|he|קֶרֶן|tr=kéren, qéren}}
+***** {{desc|phn|𐤒𐤓𐤍}}
+**** {{desc|uga|𐎖𐎗𐎐|ts=qarnu}}
+** Ethiopian Semitic:
+*** {{desc|am|ቀንድ}}
+*** {{desc|ti|ቀርኒ}}
+*** {{desc|gez|ቀርን|tr=qarn}}
+*** {{desc|tig|ቀር|tr=qär|ቀርን|tr2=qärən}}
+*** {{desc|agj|ቅራራ|tr=qərara|ቀራራ|tr2=qärara|unc=1}}
+*** {{desc|gft|ቀንድ|tr=qänd}}
+*** {{desc|har|ቀር|tr=qär}}
+*** Gurage:
+**** {{desc|stv|ቀር|tr=qär}}
+**** {{desc|wle|ቀር|tr=qär}}
+**** {{desc|zwa|ቀር|tr=qär}}
+**** {{desc|gru|ቀር|tr=qär|q=Gogot}}
+**** {{desc|sgw|ቀር|tr=qär|q=Muher}}, {{l|sgw|ቀን|tr=qän|q=Chaha, Endegen, Ennemor, Gyeto}}, {{l|sgw|ቀን|tr=qänn|q=Ezha}}
+**** {{desc|mvz|ቀን|tr=qänn}}
+** Modern South Arabian:
+*** {{desc|gdq|qōn}} (plural ''qərūn'')
+*** {{desc|hss|qōn}} (plural ''qerōn'')
+*** {{desc|shv|qun}} (plural ''qérún'')
+*** {{desc|sqt|qan}} (plural ''qírihon'')
+
+===References===
+{{reflist}}
