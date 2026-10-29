@@ -24,7 +24,7 @@ Reconstructed in Militarev & Kogan's ''Semitic Etymological Dictionary'' as {{m|
 *** Canaanite:
 **** {{desc|hbo|פָּרָשׁ|tr=pārāš|t=team of horses, horses for a chariot; horseman}}
 ** Old South Arabian:
-*** {{desc|xsa|𐩰𐩧𐩪|tr=frs¹|t=horse, mare; cavalryman, cavalry}}
+*** {{desc|xsa|𐩰𐩧𐩪𐩣|alt=𐩰𐩧𐩪|tr=frs¹|t=horse, mare; cavalryman, cavalry}}
 *** {{desc|xqt|𐩰𐩧𐩪|tr=frs¹|t=horse}}
 *** {{desc|xhd|𐩱𐩰𐩧𐩪𐩬|tr=ʔfrs¹n|t=horse leaders (plural)}}
 * Ethiopian Semitic:

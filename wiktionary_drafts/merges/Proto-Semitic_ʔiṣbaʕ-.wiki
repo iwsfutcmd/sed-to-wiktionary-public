@@ -1,0 +1,63 @@
+{{reconstructed}}
+==Proto-Semitic==
+
+===Etymology===
+Compare {{cog|egy|ḏbꜥ||finger}}.
+
+===Noun===
+{{sem-noun|m|g2=f}}
+
+# [[finger]], [[toe]]
+
+====Inflection====
+Masculine:
+{{sem-decl-noun}}
+Feminine:
+{{sem-decl-noun|fpl=ʔiṣbaʕ}}
+
+====Descendants====
+* East Semitic:
+** {{desc|akk|neṣbettum|t=finger|unc=1}}
+** {{desc|xeb|iš-ba-um|t=finger}}
+* West Semitic:
+** Central Semitic:
+*** {{desctree|ar|إِصْبَع|إِصْبِع|إِصْبُع}}
+*** Northwest Semitic:
+**** {{desc|arc|אֶצְבְּעָא|tr=ʾeṣbəʿā}}
+***** {{desc|syc|ܨܶܒܥܳܐ|tr=ṣeḇʿā}}
+***** {{desc|arc-imp|𐡀𐡑𐡁𐡏|t=finger}}
+***** {{desc|arc-bib|אצבען|tr=ʔäṣbəʕān|t=fingers, toes (plural)}}
+***** {{desc|jpa|אצבע|tr=ʔṣbʕ|t=finger, toe}}
+***** {{desc|myz|ࡑࡉࡁࡉࡕࡀ|t=finger, toe}}
+***** {{desc|lhs|ṣebʕo|t=finger}}
+***** {{desc|aii|-|tr=sipɔti|t=finger}}
+***** {{desc|hrt|-|tr=ṣepʔa|t=finger}}
+**** Canaanite:
+***** {{desc|hbo|אֶצְבַּע|tr=ʔɛṣbáʕ}}
+****** {{desc|he-IL|אֶצְבַּע|tr=étsba}}
+**** {{desc|uga|𐎜𐎕𐎁𐎓 |ts=ʾuṣbaʿ}}
+** Ethiopian Semitic
+*** {{desc|gez|አጽባዕት}}
+*** {{desc|ti|ኣጻብዕ}}
+*** {{desc|tig|ጭብዕት|tr=č̣əbʕət|t=finger}}
+*** {{desc|am|ጣት|t=finger, toe}}
+*** {{desc|agj|ጣድ|tr=ṭad|t=finger}}
+*** {{desc|har|አጣቢኛ|tr=aṭābiñña|t=finger}}
+*** Gurage:
+**** {{desc|stv|እንጣቢት|tr=ənṭābit|t=finger}}
+**** {{desc|zwa|እንጣቢት|tr=ənṭābit|t=finger}}
+**** {{desc|wle|እንጣቢት|tr=ənṭabit|t=finger}}
+**** {{desc|gru|አጣበት|tr=aṭabät|q=Soddo}}
+**** {{desc|sgw|አቴበት|tr=atebät|q=Chaha, Ezha, Muher}}
+**** {{desc|mvz|አቴበት|tr=atebät}}
+** Modern South Arabian:
+*** {{desc|gdq|ṣ̌əbáʔ|t=finger, toe}}
+*** {{desc|hss|ḥaṣ̌báʔ|t=finger}}
+*** {{desc|shv|ʔiṣbáʕ|t=finger}}
+*** {{desc|sqt|ʔéṣbaḥ|t=finger}}
+
+===References===
+* {{R:gez:Leslau-Comp.|page=45}}
+* {{R:sem-pro:SED|volume=I|id=739|entry=*ṣVbʕ(-at)-, *ʔV-ṣbaʕ-}}
+
+{{C|sem-pro|Body parts}}
