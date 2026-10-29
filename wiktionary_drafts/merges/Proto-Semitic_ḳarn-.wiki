@@ -12,7 +12,7 @@ A possible loan relation with Indo-European {{m|ine-pro||*ḱr̥h₂-nó-s|horn}
 ====Inflection====
 Masculine:
 {{sem-decl-noun}}
-Femenine:
+Feminine:
 {{sem-decl-noun|fpl=ḳarn}}
 
 ====Descendants====
