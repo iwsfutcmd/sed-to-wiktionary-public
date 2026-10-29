@@ -54,6 +54,7 @@ CURATED = {
  ("ar", "ˁalaḳ"): "عَلَق", ("ar", "ˁalaḳa"): "عَلَقَة", ("hbo", "ˁălūḳā"): "עֲלוּקָה", ("syc", "ˁalūḳā"): "ܥܠܘܩܐ",   # *ʕalaḳ-: as on Wiktionary (علق coll., علقة, עלוקה)
  ("tru", "ˁalḳo"): "ܥܠܩܐ", ("har", "ēḳti"): "ኤቅቲ",      # Turoyo in Syriac script (as ܒܩܐ); Harari initial ē is ኤ (the converter leaves initial vowels alone)
  ("hbo", "pārāš"): "פָּרָשׁ",      # *paraš-: as on Wiktionary (פרש)
+ ("xsa", "frs₁"): "𐩰𐩧𐩪𐩣",       # *paraš-: Wiktionary's Sabaean lemma has mimation (𐩰𐩧𐩪 is its construct-state form page); shown as the SED's 𐩰𐩧𐩪
  ("hbo", "šəˀēr"): "שְׁאֵר", ("uga", "šˀir"): "𐎌𐎛𐎗",          # both as on Wiktionary's Akkadian šīrum page
 }
 def api(**q):
@@ -384,7 +385,7 @@ PAGES = {   # title -> SEDonline reconstruction id and page content
                        dict(lang="Syriac", form="parrāšā", gloss="horseman"),
                        dict(lang="Mandaic", form="paraša", gloss="mounted soldier, horseman"),
                        dict(lang="Arabic", form="faras", gloss="horse, mare", id="horse"),
-                       dict(lang="Sabaic", form="frs₁", gloss="horse, mare; cavalryman, cavalry"),
+                       dict(lang="Sabaic", form="frs₁", gloss="horse, mare; cavalryman, cavalry", alt="𐩰𐩧𐩪"),
                        dict(lang="Qatabanian", form="frs₁", gloss="horse"),
                        dict(lang="Hadramitic", form="ˀfrs₁n", gloss="horse leaders (plural)"),
                        dict(lang="Geez", form="faras", gloss="horse"),

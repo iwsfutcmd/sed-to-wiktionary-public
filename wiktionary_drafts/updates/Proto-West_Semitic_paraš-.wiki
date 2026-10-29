@@ -1,0 +1,46 @@
+{{reconstructed}}
+==Proto-West Semitic==
+
+===Etymology===
+Reconstructed in Militarev & Kogan's ''Semitic Etymological Dictionary'' as {{m|sem-wes-pro||*paraš-}}, with a variant {{m|sem-wes-pro||*paras-}}. There is no trace of it in Akkadian or, notably, in Ugaritic. In Hebrew and Aramaic it mostly means “horseman”; according to the SED the Hebrew plural shows that {{m|hbo|פָּרָשׁ}} had been replaced by a derived {{m|sem-wes-pro||*parrāš-}} “horseman”. The Ethiopian Semitic and Modern South Arabian words are, following Sima, native rather than borrowed, while Harari {{m|har|ፈረዝ|tr=färäz}} and most Gurage forms in ''-z'' are loans from Cushitic or Omotic. Most of the similar words for “horse” in Chadic and Cushitic are thought to be borrowed from Arabic and Ethiopian Semitic.
+
+===Noun===
+{{head|sem-wes-pro|noun|g=m}}
+
+# [[horse]]
+
+====Descendants====
+* Central Semitic:
+** {{desc|ar|فَرَس|t=horse, mare|id=horse}}
+** Northwest Semitic:
+*** {{desc|arc-old|𐤐𐤓𐤔|t=horseman, cavalryman}}
+*** {{desc|arc-imp|𐡐𐡓𐡔|t=horseman, cavalryman}}
+*** {{desc|arc-pal|𐡱𐡴𐡵|t=horseman, cavalryman}}
+*** {{desc|arc-nab|𐢗𐢚𐢜|tr=prš|t=horseman, cavalryman}}
+*** {{desc|jpa|פרש|tr=prš|t=rider}}
+*** {{desc|tmr|פרשא|tr=parrāšā|t=horseman}}
+*** {{desc|syc|ܦܪܫܐ|tr=parrāšā|t=horseman}}
+*** {{desc|myz|ࡐࡀࡓࡀࡔࡀ|t=mounted soldier, horseman}}
+*** Canaanite:
+**** {{desc|hbo|פָּרָשׁ|tr=pārāš|t=team of horses, horses for a chariot; horseman}}
+** Old South Arabian:
+*** {{desc|xsa|𐩰𐩧𐩪𐩣|alt=𐩰𐩧𐩪|tr=frs¹|t=horse, mare; cavalryman, cavalry}}
+*** {{desc|xqt|𐩰𐩧𐩪|tr=frs¹|t=horse}}
+*** {{desc|xhd|𐩱𐩰𐩧𐩪𐩬|tr=ʔfrs¹n|t=horse leaders (plural)}}
+* Ethiopian Semitic:
+** {{desc|gez|ፈረስ|tr=faras|t=horse}}
+** {{desc|tig|ፈረስ|tr=färäs|t=horse}}
+** {{desc|ti|ፈረስ|tr=färäs|t=horse, steed}}
+** {{desc|am|ፈረስ|tr=färäs|t=horse, stallion}}
+** Gurage:
+*** {{desc|gru|ፈረስ|tr=färäs|t=horse|q=Soddo}}
+* Modern South Arabian:
+** {{desc|gdq|fərháyn|t=mare; horse}}
+** {{desc|shv|ferhín|t=mare; horse}}
+** {{desc|hss|ferhīn|t=mare; horse}}
+** {{desc|sqt|fírehim|t=girl, young girl|unc=1}}
+
+===References===
+* {{R:sem-pro:SED|volume=II|id=613|entry=*paraš-}}
+
+{{C|sem-wes-pro|Horses}}

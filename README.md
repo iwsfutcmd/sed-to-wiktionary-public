@@ -70,3 +70,7 @@ Regenerating the intermediates from the books needs `pdf/vol1.pdf` and `pdf/vol2
 The step in between is **manual**: forms and glosses in `data/intermediate/raw_v*_*.tsv` (`n<TAB>form<TAB>gloss`, with `Q` marking each glottal) were transcribed by eye from the batch crops, because the PDFs' OCR text layer garbles diacritics. `glot_vN.json` fills the `Q` slots; the four glottals the classifier left empty (1N205, 1N243, 1V37, 1V62) are set by hand in `scripts/paths.py`.
 
 Scripts: `locate.py`, `crops.py`, `glot.py`, `zoom.py` (650-dpi spot checks), `build_sed.py`, `fetch_titles.py`, `wikt_match.py`, `build_site.py`.
+
+`wikt_match.py` also tries SEDonline's form of each entry, where it is the same entry (same letters with diacritics stripped, a gloss word
+in common: SEDonline's `sed_ref` is not unique). `gaps.py` counts our own posted pages (`wiktionary_drafts/done/`) as covered through the
+SEDonline record each was drafted from, since a root cannot be matched to its stem title (*ṣ̂rṭ = ṣ́araṭ-).

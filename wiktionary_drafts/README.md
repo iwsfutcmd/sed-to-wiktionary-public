@@ -69,6 +69,25 @@ definitions; the page names our consonants with other vowels, so the page may be
 `make test` runs it on the cached pages and fails on any CONFLICT. A word can be left out of a draft with a documented reason
 (`exclude` in `wikt_draft.py`; currently Amharic *arräsä* under `ḫrš`: Wiktionary's አረሰ is "to plough", from *ḥaraṯ-).
 
+## Updates to pages that are not ours (`merges/`)
+`make enrich` (`scripts/wikt_enrich.py`) compares every existing reconstruction page that a SED entry covers with SEDonline's languages for
+the same entry and ranks them by how many the page lacks (`data/wiktionary/enrich_candidates.tsv`; the worklist's section 2b). The counts
+are an upper bound: SEDonline has some words the print does not. A page is then filled out from the *printed* entry by adding lines to the
+live text, never removing or rewording anything, and saved as `merges/<title>.wiki` (first: `ʕaṯ̣m-` "bone", SED I 25).
+
+## Back-links from the daughter pages
+`make backlink` re-downloads every daughter page that does not cite its reconstruction yet and writes whole-page edits
+(`data/wiktionary/backlink_pages.json`), then the checklist page (`scripts/build_backlink_checklist.py`). What a person decided is kept in
+`scripts/wikt_backlink.py`: `DECISIONS` (leave a page alone, write into a chosen Etymology section, or apply a given rewording), `EXTRA`
+(pages the scan cannot find: a lemma we link only through one of its forms, a page whose Etymology 1 is another word) and `NOTES`
+(an order to keep, e.g. فرس only after our page names its etymon with `id=horse`). Two languages of one page become one card.
+
+## Language codes
+Aramaic varieties use Wiktionary's etymology-only codes, which name themselves and need no label: `arc-old` (Old), `arc-imp` (Official =
+Imperial), `arc-pal` (Palmyrene), `arc-nab` (Nabataean), `arc-bib` (Biblical). Their period scripts (Phoenician, Imperial Aramaic,
+Palmyrene, Nabataean) are detected and, except Nabataean, transliterated by Wiktionary, so `sc=`/`tr=` are left out. Hadramitic is `xhd`
+(Hadrami), Qatabanian `xqt`. Old South Arabian `s₁ s₂ s₃` is written `s¹ s² s³` in `tr=`, as Wiktionary does. There is no `oar`.
+
 ## Is a draft good to go?
 `make test` (offline) and `ONLINE=1 make test` (also checks the live wiki; not yet run) run `tests/test_drafts.py` over every draft: well-formed wikitext, SED reference,
 print/site agreement, every SEDonline word present, script matches language, English glosses, tr= conventions, generator reproducibility;

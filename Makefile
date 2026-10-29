@@ -23,7 +23,7 @@ crops-%: heads-%
 	$(PY) scripts/crops.py $*
 glot-%: heads-%
 	$(PY) scripts/glot.py $* $(or $(OUT),data/intermediate/glot_v$*.json)
-.PHONY: all tables site titles sedonline-fetch sedonline sedonline-site test done-check conflicts backlink wanted
+.PHONY: enrich all tables site titles sedonline-fetch sedonline sedonline-site test done-check conflicts backlink wanted
 reflexes-%: bbox-%       # Semitic reflexes per entry from the PDFs' text layer -> data/volN/sed_volN_reflexes.tsv
 	cd scripts && $(PY) reflexes.py $*
 afras-%: bbox-%         # Afro-Asiatic comparanda per entry -> data/volN/sed_volN_afras.tsv
@@ -49,8 +49,10 @@ done-check:             # rebuild the pages already saved to Wiktionary (wiktion
 	cd scripts && $(PY) wikt_draft.py --check-done
 conflicts:              # read the Wiktionary page behind each descendant and report contradictions (CONFLICT/WARN); --fetch downloads missing pages
 	cd scripts && $(PY) wikt_conflicts.py --fetch
-backlink:               # draft the {{inh|...}} a clean daughter page is missing, for a person to add by hand (needs the wikt_pages cache; run `conflicts` first)
-	cd scripts && $(PY) wikt_backlink.py plan
+backlink:               # whole-page back-link edits from the live daughter pages (network), then the checklist page in .artifacts/ (decisions: DECISIONS/EXTRA in wikt_backlink.py)
+	cd scripts && $(PY) wikt_backlink.py pages && $(PY) build_backlink_checklist.py
+enrich:                 # existing reconstruction pages compared with the SED's languages for the same entry -> data/wiktionary/enrich_candidates.tsv (network)
+	cd scripts && $(PY) wikt_enrich.py
 wanted:                 # which Proto-Semitic pages does Wiktionary already link to but not have, that a SED entry could fill in (network, resumable, ~75 requests)
 	cd scripts && $(PY) wikt_wanted.py
 
