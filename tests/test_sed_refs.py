@@ -11,6 +11,7 @@ REF = re.compile(r"\{\{R:sem-pro:SED(\|[^{}]*)?\}\}")
 LEVEL_EXCEPTIONS = {
     "Proto-Semitic_gild-": "SEDonline 704 is PWS, but the printed SED (I 78) has Akkadian and Hebrew and reads it as Proto-Semitic; the page follows the print",
     "Proto-Semitic_ʔiṣbaʕ-": "an existing Proto-Semitic page; SEDonline 739 is PWS, but the printed SED (I 256) has Akkadian neṣbettu and Eblaite",
+    "Proto-Semitic_ḥiṣ́n-": "an existing Proto-Semitic page; SEDonline 727 is PWS, its only East Semitic evidence being Akkadian ḫuṣannu 'sash', which the print (I 129) marks (?): shown as uncertain",
     "Proto-West_Semitic_ʕigl-": "an existing Proto-West Semitic page; SEDonline 499 and the print (II 28, Eblaite) say PS, but the page stays PWS by the user's decision (2026-10-29)",
 }
 LEVEL = {r["rec_id"]: r["level"] for r in csv.DictReader(open(ROOT / "data" / "sedonline" / "sedonline_reconstructions.tsv", encoding="utf-8"), delimiter="\t")}

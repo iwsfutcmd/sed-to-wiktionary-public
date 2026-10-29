@@ -1,0 +1,44 @@
+{{reconstructed}}
+{{original research}}
+==Proto-Semitic==
+
+===Noun===
+{{sem-noun|m}}
+
+# [[bosom]], [[lap]]
+
+====Inflection====
+{{sem-decl-noun}}
+
+====Related terms====
+* {{l|sem-pro|*ḥaṣ́an-}}
+
+====Descendants====
+* East Semitic:
+** {{desc|akk|ḫuṣannum|t=sash|unc=1}}
+* West Semitic:
+** Central Semitic:
+*** {{desc|ar|حِضْن}}
+*** Northwest Semitic:
+**** {{desc|arc|-}}
+****: {{desc|syc|ܚܢܐ|tr=ḥannā}}
+****: {{desc|tmr|-|tr=ḥēnā|t=lap, bosom}}
+**** Canaanite
+***** {{desc|he|חֹצֶן|tr=ħóṣen}}
+** Ethiopian Semitic:
+*** {{desc|gez|ሕፅን}}
+*** {{desc|tig|ሕጽን|tr=ḥəṣən|t=lap}}
+*** {{desc|ti|ሕጽኒ|tr=ḥəṣni|t=bosom, lap}}
+*** {{desc|am|ጭን|t=thigh, lap}}
+*** {{desc|agj|ጭን|tr=č̣ən|t=thigh}}
+*** {{desc|gft|ጭን|tr=č̣ən|t=thigh}}
+*** {{desc|har|ጭን|tr=č̣ən|t=waist}}
+*** Gurage:
+**** {{desc|stv|ጭን|tr=č̣ən|t=back of the body, thigh, hip}}
+**** {{desc|wle|ጭን|tr=č̣ən|t=back of the body, thigh, hip}}
+**** {{desc|zwa|ጭን|tr=č̣ən|t=back of the body, thigh, hip}}
+**** {{desc|sgw|ጭነ|tr=č̣ənä|t=back of the body, thigh, hip|q=Muher}}
+
+===References===
+* {{R:gez:Leslau-Comp.|page=226}}, [https://archive.org/details/leslau-comparative-dictionary-of-geez-1987/page/226/mode/1up?view=theater]
+* {{R:sem-pro:SED|volume=I|id=727|entry=*ḥi/uṣ̂(a)n-}}

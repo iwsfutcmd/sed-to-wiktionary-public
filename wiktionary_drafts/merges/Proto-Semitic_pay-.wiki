@@ -1,0 +1,59 @@
+{{reconstructed}}
+==Proto-Semitic==
+
+===Etymology===
+Possibly from {{inh|sem-pro|afa-pro|-}}. Compare {{cog|cus-pro|*ʔaf-|t=mouth}}, and {{cog|cdc-pro|*faw-|t=mouth}}. Militarev and Kogan call the reconstruction very tentative, with {{m|sem-pro||*pVw-}} as an alternative. They derive the Ethiopian Semitic forms ({{m|gez|አፍ}}) from {{m|sem-pro||*paw/y-}} with a prefixed {{m|sem-pro||*ʔa-}} rather than from Cushitic, and take the Cushitic words for “mouth” to be cognates, not loans.<ref>{{R:sem-pro:SED|volume=I|id=35|entry=*pay-}}</ref>
+
+===Noun===
+{{sem-noun|m}}
+
+# [[mouth]]
+
+====Inflection====
+{{sem-decl-noun}}
+
+====Descendants====
+* East Semitic:
+** {{desc|akk|pûm|alt=𒅗|tr=pûm}}
+* West Semitic:
+** Central Semitic:
+*** {{desctree|ar|فَم}}
+*** Northwest Semitic:
+**** {{desc|arc|-}}
+****: {{desc|arc-imp|𐡐𐡌}}
+****: {{desc|jpa|פִּימָא|tr=pemā}}
+****: Christian Palestinian Aramaic: {{l|syc|ܦܝܡܐ|tr=pemā}}
+****: Nabataean Aramaic: {{l|arc|[[𐢘𐢒]] / [[𐢘𐢈𐢒]]|ts=pūm}}
+****: {{desc|tmr|פּוּמָא|tr=pumā}}
+***** {{desc|syc|ܦܾ݁ܘܡܳܐ|tr=pumā}}
+***** {{desc|myz|ࡐࡅࡌࡀ|t=mouth; opening}}
+***** {{desc|tru|-|tr=fēmo}}
+***** {{desc|lhs|pemo|t=mouth; opening}}
+***** {{desc|hrt|-|tr=pemma}}
+***** {{desc|aii|ܦܘܼܡܵܐ}}
+**** Canaanite:
+***** {{desc|he|פֶּה|tr=pe, pê}}
+***** {{desc|phn|𐤐|ts=pi}}
+****** {{desc|grc|πεῖ|bor=1}}
+******* {{desc|en|pi|bor=1}}
+**** {{desc|uga|𐎔|ts=pū}}
+*** Old South Arabian:
+**** {{desc|sem-srb|𐩰}}
+** Ethiopian Semitic: *ʾaf-
+*** {{desc|am|አፍ}}
+*** {{desc|agj|አፍ|tr=ʾäf}}
+*** {{desc|gez|አፍ}}
+*** Gurage: {{m|sgw|አፍ|tr=ʾäf}}
+**** {{desc|stv|አፍ|tr=af|t=mouth; language}}
+**** {{desc|wle|አፍ|tr=af|t=mouth; language}}
+**** {{desc|zwa|አፍ|tr=af|t=mouth; language}}
+*** {{desc|har|አፍ|tr=ʾäf}}
+*** {{desc|tig|አፍ}}
+*** {{desc|ti|አፍ}}
+
+===References===
+* {{R:Nöldeke:Neue Beitr.|pages=171–178}}
+* {{R:sem-pro:Weninger-Handbook|pages=221–222}}
+{{reflist}}
+
+{{c|sem-pro|Body parts}}
