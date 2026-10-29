@@ -40,6 +40,57 @@ class Backlink(unittest.TestCase):
         self.assertEqual(B.draft_title_level(Path("Proto-Semitic_warik-.wiki")), ("warik-", "PS"))
         self.assertEqual(B.draft_title_level(Path("Proto-West_Semitic_ṣ́abb-.wiki")), ("ṣ́abb-", "PWS"))
 
+class WholePage(unittest.TestCase):
+    PAGE = "==Arabic==\n===Etymology===\nCompare {{cog|he|x}}.\n\n===Noun===\n# [[pig]]\n\n----\n\n==Persian==\n===Etymology===\nCompare y.\n===Noun===\n# z\n"
+    def test_append_touches_only_that_language(self):
+        new = B.edited_page(self.PAGE, "ar", "PS", "ḫVzīr-")
+        self.assertIn("===Etymology===\nFrom {{inh|ar|sem-pro|*ḫVzīr-}}. Compare {{cog|he|x}}.", new)
+        self.assertEqual(new.split("==Persian==")[1], self.PAGE.split("==Persian==")[1])
+        self.assertEqual(new.replace("From {{inh|ar|sem-pro|*ḫVzīr-}}. ", ""), self.PAGE)
+    def test_create_goes_after_alternative_forms_and_before_the_rest(self):
+        page = "==Classical Syriac==\n===Alternative forms===\n* x\n\n===Noun===\n# [[pig]]\n"
+        new = B.edited_page(page, "syc", "PS", "ḫVzīr-")
+        self.assertEqual(new, "==Classical Syriac==\n===Alternative forms===\n* x\n\n===Etymology===\nFrom {{inh|syc|sem-pro|*ḫVzīr-}}.\n\n===Noun===\n# [[pig]]\n")
+        page = "==Classical Syriac==\n{{wp}}\n===Noun===\n# [[pig]]\n"
+        self.assertEqual(B.edited_page(page, "syc", "PWS", "ṣ́abb-"),
+                         "==Classical Syriac==\n{{wp}}\n===Etymology===\nFrom {{inh|syc|sem-wes-pro|*ṣ́abb-}}.\n\n===Noun===\n# [[pig]]\n")
+    def test_empty_etymology_is_filled(self):
+        page = "==Akkadian==\n===Etymology===\n\n===Noun===\n# [[pig]]\n"
+        self.assertEqual(B.edited_page(page, "akk", "PS", "ḫVzīr-"), "==Akkadian==\n===Etymology===\nFrom {{inh|akk|sem-pro|*ḫVzīr-}}.\n\n===Noun===\n# [[pig]]\n")
+
+class Chains(unittest.TestCase):
+    def test_ety_chain_gets_the_step(self):
+        page = "==Arabic==\n{{ar-rootbox|ش ح م}}\n{{ety|ar|id=fat|:root|ش ح م<id:root>|tree=1}}\n\n===Noun===\n# [[fat]]\n"
+        new = B.edited_page(page, "ar", "PS", "śaḥm-")         # no prose: the sentence goes on its own line after the chain
+        self.assertEqual(new, page.replace("tree=1}}\n", "tree=1|:inh|sem-pro:*śaḥm-}}\n{{inh+|ar|sem-pro|*śaḥm-}}.\n"))
+    def test_ety_chain_with_prose(self):                         # Arabic ورك: the tree alone shows nothing in the text
+        page = ("==Arabic==\n\n===Etymology===\n{{ety|ar|id=hip|:root|و ر ك<id:root>|tree=1}}\nFrom the root {{ar-root|و ر ك}}. "
+                "Compare {{cog|he|יָרֵךְ|t=thigh}}.\n\n===Pronunciation===\n{{ar-pr|وَرِك}}\n")
+        new = B.edited_page(page, "ar", "PS", "warik-")
+        self.assertIn("tree=1|:inh|sem-pro:*warik-}}\nFrom the root {{ar-root|و ر ك}}. {{inh+|ar|sem-pro|*warik-}}. Compare {{cog|he|יָרֵךְ|t=thigh}}.\n\n===Pronunciation===", new)
+        page2 = page.replace("Compare {{cog|he|יָרֵךְ|t=thigh}}.", "Of unclear formation.")
+        self.assertIn("From the root {{ar-root|و ر ك}}. Of unclear formation. {{inh+|ar|sem-pro|*warik-}}.\n\n===Pronunciation===", B.edited_page(page2, "ar", "PS", "warik-"))
+        self.assertIsNone(B.skip_reason(page, "ar", "fat"))
+    def test_rootbox_stays_first(self):
+        page = "==Hebrew==\n===Etymology===\n{{he-rootbox|י־ר־ך}}\nCognate with x.\n\n===Noun===\n# [[thigh]]\n"
+        self.assertIn("{{he-rootbox|י־ר־ך}}\nFrom {{inh|hbo|sem-pro|*warik-}}. Cognate with x.", B.edited_page(page, "hbo", "PS", "warik-"))
+    def test_another_word_with_the_same_spelling(self):
+        page = "==Hebrew==\n{{he-rootbox|כ־ר־ר}}\n\n===Noun===\n# {{tcl|he|cushion|nogloss=1}}\n# [[pillow]]\n"
+        self.assertIn("share no word", B.skip_reason(page, "hbo", "(young) ram"))
+
+class Skip(unittest.TestCase):
+    def test_reasons(self):
+        sk = lambda body, code="ar", head="Arabic": B.skip_reason(f"=={head}==\n{body}\n===Noun===\n# x\n", code)
+        self.assertIsNone(sk("===Etymology===\nCompare {{cog|he|x}}."))
+        self.assertIsNone(sk(""))
+        self.assertIn("several Etymology", sk("===Etymology 1===\nx\n===Noun===\n# a\n===Etymology 2===\ny"))
+        self.assertIn("later stage", sk("===Etymology===\nCompare x.", "aii", "Assyrian Neo-Aramaic"))
+        self.assertIn("names an ancestor", sk("===Etymology===\n{{inh+|ar|arc|x}}; cognate to y."))
+        self.assertIn("names an ancestor", sk("===Etymology===\nCompare {{bor|ar|arc|x}}."))
+        self.assertIn("names an ancestor", sk("===Etymology===\n{{ety|ar|:inh|arc:x}}"))
+        self.assertIn("opens with a source", sk("===Etymology===\nFrom a lost noun ''*warkum''."))
+        self.assertIsNone(sk("===Etymology===\nCompare {{inh|ar|sem-pro|*y-}}."))   # a PS reference is not an ancestor to defer to
+
 class RealDrafts(unittest.TestCase):
     def test_plan_runs_over_whatever_is_cached(self):
         if not (K.CACHE.exists() and any(K.CACHE.iterdir())):

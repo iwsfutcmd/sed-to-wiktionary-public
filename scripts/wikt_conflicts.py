@@ -45,11 +45,11 @@ def cached(title):
     f = cache_file(title)
     return f.read_text(encoding="utf-8") if f.exists() else None
 
-def fetch(titles, patience=600, log=print):
+def fetch(titles, patience=600, log=print, refresh=False):
     """Download the pages that are not cached yet: 50 titles per request, honouring Retry-After on HTTP 429 for up to `patience` seconds
     in total, writing the cache after every batch. Returns the number of pages still missing (0 = complete)."""
     CACHE.mkdir(parents=True, exist_ok=True)
-    todo = [t for t in dict.fromkeys(titles) if cached(t) is None]
+    todo = [t for t in dict.fromkeys(titles) if refresh or cached(t) is None]      # refresh: re-download (the live text is about to be edited)
     waited = 0
     for i in range(0, len(todo), 50):
         batch = todo[i:i + 50]

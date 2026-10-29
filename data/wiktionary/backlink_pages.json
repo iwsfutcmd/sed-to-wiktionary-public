@@ -1,0 +1,156 @@
+[
+ {
+  "page": "ܒܥܝܪܐ",
+  "lang": "Assyrian Neo-Aramaic",
+  "code": "aii",
+  "term": "ܒܥܝܼܪܵܐ",
+  "title": "bVʕVr-",
+  "level": "PS",
+  "gloss": "large cattle",
+  "skip": "a later stage: it should inherit through Aramaic / Classical Syriac, so the Proto-Semitic link belongs on the ancestor's page"
+ },
+ {
+  "page": "בעיר",
+  "lang": "Biblical Hebrew",
+  "code": "hbo",
+  "term": "בְּעִיר",
+  "title": "bVʕVr-",
+  "level": "PS",
+  "gloss": "livestock, cattle",
+  "skip": "several Etymology sections: which one is ours is a judgement call"
+ },
+ {
+  "page": "ብዕራይ",
+  "lang": "Ge'ez",
+  "code": "gez",
+  "term": "ብዕራይ",
+  "title": "bVʕVr-",
+  "level": "PS",
+  "gloss": "",
+  "full": "==Ge'ez==\n\n===Alternative forms===\n* {{alt|gez|ብዕራዊ}}\n\n===Etymology===\nFrom {{inh|gez|sem-pro|*bVʕVr-}}.\n\n===Noun===\n{{head|gez|noun|plural|አባዕር|autotrinfl=1}}\n\n# [[ox]], [[buffalo]]\n\n===References===\n* {{R:gez:Dillmann|entry=ብዕራዊ|columns=530}}\n\n==Tigrinya==\n\n===Etymology===\nFrom {{inh|ti|sem-pro|*bVʕVr-}}.\n\n===Noun===\n{{ti-noun}}\n\n# [[ox]]",
+  "summary": "Etymology: inherited from Proto-Semitic *bVʕVr- ([[Reconstruction:Proto-Semitic/bVʕVr-]], after Militarev & Kogan's SED)",
+  "diff": [
+   "+",
+   "+===Etymology===",
+   "+From {{inh|gez|sem-pro|*bVʕVr-}}."
+  ]
+ },
+ {
+  "page": "ܒܩܐ",
+  "lang": "Classical Syriac",
+  "code": "syc",
+  "term": "ܒܩܐ",
+  "title": "baḳḳ-",
+  "level": "PS",
+  "gloss": "gnat",
+  "skip": "several Etymology sections: which one is ours is a judgement call"
+ },
+ {
+  "page": "ܒܩܐ",
+  "lang": "Turoyo",
+  "code": "tru",
+  "term": "ܒܩܐ",
+  "title": "baḳḳ-",
+  "level": "PS",
+  "gloss": "mosquito",
+  "skip": "a later stage: it should inherit through Aramaic / Classical Syriac, so the Proto-Semitic link belongs on the ancestor's page"
+ },
+ {
+  "page": "כר",
+  "lang": "Biblical Hebrew",
+  "code": "hbo",
+  "term": "כַּר",
+  "title": "karr-",
+  "level": "PS",
+  "gloss": "(young) ram",
+  "confirm": "the page's senses share no word with ours ('(young) ram'): it may be a different word with the same spelling",
+  "their_senses": [
+   "{{tcl|he|cushion|id=Q10971235|nogloss=1}}",
+   "[[pillow]]"
+  ],
+  "full": "==Hebrew==\n{{he-rootbox|כ־ר־ר}}\n\n===Etymology===\nFrom {{inh|hbo|sem-pro|*karr-}}.\n\n===Noun===\n{{he-noun|tr=kár|wv=כַּר|g=m|cons=כַּר|pl=כָּרִים|plcons=כָּרֵי}}\n\n# {{tcl|he|cushion|id=Q10971235|nogloss=1}}\n# [[pillow]]\n\n====Declension====\n{{he-decl|כַּר|p|כָּרִים}}\n\n====Derived terms====\n* {{l|he|כָּרִית|tr=karít}}\n\n===References===\n* {{R:Hebrew Terms Database}}\n* {{R:he:NounTablesAHL|5525}}\n\n===Further reading===\n* {{pedia|lang=he}}\n\n{{c|he|Bedding}}",
+  "summary": "Etymology: inherited from Proto-Semitic *karr- ([[Reconstruction:Proto-Semitic/karr-]], after Militarev & Kogan's SED)",
+  "diff": [
+   "+",
+   "+===Etymology===",
+   "+From {{inh|hbo|sem-pro|*karr-}}."
+  ]
+ },
+ {
+  "page": "فجر",
+  "lang": "Arabic",
+  "code": "ar",
+  "term": "فَجَرَ",
+  "title": "pagr-",
+  "level": "PS",
+  "gloss": "to commit adultery, fornication with a woman",
+  "skip": "several Etymology sections: which one is ours is a judgement call"
+ },
+ {
+  "page": "شحم",
+  "lang": "Arabic",
+  "code": "ar",
+  "term": "شَحْم",
+  "title": "śaḥm-",
+  "level": "PS",
+  "gloss": "fat",
+  "full": "{{also|سحم}}\n==Arabic==\n{{ar-rootbox|ش ح م}}\n{{ety|ar|id=fat|:root|ش ح م<id:root>|tree=1|:inh|sem-pro:*śaḥm-|:inh|sem-pro:*śaḥm-}}\n{{inh+|ar|sem-pro|*śaḥm-}}. {{inh+|ar|sem-pro|*śaḥm-}}.\n\n===Noun===\n{{ar-noun|شَحْم|m|pl=شُحُوم}}\n\n# {{ar-verbal noun of|شَحَمَ|form=I}}\n# [[grease]], [[fat]], [[lard]], [[suet]], [[schmaltz]]; also [[greasy]] [[pulp]] like of the [[colocynth]] or [[pomegranate]]\n\n====Declension====\n{{ar-decl-noun|شَحْم|pl=شُحُوم}}\n\n====Derived terms====\n* {{l|ar|شَحْمَة|t=piece of fat}}\n* {{l|ar|شَحْمِيّ|t=[[lipic]], [[stearic]]}}\n* {{l|ar|بِشَحْمِهِ وَلَحْمِهِ|t=living and breathing|lit=by his fat and his flesh|tr=bi-šaḥmi-hī wa-laḥmi-hī}}\n\n====Descendants====\n* {{desc|mt|xaħam}}\n* {{desc|pt|acém|bor=1}}\n\n===Verb===\n{{ar-verb|I/i~a.vn:شَحَم.ap:++,+++}}\n\n# to be [[desirous]] of (eating) [[fat]] {{q|of a person}}\n# to become [[plump]] and [[full]] {{q|of fruit}}\n\n====Conjugation====\n{{ar-conj|I/i~a.vn:شَحَم.ap:++,+++}}\n\n===Verb===\n{{ar-verb|I/u~u.vn:شَحَامَة.ap:++}}\n\n# to be [[fat]], to become [[fat]] {{q|of a person}}\n\n====Conjugation====\n{{ar-conj|I/u~u.vn:شَحَامَة.ap:++}}\n\n===Verb===\n{{ar-verb|I/a~a.vn:شَحْم}}\n\n# to [[feed]] [[fat]]\n# to become [[desirous]] of [[fat]]\n\n====Conjugation====\n{{ar-conj|I/a~a.vn:شَحْم}}\n\n===Verb===\n{{ar-verb|II}}\n\n# to [[grease]], to smear with [[fat]], to [[oil]]\n\n====Conjugation====\n{{ar-conj|II}}\n\n====Descendants====\n* {{desc|mt|xaħħam}}\n\n===Adjective===\n{{ar-adj|شَحِم}}\n\n# [[desirous]] of [[fat]]\n# [[pappy]], [[mushy]], of a [[texture]] resembling [[fat]]\n\n====Declension====\n{{ar-decl-adj|شَحِم}}\n\n===References===\n* {{R:ar:Freytag|volume=2|page=399}}\n* {{R:ar:Lane|page=1513}}\n* {{R:ar:Wehr-4|page=534}}",
+  "summary": "Etymology: inherited from Proto-Semitic *śaḥm- ([[Reconstruction:Proto-Semitic/śaḥm-]], after Militarev & Kogan's SED)",
+  "diff": [
+   "-{{ety|ar|id=fat|:root|ش ح م<id:root>|tree=1|:inh|sem-pro:*śaḥm-}}",
+   "-{{inh+|ar|sem-pro|*śaḥm-}}.",
+   "+{{ety|ar|id=fat|:root|ش ح م<id:root>|tree=1|:inh|sem-pro:*śaḥm-|:inh|sem-pro:*śaḥm-}}",
+   "+{{inh+|ar|sem-pro|*śaḥm-}}. {{inh+|ar|sem-pro|*śaḥm-}}."
+  ]
+ },
+ {
+  "page": "שאר",
+  "lang": "Biblical Hebrew",
+  "code": "hbo",
+  "term": "שְׁאֵר",
+  "title": "šiʔr-",
+  "level": "PS",
+  "gloss": "body, flesh",
+  "skip": "several Etymology sections: which one is ours is a judgement call"
+ },
+ {
+  "page": "خرس",
+  "lang": "Arabic",
+  "code": "ar",
+  "term": "خَرَّسَ",
+  "title": "ḫaraš-",
+  "level": "PS",
+  "gloss": "(form II) to feed the woman on the occasion of child-birth",
+  "skip": "several Etymology sections: which one is ours is a judgement call"
+ },
+ {
+  "page": "ሓረሰ",
+  "lang": "Tigrinya",
+  "code": "ti",
+  "term": "ሓረሰ",
+  "title": "ḫaraš-",
+  "level": "PS",
+  "gloss": "to give birth",
+  "confirm": "the page's senses share no word with ours ('to give birth'): it may be a different word with the same spelling",
+  "their_senses": [
+   "to [[plough]], to [[farm]]"
+  ],
+  "full": "==Tigrinya==\n\n===Etymology===\nFrom {{inh|ti|sem-pro|*ḫaraš-}}.\n\n===Verb===\n{{head|ti|verb}}\n\n# to [[plough]], to [[farm]]\n\n====Conjugation====\n{{ti-conj\n| infinitive = ምሕራስ\n\n| perfect_1s = ሓረስኩ\n| perfect_1p = ሓረስና\n| perfect_2sm = ሓረስካ\n| perfect_2pm = ሓረስኩም\n| perfect_2sf = ሓረስኪ\n| perfect_2pf = ሓረስክን\n| perfect_3sm = ሓረሰ\n| perfect_3pm = ሓረሱ\n| perfect_3sf = ሓረሰት\n| perfect_3pf = ሓረሳ\n\n| gerundive_1s = ሓሪሰ\n| gerundive_1p = ሓሪስና\n| gerundive_2sm = ሓሪስካ\n| gerundive_2pm = ሓሪስኩም\n| gerundive_2sf = ሓሪስኪ\n| gerundive_2pf = ሓሪስክን\n| gerundive_3sm = ሓሪሱ\n| gerundive_3pm = ሓሪሶም\n| gerundive_3sf = ሓሪሳ\n| gerundive_3pf = ሓሪስን\n\n| imperfect_1s = እሓርስ\n| imperfect_1p = ንሓርስ\n| imperfect_2sm = ትሓርስ\n| imperfect_2pm = ትሓርሱ\n| imperfect_2sf = ትሓርሲ\n| imperfect_2pf = ትሓርሳ\n| imperfect_3sm = ይሓርስ\n| imperfect_3pm = ይሓርሱ\n| imperfect_3sf = ትሓርስ\n| imperfect_3pf = ትሓርሳ\n\n| jussive_1s = እሕርስ\n| jussive_1p = ንሕርስ\n| jussive_2sm = ትሕርስ\n| jussive_2pm = ትሕርሱ\n| jussive_2sf = ትሕርሲ\n| jussive_2pf = ትሕርሳ\n| jussive_3sm = ይሕርስ\n| jussive_3pm = ይሕርሱ\n| jussive_3sf = ትሕርስ\n| jussive_3pf = ይሕርሳ\n\n| imperative_2sm = ሕርስ\n| imperative_2pm = ሕርሱ\n| imperative_2sf = ሕርሲ\n| imperative_2pf = ሕርሳ\n| imperative_2smN = ኣይትሕርስ\n| imperative_2pmN = ኣይትሕርሱ\n| imperative_2sfN = ኣይትሕርሲ\n| imperative_2pfN = ኣይትሕርሳ\n\n| purposive = ክሓርስ\n\n| conditional_1s = ምሓረስኩ\n| conditional_1p = ምሓረስና\n| conditional_2sm = ምሓረስካ\n| conditional_2pm = ምሓረስኩም\n| conditional_2sf = ምሓረስኪ\n| conditional_2pf = ምሓረስክን\n| conditional_3sm = ምሓረሰ\n| conditional_3pm = ምሓረሱ\n| conditional_3sf = ምሓረስት\n| conditional_3pf = ምሓረሳ\n}}",
+  "summary": "Etymology: inherited from Proto-Semitic *ḫaraš- ([[Reconstruction:Proto-Semitic/ḫaraš-]], after Militarev & Kogan's SED)",
+  "diff": [
+   "+",
+   "+===Etymology===",
+   "+From {{inh|ti|sem-pro|*ḫaraš-}}."
+  ]
+ },
+ {
+  "page": "ضرط",
+  "lang": "Arabic",
+  "code": "ar",
+  "term": "ضَرَطَ",
+  "title": "ṣ́araṭ-",
+  "level": "PS",
+  "gloss": "to fart",
+  "skip": "several Etymology sections: which one is ours is a judgement call"
+ }
+]
