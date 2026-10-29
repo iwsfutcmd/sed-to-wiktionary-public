@@ -4,7 +4,7 @@ import re, unicodedata as U
 
 LANGS = {
  "akk": ("Akkadian", {"Latin", "Cuneiform"}), "xeb": ("Eblaite", {"Latin"}), "ar": ("Arabic", {"Arabic"}),
- "arc": ("Aramaic", {"Hebrew"}), "jpa": ("Jewish Palestinian Aramaic", {"Hebrew"}), "tmr": ("Jewish Babylonian Aramaic", {"Hebrew"}),
+ "arc": ("Aramaic", {"Hebrew", "Phoenician", "Imperial Aramaic", "Palmyrene"}), "jpa": ("Jewish Palestinian Aramaic", {"Hebrew"}), "tmr": ("Jewish Babylonian Aramaic", {"Hebrew"}),
  "arc-cpa": ("Christian Palestinian Aramaic", {"Syriac"}), "sam": ("Samaritan Aramaic", {"Samaritan"}), "syc": ("Classical Syriac", {"Syriac"}), "myz": ("Classical Mandaic", {"Mandaic"}),
  "tru": ("Turoyo", {"Syriac"}), "aii": ("Assyrian Neo-Aramaic", {"Syriac", "Latin"}), "amw": ("Western Neo-Aramaic", {"Latin"}), "hbo": ("Biblical Hebrew", {"Hebrew"}), "he": ("Hebrew", {"Hebrew"}),
  "phn": ("Phoenician", {"Phoenician"}), "sem-amm": ("Ammonite", {"Phoenician"}), "uga": ("Ugaritic", {"Ugaritic"}), "xsa": ("Sabaean", {"Old South Arabian"}),
@@ -16,6 +16,7 @@ LANGS = {
 RANGES = [("Hebrew", 0x590, 0x5FF), ("Arabic", 0x600, 0x6FF), ("Syriac", 0x700, 0x74F), ("Arabic", 0x750, 0x77F), ("Samaritan", 0x800, 0x83F),
           ("Mandaic", 0x840, 0x85F), ("Ethiopic", 0x1200, 0x139F), ("Ethiopic", 0x2D80, 0x2DDF), ("Ethiopic", 0xAB00, 0xAB2F),
           ("Arabic", 0xFB50, 0xFDFF), ("Arabic", 0xFE70, 0xFEFF), ("Ugaritic", 0x10380, 0x1039F), ("Phoenician", 0x10900, 0x1091F),
+          ("Imperial Aramaic", 0x10840, 0x1085F), ("Palmyrene", 0x10860, 0x1087F),
           ("Old South Arabian", 0x10A60, 0x10A7F), ("Cuneiform", 0x12000, 0x1254F)]
 
 # Section heading(s) a lemma of that language sits under on en.wiktionary.org

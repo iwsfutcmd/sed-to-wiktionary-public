@@ -2,8 +2,24 @@
 import json, os, sys, unittest
 from pathlib import Path
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent / "scripts"))
-from tr2script import abjad, arabic, ethiopic, mandaic
+from tr2script import abjad, arabic, ethiopic, mandaic, readings, same_spelling
 from paths import DATA
+
+class Variants(unittest.TestCase):
+    def test_readings(self):
+        self.assertEqual(readings("šuš(š)"), ["šuš", "šušš"])
+        self.assertEqual(readings("mwt/myt"), ["mwt", "myt"])
+        self.assertEqual(readings("(h)arb"), ["arb", "harb"])
+        self.assertEqual(readings("šḳy (aph.)"), ["šḳy (aph.)"])          # prose: left alone (and refused by the converters)
+        self.assertEqual(readings("sūs"), ["sūs"])
+    def test_same_spelling(self):
+        am = lambda f: ethiopic.convert("am", f)
+        self.assertEqual(same_spelling(am, "šuš(š)"), "ሹሽ")               # gemination unwritten: both readings ሹሽ
+        self.assertIsNone(same_spelling(lambda f: ethiopic.convert("tig", f), "ḥāl/ḥal"))      # one reading not convertible: refuse
+        self.assertIsNone(same_spelling(am, "(a)dāmäsä"))                  # readings spelled differently: refuse
+        self.assertIsNone(same_spelling(lambda f: abjad.convert("arc", f), "mwt/myt"))
+        self.assertEqual(same_spelling(lambda f: abjad.convert("he", f), "nāˀ/nā"), "נא")      # final ā is written alef: both נא
+        self.assertIsNone(same_spelling(lambda f: abjad.convert("arc", f), "ˀa/immar-"))   # partial slash: fragments never agree
 
 class Ethiopic(unittest.TestCase):
     def test_every_syllable_round_trips(self):
@@ -19,6 +35,9 @@ class Ethiopic(unittest.TestCase):
         self.assertEqual(ethiopic.convert("ti", "wäräḵät"), "ወረኸት")
         self.assertEqual(ethiopic.convert("am", "aṭənt"), "አጥንት")      # Wiktionary Amharic entry for 'bone'
         self.assertEqual(ethiopic.convert("am", "aras"), "አራስ")
+        self.assertEqual(ethiopic.convert("har", "sūs"), "ሱስ")           # Harari length unwritten (Wiktionary ሙዝ = mūz)
+        self.assertEqual(ethiopic.convert("har", "mūz"), "ሙዝ")
+        self.assertEqual(ethiopic.convert("har", "ḥäǧīs"), "ሐጂስ")
         self.assertEqual(ethiopic.convert("tig", "warkat"), "ዋርካት")
         self.assertEqual(ethiopic.convert("tig", "ˁaṣəm"), ethiopic.convert("tig", "ʿaṣəm"))
     def test_refuses_instead_of_guessing(self):
@@ -44,6 +63,14 @@ class Abjad(unittest.TestCase):
         self.assertEqual(abjad.convert("he", "yirkā"), "ירכא")           # final ā -> alef
         self.assertEqual(abjad.convert("arc", "yarḵāṯēh"), "ירכתה")      # spirantised ḵ ṯ -> כ ת
         self.assertEqual(abjad.convert("sam", "ṭby"), "ࠈࠁࠉ")
+        self.assertEqual(abjad.convert("hbo", "sās"), "סס")             # two radicals with a vowel between: not gemination
+        self.assertEqual(abjad.convert("syc", "sāsā"), "ܣܣܐ")
+        self.assertEqual(abjad.convert("arc", "ss"), "סס")              # bare root keeps both radicals
+        self.assertEqual(abjad.convert("syc", "baqqā"), "ܒܩܐ")           # real gemination still written once
+        self.assertEqual(abjad.convert("arc-old", "pgr"), "𐤐𐤂𐤓")           # Old Aramaic: Phoenician letters
+        self.assertEqual(abjad.convert("arc-off", "gldʔ"), "𐡂𐡋𐡃𐡀")         # Official Aramaic: Imperial Aramaic
+        self.assertEqual(abjad.convert("arc-pal", "nbl"), "\U0001086E\U00010861\U0001086B")    # Palmyrene medial nun
+        self.assertEqual(abjad.convert("arc-pal", "bn"), "\U00010861\U0001086D")               # ... and final nun
         self.assertEqual(abjad.convert("sam", "ṭabyā"), "ࠈࠁࠉࠀ")   # final ā -> alaf
     def test_refuses_when_matres_would_be_needed(self):
         for code, lat in [("syc", "ˁurṭē"), ("syc", "ṭūrā"), ("he", "ˁōp"), ("he", "ṣəbī"), ("syc", "bōḳo"), ("tmr", "ˁūpā")]:

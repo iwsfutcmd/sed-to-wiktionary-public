@@ -98,7 +98,9 @@ The reference is `{{R:sem-pro:SED|volume=…|id=<SEDonline id>|entry=…}}`.
 2. **Converters** in `scripts/tr2script/` (tests: `make test`, no network). They return nothing instead of guessing.
    - `ethiopic`: the exact inverse of Wiktionary's `Module:Ethi-translit` (snapshot in `data/scripts/ethi_translit.json`, refresh with
      `ethiopic.refresh()`). Amharic, Tigrinya, Tigre, the Gurage group and Ge'ez (Leslau's a = ä, ā = a; 118 of 645 SEDonline Ge'ez words exist on Wiktionary at the spelling produced, one under another letter). Gemination (doubled letter in the source) is not written.
-     Not for word-initial vowels (unwritten ʾ) or forms with several variants.
+     Not for word-initial vowels (unwritten ʾ). Harari long vowels are written as the short ones (Wiktionary ሙዝ = mūz).
+   - Forms with variants (`šuš(š)`, `nāˀ/nā`), for every converter: each reading is converted, and the script is used only when all of them
+     give the same spelling (`tr2script.same_spelling`); `(a)dāmäsä` or `mwt/myt` are still refused.
    - `mandaic`: one letter to one letter, since Wiktionary's `Module:Mand-translit` reads the script letter by letter and the SED's Macuch-style forms write the vowel letters a, i, u. Refuses ḥ ġ ˀ (merged in the script), doubled consonants and bare roots; the page's tr is omitted when Wiktionary's own transliteration gives the same. 37 of 368 convertible SEDonline Mandaic words are Wiktionary Classical Mandaic entries at exactly the spelling produced.
    - `abjad`: consonantal Hebrew/Aramaic, Samaritan, Syriac, Ugaritic, Phoenician, Old South Arabian. Unpointed; final ā is written
      as alef; Ugaritic ʾ is always 𐎀 (Wiktionary's 𐎛 for *ʾimr-* is in `CURATED`).

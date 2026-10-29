@@ -15,6 +15,8 @@ Language profiles say how a source's transliteration maps onto that scheme:
         converter gives, 118 are Wiktionary Ge'ez entries at exactly the spelling produced, and the only one that exists under another
         letter is sabˁ (Wiktionary ሰብእ, with ʾ for ʿ). The SED sometimes writes s for a graphic ś (kəsād = ክሣድ): give such words as ś.
 
+Harari (har) writes long ī ū ē ō as the short vowels, as Wiktionary's Harari entries do (length shows only in tr=).
+
 usage: ethiopic.convert("am", "wärč") -> "ወርች";  ethiopic.refresh() re-fetches Wiktionary's table."""
 import json, re, unicodedata as U
 from functools import lru_cache
@@ -24,6 +26,7 @@ TABLE = DATA / "scripts" / "ethi_translit.json"
 VOWELS = "äuiaeəo"
 PROFILES = {c: {} for c in "am tig agj har gft stv wle zwa gru sgw mvz".split()}
 PROFILES["ti"] = {"ḵ": "x"}
+PROFILES["har"] = {"ī": "i", "ū": "u", "ē": "e", "ō": "o"}      # Harari length is not written: Wiktionary ሙዝ tr=mūz, ሞት mōt, ሐጂስ ḥäǧīs (ā: LONG_A)
 PROFILES["gez"] = {"ŝ": "ś", "ṣ̂": "ṣ́", "ḍ": "ṣ́", "ī": "i", "ū": "u", "ē": "e", "ō": "o"}      # Leslau: ä is written a, a is written ā; ṣ́ is ḍ
 # profiles whose source writes a word-initial vowel for an unwritten ʾ, with a standing for ʾä (cf. Wiktionary's Amharic አጥንት = SED aṭənt)
 LONG_A = {"am", "agj", "gft", "stv", "wle", "zwa", "gru", "sgw", "mvz", "har"}
