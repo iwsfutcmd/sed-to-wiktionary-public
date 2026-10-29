@@ -67,3 +67,8 @@ sed_key	entry	language	site_form	print_form	status	note
 1V:42	maraṣ́-	Hebrew	mrṣ		differs	live page (2026-10-19): the root written m-r-ṣ (מ־ר־ץ) with a pointer to Modern Hebrew הִמְרִיץ; the generator follows the live page
 1N:209	pagr-	Hebrew	pāgār	pāgār	differs	live page: Enoshd (2026-10-15) corrected the Hebrew to פֶּגֶר péger; the generator follows the live page
 2N:111	ḫVzīr-	Ugaritic	ḫu-zi-rù	ḫu-zi-ru /ḫuziru/	differs	syllabic spelling: shown as cuneiform 𒄷𒍣𒀸 (rù = ru₃), linking the alphabetic lemma 𐎃𐎇𐎗 its consonants predict; tr= gives the reading ḫuzīru
+2N:32	ʕalaḳ-	Syriac	ˁellaḳtā, ˁallūḳā	ˁelaḳtā, ˁalūḳā	differs	print (Brock. 528, PS 2903) has single l in both; the site doubles it
+2N:32	ʕalaḳ-	Jewish Babylonian Aramaic	ˁlḳˀ	ˁalḳā	differs	print gives the vocalised ʕalḳā (Sok. B 869), also ʕălūḳā (ʕalḳā) after Jastrow
+2N:32	ʕalaḳ-	Arabic	ˁalaq-(at-)	ˁalaḳ(-at)-	differs	same word; written as the collective عَلَق and the singular عَلَقَة, both Wiktionary entries
+2N:32	ʕalaḳ-	Turoyo	ˁalḳo	ˁalḳo	differs	gloss only: print 'Blutegel' (leech); the site's ˁalḳe (filed as Syriac) is Turoyo per the print and is left out
+2N:32	ʕalaḳ-	Mehri	ˀāwḳáyt (pl. ˀālaḳtǝn)	ˀāwḳáyt (pl. ˀālaḳtən)	differs	plural moved out of the gloss into a note after the entry

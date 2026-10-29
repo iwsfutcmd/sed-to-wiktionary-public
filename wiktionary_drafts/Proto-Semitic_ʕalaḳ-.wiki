@@ -1,0 +1,51 @@
+{{reconstructed}}
+==Proto-Semitic==
+
+===Etymology===
+Reconstructed in Militarev & Kogan's ''Semitic Etymological Dictionary'' as {{m|sem-pro||*ʕala/ūḳ(-at)-}}, i.e. {{m|sem-pro||*ʕalaḳ-}} (Arabic, Ethiopic, Aramaic) or {{m|sem-pro||*ʕalūḳ-}} (Hebrew {{m|hbo|עֲלוּקָה}}, Syriac {{m|syc|ܥܠܘܩܐ|tr=ʕalūḳā}}), with an optional feminine suffix {{m|sem-pro||*-at-}}. The Akkadian word is attested once, in a medical text whose translation is uncertain.
+
+===Noun===
+{{sem-noun|m}}
+
+# [[leech]]
+
+====Inflection====
+{{sem-decl-noun}}
+
+====Descendants====
+* East Semitic:
+** {{desc|akk|ilqu|alt=𒅋𒄣|tr=ilqu|t=leech}}
+* West Semitic:
+** Central Semitic:
+*** {{desc|ar|عَلَق|t=leech}}, {{l|ar|عَلَقَة}}
+*** Northwest Semitic:
+**** {{desc|tmr|עלקא|tr=ʕalqā|t=leech}}
+**** {{desc|syc|ܥܠܩܬܐ|tr=ʕelaqtā|t=leech}}, {{l|syc|ܥܠܘܩܐ|tr=ʕalūqā}}
+**** {{desc|tru|ܥܠܩܐ|tr=ʕalqo|t=leech}}
+**** Canaanite:
+***** {{desc|hbo|עֲלוּקָה|tr=ʕălūqā|t=leech}}
+** Ethiopian Semitic:
+*** {{desc|gez|ዐለቅት|tr=ʕalaqt|t=leech}}
+*** {{desc|tig|ዓለቅ|tr=ʕaläq|t=leech}}
+*** {{desc|ti|ዓለቅቲ|tr=ʕaläqti|t=leech}}
+*** {{desc|am|አልቅት|tr=alqət|t=leech}}, {{l|am|አለቅት|tr=aläqət}}
+*** {{desc|har|ኤቅቲ|tr=ēqti|t=leech}}
+*** Gurage:
+**** {{desc|stv|አልጭት|tr=alč̣ət|t=leech}}
+**** {{desc|wle|አልጪት|tr=alč̣it|t=leech}}
+**** {{desc|gru|አለቅት|tr=aläqət|t=leech|q=Soddo}}, {{l|gru|አለእት|tr=aläʔət}}
+**** {{desc|gru|አለእት|tr=aläʔət|t=leech|q=Gogot}}
+**** {{desc|sgw|አረቅጥ|tr=aräqəṭ|t=leech|q=Chaha}}
+**** {{desc|sgw|አረቅት|tr=aräqət|t=leech|q=Ezha}}
+**** {{desc|sgw|አረቅጥ|tr=aräqəṭ|t=leech|q=Ennemor}}
+**** {{desc|sgw|አረቅጥ|tr=aräqəṭ|t=leech|q=Gyeto}}
+**** {{desc|sgw|አለቅት|tr=aläqət|t=leech|q=Muher}}
+**** {{desc|mvz|አለቅት|tr=aläqət|t=leech}}
+** Modern South Arabian:
+*** {{desc|gdq|ʔāwqáyt|t=small water-worm}} (plural ''ʔālaqtən'')
+*** {{desc|shv|ʕoqót|t=kind of leech which is white when small}}
+
+===References===
+* {{R:sem-pro:SED|volume=II|id=506|entry=*ʕala/ūḳ(-at)-}}
+
+{{C|sem-pro|Annelids}}

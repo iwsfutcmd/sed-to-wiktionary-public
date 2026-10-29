@@ -51,6 +51,8 @@ CURATED = {
  ("ar", "mrḍ"): "مَرِضَ", ("ar", "ḍrṭ"): "ضَرَطَ", ("ar", "nyk"): "نَاكَ", ("ar", "ḫrs"): "خَرَّسَ",    # bare roots: the verb forms are chosen by hand
  ("he", "šḳl"): "שָׁקַל", ("phn", "šḳl"): "𐤔𐤒𐤋", ("uga", "ṯḳl"): "𐎘𐎖𐎍", ("ar", "ṯql"): "ثَقَلَ",        # *ṯḳl: bare NWS roots, lemmas as on Wiktionary (שקל, ثقل)
  ("arc", "tḳl"): "תקל", ("jpa", "tḳl"): "תקל", ("tmr", "tḳl"): "תקל", ("syc", "tḳl"): "ܬܩܠ", ("arc-cpa", "tḳl"): "ܬܩܠ", ("myz", "tḳl"): "ࡕࡒࡋ",
+ ("ar", "ˁalaḳ"): "عَلَق", ("ar", "ˁalaḳa"): "عَلَقَة", ("hbo", "ˁălūḳā"): "עֲלוּקָה", ("syc", "ˁalūḳā"): "ܥܠܘܩܐ",   # *ʕalaḳ-: as on Wiktionary (علق coll., علقة, עלוקה)
+ ("tru", "ˁalḳo"): "ܥܠܩܐ", ("har", "ēḳti"): "ኤቅቲ",      # Turoyo in Syriac script (as ܒܩܐ); Harari initial ē is ኤ (the converter leaves initial vowels alone)
  ("hbo", "šəˀēr"): "שְׁאֵר", ("uga", "šˀir"): "𐎌𐎛𐎗",          # both as on Wiktionary's Akkadian šīrum page
 }
 def api(**q):
@@ -79,7 +81,7 @@ def akkadian(form):
     """-> (lemma, phonetic cuneiform spelling from the page's {{cunsp}}, or None)"""
     if form in AKK_OVERRIDE:
         return AKK_OVERRIDE[form][:2]
-    lemma = AKK_LEMMA.get(form, form)
+    lemma = AKK_LEMMA.get(form, form).replace("ḳ", "q")             # Wiktionary spells Akkadian lemmas with q (SED ilḳu = ilqu)
     c = page(lemma)
     if not (c and "==Akkadian==" in c) and form not in AKK_LEMMA and lemma[-1:] in "aeiuāēīū":     # Wiktionary's lemmas carry mimation:
         cm = page(lemma + "m")                                                                    # SED sāsu is Wiktionary sāsum
@@ -197,6 +199,18 @@ PAGES = {   # title -> SEDonline reconstruction id and page content
  "karr-": dict(rec="1077", vol="II", entry="*ka/irr-", pos="{{sem-noun|m}}", infl=True, defs=["[[ram]]"], cat="{{C|sem-pro|Mammals}}",
                etym="Reconstructed in Militarev & Kogan's ''Semitic Etymological Dictionary'' as {{m|sem-pro||*ka/irr-}}, i.e. {{m|sem-pro||*karr-}} or {{m|sem-pro||*kirr-}}: "
                     "Akkadian points to {{m|sem-pro||*kirr-}}, Hebrew to {{m|sem-pro||*karr-}}."),
+ # SED II no. 32 *ʕala/ūḳ(-at)- 'leech' (p. 50-1). Titled ʕalaḳ- with Fronzaroli (V 297) and most branches (Arabic, Ethiopic, Aramaic ʕalḳā);
+ # Hebrew and Syriac ʕalūḳā point to the other vowel. No loans are noted. Where SEDonline differs from the print, the print is followed.
+ "ʕalaḳ-": dict(rec="506", vol="II", entry="*ʕala/ūḳ(-at)-", pos="{{sem-noun|m}}", infl=True, defs=["[[leech]]"], cat="{{C|sem-pro|Annelids}}",
+               etym="Reconstructed in Militarev & Kogan's ''Semitic Etymological Dictionary'' as {{m|sem-pro||*ʕala/ūḳ(-at)-}}, i.e. {{m|sem-pro||*ʕalaḳ-}} "
+                    "(Arabic, Ethiopic, Aramaic) or {{m|sem-pro||*ʕalūḳ-}} (Hebrew {{m|hbo|עֲלוּקָה}}, Syriac {{m|syc|ܥܠܘܩܐ|tr=ʕalūḳā}}), with an optional "
+                    "feminine suffix {{m|sem-pro||*-at-}}. The Akkadian word is attested once, in a medical text whose translation is uncertain.",
+               exclude={("Syriac", "ˁalḳe"): "the print gives ʕalḳe (pl.) 'small animals that live in a well' as Turoyo (Ritter 7), next to Turoyo ʕalḳo 'leech'"},
+               override={("Syriac", "ˁellaḳtā, ˁallūḳā"): dict(form="ˁelaḳtā, ˁalūḳā", reason="print: ʕelaḳtā, ʕalūḳā (Brock. 528, PS 2903): single l"),
+                         ("Jewish Babylonian Aramaic", "ˁlḳˀ"): dict(form="ˁalḳā", reason="print: ʕalḳā (Sok. B 869)"),
+                         ("Arabic", "ˁalaq-(at-)"): dict(form="ˁalaḳ, ˁalaḳa", reason="print: ʕalaḳ(-at)-: the collective عَلَق and the singular عَلَقَة, both Wiktionary entries"),
+                         ("Turoyo", "ˁalḳo"): dict(gloss="leech", reason="print: 'Blutegel'"),
+                         ("Mehri", "ˀāwḳáyt (pl. ˀālaḳtǝn)"): dict(form="ˀāwḳáyt", gloss="small water-worm", after="(plural ''ʔālaqtən'')", reason="print: ʔāwḳáyt (pl. ʔālaḳtən)")}),
  "šiʔr-": dict(rec="691", vol="I", entry="*šiʔr-", pos="{{sem-noun|m}}", infl=True, defs=["[[flesh]]"], cat="{{C|sem-pro|Anatomy}}", etym=""),
  "śaḥm-": dict(rec="698", vol="I", entry="*ŝaḥm-",
               exclude={("Arabic", "šaḥuma"): "site only: the print gives Arabic šaḥm- (BK 1 1199) alone"},
