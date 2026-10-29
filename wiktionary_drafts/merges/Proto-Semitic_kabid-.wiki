@@ -1,0 +1,50 @@
+{{reconstructed}}
+==Proto-Semitic==
+
+===Etymology===
+Militarev and Kogan reconstruct {{m|sem-pro||*kabid(-at)-}}, with various vowel patterns among the descendants: {{m|sem-pro||*kabid-}} (Akkadian, Hebrew, Ugaritic, Arabic), {{m|sem-pro||*kabd-}} (Akkadian, Aramaic, Arabic, Ethiopian Semitic) and {{m|sem-pro||*kibd-}} (Arabic, probably Modern South Arabian). A more general sense “entrails” can be reconstructed alongside “liver”, on the evidence of Akkadian, Ugaritic, Mandaic and Arabic; Ethiopian Semitic has “belly”. A derivation from {{m|sem-pro||*kbd}} “to be heavy” is typologically tenable.<ref>{{R:sem-pro:SED|volume=I|id=33|entry=*kabid(-at)-}}</ref>
+
+===Noun===
+{{sem-noun|m}}
+
+# [[liver]]
+
+====Inflection====
+{{sem-decl-noun}}
+
+====Descendants====
+* East Semitic:
+** {{desc|akk|kabattum|alt=𒅗𒁁𒌈|tr=kabattum|t=innards; mood, mind}}
+* West Semitic:
+** Central Semitic:
+*** {{desc|ar|كَبِد|كِبْد}}
+** Northwest Semitic:
+*** Aramaic:
+**** {{desc|tmr|כַּבדָּא|tr=kaḇdā}}
+**** {{desc|syc|ܟܱ݁ܒܕܴ݁ܐ|tr=kaḇdā|t=liver; anger}}
+**** {{desc|jpa|כבד|tr=kbd}}
+**** {{desc|myz|ࡊࡀࡁࡃࡀ|t=liver; digestive organ}}
+*** {{desc|he|כָּבֵד|tr=kavéd, kāḇēd}}
+*** {{desc|uga|𐎋𐎁𐎄|ts=kabidu}}
+** Ethiopian Semitic:
+*** {{desc|am|ሆድ|t1=belly|ጉበት|t2=liver}}
+*** {{desc|gez|ከብድ|t=liver, belly}}
+*** {{desc|ti|ከብዲ|t=liver, belly}}
+*** {{desc|tig|ከብድ|tr=käbəd|t=belly}}
+*** {{desc|har|ኩድ|tr=kūd|t=liver}}
+*** Gurage:
+**** {{desc|stv|ከብድ|tr=käbd|t=liver}}
+**** {{desc|wle|ሀብድ|tr=häbd|t=liver}}
+**** {{desc|sgw|ሀብድ|tr=häbəd|t=liver|q=Muher}}
+**** {{desc|mvz|ሀብድ|tr=häbəd|t=liver}}
+** Modern South Arabian:
+*** {{desc|gdq|šəbdīt}}
+*** {{desc|hss|šebdēt}}
+*** {{desc|shv|śubdét}}
+*** {{desc|sqt|šíbdeh}}
+
+===References===
+* {{R:sem-pro:GC|page=32}}
+{{reflist}}
+
+{{C|sem-pro|Organs}}

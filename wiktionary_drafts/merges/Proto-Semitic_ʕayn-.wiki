@@ -1,0 +1,73 @@
+{{reconstructed}}
+==Proto-Semitic==
+
+===Etymology===
+{{etymon|sem-pro|:inh|afa-pro:*ʕayVn-<t:eye>|id=eye}}
+From {{inh|sem-pro|afa-pro|*ʕayVn-|t=eye}}.
+
+===Noun===
+{{sem-noun|f}}
+
+# [[eye]]
+# [[spring]] {{q|of water}}
+
+====Inflection====
+{{sem-decl-noun}}
+{{sem-decl-noun|fpl=ʕayn}}
+
+====Descendants====
+* East Semitic:
+** {{desc|akk|īnum|alt=𒅆|tr=īnum}}
+** {{desc|xeb|𒀀𒈾𒈾|tr=a-na-na|ts=ʕaynaya|g=d}}
+* West Semitic:
+** Central Semitic:
+*** {{desctree|ar|عَيْن}}
+*** Northwest Semitic:
+**** {{desc|arc|-}}
+***** {{desctree|tmr|עַיְנָא|tr=ʿaynā}}
+***** {{desc|arc-imp|𐡏𐡉𐡍}}
+***** {{desc|arc-nab|𐢖𐢍𐢔|tr=ʕyn}}
+***** {{desc|arc-pal|𐡰𐡩𐡭}}
+***** {{desc|jpa|עין|tr=ʕayn}}
+***** {{desc|syc|ܥܝܢܐ|tr=ʕaynā}}
+***** {{desc|myz|ࡀࡉࡍࡀ}}
+***** {{desc|amw|ʕayna}}
+***** {{desc|tru|ܥܰܝܢܳܐ}}
+***** {{desc|lhs|ʕayno}}
+***** {{desc|aii|ܥܲܝܢܵܐ}}
+***** {{desc|hrt|-|tr=ʔena}}
+**** Canaanite:
+***** {{desc|he|עַיִן|tr='áyin, ʿáyin}}
+***** {{desc|phn|𐤏𐤍|𐤏𐤉𐤍}}
+**** {{desc|uga|𐎓𐎊𐎐}}
+*** Old South Arabian:
+**** {{desc|inm|𐩲𐩺𐩬}}
+**** {{desc|xqt|𐩲𐩺𐩬}}
+**** {{desc|xsa|𐩲𐩺𐩬}}
+** Ethiopian Semitic:
+*** {{desc|am|ዓይን}}
+*** {{desc|gez|ዐይን}}
+*** {{desc|ti|ዓይኒ}}
+*** {{desc|tig|ዕን|tr=ʕən}}
+*** {{desc|agj|ኤን|tr=en}}
+*** {{desc|gft|ኢነ|tr=inä}}
+*** {{desc|har|ኢን|tr=īn}}
+*** Gurage:
+**** {{desc|stv|ኢን|tr=īn}}
+**** {{desc|wle|ኢን|tr=in}}
+**** {{desc|zwa|ኢን|tr=īn}}
+**** {{desc|gru|ኢን|tr=in|q=Soddo}}, {{l|gru|ኤን|tr=en|q=Gogot}}
+**** {{desc|sgw|ኤን|tr=en|q=Chaha, Ezha, Muher}}, {{l|sgw|አይን|tr=ayn|q=Gyeto}}
+**** {{desc|mvz|ኤን|tr=en}}
+** Modern South Arabian:
+*** {{desc|gdq|ʔāyn}}
+*** {{desc|hss|ʔāyn}}
+*** {{desc|shv|ʕíhn}}
+*** {{desc|sqt|ʕain}}
+
+===References===
+* {{R:sem-pro:GC}}
+* {{R:sem-pro:Huehnergard 2019}}
+* {{R:sem-pro:SED|volume=I|id=19|entry=*ʕayn-}}
+
+{{C|sem-pro|Body parts}}
