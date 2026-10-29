@@ -77,6 +77,9 @@ live text, never removing or rewording anything, and saved as `merges/<title>.wi
 Before a card is made, `make merge-check` (`scripts/wikt_merge.py`) confirms that no language we add is already on the page, whether on a
 line of its own or through a `{{desctree}}`, which shows another page's whole descendant list (on `ʕayn-`, `{{desctree|tmr|עַיְנָא}}` already
 shows Syriac, Mandaic, Turoyo and Assyrian). `tests/test_merge.py` replays that case offline.
+`tests/test_sed_refs.py` checks every page in `done/` and `merges/`: each `{{R:sem-pro:SED}}` has `id=` (links to SEDonline), and the page is
+at the level SEDonline gives that record, unless `LEVEL_EXCEPTIONS` records why not (pages that follow the print, or a decision).
+`scripts/wikt_sed_ids.py` finds SED references elsewhere on Wiktionary without `id=` and works out the record, checked against the page.
 
 ## Back-links from the daughter pages
 `make backlink` re-downloads every daughter page that does not cite its reconstruction yet and writes whole-page edits
