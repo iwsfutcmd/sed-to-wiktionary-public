@@ -22,7 +22,7 @@ Reconstructed in Militarev & Kogan's ''Semitic Etymological Dictionary'' with an
 ** Central Semitic:
 *** {{desc|ar|وَرِك|t=haunch, upper thigh}}
 *** Northwest Semitic:
-**** Biblical {{desc|arc|ירכתה|tr=yarḵāṯēh|t=thigh (suff.)}}
+**** {{desc|arc-bib|ירכתה|tr=yarḵāṯēh|t=thigh (suff.)}}
 **** {{desc|jpa|ירך|tr=yrk|t=haunch, thigh}}
 **** {{desc|tmr|ירכא|tr=yirkā|t=haunch, thigh}}
 **** {{desc|amw|werka|t=hip}}

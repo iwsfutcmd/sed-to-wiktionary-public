@@ -21,7 +21,7 @@ Reconstructed in Militarev & Kogan's ''Semitic Etymological Dictionary'' as {{m|
 **** {{desc|gdq|ḫənzīr|t=pig|bor=1}}
 **** {{desc|shv|ḫanzīr|t=pig|bor=1}}
 *** Northwest Semitic:
-**** Official {{desc|arc|𐡇𐡆𐡅𐡓|tr=ḥzwr|t=pig, swine|sc=Armi}}
+**** {{desc|arc-imp|𐡇𐡆𐡅𐡓|t=pig, swine}}
 **** {{desc|jpa|חזיר|tr=ḥzyr|t=sow}}
 **** {{desc|tmr|חֲזִירָא|tr=ḥăzīrā|t=pig}}
 **** {{desc|syc|ܚܙܝܪܐ|tr=ḥzīrā|t=pig}}

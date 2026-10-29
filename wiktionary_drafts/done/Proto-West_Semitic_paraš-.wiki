@@ -11,12 +11,12 @@ Reconstructed in Militarev & Kogan's ''Semitic Etymological Dictionary'' as {{m|
 
 ====Descendants====
 * Central Semitic:
-** {{desc|ar|فَرَس|t=horse, mare}}
+** {{desc|ar|فَرَس|t=horse, mare|id=horse}}
 ** Northwest Semitic:
-*** Old {{desc|arc|𐤐𐤓𐤔|tr=prš|t=horseman, cavalryman|sc=Phnx}}
-*** Official {{desc|arc|𐡐𐡓𐡔|tr=prš|t=horseman, cavalryman|sc=Armi}}
-*** Palmyrene {{desc|arc|𐡱𐡴𐡵|tr=prš|t=horseman, cavalryman|sc=Palm}}
-*** Nabataean {{desc|arc|𐢗𐢚𐢜|tr=prš|t=horseman, cavalryman|sc=Nbat}}
+*** {{desc|arc-old|𐤐𐤓𐤔|t=horseman, cavalryman}}
+*** {{desc|arc-imp|𐡐𐡓𐡔|t=horseman, cavalryman}}
+*** {{desc|arc-pal|𐡱𐡴𐡵|t=horseman, cavalryman}}
+*** {{desc|arc-nab|𐢗𐢚𐢜|tr=prš|t=horseman, cavalryman}}
 *** {{desc|jpa|פרש|tr=prš|t=rider}}
 *** {{desc|tmr|פרשא|tr=parrāšā|t=horseman}}
 *** {{desc|syc|ܦܪܫܐ|tr=parrāšā|t=horseman}}

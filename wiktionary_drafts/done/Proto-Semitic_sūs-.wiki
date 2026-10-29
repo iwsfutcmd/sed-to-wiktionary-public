@@ -19,8 +19,8 @@
 **** {{desc|am|ሹሽ|tr=šuš(š)|t=moth|bor=1}}
 **** {{desc|har|ሱስ|tr=sūs|t=moth|bor=1}}
 *** Northwest Semitic:
-**** Old {{desc|arc|𐤎𐤎|tr=ss|t=moth|sc=Phnx}}
-**** Official {{desc|arc|𐡎𐡎|tr=ss|t=moth|sc=Armi}}
+**** {{desc|arc-old|𐤎𐤎|t=moth}}
+**** {{desc|arc-imp|𐡎𐡎|t=moth}}
 **** {{desc|jpa|סס|tr=ss|t=moth, worm}}
 **** {{desc|syc|ܣܣܐ|tr=sāsā|t=kind of worm that infests the grapevine}}
 **** {{desc|myz|ࡎࡀࡎࡀ|t=moth, maggot}}

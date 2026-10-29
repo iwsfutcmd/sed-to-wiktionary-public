@@ -18,7 +18,7 @@
 ** Central Semitic:
 *** {{desc|ar|ثَقَلَ|t=to weigh}}
 *** Northwest Semitic:
-**** Official {{desc|arc|𐡕𐡒𐡋|tr=tql|t=to weigh out|sc=Armi}}
+**** {{desc|arc-imp|𐡕𐡒𐡋|t=to weigh out}}
 **** {{desc|jpa|תקל|tr=tql|t=to weigh}}
 **** {{desc|tmr|תקל|tr=tql|t=to weigh, be even}}
 **** {{desc|syc|ܬܩܠ|tr=tql|t=to suspend, weigh out, balance}}

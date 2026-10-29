@@ -19,8 +19,8 @@ Reconstructed in Militarev & Kogan's ''Semitic Etymological Dictionary'' as {{m|
 ** Central Semitic:
 *** {{desc|ar|جِلْد|t=skin, leather}}, {{l|ar|جَلَد}}, {{l|ar|جِلِد}}
 *** Northwest Semitic:
-**** Official {{desc|arc|𐡂𐡋𐡃𐡀|tr=gldʔ|t=hide, skin|sc=Armi}}
-**** Palmyrene {{desc|arc|𐡢𐡫𐡣𐡩𐡠|tr=gldyʔ|t=hide, skin|sc=Palm}}
+**** {{desc|arc-imp|𐡂𐡋𐡃𐡀|t=hide, skin}}
+**** {{desc|arc-pal|𐡢𐡫𐡣𐡩𐡠|t=hide, skin}}
 **** {{desc|tmr|גלדא|tr=gildā|t=plate, covering, skin, leather}}
 **** {{desc|syc|ܓܠܕܐ|tr=geldā|t=skin, hide}}
 **** {{desc|myz|ࡂࡉࡋࡃࡀ|t=testicle, leather}}

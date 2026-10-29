@@ -18,7 +18,7 @@ Reconstructed in Militarev & Kogan's ''Semitic Etymological Dictionary'' as {{m|
 * West Semitic:
 ** Central Semitic:
 *** Northwest Semitic:
-**** Official {{desc|arc|𐡊𐡓|tr=kr|t=sheep|sc=Armi}}
+**** {{desc|arc-imp|𐡊𐡓|t=sheep}}
 **** {{desc|sam|ࠊࠓ|tr=kr|t=ewe}}
 **** Canaanite:
 ***** {{desc|hbo|כַּר|tr=kar|t=(young) ram}}
