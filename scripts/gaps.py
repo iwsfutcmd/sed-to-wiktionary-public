@@ -31,6 +31,15 @@ by_skel = defaultdict(list)
 for kind, t in titles:
     by_skel[skeleton(t)].append(f'{kind}:{t}')
 
+# Our own posted pages (wiktionary_drafts/done/), tied to their SED entry through the SEDonline record each was drafted from: the matcher
+# cannot pair a root with its stem title (*ṣ̂rṭ = ṣ́araṭ-) or a V-title (*ḫV(n)zīr- = ḫVzīr-), so these count as covered by name
+import wikt_draft as WD
+site_ref = {r['rec_id']: r['sed_ref'] for r in read(DATA / 'sedonline' / 'sedonline_reconstructions.tsv')}
+ours = {}
+for t, cfg in WD.PAGES.items():
+    if (WD.OUT / 'done' / WD.filename(t, cfg)).exists() and site_ref.get(cfg['rec']):
+        ours[site_ref[cfg['rec']]] = ('PWS:' if cfg.get('level') == 'PWS' else 'PS:') + t
+
 out = []
 for r in recs:
     key = (r['vol'], r['section'], r['no'])
@@ -40,9 +49,10 @@ for r in recs:
     covered = r['wikt_ps'] in ('yes', 'pattern') or r['wikt_pws'] in ('yes', 'pattern')
     skels = {skeleton(v) for v in expand(r['wikt_norm']) if v}
     near = sorted({t for s in skels if len(s) >= 3 for t in by_skel.get(s, [])})
-    status = 'covered' if covered else ('same_skeleton' if near else 'gap')
+    mine = ours.get(f"{r['vol']}{r['section'][0].upper()}:{r['no']}")
+    status = 'covered' if covered or mine else ('same_skeleton' if near else 'gap')
     out.append(dict(vol=r['vol'], section=r['section'], no=r['no'], protoform=r['protoform'], gloss=r['gloss'],
-                    status=status, wikt_ps=r['wikt_ps'], wikt_pws=r['wikt_pws'], same_skeleton=';'.join(near),
+                    status=status, wikt_ps=r['wikt_ps'], wikt_pws=r['wikt_pws'], same_skeleton=';'.join(near), ours=mine or '',
                     n_branches=len(branches), n_langs=len(langs), n_afras=afr.get(key, 0), pdf_page=r['pdf_page']))
 order = {'gap': 0, 'same_skeleton': 1, 'covered': 2}
 out.sort(key=lambda d: (order[d['status']], -d['n_branches'], -d['n_langs'], -d['n_afras'], d['vol'], int(d['no'])))

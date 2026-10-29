@@ -66,12 +66,30 @@ def status(ex,pa):
     if ex: return 'yes',';'.join(sorted(ex))
     if pa: return 'pattern',';'.join(sorted(pa))
     return 'no',''
+# SEDonline's form of the same entry (sed_ref 1N:25 = vol 1, nominal, no. 25): the PDF text loses some diacritics (*ʕaṯ̣m- came out as
+# *ʕaṯm-), so a page under the correct spelling was missed and the entry counted as a gap
+# SEDonline's sed_ref is not unique (1N:44 also tags *nhḳ, *dbr ...), so its form is used only when it is the same entry: the same letters once
+# diacritics are stripped, and a gloss word in common
+SITE={}
+for r in csv.DictReader(open(DATA/'sedonline'/'sedonline_reconstructions.tsv',encoding='utf-8'),delimiter='\t'):
+    if r.get('sed_ref'): SITE.setdefault(r['sed_ref'],[]).append((r['norm'],r['gloss']))
+def bare(f):
+    f=re.sub(r'\([^()]*\)','',fold(f))                              # optional parts: *ʕaṯm(-at)-
+    f=''.join(c for c in U.normalize('NFD',f) if not U.combining(c))
+    return re.sub(r'[aiueoāīūēōV/,\-*\s]','',f)
+def gwords(g): return set(re.findall(r'[a-z]{3,}',g.lower()))-{'the','and','kind','with'}
+def site_forms(key,d):
+    alts=set()
+    for part in d['protoform'].split(','):                           # *ṗVrγVṯ-, *ṗVrṯaγ-: each form; *maʕay/w-: each letter of an alternation
+        alts|={re.sub(r'(\S)/(\S)',lambda m:m.group(i),part) for i in (1,2)}
+    return [n for n,g in SITE.get(key,[]) if bare(n) in {bare(a) for a in alts} and gwords(g)&gwords(d['gloss'])]
 rows=list(csv.reader(open(INTER/'sed_all.tsv',encoding='utf-8'),delimiter='\t'))
 h=rows[0]+['wikt_ps','wikt_ps_title','wikt_pws','wikt_pws_title']
 out=[h]
 for r in rows[1:]:
     d=dict(zip(rows[0],r))
-    vs=list(dict.fromkeys(expand(d['protoform'])+expand(d['wikt_norm'])+expand(d['affricate_variant'])))
+    key=f"{d['vol']}{d['section'][0].upper()}:{d['no']}"
+    vs=list(dict.fromkeys(expand(d['protoform'])+expand(d['wikt_norm'])+expand(d['affricate_variant'])+[v for f in site_forms(key,d) for v in expand(f)]))
     a=status(*match(IPS,vs));b=status(*match(IPW,vs))
     out.append(r+[a[0],a[1],b[0],b[1]])
 def write(path,rs):

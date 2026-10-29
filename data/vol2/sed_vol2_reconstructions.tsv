@@ -28,9 +28,9 @@ vol	section	no	protoform	affricate_variant	gloss	wikt_norm	pdf_page	wikt_ps	wikt
 2	nominal	27	*ʕabVw-		kind of fish	*ʕabVw-	133	no		no	
 2	nominal	28	*ʕigʷal- // *ʕigl-		calf	*ʕigʷal-	134	no		yes	ʕigl-
 2	nominal	29	*ʕVgVr-		kind of bird	*ʕVgVr-	137	no		no	
-2	nominal	30	*ʕakbar-		mouse, jerboa	*ʕakbar-	138	no		no	
+2	nominal	30	*ʕakbar-		mouse, jerboa	*ʕakbar-	138	yes	ʕakbar-	no	
 2	nominal	31	*ʕaḳrab-		scorpion	*ʕaqrab-	139	yes	ʕaḳrab-	no	
-2	nominal	32	*ʕala/ūḳ(-at)-		leech	*ʕala/ūq(-at)-	141	no		no	
+2	nominal	32	*ʕala/ūḳ(-at)-		leech	*ʕala/ūq(-at)-	141	yes	ʕalaḳ-	no	
 2	nominal	33	*ʕankab(īṯ)-	*ʕankab(īč)-	spider	*ʕankab(īṯ)-	142	no		no	
 2	nominal	34	*ʕVnV̄ḳ-		female kid	*ʕVnV̄q-	144	no		no	
 2	nominal	35	*ʕVnz-	*ʕVnʒ-	goat	*ʕVnz-	144	no		no	
@@ -116,7 +116,7 @@ vol	section	no	protoform	affricate_variant	gloss	wikt_norm	pdf_page	wikt_ps	wikt
 2	nominal	115	*kalb-		dog	*kalb-	247	yes	kalb-	no	
 2	nominal	116	*ki/ann(-Vm)-		a harmful insect	*ki/ann(-Vm)-	250	no		no	
 2	nominal	117	*k(ʷ)arkiy- // *kurkiy-		goose, crane	*k(ʷ)arkiy-	251	no		no	
-2	nominal	118	*ka/irr-		ram	*ka/irr-	253	no		no	
+2	nominal	118	*ka/irr-		ram	*ka/irr-	253	yes	karr-;kirr-	no	
 2	nominal	119	*kʷaraz- // *karaʒ-		kind of insect	*kʷaraz-	255	no		no	
 2	nominal	120	*kVS-		a (mythical) aquatic reptile	*kVS-	256	no		no	
 2	nominal	121	*kVs(Vs)-	*kVc(Vc)-	kind of bird of prey	*kVs(Vs)-	257	no		no	
@@ -164,7 +164,7 @@ vol	section	no	protoform	affricate_variant	gloss	wikt_norm	pdf_page	wikt_ps	wikt
 2	nominal	163	*nam(V)l-		ant	*nam(V)l-	305	no		no	
 2	nominal	164	*namir-		leopard	*namir-	307	yes	namir-	no	
 2	nominal	165	*nVšVp-	*nVsVp-	kind of bird	*nVšVp-	310	no		no	
-2	nominal	166	*nVšr-	*nVsr-	eagle, vulture	*nVšr-	311	pattern	našr-	pattern	našr-
+2	nominal	166	*nVšr-	*nVsr-	eagle, vulture	*nVšr-	311	yes	našr-	yes	našr-
 2	nominal	167	*nVṣVr-	*nVc̣Vr-	cricket	*nVṣVr-	313	no		no	
 2	nominal	168	*na/iṣ(ṣ)-	*na/ic̣(c̣)-	kind of bird	*na/iṣ(ṣ)-	313	no		no	
 2	nominal	169	*na(ya)l-		a wild hoofed animal	*na(ya)l-	314	no		no	
@@ -180,10 +180,10 @@ vol	section	no	protoform	affricate_variant	gloss	wikt_norm	pdf_page	wikt_ps	wikt
 2	nominal	179	*parḫ-		chick, brood	*parḫ-	328	no		no	
 2	nominal	180	*pVrpVr-, *parr/w-		kind of bird	*pVrpVr-	329	no		no	
 2	nominal	181	*parr-		young of small or large cattle	*parr-	330	no		no	
-2	nominal	182	*paraš-	*paras-	horse	*paraš-	333	no		no	
+2	nominal	182	*paraš-	*paras-	horse	*paraš-	333	no		yes	paraš-
 2	nominal	183	*pVšpVš-	*pVspVs-	bug	*pVšpVš-	336	no		no	
 2	nominal	184	*pVṣγ-	*pVc̣γ-	gecko	*pVṣġ-	336	no		no	
-2	nominal	185	*ṗVrγVṯ-, *ṗVrṯaγ-	*ṗVrγVč-, *ṗVrčaγ-	flea	*ṗVrġVṯ-	337	no		no	
+2	nominal	185	*ṗVrγVṯ-, *ṗVrṯaγ-	*ṗVrγVč-, *ṗVrčaγ-	flea	*ṗVrġVṯ-	337	pattern	purḡūṯ-	no	
 2	nominal	186	*riʔm-		aurochs	*riʔm-	339	no		no	
 2	nominal	187	*raʔ/w/hy-		kind of bird	*raʔ/w/hy-	341	no		no	
 2	nominal	188	*raḫil-		ewe	*raḫil-	341	no		no	
@@ -196,7 +196,7 @@ vol	section	no	protoform	affricate_variant	gloss	wikt_norm	pdf_page	wikt_ps	wikt
 2	nominal	195	*SVlw-		quail	*SVlw-	348	no		no	
 2	nominal	196	*sVm(V)m(-at)-	*cVm(V)m(-at)-	kind of bird	*sVm(V)m(-at)-	348	no		no	
 2	nominal	197	*su/inūn(Vw/y)-at-	*cu/inūn(Vw/y)-at-	swallow	*su/inūn(Vw/y)-at-	349	no		no	
-2	nominal	198	*sā/ūs-	*cā/ūc-	moth	*sā/ūs-	350	no		no	
+2	nominal	198	*sā/ūs-	*cā/ūc-	moth	*sā/ūs-	350	yes	sūs-	no	
 2	nominal	199	*sVwsVw-	*cVwcVw-	horse	*sVwsVw-	352	no		no	
 2	nominal	200	*šibb-	*sibb-	kind of snake, worm	*šibb-	355	no		no	
 2	nominal	201	*šVl-	*sVl-	kind of bird	*šVl-	356	no		no	
@@ -219,7 +219,7 @@ vol	section	no	protoform	affricate_variant	gloss	wikt_norm	pdf_page	wikt_ps	wikt
 2	nominal	218	*ŝₓVbay(-at)-	*ŝVbay(-at)-	kind of insect	*śₓVbay(-at)-	373	no		no	
 2	nominal	219	*ṣ̂aʔn-	*ĉ̣aʔn-	small cattle	*ṣ́aʔn-	374	yes	ṣ́aʔn-;ṣ́aʾn-	no	
 2	nominal	220	*ṣ̂ab(u)ʕ-	*ĉ̣ab(u)ʕ-	hyena	*ṣ́ab(u)ʕ-	376	yes	ṣ́abuʕ-;ṣ́abuʿ-	no	
-2	nominal	221	*ṣ̂abb-	*ĉ̣abb-	kind of lizard	*ṣ́abb-	378	no		no	
+2	nominal	221	*ṣ̂abb-	*ĉ̣abb-	kind of lizard	*ṣ́abb-	378	no		yes	ṣ́abb-
 2	nominal	222	*ṣ̂Vpardiʕ-	*ĉ̣Vpardiʕ-	frog	*ṣ́Vpardiʕ-	379	no		no	
 2	nominal	223	*ṣ̂Vrʕ(-at)-	*ĉ̣Vrʕ(-at)-	wasp	*ṣ́Vrʕ(-at)-	380	no		no	
 2	nominal	224	*ṣ̂ayw-	*ĉ̣ayw-	wild cat	*ṣ́ayw-	381	no		no	

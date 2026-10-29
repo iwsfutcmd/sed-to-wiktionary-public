@@ -23,7 +23,7 @@ vol	section	no	protoform	affricate_variant	gloss	wikt_norm	pdf_page	wikt_ps	wikt
 1	nominal	22	*ʕu/irray(-at)-		intestines; excrement	*ʕu/irray(-at)-	175	no		no	
 1	nominal	23	*ʕaṣay-	*ʕac̣ay-	backbone	*ʕaṣay-	176	no		yes	ʕaṣay-
 1	nominal	24	*ʕVṣ̂ā/īṣ̂-	*ʕVĉ̣ā/īĉ̣-	(kind of) bone	*ʕVṣ́ā/īṣ́-	176	no		no	
-1	nominal	25	*ʕaṯm(-at)-	*ʕač̣m(-at)-	bone	*ʕaṯm(-at)-	177	no		no	
+1	nominal	25	*ʕaṯm(-at)-	*ʕač̣m(-at)-	bone	*ʕaṯm(-at)-	177	yes	ʕaṯ̣m-	no	
 1	nominal	26	*ʕawr(-at)-, *ʕVrw(-at)-		pudenda	*ʕawr(-at)-	178	no		no	
 1	nominal	27	*ʕaw/yš-, *ʕašw/y-	*ʕaw/ys-, *ʕasw/y-	kind of disease (fever, cold in the head; plague)	*ʕaw/yš-	179	no		no	
 1	nominal	28	*ʕayn-		eye	*ʕayn-	180	yes	ʕayn-;ʿayn-	no	
@@ -120,7 +120,7 @@ vol	section	no	protoform	affricate_variant	gloss	wikt_norm	pdf_page	wikt_ps	wikt
 1	nominal	119	*ḥVmm(-at)-		breast, stomach, entrails	*ḥVmm(-at)-	260	no		no	
 1	nominal	120	*ḥVm-at-		venom, bile	*ḥVm-at-	261	no		no	
 1	nominal	121	*ḥum(a)ṣ-at-	*ḥum(a)c̣-at-	birth-mark, scar on the skin	*ḥum(a)ṣ-at-	262	no		no	
-1	nominal	122	*ḥVmṯ-	*ḥVmč-	(lower) belly, uterus, womb	*ḥVmṯ-	262	pattern	ḥamṯ-	no	
+1	nominal	122	*ḥVmṯ-	*ḥVmč-	(lower) belly, uterus, womb	*ḥVmṯ-	262	yes	ḥamṯ-	no	
 1	nominal	123	*ḥann(-at)-		(feminine) genital organ, uterus	*ḥann(-at)-	263	no		no	
 1	nominal	124	*ḥanak-, *ḥink-		palate	*ḥanak-	264	no		no	
 1	nominal	125	*ḥu/apn-		hollow of the hand, handful	*ḥu/apn-	265	no		no	
@@ -183,7 +183,7 @@ vol	section	no	protoform	affricate_variant	gloss	wikt_norm	pdf_page	wikt_ps	wikt
 1	nominal	182	*laṯaγ-	*lačaγ-	(inner part of the) mouth	*laṯaġ-	317	no		no	
 1	nominal	183	*mV(ʔ)n(-at)-		tendon, sinew; muscle	*mV(ʔ)n(-at)-	318	no		no	
 1	nominal	184	*mVʕmVʕ-		brain	*mVʕmVʕ-	319	no		no	
-1	nominal	185	*maʕay/w(-at)-		intestines, entrails	*maʕay/w(-at)-	320	no		no	
+1	nominal	185	*maʕay/w(-at)-		intestines, entrails	*maʕay/w(-at)-	320	pattern	miʕay-	no	
 1	nominal	186	*mVgl-		pus, blister	*mVgl-	321	no		no	
 1	nominal	187	*muḫḫ-		brain	*muḫḫ-	321	yes	muḫḫ-	no	
 1	nominal	188	*mi/ar(r)-at-, *mirār-at-		gall, gall-bladder	*mi/ar(r)-at-	322	no		no	
@@ -254,14 +254,14 @@ vol	section	no	protoform	affricate_variant	gloss	wikt_norm	pdf_page	wikt_ps	wikt
 1	nominal	253	*š/sar-	*ś/car-	vertebral column, backbone	*š/sar-	375	no		no	
 1	nominal	254	*šurr-	*surr-	navel, navel string	*šurr-	376	no		no	
 1	nominal	255	*šVt-, *ʔi-šVt-	*sVt-, *ʔi-sVt-	posterior, buttocks	*šVt-	377	no		no	
-1	nominal	256	*ṣVbʕ(-at)-, *ʔV-ṣbaʕ-	*c̣Vbʕ(-at)-, *ʔV-c̣baʕ-	finger	*ṣVbʕ(-at)-	379	pattern	ʔiṣbaʕ-	no	
+1	nominal	256	*ṣVbʕ(-at)-, *ʔV-ṣbaʕ-	*c̣Vbʕ(-at)-, *ʔV-c̣baʕ-	finger	*ṣVbʕ(-at)-	379	yes	ʔiṣbaʕ-	no	
 1	nominal	257	*ṣirnaγ-at-	*c̣irnaγ-at-	(kind of) skin disease	*ṣirnaġ-at-	381	no		no	
 1	nominal	258	*ṣaw(ʔ)ar-	*c̣aw(ʔ)ar-	neck	*ṣaw(ʔ)ar-	381	no		no	
 1	nominal	259	*ŝV(ʕ)p-at-	*ĉV(ʕ)p-at-	(tuft of) hair	*śV(ʕ)p-at-	382	pattern	śapat-	no	
 1	nominal	260	*ŝaʕr(-at)-	*ĉaʕr(-at)-	hair (of body and head)	*śaʕr(-at)-	383	yes	śaʕr-;śaʿr-	no	
 1	nominal	261	*ŝabḥ-	*ĉabḥ-	(animal) fat	*śabḥ-	384	no		no	
 1	nominal	262	*ŝVbVr-	*ĉVbVr-	buttocks, hind parts, small of the back	*śVbVr-	385	no		no	
-1	nominal	263	*ŝaḥm-	*ĉaḥm-	fat	*śaḥm-	385	no		no	
+1	nominal	263	*ŝaḥm-	*ĉaḥm-	fat	*śaḥm-	385	yes	śaḥm-	no	
 1	nominal	264	*ŝimaʔl-	*ĉimaʔl-	left hand (side)	*śimaʔl-	386	yes	śimaʔl-	no	
 1	nominal	265	*ŝa(n)p-at-	*ĉa(n)p-at-	lip	*śa(n)p-at-	387	yes	śapat-	no	
 1	nominal	266	*ŝVp(V)r-	*ĉVp(V)r-	eyelash; (tuft of) hair	*śVp(V)r-	389	no		no	
@@ -283,7 +283,7 @@ vol	section	no	protoform	affricate_variant	gloss	wikt_norm	pdf_page	wikt_ps	wikt
 1	nominal	282	*ṯapr-	*čapr-	perineum	*ṯapr-	404	no		no	
 1	nominal	283	*ṯarb-	*čarb-	(animal) fat	*ṯarb-	405	no		no	
 1	nominal	284	*ṯ̣Vhr-	*č̣Vhr-	back	*ṱVhr-	405	no		no	
-1	nominal	285	*ṯ̣ip(V)r-	*č̣ip(V)r-	nail	*ṱip(V)r-	407	no		no	
+1	nominal	285	*ṯ̣ip(V)r-	*č̣ip(V)r-	nail	*ṱip(V)r-	407	yes	θ̣ipr-	no	
 1	nominal	286	*ṯ̣ayVʔ(-at)-	*č̣ayVʔ(-at)-	excrement; excreta	*ṱayVʔ(-at)-	408	no		no	
 1	nominal	287	*warīd-		jugular vein; trachea	*warīd-	410	no		no	
 1	nominal	288	*warik(-at)-		hip(-bone)	*warik(-at)-	410	yes	warik-	no	

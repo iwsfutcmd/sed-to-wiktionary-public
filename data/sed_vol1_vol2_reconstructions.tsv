@@ -23,7 +23,7 @@ vol	section	no	protoform	affricate_variant	gloss	wikt_norm	pdf_page	wikt_ps	wikt
 1	nominal	22	*ʕu/irray(-at)-		intestines; excrement	*ʕu/irray(-at)-	175	no		no	
 1	nominal	23	*ʕaṣay-	*ʕac̣ay-	backbone	*ʕaṣay-	176	no		yes	ʕaṣay-
 1	nominal	24	*ʕVṣ̂ā/īṣ̂-	*ʕVĉ̣ā/īĉ̣-	(kind of) bone	*ʕVṣ́ā/īṣ́-	176	no		no	
-1	nominal	25	*ʕaṯm(-at)-	*ʕač̣m(-at)-	bone	*ʕaṯm(-at)-	177	no		no	
+1	nominal	25	*ʕaṯm(-at)-	*ʕač̣m(-at)-	bone	*ʕaṯm(-at)-	177	yes	ʕaṯ̣m-	no	
 1	nominal	26	*ʕawr(-at)-, *ʕVrw(-at)-		pudenda	*ʕawr(-at)-	178	no		no	
 1	nominal	27	*ʕaw/yš-, *ʕašw/y-	*ʕaw/ys-, *ʕasw/y-	kind of disease (fever, cold in the head; plague)	*ʕaw/yš-	179	no		no	
 1	nominal	28	*ʕayn-		eye	*ʕayn-	180	yes	ʕayn-;ʿayn-	no	
@@ -120,7 +120,7 @@ vol	section	no	protoform	affricate_variant	gloss	wikt_norm	pdf_page	wikt_ps	wikt
 1	nominal	119	*ḥVmm(-at)-		breast, stomach, entrails	*ḥVmm(-at)-	260	no		no	
 1	nominal	120	*ḥVm-at-		venom, bile	*ḥVm-at-	261	no		no	
 1	nominal	121	*ḥum(a)ṣ-at-	*ḥum(a)c̣-at-	birth-mark, scar on the skin	*ḥum(a)ṣ-at-	262	no		no	
-1	nominal	122	*ḥVmṯ-	*ḥVmč-	(lower) belly, uterus, womb	*ḥVmṯ-	262	pattern	ḥamṯ-	no	
+1	nominal	122	*ḥVmṯ-	*ḥVmč-	(lower) belly, uterus, womb	*ḥVmṯ-	262	yes	ḥamṯ-	no	
 1	nominal	123	*ḥann(-at)-		(feminine) genital organ, uterus	*ḥann(-at)-	263	no		no	
 1	nominal	124	*ḥanak-, *ḥink-		palate	*ḥanak-	264	no		no	
 1	nominal	125	*ḥu/apn-		hollow of the hand, handful	*ḥu/apn-	265	no		no	
@@ -183,7 +183,7 @@ vol	section	no	protoform	affricate_variant	gloss	wikt_norm	pdf_page	wikt_ps	wikt
 1	nominal	182	*laṯaγ-	*lačaγ-	(inner part of the) mouth	*laṯaġ-	317	no		no	
 1	nominal	183	*mV(ʔ)n(-at)-		tendon, sinew; muscle	*mV(ʔ)n(-at)-	318	no		no	
 1	nominal	184	*mVʕmVʕ-		brain	*mVʕmVʕ-	319	no		no	
-1	nominal	185	*maʕay/w(-at)-		intestines, entrails	*maʕay/w(-at)-	320	no		no	
+1	nominal	185	*maʕay/w(-at)-		intestines, entrails	*maʕay/w(-at)-	320	pattern	miʕay-	no	
 1	nominal	186	*mVgl-		pus, blister	*mVgl-	321	no		no	
 1	nominal	187	*muḫḫ-		brain	*muḫḫ-	321	yes	muḫḫ-	no	
 1	nominal	188	*mi/ar(r)-at-, *mirār-at-		gall, gall-bladder	*mi/ar(r)-at-	322	no		no	
@@ -254,14 +254,14 @@ vol	section	no	protoform	affricate_variant	gloss	wikt_norm	pdf_page	wikt_ps	wikt
 1	nominal	253	*š/sar-	*ś/car-	vertebral column, backbone	*š/sar-	375	no		no	
 1	nominal	254	*šurr-	*surr-	navel, navel string	*šurr-	376	no		no	
 1	nominal	255	*šVt-, *ʔi-šVt-	*sVt-, *ʔi-sVt-	posterior, buttocks	*šVt-	377	no		no	
-1	nominal	256	*ṣVbʕ(-at)-, *ʔV-ṣbaʕ-	*c̣Vbʕ(-at)-, *ʔV-c̣baʕ-	finger	*ṣVbʕ(-at)-	379	pattern	ʔiṣbaʕ-	no	
+1	nominal	256	*ṣVbʕ(-at)-, *ʔV-ṣbaʕ-	*c̣Vbʕ(-at)-, *ʔV-c̣baʕ-	finger	*ṣVbʕ(-at)-	379	yes	ʔiṣbaʕ-	no	
 1	nominal	257	*ṣirnaγ-at-	*c̣irnaγ-at-	(kind of) skin disease	*ṣirnaġ-at-	381	no		no	
 1	nominal	258	*ṣaw(ʔ)ar-	*c̣aw(ʔ)ar-	neck	*ṣaw(ʔ)ar-	381	no		no	
 1	nominal	259	*ŝV(ʕ)p-at-	*ĉV(ʕ)p-at-	(tuft of) hair	*śV(ʕ)p-at-	382	pattern	śapat-	no	
 1	nominal	260	*ŝaʕr(-at)-	*ĉaʕr(-at)-	hair (of body and head)	*śaʕr(-at)-	383	yes	śaʕr-;śaʿr-	no	
 1	nominal	261	*ŝabḥ-	*ĉabḥ-	(animal) fat	*śabḥ-	384	no		no	
 1	nominal	262	*ŝVbVr-	*ĉVbVr-	buttocks, hind parts, small of the back	*śVbVr-	385	no		no	
-1	nominal	263	*ŝaḥm-	*ĉaḥm-	fat	*śaḥm-	385	no		no	
+1	nominal	263	*ŝaḥm-	*ĉaḥm-	fat	*śaḥm-	385	yes	śaḥm-	no	
 1	nominal	264	*ŝimaʔl-	*ĉimaʔl-	left hand (side)	*śimaʔl-	386	yes	śimaʔl-	no	
 1	nominal	265	*ŝa(n)p-at-	*ĉa(n)p-at-	lip	*śa(n)p-at-	387	yes	śapat-	no	
 1	nominal	266	*ŝVp(V)r-	*ĉVp(V)r-	eyelash; (tuft of) hair	*śVp(V)r-	389	no		no	
@@ -283,7 +283,7 @@ vol	section	no	protoform	affricate_variant	gloss	wikt_norm	pdf_page	wikt_ps	wikt
 1	nominal	282	*ṯapr-	*čapr-	perineum	*ṯapr-	404	no		no	
 1	nominal	283	*ṯarb-	*čarb-	(animal) fat	*ṯarb-	405	no		no	
 1	nominal	284	*ṯ̣Vhr-	*č̣Vhr-	back	*ṱVhr-	405	no		no	
-1	nominal	285	*ṯ̣ip(V)r-	*č̣ip(V)r-	nail	*ṱip(V)r-	407	no		no	
+1	nominal	285	*ṯ̣ip(V)r-	*č̣ip(V)r-	nail	*ṱip(V)r-	407	yes	θ̣ipr-	no	
 1	nominal	286	*ṯ̣ayVʔ(-at)-	*č̣ayVʔ(-at)-	excrement; excreta	*ṱayVʔ(-at)-	408	no		no	
 1	nominal	287	*warīd-		jugular vein; trachea	*warīd-	410	no		no	
 1	nominal	288	*warik(-at)-		hip(-bone)	*warik(-at)-	410	yes	warik-	no	
@@ -410,9 +410,9 @@ vol	section	no	protoform	affricate_variant	gloss	wikt_norm	pdf_page	wikt_ps	wikt
 2	nominal	27	*ʕabVw-		kind of fish	*ʕabVw-	133	no		no	
 2	nominal	28	*ʕigʷal- // *ʕigl-		calf	*ʕigʷal-	134	no		yes	ʕigl-
 2	nominal	29	*ʕVgVr-		kind of bird	*ʕVgVr-	137	no		no	
-2	nominal	30	*ʕakbar-		mouse, jerboa	*ʕakbar-	138	no		no	
+2	nominal	30	*ʕakbar-		mouse, jerboa	*ʕakbar-	138	yes	ʕakbar-	no	
 2	nominal	31	*ʕaḳrab-		scorpion	*ʕaqrab-	139	yes	ʕaḳrab-	no	
-2	nominal	32	*ʕala/ūḳ(-at)-		leech	*ʕala/ūq(-at)-	141	no		no	
+2	nominal	32	*ʕala/ūḳ(-at)-		leech	*ʕala/ūq(-at)-	141	yes	ʕalaḳ-	no	
 2	nominal	33	*ʕankab(īṯ)-	*ʕankab(īč)-	spider	*ʕankab(īṯ)-	142	no		no	
 2	nominal	34	*ʕVnV̄ḳ-		female kid	*ʕVnV̄q-	144	no		no	
 2	nominal	35	*ʕVnz-	*ʕVnʒ-	goat	*ʕVnz-	144	no		no	
@@ -498,7 +498,7 @@ vol	section	no	protoform	affricate_variant	gloss	wikt_norm	pdf_page	wikt_ps	wikt
 2	nominal	115	*kalb-		dog	*kalb-	247	yes	kalb-	no	
 2	nominal	116	*ki/ann(-Vm)-		a harmful insect	*ki/ann(-Vm)-	250	no		no	
 2	nominal	117	*k(ʷ)arkiy- // *kurkiy-		goose, crane	*k(ʷ)arkiy-	251	no		no	
-2	nominal	118	*ka/irr-		ram	*ka/irr-	253	no		no	
+2	nominal	118	*ka/irr-		ram	*ka/irr-	253	yes	karr-;kirr-	no	
 2	nominal	119	*kʷaraz- // *karaʒ-		kind of insect	*kʷaraz-	255	no		no	
 2	nominal	120	*kVS-		a (mythical) aquatic reptile	*kVS-	256	no		no	
 2	nominal	121	*kVs(Vs)-	*kVc(Vc)-	kind of bird of prey	*kVs(Vs)-	257	no		no	
@@ -546,7 +546,7 @@ vol	section	no	protoform	affricate_variant	gloss	wikt_norm	pdf_page	wikt_ps	wikt
 2	nominal	163	*nam(V)l-		ant	*nam(V)l-	305	no		no	
 2	nominal	164	*namir-		leopard	*namir-	307	yes	namir-	no	
 2	nominal	165	*nVšVp-	*nVsVp-	kind of bird	*nVšVp-	310	no		no	
-2	nominal	166	*nVšr-	*nVsr-	eagle, vulture	*nVšr-	311	pattern	našr-	pattern	našr-
+2	nominal	166	*nVšr-	*nVsr-	eagle, vulture	*nVšr-	311	yes	našr-	yes	našr-
 2	nominal	167	*nVṣVr-	*nVc̣Vr-	cricket	*nVṣVr-	313	no		no	
 2	nominal	168	*na/iṣ(ṣ)-	*na/ic̣(c̣)-	kind of bird	*na/iṣ(ṣ)-	313	no		no	
 2	nominal	169	*na(ya)l-		a wild hoofed animal	*na(ya)l-	314	no		no	
@@ -562,10 +562,10 @@ vol	section	no	protoform	affricate_variant	gloss	wikt_norm	pdf_page	wikt_ps	wikt
 2	nominal	179	*parḫ-		chick, brood	*parḫ-	328	no		no	
 2	nominal	180	*pVrpVr-, *parr/w-		kind of bird	*pVrpVr-	329	no		no	
 2	nominal	181	*parr-		young of small or large cattle	*parr-	330	no		no	
-2	nominal	182	*paraš-	*paras-	horse	*paraš-	333	no		no	
+2	nominal	182	*paraš-	*paras-	horse	*paraš-	333	no		yes	paraš-
 2	nominal	183	*pVšpVš-	*pVspVs-	bug	*pVšpVš-	336	no		no	
 2	nominal	184	*pVṣγ-	*pVc̣γ-	gecko	*pVṣġ-	336	no		no	
-2	nominal	185	*ṗVrγVṯ-, *ṗVrṯaγ-	*ṗVrγVč-, *ṗVrčaγ-	flea	*ṗVrġVṯ-	337	no		no	
+2	nominal	185	*ṗVrγVṯ-, *ṗVrṯaγ-	*ṗVrγVč-, *ṗVrčaγ-	flea	*ṗVrġVṯ-	337	pattern	purḡūṯ-	no	
 2	nominal	186	*riʔm-		aurochs	*riʔm-	339	no		no	
 2	nominal	187	*raʔ/w/hy-		kind of bird	*raʔ/w/hy-	341	no		no	
 2	nominal	188	*raḫil-		ewe	*raḫil-	341	no		no	
@@ -578,7 +578,7 @@ vol	section	no	protoform	affricate_variant	gloss	wikt_norm	pdf_page	wikt_ps	wikt
 2	nominal	195	*SVlw-		quail	*SVlw-	348	no		no	
 2	nominal	196	*sVm(V)m(-at)-	*cVm(V)m(-at)-	kind of bird	*sVm(V)m(-at)-	348	no		no	
 2	nominal	197	*su/inūn(Vw/y)-at-	*cu/inūn(Vw/y)-at-	swallow	*su/inūn(Vw/y)-at-	349	no		no	
-2	nominal	198	*sā/ūs-	*cā/ūc-	moth	*sā/ūs-	350	no		no	
+2	nominal	198	*sā/ūs-	*cā/ūc-	moth	*sā/ūs-	350	yes	sūs-	no	
 2	nominal	199	*sVwsVw-	*cVwcVw-	horse	*sVwsVw-	352	no		no	
 2	nominal	200	*šibb-	*sibb-	kind of snake, worm	*šibb-	355	no		no	
 2	nominal	201	*šVl-	*sVl-	kind of bird	*šVl-	356	no		no	
@@ -601,7 +601,7 @@ vol	section	no	protoform	affricate_variant	gloss	wikt_norm	pdf_page	wikt_ps	wikt
 2	nominal	218	*ŝₓVbay(-at)-	*ŝVbay(-at)-	kind of insect	*śₓVbay(-at)-	373	no		no	
 2	nominal	219	*ṣ̂aʔn-	*ĉ̣aʔn-	small cattle	*ṣ́aʔn-	374	yes	ṣ́aʔn-;ṣ́aʾn-	no	
 2	nominal	220	*ṣ̂ab(u)ʕ-	*ĉ̣ab(u)ʕ-	hyena	*ṣ́ab(u)ʕ-	376	yes	ṣ́abuʕ-;ṣ́abuʿ-	no	
-2	nominal	221	*ṣ̂abb-	*ĉ̣abb-	kind of lizard	*ṣ́abb-	378	no		no	
+2	nominal	221	*ṣ̂abb-	*ĉ̣abb-	kind of lizard	*ṣ́abb-	378	no		yes	ṣ́abb-
 2	nominal	222	*ṣ̂Vpardiʕ-	*ĉ̣Vpardiʕ-	frog	*ṣ́Vpardiʕ-	379	no		no	
 2	nominal	223	*ṣ̂Vrʕ(-at)-	*ĉ̣Vrʕ(-at)-	wasp	*ṣ́Vrʕ(-at)-	380	no		no	
 2	nominal	224	*ṣ̂ayw-	*ĉ̣ayw-	wild cat	*ṣ́ayw-	381	no		no	
