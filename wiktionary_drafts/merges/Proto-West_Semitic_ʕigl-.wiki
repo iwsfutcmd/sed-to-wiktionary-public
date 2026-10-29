@@ -1,0 +1,38 @@
+{{reconstructed}}
+==Proto-West Semitic==
+
+===Etymology===
+Perhaps of {{cog|sem-pro|-}} origin if related to {{cog|akk|𒀲𒅇|tr=aggalu|t=hinny}} and {{cog|xeb|𒀲𒅇|tr=aglum|t=hinny}}.
+
+===Noun===
+{{head|sem-wes-pro|noun|g=m}}
+
+# [[calf]]
+
+====Descendants====
+* Central Semitic:
+** {{desc|ar|عِجْل|t=calf}}
+*** {{desc|mt|għoġol}}
+*** {{desc|hss|ʔáyyel|t=calf|bor=1}}
+** Northwest Semitic:
+*** {{desc|arc|עִגְלָא|tr=ʿiḡlā}}
+**** {{desc|syc|ܥܶܓܠܳܐ|tr=ʿeḡlā}}
+**** {{desc|arc-old|𐤏𐤂𐤋|t=calf}}
+**** {{desc|jpa|עגל|tr=ʕgl|t=calf}}
+**** {{desc|sam|ࠏࠂࠋ|tr=ʕgl|t=calf}}
+**** {{desc|myz|ࡀࡍࡂࡋࡉࡀ|t=calves|unc=1}}
+**** {{desc|tru|-|tr=ʔaḡlo|t=calf}}
+*** Canaanite:
+**** {{desc|he|עֵגֶל|tr='égel, ʿēḡel|t=calf}}
+**** {{desc|phn|*𐤀𐤂𐤋}}
+***** {{desc|xpu|𐤀𐤂𐤋}}
+*** {{desc|uga|𐎓𐎂𐎍|ts=ʿiglu|t=calf}}
+* Ethiopian Semitic:
+** {{desc|gez|እጕል|tr=ʾəgʷl, ʾəgʷəl|t=young of any animal, even a human}} {{q|irregular morphological developments and semantically like Aramaic for {{m|sem-wes-pro|*ṭalay-}}}}
+** {{desc|tig|እግል|tr=ʾəgəl|t=calf}}
+
+===References===
+* {{R:sem:Barth-ES|page=18}}
+* {{R:sem-pro:SED|volume=2|pages=43–46 Nr. 28}}
+
+{{c|sem-wes-pro|Mammals|Baby animals}}

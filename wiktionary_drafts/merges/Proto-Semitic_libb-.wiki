@@ -1,0 +1,57 @@
+{{reconstructed}}
+==Proto-Semitic==
+
+===Etymology===
+{{etymon|sem-pro|:inh|afa-pro:*lib-}}
+From {{inh|sem-pro|afa-pro|*lib-||heart}}. Cognate with {{cog|ber-pro|*uləβ}} and {{cog|egy|jb}}.<ref>{{R:egy:Loprieno|31}}</ref> Militarev and Kogan also reconstruct a variant {{m|sem-pro||*libab-}} as common Semitic, from Hebrew {{m|hbo|לֵבָב}}, Aramaic and Modern South Arabian (probably {{m|sem-pro||*libib-}}).<ref>{{R:sem-pro:SED|volume=I|id=27|entry=*libb-}}</ref>
+
+===Noun===
+{{sem-noun|m}}
+
+# [[heart]]
+
+====Inflection====
+{{sem-decl-noun}}
+
+====Descendants====
+* East Semitic:
+** {{desc|akk|libbum|alt=𒊮|tr=libbum}}
+** {{desc|xeb|𒇷𒅤|tr=li-bù|ts=libbu(m)}}
+* West Semitic:
+** Central Semitic:
+*** {{desc|ar|لُبّ}}
+*** Northwest Semitic:
+**** {{desc|arc|לִבָּא|tr=libbā}}
+***** {{desc|syc|ܠܶܒܴ݁ܐ|tr=lebbā}}
+***** {{desc|arc-imp|𐡋𐡁}}
+***** {{desc|jpa|לב|tr=lb}}
+***** {{desc|myz|ࡋࡉࡁࡀ|t=heart; pulp, core, mind}}
+***** {{desc|amw|leppa}}
+***** {{desc|tru|ܠܶܒܐ}}
+***** {{desc|aii|ܠܸܒܹ̈ܐ}}
+***** {{desc|hrt|-|tr=lebba}}
+**** Canaanite:
+***** {{desc|he|לֵב|tr=lev, lēḇ|לֵבָב|tr2=leváv, lēḇāḇ}}
+***** {{desc|phn|𐤋𐤁}}
+**** {{desc|uga|𐎍𐎁|ts=libbu}}
+**** Old South Arabian:
+***** {{desc|xsa|𐩡𐩨|t=heart|𐩡𐩨𐩨|t2=palm-heart}}
+***** {{desc|inm|𐩡𐩨}}
+** Ethiopian Semitic:
+*** {{desc|gez|ልብ፟}}
+*** {{desc|am|ልብ|tr=ləbb}}
+*** {{desc|tig|ልብ|tr=ləbb}}
+*** {{desc|ti|ልቢ፟}}
+*** Gurage:
+**** {{desc|gru|ልብ|tr=ləbb|q=Soddo, Gogot}}
+**** {{desc|sgw|ልብ|tr=ləbb|q=Muher}}
+** Modern South Arabian:
+*** {{desc|gdq|ḥə-wbēb}}
+*** {{desc|hss|ḥe-lbēb}}
+*** {{desc|shv|ubbə́tə}}, {{l|shv|ebbə́tə}}
+*** {{desc|sqt|ʔílbib}}
+
+===References===
+{{reflist}}
+
+{{C|sem-pro|Anatomy}}
