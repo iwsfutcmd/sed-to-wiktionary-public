@@ -9,38 +9,6 @@
   "left": "a later stage: it inherits through Aramaic, as it should"
  },
  {
-  "page": "ብዕራይ",
-  "lang": "Ge'ez",
-  "code": "gez",
-  "term": "ብዕራይ",
-  "title": "bVʕVr-",
-  "level": "PS",
-  "gloss": "",
-  "full": "==Ge'ez==\n\n===Alternative forms===\n* {{alt|gez|ብዕራዊ}}\n\n===Etymology===\nFrom {{inh|gez|sem-pro|*bVʕVr-}}.\n\n===Noun===\n{{head|gez|noun|plural|አባዕር|autotrinfl=1}}\n\n# [[ox]], [[buffalo]]\n\n===References===\n* {{R:gez:Dillmann|entry=ብዕራዊ|columns=530}}\n\n==Tigrinya==\n\n===Etymology===\nFrom {{inh|ti|sem-pro|*bVʕVr-}}.\n\n===Noun===\n{{ti-noun}}\n\n# [[ox]]",
-  "summary": "Etymology: inherited from Proto-Semitic *bVʕVr- ([[Reconstruction:Proto-Semitic/bVʕVr-]], after Militarev & Kogan's SED)",
-  "diff": [
-   "+",
-   "+===Etymology===",
-   "+From {{inh|gez|sem-pro|*bVʕVr-}}."
-  ]
- },
- {
-  "page": "ܒܩܐ",
-  "lang": "Classical Syriac",
-  "code": "syc",
-  "term": "ܒܩܐ",
-  "title": "baḳḳ-",
-  "level": "PS",
-  "gloss": "gnat",
-  "section": "Etymology 1",
-  "full": "==Assyrian Neo-Aramaic==\n\n===Etymology===\n{{aii-root|ܒ ܩ ܩ}}\nCompare {{cog|akk|𒁀𒀝𒄣|ts=baqqu|t=gnat, numerous insects, swarm}} and {{cog|ar|بَقّ}}.\n\n===Pronunciation===\n* {{IPA|aii|[baːqaː]|a=Standard}}\n\n===Noun===\n{{aii-noun|ܒܵܩܵܐ|m|pl=ܒܵܩܹ̈ܐ,ܒܵܩ̈ܵܬ݂ܵܐ}}\n\n# [[gnat]]\n# {{lb|aii|collective}} [[gnats]]\n#: {{uxa|aii|ܐܝܼܬ݂ ܣܲܓܝܼ '''ܒܵܩܵܐ''' ܐܵܟ݂ܵܐ|t=There’s a lot of '''gnats''' here.}}\n\n==Classical Syriac==\n\n===Etymology 1===\n{{syc-rootbox|ܒ ܩ ܩ}}\nFrom {{inh|syc|sem-pro|*baḳḳ-}}. Compare {{cog|akk|𒁀𒀝𒄣|ts=baqqu|t=gnat, numerous insects, swarm}} and {{cog|ar|بَقّ}}.\n\n====Pronunciation====\n* {{IPA|syc|[bɑqɑ]|aa=singular}}\n* {{IPA|syc|[bɑqe]|aa=plural}}\n\n====Noun====\n{{syc-noun|m|ܒܩܐ|tr=bāqā|pltr=bāqē}}\n\n# [[gnat]], [[mosquito]]\n\n=====Inflection=====\n{{syc-decl-noun-m|ܒܩ}}\n\n===Etymology 2===\n{{syc-rootbox|ܒ ܩ ܝ}}\n\n====Pronunciation====\n* {{IPA|syc|/bqɑʔ/}}\n\n====Verb====\n{{head|syc|verbs|tr=bqā}}\n\n# to [[examine]], to [[consider]], to [[investigate]]\n\n===References===\n* {{R:CAL|bq}}\n* {{R:CAL|bqy|V}}\n* {{R:Costaz 1963|page=36a}}\n* {{R:Payne Smith 1902|page=52b}}\n* {{R:Sokoloff 2009|page=176b}}\n\n{{topics|syc|Dipterans}}\n\n==Turoyo==\n\n===Etymology===\nFrom {{inh|tru|arc|בקא|tr=bāqā}}.\n\n===Pronunciation===\n* {{IPA|tru|/boqo/}}\n\n===Noun===\n{{tru-noun|ܒܳܩܳܐ|m}}\n\n# [[mosquito]]",
-  "summary": "Etymology: inherited from Proto-Semitic *baḳḳ- ([[Reconstruction:Proto-Semitic/baḳḳ-]], after Militarev & Kogan's SED)",
-  "diff": [
-   "-Compare {{cog|akk|𒁀𒀝𒄣|ts=baqqu|t=gnat, numerous insects, swarm}} and {{cog|ar|بَقّ}}.",
-   "+From {{inh|syc|sem-pro|*baḳḳ-}}. Compare {{cog|akk|𒁀𒀝𒄣|ts=baqqu|t=gnat, numerous insects, swarm}} and {{cog|ar|بَقّ}}."
-  ]
- },
- {
   "page": "ܒܩܐ",
   "lang": "Turoyo",
   "code": "tru",
@@ -75,20 +43,5 @@
   "title": "ḫaraš-",
   "level": "PS",
   "left": "'to plough' is too far from our sense"
- },
- {
-  "page": "ضرط",
-  "lang": "Arabic",
-  "code": "ar",
-  "term": "ضَرَطَ",
-  "title": "ṣ́araṭ-",
-  "level": "PS",
-  "gloss": "to fart",
-  "section": "Etymology 1.1",
-  "full": "==Arabic==\n{{ar-rootbox|ض ر ط}}\n\n===Etymology 1.1===\nFrom {{inh|ar|sem-pro|*ṣ́araṭ-}}.\n\n====Pronunciation====\n{{ar-pr|ضَرَطَ,ضَرِطَ}}\n\n====Verb====\n{{ar-verb|I/i~a.nopass.vn:ضَرَط.ap:+++}}<br />\n{{ar-verb|I/a~i.nopass.vn:ضَرْط,ضُرَاط.ap:+,ضَرُوط,ضَرَاط}}\n\n# to [[fart]] [[audibly]]\n\n=====Conjugation=====\n{{ar-conj|I/i~a.nopass.vn:ضَرَط.ap:+++}}\n{{ar-conj|I/a~i.nopass.vn:ضَرْط,ضُرَاط.ap:+,ضَرُوط,ضَرَاط}}\n\n===Etymology 1.2===\n\n====Pronunciation====\n{{ar-pr|ضَرْط}}\n\n====Noun====\n{{ar-noun|ضَرْط|m}}\n\n# {{ar-verbal noun of|ضَرَطَ|form=I}}\n\n=====Declension=====\n{{ar-decl-noun|ضَرْط}}\n\n===References===\n* {{R:ar:Almaany}}\n\n==Egyptian Arabic==\n{{arz-root|ض ر ط}}\n\n===Etymology===\n{{ety|arz|:inh|ar:ضَرِطَ|text=+|tree=1}}\n\n===Pronunciation===\n{{rfp|arz}}\n\n===Verb===\n{{arz-verb|I|tr=ẓiriṭ|np=يضرط|nptr=yiẓraṭ}}\n\n# to [[fart]] [[audibly]]\n#: {{syn|arz|فسي|tr=fisi|t=to fart quietly}}\n\n====Conjugation====\n{{arz-conj/I-sound-ii-ia|ض|ر|ط|ẓ|r|ṭ}}\n\n==Hijazi Arabic==\n{{acw-root|ض ر ط}}\n\n===Etymology===\n{{ety|acw|:inh|ar:ضَرَط|text=+|tree=1}}\n\n===Pronunciation===\n* {{IPA|acw|/zˤar.ratˤ/}}\n\n===Verb===\n{{acw-verb|II|tr=ẓarraṭ|np=يضرّط|nptr=yiẓarriṭ}}\n\n# to [[fart]] [[audibly]]\n#: {{alti|acw|زرّط|tr=ẓarraṭ}}\n\n====Conjugation====\n{{acw-conj/II|ض|ر|ط|ẓ|r|ṭ}}\n\n====Notes====\nThe roots ⟨ض ب ط⟩ and ⟨ض ر ط⟩ are the only roots where {{m|acw|ض}} is pronounced /zˤ/ instead of the standard /dˤ/.",
-  "summary": "Etymology: inherited from Proto-Semitic *ṣ́araṭ- ([[Reconstruction:Proto-Semitic/ṣ́araṭ-]], after Militarev & Kogan's SED)",
-  "diff": [
-   "+From {{inh|ar|sem-pro|*ṣ́araṭ-}}."
-  ]
  }
 ]
