@@ -2,7 +2,7 @@
 ==Proto-West Semitic==
 
 ===Etymology===
-Reconstructed in Militarev & Kogan's ''Semitic Etymological Dictionary'' as {{m|sem-pro|*ṣ́abb-}}. The reflexes split between a thorn-tailed/spiny-tailed lizard (Hebrew, Jewish Aramaic) and the monitor lizard (Arabic, Modern South Arabian); the SED keeps the gloss general for this reason. The Jewish Aramaic form is noted in the SED as possibly a Hebrew borrowing, since its {{m|sem-pro|*ṣ}} is irregular.
+Reconstructed in Militarev & Kogan's ''Semitic Etymological Dictionary'' as {{m|sem-pro||*ṣ́abb-}}. The reflexes split between a thorn-tailed/spiny-tailed lizard (Hebrew, Jewish Aramaic) and the monitor lizard (Arabic, Modern South Arabian); the SED keeps the gloss general for this reason. The Jewish Aramaic form is noted in the SED as possibly a Hebrew borrowing, since its {{m|sem-pro|*ṣ}} is irregular.
 
 ===Noun===
 {{head|sem-wes-pro|noun|g=m}}

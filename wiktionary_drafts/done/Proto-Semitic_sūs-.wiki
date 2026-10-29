@@ -16,6 +16,8 @@
 * West Semitic:
 ** Central Semitic:
 *** {{desc|ar|سُوس|t=moth}}
+**** {{desc|am|ሹሽ|tr=šuš(š)|t=moth|bor=1}}
+**** {{desc|har|ሱስ|tr=sūs|t=moth|bor=1}}
 *** Northwest Semitic:
 **** Old {{desc|arc|𐤎𐤎|tr=ss|t=moth|sc=Phnx}}
 **** Official {{desc|arc|𐡎𐡎|tr=ss|t=moth|sc=Armi}}
@@ -24,9 +26,6 @@
 **** {{desc|myz|ࡎࡀࡎࡀ|t=moth, maggot}}
 **** Canaanite:
 ***** {{desc|hbo|סס|tr=sās|t=clothes moth}}
-** Ethiopian Semitic:
-*** {{desc|am|ሹሽ|tr=šuš(š)|t=moth}}
-*** {{desc|har|ሱስ|tr=sūs|t=moth}}
 ** Modern South Arabian:
 *** {{desc|gdq|sust|t=large worm}}
 

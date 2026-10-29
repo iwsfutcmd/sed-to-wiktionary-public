@@ -23,7 +23,7 @@ ETH = ("West Semitic", "Ethiopian Semitic"); GUR = ETH + ("Gurage",); MSA = ("We
 LANG = {"Akkadian": ("akk", EAST, ""), "Ebla": ("xeb", EAST, ""), "Arabic": ("ar", CS, ""),
         "Old Aramaic": ("arc", NW, "Old "), "Official Aramaic": ("arc", NW, "Official "), "Biblical Aramaic": ("arc", NW, "Biblical "),
         "Palmyrean": ("arc", NW, "Palmyrene "), "Jewish Palestinian Aramaic": ("jpa", NW, ""), "Jewish Babylonian Aramaic": ("tmr", NW, ""),
-        "Samaritan": ("sam", NW, ""), "Syriac": ("syc", NW, ""), "Mandaic": ("myz", NW, ""), "Turoyo": ("tru", NW, ""), "Maalula": ("amw", NW, ""), "Assyrian Neo-Aramaic": ("aii", NW, ""),
+        "Samaritan": ("sam", NW, ""), "Syriac": ("syc", NW, ""), "Mandaic": ("myz", NW, ""), "Turoyo": ("tru", NW, ""), "Maalula": ("amw", NW, ""), "Assyrian Neo-Aramaic": ("aii", NW, ""), "Mlaḥso": ("lhs", NW, ""), "Jilu": ("aii", NW, ""),
         "Christian Palestinian Aramaic": ("arc-cpa", NW, ""), "Hebrew": ("hbo", CAN, ""), "Phoenician": ("phn", CAN, ""), "Ugaritic": ("uga", NW, ""), "Ammonite": ("sem-amm", CAN, ""),
         "Sabaic": ("xsa", OSA, ""), "Minaean": ("inm", OSA, ""), "Hadramitic": ("sem-srb", OSA, "Hadramitic "), "Geez": ("gez", ETH, ""), "Tigre": ("tig", ETH, ""),
         "Tigrinya": ("ti", ETH, ""), "Amharic": ("am", ETH, ""), "Argobba": ("agj", ETH, ""), "Harari": ("har", ETH, ""), "Gafat": ("gft", ETH, ""),
@@ -34,7 +34,7 @@ LANG = {"Akkadian": ("akk", EAST, ""), "Ebla": ("xeb", EAST, ""), "Arabic": ("ar
 ORDER = list(LANG)                      # output order within a node
 AUTO_TR = {"ar", "uga"}             # Wiktionary transliterates these itself (Module:ar-translit, uga-translit): no tr=
 LATIN_TERM = {"amw", "gdq", "shv", "hss", "bhm", "sqt", "xeb"}   # cited in Latin script (the source form is the term)
-DIALECT = {"Chaha": "Chaha", "Ezha": "Ezha", "Endegen": "Endegen", "Ennemor": "Ennemor", "Gyeto": "Gyeto", "Muher": "Muher", "Gogot": "Gogot", "Soddo": "Soddo", "Masqan": None}
+DIALECT = {"Jilu": "Jilu", "Chaha": "Chaha", "Ezha": "Ezha", "Endegen": "Endegen", "Ennemor": "Ennemor", "Gyeto": "Gyeto", "Muher": "Muher", "Gogot": "Gogot", "Soddo": "Soddo", "Masqan": None}
 
 # (lang code, SEDonline form) -> script, for spellings no converter can derive (vowelled or lexical). --verify checks them on Wiktionary.
 CURATED = {
@@ -43,7 +43,8 @@ CURATED = {
  ("hbo", "pānīm"): "פָּנִים",                  # plural tantum; the lemma page פנים
   ("hbo", "ʕakbār"): "עַכְבָּר", ("hbo", "pāgār"): "פָּגָר", ("hbo", "péger"): "פֶּגֶר",
   ("hbo", "bəʕīr"): "בְּעִיר", ("tmr", "bəʕīrā"): "בְּעִירָא", ("syc", "bəʕīrā"): "ܒܥܝܪܐ", ("aii", "bîrâ"): "ܒܥܝܼܪܵܐ",     # *bVʕVr-: as on Wiktionary (בעיר, בעירא, ܒܥܝܪܐ incl. its Assyrian section)
-  ("hbo", "m-r-ṣ"): "מ־ר־ץ",
+  ("hbo", "m-r-ṣ"): "מ־ר־ץ", ("hbo", "ḥăzīr"): "חֲזִיר", ("tmr", "ḥăzīrā"): "חֲזִירָא", ("syc", "ḥzīrā"): "ܚܙܝܪܐ", ("uga", "ḫuzīru"): "𐎃𐎇𐎗", ("myz", "ḥizura"): "ࡄࡉࡆࡅࡓࡀ",   # Mandaic ḥ is ࡄ (Wiktionary ࡄࡀࡌࡔࡀ, ࡄࡀࡃ; DM 142 under h)   # *ḫVzīr-: as cited on Wiktionary (خنزير, ܚܙܝܪܐ)
+  ("hbo", "kar"): "כַּר",                # *karr-: as on Wiktionary (כר, wv=כַּר)
  ("ar", "f\u01efr"): "فَجَرَ",                   # fajara, as Wiktionary's Arabic فجر
  ("hbo", "yārēk"): "יָרֵךְ", ("hbo", "ṣəbī"): "צְבִי", ("hbo", "ˀimmēr"): "אִמֵּר", ("tru", "bōḳo"): "ܒܩܐ",      # Turoyo is written in Syriac script on Wiktionary (entry ܒܩܐ)
 
@@ -72,7 +73,8 @@ AKK_LEMMA = {"šaḳālu": "šaqālu", "warkatu": "warkatum", "warki": "warki", 
 # tests/test_cuneiform.py checks that the transliteration really gives it (eBL sign list).
 AKK_OVERRIDE = {"baḳḳu": ("baqqu", "𒁀𒀝𒄣", "ba-aq-qu"),
                 "ṣabītu": ("ṣabītum", "𒈦𒁕", "MAŠ.DA"),    # the Sumerogram is the usual writing (CAD Ṣ 42 "wr. syll. and MAŠ.DÀ"); signs as drawn at assyrianlanguages.org/akkadian (entry ṣabītu 2, MAŠ.DA)
-                "gildu": ("gildu", "𒋢𒄀𒅋𒁺", None)}   # cuneiform as on Wiktionary's Hebrew גלד / Syriac ܓܠܕܐ (transliteration of the spelling not given)
+                "gildu": ("gildu", "𒋢𒄀𒅋𒁺", None),   # cuneiform as on Wiktionary's Hebrew גלד / Syriac ܓܠܕܐ (transliteration of the spelling not given)
+                "ḫuzīru": ("ḫuzīrum", "𒄷𒍣𒊒", "ḫu-zi-ru")}   # the Old Assyrian spelling quoted in SED II 150 (BIN 6 84.35: šumma ḫu-zi-ru lā ikabbarū)   # cuneiform as on Wiktionary's Hebrew גלד / Syriac ܓܠܕܐ (transliteration of the spelling not given)
 def akkadian(form):
     """-> (lemma, phonetic cuneiform spelling from the page's {{cunsp}}, or None)"""
     if form in AKK_OVERRIDE:
@@ -123,6 +125,8 @@ def one(code, form, notes, first, gloss, lang):
             notes.append(f"{lang} {form}: {sc} (abjad, {scode})")
             return f"{{{{{head}|{code}|{sc}|tr={tr_of(form)}{t}|sc={scode}}}}}"
     sc, how = script_for(code, form)
+    if sc == "-":                                          # CURATED "-": no script on purpose (e.g. a syllabic Ugaritic form; the alphabetic spelling is another word)
+        sc = None
     if sc and how != "curated":
         notes.append(f"{lang} {form}: {sc} ({how})")
     if sc is None:
@@ -174,6 +178,25 @@ PAGES = {   # title -> SEDonline reconstruction id and page content
  defs=["to have [[sexual intercourse]]"], cat="", etym=""),
  "ḫaraš-": dict(rec="960", vol="I", entry="*ḫrš", exclude={("Amharic", "arräsä"): "Wiktionary's Amharic አረሰ is 'to plough', from *ḥaraṯ- (tests/test_conflicts.py)"}, pos="{{head|sem-pro|verb}}", infl=False, defs=["to be in [[childbed]], to be in [[confinement]]"], cat="", etym="",
               extra_refs=["{{R:akk:CAD|volume=6|pages=95-96|entry=ḫarāšu A}}"]),  # sense (3), "(uncert. mng.)"; only D- and Š-stem forms cited there, no bare G-stem -- doesn't give the conjugation class either, but worth citing
+ # SED II no. 111 *ḫV(n)zīr- 'pig' (pp. 150-1). Titled without the optional nasal, as kišād- for *ki(n)šād-: the -n- is Arabic only once the
+ # loans are set aside. The SED's own notes decide the loans (cited, so they win over Wiktionary; see memory/feedback): Ge'ez is an Aramaism
+ # "probably correct for Gez." (after Zimmern, LGz 263); the MSA forms are "likely borrowed from Arb."; Arabic itself is NOT an Aramaism
+ # (no Aramaic form has -n-). Ugaritic: only syllabic ḫu-zi-rù means 'pig'; alphabetic ḫnzr/ḫzr is a profession (Huehn. 84-5, DUL 399, 417).
+ "ḫVzīr-": dict(rec="618", vol="II", entry="*ḫV(n)zīr-", pos="{{sem-noun|m}}", infl=True, defs=["[[pig]], [[swine]]"], cat="{{C|sem-pro|Mammals}}",
+               etym="Reconstructed in Militarev & Kogan's ''Semitic Etymological Dictionary'' as {{m|sem-pro||*ḫV(n)zīr-}}. The nasal is found in Arabic "
+                    "{{m|ar|خِنْزِير}} (whence the Modern South Arabian forms) and in Ge'ez {{m|gez|ኀንዚር|tr=ḫänzir}}, which the SED, after Zimmern and Leslau, "
+                    "takes to be an Aramaism; it rejects that explanation for Arabic, since no Aramaic form has the {{m|sem-pro||*-n-}}. Hebrew {{m|hbo|חֲזִיר}} "
+                    "probably continues an earlier {{m|sem-pro||*ḫuzīr-}} (Dead Sea Scrolls {{m|hbo|חוזיר|tr=ḥwzyr}}). Ugaritic alphabetic "
+                    "{{m|uga|𐎃𐎐𐎇𐎗}} and {{m|uga|𐎃𐎇𐎗}}, often compared, name a profession, not an animal; only the syllabic ''ḫu-zi-rù'' means “pig”. Akkadian {{m|akk|ḫuzīrum}} is reliably attested only in Old Assyrian and may have been the "
+                    "Assyrian word for the animal; the usual Akkadian term is {{m|akk|šaḫûm}}.",
+               exclude={("Geez", "ḫanzir"): "an Aramaism according to the SED (II 151, after Zimmern 1917 50 and LGz 263); named in the etymology instead"},
+               override={("Ugaritic", "ḫu-zi-rù"): dict(form="ḫuzīru", alt="𒄷𒍣𒀸", after="(syllabic ''ḫu-zi-rù'')",
+                                                         reason="syllabic spelling ḫu-zi-rù /ḫuzīru/ (SED II 150; rù = ru₃ = 𒀸, as eBL and Wiktionary 𒀸): shown in cuneiform, linking the alphabetic lemma 𐎃𐎇𐎗 its consonants predict")},
+               loans={("Mehri", "ḫənzīr"): "Arabic", ("Jibbali", "ḫanzīr"): "Arabic"}),
+ # SED II no. 118 *ka/irr- 'ram': Wiktionary already links *karr- (Ugaritic 𐎋𐎗, Proto-Afroasiatic *kar-, the suffix page -r), citing it as "*karr- / *kirr-".
+ "karr-": dict(rec="1077", vol="II", entry="*ka/irr-", pos="{{sem-noun|m}}", infl=True, defs=["[[ram]]"], cat="{{C|sem-pro|Mammals}}",
+               etym="Reconstructed in Militarev & Kogan's ''Semitic Etymological Dictionary'' as {{m|sem-pro||*ka/irr-}}, i.e. {{m|sem-pro||*karr-}} or {{m|sem-pro||*kirr-}}: "
+                    "Akkadian points to {{m|sem-pro||*kirr-}}, Hebrew to {{m|sem-pro||*karr-}}."),
  "šiʔr-": dict(rec="691", vol="I", entry="*šiʔr-", pos="{{sem-noun|m}}", infl=True, defs=["[[flesh]]"], cat="{{C|sem-pro|Anatomy}}", etym=""),
  "śaḥm-": dict(rec="698", vol="I", entry="*ŝaḥm-",
               exclude={("Arabic", "šaḥuma"): "site only: the print gives Arabic šaḥm- (BK 1 1199) alone"},
@@ -270,7 +293,11 @@ PAGES = {   # title -> SEDonline reconstruction id and page content
                      dict(lang="Arabic", form="sūs-", gloss="moth"),
                      dict(lang="Amharic", form="šuš(š)", gloss="moth"),
                      dict(lang="Harari", form="sūs", gloss="moth"),
-                     dict(lang="Mehri", form="sust", gloss="large worm")]),
+                     dict(lang="Mehri", form="sust", gloss="large worm")],
+              # SED II 259 footnotes: Amharic "apparently regarded as an Arabism by Kane", Harari "an Arabism according to Leslau"; so both are
+              # shown as borrowed from Arabic (as Wiktionary's سوس also lists them). Mehri has no such note in the SED and stays inherited
+              # (Wiktionary's bor=1 for it is uncited; see ACCEPT in wikt_conflicts.py).
+              loans={("Amharic", "šuš(š)"): "Arabic", ("Harari", "sūs"): "Arabic"}),
  # SED II no. 53 *bVʕVr- 'household animal; beast of burden' (rec. 590). SEDonline's word list and gloss ("bull") both differ from the
  # print (data/sedonline/sed_print_vs_site_agreement.tsv: agree=0); read by eye (pdf/vol2.pdf pp. 164-165). The print explicitly excludes
  # a whole cluster of forms without -ʕ- that SEDonline includes anyway (Akkadian bīru/būru, Mandaic bira, Amharic bäre, Harari bāra, and
@@ -325,20 +352,27 @@ PAGES["ṯḳl"] = dict(rec="2030", entry="*ṯḳl", site_only=True, codes={"He
               ("Arabic", "ṯql"): dict(gloss="to weigh", reason="live page: Wad Yaẓimẓn, 2026-10-23, ثَقَلَ 'to weigh' (the site has ṯql 'to be heavy', i.e. ثَقُلَ)")},
     pos="{{head|sem-pro|verb}}", infl=False, conj="{{sem-pro-conj/*paʕala-*yipʕal|ṯ|ḳ|l|vn=ṯaḳl}}",          # a/u in Akkadian šaqālu; the bare verb page, as ʔbd and ʔdm (data/wiktionary/root_vs_verb.md)
     defs=["to [[weigh]]", "to [[suspend]]"], cat="", etym="")
-def tree_lines(words, notes, exclude=(), override=None, strip=(), codes=None):
+def tree_lines(words, notes, exclude=(), override=None, strip=(), codes=None, loans=None):
     """strip: a leading path prefix to drop (e.g. ("West Semitic",) on a Proto-West Semitic page, where it is implied)."""
     lines, shown = [], set()
+    loans = loans or {}
+    under = {}                                                   # source language -> the words borrowed from it (shown beneath it, bor=1)
+    for w in words:
+        if (w["lang"], w["form"]) in loans:
+            under.setdefault(loans[(w["lang"], w["form"])], []).append(w)
     for w in sorted(words, key=lambda w: ORDER.index(w["lang"])):
-        if (w["lang"], w["form"]) in exclude:
+        if (w["lang"], w["form"]) in exclude or (w["lang"], w["form"]) in loans:
             continue
         if override and (w["lang"], w["form"]) in override:
-            w = {**w, **{k: v for k, v in override[(w["lang"], w["form"])].items() if k in ("form", "gloss", "after")}}
+            w = {**w, **{k: v for k, v in override[(w["lang"], w["form"])].items() if k in ("form", "gloss", "after", "alt")}}
         code, path, label = LANG[w["lang"]]
         if strip and path[:len(strip)] == strip:
             path = path[len(strip):]
         code = (codes or {}).get(w["lang"], code)                  # a page may use another Wiktionary code for a language (Hebrew: he, as WT:ASEM's tree has it)
         g = re.sub(r"\s+", " ", w["gloss"]).strip().replace("|", "/")
         e = entry(code, w["form"], g, w["lang"], notes)
+        if w.get("alt"):                                       # shown spelling (e.g. Ugaritic syllabic cuneiform) for the lemma linked; the reading goes in tr=
+            e = re.sub(r"^(\{\{desc\|[^|]+\|[^|}]+)", lambda m: m.group(1) + f"|alt={w['alt']}" + ("" if "|tr=" in e else f"|tr={tr_of(w['form'])}"), e, count=1)
         for key, val in (("q", w.get("q") or DIALECT.get(w["lang"])), ("unc", "1" if w.get("unc") else None)):
             if val:
                 e = re.sub(r"\}\}", f"|{key}={val}}}}}", e, count=1)
@@ -346,6 +380,12 @@ def tree_lines(words, notes, exclude=(), override=None, strip=(), codes=None):
             if path[:d + 1] not in shown:
                 shown.add(path[:d + 1]); lines.append("*" * (d + 1) + " " + path[d] + ":")
         lines.append("*" * (len(path) + 1) + " " + label + e + (" " + w["after"] if w.get("after") else ""))      # after: text following the entry
+        for lw in under.pop(w["lang"], []):
+            lcode, _, llabel = LANG[lw["lang"]]
+            lcode = (codes or {}).get(lw["lang"], lcode)
+            le = entry(lcode, lw["form"], re.sub(r"\s+", " ", lw["gloss"]).strip().replace("|", "/"), lw["lang"], notes)
+            lines.append("*" * (len(path) + 2) + " " + llabel + re.sub(r"\}\}", "|bor=1}}", le, count=1))
+    assert not under, f"loan source not among the descendants: {sorted(under)}"
     return lines
 def build(title, cfg, out=None):
     words = cfg["words"] if cfg.get("words") else [w for w in read(DATA / "sedonline" / "sedonline_words.tsv") if w["rec_id"] == cfg["rec"]]
@@ -359,7 +399,7 @@ def build(title, cfg, out=None):
     d += ["===" + ("Root" if "root" in cfg["pos"] else "Verb" if "verb" in cfg["pos"] else "Noun") + "===", cfg["pos"], ""] + ["# " + x for x in cfg["defs"]] + [""]
     if cfg["infl"] and not pws: d += ["====Inflection====", "{{sem-decl-noun}}", ""]
     if cfg.get("conj"): d += ["====Conjugation====", cfg["conj"], ""]
-    d += ["====Descendants===="] + tree_lines(words, notes, cfg.get("exclude", {}), cfg.get("override"), strip=("West Semitic",) if pws else (), codes=cfg.get("codes")) + ["",
+    d += ["====Descendants===="] + tree_lines(words, notes, cfg.get("exclude", {}), cfg.get("override"), strip=("West Semitic",) if pws else (), codes=cfg.get("codes"), loans=cfg.get("loans")) + ["",
           "===References===", "* {{R:sem-pro:SED|" + (f"volume={cfg['vol']}|" if cfg.get("vol") else "") + f"id={cfg['rec']}|entry={cfg['entry']}}}}}"]
     for r in cfg.get("extra_refs", []): d.append("* " + r)
     if cfg["cat"]: d += ["", cfg["cat"]]

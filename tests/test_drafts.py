@@ -94,7 +94,7 @@ def convention_problems(t):
         tr = params.get("tr", "")
         if re.search("[ˀˁǝḳɨ]", tr):
             out.append(f"{code}: tr={tr!r} uses SED symbols (use ʔ ʕ ə q)")
-        if code in WD.AUTO_TR and "tr" in params:
+        if code in WD.AUTO_TR and "tr" in params and term != "-" and "alt" not in params:   # alt= in another script: tr= gives its reading          # with no script (-) the tr= is the only reading shown
             out.append(f"{code}: Wiktionary transliterates this itself; drop tr={tr}")
         if code in ("gdq", "shv", "hss", "bhm", "sqt", "amw", "xeb") and "tr" in params:
             out.append(f"{code}: a Latin term needs no tr=")
