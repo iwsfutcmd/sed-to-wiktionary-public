@@ -40,6 +40,22 @@ class Templates(unittest.TestCase):
         self.assertEqual(fix("{{inh|ar|sem-pro|*" + U.normalize("NFD", "θ̣aby-") + "}}"), "{{inh|ar|sem-pro|*ṯ̣aby-}}")
         self.assertEqual(fix("{{m|sem-pro|*ṣ̂-}}"), "{{m|sem-pro|*ṣ́-}}")
 
+class OtherLevel(unittest.TestCase):          # "PWS:stem": the term moves to Proto-West Semitic, so its language code changes too (ṣ́abb-, 2026-10-28)
+    M = {("PS", "ṣ́abb-"): "PWS:ṣ́abb-", ("PS", "ṣ̂abb-"): "PWS:ṣ́abb-"}
+    def test_every_kind_of_reference(self):
+        cases = [("{{der|id|sem-pro|*ṣ́abb-}}", "{{der|id|sem-wes-pro|*ṣ́abb-}}"),
+                 ("{{inh|syc|sem-pro|*ṣ́abb-|t=lizard}}", "{{inh|syc|sem-wes-pro|*ṣ́abb-|t=lizard}}"),
+                 ("{{ety|ar|:inh|sem-pro:*ṣ́abb-|text=+|tree=1}}", "{{ety|ar|:inh|sem-wes-pro:*ṣ́abb-|text=+|tree=1}}"),
+                 ("{{l|sem-pro|*ṣ́abb-|t=kind of lizard}}", "{{l|sem-wes-pro|*ṣ́abb-|t=kind of lizard}}"),
+                 ("[[Reconstruction:Proto-Semitic/ṣ́abb-|*ṣ́abb-]]", "[[Reconstruction:Proto-West Semitic/ṣ́abb-|*ṣ́abb-]]"),
+                 ("{{inh|he|sem-pro|*ṣ̂abb-}}", "{{inh|he|sem-wes-pro|*ṣ́abb-}}")]                     # respelled and moved at once
+        for old, new in cases:
+            self.assertEqual(F.fix_text(old, self.M)[0], new, old)
+            self.assertEqual(F.fix_text(new, self.M), (new, []), "idempotent")
+    def test_only_that_term_at_that_level(self):
+        t = "{{inh|ar|sem-pro|*kalb-}} {{inh|ar|sem-wes-pro|*ṣ́abb-}} {{m|ar|*ṣ́abb-}} {{R:sem-pro:SED|entry=*ṣ́abb-}}"
+        self.assertEqual(F.fix_text(t, self.M), (t, []))
+
 class Untouched(unittest.TestCase):
     def same(self, t):
         self.assertEqual(fix(t), t)

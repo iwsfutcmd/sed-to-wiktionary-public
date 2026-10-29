@@ -65,8 +65,15 @@
     return m ? [m[1], m[2], m[3]] : null;
   }
 
+  var CODES = { PS: "sem-pro", PWS: "sem-wes-pro" };
   function fixText(text, mapping, generic) {
     var edits = []; // [a, b, replacement, kind, old, new]
+    function target(level, stem) { // -> [new level, new stem] or null; a mapping value "PWS:ṣ́abb-" moves the term to the other level
+      var v = mapping[level + "\t" + nfc(stem)];
+      if (!v) { var g = lookup(level, stem); return g ? [level, g] : null; }
+      var m = /^(PWS|PS):(.+)$/.exec(v), lv = m ? m[1] : level, nw = m ? m[2] : v;
+      return lv === level && nw === nfc(stem) ? null : [lv, nw];
+    }
     function lookup(level, stem) {
       var v = mapping[level + "\t" + nfc(stem)];
       if (!v && generic) { // any other term: its plain respelling, unless it holds a letter no rule reads
@@ -75,11 +82,13 @@
       }
       return v && nfc(stem) !== v ? v : null;
     }
-    function termEdit(level, a, b) {
+    function termEdit(level, a, b, codeSpan) {
       var parts = termCore(text.slice(a, b));
       if (!parts) return;
-      var nw = lookup(level, parts[1]);
-      if (nw) edits.push([a, b, parts[0] + nw + parts[2], "term", parts[1], nw]);
+      var tg = target(level, parts[1]);
+      if (!tg) return;
+      if (tg[0] !== level) edits.push([codeSpan[0], codeSpan[1], CODES[tg[0]], "level", level, tg[0]]);
+      if (tg[1] !== nfc(parts[1])) edits.push([a, b, parts[0] + tg[1] + parts[2], "term", parts[1], tg[1]]);
     }
     var tpls = parse(text);
     tpls.forEach(function (t) {
@@ -91,22 +100,27 @@
         if (level) {
           for (var j = li + 1; j < Math.min(li + 4, pos.length); j++) { // the term, then alternative forms written *X
             var v = text.slice(pos[j][0], pos[j][1]).trim();
-            if (v && (j === li + 1 || v.startsWith("*"))) termEdit(level, pos[j][0], pos[j][1]);
+            if (v && (j === li + 1 || v.startsWith("*"))) termEdit(level, pos[j][0], pos[j][1], pos[li]);
           }
         }
       }
       t.args.slice(1).forEach(function (ab) { // ety chains: every sem-pro:*X inside an argument, also nested <ety:uder<sem-pro:*X>>
         var argText = text.slice(ab[0], ab[1]), em, ere = /(?<![\w-])(sem-pro|sem-wes-pro):(\*?)([^<>|{}\[\]\s]+?)(?=[<>|}\s]|$)/g;
         while ((em = ere.exec(argText)) !== null) {
-          var nw = lookup(LANGS[em[1]], em[3]);
-          if (nw) { var a0 = ab[0] + em.index + em[1].length + 1 + em[2].length; edits.push([a0, a0 + em[3].length, nw, "ety", em[3], nw]); }
+          var lv = LANGS[em[1]], tg = target(lv, em[3]);
+          if (!tg) continue;
+          if (tg[0] !== lv) edits.push([ab[0] + em.index, ab[0] + em.index + em[1].length, CODES[tg[0]], "level", lv, tg[0]]);
+          if (tg[1] !== nfc(em[3])) { var a0 = ab[0] + em.index + em[1].length + 1 + em[2].length; edits.push([a0, a0 + em[3].length, tg[1], "ety", em[3], tg[1]]); }
         }
       });
     });
     var re = /\[\[(Reconstruction:Proto-(?:West )?Semitic\/)([^\]|#]+)(\|[^\]]*)?\]\]/g, m;
     while ((m = re.exec(text)) !== null) {
-      var level = m[1].indexOf("West") >= 0 ? "PWS" : "PS", stem = m[2].trim(), nw = lookup(level, stem);
-      if (!nw) continue;
+      var level = m[1].indexOf("West") >= 0 ? "PWS" : "PS", stem = m[2].trim(), tg = target(level, stem);
+      if (!tg) continue;
+      if (tg[0] !== level) edits.push([m.index + 2, m.index + 2 + m[1].length, "Reconstruction:Proto-" + (tg[0] === "PWS" ? "West " : "") + "Semitic/", "level", level, tg[0]]);
+      var nw = tg[1];
+      if (nw === nfc(stem)) continue;
       var s2 = m.index + m[0].indexOf(m[2], m[0].indexOf("/") + 1);
       edits.push([s2, s2 + m[2].length, nw, "link", stem, nw]);
       var disp = (m[3] || "").slice(1);

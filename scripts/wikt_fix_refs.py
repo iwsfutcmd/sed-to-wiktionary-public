@@ -66,17 +66,31 @@ def term_core(value):
     m = re.fullmatch(r"(\s*\*?)([^<>|{}\[\]]+?)(\s*(?:<[^>]*>)*\s*)", value)
     return m.groups() if m else None
 
+CODES = {v: k for k, v in LANGS.items()}
+def target(mapping, level, stem):
+    """-> (new level, new stem) or None. A mapping value "PWS:ṣ́abb-" moves the term to the other level (the language code changes too)."""
+    new = mapping.get((level, nfc(stem)))
+    if not new:
+        return None
+    m = re.match(r"^(PWS|PS):(.+)$", new)
+    lv, new = (m.group(1), m.group(2)) if m else (level, new)
+    return (lv, new) if (lv, new) != (level, nfc(stem)) else None
+
 def fix_text(text, mapping):
-    """text, {(level, stem): standard stem} -> (new text, [(kind, old, new)]).  Pure; idempotent."""
+    """text, {(level, stem): standard stem, or "LEVEL:stem" to move it to the other level} -> (new text, [(kind, old, new)]).  Pure; idempotent."""
     edits = []                                                   # (a, b, replacement, kind)
-    def term_edit(level, a, b, kind):
+    def term_edit(level, a, b, kind, code_span):
         parts = term_core(text[a:b])
         if not parts:
             return
         pre, stem, suf = parts
-        new = mapping.get((level, nfc(stem)))
-        if new and nfc(stem) != new:
-            edits.append((a, b, pre + new + suf, kind, stem, new))
+        tg = target(mapping, level, stem)
+        if not tg:
+            return
+        if tg[0] != level:
+            edits.append((*code_span, CODES[tg[0]], "level", level, tg[0]))
+        if tg[1] != nfc(stem):
+            edits.append((a, b, pre + tg[1] + suf, kind, stem, tg[1]))
     for t in parse(text):
         name = text[t["args"][0][0]:t["args"][0][1]].strip().lower()
         pos = positional(text, t["args"])
@@ -87,18 +101,25 @@ def fix_text(text, mapping):
                 for j in range(li + 1, min(li + 4, len(pos))):             # the term, then alternative forms written *X ({{l|sem-pro||*X}} too)
                     a2, b2 = pos[j]
                     if text[a2:b2].strip() and (j == li + 1 or text[a2:b2].strip().startswith("*")):
-                        term_edit(level, a2, b2, "term")
+                        term_edit(level, a2, b2, "term", pos[li])
         for a, b in t["args"][1:]:                                         # ety chains: every sem-pro:*X inside an argument, also nested <ety:uder<sem-pro:*X>>
             for m in re.finditer(r"(?<![\w-])(sem-pro|sem-wes-pro):(\*?)([^<>|{}\[\]\s]+?)(?=[<>|}\s]|$)", text[a:b]):
                 level = LANGS[m.group(1)]
-                new = mapping.get((level, nfc(m.group(3))))
-                if new and nfc(m.group(3)) != new:
-                    edits.append((a + m.start(3), a + m.end(3), new, "ety", m.group(3), new))
+                tg = target(mapping, level, m.group(3))
+                if tg and tg[0] != level:
+                    edits.append((a + m.start(1), a + m.end(1), CODES[tg[0]], "level", level, tg[0]))
+                if tg and tg[1] != nfc(m.group(3)):
+                    edits.append((a + m.start(3), a + m.end(3), tg[1], "ety", m.group(3), tg[1]))
     for m in re.finditer(r"\[\[(Reconstruction:Proto-(?:West )?Semitic/)([^\]|#]+)(\|[^\]]*)?\]\]", text):
         level = "PWS" if "West" in m.group(1) else "PS"
         stem = m.group(2).strip()
-        new = mapping.get((level, nfc(stem)))
-        if new and nfc(stem) != new:
+        tg = target(mapping, level, stem)
+        if not tg:
+            continue
+        if tg[0] != level:
+            edits.append((m.start(1), m.end(1), "Reconstruction:Proto-" + ("West " if tg[0] == "PWS" else "") + "Semitic/", "level", level, tg[0]))
+        new = tg[1]
+        if nfc(stem) != new:
             edits.append((m.start(2), m.end(2), new, "link", stem, new))
             disp = (m.group(3) or "")[1:]
             if disp.strip() in ("*" + stem, stem):                # the shown text is the old spelling too

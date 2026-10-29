@@ -37,6 +37,14 @@ class SamePythonAndJs(unittest.TestCase):
             new, ch = F.fix_text(text, M)
             self.assertEqual(got["text"], new, text)
             self.assertEqual([tuple(c) for c in got["changes"]], [tuple(c) for c in ch], text)
+    def test_other_level(self):                  # "PWS:stem" moves the term and its language code; JS must agree with Python
+        mp = {("PS", "ṣ́abb-"): "PWS:ṣ́abb-", ("PS", "ṣ̂abb-"): "PWS:ṣ́abb-"}
+        cases = ["{{der|id|sem-pro|*ṣ́abb-}} {{inh|he|sem-pro|*ṣ̂abb-}} {{ety|ar|:inh|sem-pro:*ṣ́abb-|text=+}} {{l|sem-pro|*ṣ́abb-|t=x}}",
+                 "[[Reconstruction:Proto-Semitic/ṣ́abb-|*ṣ́abb-]] [[Reconstruction:Proto-Semitic/ṣ̂abb-]] {{inh|ar|sem-wes-pro|*ṣ́abb-}}"]
+        for text, got in zip(cases, self.js(cases, mp)):
+            new, ch = F.fix_text(text, mp)
+            self.assertEqual(got["text"], new, text)
+            self.assertEqual([tuple(c) for c in got["changes"]], [tuple(c) for c in ch], text)
     def test_generic_respelling(self):
         """Any other term is respelled into the ASEM notation (ʾ->ʔ, q->ḳ, θ->ṯ ...), as GenericMap does in Python; x̣ and č are left alone."""
         cases = SYNTH + ["{{inh|amw|sem-pro|*šabʕ-|*šabʿum}} {{m|sem-pro|*qarn-}} {{cog|sem-pro|*x̣arb-}} {{m|sem-pro|*čaʿlab-}} {{m|sem-pro|*ṣ́abuʿ-}}",

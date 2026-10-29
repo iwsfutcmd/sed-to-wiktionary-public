@@ -65,7 +65,7 @@ tr.done td.pg a { color: var(--muted); } tr.done { background: var(--done-bg); }
 <main>
   <header class="top panel">
     <h1>Respell Proto-Semitic references</h1>
-    <p class="muted" id="intro">7 pages link to a spelling that WT:ASEM does not use. Each one opens in the edit form with the fix already made and the diff showing. You read it and press Save. A change marked <b>(new stem)</b> points the reference at the stem its old spelling already redirects to, for example <code>*ʾab-</code> to <code>*ʔabw-</code>.</p>
+    <p class="muted" id="intro">1 pages link to a spelling that WT:ASEM does not use. Each one opens in the edit form with the fix already made and the diff showing. You read it and press Save. A change marked <b>(new stem)</b> points the reference at the stem its old spelling already redirects to, for example <code>*ʾab-</code> to <code>*ʔabw-</code>.</p>
     <div class="bar" role="img" aria-label="progress"><i class="d" id="bd"></i><i class="s" id="bs"></i></div>
     <div class="stats" id="stats"></div>
     <div class="cta">
@@ -162,8 +162,15 @@ tr.done td.pg a { color: var(--muted); } tr.done { background: var(--done-bg); }
     return m ? [m[1], m[2], m[3]] : null;
   }
 
+  var CODES = { PS: "sem-pro", PWS: "sem-wes-pro" };
   function fixText(text, mapping, generic) {
     var edits = []; // [a, b, replacement, kind, old, new]
+    function target(level, stem) { // -> [new level, new stem] or null; a mapping value "PWS:ṣ́abb-" moves the term to the other level
+      var v = mapping[level + "\t" + nfc(stem)];
+      if (!v) { var g = lookup(level, stem); return g ? [level, g] : null; }
+      var m = /^(PWS|PS):(.+)$/.exec(v), lv = m ? m[1] : level, nw = m ? m[2] : v;
+      return lv === level &amp;&amp; nw === nfc(stem) ? null : [lv, nw];
+    }
     function lookup(level, stem) {
       var v = mapping[level + "\t" + nfc(stem)];
       if (!v &amp;&amp; generic) { // any other term: its plain respelling, unless it holds a letter no rule reads
@@ -172,11 +179,13 @@ tr.done td.pg a { color: var(--muted); } tr.done { background: var(--done-bg); }
       }
       return v &amp;&amp; nfc(stem) !== v ? v : null;
     }
-    function termEdit(level, a, b) {
+    function termEdit(level, a, b, codeSpan) {
       var parts = termCore(text.slice(a, b));
       if (!parts) return;
-      var nw = lookup(level, parts[1]);
-      if (nw) edits.push([a, b, parts[0] + nw + parts[2], "term", parts[1], nw]);
+      var tg = target(level, parts[1]);
+      if (!tg) return;
+      if (tg[0] !== level) edits.push([codeSpan[0], codeSpan[1], CODES[tg[0]], "level", level, tg[0]]);
+      if (tg[1] !== nfc(parts[1])) edits.push([a, b, parts[0] + tg[1] + parts[2], "term", parts[1], tg[1]]);
     }
     var tpls = parse(text);
     tpls.forEach(function (t) {
@@ -188,22 +197,27 @@ tr.done td.pg a { color: var(--muted); } tr.done { background: var(--done-bg); }
         if (level) {
           for (var j = li + 1; j &lt; Math.min(li + 4, pos.length); j++) { // the term, then alternative forms written *X
             var v = text.slice(pos[j][0], pos[j][1]).trim();
-            if (v &amp;&amp; (j === li + 1 || v.startsWith("*"))) termEdit(level, pos[j][0], pos[j][1]);
+            if (v &amp;&amp; (j === li + 1 || v.startsWith("*"))) termEdit(level, pos[j][0], pos[j][1], pos[li]);
           }
         }
       }
       t.args.slice(1).forEach(function (ab) { // ety chains: every sem-pro:*X inside an argument, also nested &lt;ety:uder&lt;sem-pro:*X>>
         var argText = text.slice(ab[0], ab[1]), em, ere = /(?&lt;![\w-])(sem-pro|sem-wes-pro):(\*?)([^&lt;>|{}\[\]\s]+?)(?=[&lt;>|}\s]|$)/g;
         while ((em = ere.exec(argText)) !== null) {
-          var nw = lookup(LANGS[em[1]], em[3]);
-          if (nw) { var a0 = ab[0] + em.index + em[1].length + 1 + em[2].length; edits.push([a0, a0 + em[3].length, nw, "ety", em[3], nw]); }
+          var lv = LANGS[em[1]], tg = target(lv, em[3]);
+          if (!tg) continue;
+          if (tg[0] !== lv) edits.push([ab[0] + em.index, ab[0] + em.index + em[1].length, CODES[tg[0]], "level", lv, tg[0]]);
+          if (tg[1] !== nfc(em[3])) { var a0 = ab[0] + em.index + em[1].length + 1 + em[2].length; edits.push([a0, a0 + em[3].length, tg[1], "ety", em[3], tg[1]]); }
         }
       });
     });
     var re = /\[\[(Reconstruction:Proto-(?:West )?Semitic\/)([^\]|#]+)(\|[^\]]*)?\]\]/g, m;
     while ((m = re.exec(text)) !== null) {
-      var level = m[1].indexOf("West") >= 0 ? "PWS" : "PS", stem = m[2].trim(), nw = lookup(level, stem);
-      if (!nw) continue;
+      var level = m[1].indexOf("West") >= 0 ? "PWS" : "PS", stem = m[2].trim(), tg = target(level, stem);
+      if (!tg) continue;
+      if (tg[0] !== level) edits.push([m.index + 2, m.index + 2 + m[1].length, "Reconstruction:Proto-" + (tg[0] === "PWS" ? "West " : "") + "Semitic/", "level", level, tg[0]]);
+      var nw = tg[1];
+      if (nw === nfc(stem)) continue;
       var s2 = m.index + m[0].indexOf(m[2], m[0].indexOf("/") + 1);
       edits.push([s2, s2 + m[2].length, nw, "link", stem, nw]);
       var disp = (m[3] || "").slice(1);
@@ -366,7 +380,7 @@ tr.done td.pg a { color: var(--muted); } tr.done { background: var(--done-bg); }
   </section>
 
   <section class="panel" id="moves">
-    <h2>Root pages to move (0)</h2>
+    <h2>Root pages to move (12)</h2>
     <p class="muted">A root is written <code>ʔ-b-d</code>: hyphens between the radicals, none at the end. These titles are still bare (<code>ʔbd</code>). <b>Move</b> opens the move form with the new title filled in; a target that already exists has to be merged by hand (or by an administrator), so it only gets links to look at both pages.</p>
     <ul class="list" id="movelist"></ul>
   </section>
@@ -384,7 +398,7 @@ tr.done td.pg a { color: var(--muted); } tr.done { background: var(--done-bg); }
   </section>
 </main>
 
-<script id="data" type="application/json">{"items": [{"title": "ܐܛܫܥ", "changes": ["*tišʿum → *tišʕum"]}, {"title": "ܐܥܣܪ", "changes": ["*ʿaśarum → *ʕaśarum"]}, {"title": "ܐܫܒܥ", "changes": ["*šabʿum → *šabʕum"]}, {"title": "ܥܣܪܐ", "changes": ["*ʿaśaratum → *ʕaśaratum ×2"]}, {"title": "ܫܒܥܐ", "changes": ["*šabʿatum → *šabʕatum"]}, {"title": "ܫܘܥܐ", "changes": ["*šabʿatum → *šabʕatum"]}, {"title": "ܬܫܥܐ", "changes": ["*tišʿatum → *tišʕatum"]}], "person": [{"to": "Reconstruction:Proto-West Semitic/rpʔ", "page": "Reconstruction:Proto-Semitic/rpˀ", "n": 0, "from": "rpˀ"}], "indirect": ["قدم"], "moves": [], "new": [{"title": "bVʕVr-", "page": "Reconstruction:Proto-Semitic/bVʕVr-", "text": "{{reconstructed}}\n==Proto-Semitic==\n\n===Etymology===\nReconstructed in Militarev & Kogan's ''Semitic Etymological Dictionary'' as {{m|sem-pro|*bVʕVr-}}. The SED notes that a cluster of semantically similar forms lacking the {{m|sem-pro|*ʕ}} (Akkadian {{m|akk|bīru}}, Mandaic {{m|myz|ࡁࡉࡓࡀ|tr=bira}}, and several Ethiopian Semitic forms such as Amharic {{m|am|በሬ|tr=bäre}}) may continue a separate, though probably related, root.\n\n===Noun===\n{{sem-noun|m}}\n\n# [[household]] [[animal]]\n# [[beast of burden]]\n\n====Inflection====\n{{sem-decl-noun}}\n\n====Descendants====\n* West Semitic:\n** Central Semitic:\n*** {{desc|ar|بَعِير|t=camel; beast of burden}}\n*** Northwest Semitic:\n**** {{desc|tmr|-|tr=bəʕīrā|t=grazing animal, cattle}}\n**** {{desc|syc|-|tr=bəʕīrā|t=cattle, beast of burden}}\n**** {{desc|aii|-|tr=bîrâ|t=large cattle}}\n**** Canaanite:\n***** {{desc|hbo|-|tr=bəʕīr|t=livestock, cattle}}\n***** {{desc|sem-amm|𐤁𐤏𐤓|tr=bʕr|t=ox, beast of burden|unc=1}}\n*** Old South Arabian:\n**** {{desc|xsa|𐩨𐩲𐩧|tr=bʕr|t=cattle, head of cattle; camel}}\n**** {{desc|inm|𐩨𐩲𐩧|tr=bʕr|t=camel; head of cattle}}\n**** Hadramitic {{desc|sem-srb|𐩨𐩲𐩧|tr=bʕr|t=commercial livestock}}\n** Ethiopian Semitic:\n*** {{desc|gez|ብዕር|tr=bəʕər|t=ox, bull, horned cattle}}, {{l|gez|ብዕራ|tr=bəʕərā}}, {{l|gez|ብዕራይ|tr=bəʕərāy}}, {{l|gez|ብዕራዊ|tr=bəʕərāwi}}\n*** {{desc|tig|-|tr=bəʕrāy|t=ox, bull}}\n*** {{desc|ti|ብዕራይ|tr=bəʕray|t=ox, bull}}, {{l|ti|በዕራይ|tr=bäʕray}}\n** Modern South Arabian:\n*** {{desc|gdq|bəʕáyr|t=male camel}}\n*** {{desc|gdq|béyr|t=male camel}}\n*** {{desc|hss|beʕîr|t=male camel}}\n*** {{desc|sqt|beʕer|t=camel}}\n*** {{desc|sqt|baʕáhar|t=she-camel}}\n\n===References===\n* {{R:sem-pro:SED|volume=II|id=590|entry=*bVʕVr-}}\n\n{{C|sem-pro|Mammals}}\n"}, {"title": "sūs-", "page": "Reconstruction:Proto-Semitic/sūs-", "text": "{{reconstructed}}\n==Proto-Semitic==\n\n===Noun===\n{{sem-noun|m}}\n\n# [[moth]]\n\n====Inflection====\n{{sem-decl-noun}}\n\n====Descendants====\n* East Semitic:\n** {{desc|akk|sāsu|alt=𒊓𒀀𒋢|tr=sāsu|t=moth}}\n** {{desc|xeb|zazum /sāsum/|t=moth|unc=1}}\n* West Semitic:\n** Central Semitic:\n*** {{desc|ar|سُوس|t=moth}}\n*** Northwest Semitic:\n**** Old {{desc|arc|ס|tr=ss|t=moth}}\n**** Official {{desc|arc|ס|tr=ss|t=moth}}\n**** {{desc|jpa|ס|tr=ss|t=moth, worm}}\n**** {{desc|syc|ܣܐ|tr=sāsā|t=kind of worm that infests the grapevine}}\n**** {{desc|myz|ࡎࡀࡎࡀ|t=moth, maggot}}\n**** Canaanite:\n***** {{desc|hbo|ס|tr=sās|t=clothes moth}}\n** Ethiopian Semitic:\n*** {{desc|am|-|tr=šuš(š)|t=moth}}\n*** {{desc|har|-|tr=sūs|t=moth}}\n** Modern South Arabian:\n*** {{desc|gdq|sust|t=large worm}}\n\n===References===\n* {{R:sem-pro:SED|volume=II|id=675|entry=*sā/ūs-}}\n\n{{C|sem-pro|Insects}}\n"}, {"title": "ṯḳl", "page": "Reconstruction:Proto-Semitic/ṯḳl", "text": "{{reconstructed}}\n==Proto-Semitic==\n\n===Verb===\n{{head|sem-pro|verb}}\n\n# to [[weigh]]\n# to [[suspend]]\n\n====Conjugation====\n{{sem-pro-conj/*paʕala-*yipʕal|ṯ|ḳ|l|vn=ṯaḳl}}\n\n====Descendants====\n* East Semitic:\n** {{desc|akk|šaqālu|tr=šaqālu|t=to suspend, weigh out, balance}}\n** {{desc|xeb|ṯaqālum|t=to weigh}}\n* West Semitic:\n** Central Semitic:\n*** {{desc|ar|ثَقُلَ|t=to be heavy}}\n*** Northwest Semitic:\n**** Official {{desc|arc|תקל|tr=tql|t=to weigh out}}\n**** {{desc|jpa|תקל|tr=tql|t=to weigh}}\n**** {{desc|tmr|תקל|tr=tql|t=to weigh, be even}}\n**** {{desc|syc|ܬܩܠ|tr=tql|t=to suspend, weigh out, balance}}\n**** {{desc|myz|ࡕࡒࡋ|t=to weigh, to smoothen}}\n**** {{desc|arc-cpa|ܬܩܠ|tr=tql|t=to suspend}}\n**** Canaanite:\n***** {{desc|he|שָׁקַל|tr=šql|t=to carry weigh, to weigh}}\n***** {{desc|phn|𐤔𐤒𐤋|tr=šql|t=to weigh out}}\n**** {{desc|uga|𐎘𐎖𐎍|t=shekel (unit of weight)}}\n** Ethiopian Semitic:\n*** {{desc|gez|ሰቀለ|tr=saqala|t=to suspend, to weigh}}\n*** {{desc|tig|ሰቅላ|tr=säqla|t=to hang, to crucify; to drag}}\n*** {{desc|ti|-|tr=säq̌älä|t=to hang, to raise up in the air}}\n*** {{desc|am|ሰቀለ|tr=säqqälä|t=to suspend, to raise up in the air}}\n*** {{desc|har|ሰቀለ|tr=säqälä|t=to hang against the wall}}\n*** {{desc|gft|ሰቀረ|tr=säqärä|t=to hang up by making object lean against something}}\n*** Gurage:\n**** {{desc|stv|ሰቀለ|tr=säqälä|t=to hang up by making object lean against something}}\n**** {{desc|wle|ሰቀለ|tr=säqälä|t=to hang up by making object lean against something}}\n**** {{desc|zwa|ሰቀለ|tr=säqälä|t=to hang up by making object lean against something}}\n**** {{desc|gru|ሰቀለ|tr=säqqälä|t=to hang up by making object lean against something|q=Soddo}}\n**** {{desc|gru|-|tr=säqqeä|t=to hang up by making object lean against something|q=Gogot}}\n**** {{desc|sgw|ሰቀረ|tr=säqärä|t=to hang up by making object lean against something|q=Chaha}}\n**** {{desc|sgw|ሰቀረ|tr=säqqärä|t=to hang up by making object lean against something|q=Ezha}}\n**** {{desc|sgw|ሰአነ|tr=säʔänä|t=to hang up by making object lean against something|q=Endegen}}\n**** {{desc|sgw|-|tr=sä̃ʔä̃rä|t=to hang up by making object lean against something|q=Ennemor}}\n**** {{desc|sgw|-|tr=säqqeą̈|t=to hang up by making object lean against something|q=Muher}}\n**** {{desc|mvz|ሰቀረ|tr=säqqärä|t=to hang up by making object lean against something}}\n\n===References===\n* {{R:sem-pro:SED|id=2030|entry=*ṯḳl}}\n"}, {"title": "PWS ṣ́abb-", "page": "Reconstruction:Proto-West Semitic/ṣ́abb-", "text": "{{reconstructed}}\n==Proto-West Semitic==\n\n===Etymology===\nReconstructed in Militarev & Kogan's ''Semitic Etymological Dictionary'' as {{m|sem-pro|*ṣ́abb-}}. The reflexes split between a thorn-tailed/spiny-tailed lizard (Hebrew, Jewish Aramaic) and the monitor lizard (Arabic, Modern South Arabian); the SED keeps the gloss general for this reason. The Jewish Aramaic form is noted in the SED as possibly a Hebrew borrowing, since its {{m|sem-pro|*ṣ}} is irregular.\n\n===Noun===\n{{head|sem-wes-pro|noun|g=m}}\n\n# kind of [[lizard]]\n\n====Descendants====\n* Central Semitic:\n** {{desc|ar|ضَبّ|t=monitor lizard; African lizard (eaten by some peoples)}}\n** Northwest Semitic:\n*** {{desc|tmr|צבא|tr=ṣabbā|t=kind of lizard|unc=1}}\n*** {{desc|syc|ܥܒܐ|tr=ʕabbā|t=kind of lizard}}\n*** Canaanite:\n**** {{desc|hbo|צב|tr=ṣāb|t=thorn-tailed lizard}}\n* Modern South Arabian:\n** {{desc|gdq|ẑōb|t=male monitor lizard}}\n** {{desc|gdq|ẑəbbūt|t=female monitor lizard}}\n** {{desc|shv|ẓ̂ɔb|t=monitor lizard}}\n** {{desc|shv|ẓ̂ēt|t=female monitor lizard}}\n** {{desc|hss|ẑōb|t=monitor lizard}}\n** {{desc|hss|ẑebbēt|t=female monitor lizard}}\n\n===References===\n* {{R:sem-pro:SED|volume=II|id=656|entry=*ṣ̂abb-}}\n\n{{C|sem-wes-pro|Reptiles}}\n"}], "rootverb": [{"level": "PS", "root": "ʔ-b-d", "bare": "ʔbd", "bare_head": "verb", "root_page_exists": "yes", "page": "Appendix:Arabic roots/ب ي د", "guess": "root", "line": "{{ety|ar|id=root|:inh|sem-pro:*ʔ-b-d<t:related to destruction, loss>}}"}, {"level": "PS", "root": "ʔ-b-d", "bare": "ʔbd", "bare_head": "verb", "root_page_exists": "yes", "page": "Appendix:Arabic roots/ب ي د", "guess": "root", "line": "{{inh+|ar|sem-pro|*ʔ-b-d|t=related to destruction, loss}}."}, {"level": "PS", "root": "ʔ-t-m", "bare": "ʔtm", "bare_head": "verb", "root_page_exists": "red", "page": "Appendix:Akkadian roots/'-t-m", "guess": "root", "line": "{{inh+|akk|sem-pro|*ʔ-t-m|t=related to community, teamwork}}."}, {"level": "PS", "root": "ṯ-ḳ-l", "bare": "ṯḳl", "bare_head": "verb", "root_page_exists": "red", "page": "šiqlum", "guess": "verb", "line": "From {{inh|akk|sem-pro|*ṯ-ḳ-l||to weigh; burden, weight}}. Cognate with {{cog|ar|ثِقْل|t=weight}} and {{cog|hbo|שֶׁקֶל|tr=šɛ́qɛl|t=shekel}}."}, {"level": "PS", "root": "ṯ-ḳ-l", "bare": "ṯḳl", "bare_head": "verb", "root_page_exists": "red", "page": "שקל", "guess": "verb", "line": "{{inh+|he|sem-pro|*ṯ-ḳ-l||to weigh; burden, weight}}; cognate with {{cog|ar|ثقل}} and {{cog|arc|תקל}}."}, {"level": "PS", "root": "ṯ-ḳ-l", "bare": "ṯḳl", "bare_head": "verb", "root_page_exists": "red", "page": "תקל", "guess": "verb", "line": "{{ety|arc|:inh|sem-pro:*ṯ-ḳ-l<t:to weigh; burden, weight>|text=+|tree=1}} Compare {{cog|he|שֶׁקֶל|tr=šéqel}}, {{cog|uga|𐎘𐎖𐎍|tr=ṯql}}, {{cog|ar|ثِقْل}}."}, {"level": "PS", "root": "ṯ-ḳ-l", "bare": "ṯḳl", "bare_head": "verb", "root_page_exists": "red", "page": "ثقل", "guess": "check", "line": "{{ety|ar|:root|ث ق ل|:inh|sem-wes-pro:<ety:inh<sem-pro:*ṯ-ḳ-l>>|tree=1}}"}, {"level": "PS", "root": "ṯ-ḳ-l", "bare": "ṯḳl", "bare_head": "verb", "root_page_exists": "red", "page": "ثقل", "guess": "verb", "line": "From {{inh|ar|sem-pro|*ṯ-ḳ-l||to weigh; burden, weight}}. Cognate with {{cog|he|שקל}} and {{cog|arc|תקל}}."}, {"level": "PS", "root": "ṯ-ḳ-l", "bare": "ṯḳl", "bare_head": "verb", "root_page_exists": "red", "page": "ܡܬܩܠܐ", "guess": "check", "line": "From the root {{syc-root|ܬ ܩ ܠ}} related to weighing, from {{der|syc|sem-pro|*ṯ-ḳ-l}}. Compare {{cog|ar|مِثْقَال}} and {{cog|he|מִשְׁקָל|tr=mišqāl}}."}, {"level": "PS", "root": "ṯ-ḳ-l", "bare": "ṯḳl", "bare_head": "verb", "root_page_exists": "red", "page": "ܬܩܠ", "guess": "verb", "line": "{{inh+|aii|arc|תְּקַל|tr=təqal}}, from {{der|aii|sem-pro|*ṯ-ḳ-l|*ṯaḳal|to weigh; burden, weight}}; compare {{cog|ar|ثَقَلَ}} and {{cog|he|שָׁקַל|tr=shakál}}."}, {"level": "PS", "root": "ṯ-ḳ-l", "bare": "ṯḳl", "bare_head": "verb", "root_page_exists": "red", "page": "ܬܩܠܐ", "guess": "check", "line": "From the root {{syc-root|ܬ ܩ ܠ}} related to weighing, from {{inh|syc|sem-pro|*ṯ-ḳ-l}}. Compare {{cog|ar|ثِقْل}} and {{cog|he|שֶׁקֶל|tr=šéqel}}."}], "pfx": {"PS": "Reconstruction:Proto-Semitic/", "PWS": "Reconstruction:Proto-West Semitic/"}}</script>
+<script id="data" type="application/json">{"items": [{"title": "Reconstruction:Proto-Berber/arəw", "changes": ["*hry → *h-r-y (new stem)"]}], "person": [{"to": "Reconstruction:Proto-West Semitic/rpʔ", "page": "Reconstruction:Proto-Semitic/rpˀ", "n": 0, "from": "rpˀ"}], "indirect": ["قدم"], "moves": [{"level": "PS", "title": "npy", "target": "n-p-y", "action": "move", "target_state": "absent"}, {"level": "PS", "title": "rpʔ", "target": "r-p-ʔ", "action": "redirect", "target_state": "absent"}, {"level": "PS", "title": "rpˀ", "target": "r-p-ʔ", "action": "redirect", "target_state": "absent"}, {"level": "PS", "title": "ʔbd", "target": "ʔ-b-d", "action": "merge", "target_state": "page"}, {"level": "PS", "title": "ʔdm", "target": "ʔ-d-m", "action": "move", "target_state": "absent"}, {"level": "PS", "title": "ʔtm", "target": "ʔ-t-m", "action": "move", "target_state": "absent"}, {"level": "PS", "title": "ʔḏn", "target": "ʔ-ḏ-n", "action": "move", "target_state": "absent"}, {"level": "PS", "title": "ʔḫḏ", "target": "ʔ-ḫ-ḏ", "action": "move", "target_state": "absent"}, {"level": "PWS", "title": "rpy", "target": "r-p-y", "action": "move", "target_state": "absent"}, {"level": "PWS", "title": "rpʔ", "target": "r-p-ʔ", "action": "move", "target_state": "absent"}, {"level": "PWS", "title": "ʔdm", "target": "ʔ-d-m", "action": "move", "target_state": "absent"}, {"level": "PWS", "title": "ʔdr", "target": "ʔ-d-r", "action": "merge", "target_state": "page"}, {"level": "PWS", "title": "ʔdw", "target": "ʔ-d-w", "action": "move", "target_state": "absent"}, {"level": "PWS", "title": "ʔḏn", "target": "ʔ-ḏ-n", "action": "move", "target_state": "absent"}], "new": [], "rootverb": [], "pfx": {"PS": "Reconstruction:Proto-Semitic/", "PWS": "Reconstruction:Proto-West Semitic/"}}</script>
 <script>
 (function () {
   var D = JSON.parse(document.getElementById("data").textContent);
