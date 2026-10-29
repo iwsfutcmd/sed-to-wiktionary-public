@@ -137,6 +137,19 @@
     return { text: out, changes: uniq.map(function (e) { return [e[3], e[4], e[5]]; }) };
   }
 
-  var api = { fixText: fixText, parse: parse, standardise: standardise, rootify: rootify, setNotation: setNotation };
+  // Link an SED citation to SEDonline: the first {{R:sem-pro:SED}} with no id= (or e=) gets id= and, if it names no entry, entry=.
+  // Twin of add_sed_id() in scripts/wikt_sed_ids.py (tests/test_respell_js.py). -> { text, changed }
+  function addSedId(text, id, entry) {
+    var re = /\{\{R:sem-pro:SED((?:\|[^{}]*)?)\}\}/g, m;
+    while ((m = re.exec(text))) {
+      var args = m[1];
+      if (/\|\s*(?:id|e)\s*=\s*\S/.test(args)) continue;
+      var add = "|id=" + id + (entry && !/\|\s*entry\s*=/.test(args) ? "|entry=" + entry : "");
+      return { text: text.slice(0, m.index) + "{{R:sem-pro:SED" + args + add + "}}" + text.slice(m.index + m[0].length), changed: true };
+    }
+    return { text: text, changed: false };
+  }
+
+  var api = { fixText: fixText, parse: parse, standardise: standardise, rootify: rootify, setNotation: setNotation, addSedId: addSedId };
   if (typeof module !== "undefined" && module.exports) module.exports = api; else root.WiktRespell = api;
 })(typeof window !== "undefined" ? window : this);

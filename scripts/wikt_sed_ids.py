@@ -47,6 +47,16 @@ def fits_page(title, text, rec):
         return bare(m.group(1)) in alternatives(rec["norm"]) or bare(m.group(1)) in alternatives(rec["form"])
     return bool(gwords(rec["gloss"]) & gwords(" ".join(K.definitions(text))))
 
+def add_sed_id(text, rec, entry=""):
+    """Twin of addSedId() in scripts/respell_core.js: the first {{R:sem-pro:SED}} without id=/e= gets id= (and entry= if it has none)."""
+    for m in REF.finditer(text):
+        args = m.group(1) or ""
+        if re.search(r"\|\s*(?:id|e)\s*=\s*\S", args):
+            continue
+        add = f"|id={rec}" + (f"|entry={entry}" if entry and not re.search(r"\|\s*entry\s*=", args) else "")
+        return text[:m.start()] + "{{R:sem-pro:SED" + args + add + "}}" + text[m.end():], True
+    return text, False
+
 def main(argv):
     recs = read(DATA / "sed_vol1_vol2_reconstructions.tsv")
     by_key = {f"{r['vol']}{r['section'][0].upper()}:{r['no']}": r for r in recs}

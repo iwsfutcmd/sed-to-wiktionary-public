@@ -235,7 +235,20 @@ tr.done td.pg a { color: var(--muted); } tr.done { background: var(--done-bg); }
     return { text: out, changes: uniq.map(function (e) { return [e[3], e[4], e[5]]; }) };
   }
 
-  var api = { fixText: fixText, parse: parse, standardise: standardise, rootify: rootify, setNotation: setNotation };
+  // Link an SED citation to SEDonline: the first {{R:sem-pro:SED}} with no id= (or e=) gets id= and, if it names no entry, entry=.
+  // Twin of add_sed_id() in scripts/wikt_sed_ids.py (tests/test_respell_js.py). -> { text, changed }
+  function addSedId(text, id, entry) {
+    var re = /\{\{R:sem-pro:SED((?:\|[^{}]*)?)\}\}/g, m;
+    while ((m = re.exec(text))) {
+      var args = m[1];
+      if (/\|\s*(?:id|e)\s*=\s*\S/.test(args)) continue;
+      var add = "|id=" + id + (entry &amp;&amp; !/\|\s*entry\s*=/.test(args) ? "|entry=" + entry : "");
+      return { text: text.slice(0, m.index) + "{{R:sem-pro:SED" + args + add + "}}" + text.slice(m.index + m[0].length), changed: true };
+    }
+    return { text: text, changed: false };
+  }
+
+  var api = { fixText: fixText, parse: parse, standardise: standardise, rootify: rootify, setNotation: setNotation, addSedId: addSedId };
   if (typeof module !== "undefined" &amp;&amp; module.exports) module.exports = api; else root.WiktRespell = api;
 })(typeof window !== "undefined" ? window : this);
 
@@ -331,6 +344,20 @@ tr.done td.pg a { color: var(--muted); } tr.done { background: var(--done-bg); }
     if (mw.config.get("wgAction") !== "edit" || !/[?&amp;]respell=1(&amp;|$)/.test(location.search)) return;   // only for the links of the checklist page
     var $ta = $("#wpTextbox1");
     if (!$ta.length) { mw.notify("Respell: no plain edit box here (turn CodeMirror off).", { type: "error", autoHide: false }); return; }
+    var sid = /[?&amp;]sedid=(\d+)/.exec(location.search);                       // &amp;sedid=636&amp;sedentry=*ḳunpuḏ-: link the page's unlinked SED citation to SEDonline
+    if (sid) {
+      var se = /[?&amp;]sedentry=([^&amp;]+)/.exec(location.search), entry = se ? decodeURIComponent(se[1]) : "";
+      var rs = WiktRespell.addSedId($ta.textSelection("getContents"), sid[1], entry);
+      if (!rs.changed) { mw.notify("Respell: no unlinked SED reference on this page (already done?).", { type: "warn", autoHide: false }); return; }
+      $ta.textSelection("setContents", rs.text);
+      $("#wpSummary").val("link the Militarev &amp; Kogan SED reference to SEDonline (id=" + sid[1] + (entry ? ", " + entry : "") + ") (script-assisted)");
+      $("#wpMinoredit").prop("checked", true);
+      mw.notify("Respell: SED reference linked (id=" + sid[1] + "). Check the diff, then Save.", { autoHide: false });
+      setTimeout(function () { $("#wpDiff").trigger("click"); }, 400);
+      var f2 = document.getElementById("editform");
+      if (f2) f2.addEventListener("submit", function (e) { if (!(e.submitter &amp;&amp; e.submitter.id === "wpSave")) return; try { sessionStorage.setItem(CLOSE_FLAG, mw.config.get("wgPageName").replace(/_/g, " ")); } catch (e2) {} });
+      return;
+    }
     var rt = /[?&amp;]retarget=([^&amp;]+)/.exec(location.search), rtm = rt &amp;&amp; /^(PWS?|PS):(.+)>(.+)$/.exec(decodeURIComponent(rt[1])), one = {};   // &amp;retarget=PS:ṯ-ḳ-l>ṯḳl: point that one term elsewhere (root -> verb), nothing else
     if (rtm) one[rtm[1] + "\t" + rtm[2]] = rtm[3];
     var r = WiktRespell.fixText($ta.textSelection("getContents"), rtm ? one : MAP, !rtm);

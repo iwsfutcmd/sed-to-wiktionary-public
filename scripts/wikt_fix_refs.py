@@ -404,6 +404,20 @@ LOADER = r"""
     if (mw.config.get("wgAction") !== "edit" || !/[?&]respell=1(&|$)/.test(location.search)) return;   // only for the links of the checklist page
     var $ta = $("#wpTextbox1");
     if (!$ta.length) { mw.notify("Respell: no plain edit box here (turn CodeMirror off).", { type: "error", autoHide: false }); return; }
+    var sid = /[?&]sedid=(\d+)/.exec(location.search);                       // &sedid=636&sedentry=*ḳunpuḏ-: link the page's unlinked SED citation to SEDonline
+    if (sid) {
+      var se = /[?&]sedentry=([^&]+)/.exec(location.search), entry = se ? decodeURIComponent(se[1]) : "";
+      var rs = WiktRespell.addSedId($ta.textSelection("getContents"), sid[1], entry);
+      if (!rs.changed) { mw.notify("Respell: no unlinked SED reference on this page (already done?).", { type: "warn", autoHide: false }); return; }
+      $ta.textSelection("setContents", rs.text);
+      $("#wpSummary").val("link the Militarev & Kogan SED reference to SEDonline (id=" + sid[1] + (entry ? ", " + entry : "") + ") (script-assisted)");
+      $("#wpMinoredit").prop("checked", true);
+      mw.notify("Respell: SED reference linked (id=" + sid[1] + "). Check the diff, then Save.", { autoHide: false });
+      setTimeout(function () { $("#wpDiff").trigger("click"); }, 400);
+      var f2 = document.getElementById("editform");
+      if (f2) f2.addEventListener("submit", function (e) { if (!(e.submitter && e.submitter.id === "wpSave")) return; try { sessionStorage.setItem(CLOSE_FLAG, mw.config.get("wgPageName").replace(/_/g, " ")); } catch (e2) {} });
+      return;
+    }
     var rt = /[?&]retarget=([^&]+)/.exec(location.search), rtm = rt && /^(PWS?|PS):(.+)>(.+)$/.exec(decodeURIComponent(rt[1])), one = {};   // &retarget=PS:ṯ-ḳ-l>ṯḳl: point that one term elsewhere (root -> verb), nothing else
     if (rtm) one[rtm[1] + "\t" + rtm[2]] = rtm[3];
     var r = WiktRespell.fixText($ta.textSelection("getContents"), rtm ? one : MAP, !rtm);

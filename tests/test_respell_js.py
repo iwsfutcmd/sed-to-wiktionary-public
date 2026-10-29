@@ -150,3 +150,22 @@ console.log(JSON.stringify(box));
 
 if __name__ == "__main__":
     unittest.main(verbosity=1)
+
+
+@unittest.skipUnless(shutil.which("node"), "node is not installed")
+class SedIdSame(unittest.TestCase):
+    """addSedId() (in the browser) and add_sed_id() (scripts/wikt_sed_ids.py) give the same text, on the references found live and edge cases."""
+    def test_same(self):
+        import wikt_sed_ids as S
+        live = [r["ref"] for r in json.loads((ROOT / "data" / "wiktionary" / "sed_ref_ids.json").read_text(encoding="utf-8"))]
+        cases = [("x " + r + " y", "636", "*ḳunpuḏ-") for r in live] + [
+            ("{{R:sem-pro:SED|volume=2|pages=181–183, Nr. 133}}", "636", "*ḳunpuḏ-"),
+            ("{{R:sem-pro:SED|entry=*prm}}", "57", "*prm"),                                  # has an entry: only id=
+            ("{{R:sem-pro:SED|e=57}} {{R:sem-pro:SED}}", "9", ""),                           # the first one already links: the second gets it
+            ("{{R:sem-pro:SED|id=1}}", "9", "*x"), ("no reference", "9", "*x"), ("{{R:sem-pro:SED}}", "12", ""),
+        ]
+        code = ("const R=require(process.argv[1]);let s='';process.stdin.on('data',d=>s+=d).on('end',()=>{"
+                "console.log(JSON.stringify(JSON.parse(s).map(c=>{const r=R.addSedId(c[0],c[1],c[2]);return [r.text,r.changed];})));});")
+        out = subprocess.run(["node", "-e", code, str(ROOT / "scripts" / "respell_core.js")], input=json.dumps(cases), capture_output=True, text=True, check=True)
+        self.assertEqual(json.loads(out.stdout), [list(S.add_sed_id(t, i, e)) for t, i, e in cases])
+        self.assertEqual(S.add_sed_id("{{R:sem-pro:SED|e=57}} {{R:sem-pro:SED}}", "9")[0], "{{R:sem-pro:SED|e=57}} {{R:sem-pro:SED|id=9}}")
