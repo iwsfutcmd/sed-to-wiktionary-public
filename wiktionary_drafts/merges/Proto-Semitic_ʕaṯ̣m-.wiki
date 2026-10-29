@@ -1,0 +1,59 @@
+{{reconstructed}}
+==Proto-Semitic==
+{{etymon|sem-pro|id=bone}}
+
+===Noun===
+{{sem-noun|m|g2=f}}
+
+# [[bone]]
+
+====Inflection====
+Masculine:
+{{sem-decl-noun}}
+Feminine:
+{{sem-decl-noun|fpl=ʕaṯ̣m}}
+
+====Descendants====
+* East Semitic:
+** {{desc|akk|eṣemtum|alt=𒄊𒉻𒁺|tr=eṣemtum}}
+** {{desc|xeb|a-za-mu-um|t=bone}}
+* West Semitic:
+** Central Semitic:
+*** {{desc|ar|عَظْم|id=bone}} {{see desc}}
+*** Northwest Semitic:
+**** {{desc|arc|עַטְמָא|tr=ʿaṭmā}}
+***** {{desc|syc|ܥܰܛܡܳܐ|tr=ʿaṭmā}}
+***** {{desc|jpa|עטם|tr=ʕṭm|t=thigh of an animal}}
+***** {{desc|myz|ࡀࡈࡌࡀ|t=thigh, side, flank}}
+***** {{desc|aii|ܥܸܛܡܵܐ|tr=iṭmɔ|t=hip, thigh}}
+***** {{desc|hrt|-|tr=ʔaṭma|t=thigh}}
+**** Canaanite:
+***** {{desc|he|עֶצֶם|tr='étsem, ʿéṣem}}
+***** {{desc|phn|𐤏𐤑𐤌}}
+**** {{desc|uga|𐎓𐎑𐎎|ts=ʿaẓmu}}
+** Ethiopian Semitic:
+*** {{desc|am|አጥንት}}
+*** {{desc|gez|ዐፅም|ዐጽም|አጽም|tr1=ʕäṣ́m|tr2=ʕäṣm|tr3=ʔäṣm}}
+**** {{desc|am|አጽም|bor=1|unc=1|t=skeleton}}
+*** {{desc|ti|ዓጽሚ|tr=ʕaṣmi}}
+*** {{desc|tig|ዓጽም|tr=ʕaṣəm}}, {{l|tig|ዓጭም|tr=ʕač̣əm}}
+*** {{desc|agj|ሃጥም|tr=haṭəm}}
+*** {{desc|gft|-|tr=aṣmʷä}}
+*** {{desc|har|አጥ|tr=āṭ}}
+*** Gurage:
+**** {{desc|wle|አጥም|tr=aṭəm}}
+**** {{desc|zwa|አጥም|tr=aṭəm}}
+**** {{desc|sgw|አጥም|tr=aṭəm|q=Chaha, Ezha, Muher}}
+**** {{desc|mvz|አጥም|tr=aṭəm}}
+**** {{desc|gru|አጥም|tr=aṭəm|q=Gogot, Soddo}}
+** Modern South Arabian:
+*** {{desc|gdq|ʔāḏ̣əmēt|t=back}}
+*** {{desc|hss|ʔaḏ̣emét|t=back}}
+*** {{desc|shv|ʕóḏ̣úm|t=(of skin over a wound, a badly set bone) to turn into scar tissue}}
+
+===References===
+* [[w:Alexander Militarev|Alexander Militarev]]: ''Semitic etymology;'' entry [http://starling.rinet.ru/cgi-bin/response.cgi?single=1&basename=%2fdata%2fsemham%2fsemet&text_number=2012&root=config *ʕat_̣m-(at-)].
+*{{R:gez:Leslau-Comp.|page=58}}
+* {{R:sem-pro:SED|volume=I|id=44|entry=*ʕaṯ̣m(-at)-}}
+
+{{C|sem-pro|Anatomy}}
