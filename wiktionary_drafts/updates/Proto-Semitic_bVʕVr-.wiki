@@ -1,0 +1,45 @@
+{{reconstructed}}
+==Proto-Semitic==
+
+===Etymology===
+Reconstructed in Militarev & Kogan's ''Semitic Etymological Dictionary'' as {{m|sem-pro|*bVʕVr-}}. The SED notes that a cluster of semantically similar forms lacking the {{m|sem-pro|*ʕ}} (Akkadian {{m|akk|bīru}}, Mandaic {{m|myz|ࡁࡉࡓࡀ|tr=bira}}, and several Ethiopian Semitic forms such as Amharic {{m|am|በሬ|tr=bäre}}) may continue a separate, though probably related, root.
+
+===Noun===
+{{sem-noun|m}}
+
+# [[household]] [[animal]]
+# [[beast of burden]]
+
+====Inflection====
+{{sem-decl-noun}}
+
+====Descendants====
+* West Semitic:
+** Central Semitic:
+*** {{desc|ar|بَعِير|t=camel; beast of burden}}
+*** Northwest Semitic:
+**** {{desc|tmr|בְּעִירָא|tr=bəʕīrā|t=grazing animal, cattle}}
+**** {{desc|syc|ܒܥܝܪܐ|tr=bəʕīrā|t=cattle, beast of burden}}
+**** {{desc|aii|ܒܥܝܼܪܵܐ|tr=bîrâ|t=large cattle}}
+**** Canaanite:
+***** {{desc|hbo|בְּעִיר|tr=bəʕīr|t=livestock, cattle}}
+***** {{desc|sem-amm|𐤁𐤏𐤓|tr=bʕr|t=ox, beast of burden|unc=1}}
+*** Old South Arabian:
+**** {{desc|xsa|𐩨𐩲𐩧|tr=bʕr|t=cattle, head of cattle; camel}}
+**** {{desc|inm|𐩨𐩲𐩧|tr=bʕr|t=camel; head of cattle}}
+**** {{desc|xhd|𐩨𐩲𐩧|tr=bʕr|t=commercial livestock}}
+** Ethiopian Semitic:
+*** {{desc|gez|ብዕር|tr=bəʕər|t=ox, bull, horned cattle}}, {{l|gez|ብዕራ|tr=bəʕərā}}, {{l|gez|ብዕራይ|tr=bəʕərāy}}, {{l|gez|ብዕራዊ|tr=bəʕərāwi}}
+*** {{desc|tig|-|tr=bəʕrāy|t=ox, bull}}
+*** {{desc|ti|ብዕራይ|tr=bəʕray|t=ox, bull}}, {{l|ti|በዕራይ|tr=bäʕray}}
+** Modern South Arabian:
+*** {{desc|gdq|bəʕáyr|t=male camel}}
+*** {{desc|gdq|béyr|t=male camel}}
+*** {{desc|hss|beʕîr|t=male camel}}
+*** {{desc|sqt|beʕer|t=camel}}
+*** {{desc|sqt|baʕáhar|t=she-camel}}
+
+===References===
+* {{R:sem-pro:SED|volume=II|id=590|entry=*bVʕVr-}}
+
+{{C|sem-pro|Mammals}}

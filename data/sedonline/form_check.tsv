@@ -72,3 +72,9 @@ sed_key	entry	language	site_form	print_form	status	note
 2N:32	ʕalaḳ-	Arabic	ˁalaq-(at-)	ˁalaḳ(-at)-	differs	same word; written as the collective عَلَق and the singular عَلَقَة, both Wiktionary entries
 2N:32	ʕalaḳ-	Turoyo	ˁalḳo	ˁalḳo	differs	gloss only: print 'Blutegel' (leech); the site's ˁalḳe (filed as Syriac) is Turoyo per the print and is left out
 2N:32	ʕalaḳ-	Mehri	ˀāwḳáyt (pl. ˀālaḳtǝn)	ˀāwḳáyt (pl. ˀālaḳtən)	differs	plural moved out of the gloss into a note after the entry
+2N:182	paraš-	Arabic	faras-	faras-, farasat-	differs	print: faras- 'horse or mare', farasat- 'mare'; the page gives فَرَس 'horse, mare'
+2N:182	paraš-	Hadramitic	ˀfrs₁n	ˀfrs₁-n (pl.)	differs	print gloss 'Pferdeleiter' (horse leaders), a plural; the site has 'Pferd (horse)'
+2N:182	paraš-	Harari	färäz	färäz	differs	left out: the print, like the site's note, takes Harari and most Gurage forms in -z as loans from Cushito-Omotic
+2N:182	paraš-	Soqotri	férhim	fírehim	differs	print: fírehim 'fille, jeune fille' (LS 341), "probably to be identified ... with a meaning shift": given with unc=1
+2N:182	paraš-	Syriac	parrāšā	parrāšā	agree	print gloss 'eques' (horseman)
+2N:182	paraš-	Nabataean	prš	prš	agree	given in Nabataean script (Nbat); Wiktionary has no Nabataean code of its own, so arc with the label

@@ -102,7 +102,7 @@ def words(s):
 def ps_references(ety):
     """Proto-Semitic forms named in an etymology: {{inh|ar|sem-pro|*x}}, {{ety|ar|:inh|sem-pro:*x}}, {{der|..|sem-pro|*x}}, {{cog|sem-pro|*x}}."""
     out = []
-    for m in re.findall(r"(?<![\w:-])sem-pro[|:]\*?([^|}]+)", ety):                   # not {{R:sem-pro:SED}} (a reference template)
+    for m in re.findall(r"(?<![\w:-])sem-pro[|:]\*?([^|}]+)", ety) + re.findall(r"(?<![\w:-])sem-wes-pro[|:]\*([^|}<]+)", ety):     # not {{R:sem-pro:SED}}; PWS too
         m = re.sub(r"<[^>]*>", "", m).replace("<", "").replace(">", "")     # also the closing >> of a nested <ety:inh<sem-pro:*x>>
         for alt in re.split(r"\s+/\s+|,\s*", m):                                    # "[[*karr-]] / [[*kirr-]]": alternatives, each a form
             alt = re.sub(r"\[\[(?:[^]|]*\|)?([^]]*)\]\]", r"\1", alt).strip().lstrip("*")
@@ -184,7 +184,8 @@ def check_files(files, pages=None):
     out = {}
     for f in files:
         text = Path(f).read_text(encoding="utf-8")
-        title = Path(f).name[len("Proto-Semitic_"):-len(".wiki")]
+        name = Path(f).name
+        title = name[len("Proto-West_Semitic_" if name.startswith("Proto-West_Semitic_") else "Proto-Semitic_"):-len(".wiki")]
         ents = entries(text)
         for code, term, params in ents:
             t = term_title(code, term, params)
@@ -197,7 +198,7 @@ def check_files(files, pages=None):
 
 def main(argv):
     drafts = ROOT / "wiktionary_drafts"
-    files = [Path(a) for a in argv if not a.startswith("--")] or sorted(drafts.glob("Proto-Semitic_*.wiki")) + sorted((drafts / "done").glob("Proto-Semitic_*.wiki"))
+    files = [Path(a) for a in argv if not a.startswith("--")] or sorted(p for d in (drafts, drafts / "done") for g in ("Proto-Semitic_*.wiki", "Proto-West_Semitic_*.wiki") for p in d.glob(g))
     if "--fetch" in argv:
         want = [term_title(c, t, p) for f in files for c, t, p in entries(f.read_text(encoding="utf-8"))]
         left = fetch([w for w in want if w])

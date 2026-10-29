@@ -58,6 +58,7 @@ def rec_of(text):
     m = re.search(r"\{\{R:sem-pro:SED\|(?:volume=(I+)\|)?id=(\d+)\|entry=([^}]*)\}\}", text)
     return (m.group(1) or "", m.group(2), m.group(3)) if m else None
 def norm(s):
+    s = re.sub(r"s([₁₂₃])", lambda m: "s" + "¹²³"["₁₂₃".index(m.group(1))], s)      # Old South Arabian s₁ as Wiktionary's s¹
     s = U.normalize("NFC", s).replace("ˀ", "ʔ").replace("ˁ", "ʕ").replace("ḳ", "q").replace("ǝ", "ə").replace("γ", "ɣ").replace("ŝ", "ś").lower()
     return re.sub(r"[\s*\-()]", "", s)
 

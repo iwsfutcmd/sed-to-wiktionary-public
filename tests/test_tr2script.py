@@ -70,6 +70,9 @@ class Abjad(unittest.TestCase):
         self.assertEqual(abjad.convert("arc-old", "pgr"), "𐤐𐤂𐤓")           # Old Aramaic: Phoenician letters
         self.assertEqual(abjad.convert("arc-off", "gldʔ"), "𐡂𐡋𐡃𐡀")         # Official Aramaic: Imperial Aramaic
         self.assertEqual(abjad.convert("arc-pal", "nbl"), "\U0001086E\U00010861\U0001086B")    # Palmyrene medial nun
+        self.assertEqual(abjad.convert("arc-nab", "prš"), "\U00010897\U0001089A\U0001089C")    # Nabataean, plain (not final) shin
+        self.assertEqual(abjad.convert("xsa", "frs₁"), "𐩰𐩧𐩪")                                 # Old South Arabian s₁ = 𐩪 (Wiktionary s¹)
+        self.assertEqual(abjad.convert("sem-srb", "ˀfrs₁n"), "𐩱𐩰𐩧𐩪𐩬")
         self.assertEqual(abjad.convert("arc-pal", "bn"), "\U00010861\U0001086D")               # ... and final nun
         self.assertEqual(abjad.convert("sam", "ṭabyā"), "ࠈࠁࠉࠀ")   # final ā -> alaf
     def test_refuses_when_matres_would_be_needed(self):

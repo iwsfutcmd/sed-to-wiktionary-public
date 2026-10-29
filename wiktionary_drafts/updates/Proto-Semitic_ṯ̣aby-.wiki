@@ -1,0 +1,40 @@
+{{reconstructed}}
+==Proto-Semitic==
+
+===Etymology===
+Reconstructed in Militarev & Kogan's ''Semitic Etymological Dictionary'' with an optional feminine suffix {{m|sem-pro|*-at-}}: {{m|sem-pro|*ṯ̣aby(-at)-}}.
+
+===Noun===
+{{sem-noun|m|g2=f}}
+
+# [[gazelle]]
+
+====Inflection====
+{{sem-decl-noun}}
+
+====Descendants====
+* East Semitic:
+** {{desc|akk|ṣabītum|alt=𒈦𒁕|tr=ṣabītum|t=gazelle}}
+** {{desc|xeb|ṣa-ba-a-tum|t=gazelle}}
+* West Semitic:
+** Central Semitic:
+*** {{desc|ar|ظَبْي|t=gazelle}}
+*** Northwest Semitic:
+**** Old {{desc|arc|𐤑𐤁𐤉|tr=ṣby|t=gazelle|sc=Phnx}}
+**** Official {{desc|arc|𐡈𐡁𐡉|tr=ṭby|t=gazelle|sc=Armi}}
+**** {{desc|jpa|טבי|tr=ṭby|t=deer}}
+**** {{desc|tmr|טביא|tr=ṭabyā|t=deer}}
+**** {{desc|sam|ࠈࠁࠉ|tr=ṭby|t=deer}}
+**** {{desc|syc|ܛܒܝܐ|tr=ṭabyā|t=gazelle, deer}}
+**** {{desc|myz|ࡈࡀࡁࡉࡀ|t=gazelle, deer}}
+**** Canaanite:
+***** {{desc|hbo|צְבִי|tr=ṣəbī|t=gazelle}}
+**** {{desc|uga|𐎑𐎁𐎊|t=gazelle}}
+*** Old South Arabian:
+**** {{desc|xsa|𐩮𐩨𐩺|tr=ṣby|t=gazelle}}
+**** {{desc|xhd|𐩮𐩨𐩺|tr=ṣby|t=gazelle}}
+
+===References===
+* {{R:sem-pro:SED|volume=II|id=624|entry=*ṯ̣aby(-at)-}}
+
+{{C|sem-pro|Mammals}}

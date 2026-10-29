@@ -22,10 +22,10 @@ ETH = ("West Semitic", "Ethiopian Semitic"); GUR = ETH + ("Gurage",); MSA = ("We
 # SEDonline language -> (Wiktionary code, tree path, label before the entry)
 LANG = {"Akkadian": ("akk", EAST, ""), "Ebla": ("xeb", EAST, ""), "Arabic": ("ar", CS, ""),
         "Old Aramaic": ("arc", NW, "Old "), "Official Aramaic": ("arc", NW, "Official "), "Biblical Aramaic": ("arc", NW, "Biblical "),
-        "Palmyrean": ("arc", NW, "Palmyrene "), "Jewish Palestinian Aramaic": ("jpa", NW, ""), "Jewish Babylonian Aramaic": ("tmr", NW, ""),
+        "Palmyrean": ("arc", NW, "Palmyrene "), "Nabataean": ("arc", NW, "Nabataean "), "Jewish Palestinian Aramaic": ("jpa", NW, ""), "Jewish Babylonian Aramaic": ("tmr", NW, ""),
         "Samaritan": ("sam", NW, ""), "Syriac": ("syc", NW, ""), "Mandaic": ("myz", NW, ""), "Turoyo": ("tru", NW, ""), "Maalula": ("amw", NW, ""), "Assyrian Neo-Aramaic": ("aii", NW, ""), "Mlaḥso": ("lhs", NW, ""), "Jilu": ("aii", NW, ""),
         "Christian Palestinian Aramaic": ("arc-cpa", NW, ""), "Hebrew": ("hbo", CAN, ""), "Phoenician": ("phn", CAN, ""), "Ugaritic": ("uga", NW, ""), "Ammonite": ("sem-amm", CAN, ""),
-        "Sabaic": ("xsa", OSA, ""), "Minaean": ("inm", OSA, ""), "Hadramitic": ("sem-srb", OSA, "Hadramitic "), "Geez": ("gez", ETH, ""), "Tigre": ("tig", ETH, ""),
+        "Sabaic": ("xsa", OSA, ""), "Qatabanian": ("xqt", OSA, ""), "Minaean": ("inm", OSA, ""), "Hadramitic": ("xhd", OSA, ""), "Geez": ("gez", ETH, ""), "Tigre": ("tig", ETH, ""),
         "Tigrinya": ("ti", ETH, ""), "Amharic": ("am", ETH, ""), "Argobba": ("agj", ETH, ""), "Harari": ("har", ETH, ""), "Gafat": ("gft", ETH, ""),
         "Selti": ("stv", GUR, ""), "Wolane": ("wle", GUR, ""), "Zway": ("zwa", GUR, ""), "Soddo": ("gru", GUR, ""), "Gogot": ("gru", GUR, ""),
         "Chaha": ("sgw", GUR, ""), "Ezha": ("sgw", GUR, ""), "Endegen": ("sgw", GUR, ""), "Ennemor": ("sgw", GUR, ""), "Gyeto": ("sgw", GUR, ""),
@@ -53,6 +53,7 @@ CURATED = {
  ("arc", "tḳl"): "תקל", ("jpa", "tḳl"): "תקל", ("tmr", "tḳl"): "תקל", ("syc", "tḳl"): "ܬܩܠ", ("arc-cpa", "tḳl"): "ܬܩܠ", ("myz", "tḳl"): "ࡕࡒࡋ",
  ("ar", "ˁalaḳ"): "عَلَق", ("ar", "ˁalaḳa"): "عَلَقَة", ("hbo", "ˁălūḳā"): "עֲלוּקָה", ("syc", "ˁalūḳā"): "ܥܠܘܩܐ",   # *ʕalaḳ-: as on Wiktionary (علق coll., علقة, עלוקה)
  ("tru", "ˁalḳo"): "ܥܠܩܐ", ("har", "ēḳti"): "ኤቅቲ",      # Turoyo in Syriac script (as ܒܩܐ); Harari initial ē is ኤ (the converter leaves initial vowels alone)
+ ("hbo", "pārāš"): "פָּרָשׁ",      # *paraš-: as on Wiktionary (פרש)
  ("hbo", "šəˀēr"): "שְׁאֵר", ("uga", "šˀir"): "𐎌𐎛𐎗",          # both as on Wiktionary's Akkadian šīrum page
 }
 def api(**q):
@@ -94,7 +95,9 @@ def akkadian(form):
     cun = cuneiform.convert(n) if n else None
     return lemma, cun
 
+SUPER = str.maketrans("₁₂₃", "¹²³")      # Old South Arabian s₁ s₂ s₃: Wiktionary's transliteration writes s¹ s² s³ (not Eblaite sign indices: ku₁₇)
 def tr_of(f):
+    f = re.sub(r"s([₁₂₃])(?![₀-₉])", lambda m: "s" + m.group(1).translate(SUPER), f)
     return U.normalize("NFC", f).replace("ˀ", "ʔ").replace("ˁ", "ʕ").replace("ḳ", "q").replace("ǝ", "ə").replace("γ", "ɣ").replace("ŝ", "ś")      # descendants: Wiktionary's tr uses q (PS titles keep ḳ)
 TRANSLATE = {"im Kindbett liegen": "to be in childbed", "partorire (to give birth)": "to give birth", "accouché": "woman who has given birth", "the sacrup or rump of a butchered animal": "the sacrum or rump of a butchered animal", "Hüfte": "hip", "Wanzen (bugs)": "bugs", "Mücke (mosquito)": "mosquito", "guérir": "to heal"}
 def script_for(code, form):
@@ -108,7 +111,7 @@ def script_for(code, form):
     return None, None
 # Epigraphic Aramaic in its period script, as other Wiktionary editors cite it (Old *ṯalāṯ- sc=Phnx; Official baʕl-, šidṯ- 𐡁𐡏𐡋, 𐡔𐡕𐡀):
 # SEDonline language -> (abjad table, Wiktionary script code). Biblical, Jewish and later Aramaic stay in the square (Hebrew) script.
-ARC_SCRIPT = {"Old Aramaic": ("arc-old", "Phnx"), "Official Aramaic": ("arc-off", "Armi"), "Palmyrean": ("arc-pal", "Palm")}
+ARC_SCRIPT = {"Old Aramaic": ("arc-old", "Phnx"), "Official Aramaic": ("arc-off", "Armi"), "Palmyrean": ("arc-pal", "Palm"), "Nabataean": ("arc-nab", "Nbat")}
 def one(code, form, notes, first, gloss, lang):
     """One {{desc}} (first variant) or {{l}} (further variants) with the best script available."""
     head = "desc" if first else "l"
@@ -359,6 +362,39 @@ PAGES = {   # title -> SEDonline reconstruction id and page content
                       dict(lang="Harsusi", form="ẑebbēt", gloss="female monitor lizard"),
                       dict(lang="Jibbali", form="ẓ̂ɔb", gloss="monitor lizard"),
                       dict(lang="Jibbali", form="ẓ̂ēt", gloss="female monitor lizard")]),
+ # SED II no. 182 *paraš- ◊ *paras- 'horse' (pp. 237-9). Filed as Proto-West Semitic, as SEDonline (613) does: no Akkadian, and none in Ugaritic, which
+ # the SED thinks "probably not accidental"; Amharic ፈረስ already links sem-wes-pro *paraš-. (Wiktionary's two links to Proto-Semitic *paraš-, from
+ # Arabic فرس and Assyrian ܦܪܫ, are for the verb 'to separate', a different word.) Words from the PRINTED entry; left out as the SED directs: Harari färäz
+ # and the Gurage forms in -z ("rather loans from similar Cushito-Omotic terms"), and Ugaritic prs (a dry measure, "no reason to connect").
+ "paraš-": dict(rec="613", vol="II", entry="*paraš-", print_sourced=True, level="PWS", pos="{{head|sem-wes-pro|noun|g=m}}", infl=True,
+                defs=["[[horse]]"], cat="{{C|sem-wes-pro|Horses}}",
+                etym="Reconstructed in Militarev & Kogan's ''Semitic Etymological Dictionary'' as {{m|sem-wes-pro||*paraš-}}, with a variant {{m|sem-wes-pro||*paras-}}. "
+                     "There is no trace of it in Akkadian or, notably, in Ugaritic. In Hebrew and Aramaic it mostly means “horseman”; according to the SED the Hebrew "
+                     "plural shows that {{m|hbo|פָּרָשׁ}} had been replaced by a derived {{m|sem-wes-pro||*parrāš-}} “horseman”. The Ethiopian Semitic and Modern South "
+                     "Arabian words are, following Sima, native rather than borrowed, while Harari {{m|har|ፈረዝ|tr=färäz}} and most Gurage forms in ''-z'' are loans "
+                     "from Cushitic or Omotic. Most of the similar words for “horse” in Chadic and Cushitic are thought to be borrowed from Arabic and Ethiopian Semitic.",
+                words=[dict(lang="Hebrew", form="pārāš", gloss="team of horses, horses for a chariot; horseman"),
+                       dict(lang="Old Aramaic", form="prš", gloss="horseman, cavalryman"),
+                       dict(lang="Official Aramaic", form="prš", gloss="horseman, cavalryman"),
+                       dict(lang="Nabataean", form="prš", gloss="horseman, cavalryman"),
+                       dict(lang="Palmyrean", form="prš", gloss="horseman, cavalryman"),
+                       dict(lang="Jewish Palestinian Aramaic", form="prš", gloss="rider"),
+                       dict(lang="Jewish Babylonian Aramaic", form="parrāšā", gloss="horseman"),
+                       dict(lang="Syriac", form="parrāšā", gloss="horseman"),
+                       dict(lang="Mandaic", form="paraša", gloss="mounted soldier, horseman"),
+                       dict(lang="Arabic", form="faras", gloss="horse, mare"),
+                       dict(lang="Sabaic", form="frs₁", gloss="horse, mare; cavalryman, cavalry"),
+                       dict(lang="Qatabanian", form="frs₁", gloss="horse"),
+                       dict(lang="Hadramitic", form="ˀfrs₁n", gloss="horse leaders (plural)"),
+                       dict(lang="Geez", form="faras", gloss="horse"),
+                       dict(lang="Tigre", form="färäs", gloss="horse"),
+                       dict(lang="Tigrinya", form="färäs", gloss="horse, steed"),
+                       dict(lang="Amharic", form="färäs", gloss="horse, stallion"),
+                       dict(lang="Soddo", form="färäs", gloss="horse"),
+                       dict(lang="Mehri", form="fərháyn", gloss="mare; horse"),
+                       dict(lang="Harsusi", form="ferhīn", gloss="mare; horse"),
+                       dict(lang="Jibbali", form="ferhín", gloss="mare; horse"),
+                       dict(lang="Soqotri", form="fírehim", gloss="girl, young girl", unc=True)]),
 }
 # SED has no printed entry for this verb: SEDonline (rec 2030, source HALOT 1642) alone reconstructs it, so there is no volume= and the page is flagged in data/sedonline/form_check.tsv.
 PAGES["ṯḳl"] = dict(rec="2030", entry="*ṯḳl", site_only=True, codes={"Hebrew": "he"},

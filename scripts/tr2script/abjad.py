@@ -3,7 +3,7 @@
   sam   Samaritan script (Samaritan Aramaic and Hebrew)
   he    Hebrew / Aramaic square script (also Biblical Aramaic, Jewish Aramaic): unpointed; final forms ך ם ן ף ץ
   syc   Syriac (Estrangela letters, unpointed)
-  armi  Imperial Aramaic (Official Aramaic)   palm  Palmyrene (final nun)   oarc  Old Aramaic, in Phoenician letters
+  armi  Imperial Aramaic (Official Aramaic)   palm  Palmyrene (final nun)   oarc  Old Aramaic, in Phoenician letters   nbat  Nabataean
   uga   Ugaritic cuneiform alphabet          phn   Phoenician          osa   Old South Arabian (Sabaic, Minaic, Qatabanic, Hadramitic)
 
 Only the consonant skeleton is written: vowels are dropped, a doubled consonant is written once (no script here marks gemination; only letters adjacent in the
@@ -36,6 +36,11 @@ _HE22 = [lat for lat, _ in PAIRS["he"] if lat != "ś"]
 PAIRS["armi"] = [(lat, chr(0x10840 + i)) for i, lat in enumerate(_HE22)] + [("ś", chr(0x10854))]
 PAIRS["palm"] = [(lat, chr(0x10860 + i + (i >= 13))) for i, lat in enumerate(_HE22)] + [("ś", chr(0x10875))]
 PAIRS["oarc"] = PAIRS["phn"] + [("ś", "𐤔")]
+# Nabataean, U+10880 .. U+1089E: the 22 letters in the Hebrew order, with separate final forms for ʾ b h y k l n š, which are left aside
+# (their use varies by period and inscription; the plain forms are the citation forms)
+_NBAT = [0x10881, 0x10883, 0x10884, 0x10885, 0x10887, 0x10888, 0x10889, 0x1088A, 0x1088B, 0x1088D, 0x1088F,
+         0x10891, 0x10892, 0x10894, 0x10895, 0x10896, 0x10897, 0x10898, 0x10899, 0x1089A, 0x1089C, 0x1089D]
+PAIRS["nbat"] = [(lat, chr(c)) for lat, c in zip(_HE22, _NBAT)] + [("ś", chr(0x1089C))]
 # Samaritan: the 22 letters in the same order as the Hebrew alphabet, U+0800 .. U+0815
 PAIRS["sam"] = [(lat, chr(0x800 + i)) for i, (lat, _) in enumerate(l for l in PAIRS["he"] if l[0] != "ś")]
 TABLES = {k: dict(v) for k, v in PAIRS.items()}
@@ -43,10 +48,11 @@ FINAL = {"כ": "ך", "מ": "ם", "נ": "ן", "פ": "ף", "צ": "ץ"}
 PALM_FINAL_NUN = (chr(0x1086E), chr(0x1086D))
 # Wiktionary language code -> table
 CODES = {"he": "he", "sam": "sam", "hbo": "he", "arc": "he", "jpa": "he", "tmr": "he", "syc": "syc", "uga": "uga", "phn": "phn", "xsa": "osa", "sem-srb": "osa",
-         "inm": "osa", "xqt": "osa", "sem-amm": "phn",
-         "arc-old": "oarc", "arc-off": "armi", "arc-pal": "palm"}      # Aramaic varieties by period script (not Wiktionary codes: all are arc)
-ARAMAIC = ("he", "sam", "syc", "armi", "palm", "oarc")                   # orthography rules shared by the Aramaic/Hebrew-type scripts
-SRC = {"ˀ": "ʾ", "ʔ": "ʾ", "ʼ": "ʾ", "ˁ": "ʿ", "ʕ": "ʿ", "ʻ": "ʿ", "ḳ": "q", "ṯ̣": "ẓ", "ḏ̣": "ẓ", "ŝ": "ś"}
+         "inm": "osa", "xqt": "osa", "xhd": "osa", "sem-amm": "phn",
+         "arc-old": "oarc", "arc-off": "armi", "arc-pal": "palm", "arc-nab": "nbat"}      # Aramaic varieties by period script (not Wiktionary codes: all are arc)
+ARAMAIC = ("he", "sam", "syc", "armi", "palm", "oarc", "nbat")                   # orthography rules shared by the Aramaic/Hebrew-type scripts
+SRC = {"s₁": "s", "s₂": "š", "s₃": "ś",      # Old South Arabian sibilants, as Wiktionary's s¹ s² s³ (𐩪 𐩦 𐩯)
+       "ˀ": "ʾ", "ʔ": "ʾ", "ʼ": "ʾ", "ˁ": "ʿ", "ʕ": "ʿ", "ʻ": "ʿ", "ḳ": "q", "ṯ̣": "ẓ", "ḏ̣": "ẓ", "ŝ": "ś"}
 VOWEL = "aeiouāēīōūəǝ"
 MATRES_RISK = re.compile("[īūōuo]")      # vowels these orthographies often write with y/w: the bare skeleton may be wrong
 
