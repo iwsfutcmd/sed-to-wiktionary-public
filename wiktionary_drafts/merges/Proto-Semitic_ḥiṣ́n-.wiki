@@ -1,5 +1,4 @@
 {{reconstructed}}
-{{original research}}
 ==Proto-Semitic==
 
 ===Noun===
@@ -22,7 +21,7 @@
 *** Northwest Semitic:
 **** {{desc|arc|-}}
 ****: {{desc|syc|ܚܢܐ|tr=ḥannā}}
-****: {{desc|tmr|-|tr=ḥēnā|t=lap, bosom}}
+****: {{desc|jpa|חנא|tr=ḥēnā|t=lap, bosom}}
 **** Canaanite
 ***** {{desc|he|חֹצֶן|tr=ħóṣen}}
 ** Ethiopian Semitic:
