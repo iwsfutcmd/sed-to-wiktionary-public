@@ -1,0 +1,52 @@
+{{reconstructed}}
+==Proto-Semitic==
+
+===Etymology===
+{{etymon|sem-pro|id=tooth|:inh|afa-pro:-}}
+From {{inh|sem-pro|afa-pro|-}}. Cognate with {{cog|ber-pro|*a-sen}} and {{cog|plj|šĩn}}.
+
+===Noun===
+{{sem-noun|f}}
+
+# [[tooth]]
+
+====Inflection====
+{{sem-decl-noun}}
+{{sem-decl-noun|fpl=šinn}}
+
+====Descendants====
+* East Semitic:
+** {{desc|akk|šinnum|alt=𒅗|tr=šinnum}}
+** {{desc|xeb|𒋛𒉡𒌝|tr=si-nu-um|ts=šinnum|𒋛𒈾𒌈|ts2=šinnātum|tr2=si-na-tum}}
+* West Semitic:
+** Central Semitic:
+*** {{desctree|ar|سِنّ}}
+*** Northwest Semitic:
+**** {{desc|arc|שִנָא|tr=šinā’}}
+***** {{desc|syc|sc=Syrc|ܫܺܢܳܐ|tr=šinā’}}
+***** {{desc|jpa|שן|tr=šn}}
+***** {{desc|myz|ࡔࡉࡍࡀ}}
+**** Canaanite:
+***** {{desc|hbo|שֵׁן|tr=šēn}}
+****** {{desc|he-IL|שֵׁן|tr=shén|bor=1}}
+**** {{desc|uga|𐎌𐎐|ts=šinnu}}
+** Ethiopian Semitic:
+*** {{desc|ti|ስኒ፟}}
+*** {{desc|agj|ስን|tr=sǝn}}
+*** {{desc|gez|ስን}}
+*** {{desc|har|ሲን}}
+*** {{desc|gft|ስነ|tr=sənä}}
+*** Gurage:
+**** {{desc|stv|ኢስን|tr=isn}}
+**** {{desc|wle|እስን|tr=əsən}}
+**** {{desc|zwa|ስን|tr=sən}}
+**** {{desc|gru|ስን|tr=sənn|q=Gogot, Soddo}}
+**** {{desc|sgw|ስን|tr=sən|q=Chaha}}, {{l|sgw|ስን|tr=sənn|q=Ezha, Muher}}, {{l|sgw|ሽን|tr=šən|q=Endegen, Ennemor, Gyeto}}
+**** {{desc|mvz|ስን|tr=sənn}}
+** Modern South Arabian:
+*** {{desc|shv|šnin}}
+
+===References===
+* {{R:sem-pro:SED|volume=I|id=64|entry=*šinn-}}
+
+{{C|sem-pro|Anatomy}}

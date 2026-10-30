@@ -1,0 +1,56 @@
+{{reconstructed}}
+==Proto-Semitic==
+{{etymon|sem-pro|id=head}}
+
+===Noun===
+{{sem-noun|m}}
+
+# [[head]]
+
+====Inflection====
+{{sem-decl-noun}}
+
+====Descendants====
+* East Semitic:
+** {{desc|akk|rēšum|alt=𒊕|tr=rēšum}}
+** {{desc|xeb|𒌷𒉈|tr=rí-še<sub>6</sub> /riʔši/ [URU.NE]}}
+* West Semitic:
+** Central Semitic:
+*** {{desctree|ar|رَأْس}}
+*** Northwest Semitic:
+**** {{desctree|arc|רֵישָׁא|tr=rēšā}}
+***** {{desc|arc-imp|𐡓𐡀𐡔}}
+***** {{desc|arc-nab|𐢚𐢍𐢜|tr=ryš}}
+***** {{desc|arc-pal|𐡴𐡵}}
+***** {{desc|jpa|ריש|tr=ryš}}
+***** {{desc|myz|ࡓࡉࡔࡀ}}
+***** {{desc|amw|raiša}}
+***** {{desc|hrt|-|tr=reša}}
+**** Canaanite:
+***** {{desc|he|רֹאשׁ|tr=rosh, rōʾš|רָאשִׁים|g2=p|tr2=rashím, rāʾšîm|רֵאשִׁית|t3=beginning|tr3=reshít, rēʾšîṯ|רִאשׁוֹן|t4=first|tr4=rishón, riʾšôn}}
+***** {{desc|obm|𐤓𐤔}}
+***** {{desc|phn|𐤓𐤀𐤔}}
+**** {{desc|uga|𐎗𐎛𐎌|ts=raʾšu}}
+*** Old South Arabian:
+**** {{desc|xqt|𐩧𐩱𐩪}}
+**** {{desc|xsa|𐩧𐩱𐩪}}
+** Ethiopian Semitic:
+*** {{desc|am|ራስ}}
+*** {{desc|gez|ርእስ}}
+*** {{desc|tig|ረኣስ}}
+*** {{desc|ti|ርእሲ}}
+*** {{desc|har|ኡሩስ|tr=urūs}}
+** Modern South Arabian:
+*** {{desc|gdq|ḥə-rōh}}
+*** {{desc|hss|ḥé-rih}}, {{l|hss|ḥe-rīh}}
+*** {{desc|shv|rēš}}
+*** {{desc|sqt|réy}} (plural ''ʔírʔeš'')
+
+===References===
+* {{R:sem-pro:GC}}
+* {{R:sem-pro:Huehnergard 2019}}
+* {{R:sem-pro:SED|volume=I|id=24|entry=*raʔ(i)š-}}
+
+[[ca:Viccionari:Protosemític/raʾš-]]
+
+{{C|sem-pro|Body parts}}

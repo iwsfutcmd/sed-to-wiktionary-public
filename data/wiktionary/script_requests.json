@@ -13,42 +13,6 @@
  {
   "language": "Akkadian",
   "code": "akk",
-  "page": "Reconstruction:Proto-Turkic/baltu",
-  "template": "{{cog|akk||tr=pāltu|t=two-headed battle axe}}",
-  "name": "cog",
-  "tr": "pāltu",
-  "ts": false,
-  "gloss": "two-headed battle axe",
-  "new": "{{cog|akk|pāltu|t=two-headed battle axe}}",
-  "how": "Latin script is the standard for this language: the transliteration becomes the term"
- },
- {
-  "language": "Akkadian",
-  "code": "akk",
-  "page": "Reconstruction:Proto-Semitic/batūl-",
-  "template": "{{desc|akk|tr=batūlu|g=f}}",
-  "name": "desc",
-  "tr": "batūlu",
-  "ts": false,
-  "gloss": "",
-  "new": "{{desc|akk|batūlu|g=f}}",
-  "how": "Latin script is the standard for this language: the transliteration becomes the term"
- },
- {
-  "language": "Akkadian",
-  "code": "akk",
-  "page": "jkꜣnꜣ",
-  "template": "{{cog|akk||ts=agannu||large bowl of copper or silver}}",
-  "name": "cog",
-  "tr": "agannu",
-  "ts": true,
-  "gloss": "large bowl of copper or silver",
-  "new": "{{cog|akk|agannu||large bowl of copper or silver}}",
-  "how": "Latin script is the standard for this language: the transliteration becomes the term"
- },
- {
-  "language": "Akkadian",
-  "code": "akk",
   "page": "jkꜣnꜣ",
   "template": "{{m|akk|tr=a-ku-nu|ts=akūnu}}",
   "name": "m",
@@ -60,42 +24,6 @@
  {
   "language": "Akkadian",
   "code": "akk",
-  "page": "Reconstruction:Proto-West Semitic/katip-",
-  "template": "{{cog|akk||tr=katappātu|t=a certain part of an animal's breast, the sternum or some ribs}}",
-  "name": "cog",
-  "tr": "katappātu",
-  "ts": false,
-  "gloss": "a certain part of an animal's breast, the sternum or some ribs",
-  "new": "{{cog|akk|katappātu|t=a certain part of an animal's breast, the sternum or some ribs}}",
-  "how": "Latin script is the standard for this language: the transliteration becomes the term"
- },
- {
-  "language": "Akkadian",
-  "code": "akk",
-  "page": "Reconstruction:Proto-West Semitic/katip-",
-  "template": "{{m|akk||tr=katappû|t=bridle, halter}}",
-  "name": "m",
-  "tr": "katappû",
-  "ts": false,
-  "gloss": "bridle, halter",
-  "new": "{{m|akk|katappû|t=bridle, halter}}",
-  "how": "Latin script is the standard for this language: the transliteration becomes the term"
- },
- {
-  "language": "Akkadian",
-  "code": "akk",
-  "page": "Reconstruction:Proto-West Semitic/katip-",
-  "template": "{{m|akk||tr=katappum|t=being of a certain kind of material}}",
-  "name": "m",
-  "tr": "katappum",
-  "ts": false,
-  "gloss": "being of a certain kind of material",
-  "new": "{{m|akk|katappum|t=being of a certain kind of material}}",
-  "how": "Latin script is the standard for this language: the transliteration becomes the term"
- },
- {
-  "language": "Akkadian",
-  "code": "akk",
   "page": "mry",
   "template": "{{cog|akk||tr=ma-a-ia}}",
   "name": "cog",
@@ -103,30 +31,6 @@
   "ts": false,
   "gloss": "",
   "why": "a syllabic spelling, not the word"
- },
- {
-  "language": "Akkadian",
-  "code": "akk",
-  "page": "Reconstruction:Proto-Semitic/paḥal-",
-  "template": "{{desc|akk||tr=paḫallu|t=inner thigh}}",
-  "name": "desc",
-  "tr": "paḫallu",
-  "ts": false,
-  "gloss": "inner thigh",
-  "new": "{{desc|akk|paḫallu|t=inner thigh}}",
-  "how": "Latin script is the standard for this language: the transliteration becomes the term"
- },
- {
-  "language": "Akkadian",
-  "code": "akk",
-  "page": "Reconstruction:Proto-Iranian/piθwáh",
-  "template": "{{desc|akk|tr=pitpi|bor=1}}",
-  "name": "desc",
-  "tr": "pitpi",
-  "ts": false,
-  "gloss": "",
-  "new": "{{desc|akk|pitpi|bor=1}}",
-  "how": "Latin script is the standard for this language: the transliteration becomes the term"
  },
  {
   "language": "Akkadian",
@@ -153,18 +57,6 @@
  {
   "language": "Akkadian",
   "code": "akk",
-  "page": "Zerbis",
-  "template": "{{cog|akk|tr=Zabu}}",
-  "name": "cog",
-  "tr": "Zabu",
-  "ts": false,
-  "gloss": "",
-  "new": "{{cog|akk|Zabu}}",
-  "how": "Latin script is the standard for this language: the transliteration becomes the term"
- },
- {
-  "language": "Akkadian",
-  "code": "akk",
   "page": "Reconstruction:Proto-Semitic/ʕapar-",
   "template": "{{desc|akk|tr=ḫa-pa-ru|bor=1}}",
   "name": "desc",
@@ -187,30 +79,6 @@
  {
   "language": "Akkadian",
   "code": "akk",
-  "page": "балта",
-  "template": "{{der|kk|akk||tr=pāltu|t=two-headed battle axe}}",
-  "name": "der",
-  "tr": "pāltu",
-  "ts": false,
-  "gloss": "two-headed battle axe",
-  "new": "{{der|kk|akk|pāltu|t=two-headed battle axe}}",
-  "how": "Latin script is the standard for this language: the transliteration becomes the term"
- },
- {
-  "language": "Akkadian",
-  "code": "akk",
-  "page": "խիճ",
-  "template": "{{noncog|akk|tr=ḫiṣṣu|t=rubble, gravel}}",
-  "name": "noncog",
-  "tr": "ḫiṣṣu",
-  "ts": false,
-  "gloss": "rubble, gravel",
-  "new": "{{noncog|akk|ḫiṣṣu|t=rubble, gravel}}",
-  "how": "Latin script is the standard for this language: the transliteration becomes the term"
- },
- {
-  "language": "Akkadian",
-  "code": "akk",
   "page": "խոփ",
   "template": "{{ncog|akk|tr=ḫepû, ḫapû|t=to break}}",
   "name": "ncog",
@@ -218,18 +86,6 @@
   "ts": false,
   "gloss": "to break",
   "why": "several forms or a note in the transliteration"
- },
- {
-  "language": "Akkadian",
-  "code": "akk",
-  "page": "կարծեմ",
-  "template": "{{cog|akk|tr=karṣu|t=slander, accusation}}",
-  "name": "cog",
-  "tr": "karṣu",
-  "ts": false,
-  "gloss": "slander, accusation",
-  "new": "{{cog|akk|karṣu|t=slander, accusation}}",
-  "how": "Latin script is the standard for this language: the transliteration becomes the term"
  },
  {
   "language": "Akkadian",
@@ -245,198 +101,6 @@
  {
   "language": "Akkadian",
   "code": "akk",
-  "page": "հալաւ",
-  "template": "{{cog|akk|tr=naḫlaptu|t=garment, cloak, coat, scale armor}}",
-  "name": "cog",
-  "tr": "naḫlaptu",
-  "ts": false,
-  "gloss": "garment, cloak, coat, scale armor",
-  "new": "{{cog|akk|naḫlaptu|t=garment, cloak, coat, scale armor}}",
-  "how": "Latin script is the standard for this language: the transliteration becomes the term"
- },
- {
-  "language": "Akkadian",
-  "code": "akk",
-  "page": "הקפה",
-  "template": "{{bor|he|akk||tr=qiāpu|t=to believe, to make a loan, to extend credit}}",
-  "name": "bor",
-  "tr": "qiāpu",
-  "ts": false,
-  "gloss": "to believe, to make a loan, to extend credit",
-  "new": "{{bor|he|akk|qiāpu|t=to believe, to make a loan, to extend credit}}",
-  "how": "Latin script is the standard for this language: the transliteration becomes the term"
- },
- {
-  "language": "Akkadian",
-  "code": "akk",
-  "page": "חמס",
-  "template": "{{cog|akk|tr=ḫummusu|t=to oppress}}",
-  "name": "cog",
-  "tr": "ḫummusu",
-  "ts": false,
-  "gloss": "to oppress",
-  "new": "{{cog|akk|ḫummusu|t=to oppress}}",
-  "how": "Latin script is the standard for this language: the transliteration becomes the term"
- },
- {
-  "language": "Akkadian",
-  "code": "akk",
-  "page": "חמס",
-  "template": "{{m|akk|tr=ḫamsu|t=maltreated}}",
-  "name": "m",
-  "tr": "ḫamsu",
-  "ts": false,
-  "gloss": "maltreated",
-  "new": "{{m|akk|ḫamsu|t=maltreated}}",
-  "how": "Latin script is the standard for this language: the transliteration becomes the term"
- },
- {
-  "language": "Akkadian",
-  "code": "akk",
-  "page": "חמס",
-  "template": "{{m|akk|tr=ḫimsātu|t=wrongful possessions}}",
-  "name": "m",
-  "tr": "ḫimsātu",
-  "ts": false,
-  "gloss": "wrongful possessions",
-  "new": "{{m|akk|ḫimsātu|t=wrongful possessions}}",
-  "how": "Latin script is the standard for this language: the transliteration becomes the term"
- },
- {
-  "language": "Akkadian",
-  "code": "akk",
-  "page": "חמס",
-  "template": "{{ncog|akk|tr=ḫamāṣu|t=to tear off, to strip, to flay; to plunder, to ransack}}",
-  "name": "ncog",
-  "tr": "ḫamāṣu",
-  "ts": false,
-  "gloss": "to tear off, to strip, to flay; to plunder, to ransack",
-  "new": "{{ncog|akk|ḫamāṣu|t=to tear off, to strip, to flay; to plunder, to ransack}}",
-  "how": "Latin script is the standard for this language: the transliteration becomes the term"
- },
- {
-  "language": "Akkadian",
-  "code": "akk",
-  "page": "חרש",
-  "template": "{{cog|akk|tr=ḫarāshu}}",
-  "name": "cog",
-  "tr": "ḫarāshu",
-  "ts": false,
-  "gloss": "",
-  "new": "{{cog|akk|ḫarāshu}}",
-  "how": "Latin script is the standard for this language: the transliteration becomes the term"
- },
- {
-  "language": "Akkadian",
-  "code": "akk",
-  "page": "כבל",
-  "template": "{{cog|akk|tr=kabālu|t=to fetter, chain}}",
-  "name": "cog",
-  "tr": "kabālu",
-  "ts": false,
-  "gloss": "to fetter, chain",
-  "new": "{{cog|akk|kabālu|t=to fetter, chain}}",
-  "how": "Latin script is the standard for this language: the transliteration becomes the term"
- },
- {
-  "language": "Akkadian",
-  "code": "akk",
-  "page": "כברה",
-  "template": "{{cog|akk|tr=kibratu|t=quarter of the world}}",
-  "name": "cog",
-  "tr": "kibratu",
-  "ts": false,
-  "gloss": "quarter of the world",
-  "new": "{{cog|akk|kibratu|t=quarter of the world}}",
-  "how": "Latin script is the standard for this language: the transliteration becomes the term"
- },
- {
-  "language": "Akkadian",
-  "code": "akk",
-  "page": "כיור",
-  "template": "{{cog|akk|tr=kiuru}}",
-  "name": "cog",
-  "tr": "kiuru",
-  "ts": false,
-  "gloss": "",
-  "new": "{{cog|akk|kiuru}}",
-  "how": "Latin script is the standard for this language: the transliteration becomes the term"
- },
- {
-  "language": "Akkadian",
-  "code": "akk",
-  "page": "מחיר",
-  "template": "{{bor+|he|akk|tr=maḫīru|t=purchase price|nocap=1}}",
-  "name": "bor+",
-  "tr": "maḫīru",
-  "ts": false,
-  "gloss": "purchase price",
-  "new": "{{bor+|he|akk|maḫīru|t=purchase price|nocap=1}}",
-  "how": "Latin script is the standard for this language: the transliteration becomes the term"
- },
- {
-  "language": "Akkadian",
-  "code": "akk",
-  "page": "מחיר",
-  "template": "{{der|he|akk|tr=maḥām|t=to receive, get, buy}}",
-  "name": "der",
-  "tr": "maḥām",
-  "ts": false,
-  "gloss": "to receive, get, buy",
-  "new": "{{der|he|akk|maḥām|t=to receive, get, buy}}",
-  "how": "Latin script is the standard for this language: the transliteration becomes the term"
- },
- {
-  "language": "Akkadian",
-  "code": "akk",
-  "page": "ספר",
-  "template": "{{cog|akk|tr=supuru|t=wall, fence}}",
-  "name": "cog",
-  "tr": "supuru",
-  "ts": false,
-  "gloss": "wall, fence",
-  "new": "{{cog|akk|supuru|t=wall, fence}}",
-  "how": "Latin script is the standard for this language: the transliteration becomes the term"
- },
- {
-  "language": "Akkadian",
-  "code": "akk",
-  "page": "פלך",
-  "template": "{{cog|akk|tr=pilakku}}",
-  "name": "cog",
-  "tr": "pilakku",
-  "ts": false,
-  "gloss": "",
-  "new": "{{cog|akk|pilakku}}",
-  "how": "Latin script is the standard for this language: the transliteration becomes the term"
- },
- {
-  "language": "Akkadian",
-  "code": "akk",
-  "page": "פלך",
-  "template": "{{cog|akk|tr=pilku}}",
-  "name": "cog",
-  "tr": "pilku",
-  "ts": false,
-  "gloss": "",
-  "new": "{{cog|akk|pilku}}",
-  "how": "Latin script is the standard for this language: the transliteration becomes the term"
- },
- {
-  "language": "Akkadian",
-  "code": "akk",
-  "page": "קצר",
-  "template": "{{cog|akk|tr=qasaru}}",
-  "name": "cog",
-  "tr": "qasaru",
-  "ts": false,
-  "gloss": "",
-  "new": "{{cog|akk|qasaru}}",
-  "how": "Latin script is the standard for this language: the transliteration becomes the term"
- },
- {
-  "language": "Akkadian",
-  "code": "akk",
   "page": "שרפרף",
   "template": "{{bor+|he|akk|tr=šupal šapi<!-- in Even-Shoshan; shufal shēfi in Klein -->}}",
   "name": "bor+",
@@ -444,18 +108,6 @@
   "ts": false,
   "gloss": "",
   "why": "several forms or a note in the transliteration"
- },
- {
-  "language": "Akkadian",
-  "code": "akk",
-  "page": "שתל",
-  "template": "{{der|he|akk||tr=satālu}}",
-  "name": "der",
-  "tr": "satālu",
-  "ts": false,
-  "gloss": "",
-  "new": "{{der|he|akk|satālu}}",
-  "how": "Latin script is the standard for this language: the transliteration becomes the term"
  },
  {
   "language": "Akkadian",
@@ -493,54 +145,6 @@
  {
   "language": "Akkadian",
   "code": "akk",
-  "page": "سورنجان",
-  "template": "{{der|ar|akk|tr=šarnagu}}",
-  "name": "der",
-  "tr": "šarnagu",
-  "ts": false,
-  "gloss": "",
-  "new": "{{der|ar|akk|šarnagu}}",
-  "how": "Latin script is the standard for this language: the transliteration becomes the term"
- },
- {
-  "language": "Akkadian",
-  "code": "akk",
-  "page": "شتلة",
-  "template": "{{der|ar|akk||tr=šitlum}}",
-  "name": "der",
-  "tr": "šitlum",
-  "ts": false,
-  "gloss": "",
-  "new": "{{der|ar|akk|šitlum}}",
-  "how": "Latin script is the standard for this language: the transliteration becomes the term"
- },
- {
-  "language": "Akkadian",
-  "code": "akk",
-  "page": "شروع",
-  "template": "{{cog|akk|tr=šarrû|t=to start, begin, commence}}",
-  "name": "cog",
-  "tr": "šarrû",
-  "ts": false,
-  "gloss": "to start, begin, commence",
-  "new": "{{cog|akk|šarrû|t=to start, begin, commence}}",
-  "how": "Latin script is the standard for this language: the transliteration becomes the term"
- },
- {
-  "language": "Akkadian",
-  "code": "akk",
-  "page": "صبا",
-  "template": "{{cog|akk|tr=ṣabû|t=to wish (for), want, request, desire, prefer}}",
-  "name": "cog",
-  "tr": "ṣabû",
-  "ts": false,
-  "gloss": "to wish (for), want, request, desire, prefer",
-  "new": "{{cog|akk|ṣabû|t=to wish (for), want, request, desire, prefer}}",
-  "how": "Latin script is the standard for this language: the transliteration becomes the term"
- },
- {
-  "language": "Akkadian",
-  "code": "akk",
   "page": "صبر",
   "template": "{{der|ar|akk||tr=ṣibaru, ṣiburu|t=a pointed gardening instrument; a fleshy excrescence; a plant in medical texts a medication for gall-bladder disease, apparently aloe comparable to the garden-tool by its lanceolate leaves}}",
   "name": "der",
@@ -552,30 +156,6 @@
  {
   "language": "Akkadian",
   "code": "akk",
-  "page": "صنف",
-  "template": "{{der|ar|akk||tr=ṣiliptu|t=diagonal}}",
-  "name": "der",
-  "tr": "ṣiliptu",
-  "ts": false,
-  "gloss": "diagonal",
-  "new": "{{der|ar|akk|ṣiliptu|t=diagonal}}",
-  "how": "Latin script is the standard for this language: the transliteration becomes the term"
- },
- {
-  "language": "Akkadian",
-  "code": "akk",
-  "page": "صنف",
-  "template": "{{der|ar|akk||tr=ṣalāpu|t=to distort}}",
-  "name": "der",
-  "tr": "ṣalāpu",
-  "ts": false,
-  "gloss": "to distort",
-  "new": "{{der|ar|akk|ṣalāpu|t=to distort}}",
-  "how": "Latin script is the standard for this language: the transliteration becomes the term"
- },
- {
-  "language": "Akkadian",
-  "code": "akk",
   "page": "علقة",
   "template": "{{cog|akk||tr=ilku, ilḳitu}}",
   "name": "cog",
@@ -583,18 +163,6 @@
   "ts": false,
   "gloss": "",
   "why": "several forms or a note in the transliteration"
- },
- {
-  "language": "Akkadian",
-  "code": "akk",
-  "page": "كبير",
-  "template": "{{cog|akk||tr=kabru|t=thick, massive}}",
-  "name": "cog",
-  "tr": "kabru",
-  "ts": false,
-  "gloss": "thick, massive",
-  "new": "{{cog|akk|kabru|t=thick, massive}}",
-  "how": "Latin script is the standard for this language: the transliteration becomes the term"
  },
  {
   "language": "Akkadian",
@@ -617,42 +185,6 @@
   "ts": false,
   "gloss": "headband",
   "why": "several forms or a note in the transliteration"
- },
- {
-  "language": "Akkadian",
-  "code": "akk",
-  "page": "ܐܘܚܠܐ",
-  "template": "{{der|aii|akk|tr=ʔuḫūlu}}",
-  "name": "der",
-  "tr": "ʔuḫūlu",
-  "ts": false,
-  "gloss": "",
-  "new": "{{der|aii|akk|ʔuḫūlu}}",
-  "how": "Latin script is the standard for this language: the transliteration becomes the term"
- },
- {
-  "language": "Akkadian",
-  "code": "akk",
-  "page": "ܐܟܠ ܩܪܨܐ",
-  "template": "{{m|akk|tr=karṣu|t=slander}}",
-  "name": "m",
-  "tr": "karṣu",
-  "ts": false,
-  "gloss": "slander",
-  "new": "{{m|akk|karṣu|t=slander}}",
-  "how": "Latin script is the standard for this language: the transliteration becomes the term"
- },
- {
-  "language": "Akkadian",
-  "code": "akk",
-  "page": "ܐܟܠܩܪܨܐ",
-  "template": "{{m|akk|tr=karṣu|t=slander}}",
-  "name": "m",
-  "tr": "karṣu",
-  "ts": false,
-  "gloss": "slander",
-  "new": "{{m|akk|karṣu|t=slander}}",
-  "how": "Latin script is the standard for this language: the transliteration becomes the term"
  },
  {
   "language": "Akkadian",
@@ -690,42 +222,6 @@
  {
   "language": "Akkadian",
   "code": "akk",
-  "page": "ܙܒܐ",
-  "template": "{{der|aii|akk||tr=Zābum}}",
-  "name": "der",
-  "tr": "Zābum",
-  "ts": false,
-  "gloss": "",
-  "new": "{{der|aii|akk|Zābum}}",
-  "how": "Latin script is the standard for this language: the transliteration becomes the term"
- },
- {
-  "language": "Akkadian",
-  "code": "akk",
-  "page": "ܚܐܪܝܬܐ",
-  "template": "{{der|aii|akk||tr=ḫirītu}}",
-  "name": "der",
-  "tr": "ḫirītu",
-  "ts": false,
-  "gloss": "",
-  "new": "{{der|aii|akk|ḫirītu}}",
-  "how": "Latin script is the standard for this language: the transliteration becomes the term"
- },
- {
-  "language": "Akkadian",
-  "code": "akk",
-  "page": "ܚܐܪܝܬܐ",
-  "template": "{{m|akk||tr=ḫerû|t=to dig}}",
-  "name": "m",
-  "tr": "ḫerû",
-  "ts": false,
-  "gloss": "to dig",
-  "new": "{{m|akk|ḫerû|t=to dig}}",
-  "how": "Latin script is the standard for this language: the transliteration becomes the term"
- },
- {
-  "language": "Akkadian",
-  "code": "akk",
   "page": "ܟܪܡܠܫ",
   "template": "{{der|aii|akk|tr=kar mulissu|t=The city of Mulissu (the consort of Ashur)}}",
   "name": "der",
@@ -733,210 +229,6 @@
   "ts": false,
   "gloss": "The city of Mulissu (the consort of Ashur)",
   "why": "several forms or a note in the transliteration"
- },
- {
-  "language": "Akkadian",
-  "code": "akk",
-  "page": "ܠܓܬܐ",
-  "template": "{{cog|akk||tr=liginnu|t=a type of tablet of one column, originally the jar wherein it was stored}}",
-  "name": "cog",
-  "tr": "liginnu",
-  "ts": false,
-  "gloss": "a type of tablet of one column, originally the jar wherein it was stored",
-  "new": "{{cog|akk|liginnu|t=a type of tablet of one column, originally the jar wherein it was stored}}",
-  "how": "Latin script is the standard for this language: the transliteration becomes the term"
- },
- {
-  "language": "Akkadian",
-  "code": "akk",
-  "page": "ܠܓܬܐ",
-  "template": "{{cog|akk||tr=lignu}}",
-  "name": "cog",
-  "tr": "lignu",
-  "ts": false,
-  "gloss": "",
-  "new": "{{cog|akk|lignu}}",
-  "how": "Latin script is the standard for this language: the transliteration becomes the term"
- },
- {
-  "language": "Akkadian",
-  "code": "akk",
-  "page": "ܠܓܬܐ",
-  "template": "{{cog|akk||tr=liginnu}}",
-  "name": "cog",
-  "tr": "liginnu",
-  "ts": false,
-  "gloss": "",
-  "new": "{{cog|akk|liginnu}}",
-  "how": "Latin script is the standard for this language: the transliteration becomes the term"
- },
- {
-  "language": "Akkadian",
-  "code": "akk",
-  "page": "ܠܓܬܐ",
-  "template": "{{m|akk|tr=ligittu|t=a measure of corn; crooked furrow}}",
-  "name": "m",
-  "tr": "ligittu",
-  "ts": false,
-  "gloss": "a measure of corn; crooked furrow",
-  "new": "{{m|akk|ligittu|t=a measure of corn; crooked furrow}}",
-  "how": "Latin script is the standard for this language: the transliteration becomes the term"
- },
- {
-  "language": "Akkadian",
-  "code": "akk",
-  "page": "ܡܟܪܐ",
-  "template": "{{bor+|aii|akk|tr=mikru|t=irrigation; irrigated or irrigable field}}",
-  "name": "bor+",
-  "tr": "mikru",
-  "ts": false,
-  "gloss": "irrigation; irrigated or irrigable field",
-  "new": "{{bor+|aii|akk|mikru|t=irrigation; irrigated or irrigable field}}",
-  "how": "Latin script is the standard for this language: the transliteration becomes the term"
- },
- {
-  "language": "Akkadian",
-  "code": "akk",
-  "page": "ܡܫܪܐ",
-  "template": "{{bor+|aii|akk|tr=mūšaru|t=vegetable bed, garden plot}}",
-  "name": "bor+",
-  "tr": "mūšaru",
-  "ts": false,
-  "gloss": "vegetable bed, garden plot",
-  "new": "{{bor+|aii|akk|mūšaru|t=vegetable bed, garden plot}}",
-  "how": "Latin script is the standard for this language: the transliteration becomes the term"
- },
- {
-  "language": "Akkadian",
-  "code": "akk",
-  "page": "ܢܟܣܐ",
-  "template": "{{der|aii|akk||tr=nikkassum}}",
-  "name": "der",
-  "tr": "nikkassum",
-  "ts": false,
-  "gloss": "",
-  "new": "{{der|aii|akk|nikkassum}}",
-  "how": "Latin script is the standard for this language: the transliteration becomes the term"
- },
- {
-  "language": "Akkadian",
-  "code": "akk",
-  "page": "ܦܕܢܐ",
-  "template": "{{der|aii|akk|tr=padānu|t=road, way}}",
-  "name": "der",
-  "tr": "padānu",
-  "ts": false,
-  "gloss": "road, way",
-  "new": "{{der|aii|akk|padānu|t=road, way}}",
-  "how": "Latin script is the standard for this language: the transliteration becomes the term"
- },
- {
-  "language": "Akkadian",
-  "code": "akk",
-  "page": "ܫܘܪ",
-  "template": "{{cog|akk||tr=samārum|t=to leap, jump}}",
-  "name": "cog",
-  "tr": "samārum",
-  "ts": false,
-  "gloss": "to leap, jump",
-  "new": "{{cog|akk|samārum|t=to leap, jump}}",
-  "how": "Latin script is the standard for this language: the transliteration becomes the term"
- },
- {
-  "language": "Akkadian",
-  "code": "akk",
-  "page": "ܫܘܪܢܩܐ",
-  "template": "{{der|aii|akk|tr=šarnagu}}",
-  "name": "der",
-  "tr": "šarnagu",
-  "ts": false,
-  "gloss": "",
-  "new": "{{der|aii|akk|šarnagu}}",
-  "how": "Latin script is the standard for this language: the transliteration becomes the term"
- },
- {
-  "language": "Akkadian",
-  "code": "akk",
-  "page": "ܫܬܠܐ",
-  "template": "{{der|aii|akk||tr=šitlum}}",
-  "name": "der",
-  "tr": "šitlum",
-  "ts": false,
-  "gloss": "",
-  "new": "{{der|aii|akk|šitlum}}",
-  "how": "Latin script is the standard for this language: the transliteration becomes the term"
- },
- {
-  "language": "Akkadian",
-  "code": "akk",
-  "page": "ܬܪܣܝܬܐ",
-  "template": "{{der|aii|akk|tr=tarsītum}}",
-  "name": "der",
-  "tr": "tarsītum",
-  "ts": false,
-  "gloss": "",
-  "new": "{{der|aii|akk|tarsītum}}",
-  "how": "Latin script is the standard for this language: the transliteration becomes the term"
- },
- {
-  "language": "Akkadian",
-  "code": "akk",
-  "page": "ሐፀነ",
-  "template": "{{cog|akk|tr=ḫaṣānu|t=embrace}}",
-  "name": "cog",
-  "tr": "ḫaṣānu",
-  "ts": false,
-  "gloss": "embrace",
-  "new": "{{cog|akk|ḫaṣānu|t=embrace}}",
-  "how": "Latin script is the standard for this language: the transliteration becomes the term"
- },
- {
-  "language": "Akkadian",
-  "code": "akk",
-  "page": "Reconstruction:Proto-Semitic/ḥaṣ́an-",
-  "template": "{{desc|akk|tr=ḫaṣānu|t=embrace}}",
-  "name": "desc",
-  "tr": "ḫaṣānu",
-  "ts": false,
-  "gloss": "embrace",
-  "new": "{{desc|akk|ḫaṣānu|t=embrace}}",
-  "how": "Latin script is the standard for this language: the transliteration becomes the term"
- },
- {
-  "language": "Akkadian",
-  "code": "akk",
-  "page": "Reconstruction:Proto-Semitic/ṯ̣amiʔ-",
-  "template": "{{desc|akk||alt=|tr=ṣamû}}",
-  "name": "desc",
-  "tr": "ṣamû",
-  "ts": false,
-  "gloss": "",
-  "new": "{{desc|akk|ṣamû|alt=}}",
-  "how": "Latin script is the standard for this language: the transliteration becomes the term"
- },
- {
-  "language": "Akkadian",
-  "code": "akk",
-  "page": "𐤔𐤕𐤋",
-  "template": "{{der|xpu|akk||tr=satālu}}",
-  "name": "der",
-  "tr": "satālu",
-  "ts": false,
-  "gloss": "",
-  "new": "{{der|xpu|akk|satālu}}",
-  "how": "Latin script is the standard for this language: the transliteration becomes the term"
- },
- {
-  "language": "Aramaic",
-  "code": "arc",
-  "page": "afus",
-  "template": "{{cog|arc||tr=psʔ|t=palm}}",
-  "name": "cog",
-  "tr": "psʔ",
-  "ts": false,
-  "gloss": "palm",
-  "new": "{{cog|arc|פסא|tr=psʔ|t=palm}}",
-  "how": "consonantal transliteration, letter for letter"
  },
  {
   "language": "Aramaic",
@@ -948,18 +240,6 @@
   "ts": false,
   "gloss": "",
   "why": "a letter the table does not have"
- },
- {
-  "language": "Aramaic",
-  "code": "arc",
-  "page": "Reconstruction:Proto-Iranian/carHdáh",
-  "template": "{{desc|arc|tr=nwsrdʾ|ts=nawsardā|bor=1|t=new year}}",
-  "name": "desc",
-  "tr": "nwsrdʾ",
-  "ts": false,
-  "gloss": "new year",
-  "new": "{{desc|arc|נוסרדא|tr=nwsrdʾ|ts=nawsardā|bor=1|t=new year}}",
-  "how": "consonantal transliteration, letter for letter"
  },
  {
   "language": "Aramaic",
@@ -986,30 +266,6 @@
  {
   "language": "Aramaic",
   "code": "arc",
-  "page": "Reconstruction:Proto-Iranian/HacwastaHnah",
-  "template": "{{desc|arc|tr=ʼspstn|bor=1}}",
-  "name": "desc",
-  "tr": "ʼspstn",
-  "ts": false,
-  "gloss": "",
-  "new": "{{desc|arc|אספסתן|tr=ʼspstn|bor=1}}",
-  "how": "consonantal transliteration, letter for letter"
- },
- {
-  "language": "Aramaic",
-  "code": "arc",
-  "page": "Reconstruction:Proto-Iranian/(H)uxšā́",
-  "template": "{{desc|arc|tr=whšp|bor=1}}",
-  "name": "desc",
-  "tr": "whšp",
-  "ts": false,
-  "gloss": "",
-  "new": "{{desc|arc|והשף|tr=whšp|bor=1}}",
-  "how": "consonantal transliteration, letter for letter"
- },
- {
-  "language": "Aramaic",
-  "code": "arc",
   "page": "jkꜣnꜣ",
   "template": "{{cog|arc|tr=ag-gan-nu}}",
   "name": "cog",
@@ -1028,18 +284,6 @@
   "ts": false,
   "gloss": "basin or bowl",
   "why": "vocalised: the spelling (matres lectionis) is not certain"
- },
- {
-  "language": "Aramaic",
-  "code": "arc",
-  "page": "Reconstruction:Proto-Indo-Iranian/náyȷ́žʰam",
-  "template": "{{desc|arc||tr=nzk|bor=1}}",
-  "name": "desc",
-  "tr": "nzk",
-  "ts": false,
-  "gloss": "",
-  "new": "{{desc|arc|נזך|tr=nzk|bor=1}}",
-  "how": "consonantal transliteration, letter for letter"
  },
  {
   "language": "Aramaic",
@@ -1099,18 +343,6 @@
  {
   "language": "Aramaic",
   "code": "arc",
-  "page": "tallel",
-  "template": "{{bor+|acy|arc|tr=dll}}",
-  "name": "bor+",
-  "tr": "dll",
-  "ts": false,
-  "gloss": "",
-  "new": "{{bor+|acy|arc|דלל|tr=dll}}",
-  "how": "consonantal transliteration, letter for letter"
- },
- {
-  "language": "Aramaic",
-  "code": "arc",
   "page": "tallil",
   "template": "{{bor+|acy|arc|tr=dallīlā}}",
   "name": "bor+",
@@ -1133,30 +365,6 @@
  {
   "language": "Aramaic",
   "code": "arc",
-  "page": "Reconstruction:Proto-Iranian/yáwah",
-  "template": "{{desc|arc|tr=ywdn|t=grain-house|bor=1}}",
-  "name": "desc",
-  "tr": "ywdn",
-  "ts": false,
-  "gloss": "grain-house",
-  "new": "{{desc|arc|יודן|tr=ywdn|t=grain-house|bor=1}}",
-  "how": "consonantal transliteration, letter for letter"
- },
- {
-  "language": "Aramaic",
-  "code": "arc",
-  "page": "λαμπάς",
-  "template": "{{desc|arc|tr=lmpd|bor=1}}",
-  "name": "desc",
-  "tr": "lmpd",
-  "ts": false,
-  "gloss": "",
-  "new": "{{desc|arc|למפד|tr=lmpd|bor=1}}",
-  "how": "consonantal transliteration, letter for letter"
- },
- {
-  "language": "Aramaic",
-  "code": "arc",
   "page": "առիւծ",
   "template": "{{m|arc|tr=ʾaryāwā|t=lion}}",
   "name": "m",
@@ -1168,90 +376,6 @@
  {
   "language": "Aramaic",
   "code": "arc",
-  "page": "դահիճ",
-  "template": "{{cog|arc|tr=dḥšpṭˀ|t=an epithet of Nergal (=chief judge or the like)}}",
-  "name": "cog",
-  "tr": "dḥšpṭˀ",
-  "ts": false,
-  "gloss": "an epithet of Nergal (=chief judge or the like)",
-  "new": "{{cog|arc|דחשפטא|tr=dḥšpṭˀ|t=an epithet of Nergal (=chief judge or the like)}}",
-  "how": "consonantal transliteration, letter for letter"
- },
- {
-  "language": "Aramaic",
-  "code": "arc",
-  "page": "մխիթար",
-  "template": "{{m|arc|tr=ḥtr|||to encourage; to make proud}}",
-  "name": "m",
-  "tr": "ḥtr",
-  "ts": false,
-  "gloss": "to encourage; to make proud",
-  "new": "{{m|arc|tr=ḥtr|חתר||to encourage; to make proud}}",
-  "how": "consonantal transliteration, letter for letter"
- },
- {
-  "language": "Aramaic",
-  "code": "arc",
-  "page": "շփշփեմ",
-  "template": "{{bor|xcl|arc|tr=špšp|t=to rub against}}",
-  "name": "bor",
-  "tr": "špšp",
-  "ts": false,
-  "gloss": "to rub against",
-  "new": "{{bor|xcl|arc|שפשף|tr=špšp|t=to rub against}}",
-  "how": "consonantal transliteration, letter for letter"
- },
- {
-  "language": "Aramaic",
-  "code": "arc",
-  "page": "ցամաք",
-  "template": "{{cog|arc|tr=ṣmq|t=to be dried up}}",
-  "name": "cog",
-  "tr": "ṣmq",
-  "ts": false,
-  "gloss": "to be dried up",
-  "new": "{{cog|arc|צמק|tr=ṣmq|t=to be dried up}}",
-  "how": "consonantal transliteration, letter for letter"
- },
- {
-  "language": "Aramaic",
-  "code": "arc",
-  "page": "דרדס",
-  "template": "{{ncog|arc||tr=bwrdˁˀ|gloss=ragged garment}}",
-  "name": "ncog",
-  "tr": "bwrdˁˀ",
-  "ts": false,
-  "gloss": "ragged garment",
-  "new": "{{ncog|arc|בורדעא|tr=bwrdˁˀ|gloss=ragged garment}}",
-  "how": "consonantal transliteration, letter for letter"
- },
- {
-  "language": "Aramaic",
-  "code": "arc",
-  "page": "ח־ל־ש",
-  "template": "{{cog|arc|tr=ḥlš|t=to be weak}}",
-  "name": "cog",
-  "tr": "ḥlš",
-  "ts": false,
-  "gloss": "to be weak",
-  "new": "{{cog|arc|חלש|tr=ḥlš|t=to be weak}}",
-  "how": "consonantal transliteration, letter for letter"
- },
- {
-  "language": "Aramaic",
-  "code": "arc",
-  "page": "ח־ל־ש",
-  "template": "{{cog|arc|tr=qlš}}",
-  "name": "cog",
-  "tr": "qlš",
-  "ts": false,
-  "gloss": "",
-  "new": "{{cog|arc|קלש|tr=qlš}}",
-  "how": "consonantal transliteration, letter for letter"
- },
- {
-  "language": "Aramaic",
-  "code": "arc",
   "page": "חמס",
   "template": "{{cog|arc|tr=ḥ-m-s|t=criminality, violence}}",
   "name": "cog",
@@ -1259,18 +383,6 @@
   "ts": false,
   "gloss": "criminality, violence",
   "why": "a letter the table does not have"
- },
- {
-  "language": "Aramaic",
-  "code": "arc",
-  "page": "כ־ש־ל",
-  "template": "{{cog|arc|tr=kšl|t=to stumble}}",
-  "name": "cog",
-  "tr": "kšl",
-  "ts": false,
-  "gloss": "to stumble",
-  "new": "{{cog|arc|כשל|tr=kšl|t=to stumble}}",
-  "how": "consonantal transliteration, letter for letter"
  },
  {
   "language": "Aramaic",
@@ -1293,30 +405,6 @@
   "ts": false,
   "gloss": "hammer",
   "why": "vocalised: the spelling (matres lectionis) is not certain"
- },
- {
-  "language": "Aramaic",
-  "code": "arc",
-  "page": "هزینه",
-  "template": "{{cog|arc|tr=ˀwzynqˀ|t=expenses, price}}",
-  "name": "cog",
-  "tr": "ˀwzynqˀ",
-  "ts": false,
-  "gloss": "expenses, price",
-  "new": "{{cog|arc|אוזינקא|tr=ˀwzynqˀ|t=expenses, price}}",
-  "how": "consonantal transliteration, letter for letter"
- },
- {
-  "language": "Aramaic",
-  "code": "arc",
-  "page": "کندر",
-  "template": "{{cog|arc|tr=qndrwg}}",
-  "name": "cog",
-  "tr": "qndrwg",
-  "ts": false,
-  "gloss": "",
-  "new": "{{cog|arc|קנדרוג|tr=qndrwg}}",
-  "how": "consonantal transliteration, letter for letter"
  },
  {
   "language": "Aramaic",
@@ -1387,18 +475,6 @@
  {
   "language": "Aramaic",
   "code": "arc",
-  "page": "ܡܗܡܐ",
-  "template": "{{inh|aii|arc||tr=ʾhmy|t=to avert the eyes; to avoid}}",
-  "name": "inh",
-  "tr": "ʾhmy",
-  "ts": false,
-  "gloss": "to avert the eyes; to avoid",
-  "new": "{{inh|aii|arc|אהמי|tr=ʾhmy|t=to avert the eyes; to avoid}}",
-  "how": "consonantal transliteration, letter for letter"
- },
- {
-  "language": "Aramaic",
-  "code": "arc",
   "page": "ܡܪܚܡ",
   "template": "{{inh|aii|arc||tr=raḥḥem}}",
   "name": "inh",
@@ -1427,7 +503,8 @@
   "tr": "nṭal",
   "ts": false,
   "gloss": "to lift up",
-  "why": "vocalised: the spelling (matres lectionis) is not certain"
+  "new": "{{cog|arc|נטל|tr=nṭal|t=to lift up}}",
+  "how": "the spelling of the existing Aramaic entry נטל (matched by gloss)"
  },
  {
   "language": "Aramaic",
@@ -1570,7 +647,8 @@
   "tr": "yaman",
   "ts": false,
   "gloss": "right side",
-  "why": "no safe converter for this language yet"
+  "new": "{{bor|lv|ar|يمن|tr=yaman|t=right side}}",
+  "how": "the spelling of the existing Arabic entry يمن (matched by headword)"
  },
  {
   "language": "Arabic",
@@ -2004,18 +1082,6 @@
  {
   "language": "Sabaean",
   "code": "xsa",
-  "page": "Reconstruction:Proto-Berber/a-βărn",
-  "template": "{{cog|xsa||tr=br|t=a kind of cereal}}",
-  "name": "cog",
-  "tr": "br",
-  "ts": false,
-  "gloss": "a kind of cereal",
-  "new": "{{cog|xsa|𐩨𐩧|tr=br|t=a kind of cereal}}",
-  "how": "consonantal transliteration, letter for letter"
- },
- {
-  "language": "Sabaean",
-  "code": "xsa",
   "page": "Reconstruction:Proto-Berber/a-ẓrəf",
   "template": "{{cog|xsa||tr=ṣrp|t=silver}}",
   "name": "cog",
@@ -2023,66 +1089,6 @@
   "ts": false,
   "gloss": "silver",
   "why": "a letter the table does not have"
- },
- {
-  "language": "Sabaean",
-  "code": "xsa",
-  "page": "Reconstruction:Proto-Semitic/ʔtm",
-  "template": "{{desc|xsa|tr=ˀtm|t=to bring together, to reconcile; to acquire property by mutual agreement}}",
-  "name": "desc",
-  "tr": "ˀtm",
-  "ts": false,
-  "gloss": "to bring together, to reconcile; to acquire property by mutual agreement",
-  "new": "{{desc|xsa|𐩱𐩩𐩣|tr=ˀtm|t=to bring together, to reconcile; to acquire property by mutual agreement}}",
-  "how": "consonantal transliteration, letter for letter"
- },
- {
-  "language": "Sabaean",
-  "code": "xsa",
-  "page": "חמס",
-  "template": "{{ncog|xsa|tr=ḫmṣ|t=to deface (an inscription)}}",
-  "name": "ncog",
-  "tr": "ḫmṣ",
-  "ts": false,
-  "gloss": "to deface (an inscription)",
-  "new": "{{ncog|xsa|𐩭𐩣𐩮|tr=ḫmṣ|t=to deface (an inscription)}}",
-  "how": "consonantal transliteration, letter for letter"
- },
- {
-  "language": "Sabaean",
-  "code": "xsa",
-  "page": "خلق",
-  "template": "{{cog|xsa|tr=ḫlq|t=compensation, portion, lot}}",
-  "name": "cog",
-  "tr": "ḫlq",
-  "ts": false,
-  "gloss": "compensation, portion, lot",
-  "new": "{{cog|xsa|𐩭𐩡𐩤|tr=ḫlq|t=compensation, portion, lot}}",
-  "how": "consonantal transliteration, letter for letter"
- },
- {
-  "language": "Sabaean",
-  "code": "xsa",
-  "page": "عرب",
-  "template": "{{cog|xsa||tr=ʿrb}}",
-  "name": "cog",
-  "tr": "ʿrb",
-  "ts": false,
-  "gloss": "",
-  "new": "{{cog|xsa|𐩲𐩧𐩨|tr=ʿrb}}",
-  "how": "consonantal transliteration, letter for letter"
- },
- {
-  "language": "Sabaean",
-  "code": "xsa",
-  "page": "عرب",
-  "template": "{{cog|xsa||tr=ʾʿrb}}",
-  "name": "cog",
-  "tr": "ʾʿrb",
-  "ts": false,
-  "gloss": "",
-  "new": "{{cog|xsa|𐩱𐩲𐩧𐩨|tr=ʾʿrb}}",
-  "how": "consonantal transliteration, letter for letter"
  },
  {
   "language": "Sabaean",
@@ -2116,18 +1122,6 @@
   "ts": false,
   "gloss": "",
   "why": "several forms or a note in the transliteration"
- },
- {
-  "language": "Sabaean",
-  "code": "xsa",
-  "page": "𐩡𐩬",
-  "template": "{{m|xsa||tr=glbm}}",
-  "name": "m",
-  "tr": "glbm",
-  "ts": false,
-  "gloss": "",
-  "new": "{{m|xsa|𐩴𐩡𐩨𐩣|tr=glbm}}",
-  "how": "consonantal transliteration, letter for letter"
  },
  {
   "language": "Sabaean",
@@ -2227,7 +1221,8 @@
   "tr": "ʿaššā",
   "ts": false,
   "gloss": "louse",
-  "why": "no safe converter for this language yet"
+  "new": "{{cog|syc|ܥܫܐ|tr=ʿaššā|t=louse}}",
+  "how": "the spelling of the existing Classical Syriac entry ܥܫܐ (matched by gloss)"
  },
  {
   "language": "Classical Syriac",
@@ -2284,18 +1279,6 @@
   "ts": false,
   "gloss": "",
   "why": "not a syllabic spelling"
- },
- {
-  "language": "Eblaite",
-  "code": "xeb",
-  "page": "Reconstruction:Proto-Semitic/ʔtm",
-  "template": "{{desc|xeb||tr=a-ti-mu|t=group}}",
-  "name": "desc",
-  "tr": "a-ti-mu",
-  "ts": false,
-  "gloss": "group",
-  "new": "{{desc|xeb|𒀀𒋾𒈬|tr=a-ti-mu|t=group}}",
-  "how": "syllabic spelling, sign by sign (eBL sign list)"
  },
  {
   "language": "Eblaite",
@@ -2427,7 +1410,7 @@
   "tr": "guddā",
   "ts": false,
   "gloss": "",
-  "why": "no safe converter for this language yet"
+  "why": "not convertible"
  },
  {
   "language": "Classical Mandaic",
@@ -2438,7 +1421,7 @@
   "tr": "pursma",
   "ts": false,
   "gloss": "",
-  "why": "no safe converter for this language yet"
+  "why": "a second term (tr2=/ts2=) in the same template: one fill would leave the request open"
  },
  {
   "language": "Classical Mandaic",
@@ -2449,7 +1432,8 @@
   "tr": "qamar",
   "ts": false,
   "gloss": "",
-  "why": "no safe converter for this language yet"
+  "new": "{{desc|myz|ࡒࡀࡌࡀࡓ|tr=qamar}}",
+  "how": "Mandaic writes its vowels: converted letter for letter"
  },
  {
   "language": "Classical Mandaic",
@@ -2460,7 +1444,8 @@
   "tr": "pardasa",
   "ts": false,
   "gloss": "",
-  "why": "no safe converter for this language yet"
+  "new": "{{desc|myz|ࡐࡀࡓࡃࡀࡎࡀ|tr=pardasa}}",
+  "how": "Mandaic writes its vowels: converted letter for letter"
  },
  {
   "language": "Classical Mandaic",
@@ -2471,7 +1456,8 @@
   "tr": "pardisa",
   "ts": false,
   "gloss": "",
-  "why": "no safe converter for this language yet"
+  "new": "{{l|myz|ࡐࡀࡓࡃࡉࡎࡀ|tr=pardisa}}",
+  "how": "Mandaic writes its vowels: converted letter for letter"
  },
  {
   "language": "Classical Mandaic",
@@ -2482,7 +1468,7 @@
   "tr": "Bahrān",
   "ts": false,
   "gloss": "",
-  "why": "no safe converter for this language yet"
+  "why": "not convertible"
  },
  {
   "language": "Classical Mandaic",
@@ -2493,7 +1479,7 @@
   "tr": "gwsʾnʾ",
   "ts": false,
   "gloss": "",
-  "why": "no safe converter for this language yet"
+  "why": "not convertible"
  },
  {
   "language": "Ge'ez",
@@ -2615,18 +1601,6 @@
   "ts": false,
   "gloss": "",
   "why": "vocalised: the spelling (matres lectionis) is not certain"
- },
- {
-  "language": "Ugaritic",
-  "code": "uga",
-  "page": "בעא",
-  "template": "{{cog|uga||tr=bgy}}",
-  "name": "cog",
-  "tr": "bgy",
-  "ts": false,
-  "gloss": "",
-  "new": "{{cog|uga|𐎁𐎂𐎊|tr=bgy}}",
-  "how": "consonantal transliteration, letter for letter"
  },
  {
   "language": "Ugaritic",
@@ -2966,42 +1940,6 @@
   "why": "not convertible"
  },
  {
-  "language": "Minaean",
-  "code": "inm",
-  "page": "Reconstruction:Proto-Semitic/ʔtm",
-  "template": "{{desc|inm||tr=ˀtm|t=to reunite, reassemble}}",
-  "name": "desc",
-  "tr": "ˀtm",
-  "ts": false,
-  "gloss": "to reunite, reassemble",
-  "new": "{{desc|inm|𐩱𐩩𐩣|tr=ˀtm|t=to reunite, reassemble}}",
-  "how": "consonantal transliteration, letter for letter"
- },
- {
-  "language": "Minaean",
-  "code": "inm",
-  "page": "خلق",
-  "template": "{{cog|inm|tr=ḫlq}}",
-  "name": "cog",
-  "tr": "ḫlq",
-  "ts": false,
-  "gloss": "",
-  "new": "{{cog|inm|𐩭𐩡𐩤|tr=ḫlq}}",
-  "how": "consonantal transliteration, letter for letter"
- },
- {
-  "language": "Qatabanian",
-  "code": "xqt",
-  "page": "Reconstruction:Proto-Semitic/ʔtm",
-  "template": "{{desc|xqt|tr=ˀtm|t=to agree, to make an agreement}}",
-  "name": "desc",
-  "tr": "ˀtm",
-  "ts": false,
-  "gloss": "to agree, to make an agreement",
-  "new": "{{desc|xqt|𐩱𐩩𐩣|tr=ˀtm|t=to agree, to make an agreement}}",
-  "how": "consonantal transliteration, letter for letter"
- },
- {
   "language": "Qatabanian",
   "code": "xqt",
   "page": "קם",
@@ -3163,126 +2101,6 @@
  {
   "language": "Mehri",
   "code": "gdq",
-  "page": "أأد",
-  "template": "{{cog|gdq|tr=ḥayd}}",
-  "name": "cog",
-  "tr": "ḥayd",
-  "ts": false,
-  "gloss": "",
-  "new": "{{cog|gdq|ḥayd}}",
-  "how": "Latin script is the standard for this language: the transliteration becomes the term"
- },
- {
-  "language": "Mehri",
-  "code": "gdq",
-  "page": "حن",
-  "template": "{{cog|gdq|tr=nḥa}}",
-  "name": "cog",
-  "tr": "nḥa",
-  "ts": false,
-  "gloss": "",
-  "new": "{{cog|gdq|nḥa}}",
-  "how": "Latin script is the standard for this language: the transliteration becomes the term"
- },
- {
-  "language": "Mehri",
-  "code": "gdq",
-  "page": "شام",
-  "template": "{{cog|gdq|tr=hemm}}",
-  "name": "cog",
-  "tr": "hemm",
-  "ts": false,
-  "gloss": "",
-  "new": "{{cog|gdq|hemm}}",
-  "how": "Latin script is the standard for this language: the transliteration becomes the term"
- },
- {
-  "language": "Mehri",
-  "code": "gdq",
-  "page": "فتن",
-  "template": "{{cog|gdq|tr=fetōn}}",
-  "name": "cog",
-  "tr": "fetōn",
-  "ts": false,
-  "gloss": "",
-  "new": "{{cog|gdq|fetōn}}",
-  "how": "Latin script is the standard for this language: the transliteration becomes the term"
- },
- {
-  "language": "Mehri",
-  "code": "gdq",
-  "page": "كبڛ",
-  "template": "{{cog|gdq|tr=kebś}}",
-  "name": "cog",
-  "tr": "kebś",
-  "ts": false,
-  "gloss": "",
-  "new": "{{cog|gdq|kebś}}",
-  "how": "Latin script is the standard for this language: the transliteration becomes the term"
- },
- {
-  "language": "Mehri",
-  "code": "gdq",
-  "page": "كبڛ",
-  "template": "{{m|gdq|tr=kêbeś}}",
-  "name": "m",
-  "tr": "kêbeś",
-  "ts": false,
-  "gloss": "",
-  "new": "{{m|gdq|kêbeś}}",
-  "how": "Latin script is the standard for this language: the transliteration becomes the term"
- },
- {
-  "language": "Mehri",
-  "code": "gdq",
-  "page": "لخم",
-  "template": "{{cog|gdq|tr=laḫáym|t=shark}}",
-  "name": "cog",
-  "tr": "laḫáym",
-  "ts": false,
-  "gloss": "shark",
-  "new": "{{cog|gdq|laḫáym|t=shark}}",
-  "how": "Latin script is the standard for this language: the transliteration becomes the term"
- },
- {
-  "language": "Mehri",
-  "code": "gdq",
-  "page": "مآن",
-  "template": "{{cog|gdq|tr=môn}}",
-  "name": "cog",
-  "tr": "môn",
-  "ts": false,
-  "gloss": "",
-  "new": "{{cog|gdq|môn}}",
-  "how": "Latin script is the standard for this language: the transliteration becomes the term"
- },
- {
-  "language": "Mehri",
-  "code": "gdq",
-  "page": "ميد",
-  "template": "{{cog|gdq|tr=mäd}}",
-  "name": "cog",
-  "tr": "mäd",
-  "ts": false,
-  "gloss": "",
-  "new": "{{cog|gdq|mäd}}",
-  "how": "Latin script is the standard for this language: the transliteration becomes the term"
- },
- {
-  "language": "Mehri",
-  "code": "gdq",
-  "page": "هو",
-  "template": "{{cog|gdq|tr=hû}}",
-  "name": "cog",
-  "tr": "hû",
-  "ts": false,
-  "gloss": "",
-  "new": "{{cog|gdq|hû}}",
-  "how": "Latin script is the standard for this language: the transliteration becomes the term"
- },
- {
-  "language": "Mehri",
-  "code": "gdq",
   "page": "Reconstruction:Proto-Semitic/ṭiḥāl-",
   "template": "{{desc|gdq||tr=ṭɛlḥáym}}",
   "name": "desc",
@@ -3319,90 +2137,6 @@
  {
   "language": "Shehri",
   "code": "shv",
-  "page": "קצע",
-  "template": "{{cog|shv|tr=qeḍaʿ|t=to gnaw through}}",
-  "name": "cog",
-  "tr": "qeḍaʿ",
-  "ts": false,
-  "gloss": "to gnaw through",
-  "new": "{{cog|shv|qeḍaʿ|t=to gnaw through}}",
-  "how": "Latin script is the standard for this language: the transliteration becomes the term"
- },
- {
-  "language": "Shehri",
-  "code": "shv",
-  "page": "أأد",
-  "template": "{{cog|shv|tr=ed}}",
-  "name": "cog",
-  "tr": "ed",
-  "ts": false,
-  "gloss": "",
-  "new": "{{cog|shv|ed}}",
-  "how": "Latin script is the standard for this language: the transliteration becomes the term"
- },
- {
-  "language": "Shehri",
-  "code": "shv",
-  "page": "حن",
-  "template": "{{cog|shv|tr=nḥa}}",
-  "name": "cog",
-  "tr": "nḥa",
-  "ts": false,
-  "gloss": "",
-  "new": "{{cog|shv|nḥa}}",
-  "how": "Latin script is the standard for this language: the transliteration becomes the term"
- },
- {
-  "language": "Shehri",
-  "code": "shv",
-  "page": "شام",
-  "template": "{{cog|shv|tr=šum}}",
-  "name": "cog",
-  "tr": "šum",
-  "ts": false,
-  "gloss": "",
-  "new": "{{cog|shv|šum}}",
-  "how": "Latin script is the standard for this language: the transliteration becomes the term"
- },
- {
-  "language": "Shehri",
-  "code": "shv",
-  "page": "كبڛ",
-  "template": "{{cog|shv|tr=koś}}",
-  "name": "cog",
-  "tr": "koś",
-  "ts": false,
-  "gloss": "",
-  "new": "{{cog|shv|koś}}",
-  "how": "Latin script is the standard for this language: the transliteration becomes the term"
- },
- {
-  "language": "Shehri",
-  "code": "shv",
-  "page": "مآن",
-  "template": "{{cog|shv|tr=mun}}",
-  "name": "cog",
-  "tr": "mun",
-  "ts": false,
-  "gloss": "",
-  "new": "{{cog|shv|mun}}",
-  "how": "Latin script is the standard for this language: the transliteration becomes the term"
- },
- {
-  "language": "Shehri",
-  "code": "shv",
-  "page": "هو",
-  "template": "{{cog|shv|tr=he}}",
-  "name": "cog",
-  "tr": "he",
-  "ts": false,
-  "gloss": "",
-  "new": "{{cog|shv|he}}",
-  "how": "Latin script is the standard for this language: the transliteration becomes the term"
- },
- {
-  "language": "Shehri",
-  "code": "shv",
   "page": "Reconstruction:Proto-Semitic/ṭiḥāl-",
   "template": "{{desc|shv||tr=ṭɛlḥím}}",
   "name": "desc",
@@ -3410,54 +2144,6 @@
   "ts": false,
   "gloss": "",
   "new": "{{desc|shv|ṭɛlḥím}}",
-  "how": "Latin script is the standard for this language: the transliteration becomes the term"
- },
- {
-  "language": "Soqotri",
-  "code": "sqt",
-  "page": "cc",
-  "template": "{{cog|sqt||tr=teʔ|t=to eat}}",
-  "name": "cog",
-  "tr": "teʔ",
-  "ts": false,
-  "gloss": "to eat",
-  "new": "{{cog|sqt|teʔ|t=to eat}}",
-  "how": "Latin script is the standard for this language: the transliteration becomes the term"
- },
- {
-  "language": "Soqotri",
-  "code": "sqt",
-  "page": "maḫrum",
-  "template": "{{cog|sqt||tr=meḥor|t=to offer}}",
-  "name": "cog",
-  "tr": "meḥor",
-  "ts": false,
-  "gloss": "to offer",
-  "new": "{{cog|sqt|meḥor|t=to offer}}",
-  "how": "Latin script is the standard for this language: the transliteration becomes the term"
- },
- {
-  "language": "Soqotri",
-  "code": "sqt",
-  "page": "Reconstruction:Proto-Semitic/ʔtm",
-  "template": "{{desc|sqt||tr=étom|t=to share, to do something together with someone}}",
-  "name": "desc",
-  "tr": "étom",
-  "ts": false,
-  "gloss": "to share, to do something together with someone",
-  "new": "{{desc|sqt|étom|t=to share, to do something together with someone}}",
-  "how": "Latin script is the standard for this language: the transliteration becomes the term"
- },
- {
-  "language": "Soqotri",
-  "code": "sqt",
-  "page": "בר",
-  "template": "{{cog|sqt|tr=bor|t=maize}}",
-  "name": "cog",
-  "tr": "bor",
-  "ts": false,
-  "gloss": "maize",
-  "new": "{{cog|sqt|bor|t=maize}}",
   "how": "Latin script is the standard for this language: the transliteration becomes the term"
  },
  {
@@ -3485,18 +2171,6 @@
  {
   "language": "Harsusi",
   "code": "hss",
-  "page": "Reconstruction:Proto-Semitic/lā",
-  "template": "{{desc|hss|tr=laʔ}}",
-  "name": "desc",
-  "tr": "laʔ",
-  "ts": false,
-  "gloss": "",
-  "new": "{{desc|hss|laʔ}}",
-  "how": "Latin script is the standard for this language: the transliteration becomes the term"
- },
- {
-  "language": "Harsusi",
-  "code": "hss",
   "page": "muh",
   "template": "{{cog|hss|tr=ḥə-myóh}}",
   "name": "cog",
@@ -3509,30 +2183,6 @@
  {
   "language": "Harsusi",
   "code": "hss",
-  "page": "جمع",
-  "template": "{{cog|hss|tr=egtōma}}",
-  "name": "cog",
-  "tr": "egtōma",
-  "ts": false,
-  "gloss": "",
-  "new": "{{cog|hss|egtōma}}",
-  "how": "Latin script is the standard for this language: the transliteration becomes the term"
- },
- {
-  "language": "Harsusi",
-  "code": "hss",
-  "page": "لخم",
-  "template": "{{cog|hss|tr=léḫem|t=shark}}",
-  "name": "cog",
-  "tr": "léḫem",
-  "ts": false,
-  "gloss": "shark",
-  "new": "{{cog|hss|léḫem|t=shark}}",
-  "how": "Latin script is the standard for this language: the transliteration becomes the term"
- },
- {
-  "language": "Harsusi",
-  "code": "hss",
   "page": "Reconstruction:Proto-Semitic/ṭiḥāl-",
   "template": "{{desc|hss||tr=ṭelḥáym}}",
   "name": "desc",
@@ -3540,42 +2190,6 @@
   "ts": false,
   "gloss": "",
   "new": "{{desc|hss|ṭelḥáym}}",
-  "how": "Latin script is the standard for this language: the transliteration becomes the term"
- },
- {
-  "language": "Western Neo-Aramaic",
-  "code": "amw",
-  "page": "بحر",
-  "template": "{{ncog|amw|tr=baḥar|t=a lot|lit=ocean}}",
-  "name": "ncog",
-  "tr": "baḥar",
-  "ts": false,
-  "gloss": "a lot",
-  "new": "{{ncog|amw|baḥar|t=a lot|lit=ocean}}",
-  "how": "Latin script is the standard for this language: the transliteration becomes the term"
- },
- {
-  "language": "Western Neo-Aramaic",
-  "code": "amw",
-  "page": "هن",
-  "template": "{{cog|amw||t=they|tr=hinnun|pos=masculine}}",
-  "name": "cog",
-  "tr": "hinnun",
-  "ts": false,
-  "gloss": "they",
-  "new": "{{cog|amw|hinnun|t=they|pos=masculine}}",
-  "how": "Latin script is the standard for this language: the transliteration becomes the term"
- },
- {
-  "language": "Western Neo-Aramaic",
-  "code": "amw",
-  "page": "هن",
-  "template": "{{m|amw||t=they|tr=hinnin|pos=feminine}}",
-  "name": "m",
-  "tr": "hinnin",
-  "ts": false,
-  "gloss": "they",
-  "new": "{{m|amw|hinnin|t=they|pos=feminine}}",
   "how": "Latin script is the standard for this language: the transliteration becomes the term"
  },
  {

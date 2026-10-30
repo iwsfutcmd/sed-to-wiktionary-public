@@ -94,12 +94,61 @@ def suggest(code, tr, ts=False):
             return None, "not a syllabic spelling"
         sc = cuneiform.convert(t)
         return (sc, "syllabic spelling, sign by sign (eBL sign list)") if sc else (None, "a sign the list does not have")
+    if code == "myz":
+        sc = mandaic.convert("myz", t)
+        return (sc, "Mandaic writes its vowels: converted letter for letter") if sc else (None, "not convertible")
     if code in ETHIOPIC:
         if not re.search(r"[äə]", t):
             return None, "not clearly in Wiktionary's Ethiopic transliteration scheme (no ä/ə)"
         sc = ethiopic.convert("am", t)
         return (sc, "Wiktionary's own Ethiopic transliteration, inverted") if sc else (None, "not convertible")
     return None, "no safe converter for this language yet"
+
+from tr2script import arabic, mandaic
+LOOKUP = {"arc", "tmr", "jpa", "syc", "aii", "tru", "he", "hbo", "ar"} | ETHIOPIC
+ABJAD_TABLE = {"arc": "arc", "tmr": "tmr", "jpa": "jpa", "he": "he", "hbo": "hbo", "syc": "syc", "aii": "syc", "tru": "syc"}
+LONG = {"ī": ["y", ""], "ē": ["y", ""], "ū": ["w", ""], "ō": ["w", ""], "ā": [""], "ă": [""], "ĕ": [""], "ŏ": [""]}
+
+def candidates(code, tr):
+    """Possible written forms of a vocalised transliteration: long vowels with or without a mater, a final -ā as aleph or he, an initial
+    vowel with aleph. Arabic: the converter's vocalised form, stripped. Ethiopic: both transliteration schemes."""
+    t = U.normalize("NFC", tr.strip()).replace("'", "ʾ").replace("’", "ʾ")
+    if code == "ar":
+        v = arabic.convert(t)
+        return {strip_harakat(v): v} if v else {}
+    if code in ETHIOPIC:
+        out = {}
+        for prof in ("am", "gez"):
+            c = ethiopic.convert(prof, t) if prof == "gez" else ethiopic.convert(code if code in ethiopic.PROFILES else "am", t)
+            if c: out[c] = c
+        return out
+    if code not in ABJAD_TABLE or re.search(r"[-\s]", t):
+        return {}
+    forms = [""]
+    s = t
+    if s and s[0] in "aeiouāēīōūə":
+        s = "ʾ" + s
+    for i, ch in enumerate(s):
+        last = i == len(s) - 1
+        if ch in "āa" and last:
+            opts = ["ʾ", "h"]
+        elif ch in LONG:
+            opts = LONG[ch]
+        elif ch in "aeiouəɛɔ":
+            opts = [""]
+        else:
+            opts = [ch]
+        forms = [f + o for f in forms for o in opts][:64]
+    out = {}
+    for f in forms:
+        f = re.sub(r"(.)\1", r"\1", f)                                   # gemination is not written
+        c = abjad.convert(ABJAD_TABLE[code], f)
+        if c:
+            out[c] = c
+    return out
+
+def strip_harakat(s):
+    return "".join(ch for ch in U.normalize("NFC", s) if not (0x64B <= ord(ch) <= 0x652 or ord(ch) in (0x670, 0x640)))
 
 def rewrite(template, name, new_term):
     """The template with its term filled in: an empty or "-" term slot gets the script, or one is inserted where none was given."""
@@ -163,12 +212,11 @@ def main(argv):
             r.update(new=new, how=how)
         else:
             r.update(why=how if not term else "Arabic left for a person")
+    print(f"second pass, spellings Wiktionary already has: {lookup_pass(rows)} more")
     OUT.write_text(json.dumps(rows, ensure_ascii=False, indent=1), encoding="utf-8")
     ok = [r for r in rows if "new" in r]
     print(f"{len(rows)} requests; {len(ok)} with a safe script/term, {len(rows) - len(ok)} left for a person; see {OUT.relative_to(WIKT.parent.parent)}")
 
-if __name__ == "__main__":
-    sys.exit(main(sys.argv[1:]))
 
 
 def page_edits(rows):
@@ -190,3 +238,32 @@ def apply_pairs(text, pairs):
             found += 1
             text = text.replace(old, new)
     return text, found
+
+
+def lookup_pass(rows):
+    """Second pass for rows left for a person: a spelling that Wiktionary already has an entry for, in that language, that fits the gloss
+    (or, for Arabic, whose headword is the converter's vocalised form). Exactly one candidate must qualify."""
+    todo = [r for r in rows if "new" not in r and r["code"] in LOOKUP and not re.search(r"\|\s*(?:tr|ts|alt)\d\s*=", r["template"])]
+    cand = {id(r): candidates(r["code"], r["tr"]) for r in todo}
+    titles = sorted({t for c in cand.values() for t in c})
+    K.fetch(titles, log=lambda *a: None)
+    n = 0
+    for r in todo:
+        hits = []
+        for title, voc in cand[id(r)].items():
+            sec = K.language_section(K.cached(title) or "", r["code"])
+            if not sec:
+                continue
+            gloss_ok = bool(K.words(r["gloss"]) & K.words(" ".join(K.definitions(sec)))) if r["gloss"] else False
+            head_ok = r["code"] == "ar" and voc != title and voc in U.normalize("NFC", sec)
+            if gloss_ok or head_ok:
+                hits.append((title, "gloss" if gloss_ok else "headword"))
+        if len(hits) == 1:
+            title, why = hits[0]
+            r.pop("why", None)
+            r.update(new=rewrite(r["template"], r["name"], title), how=f"the spelling of the existing {r['language']} entry {title} (matched by {why})")
+            n += 1
+    return n
+
+if __name__ == "__main__":
+    sys.exit(main(sys.argv[1:]))
