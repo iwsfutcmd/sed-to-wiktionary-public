@@ -74,3 +74,6 @@ Scripts: `locate.py`, `crops.py`, `glot.py`, `zoom.py` (650-dpi spot checks), `b
 `wikt_match.py` also tries SEDonline's form of each entry, where it is the same entry (same letters with diacritics stripped, a gloss word
 in common: SEDonline's `sed_ref` is not unique). `gaps.py` counts our own posted pages (`wiktionary_drafts/done/`) as covered through the
 SEDonline record each was drafted from, since a root cannot be matched to its stem title (*ṣ̂rṭ = ṣ́araṭ-).
+
+## License
+Code and original material in this repository are released under the [MIT License](LICENSE). The MIT licence covers only our own work: the underlying dictionary content belongs to its authors (Kogan et al., *Semitic Etymological Database*; the eBL sign list in `data/scripts/ebl_signs.json` is eBL's, with its own terms), and Wiktionary text is under CC BY-SA.
