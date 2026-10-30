@@ -16,4 +16,4 @@ jobs:
         with:
           fetch-depth: 0
       - run: pip install git-filter-repo
-      - run: scripts/sync_public.sh "https://x-access-token:${{ secrets.PUBLIC_REPO_TOKEN }}@github.com/iwsfutcmd/sed-to-wiktionary-public.git" HEAD
+      - run: scripts/sync_public.sh "https://x-access-token:${{ secrets.PUBLIC_REPO_TOKEN }}@github.com/iwsfutcmd/sed-to-wiktionary-public.git"
