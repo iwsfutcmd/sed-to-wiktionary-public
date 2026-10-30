@@ -81,6 +81,13 @@ shows Syriac, Mandaic, Turoyo and Assyrian). `tests/test_merge.py` replays that 
 at the level SEDonline gives that record, unless `LEVEL_EXCEPTIONS` records why not (pages that follow the print, or a decision).
 `scripts/wikt_sed_ids.py` finds SED references elsewhere on Wiktionary without `id=` and works out the record, checked against the page.
 
+## Native script for Semitic terms elsewhere
+`scripts/wikt_script_requests.py` reads every page in "Requests for native script for <Language> terms" for the Semitic languages and works out
+which script-less terms can be filled safely: Latin-script languages get the transliteration as the term (Akkadian, Mehri, Shehri, Soqotri,
+Harsusi, Turoyo, Maaloula); consonantal transliterations go letter for letter (Aramaic in the square script, Old South Arabian, Phoenician,
+Ugaritic); Eblaite syllables sign by sign; Ethiopic only when written in Wiktionary's own scheme. Vocalised abjad forms, several forms, notes and
+Arabic (many requests are garbled loan sources) are left for a person. Edits are made on the live page by the respeller script's `&rpl=` mode.
+
 ## Back-links from the daughter pages
 `make backlink` re-downloads every daughter page that does not cite its reconstruction yet and writes whole-page edits
 (`data/wiktionary/backlink_pages.json`), then the checklist page (`scripts/build_backlink_checklist.py`). What a person decided is kept in

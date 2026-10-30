@@ -169,3 +169,16 @@ class SedIdSame(unittest.TestCase):
         out = subprocess.run(["node", "-e", code, str(ROOT / "scripts" / "respell_core.js")], input=json.dumps(cases), capture_output=True, text=True, check=True)
         self.assertEqual(json.loads(out.stdout), [list(S.add_sed_id(t, i, e)) for t, i, e in cases])
         self.assertEqual(S.add_sed_id("{{R:sem-pro:SED|e=57}} {{R:sem-pro:SED}}", "9")[0], "{{R:sem-pro:SED|e=57}} {{R:sem-pro:SED|id=9}}")
+
+
+@unittest.skipUnless(shutil.which("node"), "node is not installed")
+class ReplacementsSame(unittest.TestCase):
+    """applyReplacements() (browser) and apply_pairs() (scripts/wikt_script_requests.py) agree, on the planned native-script fills."""
+    def test_same(self):
+        import wikt_script_requests as R, wikt_conflicts as K
+        rows = json.loads((ROOT / "data" / "wiktionary" / "script_requests.json").read_text(encoding="utf-8"))
+        cases = [(K.cached(p) or "", pairs) for p, pairs in list(R.page_edits(rows).items())[:40]] + [("a {{x}} b {{x}}", [["{{x}}", "{{y}}"]]), ("none", [["{{x}}", "{{y}}"]])]
+        code = ("const R=require(process.argv[1]);let s='';process.stdin.on('data',d=>s+=d).on('end',()=>{"
+                "console.log(JSON.stringify(JSON.parse(s).map(c=>{const r=R.applyReplacements(c[0],c[1]);return [r.text,r.found];})));});")
+        out = subprocess.run(["node", "-e", code, str(ROOT / "scripts" / "respell_core.js")], input=json.dumps(cases), capture_output=True, text=True, check=True)
+        self.assertEqual(json.loads(out.stdout), [list(R.apply_pairs(t, [tuple(p) for p in pairs])) for t, pairs in cases])

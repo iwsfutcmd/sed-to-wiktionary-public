@@ -1,0 +1,192 @@
+"""Terms in Semitic languages that Wiktionary lists as needing their native script, and which of them our converters can supply.
+usage: wikt_script_requests.py [LANGUAGE ...]      (network) -> data/wiktionary/script_requests.json
+
+Every page in "Category:Requests for native script for <Language> terms" is read; each template that names a term of that language with no
+script (term empty or "-", a tr=/ts= given) is one request. Templates and the position of their language code and term:
+  {{desc|CODE|TERM}} {{l|CODE|TERM}} {{m|CODE|TERM}} {{cog|CODE|TERM}} ...         CODE at 1, TERM at 2
+  {{inh|SRC|CODE|TERM}} {{der|..}} {{bor|..}} ...                                    CODE at 2, TERM at 3
+The conversion itself is done by suggest(), which refuses anything uncertain (see its docstring)."""
+import json, re, sys, urllib.parse, urllib.request, unicodedata as U
+from paths import WIKT
+import wikt_conflicts as K
+
+OUT = WIKT / "script_requests.json"
+UA = K.UA
+FIRST = {"desc", "desctree", "l", "l-lite", "m", "m-lite", "mention", "link", "cog", "cognate", "noncog", "ncog", "nc", "m+", "l+", "alt", "alter", "syn", "ant"}
+SECOND = {"inh", "inh+", "inh-lite", "der", "der+", "der-lite", "bor", "bor+", "lbor", "slbor", "obor", "cal", "calque", "pcal", "psm", "uder", "ubor"}
+LANGUAGES = ["Akkadian", "Aramaic", "Arabic", "Assyrian Neo-Aramaic", "Sabaean", "Classical Syriac", "Eblaite", "Silt'e", "Classical Mandaic", "Ge'ez",
+             "Hebrew", "Mandaic", "Ugaritic", "Amharic", "Tigrinya", "Turoyo", "Zay", "Gafat", "Harari", "Phoenician", "Tigre", "Jewish Babylonian Aramaic",
+             "Kistane", "Minaean", "Qatabanian", "Sebat Bet Gurage", "Argobba", "Biblical Aramaic", "Imperial Aramaic", "Mesqan", "Wolane", "Inor",
+             "Mehri", "Shehri", "Soqotri", "Harsusi", "Western Neo-Aramaic", "Lishana Deni", "Mlahsö", "Chaldean Neo-Aramaic", "Hulaulá", "Amorite", "Safaitic"]
+
+def api(**q):
+    d = urllib.request.urlopen(urllib.request.Request("https://en.wiktionary.org/w/api.php?" + urllib.parse.urlencode(dict(format="json", formatversion=2, **q)), headers=UA), timeout=60)
+    return json.load(d)
+
+def members(language):
+    out, cont = [], {}
+    while True:
+        d = api(action="query", list="categorymembers", cmtitle=f"Category:Requests for native script for {language} terms", cmlimit=500, **cont)
+        out += [p["title"] for p in d["query"]["categorymembers"]]
+        if "continue" not in d:
+            return out
+        cont = d["continue"]
+
+def templates(text):
+    """-> [(start, end, name, positional args, named args)] for every {{...}} that contains no nested template."""
+    for m in re.finditer(r"\{\{([^{}|]+)((?:\|[^{}]*)?)\}\}", text):
+        parts = m.group(2).split("|")[1:]
+        pos, named = [], {}
+        for p in parts:
+            k = re.match(r"\s*([a-z0-9]+)\s*=(.*)$", p, re.S)
+            if k and not k.group(1).isdigit():
+                named[k.group(1)] = k.group(2).strip()
+            else:
+                pos.append(p.strip())
+        yield m.start(), m.end(), m.group(1).strip(), pos, named
+
+def requests(text, code):
+    """Template uses of `code` with no script but a transliteration: [(start, end, name, term index, tr, gloss)]."""
+    out = []
+    for a, b, name, pos, named in templates(text):
+        if name in FIRST:
+            ci, ti = 0, 1
+        elif name in SECOND:
+            ci, ti = 1, 2
+        else:
+            continue
+        if len(pos) <= ci or pos[ci] != code:
+            continue
+        term = pos[ti] if len(pos) > ti else ""
+        tr = named.get("tr") or named.get("ts") or ""
+        if term.strip() not in ("", "-") or not tr:
+            continue
+        out.append(dict(start=a, end=b, template=text[a:b], name=name, tr=tr, ts=bool(named.get("ts") and not named.get("tr")),
+                        gloss=named.get("t") or named.get("gloss") or (pos[ti + 2] if len(pos) > ti + 2 else "")))
+    return out
+
+from tr2script import abjad, ethiopic, cuneiform
+
+# Wiktionary writes these in Latin (checked: no "nonstandard script" category), so the transliteration simply becomes the term
+LATIN = {"gdq", "shv", "sqt", "hss", "amw", "akk", "tru"}
+# consonantal scripts: a transliteration with no vowels maps letter for letter (Aramaic in the square script, its default on Wiktionary)
+CONSONANTAL = {"xsa", "inm", "xqt", "xhd", "sem-srb", "phn", "uga", "arc"}
+ETHIOPIC = {"gez", "am", "ti", "tig", "har", "stv", "zwa", "gft", "gru", "sgw", "agj", "mvz", "wle"}
+VOWELS = re.compile(r"[aeiouāēīōūăĕŏəäɛɔâêîôûáéíóú]", re.I)
+
+def suggest(code, tr, ts=False):
+    """-> (new term, how) or (None, why not). Refuses: several forms, syllabic spellings where a word is wanted, letters outside the tables,
+    Ethiopic transliterations not in Wiktionary's own scheme (no ä/ə to show it), Arabic (many requests are garbled loan sources)."""
+    t = U.normalize("NFC", tr.strip())
+    if not t or re.search(r"[,;/()\[\]?]|\s", t):
+        return None, "several forms or a note in the transliteration"
+    if code in LATIN:
+        if "-" in t.strip("-") and code == "akk":
+            return None, "a syllabic spelling, not the word"
+        return t, "Latin script is the standard for this language: the transliteration becomes the term"
+    if code in CONSONANTAL:
+        if VOWELS.search(t):
+            return None, "vocalised: the spelling (matres lectionis) is not certain"
+        sc = abjad.convert(code, t)
+        return (sc, "consonantal transliteration, letter for letter") if sc else (None, "a letter the table does not have")
+    if code == "xeb":
+        if not re.fullmatch(r"[\w\u0300-\u036f₀-₉]+(?:-[\w\u0300-\u036f₀-₉]+)+", t):
+            return None, "not a syllabic spelling"
+        sc = cuneiform.convert(t)
+        return (sc, "syllabic spelling, sign by sign (eBL sign list)") if sc else (None, "a sign the list does not have")
+    if code in ETHIOPIC:
+        if not re.search(r"[äə]", t):
+            return None, "not clearly in Wiktionary's Ethiopic transliteration scheme (no ä/ə)"
+        sc = ethiopic.convert("am", t)
+        return (sc, "Wiktionary's own Ethiopic transliteration, inverted") if sc else (None, "not convertible")
+    return None, "no safe converter for this language yet"
+
+def rewrite(template, name, new_term):
+    """The template with its term filled in: an empty or "-" term slot gets the script, or one is inserted where none was given."""
+    body = template[2:-2]
+    parts = body.split("|")
+    ci = 1 if name in FIRST else 2
+    pos_idx = [i for i, p in enumerate(parts) if i > 0 and not re.match(r"\s*[a-z0-9]+\s*=", p) or (i > 0 and re.match(r"\s*\d+\s*=", p))]
+    term_slot = pos_idx[ci] if len(pos_idx) > ci else None
+    if term_slot is not None and parts[term_slot].strip() in ("", "-"):
+        parts[term_slot] = new_term
+    else:
+        at = pos_idx[ci - 1] + 1 if len(pos_idx) >= ci else len(parts)
+        parts.insert(at, new_term)
+    return "{{" + "|".join(parts) + "}}"
+
+def page_exists(titles):
+    out = {}
+    for i in range(0, len(titles), 50):
+        d = api(action="query", titles="|".join(titles[i:i + 50]))
+        for p in d["query"]["pages"]:
+            out[U.normalize("NFC", p["title"])] = not p.get("missing")
+    return out
+
+def drop_tr(template):
+    return re.sub(r"\|\s*tr\s*=[^|}]*", "", template, count=1)
+
+def main(argv):
+    langs = argv or LANGUAGES
+    rows = []
+    for lang in langs:
+        try:
+            pages = members(lang)
+        except Exception as e:
+            print(f"  {lang}: {e}"); continue
+        codes = [c for c, v in K.LANGS.items() if v[0] == lang] or [lang]
+        K.fetch(pages, refresh=True, log=lambda *a: None)
+        n = 0
+        for p in pages:
+            text = K.cached(p) or ""
+            for code in codes:
+                for r in requests(text, code):
+                    rows.append(dict(language=lang, code=code, page=p, **{k: v for k, v in r.items() if k not in ("start", "end")}))
+                    n += 1
+        print(f"{lang:28} {len(pages):4} pages, {n:4} requests found" + ("" if n or not pages else f"  (code? {codes})"))
+    akk = sorted({suggest("akk", r["tr"])[0] for r in rows if r["code"] == "akk"} - {None})
+    exists = page_exists(akk + [t + "m" for t in akk if t[-1:] in "aeiuāēīū"])
+    for r in rows:
+        term, how = suggest(r["code"], r["tr"], r["ts"])
+        if term and re.search(r"\|\s*(?:tr|ts|alt)\d\s*=", r["template"]):
+            term, how = None, "a second term (tr2=/ts2=) in the same template: one fill would leave the request open"
+        alt = None
+        if term and r["code"] == "akk" and not exists.get(term) and exists.get(term + "m"):
+            term, alt, how = term + "m", term, how + "; linked to Wiktionary's lemma with mimation, shown as written"
+        if term and r["code"] != "ar":
+            new = rewrite(r["template"], r["name"], term)
+            if r["code"] in LATIN:
+                new = drop_tr(new)
+                new = re.sub(r"\|\s*ts\s*=\s*" + re.escape(alt or term) + r"\s*(?=[|}])", "", new, count=1)    # ts= the same as the term: redundant
+                if alt:
+                    new = new[:-2] + f"|alt={alt}}}}}"
+            r.update(new=new, how=how)
+        else:
+            r.update(why=how if not term else "Arabic left for a person")
+    OUT.write_text(json.dumps(rows, ensure_ascii=False, indent=1), encoding="utf-8")
+    ok = [r for r in rows if "new" in r]
+    print(f"{len(rows)} requests; {len(ok)} with a safe script/term, {len(rows) - len(ok)} left for a person; see {OUT.relative_to(WIKT.parent.parent)}")
+
+if __name__ == "__main__":
+    sys.exit(main(sys.argv[1:]))
+
+
+def page_edits(rows):
+    """-> {page: [(old template, new template)]}, each distinct template once (a template repeated on a page is replaced everywhere)."""
+    out = {}
+    for r in rows:
+        if "new" in r:
+            pairs = out.setdefault(r["page"], [])
+            if (r["template"], r["new"]) not in pairs:
+                pairs.append((r["template"], r["new"]))
+    return out
+
+def apply_pairs(text, pairs):
+    """Twin of applyReplacements() in scripts/respell_core.js: every occurrence of each old template becomes the new one.
+    -> (text, number of templates found)"""
+    found = 0
+    for old, new in pairs:
+        if old in text:
+            found += 1
+            text = text.replace(old, new)
+    return text, found

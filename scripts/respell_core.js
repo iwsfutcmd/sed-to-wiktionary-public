@@ -150,6 +150,14 @@
     return { text: text, changed: false };
   }
 
-  var api = { fixText: fixText, parse: parse, standardise: standardise, rootify: rootify, setNotation: setNotation, addSedId: addSedId };
+  // Exact template replacements prepared offline (scripts/wikt_script_requests.py): every occurrence of each old template becomes the new one.
+  // Twin of apply_pairs() there (tests/test_respell_js.py). -> { text, found }
+  function applyReplacements(text, pairs) {
+    var found = 0;
+    pairs.forEach(function (p) { if (text.indexOf(p[0]) >= 0) { found++; text = text.split(p[0]).join(p[1]); } });
+    return { text: text, found: found };
+  }
+
+  var api = { fixText: fixText, parse: parse, standardise: standardise, rootify: rootify, setNotation: setNotation, addSedId: addSedId, applyReplacements: applyReplacements };
   if (typeof module !== "undefined" && module.exports) module.exports = api; else root.WiktRespell = api;
 })(typeof window !== "undefined" ? window : this);
