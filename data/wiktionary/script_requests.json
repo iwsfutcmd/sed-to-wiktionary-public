@@ -79,6 +79,18 @@
  {
   "language": "Akkadian",
   "code": "akk",
+  "page": "խիճ",
+  "template": "{{noncog|akk|tr=ḫiṣṣu|t=rubble, gravel}}",
+  "name": "noncog",
+  "tr": "ḫiṣṣu",
+  "ts": false,
+  "gloss": "rubble, gravel",
+  "new": "{{noncog|akk|ḫiṣṣu|t=rubble, gravel}}",
+  "how": "Latin script is the standard for this language: the transliteration becomes the term"
+ },
+ {
+  "language": "Akkadian",
+  "code": "akk",
   "page": "խոփ",
   "template": "{{ncog|akk|tr=ḫepû, ḫapû|t=to break}}",
   "name": "ncog",
@@ -91,12 +103,34 @@
   "language": "Akkadian",
   "code": "akk",
   "page": "կարծեմ",
+  "template": "{{cog|akk|tr=karṣu|t=slander, accusation}}",
+  "name": "cog",
+  "tr": "karṣu",
+  "ts": false,
+  "gloss": "slander, accusation",
+  "why": "fails the sanity check: does not fit the regular correspondences with syc ܩܪܨܐ, syc ܐܩܪܨ, syc ܐܶܟܰܠ ܩܱܪ̈ܨܶܐ, syc ܐܟܠ ܩܪܨܐ, akk karṣī akālu"
+ },
+ {
+  "language": "Akkadian",
+  "code": "akk",
+  "page": "կարծեմ",
   "template": "{{m|akk|tr=karṣī akālu|t=to slander}}",
   "name": "m",
   "tr": "karṣī akālu",
   "ts": false,
   "gloss": "to slander",
   "why": "several forms or a note in the transliteration"
+ },
+ {
+  "language": "Akkadian",
+  "code": "akk",
+  "page": "հալաւ",
+  "template": "{{cog|akk|tr=naḫlaptu|t=garment, cloak, coat, scale armor}}",
+  "name": "cog",
+  "tr": "naḫlaptu",
+  "ts": false,
+  "gloss": "garment, cloak, coat, scale armor",
+  "why": "fails the sanity check: does not fit the regular correspondences with xsa 𐩭𐩡𐩰𐩣, uga 𐎃𐎍𐎔𐎐"
  },
  {
   "language": "Akkadian",
@@ -239,7 +273,7 @@
   "tr": "ʾhšnẖwyn",
   "ts": false,
   "gloss": "",
-  "why": "a letter the table does not have"
+  "why": "no safe converter for this language yet"
  },
  {
   "language": "Aramaic",
@@ -250,7 +284,7 @@
   "tr": "'ibrāy",
   "ts": false,
   "gloss": "",
-  "why": "vocalised: the spelling (matres lectionis) is not certain"
+  "why": "no safe converter for this language yet"
  },
  {
   "language": "Aramaic",
@@ -261,7 +295,18 @@
   "tr": "'ibrāy",
   "ts": false,
   "gloss": "",
-  "why": "vocalised: the spelling (matres lectionis) is not certain"
+  "why": "no safe converter for this language yet"
+ },
+ {
+  "language": "Aramaic",
+  "code": "arc",
+  "page": "Reconstruction:Proto-Iranian/HacwastaHnah",
+  "template": "{{desc|arc|tr=ʼspstn|bor=1}}",
+  "name": "desc",
+  "tr": "ʼspstn",
+  "ts": false,
+  "gloss": "",
+  "why": "no safe converter for this language yet"
  },
  {
   "language": "Aramaic",
@@ -272,7 +317,7 @@
   "tr": "ag-gan-nu",
   "ts": false,
   "gloss": "",
-  "why": "vocalised: the spelling (matres lectionis) is not certain"
+  "why": "no safe converter for this language yet"
  },
  {
   "language": "Aramaic",
@@ -283,7 +328,7 @@
   "tr": "ag-ga-nu",
   "ts": false,
   "gloss": "basin or bowl",
-  "why": "vocalised: the spelling (matres lectionis) is not certain"
+  "why": "no safe converter for this language yet"
  },
  {
   "language": "Aramaic",
@@ -294,7 +339,7 @@
   "tr": "pasḥa",
   "ts": false,
   "gloss": "",
-  "why": "vocalised: the spelling (matres lectionis) is not certain"
+  "why": "no safe converter for this language yet"
  },
  {
   "language": "Aramaic",
@@ -305,7 +350,7 @@
   "tr": "pasḥa",
   "ts": false,
   "gloss": "",
-  "why": "vocalised: the spelling (matres lectionis) is not certain"
+  "why": "no safe converter for this language yet"
  },
  {
   "language": "Aramaic",
@@ -316,7 +361,7 @@
   "tr": "šultānā",
   "ts": false,
   "gloss": "strength, authority",
-  "why": "vocalised: the spelling (matres lectionis) is not certain"
+  "why": "no safe converter for this language yet"
  },
  {
   "language": "Aramaic",
@@ -327,7 +372,7 @@
   "tr": "šultānā",
   "ts": false,
   "gloss": "strength, authority",
-  "why": "vocalised: the spelling (matres lectionis) is not certain"
+  "why": "no safe converter for this language yet"
  },
  {
   "language": "Aramaic",
@@ -338,7 +383,7 @@
   "tr": "šultānā",
   "ts": false,
   "gloss": "strength, power, authority",
-  "why": "vocalised: the spelling (matres lectionis) is not certain"
+  "why": "no safe converter for this language yet"
  },
  {
   "language": "Aramaic",
@@ -349,7 +394,7 @@
   "tr": "dallīlā",
   "ts": false,
   "gloss": "",
-  "why": "vocalised: the spelling (matres lectionis) is not certain"
+  "why": "no safe converter for this language yet"
  },
  {
   "language": "Aramaic",
@@ -360,7 +405,7 @@
   "tr": "kittuna",
   "ts": false,
   "gloss": "",
-  "why": "vocalised: the spelling (matres lectionis) is not certain"
+  "why": "no safe converter for this language yet"
  },
  {
   "language": "Aramaic",
@@ -371,7 +416,51 @@
   "tr": "ʾaryāwā",
   "ts": false,
   "gloss": "lion",
-  "why": "vocalised: the spelling (matres lectionis) is not certain"
+  "why": "no safe converter for this language yet"
+ },
+ {
+  "language": "Aramaic",
+  "code": "arc",
+  "page": "դահիճ",
+  "template": "{{cog|arc|tr=dḥšpṭˀ|t=an epithet of Nergal (=chief judge or the like)}}",
+  "name": "cog",
+  "tr": "dḥšpṭˀ",
+  "ts": false,
+  "gloss": "an epithet of Nergal (=chief judge or the like)",
+  "why": "no safe converter for this language yet"
+ },
+ {
+  "language": "Aramaic",
+  "code": "arc",
+  "page": "մխիթար",
+  "template": "{{m|arc|tr=ḥtr|||to encourage; to make proud}}",
+  "name": "m",
+  "tr": "ḥtr",
+  "ts": false,
+  "gloss": "to encourage; to make proud",
+  "why": "no safe converter for this language yet"
+ },
+ {
+  "language": "Aramaic",
+  "code": "arc",
+  "page": "շփշփեմ",
+  "template": "{{bor|xcl|arc|tr=špšp|t=to rub against}}",
+  "name": "bor",
+  "tr": "špšp",
+  "ts": false,
+  "gloss": "to rub against",
+  "why": "no safe converter for this language yet"
+ },
+ {
+  "language": "Aramaic",
+  "code": "arc",
+  "page": "ցամաք",
+  "template": "{{cog|arc|tr=ṣmq|t=to be dried up}}",
+  "name": "cog",
+  "tr": "ṣmq",
+  "ts": false,
+  "gloss": "to be dried up",
+  "why": "no safe converter for this language yet"
  },
  {
   "language": "Aramaic",
@@ -382,7 +471,7 @@
   "tr": "ḥ-m-s",
   "ts": false,
   "gloss": "criminality, violence",
-  "why": "a letter the table does not have"
+  "why": "no safe converter for this language yet"
  },
  {
   "language": "Aramaic",
@@ -393,7 +482,7 @@
   "tr": "kəhā",
   "ts": false,
   "gloss": "",
-  "why": "vocalised: the spelling (matres lectionis) is not certain"
+  "why": "no safe converter for this language yet"
  },
  {
   "language": "Aramaic",
@@ -404,7 +493,18 @@
   "tr": "makkaba",
   "ts": false,
   "gloss": "hammer",
-  "why": "vocalised: the spelling (matres lectionis) is not certain"
+  "why": "no safe converter for this language yet"
+ },
+ {
+  "language": "Aramaic",
+  "code": "arc",
+  "page": "کندر",
+  "template": "{{cog|arc|tr=qndrwg}}",
+  "name": "cog",
+  "tr": "qndrwg",
+  "ts": false,
+  "gloss": "",
+  "why": "no safe converter for this language yet"
  },
  {
   "language": "Aramaic",
@@ -426,7 +526,7 @@
   "tr": "ḥeryā",
   "ts": false,
   "gloss": "excrement",
-  "why": "vocalised: the spelling (matres lectionis) is not certain"
+  "why": "no safe converter for this language yet"
  },
  {
   "language": "Aramaic",
@@ -437,7 +537,7 @@
   "tr": "šbōlā",
   "ts": false,
   "gloss": "",
-  "why": "vocalised: the spelling (matres lectionis) is not certain"
+  "why": "no safe converter for this language yet"
  },
  {
   "language": "Aramaic",
@@ -448,7 +548,7 @@
   "tr": "dī",
   "ts": false,
   "gloss": "of, belonging to",
-  "why": "vocalised: the spelling (matres lectionis) is not certain"
+  "why": "no safe converter for this language yet"
  },
  {
   "language": "Aramaic",
@@ -459,7 +559,7 @@
   "tr": "ḥayyā",
   "ts": false,
   "gloss": "",
-  "why": "vocalised: the spelling (matres lectionis) is not certain"
+  "why": "no safe converter for this language yet"
  },
  {
   "language": "Aramaic",
@@ -470,7 +570,7 @@
   "tr": "zābā",
   "ts": false,
   "gloss": "",
-  "why": "vocalised: the spelling (matres lectionis) is not certain"
+  "why": "no safe converter for this language yet"
  },
  {
   "language": "Aramaic",
@@ -481,7 +581,7 @@
   "tr": "raḥḥem",
   "ts": false,
   "gloss": "",
-  "why": "vocalised: the spelling (matres lectionis) is not certain"
+  "why": "no safe converter for this language yet"
  },
  {
   "language": "Aramaic",
@@ -492,19 +592,7 @@
   "tr": "nāḡā",
   "ts": false,
   "gloss": "",
-  "why": "vocalised: the spelling (matres lectionis) is not certain"
- },
- {
-  "language": "Aramaic",
-  "code": "arc",
-  "page": "ܢܟܠ",
-  "template": "{{cog|arc|tr=nṭal|t=to lift up}}",
-  "name": "cog",
-  "tr": "nṭal",
-  "ts": false,
-  "gloss": "to lift up",
-  "new": "{{cog|arc|נטל|tr=nṭal|t=to lift up}}",
-  "how": "the spelling of the existing Aramaic entry נטל (matched by gloss)"
+  "why": "no safe converter for this language yet"
  },
  {
   "language": "Aramaic",
@@ -515,7 +603,7 @@
   "tr": "nšal",
   "ts": false,
   "gloss": "to be removed",
-  "why": "vocalised: the spelling (matres lectionis) is not certain"
+  "why": "no safe converter for this language yet"
  },
  {
   "language": "Aramaic",
@@ -526,7 +614,7 @@
   "tr": "sdaq",
   "ts": false,
   "gloss": "",
-  "why": "vocalised: the spelling (matres lectionis) is not certain"
+  "why": "no safe converter for this language yet"
  },
  {
   "language": "Aramaic",
@@ -537,7 +625,7 @@
   "tr": "ʿəḇā",
   "ts": false,
   "gloss": "",
-  "why": "vocalised: the spelling (matres lectionis) is not certain"
+  "why": "no safe converter for this language yet"
  },
  {
   "language": "Aramaic",
@@ -548,7 +636,7 @@
   "tr": "qḏam",
   "ts": false,
   "gloss": "",
-  "why": "vocalised: the spelling (matres lectionis) is not certain"
+  "why": "no safe converter for this language yet"
  },
  {
   "language": "Aramaic",
@@ -559,7 +647,7 @@
   "tr": "rəḥem",
   "ts": false,
   "gloss": "",
-  "why": "vocalised: the spelling (matres lectionis) is not certain"
+  "why": "no safe converter for this language yet"
  },
  {
   "language": "Arabic",
@@ -637,18 +725,6 @@
   "ts": false,
   "gloss": "",
   "why": "no safe converter for this language yet"
- },
- {
-  "language": "Arabic",
-  "code": "ar",
-  "page": "Jemena",
-  "template": "{{bor|lv|ar||tr=yaman|t=right side}}",
-  "name": "bor",
-  "tr": "yaman",
-  "ts": false,
-  "gloss": "right side",
-  "new": "{{bor|lv|ar|يمن|tr=yaman|t=right side}}",
-  "how": "the spelling of the existing Arabic entry يمن (matched by headword)"
  },
  {
   "language": "Arabic",
@@ -1127,18 +1203,6 @@
   "language": "Sabaean",
   "code": "xsa",
   "page": "𐩨𐩬",
-  "template": "{{m|xsa||tr=bwn}}",
-  "name": "m",
-  "tr": "bwn",
-  "ts": false,
-  "gloss": "",
-  "new": "{{m|xsa|𐩨𐩥𐩬|tr=bwn}}",
-  "how": "consonantal transliteration, letter for letter"
- },
- {
-  "language": "Sabaean",
-  "code": "xsa",
-  "page": "𐩨𐩬",
   "template": "{{m|xsa||tr=ʿAbadān 1}}",
   "name": "m",
   "tr": "ʿAbadān 1",
@@ -1215,18 +1279,6 @@
  {
   "language": "Classical Syriac",
   "code": "syc",
-  "page": "עש",
-  "template": "{{cog|syc|tr=ʿaššā|t=louse}}",
-  "name": "cog",
-  "tr": "ʿaššā",
-  "ts": false,
-  "gloss": "louse",
-  "new": "{{cog|syc|ܥܫܐ|tr=ʿaššā|t=louse}}",
-  "how": "the spelling of the existing Classical Syriac entry ܥܫܐ (matched by gloss)"
- },
- {
-  "language": "Classical Syriac",
-  "code": "syc",
   "page": "Reconstruction:Proto-Semitic/ṣ́araṭ-",
   "template": "{{desc|syc|-|tr=ʕurṭē|t=flatulence}}",
   "name": "desc",
@@ -1245,18 +1297,6 @@
   "ts": false,
   "gloss": "",
   "why": "no safe converter for this language yet"
- },
- {
-  "language": "Eblaite",
-  "code": "xeb",
-  "page": "Reconstruction:Proto-Semitic/našaḳ-",
-  "template": "{{desc|xeb||tr=ne-sa-gu|t=to kiss}}",
-  "name": "desc",
-  "tr": "ne-sa-gu",
-  "ts": false,
-  "gloss": "to kiss",
-  "new": "{{desc|xeb|𒉈𒊓𒄖|tr=ne-sa-gu|t=to kiss}}",
-  "how": "syllabic spelling, sign by sign (eBL sign list)"
  },
  {
   "language": "Eblaite",
@@ -1421,43 +1461,7 @@
   "tr": "pursma",
   "ts": false,
   "gloss": "",
-  "why": "a second term (tr2=/ts2=) in the same template: one fill would leave the request open"
- },
- {
-  "language": "Classical Mandaic",
-  "code": "myz",
-  "page": "Reconstruction:Proto-Iranian/kamaraH",
-  "template": "{{desc|myz|tr=qamar}}",
-  "name": "desc",
-  "tr": "qamar",
-  "ts": false,
-  "gloss": "",
-  "new": "{{desc|myz|ࡒࡀࡌࡀࡓ|tr=qamar}}",
-  "how": "Mandaic writes its vowels: converted letter for letter"
- },
- {
-  "language": "Classical Mandaic",
-  "code": "myz",
-  "page": "Reconstruction:Old Median/pariδayzah",
-  "template": "{{desc|myz|tr=pardasa}}",
-  "name": "desc",
-  "tr": "pardasa",
-  "ts": false,
-  "gloss": "",
-  "new": "{{desc|myz|ࡐࡀࡓࡃࡀࡎࡀ|tr=pardasa}}",
-  "how": "Mandaic writes its vowels: converted letter for letter"
- },
- {
-  "language": "Classical Mandaic",
-  "code": "myz",
-  "page": "Reconstruction:Old Median/pariδayzah",
-  "template": "{{l|myz|tr=pardisa}}",
-  "name": "l",
-  "tr": "pardisa",
-  "ts": false,
-  "gloss": "",
-  "new": "{{l|myz|ࡐࡀࡓࡃࡉࡎࡀ|tr=pardisa}}",
-  "how": "Mandaic writes its vowels: converted letter for letter"
+  "why": "no source or cognate to check it against: a letter of 'ࡐࡅࡓࡎࡌࡀ' has no correspondence in the table"
  },
  {
   "language": "Classical Mandaic",
@@ -1484,78 +1488,12 @@
  {
   "language": "Ge'ez",
   "code": "gez",
-  "page": "Reconstruction:Proto-Semitic/ʔbd",
-  "template": "{{desc|gez|-|tr=ˀbd|ts=ʔabda|t=to be out of one's mind}}",
-  "name": "desc",
-  "tr": "ˀbd",
-  "ts": false,
-  "gloss": "to be out of one's mind",
-  "why": "not clearly in Wiktionary's Ethiopic transliteration scheme (no ä/ə)"
- },
- {
-  "language": "Ge'ez",
-  "code": "gez",
-  "page": "Reconstruction:Proto-Semitic/ʔdm",
-  "template": "{{desc|gez||tr=ʾdm|ts=ʔaddama|t=to be red > beautiful}}",
-  "name": "desc",
-  "tr": "ʾdm",
-  "ts": false,
-  "gloss": "to be red > beautiful",
-  "why": "not clearly in Wiktionary's Ethiopic transliteration scheme (no ä/ə)"
- },
- {
-  "language": "Ge'ez",
-  "code": "gez",
-  "page": "Reconstruction:Proto-West Semitic/ʔdm",
-  "template": "{{desc|gez||tr=ʾdm|ts=ʔaddama|t=to be red > beautiful}}",
-  "name": "desc",
-  "tr": "ʾdm",
-  "ts": false,
-  "gloss": "to be red > beautiful",
-  "why": "not clearly in Wiktionary's Ethiopic transliteration scheme (no ä/ə)"
- },
- {
-  "language": "Ge'ez",
-  "code": "gez",
-  "page": "חמס",
-  "template": "{{ncog|gez|tr=ʕammaḍa|t=to do wrong, do violence, injure, harm}}",
-  "name": "ncog",
-  "tr": "ʕammaḍa",
-  "ts": false,
-  "gloss": "to do wrong, do violence, injure, harm",
-  "why": "not clearly in Wiktionary's Ethiopic transliteration scheme (no ä/ə)"
- },
- {
-  "language": "Ge'ez",
-  "code": "gez",
   "page": "עש",
   "template": "{{cog|gez|tr=‘eḍē|t=moth}}",
   "name": "cog",
   "tr": "‘eḍē",
   "ts": false,
   "gloss": "moth",
-  "why": "not clearly in Wiktionary's Ethiopic transliteration scheme (no ä/ə)"
- },
- {
-  "language": "Ge'ez",
-  "code": "gez",
-  "page": "Reconstruction:Proto-Afroasiatic/ḳas-",
-  "template": "{{desc|gez||tr=qʷəyṣ|t=shinbone}}",
-  "name": "desc",
-  "tr": "qʷəyṣ",
-  "ts": false,
-  "gloss": "shinbone",
-  "why": "not convertible"
- },
- {
-  "language": "Ge'ez",
-  "code": "gez",
-  "page": "Reconstruction:Proto-West Semitic/ṭaʕm-",
-  "template": "{{desc|gez||tr=ṭāʿm}}",
-  "name": "desc",
-  "tr": "ṭāʿm",
-  "ts": false,
-  "gloss": "",
   "why": "not clearly in Wiktionary's Ethiopic transliteration scheme (no ä/ə)"
  },
  {
@@ -1601,18 +1539,6 @@
   "ts": false,
   "gloss": "",
   "why": "vocalised: the spelling (matres lectionis) is not certain"
- },
- {
-  "language": "Ugaritic",
-  "code": "uga",
-  "page": "התפלש",
-  "template": "{{cog|uga|tr=plṯ|t=rolling oneself}}",
-  "name": "cog",
-  "tr": "plṯ",
-  "ts": false,
-  "gloss": "rolling oneself",
-  "new": "{{cog|uga|𐎔𐎍𐎘|tr=plṯ|t=rolling oneself}}",
-  "how": "consonantal transliteration, letter for letter"
  },
  {
   "language": "Ugaritic",
@@ -1705,26 +1631,13 @@
  {
   "language": "Turoyo",
   "code": "tru",
-  "page": "Reconstruction:Proto-Semitic/pay-",
-  "template": "{{desc|tru|-|tr=fēmo}}",
-  "name": "desc",
-  "tr": "fēmo",
-  "ts": false,
-  "gloss": "",
-  "new": "{{desc|tru|fēmo}}",
-  "how": "Latin script is the standard for this language: the transliteration becomes the term"
- },
- {
-  "language": "Turoyo",
-  "code": "tru",
   "page": "Reconstruction:Proto-West Semitic/ʕigl-",
   "template": "{{desc|tru|-|tr=ʔaḡlo|t=calf}}",
   "name": "desc",
   "tr": "ʔaḡlo",
   "ts": false,
   "gloss": "calf",
-  "new": "{{desc|tru|ʔaḡlo|t=calf}}",
-  "how": "Latin script is the standard for this language: the transliteration becomes the term"
+  "why": "no safe converter for this language yet"
  },
  {
   "language": "Turoyo",
@@ -1735,8 +1648,7 @@
   "tr": "nobačči",
   "ts": false,
   "gloss": "",
-  "new": "{{desc|tru|nobačči|bor=1}}",
-  "how": "Latin script is the standard for this language: the transliteration becomes the term"
+  "why": "no safe converter for this language yet"
  },
  {
   "language": "Zay",
@@ -1763,18 +1675,6 @@
  {
   "language": "Gafat",
   "code": "gft",
-  "page": "Reconstruction:Proto-Semitic/lawaṯ-",
-  "template": "{{desc|gft||tr=liwwäsä|t=to knead}}",
-  "name": "desc",
-  "tr": "liwwäsä",
-  "ts": false,
-  "gloss": "to knead",
-  "new": "{{desc|gft|ሊወሰ|tr=liwwäsä|t=to knead}}",
-  "how": "Wiktionary's own Ethiopic transliteration, inverted"
- },
- {
-  "language": "Gafat",
-  "code": "gft",
   "page": "Reconstruction:Proto-Semitic/ʕaṯ̣m-",
   "template": "{{desc|gft|-|tr=aṣmʷä}}",
   "name": "desc",
@@ -1782,18 +1682,6 @@
   "ts": false,
   "gloss": "",
   "why": "not convertible"
- },
- {
-  "language": "Gafat",
-  "code": "gft",
-  "page": "هر",
-  "template": "{{cog|gft||tr=urrä||cat}}",
-  "name": "cog",
-  "tr": "urrä",
-  "ts": false,
-  "gloss": "cat",
-  "new": "{{cog|gft|ኡረ|tr=urrä||cat}}",
-  "how": "Wiktionary's own Ethiopic transliteration, inverted"
  },
  {
   "language": "Harari",
@@ -1860,18 +1748,6 @@
   "ts": false,
   "gloss": "citadel, high rock",
   "why": "vocalised: the spelling (matres lectionis) is not certain"
- },
- {
-  "language": "Tigre",
-  "code": "tig",
-  "page": "Reconstruction:Proto-Semitic/bVʕVr-",
-  "template": "{{desc|tig|-|tr=bəʕrāy|t=ox, bull}}",
-  "name": "desc",
-  "tr": "bəʕrāy",
-  "ts": false,
-  "gloss": "ox, bull",
-  "new": "{{desc|tig|ብዕራይ|tr=bəʕrāy|t=ox, bull}}",
-  "how": "Wiktionary's own Ethiopic transliteration, inverted"
  },
  {
   "language": "Tigre",
@@ -2039,114 +1915,6 @@
   "why": "not clearly in Wiktionary's Ethiopic transliteration scheme (no ä/ə)"
  },
  {
-  "language": "Wolane",
-  "code": "wle",
-  "page": "Reconstruction:Proto-Semitic/ṭiḥāl-",
-  "template": "{{desc|wle||tr=ṭalä}}",
-  "name": "desc",
-  "tr": "ṭalä",
-  "ts": false,
-  "gloss": "",
-  "new": "{{desc|wle|ጣለ|tr=ṭalä}}",
-  "how": "Wiktionary's own Ethiopic transliteration, inverted"
- },
- {
-  "language": "Mehri",
-  "code": "gdq",
-  "page": "abukir",
-  "template": "{{cog|gdq||tr=bōker|t=young camel}}",
-  "name": "cog",
-  "tr": "bōker",
-  "ts": false,
-  "gloss": "young camel",
-  "new": "{{cog|gdq|bōker|t=young camel}}",
-  "how": "Latin script is the standard for this language: the transliteration becomes the term"
- },
- {
-  "language": "Mehri",
-  "code": "gdq",
-  "page": "muh",
-  "template": "{{cog|gdq|tr=ḥə-mōh}}",
-  "name": "cog",
-  "tr": "ḥə-mōh",
-  "ts": false,
-  "gloss": "",
-  "new": "{{cog|gdq|ḥə-mōh}}",
-  "how": "Latin script is the standard for this language: the transliteration becomes the term"
- },
- {
-  "language": "Mehri",
-  "code": "gdq",
-  "page": "Reconstruction:Proto-Semitic/ʔaḥad-",
-  "template": "{{desc|gdq|tr=ʾəḥād|g=m}}",
-  "name": "desc",
-  "tr": "ʾəḥād",
-  "ts": false,
-  "gloss": "",
-  "new": "{{desc|gdq|ʾəḥād|g=m}}",
-  "how": "Latin script is the standard for this language: the transliteration becomes the term"
- },
- {
-  "language": "Mehri",
-  "code": "gdq",
-  "page": "أأبن",
-  "template": "{{cog|gdq|tr=ḥawbin}}",
-  "name": "cog",
-  "tr": "ḥawbin",
-  "ts": false,
-  "gloss": "",
-  "new": "{{cog|gdq|ḥawbin}}",
-  "how": "Latin script is the standard for this language: the transliteration becomes the term"
- },
- {
-  "language": "Mehri",
-  "code": "gdq",
-  "page": "Reconstruction:Proto-Semitic/ṭiḥāl-",
-  "template": "{{desc|gdq||tr=ṭɛlḥáym}}",
-  "name": "desc",
-  "tr": "ṭɛlḥáym",
-  "ts": false,
-  "gloss": "",
-  "new": "{{desc|gdq|ṭɛlḥáym}}",
-  "how": "Latin script is the standard for this language: the transliteration becomes the term"
- },
- {
-  "language": "Shehri",
-  "code": "shv",
-  "page": "muh",
-  "template": "{{cog|shv|tr=ɛ́-mí}}",
-  "name": "cog",
-  "tr": "ɛ́-mí",
-  "ts": false,
-  "gloss": "",
-  "new": "{{cog|shv|ɛ́-mí}}",
-  "how": "Latin script is the standard for this language: the transliteration becomes the term"
- },
- {
-  "language": "Shehri",
-  "code": "shv",
-  "page": "muh",
-  "template": "{{m|shv|tr=é-míh}}",
-  "name": "m",
-  "tr": "é-míh",
-  "ts": false,
-  "gloss": "",
-  "new": "{{m|shv|é-míh}}",
-  "how": "Latin script is the standard for this language: the transliteration becomes the term"
- },
- {
-  "language": "Shehri",
-  "code": "shv",
-  "page": "Reconstruction:Proto-Semitic/ṭiḥāl-",
-  "template": "{{desc|shv||tr=ṭɛlḥím}}",
-  "name": "desc",
-  "tr": "ṭɛlḥím",
-  "ts": false,
-  "gloss": "",
-  "new": "{{desc|shv|ṭɛlḥím}}",
-  "how": "Latin script is the standard for this language: the transliteration becomes the term"
- },
- {
   "language": "Soqotri",
   "code": "sqt",
   "page": "لخم",
@@ -2166,31 +1934,7 @@
   "tr": "ṭálḥəm",
   "ts": false,
   "gloss": "",
-  "why": "a second term (tr2=/ts2=) in the same template: one fill would leave the request open"
- },
- {
-  "language": "Harsusi",
-  "code": "hss",
-  "page": "muh",
-  "template": "{{cog|hss|tr=ḥə-myóh}}",
-  "name": "cog",
-  "tr": "ḥə-myóh",
-  "ts": false,
-  "gloss": "",
-  "new": "{{cog|hss|ḥə-myóh}}",
-  "how": "Latin script is the standard for this language: the transliteration becomes the term"
- },
- {
-  "language": "Harsusi",
-  "code": "hss",
-  "page": "Reconstruction:Proto-Semitic/ṭiḥāl-",
-  "template": "{{desc|hss||tr=ṭelḥáym}}",
-  "name": "desc",
-  "tr": "ṭelḥáym",
-  "ts": false,
-  "gloss": "",
-  "new": "{{desc|hss|ṭelḥáym}}",
-  "how": "Latin script is the standard for this language: the transliteration becomes the term"
+  "why": "no safe converter for this language yet"
  },
  {
   "language": "Mlahsö",

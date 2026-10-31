@@ -68,9 +68,11 @@ def requests(text, code):
 from tr2script import abjad, ethiopic, cuneiform
 
 # Wiktionary writes these in Latin (checked: no "nonstandard script" category), so the transliteration simply becomes the term
-LATIN = {"gdq", "shv", "sqt", "hss", "amw", "akk", "tru"}
+# Not Modern South Arabian (Mehri, Shehri, Soqotri, Harsusi): their requests often carry old transcriptions in another scheme and are left for
+# someone who knows the language (Catonif, 2026-10-30). Not Turoyo: Wiktionary expects Syriac script (Fay Freak undid a Latin Turoyo term).
+LATIN = {"akk", "amw"}
 # consonantal scripts: a transliteration with no vowels maps letter for letter (Aramaic in the square script, its default on Wiktionary)
-CONSONANTAL = {"xsa", "inm", "xqt", "xhd", "sem-srb", "phn", "uga", "arc"}
+CONSONANTAL = {"xsa", "inm", "xqt", "xhd", "sem-srb", "phn", "uga"}       # not Aramaic: which script (square? Imperial?) needs a source
 ETHIOPIC = {"gez", "am", "ti", "tig", "har", "stv", "zwa", "gft", "gru", "sgw", "agj", "mvz", "wle"}
 VOWELS = re.compile(r"[aeiouāēīōūăĕŏəäɛɔâêîôûáéíóú]", re.I)
 
@@ -105,6 +107,7 @@ def suggest(code, tr, ts=False):
     return None, "no safe converter for this language yet"
 
 from tr2script import arabic, mandaic
+import semitic_phon
 LOOKUP = {"arc", "tmr", "jpa", "syc", "aii", "tru", "he", "hbo", "ar"} | ETHIOPIC
 ABJAD_TABLE = {"arc": "arc", "tmr": "tmr", "jpa": "jpa", "he": "he", "hbo": "hbo", "syc": "syc", "aii": "syc", "tru": "syc"}
 LONG = {"ī": ["y", ""], "ē": ["y", ""], "ū": ["w", ""], "ō": ["w", ""], "ā": [""], "ă": [""], "ĕ": [""], "ŏ": [""]}
@@ -164,6 +167,45 @@ def rewrite(template, name, new_term):
         parts.insert(at, new_term)
     return "{{" + "|".join(parts) + "}}"
 
+def sed_index():
+    """SEDonline's cited words by Wiktionary code: [(code, form)] (the source check)."""
+    import csv, wikt_draft as WD
+    from paths import DATA
+    out = {}
+    for w in csv.DictReader(open(DATA / "sedonline" / "sedonline_words.tsv", encoding="utf-8"), delimiter="\t"):
+        if w["lang"] in WD.LANG:
+            out.setdefault(WD.LANG[w["lang"]][0], []).append(w["form"])
+    return out
+
+def comparanda(r):
+    """The other Semitic terms on the template's own line (its cognates, ancestor or descendants), as (code, form)."""
+    text = K.cached(r["page"]) or ""
+    line = next((l for l in text.split("\n") if r["template"] in l), "")
+    out = []
+    for a, b, name, pos, named in templates(line):
+        if line[a:b] == r["template"]:
+            continue
+        ci = 0 if name in FIRST else 1 if name in SECOND else None
+        if ci is None or len(pos) <= ci or name in ("noncog", "ncog", "nc"):
+            continue                                                   # not cognates by the editor's own account
+        code, term = pos[ci], (pos[ci + 1] if len(pos) > ci + 1 else "")
+        if code == r["code"]:
+            continue                                                   # the same language: context, not a cognate (𐩡𐩬: ln, lnm beside glbm)
+        form = term if term.strip() not in ("", "-") else (named.get("tr") or named.get("ts") or "")
+        if form and code in semitic_phon.FAMILY:
+            out.append((code, form))
+    return out
+
+def sanity(r, term, src):
+    """-> (True/False/None, why). True if a source has the form (SEDonline, same language, same consonants) or the form fits the regular sound
+    correspondences with the cognates on its line (semitic_phon.py; e.g. Ugaritic bgy beside Arabic بغى fails: *ġ is ġ in Ugaritic)."""
+    code = r["code"]
+    mine = semitic_phon.letters(code, term)
+    for f in src.get(code, []):
+        if semitic_phon.letters(code, f) == mine and mine:
+            return True, f"in SEDonline as {f}"
+    return semitic_phon.check(code, term, comparanda(r))
+
 def page_exists(titles):
     out = {}
     for i in range(0, len(titles), 50):
@@ -195,8 +237,13 @@ def main(argv):
         print(f"{lang:28} {len(pages):4} pages, {n:4} requests found" + ("" if n or not pages else f"  (code? {codes})"))
     akk = sorted({suggest("akk", r["tr"])[0] for r in rows if r["code"] == "akk"} - {None})
     exists = page_exists(akk + [t + "m" for t in akk if t[-1:] in "aeiuāēīū"])
+    src = sed_index()
     for r in rows:
         term, how = suggest(r["code"], r["tr"], r["ts"])
+        if term:
+            verdict, why = sanity(r, term, src)
+            if verdict is not True:
+                term, how = None, ("fails the sanity check: " if verdict is False else "no source or cognate to check it against: ") + why
         if term and re.search(r"\|\s*(?:tr|ts|alt)\d\s*=", r["template"]):
             term, how = None, "a second term (tr2=/ts2=) in the same template: one fill would leave the request open"
         alt = None
@@ -261,7 +308,11 @@ def lookup_pass(rows):
         if len(hits) == 1:
             title, why = hits[0]
             r.pop("why", None)
-            r.update(new=rewrite(r["template"], r["name"], title), how=f"the spelling of the existing {r['language']} entry {title} (matched by {why})")
+            new = rewrite(r["template"], r["name"], title)
+            if r["code"] == "ar":                                  # Arabic: the vocalised headword, and no tr= (Wiktionary transliterates it; Catonif)
+                voc = cand[id(r)][title]
+                new = drop_tr(rewrite(r["template"], r["name"], voc))
+            r.update(new=new, how=f"the spelling of the existing {r['language']} entry {title} (matched by {why})")
             n += 1
     return n
 

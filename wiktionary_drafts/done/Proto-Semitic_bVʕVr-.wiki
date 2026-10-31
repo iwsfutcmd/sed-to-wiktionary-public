@@ -30,7 +30,7 @@ Reconstructed in Militarev & Kogan's ''Semitic Etymological Dictionary'' as {{m|
 **** {{desc|xhd|𐩨𐩲𐩧|tr=bʕr|t=commercial livestock}}
 ** Ethiopian Semitic:
 *** {{desc|gez|ብዕር|tr=bəʕər|t=ox, bull, horned cattle}}, {{l|gez|ብዕራ|tr=bəʕərā}}, {{l|gez|ብዕራይ|tr=bəʕərāy}}, {{l|gez|ብዕራዊ|tr=bəʕərāwi}}
-*** {{desc|tig|-|tr=bəʕrāy|t=ox, bull}}
+*** {{desc|tig|ብዕራይ|tr=bəʕrāy|t=ox, bull}}
 *** {{desc|ti|ብዕራይ|tr=bəʕray|t=ox, bull}}, {{l|ti|በዕራይ|tr=bäʕray}}
 ** Modern South Arabian:
 *** {{desc|gdq|bəʕáyr|t=male camel}}

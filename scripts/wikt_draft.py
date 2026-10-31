@@ -53,6 +53,7 @@ CURATED = {
  ("arc", "tḳl"): "תקל", ("jpa", "tḳl"): "תקל", ("tmr", "tḳl"): "תקל", ("syc", "tḳl"): "ܬܩܠ", ("arc-cpa", "tḳl"): "ܬܩܠ", ("myz", "tḳl"): "ࡕࡒࡋ",
  ("ar", "ˁalaḳ"): "عَلَق", ("ar", "ˁalaḳa"): "عَلَقَة", ("hbo", "ˁălūḳā"): "עֲלוּקָה", ("syc", "ˁalūḳā"): "ܥܠܘܩܐ",   # *ʕalaḳ-: as on Wiktionary (علق coll., علقة, עלוקה)
  ("tru", "ˁalḳo"): "ܥܠܩܐ", ("har", "ēḳti"): "ኤቅቲ",      # Turoyo in Syriac script (as ܒܩܐ); Harari initial ē is ኤ (the converter leaves initial vowels alone)
+ ("tig", "bəʕrāy"): "ብዕራይ",          # *bVʕVr-: the Tigre entry (filled 2026-10-29; ʕ before a consonant is the 6th order ዕ)
  ("hbo", "pārāš"): "פָּרָשׁ",      # *paraš-: as on Wiktionary (פרש)
  ("xsa", "frs₁"): "𐩰𐩧𐩪𐩣",       # *paraš-: Wiktionary's Sabaean lemma has mimation (𐩰𐩧𐩪 is its construct-state form page); shown as the SED's 𐩰𐩧𐩪
  ("hbo", "šəˀēr"): "שְׁאֵר", ("uga", "šˀir"): "𐎌𐎛𐎗",          # both as on Wiktionary's Akkadian šīrum page
@@ -122,6 +123,8 @@ def one(code, form, notes, first, gloss, lang):
         if not cun: notes.append(f"Akkadian {lemma}: no cuneiform (no Wiktionary lemma page, no convertible normalised spelling)")
         elif form not in AKK_OVERRIDE and "|phon=" not in (page(lemma) or ""): notes.append(f"Akkadian {lemma}: {cun} (NORMALISED spelling {cuneiform.normalise(lemma)}, not an attestation)")
         return f"{{{{{head}|akk|{lemma}" + (f"|alt={cun}" if cun else "") + f"|tr={lemma}{t}}}}}"
+    if code == "xeb" and cuneiform.convert(form):                # Eblaite is written in cuneiform on Wiktionary: the syllables, sign by sign, where
+        return f"{{{{{head}|{code}|{cuneiform.convert(form)}|tr={form}{t}}}}}"   # every reading is safe (unindexed, undisputed); else Latin
     if code in LATIN_TERM:
         return f"{{{{{head}|{code}|{tr_of(form)}{t}}}}}"
     if lang in ARC_SCRIPT:

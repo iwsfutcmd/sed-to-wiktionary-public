@@ -110,7 +110,7 @@ console.log(JSON.stringify(box));
     def test_respells_summarises_and_shows_the_diff(self):
         b = self.run_js(text="{{inh|ar|sem-pro|*ʿayn-}} x [[Reconstruction:Proto-Semitic/ʿayn-]]")
         self.assertEqual(b["val"], "{{inh|ar|sem-pro|*ʕayn-}} x [[Reconstruction:Proto-Semitic/ʕayn-]]")
-        self.assertIn("*ʿayn- → *ʕayn-", b["summary"]); self.assertIn("script-assisted", b["summary"])
+        self.assertIn("*ʿayn- → *ʕayn-", b["summary"]); self.assertNotIn("script-assisted", b["summary"])   # dropped 2026-10-30: the user page says which tools are used
         self.assertEqual(b["diff"], 1)
         self.assertIs(b["minor"], True); self.assertIs(b["watch"], False)       # minor edit, page not watched
     def test_only_on_the_checklist_links(self):

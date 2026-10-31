@@ -1,0 +1,50 @@
+[
+ {
+  "language": "Ugaritic",
+  "code": "uga",
+  "page": "ברח",
+  "template": "{{cog|uga|brḥ|t=to flee}}",
+  "new": "{{cog|uga|𐎁𐎗𐎈|t=to flee|tr=brḥ}}",
+  "how": "wrong script: Latin consonants → Ugaritic"
+ },
+ {
+  "language": "Ugaritic",
+  "code": "uga",
+  "page": "לוג",
+  "template": "{{cog|uga|lg}}",
+  "new": "{{cog|uga|𐎍𐎂|tr=lg}}",
+  "how": "wrong script: Latin consonants → Ugaritic"
+ },
+ {
+  "language": "Ugaritic",
+  "code": "uga",
+  "page": "ספיר",
+  "template": "{{cog|uga|spr|t=lapis lazuli}}",
+  "new": "{{cog|uga|𐎒𐎔𐎗|t=lapis lazuli|tr=spr}}",
+  "how": "wrong script: Latin consonants → Ugaritic"
+ },
+ {
+  "language": "Moabite",
+  "code": "obm",
+  "page": "abātum",
+  "template": "{{cog|obm|אבד|tr='-b-d||to perish}}",
+  "new": "{{cog|obm|𐤀𐤁𐤃|tr=ʾbd||to perish}}",
+  "how": "wrong script: Hebrew letters → Phoenician (Moabite's own alphabet)"
+ },
+ {
+  "language": "Moabite",
+  "code": "obm",
+  "page": "Reconstruction:Proto-Semitic/ʔbd",
+  "template": "{{desc|obm|אבד|t=to perish}}",
+  "new": "{{desc|obm|𐤀𐤁𐤃|t=to perish}}",
+  "how": "wrong script: Hebrew letters → Phoenician (Moabite's own alphabet)"
+ },
+ {
+  "language": "Moabite",
+  "code": "obm",
+  "page": "אבד",
+  "template": "{{cog|obm|אבד|tr='-b-d||to perish}}",
+  "new": "{{cog|obm|𐤀𐤁𐤃|tr=ʾbd||to perish}}",
+  "how": "wrong script: Hebrew letters → Phoenician (Moabite's own alphabet)"
+ }
+]
