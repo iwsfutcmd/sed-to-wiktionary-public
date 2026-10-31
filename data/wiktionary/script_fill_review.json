@@ -836,7 +836,7 @@
   "new": "{{cog|arc|פסא|tr=psʔ|t=palm}}",
   "how": "consonantal transliteration, letter for letter",
   "round": "5bc2df4",
-  "action": "restore",
+  "action": "restored",
   "why": "Aramaic: needs a source for the script; no cognate on the line to compare with",
   "to": "{{cog|arc||tr=psʔ|t=palm}}"
  },
@@ -852,7 +852,7 @@
   "new": "{{desc|arc|נוסרדא|tr=nwsrdʾ|ts=nawsardā|bor=1|t=new year}}",
   "how": "consonantal transliteration, letter for letter",
   "round": "5bc2df4",
-  "action": "restore",
+  "action": "restored",
   "why": "Aramaic: needs a source for the script; no cognate on the line to compare with",
   "to": "{{desc|arc|tr=nwsrdʾ|ts=nawsardā|bor=1|t=new year}}"
  },
@@ -868,7 +868,7 @@
   "new": "{{desc|arc|והשף|tr=whšp|bor=1}}",
   "how": "consonantal transliteration, letter for letter",
   "round": "5bc2df4",
-  "action": "restore",
+  "action": "restored",
   "why": "Aramaic: needs a source for the script; no cognate on the line to compare with",
   "to": "{{desc|arc|tr=whšp|bor=1}}"
  },
@@ -884,7 +884,7 @@
   "new": "{{desc|arc|נזך|tr=nzk|bor=1}}",
   "how": "consonantal transliteration, letter for letter",
   "round": "5bc2df4",
-  "action": "restore",
+  "action": "restored",
   "why": "Aramaic: needs a source for the script; no cognate on the line to compare with",
   "to": "{{desc|arc||tr=nzk|bor=1}}"
  },
@@ -900,7 +900,7 @@
   "new": "{{bor+|acy|arc|דלל|tr=dll}}",
   "how": "consonantal transliteration, letter for letter",
   "round": "5bc2df4",
-  "action": "restore",
+  "action": "restored",
   "why": "Aramaic: needs a source for the script; no cognate on the line to compare with",
   "to": "{{bor+|acy|arc|tr=dll}}"
  },
@@ -916,7 +916,7 @@
   "new": "{{desc|arc|יודן|tr=ywdn|t=grain-house|bor=1}}",
   "how": "consonantal transliteration, letter for letter",
   "round": "5bc2df4",
-  "action": "restore",
+  "action": "restored",
   "why": "Aramaic: needs a source for the script; no cognate on the line to compare with",
   "to": "{{desc|arc|tr=ywdn|t=grain-house|bor=1}}"
  },
@@ -932,7 +932,7 @@
   "new": "{{desc|arc|למפד|tr=lmpd|bor=1}}",
   "how": "consonantal transliteration, letter for letter",
   "round": "5bc2df4",
-  "action": "restore",
+  "action": "restored",
   "why": "Aramaic: needs a source for the script; no cognate on the line to compare with",
   "to": "{{desc|arc|tr=lmpd|bor=1}}"
  },
@@ -948,7 +948,7 @@
   "new": "{{ncog|arc|בורדעא|tr=bwrdˁˀ|gloss=ragged garment}}",
   "how": "consonantal transliteration, letter for letter",
   "round": "5bc2df4",
-  "action": "restore",
+  "action": "restored",
   "why": "Aramaic: needs a source for the script; does not fit the regular correspondences with he דרס, he ערדל, syc ܕܼܪܕܣ, he דש, he דראון",
   "to": "{{ncog|arc||tr=bwrdˁˀ|gloss=ragged garment}}"
  },
@@ -964,7 +964,7 @@
   "new": "{{cog|arc|חלש|tr=ḥlš|t=to be weak}}",
   "how": "consonantal transliteration, letter for letter",
   "round": "5bc2df4",
-  "action": "restore",
+  "action": "restored",
   "why": "Aramaic: needs a source for the script; no cognate on the line to compare with",
   "to": "{{cog|arc|tr=ḥlš|t=to be weak}}"
  },
@@ -980,7 +980,7 @@
   "new": "{{cog|arc|קלש|tr=qlš}}",
   "how": "consonantal transliteration, letter for letter",
   "round": "5bc2df4",
-  "action": "restore",
+  "action": "restored",
   "why": "Aramaic: needs a source for the script; no cognate on the line to compare with",
   "to": "{{cog|arc|tr=qlš}}"
  },
@@ -1012,7 +1012,7 @@
   "new": "{{inh|aii|arc|אהמי|tr=ʾhmy|t=to avert the eyes; to avoid}}",
   "how": "consonantal transliteration, letter for letter",
   "round": "5bc2df4",
-  "action": "restore",
+  "action": "restored",
   "why": "Aramaic: needs a source for the script; no cognate on the line to compare with",
   "to": "{{inh|aii|arc||tr=ʾhmy|t=to avert the eyes; to avoid}}"
  },
@@ -1058,8 +1058,8 @@
   "new": "{{ncog|xsa|𐩭𐩣𐩮|tr=ḫmṣ|t=to deface (an inscription)}}",
   "how": "consonantal transliteration, letter for letter",
   "round": "5bc2df4",
-  "action": "restore",
-  "why": "nothing to verify it against: no cognate on the line to compare with",
+  "action": "keep",
+  "why": "kept by the user on review (2026-10-31): nothing to verify it against: no cognate on the line to compare with",
   "to": "{{ncog|xsa|tr=ḫmṣ|t=to deface (an inscription)}}"
  },
  {
@@ -1119,8 +1119,8 @@
   "new": "{{m|xsa|𐩴𐩡𐩨𐩣|tr=glbm}}",
   "how": "consonantal transliteration, letter for letter",
   "round": "5bc2df4",
-  "action": "restore",
-  "why": "nothing to verify it against: no cognate on the line to compare with",
+  "action": "keep",
+  "why": "kept by the user on review (2026-10-31): nothing to verify it against: no cognate on the line to compare with",
   "to": "{{m|xsa||tr=glbm}}"
  },
  {
@@ -1150,8 +1150,8 @@
   "new": "{{desc|xeb|𒉈𒊓𒄖|tr=ne-sa-gu|t=to kiss}}",
   "how": "syllabic spelling, sign by sign (eBL sign list)",
   "round": "5bc2df4",
-  "action": "restore",
-  "why": "nothing to verify it against: a letter of '𒉈𒊓𒄖' has no correspondence in the table",
+  "action": "keep",
+  "why": "kept by the user on review (2026-10-31): nothing to verify it against: a letter of '𒉈𒊓𒄖' has no correspondence in the table",
   "to": "{{desc|xeb||tr=ne-sa-gu|t=to kiss}}"
  },
  {
@@ -1166,8 +1166,8 @@
   "new": "{{desc|xeb|𒀀𒋾𒈬|tr=a-ti-mu|t=group}}",
   "how": "syllabic spelling, sign by sign (eBL sign list)",
   "round": "5bc2df4",
-  "action": "restore",
-  "why": "nothing to verify it against: a letter of '𒀀𒋾𒈬' has no correspondence in the table",
+  "action": "keep",
+  "why": "kept by the user on review (2026-10-31): nothing to verify it against: a letter of '𒀀𒋾𒈬' has no correspondence in the table",
   "to": "{{desc|xeb||tr=a-ti-mu|t=group}}"
  },
  {
@@ -1198,7 +1198,7 @@
   "new": "{{desc|tru|fēmo}}",
   "how": "Latin script is the standard for this language: the transliteration becomes the term",
   "round": "5bc2df4",
-  "action": "restore",
+  "action": "restored",
   "why": "policy: Modern South Arabian / Turoyo requests are left for someone who knows the language",
   "to": "{{desc|tru|-|tr=fēmo}}"
  },
@@ -1214,8 +1214,8 @@
   "new": "{{desc|gft|ሊወሰ|tr=liwwäsä|t=to knead}}",
   "how": "Wiktionary's own Ethiopic transliteration, inverted",
   "round": "5bc2df4",
-  "action": "restore",
-  "why": "nothing to verify it against: no cognate on the line to compare with",
+  "action": "keep",
+  "why": "kept by the user on review (2026-10-31): nothing to verify it against: no cognate on the line to compare with",
   "to": "{{desc|gft||tr=liwwäsä|t=to knead}}"
  },
  {
@@ -1321,7 +1321,7 @@
   "new": "{{cog|gdq|bōker|t=young camel}}",
   "how": "Latin script is the standard for this language: the transliteration becomes the term",
   "round": "5bc2df4",
-  "action": "restore",
+  "action": "restored",
   "why": "policy: Modern South Arabian / Turoyo requests are left for someone who knows the language",
   "to": "{{cog|gdq||tr=bōker|t=young camel}}"
  },
@@ -1337,7 +1337,7 @@
   "new": "{{cog|gdq|ḥə-mōh}}",
   "how": "Latin script is the standard for this language: the transliteration becomes the term",
   "round": "5bc2df4",
-  "action": "restore",
+  "action": "restored",
   "why": "policy: Modern South Arabian / Turoyo requests are left for someone who knows the language",
   "to": "{{cog|gdq|tr=ḥə-mōh}}"
  },
@@ -1353,7 +1353,7 @@
   "new": "{{desc|gdq|ʾəḥād|g=m}}",
   "how": "Latin script is the standard for this language: the transliteration becomes the term",
   "round": "5bc2df4",
-  "action": "restore",
+  "action": "restored",
   "why": "policy: Modern South Arabian / Turoyo requests are left for someone who knows the language",
   "to": "{{desc|gdq|tr=ʾəḥād|g=m}}"
  },
@@ -1369,7 +1369,7 @@
   "new": "{{cog|gdq|ḥawbin}}",
   "how": "Latin script is the standard for this language: the transliteration becomes the term",
   "round": "5bc2df4",
-  "action": "restore",
+  "action": "restored",
   "why": "policy: Modern South Arabian / Turoyo requests are left for someone who knows the language",
   "to": "{{cog|gdq|tr=ḥawbin}}"
  },
@@ -1385,7 +1385,7 @@
   "new": "{{cog|gdq|ḥayd}}",
   "how": "Latin script is the standard for this language: the transliteration becomes the term",
   "round": "5bc2df4",
-  "action": "restore",
+  "action": "restored",
   "why": "policy: Modern South Arabian / Turoyo requests are left for someone who knows the language",
   "to": "{{cog|gdq|tr=ḥayd}}"
  },
@@ -1401,7 +1401,7 @@
   "new": "{{cog|gdq|nḥa}}",
   "how": "Latin script is the standard for this language: the transliteration becomes the term",
   "round": "5bc2df4",
-  "action": "restore",
+  "action": "restored",
   "why": "policy: Modern South Arabian / Turoyo requests are left for someone who knows the language",
   "to": "{{cog|gdq|tr=nḥa}}"
  },
@@ -1417,7 +1417,7 @@
   "new": "{{cog|gdq|hemm}}",
   "how": "Latin script is the standard for this language: the transliteration becomes the term",
   "round": "5bc2df4",
-  "action": "restore",
+  "action": "restored",
   "why": "policy: Modern South Arabian / Turoyo requests are left for someone who knows the language",
   "to": "{{cog|gdq|tr=hemm}}"
  },
@@ -1433,7 +1433,7 @@
   "new": "{{cog|gdq|fetōn}}",
   "how": "Latin script is the standard for this language: the transliteration becomes the term",
   "round": "5bc2df4",
-  "action": "restore",
+  "action": "restored",
   "why": "policy: Modern South Arabian / Turoyo requests are left for someone who knows the language",
   "to": "{{cog|gdq|tr=fetōn}}"
  },
@@ -1449,7 +1449,7 @@
   "new": "{{cog|gdq|kebś}}",
   "how": "Latin script is the standard for this language: the transliteration becomes the term",
   "round": "5bc2df4",
-  "action": "restore",
+  "action": "restored",
   "why": "policy: Modern South Arabian / Turoyo requests are left for someone who knows the language",
   "to": "{{cog|gdq|tr=kebś}}"
  },
@@ -1465,7 +1465,7 @@
   "new": "{{m|gdq|kêbeś}}",
   "how": "Latin script is the standard for this language: the transliteration becomes the term",
   "round": "5bc2df4",
-  "action": "restore",
+  "action": "restored",
   "why": "policy: Modern South Arabian / Turoyo requests are left for someone who knows the language",
   "to": "{{m|gdq|tr=kêbeś}}"
  },
@@ -1481,7 +1481,7 @@
   "new": "{{cog|gdq|laḫáym|t=shark}}",
   "how": "Latin script is the standard for this language: the transliteration becomes the term",
   "round": "5bc2df4",
-  "action": "restore",
+  "action": "restored",
   "why": "policy: Modern South Arabian / Turoyo requests are left for someone who knows the language",
   "to": "{{cog|gdq|tr=laḫáym|t=shark}}"
  },
@@ -1497,7 +1497,7 @@
   "new": "{{cog|gdq|môn}}",
   "how": "Latin script is the standard for this language: the transliteration becomes the term",
   "round": "5bc2df4",
-  "action": "restore",
+  "action": "restored",
   "why": "policy: Modern South Arabian / Turoyo requests are left for someone who knows the language",
   "to": "{{cog|gdq|tr=môn}}"
  },
@@ -1513,7 +1513,7 @@
   "new": "{{cog|gdq|mäd}}",
   "how": "Latin script is the standard for this language: the transliteration becomes the term",
   "round": "5bc2df4",
-  "action": "restore",
+  "action": "restored",
   "why": "policy: Modern South Arabian / Turoyo requests are left for someone who knows the language",
   "to": "{{cog|gdq|tr=mäd}}"
  },
@@ -1529,7 +1529,7 @@
   "new": "{{cog|gdq|hû}}",
   "how": "Latin script is the standard for this language: the transliteration becomes the term",
   "round": "5bc2df4",
-  "action": "restore",
+  "action": "restored",
   "why": "policy: Modern South Arabian / Turoyo requests are left for someone who knows the language",
   "to": "{{cog|gdq|tr=hû}}"
  },
@@ -1545,7 +1545,7 @@
   "new": "{{desc|gdq|ṭɛlḥáym}}",
   "how": "Latin script is the standard for this language: the transliteration becomes the term",
   "round": "5bc2df4",
-  "action": "restore",
+  "action": "restored",
   "why": "policy: Modern South Arabian / Turoyo requests are left for someone who knows the language",
   "to": "{{desc|gdq||tr=ṭɛlḥáym}}"
  },
@@ -1561,7 +1561,7 @@
   "new": "{{cog|shv|ɛ́-mí}}",
   "how": "Latin script is the standard for this language: the transliteration becomes the term",
   "round": "5bc2df4",
-  "action": "restore",
+  "action": "restored",
   "why": "policy: Modern South Arabian / Turoyo requests are left for someone who knows the language",
   "to": "{{cog|shv|tr=ɛ́-mí}}"
  },
@@ -1577,7 +1577,7 @@
   "new": "{{m|shv|é-míh}}",
   "how": "Latin script is the standard for this language: the transliteration becomes the term",
   "round": "5bc2df4",
-  "action": "restore",
+  "action": "restored",
   "why": "policy: Modern South Arabian / Turoyo requests are left for someone who knows the language",
   "to": "{{m|shv|tr=é-míh}}"
  },
@@ -1593,7 +1593,7 @@
   "new": "{{cog|shv|qeḍaʿ|t=to gnaw through}}",
   "how": "Latin script is the standard for this language: the transliteration becomes the term",
   "round": "5bc2df4",
-  "action": "restore",
+  "action": "restored",
   "why": "policy: Modern South Arabian / Turoyo requests are left for someone who knows the language",
   "to": "{{cog|shv|tr=qeḍaʿ|t=to gnaw through}}"
  },
@@ -1609,7 +1609,7 @@
   "new": "{{cog|shv|ed}}",
   "how": "Latin script is the standard for this language: the transliteration becomes the term",
   "round": "5bc2df4",
-  "action": "restore",
+  "action": "restored",
   "why": "policy: Modern South Arabian / Turoyo requests are left for someone who knows the language",
   "to": "{{cog|shv|tr=ed}}"
  },
@@ -1625,7 +1625,7 @@
   "new": "{{cog|shv|nḥa}}",
   "how": "Latin script is the standard for this language: the transliteration becomes the term",
   "round": "5bc2df4",
-  "action": "restore",
+  "action": "restored",
   "why": "policy: Modern South Arabian / Turoyo requests are left for someone who knows the language",
   "to": "{{cog|shv|tr=nḥa}}"
  },
@@ -1641,7 +1641,7 @@
   "new": "{{cog|shv|šum}}",
   "how": "Latin script is the standard for this language: the transliteration becomes the term",
   "round": "5bc2df4",
-  "action": "restore",
+  "action": "restored",
   "why": "policy: Modern South Arabian / Turoyo requests are left for someone who knows the language",
   "to": "{{cog|shv|tr=šum}}"
  },
@@ -1657,7 +1657,7 @@
   "new": "{{cog|shv|koś}}",
   "how": "Latin script is the standard for this language: the transliteration becomes the term",
   "round": "5bc2df4",
-  "action": "restore",
+  "action": "restored",
   "why": "policy: Modern South Arabian / Turoyo requests are left for someone who knows the language",
   "to": "{{cog|shv|tr=koś}}"
  },
@@ -1673,7 +1673,7 @@
   "new": "{{cog|shv|mun}}",
   "how": "Latin script is the standard for this language: the transliteration becomes the term",
   "round": "5bc2df4",
-  "action": "restore",
+  "action": "restored",
   "why": "policy: Modern South Arabian / Turoyo requests are left for someone who knows the language",
   "to": "{{cog|shv|tr=mun}}"
  },
@@ -1689,7 +1689,7 @@
   "new": "{{cog|shv|he}}",
   "how": "Latin script is the standard for this language: the transliteration becomes the term",
   "round": "5bc2df4",
-  "action": "restore",
+  "action": "restored",
   "why": "policy: Modern South Arabian / Turoyo requests are left for someone who knows the language",
   "to": "{{cog|shv|tr=he}}"
  },
@@ -1705,7 +1705,7 @@
   "new": "{{desc|shv|ṭɛlḥím}}",
   "how": "Latin script is the standard for this language: the transliteration becomes the term",
   "round": "5bc2df4",
-  "action": "restore",
+  "action": "restored",
   "why": "policy: Modern South Arabian / Turoyo requests are left for someone who knows the language",
   "to": "{{desc|shv||tr=ṭɛlḥím}}"
  },
@@ -1721,7 +1721,7 @@
   "new": "{{cog|sqt|teʔ|t=to eat}}",
   "how": "Latin script is the standard for this language: the transliteration becomes the term",
   "round": "5bc2df4",
-  "action": "restore",
+  "action": "restored",
   "why": "policy: Modern South Arabian / Turoyo requests are left for someone who knows the language",
   "to": "{{cog|sqt||tr=teʔ|t=to eat}}"
  },
@@ -1737,7 +1737,7 @@
   "new": "{{cog|sqt|meḥor|t=to offer}}",
   "how": "Latin script is the standard for this language: the transliteration becomes the term",
   "round": "5bc2df4",
-  "action": "restore",
+  "action": "restored",
   "why": "policy: Modern South Arabian / Turoyo requests are left for someone who knows the language",
   "to": "{{cog|sqt||tr=meḥor|t=to offer}}"
  },
@@ -1753,7 +1753,7 @@
   "new": "{{desc|sqt|étom|t=to share, to do something together with someone}}",
   "how": "Latin script is the standard for this language: the transliteration becomes the term",
   "round": "5bc2df4",
-  "action": "restore",
+  "action": "restored",
   "why": "policy: Modern South Arabian / Turoyo requests are left for someone who knows the language",
   "to": "{{desc|sqt||tr=étom|t=to share, to do something together with someone}}"
  },
@@ -1769,7 +1769,7 @@
   "new": "{{cog|sqt|bor|t=maize}}",
   "how": "Latin script is the standard for this language: the transliteration becomes the term",
   "round": "5bc2df4",
-  "action": "restore",
+  "action": "restored",
   "why": "policy: Modern South Arabian / Turoyo requests are left for someone who knows the language",
   "to": "{{cog|sqt|tr=bor|t=maize}}"
  },
@@ -1785,7 +1785,7 @@
   "new": "{{desc|hss|laʔ}}",
   "how": "Latin script is the standard for this language: the transliteration becomes the term",
   "round": "5bc2df4",
-  "action": "restore",
+  "action": "restored",
   "why": "policy: Modern South Arabian / Turoyo requests are left for someone who knows the language",
   "to": "{{desc|hss|tr=laʔ}}"
  },
@@ -1801,7 +1801,7 @@
   "new": "{{cog|hss|ḥə-myóh}}",
   "how": "Latin script is the standard for this language: the transliteration becomes the term",
   "round": "5bc2df4",
-  "action": "restore",
+  "action": "restored",
   "why": "policy: Modern South Arabian / Turoyo requests are left for someone who knows the language",
   "to": "{{cog|hss|tr=ḥə-myóh}}"
  },
@@ -1817,7 +1817,7 @@
   "new": "{{cog|hss|egtōma}}",
   "how": "Latin script is the standard for this language: the transliteration becomes the term",
   "round": "5bc2df4",
-  "action": "restore",
+  "action": "restored",
   "why": "policy: Modern South Arabian / Turoyo requests are left for someone who knows the language",
   "to": "{{cog|hss|tr=egtōma}}"
  },
@@ -1833,7 +1833,7 @@
   "new": "{{cog|hss|léḫem|t=shark}}",
   "how": "Latin script is the standard for this language: the transliteration becomes the term",
   "round": "5bc2df4",
-  "action": "restore",
+  "action": "restored",
   "why": "policy: Modern South Arabian / Turoyo requests are left for someone who knows the language",
   "to": "{{cog|hss|tr=léḫem|t=shark}}"
  },
@@ -1849,7 +1849,7 @@
   "new": "{{desc|hss|ṭelḥáym}}",
   "how": "Latin script is the standard for this language: the transliteration becomes the term",
   "round": "5bc2df4",
-  "action": "restore",
+  "action": "restored",
   "why": "policy: Modern South Arabian / Turoyo requests are left for someone who knows the language",
   "to": "{{desc|hss||tr=ṭelḥáym}}"
  },
@@ -1925,7 +1925,7 @@
   "new": "{{bor|lv|ar|يمن|tr=yaman|t=right side}}",
   "how": "the spelling of the existing Arabic entry يمن (matched by headword)",
   "round": "9f68073",
-  "action": "correct",
+  "action": "correctd",
   "why": "Arabic: the vocalised headword, without tr=",
   "to": "{{bor|lv|ar|يَمَن|t=right side}}"
  },
@@ -1956,8 +1956,8 @@
   "new": "{{desc|myz|ࡒࡀࡌࡀࡓ|tr=qamar}}",
   "how": "Mandaic writes its vowels: converted letter for letter",
   "round": "9f68073",
-  "action": "restore",
-  "why": "nothing to verify it against: a letter of 'ࡒࡀࡌࡀࡓ' has no correspondence in the table",
+  "action": "keep",
+  "why": "kept by the user on review (2026-10-31): nothing to verify it against: a letter of 'ࡒࡀࡌࡀࡓ' has no correspondence in the table",
   "to": "{{desc|myz|tr=qamar}}"
  },
  {
@@ -1972,8 +1972,8 @@
   "new": "{{desc|myz|ࡐࡀࡓࡃࡀࡎࡀ|tr=pardasa}}",
   "how": "Mandaic writes its vowels: converted letter for letter",
   "round": "9f68073",
-  "action": "restore",
-  "why": "nothing to verify it against: a letter of 'ࡐࡀࡓࡃࡀࡎࡀ' has no correspondence in the table",
+  "action": "keep",
+  "why": "kept by the user on review (2026-10-31): nothing to verify it against: a letter of 'ࡐࡀࡓࡃࡀࡎࡀ' has no correspondence in the table",
   "to": "{{desc|myz|tr=pardasa}}"
  },
  {
@@ -1988,8 +1988,8 @@
   "new": "{{l|myz|ࡐࡀࡓࡃࡉࡎࡀ|tr=pardisa}}",
   "how": "Mandaic writes its vowels: converted letter for letter",
   "round": "9f68073",
-  "action": "restore",
-  "why": "nothing to verify it against: a letter of 'ࡐࡀࡓࡃࡉࡎࡀ' has no correspondence in the table",
+  "action": "keep",
+  "why": "kept by the user on review (2026-10-31): nothing to verify it against: a letter of 'ࡐࡀࡓࡃࡉࡎࡀ' has no correspondence in the table",
   "to": "{{l|myz|tr=pardisa}}"
  }
 ]

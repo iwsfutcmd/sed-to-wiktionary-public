@@ -73,6 +73,10 @@ from tr2script import abjad, ethiopic, cuneiform
 LATIN = {"akk", "amw"}
 # consonantal scripts: a transliteration with no vowels maps letter for letter (Aramaic in the square script, its default on Wiktionary)
 CONSONANTAL = {"xsa", "inm", "xqt", "xhd", "sem-srb", "phn", "uga"}       # not Aramaic: which script (square? Imperial?) needs a source
+# Scripts where the transliteration maps to the script without guessing, so a fill may go ahead when nothing confirms it, as long as nothing
+# contradicts it either (the sound-law check must not fail): the user reviewed and kept such fills (2026-10-31). Ethiopic only in Wiktionary's
+# own transliteration scheme (suggest() checks that); Eblaite only from unindexed, undisputed signs (cuneiform.convert refuses the rest).
+LOSSLESS = {"xsa", "inm", "xqt", "xhd", "sem-srb", "myz", "xeb", "gez", "am", "ti", "tig", "har", "stv", "zwa", "gft", "gru", "sgw", "agj", "mvz", "wle"}
 ETHIOPIC = {"gez", "am", "ti", "tig", "har", "stv", "zwa", "gft", "gru", "sgw", "agj", "mvz", "wle"}
 VOWELS = re.compile(r"[aeiouāēīōūăĕŏəäɛɔâêîôûáéíóú]", re.I)
 
@@ -242,6 +246,8 @@ def main(argv):
         term, how = suggest(r["code"], r["tr"], r["ts"])
         if term:
             verdict, why = sanity(r, term, src)
+            if verdict is None and r["code"] in LOSSLESS:
+                verdict, why = True, "a lossless script (the user's call, 2026-10-31); no cognate contradicts it"
             if verdict is not True:
                 term, how = None, ("fails the sanity check: " if verdict is False else "no source or cognate to check it against: ") + why
         if term and re.search(r"\|\s*(?:tr|ts|alt)\d\s*=", r["template"]):

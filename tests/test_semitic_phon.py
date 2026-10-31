@@ -48,3 +48,11 @@ class FillSanity(unittest.TestCase):
         verdict, why = R.sanity(row, "𐎁𐎂𐎊", {})
         self.assertIs(verdict, False, why)
         self.assertIs(R.sanity(row, "𐎁𐎙𐎊", {})[0], True)
+
+
+class Lossless(unittest.TestCase):
+    """Old South Arabian, Mandaic, Eblaite and Ethiopic fills may go ahead unconfirmed (the user's call, 2026-10-31), never when contradicted."""
+    def test_rule(self):
+        import wikt_script_requests as R
+        self.assertIn("xsa", R.LOSSLESS); self.assertIn("myz", R.LOSSLESS)
+        self.assertNotIn("uga", R.LOSSLESS); self.assertNotIn("arc", R.LOSSLESS); self.assertNotIn("ar", R.LOSSLESS)
